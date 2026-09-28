@@ -1,0 +1,213 @@
+- generic [ref=f38e2]:
+  - generic [ref=f38e3]:
+    - generic [ref=f38e5]:
+      - generic [ref=f38e6]: 
+      - heading "Cource" [level=2] [ref=f38e9]
+    - paragraph [ref=f38e10]: OVERVIEW
+    - navigation [ref=f38e11]:
+      - link " Dashboard" [ref=f38e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/dashboard
+        - generic [ref=f38e13]: 
+        - generic [ref=f38e14]: Dashboard
+      - link " Inbox" [ref=f38e15] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f38e16]: 
+        - generic [ref=f38e17]: Inbox
+    - paragraph [ref=f38e18]: Content
+    - navigation [ref=f38e19]:
+      - link " Articles" [ref=f38e20] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/articles
+        - generic [ref=f38e21]: 
+        - generic [ref=f38e22]: Articles
+      - link " Categories" [ref=f38e23] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/categories
+        - generic [ref=f38e24]: 
+        - generic [ref=f38e25]: Categories
+      - link " Tags" [ref=f38e26] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tags
+        - generic [ref=f38e27]: 
+        - generic [ref=f38e28]: Tags
+    - paragraph [ref=f38e29]: Management
+    - navigation [ref=f38e30]:
+      - link " Users" [ref=f38e31] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/users
+        - generic [ref=f38e32]: 
+        - generic [ref=f38e33]: Users
+      - link " Ads" [ref=f38e34] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/ads
+        - generic [ref=f38e35]: 
+        - generic [ref=f38e36]: Ads
+      - link " Keywords" [ref=f38e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/keywords
+        - generic [ref=f38e38]: 
+        - generic [ref=f38e39]: Keywords
+    - generic [ref=f38e40]:
+      - paragraph [ref=f38e41]: Settings
+      - navigation [ref=f38e42]:
+        - link " Settings" [ref=f38e43] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=f38e44]: 
+          - generic [ref=f38e45]: Settings
+        - button " Logout" [ref=f38e47]:
+          - generic [ref=f38e48]: 
+          - generic [ref=f38e49]: Logout
+  - generic [ref=f38e50]:
+    - generic [ref=f38e51]:
+      - textbox "Search your content..." [ref=f38e53]
+      - generic [ref=f38e54]:
+        - button "" [ref=f38e55]
+        - button "" [ref=f38e57]
+    - generic [ref=f38e60]:
+      - generic [ref=f38e61]:
+        - generic [ref=f38e62]:
+          - heading "Users" [level=1] [ref=f38e63]
+          - paragraph [ref=f38e64]: Manage user accounts and permissions
+        - link "+ New User" [ref=f38e65] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/users/create
+          - generic [ref=f38e66]: +
+          - generic [ref=f38e67]: New User
+      - generic [ref=f38e68]:
+        - generic [ref=f38e70]:
+          - generic [ref=f38e71]:
+            - paragraph [ref=f38e72]: Total Users
+            - paragraph [ref=f38e73]: "3"
+          - generic [ref=f38e74]: 
+        - generic [ref=f38e77]:
+          - generic [ref=f38e78]:
+            - paragraph [ref=f38e79]: Active
+            - paragraph [ref=f38e80]: "3"
+          - generic [ref=f38e81]: 
+        - generic [ref=f38e84]:
+          - generic [ref=f38e85]:
+            - paragraph [ref=f38e86]: Inactive
+            - paragraph [ref=f38e87]: "0"
+          - generic [ref=f38e88]: 
+        - generic [ref=f38e91]:
+          - generic [ref=f38e92]:
+            - paragraph [ref=f38e93]: Admins
+            - paragraph [ref=f38e94]: "1"
+          - generic [ref=f38e95]: 
+      - table [ref=f38e99]:
+        - rowgroup [ref=f38e100]:
+          - row [ref=f38e101]:
+            - columnheader "User" [ref=f38e102]
+            - columnheader "Email" [ref=f38e103]
+            - columnheader "Role" [ref=f38e104]
+            - columnheader "Status" [ref=f38e105]
+            - columnheader "Joined" [ref=f38e106]
+            - columnheader "Actions" [ref=f38e107]
+        - rowgroup [ref=f38e108]:
+          - row [ref=f38e109]:
+            - 'cell "W Writer User ID: 3" [ref=f38e110]':
+              - generic [ref=f38e111]:
+                - generic [ref=f38e112]: W
+                - generic [ref=f38e113]:
+                  - paragraph [ref=f38e114]: Writer User
+                  - paragraph [ref=f38e115]: "ID: 3"
+            - cell [ref=f38e116]:
+              - paragraph [ref=f38e117]: writer@newsmedia.test
+            - cell " Writer" [ref=f38e118]:
+              - generic [ref=f38e120]:
+                - generic [ref=f38e121]: 
+                - text: Writer
+            - cell " Active" [ref=f38e122]:
+              - generic [ref=f38e123]:
+                - generic [ref=f38e124]: 
+                - text: Active
+            - cell [ref=f38e125]:
+              - paragraph [ref=f38e126]: Jul 15, 2026
+            - cell [ref=f38e127]:
+              - generic [ref=f38e128]:
+                - link "" [ref=f38e129] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/users/3/edit
+                - button "" [ref=f38e132]
+          - row [ref=f38e134]:
+            - 'cell "A Administrator ID: 1" [ref=f38e135]':
+              - generic [ref=f38e136]:
+                - generic [ref=f38e137]: A
+                - generic [ref=f38e138]:
+                  - paragraph [ref=f38e139]: Administrator
+                  - paragraph [ref=f38e140]: "ID: 1"
+            - cell [ref=f38e141]:
+              - paragraph [ref=f38e142]: admin@retnews.com
+            - cell " Admin" [ref=f38e143]:
+              - generic [ref=f38e145]:
+                - generic [ref=f38e146]: 
+                - text: Admin
+            - cell " Active" [ref=f38e147]:
+              - generic [ref=f38e148]:
+                - generic [ref=f38e149]: 
+                - text: Active
+            - cell [ref=f38e150]:
+              - paragraph [ref=f38e151]: Jul 15, 2026
+            - cell [ref=f38e152]:
+              - generic [ref=f38e153]:
+                - link "" [ref=f38e154] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/users/1/edit
+                - button "" [ref=f38e157]
+          - row [ref=f38e159]:
+            - 'cell "E Editor User ID: 2" [ref=f38e160]':
+              - generic [ref=f38e161]:
+                - generic [ref=f38e162]: E
+                - generic [ref=f38e163]:
+                  - paragraph [ref=f38e164]: Editor User
+                  - paragraph [ref=f38e165]: "ID: 2"
+            - cell [ref=f38e166]:
+              - paragraph [ref=f38e167]: editor@newsmedia.test
+            - cell " Editor" [ref=f38e168]:
+              - generic [ref=f38e170]:
+                - generic [ref=f38e171]: 
+                - text: Editor
+            - cell " Active" [ref=f38e172]:
+              - generic [ref=f38e173]:
+                - generic [ref=f38e174]: 
+                - text: Active
+            - cell [ref=f38e175]:
+              - paragraph [ref=f38e176]: Jul 15, 2026
+            - cell [ref=f38e177]:
+              - generic [ref=f38e178]:
+                - link "" [ref=f38e179] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/users/2/edit
+                - button "" [ref=f38e182]
+  - generic [ref=f38e184]:
+    - generic [ref=f38e185]:
+      - generic [ref=f38e186]: A
+      - heading "Administrator" [level=3] [ref=f38e187]
+      - paragraph [ref=f38e188]: Administrator
+    - generic [ref=f38e189]:
+      - paragraph [ref=f38e190]: Statistics
+      - generic [ref=f38e191]:
+        - generic [ref=f38e192]:
+          - generic [ref=f38e193]: "202"
+          - generic [ref=f38e194]: +32%
+        - paragraph [ref=f38e195]: Total Articles
+      - generic [ref=f38e196]:
+        - generic [ref=f38e197]:
+          - generic [ref=f38e198]: "3"
+          - generic [ref=f38e199]: +12%
+        - paragraph [ref=f38e200]: Total Users
+      - generic [ref=f38e201]:
+        - generic [ref=f38e202]:
+          - generic [ref=f38e203]: "14"
+          - generic [ref=f38e204]: →
+        - paragraph [ref=f38e205]: Total Categories
+    - paragraph [ref=f38e207]: Monthly Activity
+    - generic [ref=f38e211]:
+      - generic [ref=f38e212]:
+        - paragraph [ref=f38e213]: Your Mentors
+        - button "+" [ref=f38e214]
+      - generic [ref=f38e216]:
+        - generic [ref=f38e217]:
+          - generic [ref=f38e218]:
+            - generic [ref=f38e219]: 👨‍💼
+            - generic [ref=f38e220]:
+              - paragraph [ref=f38e221]: John Mentor
+              - paragraph [ref=f38e222]: Senior Admin
+          - button "Follow" [ref=f38e223]
+        - generic [ref=f38e224]:
+          - generic [ref=f38e225]:
+            - generic [ref=f38e226]: 👩‍💼
+            - generic [ref=f38e227]:
+              - paragraph [ref=f38e228]: Sarah Admin
+              - paragraph [ref=f38e229]: Content Lead
+          - button "Follow" [ref=f38e230]

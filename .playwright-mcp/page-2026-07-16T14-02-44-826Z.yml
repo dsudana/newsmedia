@@ -1,0 +1,69 @@
+- generic [active] [ref=f26e1]:
+  - banner [ref=f26e2]:
+    - generic [ref=f26e3]:
+      - link "NewsMedia" [ref=f26e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000
+      - navigation [ref=f26e6]:
+        - link "Home" [ref=f26e7] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+        - link "Politik" [ref=f26e8] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/politik
+        - link "Business" [ref=f26e9] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/business
+        - link "Technology" [ref=f26e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/technology
+        - link "Entertainment" [ref=f26e11] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/entertainment
+        - link "Health" [ref=f26e12] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/health
+      - generic [ref=f26e13]:
+        - generic [ref=f26e15]:
+          - textbox "Search..." [ref=f26e16]
+          - button [ref=f26e17]
+        - button "Administrator" [ref=f26e21]
+  - main [ref=f26e25]
+  - contentinfo [ref=f26e41]:
+    - generic [ref=f26e42]:
+      - generic [ref=f26e43]:
+        - heading "About Us" [level=4] [ref=f26e44]
+        - paragraph [ref=f26e45]: Your source for the latest news and updates.
+      - generic [ref=f26e46]:
+        - heading "Quick Links" [level=4] [ref=f26e47]
+        - list [ref=f26e48]:
+          - listitem [ref=f26e49]:
+            - link "Home" [ref=f26e50] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000
+          - listitem [ref=f26e51]:
+            - link "About" [ref=f26e52] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f26e53]:
+            - link "Contact" [ref=f26e54] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f26e55]:
+            - link "Privacy Policy" [ref=f26e56] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=f26e57]:
+        - heading "Categories" [level=4] [ref=f26e58]
+        - list [ref=f26e59]:
+          - listitem [ref=f26e60]:
+            - link "Politik" [ref=f26e61] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/politik
+          - listitem [ref=f26e62]:
+            - link "Business" [ref=f26e63] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/business
+          - listitem [ref=f26e64]:
+            - link "Technology" [ref=f26e65] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/technology
+          - listitem [ref=f26e66]:
+            - link "Entertainment" [ref=f26e67] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/entertainment
+          - listitem [ref=f26e68]:
+            - link "Health" [ref=f26e69] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/health
+      - generic [ref=f26e70]:
+        - heading "Newsletter" [level=4] [ref=f26e71]
+        - paragraph [ref=f26e72]: Subscribe to get the latest news updates.
+        - generic [ref=f26e73]:
+          - textbox "Your email" [ref=f26e74]
+          - button "Subscribe" [ref=f26e75]
+    - generic [ref=f26e76]: © 2026 NewsMedia. All rights reserved.

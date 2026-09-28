@@ -1,0 +1,243 @@
+- generic [ref=f44e2]:
+  - generic [ref=f44e3]:
+    - generic [ref=f44e5]:
+      - generic [ref=f44e6]: 
+      - heading "Cource" [level=2] [ref=f44e9]
+    - paragraph [ref=f44e10]: OVERVIEW
+    - navigation [ref=f44e11]:
+      - link " Dashboard" [ref=f44e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/dashboard
+        - generic [ref=f44e13]: 
+        - generic [ref=f44e14]: Dashboard
+      - link " Inbox" [ref=f44e15] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f44e16]: 
+        - generic [ref=f44e17]: Inbox
+    - paragraph [ref=f44e18]: Content
+    - navigation [ref=f44e19]:
+      - link " Articles" [ref=f44e20] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/articles
+        - generic [ref=f44e21]: 
+        - generic [ref=f44e22]: Articles
+      - link " Categories" [ref=f44e23] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/categories
+        - generic [ref=f44e24]: 
+        - generic [ref=f44e25]: Categories
+      - link " Tags" [ref=f44e26] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tags
+        - generic [ref=f44e27]: 
+        - generic [ref=f44e28]: Tags
+    - paragraph [ref=f44e29]: Management
+    - navigation [ref=f44e30]:
+      - link " Users" [ref=f44e31] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/users
+        - generic [ref=f44e32]: 
+        - generic [ref=f44e33]: Users
+      - link " Ads" [ref=f44e34] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/ads
+        - generic [ref=f44e35]: 
+        - generic [ref=f44e36]: Ads
+      - link " Keywords" [ref=f44e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/keywords
+        - generic [ref=f44e38]: 
+        - generic [ref=f44e39]: Keywords
+    - generic [ref=f44e40]:
+      - paragraph [ref=f44e41]: Settings
+      - navigation [ref=f44e42]:
+        - link " Settings" [ref=f44e43] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=f44e44]: 
+          - generic [ref=f44e45]: Settings
+        - button " Logout" [ref=f44e47]:
+          - generic [ref=f44e48]: 
+          - generic [ref=f44e49]: Logout
+  - generic [ref=f44e50]:
+    - generic [ref=f44e51]:
+      - textbox "Search your content..." [ref=f44e53]
+      - generic [ref=f44e54]:
+        - button "" [ref=f44e55]
+        - button "" [ref=f44e57]
+    - generic [ref=f44e60]:
+      - generic [ref=f44e62]:
+        - generic [ref=f44e63]: 📚 Online Course
+        - heading "Sharpen Your Skills with Professional Online Courses" [level=1] [ref=f44e64]
+        - paragraph [ref=f44e65]: Master the art of content creation and management
+        - button "Get Started " [ref=f44e66]:
+          - generic [ref=f44e67]: Get Started
+          - generic [ref=f44e68]: 
+      - generic [ref=f44e69]:
+        - heading "Featured Courses" [level=2] [ref=f44e70]
+        - generic [ref=f44e71]:
+          - generic [ref=f44e72]:
+            - generic [ref=f44e73]: 🎨
+            - generic [ref=f44e74]:
+              - generic [ref=f44e75]:
+                - generic [ref=f44e76]: UI/UX Design
+                - generic [ref=f44e77]: 2/8 watched
+              - heading "Designing Beautiful Interfaces" [level=3] [ref=f44e78]
+              - generic [ref=f44e79]:
+                - img "Mentor" [ref=f44e80]
+                - generic [ref=f44e81]:
+                  - paragraph [ref=f44e82]: Leonardo Samuel
+                  - paragraph [ref=f44e83]: Design Lead
+          - generic [ref=f44e86]:
+            - generic [ref=f44e87]: 🎯
+            - generic [ref=f44e88]:
+              - generic [ref=f44e89]:
+                - generic [ref=f44e90]: Branding
+                - generic [ref=f44e91]: 3/8 watched
+              - heading "Master Brand Strategy" [level=3] [ref=f44e92]
+              - generic [ref=f44e93]:
+                - img "Mentor" [ref=f44e94]
+                - generic [ref=f44e95]:
+                  - paragraph [ref=f44e96]: Bayu Salto
+                  - paragraph [ref=f44e97]: Branding Expert
+          - generic [ref=f44e100]:
+            - generic [ref=f44e101]: 💻
+            - generic [ref=f44e102]:
+              - generic [ref=f44e103]:
+                - generic [ref=f44e104]: Front End
+                - generic [ref=f44e105]: 6/12 watched
+              - heading "Modern Web Development" [level=3] [ref=f44e106]
+              - generic [ref=f44e107]:
+                - img "Mentor" [ref=f44e108]
+                - generic [ref=f44e109]:
+                  - paragraph [ref=f44e110]: Padhang Satrio
+                  - paragraph [ref=f44e111]: Tech Lead
+      - generic [ref=f44e114]:
+        - generic [ref=f44e115]:
+          - heading "Continue Watching" [level=2] [ref=f44e116]
+          - link "See all" [ref=f44e117] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=f44e118]:
+          - generic [ref=f44e119] [cursor=pointer]:
+            - generic [ref=f44e120]:
+              - img "Consequatur qui maxime veritatis reprehenderit exercitationem." [ref=f44e121]
+              - generic [ref=f44e123]: Pendidikan
+            - generic [ref=f44e124]:
+              - heading "Consequatur qui maxime veritatis reprehenderit exercitationem." [level=3] [ref=f44e125]
+              - paragraph [ref=f44e126]: By Editor User
+          - generic [ref=f44e129] [cursor=pointer]:
+            - generic [ref=f44e130]:
+              - img "Eos at doloremque quisquam vitae." [ref=f44e131]
+              - generic [ref=f44e133]: Entertainment
+            - generic [ref=f44e134]:
+              - heading "Eos at doloremque quisquam vitae." [level=3] [ref=f44e135]
+              - paragraph [ref=f44e136]: By Editor User
+          - generic [ref=f44e139] [cursor=pointer]:
+            - generic [ref=f44e140]:
+              - img "Et voluptatem voluptate ut itaque ipsam consequatur quisquam." [ref=f44e141]
+              - generic [ref=f44e143]: Entertainment
+            - generic [ref=f44e144]:
+              - heading "Et voluptatem voluptate ut itaque ipsam consequatur quisquam." [level=3] [ref=f44e145]
+              - paragraph [ref=f44e146]: By Editor User
+      - generic [ref=f44e149]:
+        - heading "Your Lessons" [level=2] [ref=f44e151]
+        - table [ref=f44e153]:
+          - rowgroup [ref=f44e154]:
+            - row [ref=f44e155]:
+              - columnheader "Mentor" [ref=f44e156]
+              - columnheader "Type" [ref=f44e157]
+              - columnheader "Description" [ref=f44e158]
+              - columnheader "Action" [ref=f44e159]
+          - rowgroup [ref=f44e160]:
+            - row [ref=f44e161]:
+              - cell [ref=f44e162]:
+                - generic [ref=f44e163]:
+                  - img "Padhang Satrio" [ref=f44e164]
+                  - generic [ref=f44e165]:
+                    - paragraph [ref=f44e166]: Padhang Satrio
+                    - paragraph [ref=f44e167]: 7/16/2004
+              - cell " UI/UX Design" [ref=f44e168]:
+                - generic [ref=f44e169]:
+                  - generic [ref=f44e170]: 
+                  - text: UI/UX Design
+              - cell [ref=f44e171]:
+                - paragraph [ref=f44e172]: Understand Of UI/UX Design
+              - cell [ref=f44e173]:
+                - button "" [ref=f44e174]
+            - row [ref=f44e176]:
+              - cell [ref=f44e177]:
+                - generic [ref=f44e178]:
+                  - img "Leonardo Samuel" [ref=f44e179]
+                  - generic [ref=f44e180]:
+                    - paragraph [ref=f44e181]: Leonardo Samuel
+                    - paragraph [ref=f44e182]: 7/18/2004
+              - cell " Web Design" [ref=f44e183]:
+                - generic [ref=f44e184]:
+                  - generic [ref=f44e185]: 
+                  - text: Web Design
+              - cell [ref=f44e186]:
+                - paragraph [ref=f44e187]: Advanced Web Design Concepts
+              - cell [ref=f44e188]:
+                - button "" [ref=f44e189]
+            - row [ref=f44e191]:
+              - cell [ref=f44e192]:
+                - generic [ref=f44e193]:
+                  - img "Bayu Salto" [ref=f44e194]
+                  - generic [ref=f44e195]:
+                    - paragraph [ref=f44e196]: Bayu Salto
+                    - paragraph [ref=f44e197]: 7/20/2004
+              - cell " Branding" [ref=f44e198]:
+                - generic [ref=f44e199]:
+                  - generic [ref=f44e200]: 
+                  - text: Branding
+              - cell [ref=f44e201]:
+                - paragraph [ref=f44e202]: Brand Identity Mastery
+              - cell [ref=f44e203]:
+                - button "" [ref=f44e204]
+      - generic [ref=f44e206]:
+        - generic [ref=f44e207]:
+          - generic [ref=f44e208]: "202"
+          - paragraph [ref=f44e209]: Total Articles Published
+        - generic [ref=f44e210]:
+          - generic [ref=f44e211]: "3"
+          - paragraph [ref=f44e212]: Active Users
+        - generic [ref=f44e213]:
+          - generic [ref=f44e214]: "14"
+          - paragraph [ref=f44e215]: Categories
+        - generic [ref=f44e216]:
+          - generic [ref=f44e217]: "16"
+          - paragraph [ref=f44e218]: Total Tags
+  - generic [ref=f44e219]:
+    - generic [ref=f44e220]:
+      - generic [ref=f44e221]: A
+      - heading "Administrator" [level=3] [ref=f44e222]
+      - paragraph [ref=f44e223]: Administrator
+    - generic [ref=f44e224]:
+      - paragraph [ref=f44e225]: Statistics
+      - generic [ref=f44e226]:
+        - generic [ref=f44e227]:
+          - generic [ref=f44e228]: "202"
+          - generic [ref=f44e229]: +32%
+        - paragraph [ref=f44e230]: Total Articles
+      - generic [ref=f44e231]:
+        - generic [ref=f44e232]:
+          - generic [ref=f44e233]: "3"
+          - generic [ref=f44e234]: +12%
+        - paragraph [ref=f44e235]: Total Users
+      - generic [ref=f44e236]:
+        - generic [ref=f44e237]:
+          - generic [ref=f44e238]: "14"
+          - generic [ref=f44e239]: →
+        - paragraph [ref=f44e240]: Total Categories
+    - paragraph [ref=f44e242]: Monthly Activity
+    - generic [ref=f44e246]:
+      - generic [ref=f44e247]:
+        - paragraph [ref=f44e248]: Your Mentors
+        - button "+" [ref=f44e249]
+      - generic [ref=f44e251]:
+        - generic [ref=f44e252]:
+          - generic [ref=f44e253]:
+            - generic [ref=f44e254]: 👨‍💼
+            - generic [ref=f44e255]:
+              - paragraph [ref=f44e256]: John Mentor
+              - paragraph [ref=f44e257]: Senior Admin
+          - button "Follow" [ref=f44e258]
+        - generic [ref=f44e259]:
+          - generic [ref=f44e260]:
+            - generic [ref=f44e261]: 👩‍💼
+            - generic [ref=f44e262]:
+              - paragraph [ref=f44e263]: Sarah Admin
+              - paragraph [ref=f44e264]: Content Lead
+          - button "Follow" [ref=f44e265]

@@ -1,0 +1,943 @@
+PRODUCT REQUIREMENTS DOCUMENT (PRD)
+Produk: Portal Website Berita & Media Online
+Versi: 1.0
+Target: Monetisasi melalui Iklan, Affiliate, dan Sponsored Content
+Teknologi: Laravel 11 + MySQL + Redis (Cache)
+1️⃣ EXECUTIVE SUMMARY
+
+Website berita ini adalah portal media online dengan fokus pada:
+
+Publikasi berita aktual & evergreen
+
+Optimasi SEO (on-page & technical)
+
+Monetisasi (Google AdSense, direct ads, affiliate, sponsored post)
+
+Performa tinggi & scalable
+
+Siap untuk traffic besar
+
+Target pengunjung:
+
+18–45 tahun
+
+Mobile-first audience
+
+Pencari informasi cepat & aktual
+
+2️⃣ BUSINESS GOALS
+🎯 Target 12 Bulan:
+
+100.000+ visitor / bulan
+
+1.000+ artikel terindeks Google
+
+Monetisasi:
+
+AdSense
+
+Direct banner ads
+
+Affiliate marketing
+
+Sponsored post
+
+Email marketing
+
+3️⃣ TARGET AUDIENCE
+Segmen	Kebutuhan
+Pembaca umum	Berita cepat & akurat
+Profesional	Analisis mendalam
+Brand/Advertiser	Slot iklan
+Affiliate Partner	Konversi penjualan
+4️⃣ CORE FEATURES (MVP)
+A. Frontend (User Side)
+1️⃣ Homepage
+
+Breaking news slider
+
+Trending news
+
+Kategori section
+
+Artikel terbaru
+
+Sidebar: popular posts
+
+Slot iklan
+
+2️⃣ Halaman Artikel
+
+Judul SEO optimized (H1)
+
+Featured image
+
+Penulis & tanggal
+
+Breadcrumb schema
+
+Related posts
+
+Share buttons (WA, FB, Twitter, Telegram)
+
+Comment system
+
+Slot iklan (header, middle, footer)
+
+FAQ schema (untuk rich result)
+
+3️⃣ Kategori Page
+
+Pagination
+
+SEO title & meta dynamic
+
+Description per kategori
+
+4️⃣ Search Page
+
+AJAX search
+
+Highlight keyword
+
+5️⃣ Tag Page
+
+SEO friendly URL
+
+Auto internal linking
+
+B. Admin Dashboard
+1️⃣ Article Management
+
+CRUD artikel
+
+Draft & publish
+
+Schedule post
+
+Rich text editor (TinyMCE / CKEditor)
+
+Upload featured image
+
+Auto slug generator
+
+Auto meta title & description (AI assisted optional)
+
+Schema markup generator
+
+2️⃣ Category & Tag Management
+
+Parent category (nested)
+
+Custom meta description
+
+SEO slug
+
+3️⃣ Advertisement Management
+
+Slot management:
+
+Header banner
+
+Sidebar banner
+
+In-article ads
+
+Sticky mobile ads
+
+Script injection (AdSense)
+
+Direct banner upload
+
+Schedule ads
+
+4️⃣ Affiliate Management
+
+Link cloaking system
+
+Click tracking
+
+Affiliate campaign analytics
+
+Auto insert affiliate box di artikel tertentu
+
+5️⃣ User & Role Management
+
+Menggunakan Spatie Laravel Permission
+
+Roles:
+
+Admin
+
+Editor
+
+Writer
+
+Advertiser
+
+6️⃣ SEO Settings
+
+Global meta settings
+
+Sitemap auto generate
+
+Robots.txt manager
+
+Schema.org structured data
+
+OpenGraph & Twitter card
+
+Canonical URL auto
+
+5️⃣ MONETIZATION FEATURES (WAJIB)
+1️⃣ Google AdSense Ready
+
+Script injection via dashboard
+
+Lazy load ads
+
+Auto placement
+
+2️⃣ Direct Ads Marketplace (Premium Feature)
+
+Advertiser register
+
+Upload banner
+
+Choose duration
+
+Auto invoice
+
+Payment gateway integration
+
+3️⃣ Affiliate Engine
+
+Custom affiliate short link:
+example.com/go/shopee-product-1
+
+Click counter
+
+Top converting article report
+
+4️⃣ Sponsored Post System
+
+Label otomatis "Sponsored"
+
+No-follow link toggle
+
+Pricing management
+
+5️⃣ Email Newsletter
+
+Lead magnet popup
+
+Auto weekly digest
+
+Monetisasi via email affiliate
+
+6️⃣ SEO REQUIREMENTS (CRITICAL)
+
+Sebagai SEO expert, ini WAJIB:
+
+✅ Technical SEO
+
+SSR friendly (Blade optimized)
+
+Clean URL structure
+
+Fast loading (<2s)
+
+Image compression auto
+
+Lazy loading image
+
+WebP support
+
+Core Web Vitals optimized
+
+Mobile-first responsive
+
+✅ On-Page SEO
+
+H1 single
+
+H2/H3 structured
+
+Auto internal linking
+
+Breadcrumb schema
+
+FAQ schema
+
+Article schema
+
+Author schema
+
+✅ Content SEO Tools
+
+Admin bisa melihat:
+
+Word count
+
+Keyword density
+
+SEO score (optional future AI)
+
+✅ Sitemap
+
+/sitemap.xml
+
+News sitemap
+
+Category sitemap
+
+Auto update
+
+7️⃣ PERFORMANCE REQUIREMENTS
+
+Laravel cache (Redis)
+
+Route cache
+
+Query optimization
+
+CDN ready
+
+Queue system untuk:
+
+Newsletter
+
+Heavy job
+
+Sitemap regeneration
+
+8️⃣ NON-FUNCTIONAL REQUIREMENTS
+Aspek	Requirement
+Security	CSRF, XSS filter, rate limit
+Backup	Daily backup
+Scalability	Cloud ready
+Logging	Activity log
+Monitoring	Error tracking
+9️⃣ DATABASE STRUCTURE (High Level)
+
+Tables:
+
+users
+
+roles
+
+permissions
+
+articles
+
+categories
+
+tags
+
+article_tag
+
+comments
+
+ads
+
+affiliate_links
+
+affiliate_clicks
+
+newsletters
+
+subscribers
+
+sponsored_posts
+
+settings
+
+activity_logs
+
+🔟 FUTURE ROADMAP
+Phase 2
+
+AI headline generator
+
+Auto rewrite summary
+
+Trending algorithm
+
+Push notification
+
+AMP version
+
+Mobile app API
+
+Phase 3
+
+Subscription premium content
+
+Paywall
+
+Member-only newsletter
+
+AI personalized feed
+
+1️⃣1️⃣ ESTIMASI STACK TEKNOLOGI
+
+Backend:
+
+Laravel 11
+
+MySQL
+
+Redis
+
+Frontend:
+
+Blade + Bootstrap / Tailwind
+
+Alpine.js
+
+SEO:
+
+spatie/laravel-sitemap
+
+spatie/laravel-permission
+
+spatie/laravel-activitylog
+
+Optional:
+
+Meilisearch / Algolia
+
+1️⃣2️⃣ SUCCESS METRICS (KPI)
+
+CTR artikel > 4%
+
+Bounce rate < 60%
+
+Average session > 2 menit
+
+RPM ads meningkat tiap bulan
+
+Affiliate conversion rate > 2%
+
+🔥 REKOMENDASI FITUR TAMBAHAN AGAR MENANG DI SEO
+
+Topical cluster system
+
+Auto internal linking engine
+
+Trending by category
+
+Related article by AI similarity
+
+Table of content auto generate
+
+Author profile page SEO optimized
+
+FAQ builder
+
+Review schema (untuk affiliate artikel)
+
+Comparison table builder
+
+Content refresh reminder system
+
+💰 STRATEGI MONETISASI TERBAIK
+
+Untuk website berita baru:
+
+1️⃣ Fokus traffic dulu (SEO + Social)
+2️⃣ Pasang AdSense
+3️⃣ Tambahkan affiliate di artikel evergreen
+4️⃣ Jual sponsored post setelah DA naik
+5️⃣ Bangun email list
+
+Jika Anda mau, saya bisa lanjutkan dengan:
+
+📊 Detail ERD & Migration Laravel
+
+🏗️ Struktur folder Laravel untuk proyek ini
+
+🎨 Wireframe layout homepage
+
+💡 Strategi SEO 6 bulan pertama
+
+🚀 Roadmap teknis pengembangan 3 bulan
+
+Tinggal pilih mau lanjut ke bagian mana dulu 👍
+
+iya buatkan detail erd dan migration laravel
+
+Siap David 👍
+Berikut saya buatkan Detail ERD + Struktur Database + Migration Laravel lengkap untuk Website Berita yang sudah siap:
+
+SEO optimized
+
+Monetisasi (Ads & Affiliate)
+
+Sponsored content
+
+Newsletter
+
+Role permission (Spatie)
+
+Scalable untuk traffic besar
+
+📊 1️⃣ ERD (ENTITY RELATIONSHIP DESIGN)
+🔷 RELASI UTAMA
+User
+ ├── hasMany Articles
+ ├── hasMany Comments
+ ├── hasMany ActivityLogs
+ └── hasMany SponsoredPosts
+
+Article
+ ├── belongsTo User (author)
+ ├── belongsTo Category
+ ├── belongsToMany Tag
+ ├── hasMany Comments
+ ├── hasMany AffiliateClicks
+ └── hasMany ArticleViews
+
+Category
+ ├── hasMany Articles
+ └── belongsTo Parent Category (self relation)
+
+Tag
+ └── belongsToMany Articles
+
+Ad
+ └── no direct relation (slot based rendering)
+
+AffiliateLink
+ ├── hasMany AffiliateClicks
+ └── optional belongsTo Article
+
+Subscriber
+ └── receives Newsletter
+
+SponsoredPost
+ └── belongsTo User (advertiser)
+
+
+🗄 2️⃣ DETAIL TABEL & STRUKTUR DATABASE
+1️⃣ USERS (default Laravel)
+
+Tambahan kolom untuk SEO & Author schema:
+
+id
+
+name
+
+email
+
+password
+
+bio
+
+avatar
+
+role (optional jika tidak pakai Spatie)
+
+social_links (json)
+
+is_active
+
+timestamps
+
+2️⃣ CATEGORIES
+
+Struktur nested category untuk SEO silo.
+
+id
+
+parent_id (nullable)
+
+name
+
+slug (unique)
+
+description
+
+meta_title
+
+meta_description
+
+created_at
+
+updated_at
+
+Relasi:
+
+parent_id → categories.id
+
+3️⃣ TAGS
+
+id
+
+name
+
+slug
+
+created_at
+
+updated_at
+
+4️⃣ ARTICLES
+
+SEO optimized structure.
+
+id
+
+user_id (author)
+
+category_id
+
+title
+
+slug (unique)
+
+excerpt
+
+content (longText)
+
+featured_image
+
+meta_title
+
+meta_description
+
+schema_type (article/news/review)
+
+status (draft, published, scheduled)
+
+published_at
+
+views_count
+
+is_featured
+
+created_at
+
+updated_at
+
+5️⃣ ARTICLE_TAG (Pivot)
+
+article_id
+
+tag_id
+
+6️⃣ COMMENTS
+
+id
+
+article_id
+
+user_id (nullable)
+
+name (guest)
+
+email (guest)
+
+content
+
+status (pending, approved)
+
+created_at
+
+updated_at
+
+7️⃣ ADS (MONETISASI IKLAN)
+
+id
+
+name
+
+type (adsense/banner/script)
+
+placement (header, sidebar, in_article, footer)
+
+script (nullable)
+
+image (nullable)
+
+url (nullable)
+
+start_date
+
+end_date
+
+is_active
+
+created_at
+
+updated_at
+
+8️⃣ AFFILIATE_LINKS
+
+id
+
+article_id (nullable)
+
+name
+
+slug
+
+destination_url
+
+commission_type (fixed/percentage)
+
+commission_value
+
+clicks_count
+
+created_at
+
+updated_at
+
+9️⃣ AFFILIATE_CLICKS
+
+id
+
+affiliate_link_id
+
+ip_address
+
+user_agent
+
+referrer
+
+created_at
+
+🔟 SPONSORED_POSTS
+
+id
+
+user_id (advertiser)
+
+article_id (nullable)
+
+price
+
+status (pending, approved, rejected)
+
+start_date
+
+end_date
+
+created_at
+
+updated_at
+
+1️⃣1️⃣ SUBSCRIBERS
+
+id
+
+email
+
+name
+
+is_active
+
+subscribed_at
+
+created_at
+
+updated_at
+
+1️⃣2️⃣ NEWSLETTERS
+
+id
+
+subject
+
+content
+
+status (draft/sent)
+
+sent_at
+
+created_at
+
+updated_at
+
+1️⃣3️⃣ SETTINGS
+
+id
+
+key
+
+value
+
+created_at
+
+updated_at
+
+1️⃣4️⃣ ARTICLE_VIEWS (Tracking Analytics)
+
+id
+
+article_id
+
+ip_address
+
+user_agent
+
+viewed_at
+
+🚀 3️⃣ MIGRATION LARAVEL
+
+Berikut contoh migration utama.
+
+📌 Migration: categories
+Schema::create('categories', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('parent_id')->nullable()->constrained('categories')->nullOnDelete();
+    $table->string('name');
+    $table->string('slug')->unique();
+    $table->text('description')->nullable();
+    $table->string('meta_title')->nullable();
+    $table->string('meta_description')->nullable();
+    $table->timestamps();
+});
+
+📌 Migration: tags
+Schema::create('tags', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->string('slug')->unique();
+    $table->timestamps();
+});
+
+📌 Migration: articles
+Schema::create('articles', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+    $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+    
+    $table->string('title');
+    $table->string('slug')->unique();
+    $table->text('excerpt')->nullable();
+    $table->longText('content');
+    $table->string('featured_image')->nullable();
+
+    $table->string('meta_title')->nullable();
+    $table->string('meta_description')->nullable();
+    $table->string('schema_type')->default('article');
+
+    $table->enum('status', ['draft', 'published', 'scheduled'])->default('draft');
+    $table->timestamp('published_at')->nullable();
+
+    $table->unsignedBigInteger('views_count')->default(0);
+    $table->boolean('is_featured')->default(false);
+
+    $table->timestamps();
+});
+
+📌 Migration: article_tag
+Schema::create('article_tag', function (Blueprint $table) {
+    $table->foreignId('article_id')->constrained()->cascadeOnDelete();
+    $table->foreignId('tag_id')->constrained()->cascadeOnDelete();
+});
+
+📌 Migration: ads
+Schema::create('ads', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->enum('type', ['adsense', 'banner', 'script']);
+    $table->string('placement');
+    $table->longText('script')->nullable();
+    $table->string('image')->nullable();
+    $table->string('url')->nullable();
+    $table->date('start_date')->nullable();
+    $table->date('end_date')->nullable();
+    $table->boolean('is_active')->default(true);
+    $table->timestamps();
+});
+
+📌 Migration: affiliate_links
+Schema::create('affiliate_links', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('article_id')->nullable()->constrained()->nullOnDelete();
+    $table->string('name');
+    $table->string('slug')->unique();
+    $table->text('destination_url');
+    $table->enum('commission_type', ['fixed', 'percentage'])->nullable();
+    $table->decimal('commission_value', 10, 2)->nullable();
+    $table->unsignedBigInteger('clicks_count')->default(0);
+    $table->timestamps();
+});
+
+📌 Migration: affiliate_clicks
+Schema::create('affiliate_clicks', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('affiliate_link_id')->constrained()->cascadeOnDelete();
+    $table->string('ip_address')->nullable();
+    $table->text('user_agent')->nullable();
+    $table->text('referrer')->nullable();
+    $table->timestamps();
+});
+
+📌 Migration: subscribers
+Schema::create('subscribers', function (Blueprint $table) {
+    $table->id();
+    $table->string('email')->unique();
+    $table->string('name')->nullable();
+    $table->boolean('is_active')->default(true);
+    $table->timestamp('subscribed_at')->nullable();
+    $table->timestamps();
+});
+
+⚡ PERFORMANCE INDEX RECOMMENDATION
+
+Tambahkan index pada:
+
+$table->index('slug');
+$table->index('status');
+$table->index('published_at');
+$table->index('views_count');
+
+🧠 SEO BONUS IMPROVEMENT
+
+Tambahkan:
+
+FULLTEXT index pada:
+
+title
+
+content
+
+URL structure:
+
+/kategori/slug
+/tag/slug
+/berita/slug
+
+🔥 PRODUCTION READY IMPROVEMENT
+
+Tambahkan:
+
+SoftDeletes pada articles
+
+Cache layer untuk:
+
+homepage
+
+popular posts
+
+Redis untuk trending counter
+
+Queue untuk newsletter
+
+Jika Anda mau, saya bisa lanjutkan dengan:
+
+✅ Model Laravel lengkap + relasi
+
+✅ Factory & Seeder dummy data 200 artikel
+
+✅ Struktur folder production ready
+
+✅ Sistem affiliate redirect controller
+
+✅ Dashboard monetisasi analytics
+
+Mau lanjut ke bagian mana dulu, David? 🚀

@@ -1,0 +1,219 @@
+- generic [ref=f35e2]:
+  - generic [ref=f35e4]:
+    - generic [ref=f35e5]: Internal Server Error
+    - button "Copy as Markdown" [ref=f35e11] [cursor=pointer]
+  - generic [ref=f35e18]:
+    - generic [ref=f35e19]:
+      - heading "Error" [level=1] [ref=f35e20]
+      - generic [ref=f35e21]: app\Http\Controllers\Admin\ShowcaseController.php:17
+      - paragraph [ref=f35e23]: Call to undefined method App\Http\Controllers\Admin\ShowcaseController::middleware()
+    - generic [ref=f35e24]:
+      - generic [ref=f35e25]:
+        - generic [ref=f35e26]:
+          - generic [ref=f35e27]: LARAVEL
+          - generic [ref=f35e28]: 12.51.0
+        - generic [ref=f35e29]:
+          - generic [ref=f35e30]: PHP
+          - generic [ref=f35e31]: 8.3.27
+      - generic [ref=f35e32]: UNHANDLED
+      - generic [ref=f35e36]: CODE 0
+    - generic [ref=f35e38]:
+      - generic [ref=f35e39]: "500"
+      - generic [ref=f35e43]: GET
+      - generic [ref=f35e47]: http://127.0.0.1:8000/admin/showcase
+      - button [ref=f35e48] [cursor=pointer]
+  - generic [ref=f35e53]:
+    - generic [ref=f35e54]:
+      - heading "Exception trace" [level=3] [ref=f35e60]
+      - generic [ref=f35e61]:
+        - generic [ref=f35e62]:
+          - generic [ref=f35e63] [cursor=pointer]:
+            - generic [ref=f35e66]:
+              - code [ref=f35e70]:
+                - generic [ref=f35e71]: app\Http\Controllers\Admin\ShowcaseController.php
+              - generic [ref=f35e72]: app\Http\Controllers\Admin\ShowcaseController.php:17
+            - button [ref=f35e75]
+          - code [ref=f35e84]:
+            - generic [ref=f35e85]: "12"
+            - generic [ref=f35e86]: 13class ShowcaseController extends Controller
+            - generic [ref=f35e87]: "14{"
+            - generic [ref=f35e88]: 15 public function __construct()
+            - generic [ref=f35e89]: "16 {"
+            - generic [ref=f35e90]: 17 $this->middleware(['auth', 'verified']);
+            - generic [ref=f35e91]: "18 }"
+            - generic [ref=f35e92]: "19"
+            - generic [ref=f35e93]: 20 public function index()
+            - generic [ref=f35e94]: "21 {"
+            - generic [ref=f35e95]: "22 if (!auth()->user()->hasRole('admin')) {"
+            - generic [ref=f35e96]: 23 abort(403, 'Unauthorized access to showcase dashboard');
+            - generic [ref=f35e97]: "24 }"
+            - generic [ref=f35e98]: "25"
+            - generic [ref=f35e99]: 26 // Get current month and last month dates
+            - generic [ref=f35e100]: 27 $thisMonth = Carbon::now()->startOfMonth();
+            - generic [ref=f35e101]: 28 $lastMonth = Carbon::now()->subMonth()->startOfMonth();
+            - generic [ref=f35e102]: "29"
+        - generic [ref=f35e104] [cursor=pointer]:
+          - generic [ref=f35e109]: 34 vendor frames
+          - button [ref=f35e110]
+        - generic [ref=f35e116] [cursor=pointer]:
+          - generic [ref=f35e119]:
+            - code [ref=f35e123]:
+              - generic [ref=f35e124]: app\Http\Middleware\SecurityHeaders.php
+            - generic [ref=f35e125]: app\Http\Middleware\SecurityHeaders.php:16
+          - button [ref=f35e128]
+        - generic [ref=f35e134] [cursor=pointer]:
+          - generic [ref=f35e139]: 23 vendor frames
+          - button [ref=f35e140]
+        - generic [ref=f35e146] [cursor=pointer]:
+          - generic [ref=f35e149]:
+            - code [ref=f35e153]:
+              - generic [ref=f35e154]: public\index.php
+            - generic [ref=f35e155]: public\index.php:20
+          - button [ref=f35e158]
+        - generic [ref=f35e164] [cursor=pointer]:
+          - generic [ref=f35e169]: 1 vendor frame
+          - button [ref=f35e170]
+    - generic [ref=f35e175]:
+      - generic [ref=f35e176]:
+        - heading "Queries" [level=3] [ref=f35e181]
+        - generic [ref=f35e182]: 1-10 of 100
+      - generic [ref=f35e186]:
+        - generic [ref=f35e187]:
+          - generic [ref=f35e188]:
+            - generic [ref=f35e189]: mysql
+            - code [ref=f35e196]:
+              - generic [ref=f35e197]: "select * from `sessions` where `id` = 'IfbPKLnVILliSJCpIzbgIFV3l9eNIS07wzl41f3j' limit 1"
+          - generic [ref=f35e198]: 9.04ms
+        - generic [ref=f35e199]:
+          - generic [ref=f35e200]:
+            - generic [ref=f35e201]: mysql
+            - code [ref=f35e208]:
+              - generic [ref=f35e209]: "select * from `users` where `id` = 1 limit 1"
+          - generic [ref=f35e210]: 1.24ms
+        - generic [ref=f35e211]:
+          - generic [ref=f35e212]:
+            - generic [ref=f35e213]: mysql
+            - code [ref=f35e220]:
+              - generic [ref=f35e221]: "select * from `settings`"
+          - generic [ref=f35e222]: 0.85ms
+        - generic [ref=f35e223]:
+          - generic [ref=f35e224]:
+            - generic [ref=f35e225]: mysql
+            - code [ref=f35e232]:
+              - generic [ref=f35e233]: "select * from `categories` where `parent_id` is null"
+          - generic [ref=f35e234]: 1ms
+        - generic [ref=f35e235]:
+          - generic [ref=f35e236]:
+            - generic [ref=f35e237]: mysql
+            - code [ref=f35e244]:
+              - generic [ref=f35e245]: "select * from `categories` where `categories`.`parent_id` in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)"
+          - generic [ref=f35e246]: 0.59ms
+        - generic [ref=f35e247]:
+          - generic [ref=f35e248]:
+            - generic [ref=f35e249]: mysql
+            - code [ref=f35e256]:
+              - generic [ref=f35e257]: "select * from `settings`"
+          - generic [ref=f35e258]: 1.05ms
+        - generic [ref=f35e259]:
+          - generic [ref=f35e260]:
+            - generic [ref=f35e261]: mysql
+            - code [ref=f35e268]:
+              - generic [ref=f35e269]: "select * from `categories` where `parent_id` is null"
+          - generic [ref=f35e270]: 0.63ms
+        - generic [ref=f35e271]:
+          - generic [ref=f35e272]:
+            - generic [ref=f35e273]: mysql
+            - code [ref=f35e280]:
+              - generic [ref=f35e281]: "select * from `categories` where `categories`.`parent_id` in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)"
+          - generic [ref=f35e282]: 0.48ms
+        - generic [ref=f35e283]:
+          - generic [ref=f35e284]:
+            - generic [ref=f35e285]: mysql
+            - code [ref=f35e292]:
+              - generic [ref=f35e293]: "select * from `settings`"
+          - generic [ref=f35e294]: 1.09ms
+        - generic [ref=f35e295]:
+          - generic [ref=f35e296]:
+            - generic [ref=f35e297]: mysql
+            - code [ref=f35e304]:
+              - generic [ref=f35e305]: "select * from `categories` where `parent_id` is null"
+          - generic [ref=f35e306]: 0.7ms
+      - generic [ref=f35e307]:
+        - button [disabled] [ref=f35e308]
+        - button [disabled] [ref=f35e312]
+        - button "1" [ref=f35e316] [cursor=pointer]
+        - button "2" [ref=f35e318] [cursor=pointer]
+        - button "3" [ref=f35e320] [cursor=pointer]
+        - button "4" [ref=f35e322] [cursor=pointer]
+        - button "5" [ref=f35e324] [cursor=pointer]
+        - generic [ref=f35e325]: ...
+        - button "10" [ref=f35e328] [cursor=pointer]
+        - button [ref=f35e329] [cursor=pointer]
+        - button [ref=f35e332] [cursor=pointer]
+  - generic [ref=f35e337]:
+    - generic [ref=f35e338]:
+      - heading "Headers" [level=2] [ref=f35e339]
+      - generic [ref=f35e340]:
+        - generic [ref=f35e341]:
+          - generic [ref=f35e342]: host
+          - generic [ref=f35e344]: 127.0.0.1:8000
+        - generic [ref=f35e345]:
+          - generic [ref=f35e346]: connection
+          - generic [ref=f35e348]: keep-alive
+        - generic [ref=f35e349]:
+          - generic [ref=f35e350]: sec-ch-ua
+          - generic [ref=f35e352]: "\"Not;A=Brand\";v=\"8\", \"Chromium\";v=\"150\", \"Google Chrome\";v=\"150\""
+        - generic [ref=f35e353]:
+          - generic [ref=f35e354]: sec-ch-ua-mobile
+          - generic [ref=f35e356]: "?0"
+        - generic [ref=f35e357]:
+          - generic [ref=f35e358]: sec-ch-ua-platform
+          - generic [ref=f35e360]: "\"Windows\""
+        - generic [ref=f35e361]:
+          - generic [ref=f35e362]: upgrade-insecure-requests
+          - generic [ref=f35e364]: "1"
+        - generic [ref=f35e365]:
+          - generic [ref=f35e366]: user-agent
+          - generic [ref=f35e368]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+        - generic [ref=f35e369]:
+          - generic [ref=f35e370]: accept
+          - generic [ref=f35e372]: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        - generic [ref=f35e373]:
+          - generic [ref=f35e374]: sec-fetch-site
+          - generic [ref=f35e376]: none
+        - generic [ref=f35e377]:
+          - generic [ref=f35e378]: sec-fetch-mode
+          - generic [ref=f35e380]: navigate
+        - generic [ref=f35e381]:
+          - generic [ref=f35e382]: sec-fetch-user
+          - generic [ref=f35e384]: "?1"
+        - generic [ref=f35e385]:
+          - generic [ref=f35e386]: sec-fetch-dest
+          - generic [ref=f35e388]: document
+        - generic [ref=f35e389]:
+          - generic [ref=f35e390]: accept-encoding
+          - generic [ref=f35e392]: gzip, deflate, br, zstd
+        - generic [ref=f35e393]:
+          - generic [ref=f35e394]: accept-language
+          - generic [ref=f35e396]: en-US,en;q=0.9
+        - generic [ref=f35e397]:
+          - generic [ref=f35e398]: cookie
+          - generic [ref=f35e400]: XSRF-TOKEN=eyJpdiI6Ik43dHMrVmNVeitqZzdwYmxwV2Fad1E9PSIsInZhbHVlIjoiRU1ScFdCSkZQYTFjTzAzR2Vac0ZxTzEvZWdYdDFYUStsN01TamFjajNFakZUcVhDa25uTmhkL1Q2anNQRVh2WjZGNVNmNFBsWFYyL0MzdEh2VWYweEhXM1VkbmNrMythTW55MXk5UXJRVll3bW5iaFJKQTBleWUycFhWZkpMcnMiLCJtYWMiOiIxMTU0NjkwNjNlMzBjYmJkNTQ1ZWZjNWY3ZGJjNTZjOTY2ZGEwYWQzNjkwZjI0ZWY3ZjY1MDYwNmRhNzhjMzcxIiwidGFnIjoiIn0%3D; newsmedia-session=eyJpdiI6IlRmNDkyZDdIU1ZiUHd5a3QwSWJHZkE9PSIsInZhbHVlIjoiYnlaZHNRM3RWakg4bVFDZ3RmYWJHeXkvNlZrc2hjRmRhY1QzcXJaM0pYeWtLRzdrK1REMjFpNjU4U2NCNDhKeXhTQkFlV2JGQUFxekZxVnRvLzc0NGgzcjg4SHlYWnl5QjJEWFNoRldYQjZDaXdlTzVNZVBIdWxhOG9WU2s4LzIiLCJtYWMiOiIzOGFmMmU5NTk0MzYyMGZiM2JmODM3ZTIzMjUxNDc1NjAwNGE5ZjZmYjRhYjM3MzQ0ZWNiNWNmZmZlZDJiMjAyIiwidGFnIjoiIn0%3D
+    - generic [ref=f35e401]:
+      - heading "Body" [level=2] [ref=f35e402]
+      - generic [ref=f35e403]: // No request body
+    - generic [ref=f35e404]:
+      - heading "Routing" [level=2] [ref=f35e405]
+      - generic [ref=f35e406]:
+        - generic [ref=f35e407]:
+          - generic [ref=f35e408]: controller
+          - generic [ref=f35e410]: App\Http\Controllers\Admin\ShowcaseController@index
+        - generic [ref=f35e411]:
+          - generic [ref=f35e412]: route name
+          - generic [ref=f35e414]: admin.showcase.index
+        - generic [ref=f35e415]:
+          - generic [ref=f35e416]: middleware
+          - generic [ref=f35e418]: web, auth, verified
+    - generic [ref=f35e419]:
+      - heading "Routing parameters" [level=2] [ref=f35e420]
+      - generic [ref=f35e421]: // No routing parameters

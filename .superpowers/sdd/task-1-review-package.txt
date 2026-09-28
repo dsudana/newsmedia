@@ -1,0 +1,220 @@
+diff --git a/laragon/www/newsmedia/app/Models/HomepageSection.php b/laragon/www/newsmedia/app/Models/HomepageSection.php
+index dab541e4..752ed730 100644
+--- a/laragon/www/newsmedia/app/Models/HomepageSection.php
++++ b/laragon/www/newsmedia/app/Models/HomepageSection.php
+@@ -59,20 +59,68 @@ class HomepageSection extends Model
+             'icon' => 'quote',
+             'description' => 'Customer testimonials section',
+             'color' => '#BB8FCE',
+         ],
+         'lookbook' => [
+             'label' => 'Lookbook',
+             'icon' => 'gallery',
+             'description' => 'Visual lookbook gallery',
+             'color' => '#85C1E2',
+         ],
++        'trending_news_carousel' => [
++            'label' => 'Trending News Carousel',
++            'icon' => 'trending-up',
++            'description' => 'Horizontal carousel with trending articles',
++            'color' => '#FF9F43',
++        ],
++        'hero_carousel' => [
++            'label' => 'Hero Carousel',
++            'icon' => 'image',
++            'description' => 'Large hero carousel with side featured articles',
++            'color' => '#FF6348',
++        ],
++        'breaking_news_strip' => [
++            'label' => 'Breaking News Strip',
++            'icon' => 'newspaper',
++            'description' => 'Horizontal carousel with breaking news thumbnails',
++            'color' => '#E74C3C',
++        ],
++        'recent_and_popular' => [
++            'label' => 'Recent & Popular',
++            'icon' => 'fire',
++            'description' => 'Recent posts + popular posts in 2-column layout',
++            'color' => '#9B59B6',
++        ],
++        'category_strip_carousel' => [
++            'label' => 'Category Strip Carousel',
++            'icon' => 'images',
++            'description' => 'Category-specific article carousel',
++            'color' => '#3498DB',
++        ],
++        'category_grid_section' => [
++            'label' => 'Category Grid',
++            'icon' => 'th-large',
++            'description' => 'Grid layout for category articles',
++            'color' => '#1ABC9C',
++        ],
++        'category_list_section' => [
++            'label' => 'Category List',
++            'icon' => 'list',
++            'description' => 'Horizontal card list for category articles',
++            'color' => '#F39C12',
++        ],
++        'sports_carousel' => [
++            'label' => 'Sports Carousel',
++            'icon' => 'futbol',
++            'description' => 'Sports news carousel section',
++            'color' => '#E67E22',
++        ],
+     ];
+ 
+     /**
+      * Scope: Get active sections only
+      */
+     public function scopeActive($query)
+     {
+         return $query->where('status', true);
+     }
+ 
+diff --git a/laragon/www/newsmedia/resources/views/partials/sidebar/ads.blade.php b/laragon/www/newsmedia/resources/views/partials/sidebar/ads.blade.php
+new file mode 100644
+index 00000000..f03711af
+--- /dev/null
++++ b/laragon/www/newsmedia/resources/views/partials/sidebar/ads.blade.php
+@@ -0,0 +1,26 @@
++<div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
++    <h3 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">
++        <i class="fas fa-bullhorn text-red-600 mr-2"></i>Advertisement
++    </h3>
++
++    {{-- Ad Space (Placeholder) --}}
++    <div class="bg-gray-100 rounded-lg p-8 text-center">
++        <div class="aspect-square flex items-center justify-center">
++            <div>
++                <i class="fas fa-image text-gray-400 text-4xl mb-3"></i>
++                <p class="text-gray-500 text-sm font-medium">Ad Space 300x300</p>
++                <p class="text-gray-400 text-xs mt-1">Your ad here</p>
++            </div>
++        </div>
++    </div>
++
++    {{-- Configurable ads would go here in production --}}
++    @if(isset($ads) && count($ads) > 0)
++        @foreach($ads as $ad)
++            <a href="{{ $ad['url'] ?? '#' }}" target="_blank" rel="noopener"
++               class="block mt-4 rounded-lg overflow-hidden hover:opacity-80 transition-opacity">
++                <img src="{{ $ad['image'] ?? '' }}" alt="Advertisement" class="w-full">
++            </a>
++        @endforeach
++    @endif
++</div>
+diff --git a/laragon/www/newsmedia/resources/views/partials/sidebar/newsletter.blade.php b/laragon/www/newsmedia/resources/views/partials/sidebar/newsletter.blade.php
+new file mode 100644
+index 00000000..ad3ffefc
+--- /dev/null
++++ b/laragon/www/newsmedia/resources/views/partials/sidebar/newsletter.blade.php
+@@ -0,0 +1,47 @@
++<div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-lg border border-red-200 p-6 mb-6">
++    <h3 class="text-lg font-bold text-gray-900 mb-2">
++        <i class="fas fa-envelope text-red-600 mr-2"></i>Newsletter
++    </h3>
++    <p class="text-sm text-gray-600 mb-4">Subscribe to get latest news and updates</p>
++
++    <form class="space-y-3" onsubmit="handleNewsletterSubscribe(event)">
++        @csrf
++        <input type="email" name="email" placeholder="Enter your email" required
++               class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent">
++        <button type="submit"
++                class="w-full px-4 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm">
++            Subscribe
++        </button>
++    </form>
++
++    <p class="text-xs text-gray-500 mt-3">We don't spam. Unsubscribe at any time.</p>
++</div>
++
++<script>
++    function handleNewsletterSubscribe(e) {
++        e.preventDefault();
++        const email = e.target.email.value;
++
++        fetch('/api/newsletter/subscribe', {
++            method: 'POST',
++            headers: {
++                'Content-Type': 'application/json',
++                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
++            },
++            body: JSON.stringify({ email })
++        })
++        .then(r => r.json())
++        .then(data => {
++            if (data.success) {
++                showToast('Thank you for subscribing!', 'success');
++                e.target.reset();
++            } else {
++                showToast(data.message || 'Subscription failed', 'error');
++            }
++        })
++        .catch(err => {
++            console.error(err);
++            showToast('An error occurred', 'error');
++        });
++    }
++</script>
+diff --git a/laragon/www/newsmedia/resources/views/partials/sidebar/social-media.blade.php b/laragon/www/newsmedia/resources/views/partials/sidebar/social-media.blade.php
+new file mode 100644
+index 00000000..3d7d4f8b
+--- /dev/null
++++ b/laragon/www/newsmedia/resources/views/partials/sidebar/social-media.blade.php
+@@ -0,0 +1,28 @@
++<div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
++    <h3 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">
++        <i class="fas fa-share-alt text-red-600 mr-2"></i>Follow Us
++    </h3>
++
++    <div class="flex gap-3">
++        <a href="https://facebook.com" target="_blank" rel="noopener"
++           class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
++            <i class="fab fa-facebook-f"></i>
++        </a>
++        <a href="https://twitter.com" target="_blank" rel="noopener"
++           class="w-10 h-10 bg-sky-500 text-white rounded-lg flex items-center justify-center hover:bg-sky-600 transition-colors">
++            <i class="fab fa-twitter"></i>
++        </a>
++        <a href="https://instagram.com" target="_blank" rel="noopener"
++           class="w-10 h-10 bg-pink-600 text-white rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors">
++            <i class="fab fa-instagram"></i>
++        </a>
++        <a href="https://linkedin.com" target="_blank" rel="noopener"
++           class="w-10 h-10 bg-blue-700 text-white rounded-lg flex items-center justify-center hover:bg-blue-800 transition-colors">
++            <i class="fab fa-linkedin-in"></i>
++        </a>
++        <a href="https://youtube.com" target="_blank" rel="noopener"
++           class="w-10 h-10 bg-red-600 text-white rounded-lg flex items-center justify-center hover:bg-red-700 transition-colors">
++            <i class="fab fa-youtube"></i>
++        </a>
++    </div>
++</div>
+diff --git a/laragon/www/newsmedia/resources/views/partials/sidebar/tag-cloud.blade.php b/laragon/www/newsmedia/resources/views/partials/sidebar/tag-cloud.blade.php
+new file mode 100644
+index 00000000..e76d292d
+--- /dev/null
++++ b/laragon/www/newsmedia/resources/views/partials/sidebar/tag-cloud.blade.php
+@@ -0,0 +1,22 @@
++<div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
++    <h3 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">
++        <i class="fas fa-tag text-red-600 mr-2"></i>Tags
++    </h3>
++
++    @php
++        $tags = $tags ?? \App\Models\Tag::orderByDesc('articles_count')
++            ->limit(30)
++            ->pluck('name', 'slug');
++    @endphp
++
++    <div class="flex flex-wrap gap-2">
++        @forelse ($tags as $slug => $name)
++            <a href="{{ route('tags.show', $slug) }}"
++               class="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded hover:bg-red-50 hover:text-red-600 transition-colors">
++                {{ $name }}
++            </a>
++        @empty
++            <p class="text-gray-500 text-sm">No tags available</p>
++        @endforelse
++    </div>
++</div>

@@ -1,0 +1,658 @@
+- generic [active] [ref=f47e1]:
+  - banner [ref=f47e2]:
+    - generic [ref=f47e4]:
+      - generic [ref=f47e5]: Kamis, 16 Juli 2026
+      - generic [ref=f47e6]:
+        - link "Contact Us" [ref=f47e7] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/contact
+        - link "Login / Register" [ref=f47e8] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/login
+        - generic [ref=f47e9]:
+          - link "Facebook" [ref=f47e10] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f47e11]: 
+          - link "Twitter" [ref=f47e12] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f47e13]: 
+          - link "Instagram" [ref=f47e14] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f47e15]: 
+    - banner [ref=f47e16]:
+      - generic [ref=f47e17]:
+        - link "RET NEWS" [ref=f47e18] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+          - generic [ref=f47e19]: RET
+          - generic [ref=f47e22]: NEWS
+        - button "Search" [ref=f47e23]:
+          - generic [ref=f47e24]: 
+    - generic [ref=f47e28]:
+      - link [ref=f47e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
+        - img "Sit occaecati esse est sed id." [ref=f47e31]
+        - generic [ref=f47e32]:
+          - paragraph [ref=f47e33]: By Writer User Jul 08, 2026
+          - paragraph [ref=f47e34]: Sit occaecati esse est sed id.
+      - link [ref=f47e36] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/voluptatem-accusantium-autem-consectetur
+        - img "Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus." [ref=f47e37]
+        - generic [ref=f47e38]:
+          - paragraph [ref=f47e39]: By Writer User Jul 01, 2026
+          - paragraph [ref=f47e40]: Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus.
+      - link [ref=f47e42] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/ut-est-aperiam-numquam-expedita
+        - img "Fugiat dicta quod quos nostrum rerum quibusdam est." [ref=f47e43]
+        - generic [ref=f47e44]:
+          - paragraph [ref=f47e45]: By Administrator Jun 04, 2026
+          - paragraph [ref=f47e46]: Fugiat dicta quod quos nostrum rerum quibusdam est.
+      - link [ref=f47e48] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/perferendis-est-quis-ex-veniam-animi
+        - img "Eos nobis doloremque tempore." [ref=f47e49]
+        - generic [ref=f47e50]:
+          - paragraph [ref=f47e51]: By Writer User May 23, 2026
+          - paragraph [ref=f47e52]: Eos nobis doloremque tempore.
+      - link [ref=f47e54] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/tenetur-minus-occaecati-animi-omnis-facilis
+        - img "Dignissimos error ea provident asperiores mollitia accusamus facilis." [ref=f47e55]
+        - generic [ref=f47e56]:
+          - paragraph [ref=f47e57]: By Writer User Apr 29, 2026
+          - paragraph [ref=f47e58]: Dignissimos error ea provident asperiores mollitia accusamus facilis.
+      - link [ref=f47e60] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/accusamus-officia-fuga-voluptate-reiciendis-necessitatibus
+        - img "Veniam reiciendis consequatur iure natus perferendis voluptatem." [ref=f47e61]
+        - generic [ref=f47e62]:
+          - paragraph [ref=f47e63]: By Writer User Apr 18, 2026
+          - paragraph [ref=f47e64]: Veniam reiciendis consequatur iure natus perferendis voluptatem.
+  - main [ref=f47e65]:
+    - generic [ref=f47e66]:
+      - generic [ref=f47e69]:
+        - generic [ref=f47e72]:
+          - link "Politik Sit occaecati esse est sed id. By Writer User July 08, 2026" [ref=f47e74] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
+            - generic [ref=f47e77]:
+              - generic [ref=f47e78]: Politik
+              - heading "Sit occaecati esse est sed id." [level=2] [ref=f47e80]
+              - generic [ref=f47e81]:
+                - generic [ref=f47e82]: By Writer User
+                - generic [ref=f47e83]: July 08, 2026
+          - link "Business Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus. By Writer User July 01, 2026" [ref=f47e85] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/voluptatem-accusantium-autem-consectetur
+            - generic [ref=f47e88]:
+              - generic [ref=f47e89]: Business
+              - heading "Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus." [level=2] [ref=f47e91]
+              - generic [ref=f47e92]:
+                - generic [ref=f47e93]: By Writer User
+                - generic [ref=f47e94]: July 01, 2026
+          - link "Technology Fugiat dicta quod quos nostrum rerum quibusdam est. By Administrator June 04, 2026" [ref=f47e96] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/ut-est-aperiam-numquam-expedita
+            - generic [ref=f47e99]:
+              - generic [ref=f47e100]: Technology
+              - heading "Fugiat dicta quod quos nostrum rerum quibusdam est." [level=2] [ref=f47e102]
+              - generic [ref=f47e103]:
+                - generic [ref=f47e104]: By Administrator
+                - generic [ref=f47e105]: June 04, 2026
+          - link "Entertainment Eos nobis doloremque tempore. By Writer User May 23, 2026" [ref=f47e107] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/perferendis-est-quis-ex-veniam-animi
+            - generic [ref=f47e110]:
+              - generic [ref=f47e111]: Entertainment
+              - heading "Eos nobis doloremque tempore." [level=2] [ref=f47e113]
+              - generic [ref=f47e114]:
+                - generic [ref=f47e115]: By Writer User
+                - generic [ref=f47e116]: May 23, 2026
+          - link "Entertainment Dignissimos error ea provident asperiores mollitia accusamus facilis. By Writer User April 29, 2026" [ref=f47e118] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/tenetur-minus-occaecati-animi-omnis-facilis
+            - generic [ref=f47e121]:
+              - generic [ref=f47e122]: Entertainment
+              - heading "Dignissimos error ea provident asperiores mollitia accusamus facilis." [level=2] [ref=f47e124]
+              - generic [ref=f47e125]:
+                - generic [ref=f47e126]: By Writer User
+                - generic [ref=f47e127]: April 29, 2026
+          - link "Entertainment Veniam reiciendis consequatur iure natus perferendis voluptatem. By Writer User April 18, 2026" [ref=f47e129] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/accusamus-officia-fuga-voluptate-reiciendis-necessitatibus
+            - generic [ref=f47e132]:
+              - generic [ref=f47e133]: Entertainment
+              - heading "Veniam reiciendis consequatur iure natus perferendis voluptatem." [level=2] [ref=f47e135]
+              - generic [ref=f47e136]:
+                - generic [ref=f47e137]: By Writer User
+                - generic [ref=f47e138]: April 18, 2026
+          - link "Politik Iste qui est assumenda maxime harum perspiciatis cumque. By Writer User April 18, 2026" [ref=f47e140] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/iure-accusamus-rem-molestiae-saepe-id-qui-eius-aliquam
+            - generic [ref=f47e143]:
+              - generic [ref=f47e144]: Politik
+              - heading "Iste qui est assumenda maxime harum perspiciatis cumque." [level=2] [ref=f47e146]
+              - generic [ref=f47e147]:
+                - generic [ref=f47e148]: By Writer User
+                - generic [ref=f47e149]: April 18, 2026
+          - link "Technology Facere iste sint accusantium itaque dolor ipsam. By Administrator April 08, 2026" [ref=f47e151] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/rerum-autem-in-beatae-voluptas
+            - generic [ref=f47e154]:
+              - generic [ref=f47e155]: Technology
+              - heading "Facere iste sint accusantium itaque dolor ipsam." [level=2] [ref=f47e157]
+              - generic [ref=f47e158]:
+                - generic [ref=f47e159]: By Administrator
+                - generic [ref=f47e160]: April 08, 2026
+          - link "Health Aliquid id tempora tempore eveniet dolor excepturi quam. By Administrator March 31, 2026" [ref=f47e162] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/deserunt-placeat-illo-sit-ad-consequatur-rerum-a
+            - generic [ref=f47e165]:
+              - generic [ref=f47e166]: Health
+              - heading "Aliquid id tempora tempore eveniet dolor excepturi quam." [level=2] [ref=f47e168]
+              - generic [ref=f47e169]:
+                - generic [ref=f47e170]: By Administrator
+                - generic [ref=f47e171]: March 31, 2026
+          - link "Politik Voluptatum et cupiditate magnam veritatis facilis. By Writer User March 31, 2026" [ref=f47e173] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/aut-officia-deleniti-corporis-repudiandae
+            - generic [ref=f47e176]:
+              - generic [ref=f47e177]: Politik
+              - heading "Voluptatum et cupiditate magnam veritatis facilis." [level=2] [ref=f47e179]
+              - generic [ref=f47e180]:
+                - generic [ref=f47e181]: By Writer User
+                - generic [ref=f47e182]: March 31, 2026
+        - generic [ref=f47e184]:
+          - link "Entertainment Veniam reiciendis consequatur iure natus perferendis voluptatem." [ref=f47e185] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/accusamus-officia-fuga-voluptate-reiciendis-necessitatibus
+            - generic [ref=f47e188]:
+              - generic [ref=f47e189]: Entertainment
+              - heading "Veniam reiciendis consequatur iure natus perferendis voluptatem." [level=3] [ref=f47e191]
+          - link "Politik Iste qui est assumenda maxime harum perspiciatis cumque." [ref=f47e192] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/iure-accusamus-rem-molestiae-saepe-id-qui-eius-aliquam
+            - generic [ref=f47e195]:
+              - generic [ref=f47e196]: Politik
+              - heading "Iste qui est assumenda maxime harum perspiciatis cumque." [level=3] [ref=f47e198]
+      - generic [ref=f47e202]:
+        - link [ref=f47e204] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
+          - img "Sit occaecati esse est sed id." [ref=f47e206]
+          - paragraph [ref=f47e207]: By Writer User, Jul 08, 2026
+          - paragraph [ref=f47e208]: Sit occaecati esse est sed id.
+        - link [ref=f47e210] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/voluptatem-accusantium-autem-consectetur
+          - img "Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus." [ref=f47e212]
+          - paragraph [ref=f47e213]: By Writer User, Jul 01, 2026
+          - paragraph [ref=f47e214]: Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus.
+        - link [ref=f47e216] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/ut-est-aperiam-numquam-expedita
+          - img "Fugiat dicta quod quos nostrum rerum quibusdam est." [ref=f47e218]
+          - paragraph [ref=f47e219]: By Administrator, Jun 04, 2026
+          - paragraph [ref=f47e220]: Fugiat dicta quod quos nostrum rerum quibusdam est.
+        - link [ref=f47e222] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/perferendis-est-quis-ex-veniam-animi
+          - img "Eos nobis doloremque tempore." [ref=f47e224]
+          - paragraph [ref=f47e225]: By Writer User, May 23, 2026
+          - paragraph [ref=f47e226]: Eos nobis doloremque tempore.
+        - link [ref=f47e228] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/tenetur-minus-occaecati-animi-omnis-facilis
+          - img "Dignissimos error ea provident asperiores mollitia accusamus facilis." [ref=f47e230]
+          - paragraph [ref=f47e231]: By Writer User, Apr 29, 2026
+          - paragraph [ref=f47e232]: Dignissimos error ea provident asperiores mollitia accusamus facilis.
+        - link [ref=f47e234] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/accusamus-officia-fuga-voluptate-reiciendis-necessitatibus
+          - img "Veniam reiciendis consequatur iure natus perferendis voluptatem." [ref=f47e236]
+          - paragraph [ref=f47e237]: By Writer User, Apr 18, 2026
+          - paragraph [ref=f47e238]: Veniam reiciendis consequatur iure natus perferendis voluptatem.
+        - link [ref=f47e240] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/iure-accusamus-rem-molestiae-saepe-id-qui-eius-aliquam
+          - img "Iste qui est assumenda maxime harum perspiciatis cumque." [ref=f47e242]
+          - paragraph [ref=f47e243]: By Writer User, Apr 18, 2026
+          - paragraph [ref=f47e244]: Iste qui est assumenda maxime harum perspiciatis cumque.
+        - link [ref=f47e246] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/rerum-autem-in-beatae-voluptas
+          - img "Facere iste sint accusantium itaque dolor ipsam." [ref=f47e248]
+          - paragraph [ref=f47e249]: By Administrator, Apr 08, 2026
+          - paragraph [ref=f47e250]: Facere iste sint accusantium itaque dolor ipsam.
+        - link [ref=f47e252] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/deserunt-placeat-illo-sit-ad-consequatur-rerum-a
+          - img "Aliquid id tempora tempore eveniet dolor excepturi quam." [ref=f47e254]
+          - paragraph [ref=f47e255]: By Administrator, Mar 31, 2026
+          - paragraph [ref=f47e256]: Aliquid id tempora tempore eveniet dolor excepturi quam.
+        - link [ref=f47e258] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/aut-officia-deleniti-corporis-repudiandae
+          - img "Voluptatum et cupiditate magnam veritatis facilis." [ref=f47e260]
+          - paragraph [ref=f47e261]: By Writer User, Mar 31, 2026
+          - paragraph [ref=f47e262]: Voluptatum et cupiditate magnam veritatis facilis.
+        - link [ref=f47e264] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/minima-et-rerum-dolores-quo-dolorem-reiciendis
+          - img "Illo minus voluptatem molestiae sapiente aliquam rerum." [ref=f47e266]
+          - paragraph [ref=f47e267]: By Administrator, Mar 24, 2026
+          - paragraph [ref=f47e268]: Illo minus voluptatem molestiae sapiente aliquam rerum.
+        - link [ref=f47e270] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/corrupti-et-odit-minus-nesciunt
+          - img "Voluptatem voluptatem deserunt velit velit quisquam ut." [ref=f47e272]
+          - paragraph [ref=f47e273]: By Writer User, Mar 18, 2026
+          - paragraph [ref=f47e274]: Voluptatem voluptatem deserunt velit velit quisquam ut.
+        - link [ref=f47e276] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/iusto-omnis-blanditiis-et-enim-molestias-hic-adipisci-optio
+          - img "Sint et doloremque ipsum quia." [ref=f47e278]
+          - paragraph [ref=f47e279]: By Writer User, Mar 08, 2026
+          - paragraph [ref=f47e280]: Sint et doloremque ipsum quia.
+        - link [ref=f47e282] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/dolor-nobis-omnis-officia-sed
+          - img "Qui vero eum deserunt labore." [ref=f47e284]
+          - paragraph [ref=f47e285]: By Writer User, Feb 28, 2026
+          - paragraph [ref=f47e286]: Qui vero eum deserunt labore.
+        - link [ref=f47e288] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/repudiandae-in-odit-ut-sed
+          - img "Qui sit fugit libero debitis et in corrupti." [ref=f47e290]
+          - paragraph [ref=f47e291]: By Administrator, Feb 07, 2026
+          - paragraph [ref=f47e292]: Qui sit fugit libero debitis et in corrupti.
+      - generic [ref=f47e295]:
+        - generic [ref=f47e296]:
+          - heading "Recent Post" [level=2] [ref=f47e297]
+          - generic [ref=f47e298]:
+            - link "Politik Sit occaecati esse est sed id. By Writer User Jul 08, 2026" [ref=f47e299] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
+              - generic [ref=f47e301]:
+                - generic [ref=f47e302]: Politik
+                - heading "Sit occaecati esse est sed id." [level=3] [ref=f47e303]
+                - paragraph [ref=f47e304]: By Writer User Jul 08, 2026
+            - link "Business Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus. By Writer User Jul 01, 2026" [ref=f47e305] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/voluptatem-accusantium-autem-consectetur
+              - generic [ref=f47e307]:
+                - generic [ref=f47e308]: Business
+                - heading "Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus." [level=3] [ref=f47e309]
+                - paragraph [ref=f47e310]: By Writer User Jul 01, 2026
+          - generic [ref=f47e311]:
+            - link [ref=f47e312] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/ut-est-aperiam-numquam-expedita
+              - img "Fugiat dicta quod quos nostrum rerum quibusdam est." [ref=f47e313]
+              - generic [ref=f47e314]:
+                - paragraph [ref=f47e315]: By Administrator Jun 04, 2026
+                - heading "Fugiat dicta quod quos nostrum rerum quibusdam est." [level=4] [ref=f47e316]
+            - link [ref=f47e317] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/perferendis-est-quis-ex-veniam-animi
+              - img "Eos nobis doloremque tempore." [ref=f47e318]
+              - generic [ref=f47e319]:
+                - paragraph [ref=f47e320]: By Writer User May 23, 2026
+                - heading "Eos nobis doloremque tempore." [level=4] [ref=f47e321]
+            - link [ref=f47e322] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/tenetur-minus-occaecati-animi-omnis-facilis
+              - img "Dignissimos error ea provident asperiores mollitia accusamus facilis." [ref=f47e323]
+              - generic [ref=f47e324]:
+                - paragraph [ref=f47e325]: By Writer User Apr 29, 2026
+                - heading "Dignissimos error ea provident asperiores mollitia accusamus facilis." [level=4] [ref=f47e326]
+            - link [ref=f47e327] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/accusamus-officia-fuga-voluptate-reiciendis-necessitatibus
+              - img "Veniam reiciendis consequatur iure natus perferendis voluptatem." [ref=f47e328]
+              - generic [ref=f47e329]:
+                - paragraph [ref=f47e330]: By Writer User Apr 18, 2026
+                - heading "Veniam reiciendis consequatur iure natus perferendis voluptatem." [level=4] [ref=f47e331]
+        - generic [ref=f47e332]:
+          - heading "Popular Post" [level=2] [ref=f47e333]
+          - list [ref=f47e334]:
+            - listitem [ref=f47e335]:
+              - generic [ref=f47e336]: "1"
+              - link "Uncategorized Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [ref=f47e338] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/kue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+                - generic [ref=f47e339]: Uncategorized
+                - paragraph [ref=f47e340]: Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset "Naik Kelas"
+            - listitem [ref=f47e341]:
+              - generic [ref=f47e342]: "2"
+              - link "Uncategorized DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f47e344] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                - generic [ref=f47e345]: Uncategorized
+                - paragraph [ref=f47e346]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+            - listitem [ref=f47e347]:
+              - generic [ref=f47e348]: "3"
+              - link "Uncategorized Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f47e350] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
+                - generic [ref=f47e351]: Uncategorized
+                - paragraph [ref=f47e352]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+            - listitem [ref=f47e353]:
+              - generic [ref=f47e354]: "4"
+              - link "Uncategorized Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f47e356] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
+                - generic [ref=f47e357]: Uncategorized
+                - paragraph [ref=f47e358]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+      - generic [ref=f47e360]:
+        - heading "Sports" [level=2] [ref=f47e361]
+        - generic [ref=f47e363]:
+          - link "Sports Earum iusto harum magni iusto. By Administrator May 10, 2026" [ref=f47e365] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/et-quis-aut-quidem-aut
+            - generic [ref=f47e367]:
+              - generic [ref=f47e368]: Sports
+              - heading "Earum iusto harum magni iusto." [level=3] [ref=f47e369]
+              - paragraph [ref=f47e370]: By Administrator May 10, 2026
+          - link "Sports Laboriosam quos hic optio ipsum quo ab unde. By Administrator Feb 22, 2026" [ref=f47e372] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/qui-aliquam-consequatur-sed-molestiae-quam-laborum
+            - generic [ref=f47e374]:
+              - generic [ref=f47e375]: Sports
+              - heading "Laboriosam quos hic optio ipsum quo ab unde." [level=3] [ref=f47e376]
+              - paragraph [ref=f47e377]: By Administrator Feb 22, 2026
+          - link "Sports In quod enim enim ut tempora quaerat. By Administrator Jan 23, 2026" [ref=f47e379] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/et-quia-occaecati-eius-molestiae-totam-voluptas
+            - generic [ref=f47e381]:
+              - generic [ref=f47e382]: Sports
+              - heading "In quod enim enim ut tempora quaerat." [level=3] [ref=f47e383]
+              - paragraph [ref=f47e384]: By Administrator Jan 23, 2026
+          - link "Sports Est et voluptatum enim hic laudantium et id. By Administrator Dec 05, 2025" [ref=f47e386] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/et-numquam-odit-similique
+            - generic [ref=f47e388]:
+              - generic [ref=f47e389]: Sports
+              - heading "Est et voluptatum enim hic laudantium et id." [level=3] [ref=f47e390]
+              - paragraph [ref=f47e391]: By Administrator Dec 05, 2025
+          - link "Sports Eaque rerum harum sed explicabo sed architecto. By Administrator Sep 13, 2025" [ref=f47e393] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/commodi-officia-officia-sunt-deserunt-nulla-sit-et
+            - generic [ref=f47e395]:
+              - generic [ref=f47e396]: Sports
+              - heading "Eaque rerum harum sed explicabo sed architecto." [level=3] [ref=f47e397]
+              - paragraph [ref=f47e398]: By Administrator Sep 13, 2025
+          - link "Sports Voluptatem ea velit fugit consequatur. By Administrator Sep 01, 2025" [ref=f47e400] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/et-animi-rerum-nesciunt-in-sint
+            - generic [ref=f47e402]:
+              - generic [ref=f47e403]: Sports
+              - heading "Voluptatem ea velit fugit consequatur." [level=3] [ref=f47e404]
+              - paragraph [ref=f47e405]: By Administrator Sep 01, 2025
+          - link "Sports Sunt voluptatem eius modi dolor. By Administrator Jul 24, 2025" [ref=f47e407] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/a-delectus-nihil-modi-et-expedita-et
+            - generic [ref=f47e409]:
+              - generic [ref=f47e410]: Sports
+              - heading "Sunt voluptatem eius modi dolor." [level=3] [ref=f47e411]
+              - paragraph [ref=f47e412]: By Administrator Jul 24, 2025
+          - link "Sports Sunt non et sint. By Administrator Jul 19, 2025" [ref=f47e414] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/asperiores-nesciunt-occaecati-voluptatem-veritatis-sint-in
+            - generic [ref=f47e416]:
+              - generic [ref=f47e417]: Sports
+              - heading "Sunt non et sint." [level=3] [ref=f47e418]
+              - paragraph [ref=f47e419]: By Administrator Jul 19, 2025
+      - generic [ref=f47e422]:
+        - generic [ref=f47e423]:
+          - generic [ref=f47e425]:
+            - heading "Lifestyle" [level=2] [ref=f47e426]
+            - generic [ref=f47e427]:
+              - link "By Writer User May 23, 2026 Eos nobis doloremque tempore." [ref=f47e428] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/perferendis-est-quis-ex-veniam-animi
+                - generic [ref=f47e430]:
+                  - paragraph [ref=f47e431]: By Writer User May 23, 2026
+                  - heading "Eos nobis doloremque tempore." [level=3] [ref=f47e432]
+              - link "By Writer User Apr 29, 2026 Dignissimos error ea provident asperiores mollitia accusamus facilis." [ref=f47e433] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tenetur-minus-occaecati-animi-omnis-facilis
+                - generic [ref=f47e435]:
+                  - paragraph [ref=f47e436]: By Writer User Apr 29, 2026
+                  - heading "Dignissimos error ea provident asperiores mollitia accusamus facilis." [level=3] [ref=f47e437]
+              - link "By Writer User Apr 18, 2026 Veniam reiciendis consequatur iure natus perferendis voluptatem." [ref=f47e438] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/accusamus-officia-fuga-voluptate-reiciendis-necessitatibus
+                - generic [ref=f47e440]:
+                  - paragraph [ref=f47e441]: By Writer User Apr 18, 2026
+                  - heading "Veniam reiciendis consequatur iure natus perferendis voluptatem." [level=3] [ref=f47e442]
+              - link "By Writer User Mar 18, 2026 Voluptatem voluptatem deserunt velit velit quisquam ut." [ref=f47e443] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/corrupti-et-odit-minus-nesciunt
+                - generic [ref=f47e445]:
+                  - paragraph [ref=f47e446]: By Writer User Mar 18, 2026
+                  - heading "Voluptatem voluptatem deserunt velit velit quisquam ut." [level=3] [ref=f47e447]
+              - link "By Writer User Jan 17, 2026 Ducimus maxime aliquam atque harum consectetur totam." [ref=f47e448] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/inventore-minus-dolorem-voluptatem-in-impedit-aut-illo
+                - generic [ref=f47e450]:
+                  - paragraph [ref=f47e451]: By Writer User Jan 17, 2026
+                  - heading "Ducimus maxime aliquam atque harum consectetur totam." [level=3] [ref=f47e452]
+              - link "By Writer User Nov 14, 2025 Maxime exercitationem sed assumenda architecto quis minima." [ref=f47e453] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/voluptatem-velit-voluptas-magni-voluptatem-deleniti-est-voluptatem
+                - generic [ref=f47e455]:
+                  - paragraph [ref=f47e456]: By Writer User Nov 14, 2025
+                  - heading "Maxime exercitationem sed assumenda architecto quis minima." [level=3] [ref=f47e457]
+          - generic [ref=f47e459]:
+            - heading "Technology" [level=2] [ref=f47e460]
+            - generic [ref=f47e461]:
+              - link "Technology Fugiat dicta quod quos nostrum rerum quibusdam est. Eaque exercitationem officia sapiente dicta quisquam et et omnis. Tempora alias soluta alias officiis. Necessitatibus voluptatibus ut ex rerum reprehenderit tempora minus. Omnis sunt similique repellat sit mollitia. By Administrator Jun 04, 2026" [ref=f47e462] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/ut-est-aperiam-numquam-expedita
+                - generic [ref=f47e464]:
+                  - generic [ref=f47e465]: Technology
+                  - heading "Fugiat dicta quod quos nostrum rerum quibusdam est." [level=3] [ref=f47e466]
+                  - paragraph [ref=f47e467]: Eaque exercitationem officia sapiente dicta quisquam et et omnis. Tempora alias soluta alias officiis. Necessitatibus voluptatibus ut ex rerum reprehenderit tempora minus. Omnis sunt similique repellat sit mollitia.
+                  - paragraph [ref=f47e468]: By Administrator Jun 04, 2026
+              - link "Technology Facere iste sint accusantium itaque dolor ipsam. Maiores facere ut eveniet. Quisquam officiis officia est et aspernatur culpa eos neque. Vero omnis error voluptatem neque et nobis. Libero neque temporibus provident quo quos optio. By Administrator Apr 08, 2026" [ref=f47e469] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/rerum-autem-in-beatae-voluptas
+                - generic [ref=f47e471]:
+                  - generic [ref=f47e472]: Technology
+                  - heading "Facere iste sint accusantium itaque dolor ipsam." [level=3] [ref=f47e473]
+                  - paragraph [ref=f47e474]: Maiores facere ut eveniet. Quisquam officiis officia est et aspernatur culpa eos neque. Vero omnis error voluptatem neque et nobis. Libero neque temporibus provident quo quos optio.
+                  - paragraph [ref=f47e475]: By Administrator Apr 08, 2026
+              - link "Technology Illo minus voluptatem molestiae sapiente aliquam rerum. Et modi repudiandae beatae eos. Qui reprehenderit vel accusamus ex placeat velit. Sit soluta vitae dolorem similique explicabo ducimus. By Administrator Mar 24, 2026" [ref=f47e476] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/minima-et-rerum-dolores-quo-dolorem-reiciendis
+                - generic [ref=f47e478]:
+                  - generic [ref=f47e479]: Technology
+                  - heading "Illo minus voluptatem molestiae sapiente aliquam rerum." [level=3] [ref=f47e480]
+                  - paragraph [ref=f47e481]: Et modi repudiandae beatae eos. Qui reprehenderit vel accusamus ex placeat velit. Sit soluta vitae dolorem similique explicabo ducimus.
+                  - paragraph [ref=f47e482]: By Administrator Mar 24, 2026
+              - link "Technology Qui aliquam voluptate quia non provident saepe non. Nobis soluta modi enim culpa libero reiciendis mollitia. Aut quia fugit maxime tempora. Voluptatem molestias nulla sit ratione distinctio numquam. Vel architecto quia qui voluptatem mollitia ad. Quia eum libero vero maiores. By Administrator Dec 09, 2025" [ref=f47e483] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/qui-non-sapiente-sed-non
+                - generic [ref=f47e485]:
+                  - generic [ref=f47e486]: Technology
+                  - heading "Qui aliquam voluptate quia non provident saepe non." [level=3] [ref=f47e487]
+                  - paragraph [ref=f47e488]: Nobis soluta modi enim culpa libero reiciendis mollitia. Aut quia fugit maxime tempora. Voluptatem molestias nulla sit ratione distinctio numquam. Vel architecto quia qui voluptatem mollitia ad. Quia eum libero vero maiores.
+                  - paragraph [ref=f47e489]: By Administrator Dec 09, 2025
+          - navigation "Pagination" [ref=f47e491]:
+            - generic [ref=f47e492]: «
+            - generic [ref=f47e493]: "1"
+            - link "2" [ref=f47e494] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=2
+            - link "3" [ref=f47e495] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=3
+            - link "4" [ref=f47e496] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=4
+            - link "5" [ref=f47e497] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=5
+            - link "6" [ref=f47e498] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=6
+            - link "7" [ref=f47e499] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=7
+            - link "8" [ref=f47e500] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=8
+            - link "9" [ref=f47e501] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=9
+            - link "10" [ref=f47e502] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=10
+            - link "11" [ref=f47e503] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=11
+            - link "12" [ref=f47e504] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=12
+            - link "13" [ref=f47e505] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=13
+            - link "14" [ref=f47e506] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=14
+            - link "15" [ref=f47e507] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=15
+            - link "16" [ref=f47e508] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=16
+            - link "17" [ref=f47e509] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=17
+            - link "18" [ref=f47e510] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=18
+            - link "19" [ref=f47e511] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=19
+            - link "20" [ref=f47e512] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=20
+            - link "21" [ref=f47e513] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=21
+            - link "22" [ref=f47e514] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=22
+            - link "»" [ref=f47e515] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=2
+        - complementary [ref=f47e516]:
+          - complementary [ref=f47e517]:
+            - heading "Latest Post" [level=2] [ref=f47e518]
+            - generic [ref=f47e519]:
+              - link [ref=f47e520] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
+                - img "Sit occaecati esse est sed id." [ref=f47e521]
+              - generic [ref=f47e522]: Politik
+              - paragraph [ref=f47e523]: By Writer User Jul 08, 2026
+              - heading "Sit occaecati esse est sed id." [level=3] [ref=f47e524]
+              - paragraph [ref=f47e525]: Laboriosam rem corporis cum impedit maxime mollitia. Assumenda pariatur sunt consequatur tenetur nisi non similique. Repudiandae dolores pariatur perferendis consequatur. Consequuntur aperiam error labore fuga exercitationem maxime eos vero.
+              - link "Read More" [ref=f47e526] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
+            - generic [ref=f47e527]:
+              - link [ref=f47e528] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/voluptatem-accusantium-autem-consectetur
+                - img "Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus." [ref=f47e529]
+                - generic [ref=f47e530]:
+                  - paragraph [ref=f47e531]: By Writer User Jul 01, 2026
+                  - heading "Iure molestiae adipisci sed asperiores voluptatibus sunt ducimus." [level=4] [ref=f47e532]
+              - link [ref=f47e533] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/ut-est-aperiam-numquam-expedita
+                - img "Fugiat dicta quod quos nostrum rerum quibusdam est." [ref=f47e534]
+                - generic [ref=f47e535]:
+                  - paragraph [ref=f47e536]: By Administrator Jun 04, 2026
+                  - heading "Fugiat dicta quod quos nostrum rerum quibusdam est." [level=4] [ref=f47e537]
+            - generic [ref=f47e538]:
+              - heading "Stay Connected" [level=2] [ref=f47e539]
+              - generic [ref=f47e540]:
+                - link " Like 19,243 Fans" [ref=f47e541] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=f47e542]:
+                    - generic [ref=f47e543]: 
+                    - generic [ref=f47e545]:
+                      - paragraph [ref=f47e546]: Like
+                      - paragraph [ref=f47e547]: 19,243 Fans
+                - link " Follow 2,076 Followers" [ref=f47e548] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=f47e549]:
+                    - generic [ref=f47e550]: 
+                    - generic [ref=f47e552]:
+                      - paragraph [ref=f47e553]: Follow
+                      - paragraph [ref=f47e554]: 2,076 Followers
+                - link " Subscribe 15,200 Followers" [ref=f47e555] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=f47e556]:
+                    - generic [ref=f47e557]: 
+                    - generic [ref=f47e559]:
+                      - paragraph [ref=f47e560]: Subscribe
+                      - paragraph [ref=f47e561]: 15,200 Followers
+            - heading "Tags" [level=2] [ref=f47e562]
+            - generic [ref=f47e563]:
+              - link "#Global" [ref=f47e564] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/global
+              - link "#Trending" [ref=f47e565] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/trending
+              - link "#Opinion" [ref=f47e566] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/opinion
+              - link "#Analysis" [ref=f47e567] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/analysis
+              - link "#Breaking News" [ref=f47e568] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/breaking-news
+              - link "#Featured" [ref=f47e569] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/featured
+              - link "#Local" [ref=f47e570] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/local
+            - heading "Advertise" [level=2] [ref=f47e571]
+            - link [ref=f47e572] [cursor=pointer]:
+              - /url: "#"
+              - img "Advertisement" [ref=f47e573]
+            - generic [ref=f47e575]:
+              - heading "Newsletter" [level=2] [ref=f47e576]
+              - paragraph [ref=f47e577]: The most important world news and events of the day.
+              - paragraph [ref=f47e578]: Get our daily newsletter on your inbox.
+              - generic [ref=f47e579]:
+                - textbox "Your email address" [ref=f47e580]
+                - button "Sign Up" [ref=f47e581]
+  - contentinfo [ref=f47e582]:
+    - contentinfo [ref=f47e583]:
+      - generic [ref=f47e584]:
+        - generic [ref=f47e585]:
+          - heading "World" [level=3] [ref=f47e586]
+          - list [ref=f47e588]:
+            - listitem [ref=f47e589]:
+              - link "Global Economy" [ref=f47e590] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e591]:
+              - link "Religion" [ref=f47e592] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e593]:
+              - link "Bitcoin" [ref=f47e594] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e595]:
+              - link "Conflict" [ref=f47e596] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e597]:
+              - link "Sports" [ref=f47e598] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e599]:
+              - link "Scandals" [ref=f47e600] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f47e601]:
+          - heading "Entertainment" [level=3] [ref=f47e602]
+          - list [ref=f47e604]:
+            - listitem [ref=f47e605]:
+              - link "Celebity News" [ref=f47e606] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e607]:
+              - link "Movies" [ref=f47e608] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e609]:
+              - link "Tv News" [ref=f47e610] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e611]:
+              - link "Music News" [ref=f47e612] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e613]:
+              - link "Life Style" [ref=f47e614] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e615]:
+              - link "Entertainment Video" [ref=f47e616] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f47e617]:
+          - heading "Health" [level=3] [ref=f47e618]
+          - list [ref=f47e620]:
+            - listitem [ref=f47e621]:
+              - link "Medical Research" [ref=f47e622] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e623]:
+              - link "Healthy Living" [ref=f47e624] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e625]:
+              - link "Mental Health" [ref=f47e626] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e627]:
+              - link "Virus Corona" [ref=f47e628] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e629]:
+              - link "Children's Health" [ref=f47e630] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f47e631]:
+          - heading "Business" [level=3] [ref=f47e632]
+          - list [ref=f47e634]:
+            - listitem [ref=f47e635]:
+              - link "Markets" [ref=f47e636] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e637]:
+              - link "Technology" [ref=f47e638] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e639]:
+              - link "Features" [ref=f47e640] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e641]:
+              - link "Property" [ref=f47e642] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f47e643]:
+              - link "Business Leaders" [ref=f47e644] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=f47e646]:
+        - link "RET NEWS" [ref=f47e647] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+          - generic [ref=f47e648]: RET
+          - generic [ref=f47e651]: NEWS
+        - generic [ref=f47e652]:
+          - link "" [ref=f47e653] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f47e655] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f47e657] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f47e659] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f47e661] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=f47e664]:
+        - generic [ref=f47e665]:
+          - link "Contact Us" [ref=f47e666] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/contact
+          - link "Terms Of Use" [ref=f47e667] [cursor=pointer]:
+            - /url: "#"
+          - link "Adchoice" [ref=f47e668] [cursor=pointer]:
+            - /url: "#"
+          - link "About Us" [ref=f47e669] [cursor=pointer]:
+            - /url: "#"
+          - link "Newsletters" [ref=f47e670] [cursor=pointer]:
+            - /url: "#"
+          - link "Sitemap" [ref=f47e671] [cursor=pointer]:
+            - /url: "#"
+          - link "Magrenvi Store" [ref=f47e672] [cursor=pointer]:
+            - /url: "#"
+        - paragraph [ref=f47e673]: Copyright © 2026 News and Magazine template based on Bootstrap 4 Theme by Retenvi.

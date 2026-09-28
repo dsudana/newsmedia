@@ -1,0 +1,155 @@
+- generic [active] [ref=f34e1]:
+  - banner [ref=f34e2]:
+    - generic [ref=f34e4]:
+      - generic [ref=f34e5]: Kamis, 16 Juli 2026
+      - generic [ref=f34e6]:
+        - link "Contact Us" [ref=f34e7] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/contact
+        - link "Login / Register" [ref=f34e8] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/login
+        - generic [ref=f34e9]:
+          - link "Facebook" [ref=f34e10] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f34e11]: 
+          - link "Twitter" [ref=f34e12] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f34e13]: 
+          - link "Instagram" [ref=f34e14] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f34e15]: 
+    - banner [ref=f34e16]:
+      - generic [ref=f34e17]:
+        - link "RET NEWS" [ref=f34e18] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+          - generic [ref=f34e19]: RET
+          - generic [ref=f34e22]: NEWS
+        - navigation [ref=f34e23]:
+          - link "Home" [ref=f34e24] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000
+          - link "Pages" [ref=f34e27] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/pages
+          - link "About" [ref=f34e30] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/about
+          - link "News" [ref=f34e33] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/news
+          - link "Category" [ref=f34e36] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/category
+          - link "Contact" [ref=f34e37] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/contact
+        - button "Search" [ref=f34e38]:
+          - generic [ref=f34e39]: 
+  - main
+  - contentinfo [ref=f34e42]:
+    - contentinfo [ref=f34e43]:
+      - generic [ref=f34e44]:
+        - generic [ref=f34e45]:
+          - heading "World" [level=3] [ref=f34e46]
+          - list [ref=f34e48]:
+            - listitem [ref=f34e49]:
+              - link "Global Economy" [ref=f34e50] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e51]:
+              - link "Religion" [ref=f34e52] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e53]:
+              - link "Bitcoin" [ref=f34e54] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e55]:
+              - link "Conflict" [ref=f34e56] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e57]:
+              - link "Sports" [ref=f34e58] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e59]:
+              - link "Scandals" [ref=f34e60] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f34e61]:
+          - heading "Entertainment" [level=3] [ref=f34e62]
+          - list [ref=f34e64]:
+            - listitem [ref=f34e65]:
+              - link "Celebity News" [ref=f34e66] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e67]:
+              - link "Movies" [ref=f34e68] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e69]:
+              - link "Tv News" [ref=f34e70] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e71]:
+              - link "Music News" [ref=f34e72] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e73]:
+              - link "Life Style" [ref=f34e74] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e75]:
+              - link "Entertainment Video" [ref=f34e76] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f34e77]:
+          - heading "Health" [level=3] [ref=f34e78]
+          - list [ref=f34e80]:
+            - listitem [ref=f34e81]:
+              - link "Medical Research" [ref=f34e82] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e83]:
+              - link "Healthy Living" [ref=f34e84] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e85]:
+              - link "Mental Health" [ref=f34e86] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e87]:
+              - link "Virus Corona" [ref=f34e88] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e89]:
+              - link "Children's Health" [ref=f34e90] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f34e91]:
+          - heading "Business" [level=3] [ref=f34e92]
+          - list [ref=f34e94]:
+            - listitem [ref=f34e95]:
+              - link "Markets" [ref=f34e96] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e97]:
+              - link "Technology" [ref=f34e98] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e99]:
+              - link "Features" [ref=f34e100] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e101]:
+              - link "Property" [ref=f34e102] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f34e103]:
+              - link "Business Leaders" [ref=f34e104] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=f34e106]:
+        - link "RET NEWS" [ref=f34e107] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+          - generic [ref=f34e108]: RET
+          - generic [ref=f34e111]: NEWS
+        - generic [ref=f34e112]:
+          - link "" [ref=f34e113] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f34e115] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f34e117] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f34e119] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f34e121] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=f34e124]:
+        - generic [ref=f34e125]:
+          - link "Contact Us" [ref=f34e126] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/contact
+          - link "Terms Of Use" [ref=f34e127] [cursor=pointer]:
+            - /url: "#"
+          - link "Adchoice" [ref=f34e128] [cursor=pointer]:
+            - /url: "#"
+          - link "About Us" [ref=f34e129] [cursor=pointer]:
+            - /url: "#"
+          - link "Newsletters" [ref=f34e130] [cursor=pointer]:
+            - /url: "#"
+          - link "Sitemap" [ref=f34e131] [cursor=pointer]:
+            - /url: "#"
+          - link "Magrenvi Store" [ref=f34e132] [cursor=pointer]:
+            - /url: "#"
+        - paragraph [ref=f34e133]: Copyright © 2026 News and Magazine template based on Bootstrap 4 Theme by Retenvi.

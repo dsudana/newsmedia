@@ -1,0 +1,394 @@
+- generic [ref=f37e2]:
+  - generic [ref=f37e3]:
+    - generic [ref=f37e5]:
+      - generic [ref=f37e6]: 
+      - heading "Cource" [level=2] [ref=f37e9]
+    - paragraph [ref=f37e10]: OVERVIEW
+    - navigation [ref=f37e11]:
+      - link " Dashboard" [ref=f37e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/dashboard
+        - generic [ref=f37e13]: 
+        - generic [ref=f37e14]: Dashboard
+      - link " Inbox" [ref=f37e15] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f37e16]: 
+        - generic [ref=f37e17]: Inbox
+    - paragraph [ref=f37e18]: Content
+    - navigation [ref=f37e19]:
+      - link " Articles" [ref=f37e20] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/articles
+        - generic [ref=f37e21]: 
+        - generic [ref=f37e22]: Articles
+      - link " Categories" [ref=f37e23] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/categories
+        - generic [ref=f37e24]: 
+        - generic [ref=f37e25]: Categories
+      - link " Tags" [ref=f37e26] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tags
+        - generic [ref=f37e27]: 
+        - generic [ref=f37e28]: Tags
+    - paragraph [ref=f37e29]: Management
+    - navigation [ref=f37e30]:
+      - link " Users" [ref=f37e31] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/users
+        - generic [ref=f37e32]: 
+        - generic [ref=f37e33]: Users
+      - link " Ads" [ref=f37e34] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/ads
+        - generic [ref=f37e35]: 
+        - generic [ref=f37e36]: Ads
+      - link " Keywords" [ref=f37e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/keywords
+        - generic [ref=f37e38]: 
+        - generic [ref=f37e39]: Keywords
+    - generic [ref=f37e40]:
+      - paragraph [ref=f37e41]: Settings
+      - navigation [ref=f37e42]:
+        - link " Settings" [ref=f37e43] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=f37e44]: 
+          - generic [ref=f37e45]: Settings
+        - button " Logout" [ref=f37e47]:
+          - generic [ref=f37e48]: 
+          - generic [ref=f37e49]: Logout
+  - generic [ref=f37e50]:
+    - generic [ref=f37e51]:
+      - textbox "Search your content..." [ref=f37e53]
+      - generic [ref=f37e54]:
+        - button "" [ref=f37e55]
+        - button "" [ref=f37e57]
+    - generic [ref=f37e60]:
+      - generic [ref=f37e61]:
+        - generic [ref=f37e62]:
+          - heading "Articles" [level=1] [ref=f37e63]
+          - paragraph [ref=f37e64]: Manage all your articles in one place
+        - link "+ New Article" [ref=f37e65] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/articles/create
+          - generic [ref=f37e66]: +
+          - generic [ref=f37e67]: New Article
+      - generic [ref=f37e68]:
+        - generic [ref=f37e70]:
+          - generic [ref=f37e71]:
+            - paragraph [ref=f37e72]: Total
+            - paragraph [ref=f37e73]: "202"
+          - generic [ref=f37e74]: 
+        - generic [ref=f37e77]:
+          - generic [ref=f37e78]:
+            - paragraph [ref=f37e79]: Published
+            - paragraph [ref=f37e80]: "202"
+          - generic [ref=f37e81]: 
+        - generic [ref=f37e84]:
+          - generic [ref=f37e85]:
+            - paragraph [ref=f37e86]: Draft
+            - paragraph [ref=f37e87]: "0"
+          - generic [ref=f37e88]: 
+        - generic [ref=f37e91]:
+          - generic [ref=f37e92]:
+            - paragraph [ref=f37e93]: Scheduled
+            - paragraph [ref=f37e94]: "0"
+          - generic [ref=f37e95]: 
+      - generic [ref=f37e97]:
+        - table [ref=f37e99]:
+          - rowgroup [ref=f37e100]:
+            - row [ref=f37e101]:
+              - columnheader "Article" [ref=f37e102]
+              - columnheader "Category" [ref=f37e103]
+              - columnheader "Author" [ref=f37e104]
+              - columnheader "Status" [ref=f37e105]
+              - columnheader "Published" [ref=f37e106]
+              - columnheader "Actions" [ref=f37e107]
+          - rowgroup [ref=f37e108]:
+            - row [ref=f37e109]:
+              - cell [ref=f37e110]:
+                - generic [ref=f37e111]:
+                  - img "Eos at doloremque quisquam vitae." [ref=f37e113]
+                  - generic [ref=f37e114]:
+                    - paragraph [ref=f37e115]: Eos at doloremque quisquam vitae.
+                    - paragraph [ref=f37e116]: Nihil maiores ut odit ut nihil odio. Sapiente molestias sequ...
+              - cell "Entertainment" [ref=f37e117]
+              - cell [ref=f37e119]:
+                - paragraph [ref=f37e120]: Editor User
+              - cell " Published" [ref=f37e121]:
+                - generic [ref=f37e122]:
+                  - generic [ref=f37e123]: 
+                  - text: Published
+              - cell [ref=f37e124]:
+                - paragraph [ref=f37e125]: Jan 01, 2026
+              - cell [ref=f37e126]:
+                - generic [ref=f37e127]:
+                  - link "" [ref=f37e128] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/134/edit
+                  - button "" [ref=f37e131]
+            - row [ref=f37e133]:
+              - cell [ref=f37e134]:
+                - generic [ref=f37e135]:
+                  - img "Nihil in ut eveniet aut aspernatur id et velit." [ref=f37e137]
+                  - generic [ref=f37e138]:
+                    - paragraph [ref=f37e139]: Nihil in ut eveniet aut aspernatur id et...
+                    - paragraph [ref=f37e140]: Voluptate doloremque quis aliquam est. Laborum sit dicta ips...
+              - cell "Health" [ref=f37e141]
+              - cell [ref=f37e143]:
+                - paragraph [ref=f37e144]: Writer User
+              - cell " Published" [ref=f37e145]:
+                - generic [ref=f37e146]:
+                  - generic [ref=f37e147]: 
+                  - text: Published
+              - cell [ref=f37e148]:
+                - paragraph [ref=f37e149]: Aug 04, 2025
+              - cell [ref=f37e150]:
+                - generic [ref=f37e151]:
+                  - link "" [ref=f37e152] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/136/edit
+                  - button "" [ref=f37e155]
+            - row [ref=f37e157]:
+              - cell [ref=f37e158]:
+                - generic [ref=f37e159]:
+                  - img "Consequatur qui maxime veritatis reprehenderit exercitationem." [ref=f37e161]
+                  - generic [ref=f37e162]:
+                    - paragraph [ref=f37e163]: Consequatur qui maxime veritatis reprehe...
+                    - paragraph [ref=f37e164]: Molestiae excepturi omnis doloremque sint a. Dignissimos rer...
+              - cell "Pendidikan" [ref=f37e165]
+              - cell [ref=f37e167]:
+                - paragraph [ref=f37e168]: Editor User
+              - cell " Published" [ref=f37e169]:
+                - generic [ref=f37e170]:
+                  - generic [ref=f37e171]: 
+                  - text: Published
+              - cell [ref=f37e172]:
+                - paragraph [ref=f37e173]: Jul 02, 2026
+              - cell [ref=f37e174]:
+                - generic [ref=f37e175]:
+                  - link "" [ref=f37e176] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/202/edit
+                  - button "" [ref=f37e179]
+            - row [ref=f37e181]:
+              - cell [ref=f37e182]:
+                - generic [ref=f37e183]:
+                  - img "Eos ut officiis eos eius ipsa harum optio." [ref=f37e185]
+                  - generic [ref=f37e186]:
+                    - paragraph [ref=f37e187]: Eos ut officiis eos eius ipsa harum opti...
+                    - paragraph [ref=f37e188]: Expedita aspernatur nam quam. Odio est ullam odio corrupti o...
+              - cell "Sports" [ref=f37e189]
+              - cell [ref=f37e191]:
+                - paragraph [ref=f37e192]: Editor User
+              - cell " Published" [ref=f37e193]:
+                - generic [ref=f37e194]:
+                  - generic [ref=f37e195]: 
+                  - text: Published
+              - cell [ref=f37e196]:
+                - paragraph [ref=f37e197]: Oct 20, 2025
+              - cell [ref=f37e198]:
+                - generic [ref=f37e199]:
+                  - link "" [ref=f37e200] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/143/edit
+                  - button "" [ref=f37e203]
+            - row [ref=f37e205]:
+              - cell [ref=f37e206]:
+                - generic [ref=f37e207]:
+                  - img "Nihil maiores quos saepe sed voluptatem." [ref=f37e209]
+                  - generic [ref=f37e210]:
+                    - paragraph [ref=f37e211]: Nihil maiores quos saepe sed voluptatem.
+                    - paragraph [ref=f37e212]: Aliquid iusto magni nesciunt aut enim dolorem repellendus au...
+              - cell "Health" [ref=f37e213]
+              - cell [ref=f37e215]:
+                - paragraph [ref=f37e216]: Writer User
+              - cell " Published" [ref=f37e217]:
+                - generic [ref=f37e218]:
+                  - generic [ref=f37e219]: 
+                  - text: Published
+              - cell [ref=f37e220]:
+                - paragraph [ref=f37e221]: Mar 16, 2026
+              - cell [ref=f37e222]:
+                - generic [ref=f37e223]:
+                  - link "" [ref=f37e224] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/138/edit
+                  - button "" [ref=f37e227]
+            - row [ref=f37e229]:
+              - cell [ref=f37e230]:
+                - generic [ref=f37e231]:
+                  - img "Sed ut occaecati est officiis perferendis." [ref=f37e233]
+                  - generic [ref=f37e234]:
+                    - paragraph [ref=f37e235]: Sed ut occaecati est officiis perferendi...
+                    - paragraph [ref=f37e236]: Velit rem neque consectetur non dolor expedita. Voluptas ill...
+              - cell "Health" [ref=f37e237]
+              - cell [ref=f37e239]:
+                - paragraph [ref=f37e240]: Writer User
+              - cell " Published" [ref=f37e241]:
+                - generic [ref=f37e242]:
+                  - generic [ref=f37e243]: 
+                  - text: Published
+              - cell [ref=f37e244]:
+                - paragraph [ref=f37e245]: Dec 17, 2025
+              - cell [ref=f37e246]:
+                - generic [ref=f37e247]:
+                  - link "" [ref=f37e248] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/137/edit
+                  - button "" [ref=f37e251]
+            - row [ref=f37e253]:
+              - cell [ref=f37e254]:
+                - generic [ref=f37e255]:
+                  - img "Et voluptatem voluptate ut itaque ipsam consequatur quisquam." [ref=f37e257]
+                  - generic [ref=f37e258]:
+                    - paragraph [ref=f37e259]: Et voluptatem voluptate ut itaque ipsam...
+                    - paragraph [ref=f37e260]: Qui cum deserunt fugit vero. Minus explicabo incidunt at rem...
+              - cell "Entertainment" [ref=f37e261]
+              - cell [ref=f37e263]:
+                - paragraph [ref=f37e264]: Editor User
+              - cell " Published" [ref=f37e265]:
+                - generic [ref=f37e266]:
+                  - generic [ref=f37e267]: 
+                  - text: Published
+              - cell [ref=f37e268]:
+                - paragraph [ref=f37e269]: Dec 16, 2025
+              - cell [ref=f37e270]:
+                - generic [ref=f37e271]:
+                  - link "" [ref=f37e272] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/135/edit
+                  - button "" [ref=f37e275]
+            - row [ref=f37e277]:
+              - cell [ref=f37e278]:
+                - generic [ref=f37e279]:
+                  - img "Rerum quidem sit ut sit quibusdam aperiam." [ref=f37e281]
+                  - generic [ref=f37e282]:
+                    - paragraph [ref=f37e283]: Rerum quidem sit ut sit quibusdam aperia...
+                    - paragraph [ref=f37e284]: Officiis mollitia quae eos nihil sint. Id quo harum sed dolo...
+              - cell "Health" [ref=f37e285]
+              - cell [ref=f37e287]:
+                - paragraph [ref=f37e288]: Writer User
+              - cell " Published" [ref=f37e289]:
+                - generic [ref=f37e290]:
+                  - generic [ref=f37e291]: 
+                  - text: Published
+              - cell [ref=f37e292]:
+                - paragraph [ref=f37e293]: Jan 22, 2026
+              - cell [ref=f37e294]:
+                - generic [ref=f37e295]:
+                  - link "" [ref=f37e296] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/142/edit
+                  - button "" [ref=f37e299]
+            - row [ref=f37e301]:
+              - cell [ref=f37e302]:
+                - generic [ref=f37e303]:
+                  - img "Distinctio sit et omnis omnis occaecati repellendus." [ref=f37e305]
+                  - generic [ref=f37e306]:
+                    - paragraph [ref=f37e307]: Distinctio sit et omnis omnis occaecati...
+                    - paragraph [ref=f37e308]: Voluptate doloremque assumenda perspiciatis repellat aut dol...
+              - cell "Health" [ref=f37e309]
+              - cell [ref=f37e311]:
+                - paragraph [ref=f37e312]: Writer User
+              - cell " Published" [ref=f37e313]:
+                - generic [ref=f37e314]:
+                  - generic [ref=f37e315]: 
+                  - text: Published
+              - cell [ref=f37e316]:
+                - paragraph [ref=f37e317]: Oct 18, 2025
+              - cell [ref=f37e318]:
+                - generic [ref=f37e319]:
+                  - link "" [ref=f37e320] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/140/edit
+                  - button "" [ref=f37e323]
+            - row [ref=f37e325]:
+              - cell [ref=f37e326]:
+                - generic [ref=f37e327]:
+                  - img "Commodi doloremque fuga eveniet impedit." [ref=f37e329]
+                  - generic [ref=f37e330]:
+                    - paragraph [ref=f37e331]: Commodi doloremque fuga eveniet impedit.
+                    - paragraph [ref=f37e332]: Reprehenderit sed et autem doloremque ut. Eos voluptatum dol...
+              - cell "Health" [ref=f37e333]
+              - cell [ref=f37e335]:
+                - paragraph [ref=f37e336]: Writer User
+              - cell " Published" [ref=f37e337]:
+                - generic [ref=f37e338]:
+                  - generic [ref=f37e339]: 
+                  - text: Published
+              - cell [ref=f37e340]:
+                - paragraph [ref=f37e341]: Nov 01, 2025
+              - cell [ref=f37e342]:
+                - generic [ref=f37e343]:
+                  - link "" [ref=f37e344] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/articles/141/edit
+                  - button "" [ref=f37e347]
+        - navigation "Pagination Navigation" [ref=f37e350]:
+          - generic [ref=f37e351]:
+            - paragraph [ref=f37e353]: Showing 1 to 10 of 202 results
+            - generic [ref=f37e355]:
+              - generic "&laquo; Previous" [ref=f37e356]
+              - generic [ref=f37e360]: "1"
+              - link "Go to page 2" [ref=f37e362] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=2
+                - text: "2"
+              - link "Go to page 3" [ref=f37e363] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=3
+                - text: "3"
+              - link "Go to page 4" [ref=f37e364] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=4
+                - text: "4"
+              - link "Go to page 5" [ref=f37e365] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=5
+                - text: "5"
+              - link "Go to page 6" [ref=f37e366] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=6
+                - text: "6"
+              - link "Go to page 7" [ref=f37e367] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=7
+                - text: "7"
+              - link "Go to page 8" [ref=f37e368] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=8
+                - text: "8"
+              - link "Go to page 9" [ref=f37e369] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=9
+                - text: "9"
+              - link "Go to page 10" [ref=f37e370] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=10
+                - text: "10"
+              - generic [ref=f37e371]: ...
+              - link "Go to page 20" [ref=f37e373] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=20
+                - text: "20"
+              - link "Go to page 21" [ref=f37e374] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=21
+                - text: "21"
+              - link "Next &raquo;" [ref=f37e375] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles?page=2
+  - generic [ref=f37e378]:
+    - generic [ref=f37e379]:
+      - generic [ref=f37e380]: A
+      - heading "Administrator" [level=3] [ref=f37e381]
+      - paragraph [ref=f37e382]: Administrator
+    - generic [ref=f37e383]:
+      - paragraph [ref=f37e384]: Statistics
+      - generic [ref=f37e385]:
+        - generic [ref=f37e386]:
+          - generic [ref=f37e387]: "202"
+          - generic [ref=f37e388]: +32%
+        - paragraph [ref=f37e389]: Total Articles
+      - generic [ref=f37e390]:
+        - generic [ref=f37e391]:
+          - generic [ref=f37e392]: "3"
+          - generic [ref=f37e393]: +12%
+        - paragraph [ref=f37e394]: Total Users
+      - generic [ref=f37e395]:
+        - generic [ref=f37e396]:
+          - generic [ref=f37e397]: "14"
+          - generic [ref=f37e398]: →
+        - paragraph [ref=f37e399]: Total Categories
+    - paragraph [ref=f37e401]: Monthly Activity
+    - generic [ref=f37e405]:
+      - generic [ref=f37e406]:
+        - paragraph [ref=f37e407]: Your Mentors
+        - button "+" [ref=f37e408]
+      - generic [ref=f37e410]:
+        - generic [ref=f37e411]:
+          - generic [ref=f37e412]:
+            - generic [ref=f37e413]: 👨‍💼
+            - generic [ref=f37e414]:
+              - paragraph [ref=f37e415]: John Mentor
+              - paragraph [ref=f37e416]: Senior Admin
+          - button "Follow" [ref=f37e417]
+        - generic [ref=f37e418]:
+          - generic [ref=f37e419]:
+            - generic [ref=f37e420]: 👩‍💼
+            - generic [ref=f37e421]:
+              - paragraph [ref=f37e422]: Sarah Admin
+              - paragraph [ref=f37e423]: Content Lead
+          - button "Follow" [ref=f37e424]

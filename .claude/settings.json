@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"comment\" c:\\\\\\\\laragon\\\\\\\\www\\\\\\\\newsmedia\\\\\\\\routes\\\\\\\\web.php)"
+    ]
+  }
+}

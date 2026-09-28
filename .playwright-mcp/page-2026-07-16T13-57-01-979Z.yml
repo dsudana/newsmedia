@@ -1,0 +1,34 @@
+- generic [ref=f18e4]:
+  - generic [ref=f18e5]:
+    - generic [ref=f18e6]: 
+    - heading "RET NEWS" [level=1] [ref=f18e8]
+    - paragraph [ref=f18e9]: Admin Dashboard
+  - generic [ref=f18e10]:
+    - generic [ref=f18e11]:
+      - strong [ref=f18e12]:
+        - generic [ref=f18e13]: 
+        - text: Login Failed
+      - text: These credentials do not match our records.
+    - generic [ref=f18e14]:
+      - generic [ref=f18e15]:
+        - generic [ref=f18e16]:
+          - generic [ref=f18e17]: 
+          - text: Email Address
+        - textbox " Email Address" [active] [ref=f18e18]:
+          - /placeholder: admin@retnews.com
+          - text: admin@example.com
+      - generic [ref=f18e19]:
+        - generic [ref=f18e20]:
+          - generic [ref=f18e21]: 
+          - text: Password
+        - textbox " Password" [ref=f18e22]:
+          - /placeholder: ••••••••
+      - generic [ref=f18e23]:
+        - generic [ref=f18e24] [cursor=pointer]:
+          - checkbox "Remember me" [ref=f18e25]
+          - text: Remember me
+        - link "Forgot password?" [ref=f18e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/forgot-password
+      - button " Sign In to Admin" [ref=f18e27] [cursor=pointer]:
+        - generic [ref=f18e28]: 
+        - text: Sign In to Admin

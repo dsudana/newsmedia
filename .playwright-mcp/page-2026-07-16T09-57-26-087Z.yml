@@ -1,0 +1,51 @@
+- generic [ref=f7e2]:
+  - complementary [ref=f7e3]:
+    - generic [ref=f7e4]:
+      - generic [ref=f7e5]:
+        - link "NewsMedia" [ref=f7e7] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/dashboard
+        - navigation [ref=f7e8]:
+          - link "Dashboard" [ref=f7e9] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/dashboard
+          - link "Articles" [ref=f7e10] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/articles
+          - link "Categories" [ref=f7e11] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/categories
+          - link "Tags" [ref=f7e12] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/tags
+          - link "Users" [ref=f7e13] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/users
+          - link "Ads" [ref=f7e14] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/ads
+          - link "Affiliate Links" [ref=f7e15] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/affiliates
+          - link "Settings" [ref=f7e16] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/settings
+      - link "← Back to App" [ref=f7e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+  - generic [ref=f7e19]:
+    - banner [ref=f7e20]:
+      - generic [ref=f7e21]: Dashboard
+      - button "Administrator" [ref=f7e25]
+    - main [ref=f7e30]:
+      - generic [ref=f7e31]:
+        - generic [ref=f7e32]:
+          - generic [ref=f7e35]:
+            - heading "Homepage Builder" [level=1] [ref=f7e36]
+            - paragraph [ref=f7e37]: Customize your website layout and content sections
+          - generic [ref=f7e38]:
+            - link "Preview" [ref=f7e39] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000
+            - button "Tambah Section" [ref=f7e41]
+        - generic [ref=f7e43]:
+          - link "Homepage" [ref=f7e44] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/homepage-builder/homepage
+          - link "Blog Index" [ref=f7e45] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/homepage-builder/blog_index
+        - generic [ref=f7e47]:
+          - paragraph [ref=f7e48]: Drag & drop sections untuk mengubah urutan
+          - paragraph [ref=f7e49]: Seret dan lepaskan item di bawah untuk mengatur ulang urutan tampilan.
+        - generic [ref=f7e52]:
+          - paragraph [ref=f7e53]: No sections configured
+          - paragraph [ref=f7e54]: Add your first section to customize this page
+          - button "Add Section" [ref=f7e55]

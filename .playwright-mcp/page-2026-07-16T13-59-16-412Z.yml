@@ -1,0 +1,82 @@
+- generic [ref=f23e2]:
+  - complementary [ref=f23e3]:
+    - generic [ref=f23e4]:
+      - generic [ref=f23e5]:
+        - link "NewsMedia" [ref=f23e7] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/dashboard
+        - navigation [ref=f23e8]:
+          - link "Dashboard" [ref=f23e9] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/dashboard
+          - link "Articles" [ref=f23e10] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/articles
+          - link "Categories" [ref=f23e11] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/categories
+          - link "Tags" [ref=f23e12] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/tags
+          - link "Users" [ref=f23e13] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/users
+          - link "Ads" [ref=f23e14] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/ads
+          - link "Affiliate Links" [ref=f23e15] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/affiliates
+          - link "Settings" [ref=f23e16] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/settings
+      - link "← Back to App" [ref=f23e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+  - generic [ref=f23e19]:
+    - banner [ref=f23e20]:
+      - generic [ref=f23e21]: Dashboard
+      - button "Administrator" [ref=f23e25]
+    - main [ref=f23e30]:
+      - generic [ref=f23e31]:
+        - generic [ref=f23e32]:
+          - generic [ref=f23e35]:
+            - heading "Homepage Builder" [level=1] [ref=f23e36]
+            - paragraph [ref=f23e37]: Customize your website layout and content sections
+          - generic [ref=f23e38]:
+            - link "Preview" [ref=f23e39] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000
+            - button "Tambah Section" [ref=f23e41]
+        - generic [ref=f23e43]:
+          - link "Homepage" [ref=f23e44] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/homepage-builder/homepage
+          - link "Blog Index" [ref=f23e45] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/homepage-builder/blog_index
+        - generic [ref=f23e47]:
+          - paragraph [ref=f23e48]: Drag & drop sections untuk mengubah urutan
+          - paragraph [ref=f23e49]: Seret dan lepaskan item di bawah untuk mengatur ulang urutan tampilan.
+        - generic [ref=f23e52]:
+          - paragraph [ref=f23e53]: No sections configured
+          - paragraph [ref=f23e54]: Add your first section to customize this page
+          - button "Add Section" [active] [ref=f23e55]
+      - generic [ref=f23e57]:
+        - generic [ref=f23e58]:
+          - generic [ref=f23e59]:
+            - heading "Add New Section" [level=2] [ref=f23e60]
+            - paragraph [ref=f23e61]: Choose a section type to add to your page
+          - button [ref=f23e62]
+        - generic [ref=f23e64]:
+          - button [ref=f23e65]:
+            - paragraph [ref=f23e67]: Article Carousel
+            - paragraph [ref=f23e68]: Display articles in a carousel format
+          - button [ref=f23e69]:
+            - paragraph [ref=f23e71]: Category Highlight
+            - paragraph [ref=f23e72]: Highlight specific categories
+          - button [ref=f23e73]:
+            - paragraph [ref=f23e75]: Newsletter Signup
+            - paragraph [ref=f23e76]: Newsletter subscription section
+          - button [ref=f23e77]:
+            - paragraph [ref=f23e79]: Image Banner
+            - paragraph [ref=f23e80]: Large image banner with optional text overlay
+          - button [ref=f23e81]:
+            - paragraph [ref=f23e83]: Text Image Split
+            - paragraph [ref=f23e84]: Side-by-side text and image layout
+          - button [ref=f23e85]:
+            - paragraph [ref=f23e87]: Blog Preview
+            - paragraph [ref=f23e88]: Preview recent blog articles
+          - button [ref=f23e89]:
+            - paragraph [ref=f23e91]: Testimonial
+            - paragraph [ref=f23e92]: Customer testimonials section
+          - button [ref=f23e93]:
+            - paragraph [ref=f23e95]: Lookbook
+            - paragraph [ref=f23e96]: Visual lookbook gallery

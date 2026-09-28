@@ -1,0 +1,112 @@
+- generic [ref=f41e2]:
+  - complementary [ref=f41e3]:
+    - generic [ref=f41e4]:
+      - generic [ref=f41e5]:
+        - link "NewsMedia" [ref=f41e7] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/dashboard
+        - navigation [ref=f41e8]:
+          - link "Dashboard" [ref=f41e9] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/dashboard
+          - link "Articles" [ref=f41e10] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/articles
+          - link "Categories" [ref=f41e11] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/categories
+          - link "Tags" [ref=f41e12] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/tags
+          - link "Users" [ref=f41e13] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/users
+          - link "Ads" [ref=f41e14] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/ads
+          - link "Affiliate Links" [ref=f41e15] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/affiliates
+          - link "Settings" [ref=f41e16] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/settings
+      - link "← Back to App" [ref=f41e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+  - generic [ref=f41e19]:
+    - banner [ref=f41e20]:
+      - generic [ref=f41e21]: Platform Showcase
+      - button "Administrator" [ref=f41e25]
+    - main [ref=f41e30]:
+      - generic [ref=f41e31]:
+        - generic [ref=f41e33]:
+          - heading "Platform Overview" [level=1] [ref=f41e34]
+          - paragraph [ref=f41e35]: Real-time snapshot of your content ecosystem and platform health
+        - generic [ref=f41e36]:
+          - generic [ref=f41e38]:
+            - generic [ref=f41e39]:
+              - generic [ref=f41e40]: 📰
+              - heading "Blog Management" [level=3] [ref=f41e41]
+              - paragraph [ref=f41e42]: Create, edit, and organize articles with categories and tags
+              - link "View Dashboard →" [ref=f41e43] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/articles
+            - generic [ref=f41e44]:
+              - generic [ref=f41e45]: 🎨
+              - heading "Homepage Builder" [level=3] [ref=f41e46]
+              - paragraph [ref=f41e47]: Drag-and-drop page builder with 8 section types
+              - link "Configure →" [ref=f41e48] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/homepage-builder
+            - generic [ref=f41e49]:
+              - generic [ref=f41e50]: 🔍
+              - heading "Search & Discovery" [level=3] [ref=f41e51]
+              - paragraph [ref=f41e52]: Full-text search with category and tag filters
+              - link "View →" [ref=f41e53] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/search
+            - generic [ref=f41e54]:
+              - generic [ref=f41e55]: 📊
+              - heading "Content Analytics" [level=3] [ref=f41e56]
+              - paragraph [ref=f41e57]: Track article views, engagement, and performance
+              - link "View Analytics →" [ref=f41e58] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/analytics
+            - generic [ref=f41e59]:
+              - generic [ref=f41e60]: 👥
+              - heading "User Management" [level=3] [ref=f41e61]
+              - paragraph [ref=f41e62]: Manage registered users, roles, and permissions
+              - link "View Users →" [ref=f41e63] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/users
+            - generic [ref=f41e64]:
+              - generic [ref=f41e65]: 📧
+              - heading "Newsletter System" [level=3] [ref=f41e66]
+              - paragraph [ref=f41e67]: Subscriber management and email campaigns
+              - link "Manage Subscribers →" [ref=f41e68]:
+                - /url: "#"
+            - generic [ref=f41e69]:
+              - generic [ref=f41e70]: 📥
+              - heading "WordPress Import" [level=3] [ref=f41e71]
+              - paragraph [ref=f41e72]: Bulk import articles and images from WordPress
+              - link "Import →" [ref=f41e73] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/wp-import
+            - generic [ref=f41e74]:
+              - generic [ref=f41e75]: 📢
+              - heading "Ad Management" [level=3] [ref=f41e76]
+              - paragraph [ref=f41e77]: Create, schedule, and track ad placements
+              - link "Manage Ads →" [ref=f41e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/ads
+          - complementary [ref=f41e79]:
+            - generic [ref=f41e80]:
+              - heading "Statistics" [level=3] [ref=f41e81]
+              - generic [ref=f41e82]:
+                - generic [ref=f41e83]: 📰 Articles
+                - generic [ref=f41e85]: "202"
+                - generic [ref=f41e86]: "-5 this month"
+              - generic [ref=f41e87]:
+                - generic [ref=f41e88]: 👥 Users
+                - generic [ref=f41e90]: "3"
+                - generic [ref=f41e91]: +3 this month ✓
+              - generic [ref=f41e92]:
+                - generic [ref=f41e93]: 🏷️ Categories
+                - generic [ref=f41e95]: "14"
+                - generic [ref=f41e96]: +14 this month ✓
+              - generic [ref=f41e97]:
+                - generic [ref=f41e98]: 📧 Subscribers
+                - generic [ref=f41e100]: "0"
+                - generic [ref=f41e101]: No change
+              - generic [ref=f41e102]:
+                - generic [ref=f41e103]: 🎨 Builder Sections
+                - generic [ref=f41e105]: "5"
+                - generic [ref=f41e106]: active sections
+              - generic [ref=f41e107]:
+                - generic [ref=f41e108]: 📊 Avg Engagement
+                - generic [ref=f41e110]: "0"
+                - generic [ref=f41e111]: views per post
+              - button "↻ Refresh" [ref=f41e112]

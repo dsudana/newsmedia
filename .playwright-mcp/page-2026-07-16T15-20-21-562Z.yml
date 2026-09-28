@@ -1,0 +1,241 @@
+- generic [active] [ref=f33e1]:
+  - banner [ref=f33e2]:
+    - generic [ref=f33e3]:
+      - link "NewsMedia" [ref=f33e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000
+      - navigation [ref=f33e6]:
+        - link "Home" [ref=f33e7] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+        - link "Politik" [ref=f33e8] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/politik
+        - link "Business" [ref=f33e9] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/business
+        - link "Technology" [ref=f33e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/technology
+        - link "Entertainment" [ref=f33e11] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/entertainment
+        - link "Health" [ref=f33e12] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/health
+      - generic [ref=f33e13]:
+        - generic [ref=f33e15]:
+          - textbox "Search..." [ref=f33e16]
+          - button [ref=f33e17]
+        - button "Administrator" [ref=f33e21]
+  - main [ref=f33e25]:
+    - generic [ref=f33e43]:
+      - generic [ref=f33e44]:
+        - heading [level=3] [ref=f33e45]:
+          - link "Warganet" [ref=f33e46] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/info-terkini
+        - paragraph [ref=f33e47]: 99 articles
+        - link "View All →" [ref=f33e48] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/info-terkini
+      - generic [ref=f33e49]:
+        - heading [level=3] [ref=f33e50]:
+          - link "Pemerintahan" [ref=f33e51] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/info-kota
+        - paragraph [ref=f33e52]: 17 articles
+        - link "View All →" [ref=f33e53] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/info-kota
+      - generic [ref=f33e54]:
+        - heading [level=3] [ref=f33e55]:
+          - link "Pendidikan" [ref=f33e56] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/ilmu
+        - paragraph [ref=f33e57]: 11 articles
+        - link "View All →" [ref=f33e58] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/ilmu
+      - generic [ref=f33e59]:
+        - heading [level=3] [ref=f33e60]:
+          - link "Politik" [ref=f33e61] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/politik
+        - paragraph [ref=f33e62]: 8 articles
+        - link "View All →" [ref=f33e63] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/politik
+      - generic [ref=f33e64]:
+        - heading [level=3] [ref=f33e65]:
+          - link "Pendidikan" [ref=f33e66] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/pendidikan
+        - paragraph [ref=f33e67]: 8 articles
+        - link "View All →" [ref=f33e68] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/pendidikan
+      - generic [ref=f33e69]:
+        - heading [level=3] [ref=f33e70]:
+          - link "Business" [ref=f33e71] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/business
+        - paragraph [ref=f33e72]: 7 articles
+        - link "View All →" [ref=f33e73] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/business
+    - generic [ref=f33e76]:
+      - generic [ref=f33e77]:
+        - heading [level=3] [ref=f33e78]:
+          - link "Warganet" [ref=f33e79] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/info-terkini
+        - paragraph [ref=f33e80]: 99 articles
+        - link "View All →" [ref=f33e81] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/info-terkini
+      - generic [ref=f33e82]:
+        - heading [level=3] [ref=f33e83]:
+          - link "Pemerintahan" [ref=f33e84] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/info-kota
+        - paragraph [ref=f33e85]: 17 articles
+        - link "View All →" [ref=f33e86] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/info-kota
+      - generic [ref=f33e87]:
+        - heading [level=3] [ref=f33e88]:
+          - link "Pendidikan" [ref=f33e89] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/ilmu
+        - paragraph [ref=f33e90]: 11 articles
+        - link "View All →" [ref=f33e91] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/ilmu
+      - generic [ref=f33e92]:
+        - heading [level=3] [ref=f33e93]:
+          - link "Politik" [ref=f33e94] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/politik
+        - paragraph [ref=f33e95]: 8 articles
+        - link "View All →" [ref=f33e96] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/politik
+      - generic [ref=f33e97]:
+        - heading [level=3] [ref=f33e98]:
+          - link "Pendidikan" [ref=f33e99] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/pendidikan
+        - paragraph [ref=f33e100]: 8 articles
+        - link "View All →" [ref=f33e101] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/pendidikan
+      - generic [ref=f33e102]:
+        - heading [level=3] [ref=f33e103]:
+          - link "Business" [ref=f33e104] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/business
+        - paragraph [ref=f33e105]: 7 articles
+        - link "View All →" [ref=f33e106] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/business
+    - generic [ref=f33e109]:
+      - generic [ref=f33e110]:
+        - heading [level=3] [ref=f33e111]:
+          - link "Warganet" [ref=f33e112] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/info-terkini
+        - paragraph [ref=f33e113]: 99 articles
+        - link "View All →" [ref=f33e114] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/info-terkini
+      - generic [ref=f33e115]:
+        - heading [level=3] [ref=f33e116]:
+          - link "Pemerintahan" [ref=f33e117] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/info-kota
+        - paragraph [ref=f33e118]: 17 articles
+        - link "View All →" [ref=f33e119] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/info-kota
+      - generic [ref=f33e120]:
+        - heading [level=3] [ref=f33e121]:
+          - link "Pendidikan" [ref=f33e122] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/ilmu
+        - paragraph [ref=f33e123]: 11 articles
+        - link "View All →" [ref=f33e124] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/ilmu
+      - generic [ref=f33e125]:
+        - heading [level=3] [ref=f33e126]:
+          - link "Politik" [ref=f33e127] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/politik
+        - paragraph [ref=f33e128]: 8 articles
+        - link "View All →" [ref=f33e129] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/politik
+      - generic [ref=f33e130]:
+        - heading [level=3] [ref=f33e131]:
+          - link "Pendidikan" [ref=f33e132] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/pendidikan
+        - paragraph [ref=f33e133]: 8 articles
+        - link "View All →" [ref=f33e134] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/pendidikan
+      - generic [ref=f33e135]:
+        - heading [level=3] [ref=f33e136]:
+          - link "Business" [ref=f33e137] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/business
+        - paragraph [ref=f33e138]: 7 articles
+        - link "View All →" [ref=f33e139] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/business
+    - generic [ref=f33e142]:
+      - generic [ref=f33e143]:
+        - heading [level=3] [ref=f33e144]:
+          - link "Warganet" [ref=f33e145] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/info-terkini
+        - paragraph [ref=f33e146]: 99 articles
+        - link "View All →" [ref=f33e147] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/info-terkini
+      - generic [ref=f33e148]:
+        - heading [level=3] [ref=f33e149]:
+          - link "Pemerintahan" [ref=f33e150] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/info-kota
+        - paragraph [ref=f33e151]: 17 articles
+        - link "View All →" [ref=f33e152] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/info-kota
+      - generic [ref=f33e153]:
+        - heading [level=3] [ref=f33e154]:
+          - link "Pendidikan" [ref=f33e155] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/ilmu
+        - paragraph [ref=f33e156]: 11 articles
+        - link "View All →" [ref=f33e157] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/ilmu
+      - generic [ref=f33e158]:
+        - heading [level=3] [ref=f33e159]:
+          - link "Politik" [ref=f33e160] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/politik
+        - paragraph [ref=f33e161]: 8 articles
+        - link "View All →" [ref=f33e162] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/politik
+      - generic [ref=f33e163]:
+        - heading [level=3] [ref=f33e164]:
+          - link "Pendidikan" [ref=f33e165] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/pendidikan
+        - paragraph [ref=f33e166]: 8 articles
+        - link "View All →" [ref=f33e167] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/pendidikan
+      - generic [ref=f33e168]:
+        - heading [level=3] [ref=f33e169]:
+          - link "Business" [ref=f33e170] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/categories/business
+        - paragraph [ref=f33e171]: 7 articles
+        - link "View All →" [ref=f33e172] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/categories/business
+  - contentinfo [ref=f33e173]:
+    - generic [ref=f33e174]:
+      - generic [ref=f33e175]:
+        - heading "About Us" [level=4] [ref=f33e176]
+        - paragraph [ref=f33e177]: Your source for the latest news and updates.
+      - generic [ref=f33e178]:
+        - heading "Quick Links" [level=4] [ref=f33e179]
+        - list [ref=f33e180]:
+          - listitem [ref=f33e181]:
+            - link "Home" [ref=f33e182] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000
+          - listitem [ref=f33e183]:
+            - link "About" [ref=f33e184] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f33e185]:
+            - link "Contact" [ref=f33e186] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f33e187]:
+            - link "Privacy Policy" [ref=f33e188] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=f33e189]:
+        - heading "Categories" [level=4] [ref=f33e190]
+        - list [ref=f33e191]:
+          - listitem [ref=f33e192]:
+            - link "Politik" [ref=f33e193] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/politik
+          - listitem [ref=f33e194]:
+            - link "Business" [ref=f33e195] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/business
+          - listitem [ref=f33e196]:
+            - link "Technology" [ref=f33e197] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/technology
+          - listitem [ref=f33e198]:
+            - link "Entertainment" [ref=f33e199] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/entertainment
+          - listitem [ref=f33e200]:
+            - link "Health" [ref=f33e201] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/categories/health
+      - generic [ref=f33e202]:
+        - heading "Newsletter" [level=4] [ref=f33e203]
+        - paragraph [ref=f33e204]: Subscribe to get the latest news updates.
+        - generic [ref=f33e205]:
+          - textbox "Your email" [ref=f33e206]
+          - button "Subscribe" [ref=f33e207]
+    - generic [ref=f33e208]: © 2026 NewsMedia. All rights reserved.

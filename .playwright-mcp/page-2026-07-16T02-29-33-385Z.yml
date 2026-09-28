@@ -1,0 +1,654 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: Kamis, 16 Juli 2026
+      - generic [ref=e6]:
+        - link "Contact Us" [ref=e7] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/contact
+        - link "Login / Register" [ref=e8] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/login
+        - generic [ref=e9]:
+          - link "Facebook" [ref=e10] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e11]: 
+          - link "Twitter" [ref=e12] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e13]: 
+          - link "Instagram" [ref=e14] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e15]: 
+    - banner [ref=e16]:
+      - generic [ref=e17]:
+        - link "RET NEWS" [ref=e18] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+          - generic [ref=e19]: RET
+          - generic [ref=e22]: NEWS
+        - button "Search" [ref=e23]:
+          - generic [ref=e24]: 
+    - generic [ref=e28]:
+      - link [ref=e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/supian-suri-buka-bbgrm-2025-ajak-warga-perkuat-budaya-gotong-royong
+        - img "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [ref=e31]
+        - generic [ref=e32]:
+          - paragraph [ref=e33]: By Administrator Nov 06, 2025
+          - paragraph [ref=e34]: Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong
+      - link [ref=e36] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/khidmat-dan-meriah-maulid-di-masjid-al-barkah-itc-depok
+        - img "Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok" [ref=e37]
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: By Administrator Nov 02, 2025
+          - paragraph [ref=e40]: Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok
+      - link [ref=e42] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/pesan-wakil-walikota-depok-chandra-rahmansyah-pada-hari-ber-muhammadiyah
+        - img "Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah" [ref=e43]
+        - generic [ref=e44]:
+          - paragraph [ref=e45]: By Administrator Aug 30, 2025
+          - paragraph [ref=e46]: Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah
+      - link [ref=e48] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/rawat-kemerdekaan-dan-cinta-tanah-air-dengan-akhlakul-karimah
+        - img "'Rawat Kemerdekaan dan Cinta Tanah Air Dengan Akhlakul Karimah'" [ref=e49]
+        - generic [ref=e50]:
+          - paragraph [ref=e51]: By Administrator Aug 29, 2025
+          - paragraph [ref=e52]: "'Rawat Kemerdekaan dan Cinta Tanah Air Dengan Akhlakul Karimah'"
+      - link [ref=e54] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/ceramah-kocak-kh-abu-bakar-madris-meski-kocak-tidak-mengurangi-esensi-pesan-yang-disampaikan
+        - img "Ceramah Kocak KH. Abu Bakar Madris meski Kocak Tidak mengurangi esensi pesan yang disampaikan." [ref=e55]
+        - generic [ref=e56]:
+          - paragraph [ref=e57]: By Administrator Jul 26, 2025
+          - paragraph [ref=e58]: Ceramah Kocak KH. Abu Bakar Madris meski Kocak Tidak mengurangi esensi pesan yang disampaikan.
+      - link [ref=e60] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/blog/kue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+        - img "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [ref=e61]
+        - generic [ref=e62]:
+          - paragraph [ref=e63]: By Administrator Nov 19, 2024
+          - paragraph [ref=e64]: Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset "Naik Kelas"
+  - main [ref=e65]:
+    - generic [ref=e66]:
+      - generic [ref=e69]:
+        - generic [ref=e72]:
+          - link "Uncategorized Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong By Administrator November 06, 2025" [ref=e74] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/supian-suri-buka-bbgrm-2025-ajak-warga-perkuat-budaya-gotong-royong
+            - generic [ref=e77]:
+              - generic [ref=e78]: Uncategorized
+              - heading "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [level=2] [ref=e80]
+              - generic [ref=e81]:
+                - generic [ref=e82]: By Administrator
+                - generic [ref=e83]: November 06, 2025
+          - link "Uncategorized Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok By Administrator November 02, 2025" [ref=e85] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/khidmat-dan-meriah-maulid-di-masjid-al-barkah-itc-depok
+            - generic [ref=e88]:
+              - generic [ref=e89]: Uncategorized
+              - heading "Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok" [level=2] [ref=e91]
+              - generic [ref=e92]:
+                - generic [ref=e93]: By Administrator
+                - generic [ref=e94]: November 02, 2025
+          - link "Uncategorized Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah By Administrator August 30, 2025" [ref=e96] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/pesan-wakil-walikota-depok-chandra-rahmansyah-pada-hari-ber-muhammadiyah
+            - generic [ref=e99]:
+              - generic [ref=e100]: Uncategorized
+              - heading "Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah" [level=2] [ref=e102]
+              - generic [ref=e103]:
+                - generic [ref=e104]: By Administrator
+                - generic [ref=e105]: August 30, 2025
+          - link "Uncategorized 'Rawat Kemerdekaan dan Cinta Tanah Air Dengan Akhlakul Karimah' By Administrator August 29, 2025" [ref=e107] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/rawat-kemerdekaan-dan-cinta-tanah-air-dengan-akhlakul-karimah
+            - generic [ref=e110]:
+              - generic [ref=e111]: Uncategorized
+              - heading "'Rawat Kemerdekaan dan Cinta Tanah Air Dengan Akhlakul Karimah'" [level=2] [ref=e113]
+              - generic [ref=e114]:
+                - generic [ref=e115]: By Administrator
+                - generic [ref=e116]: August 29, 2025
+          - link "Uncategorized Ceramah Kocak KH. Abu Bakar Madris meski Kocak Tidak mengurangi esensi pesan yang disampaikan. By Administrator July 26, 2025" [ref=e118] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/ceramah-kocak-kh-abu-bakar-madris-meski-kocak-tidak-mengurangi-esensi-pesan-yang-disampaikan
+            - generic [ref=e121]:
+              - generic [ref=e122]: Uncategorized
+              - heading "Ceramah Kocak KH. Abu Bakar Madris meski Kocak Tidak mengurangi esensi pesan yang disampaikan." [level=2] [ref=e124]
+              - generic [ref=e125]:
+                - generic [ref=e126]: By Administrator
+                - generic [ref=e127]: July 26, 2025
+          - link "Uncategorized Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\" By Administrator November 19, 2024" [ref=e129] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/kue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+            - generic [ref=e132]:
+              - generic [ref=e133]: Uncategorized
+              - heading "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [level=2] [ref=e135]
+              - generic [ref=e136]:
+                - generic [ref=e137]: By Administrator
+                - generic [ref=e138]: November 19, 2024
+          - link "Uncategorized Pelatihan Peningkatan Kapasitas Pengelola Rumah Ibadah Tingkat Kota Depok dan Kesiapsiagaan Bencana Berbasis Rumah Ibadah Tahun 2024 By Administrator September 24, 2024" [ref=e140] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/pelatihan-peningkatan-kapasitas-pengelola-rumah-ibadah-tingkat-kota-depok-dan-kesiapsiagaan-bencana-berbasis-rumah-ibadah-tahun-2024
+            - generic [ref=e143]:
+              - generic [ref=e144]: Uncategorized
+              - heading "Pelatihan Peningkatan Kapasitas Pengelola Rumah Ibadah Tingkat Kota Depok dan Kesiapsiagaan Bencana Berbasis Rumah Ibadah Tahun 2024" [level=2] [ref=e146]
+              - generic [ref=e147]:
+                - generic [ref=e148]: By Administrator
+                - generic [ref=e149]: September 24, 2024
+          - link "Uncategorized Temu Ulama \"Meningkatkan Sinergi Ulama dan Pimpinan Ormas Islam Kota Depok\" By Administrator September 23, 2024" [ref=e151] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/temu-ulama-meningkatkan-sinergi-ulama-dan-pimpinan-ormas-islam-kota-depok
+            - generic [ref=e154]:
+              - generic [ref=e155]: Uncategorized
+              - heading "Temu Ulama \"Meningkatkan Sinergi Ulama dan Pimpinan Ormas Islam Kota Depok\"" [level=2] [ref=e157]
+              - generic [ref=e158]:
+                - generic [ref=e159]: By Administrator
+                - generic [ref=e160]: September 23, 2024
+          - link "Uncategorized Wakil Walikota Depok Imam Budi Hartono Menutup Kegiatan Pendidikan Kader Ulama (PKU) MUI Kota Depok Angkatan X By Administrator September 14, 2024" [ref=e162] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/wakil-walikota-depok-imam-budi-hartono-menutup-kegiatan-pendidikan-kader-ulama-pku-mui-kota-depok-angkatan-x
+            - generic [ref=e165]:
+              - generic [ref=e166]: Uncategorized
+              - heading "Wakil Walikota Depok Imam Budi Hartono Menutup Kegiatan Pendidikan Kader Ulama (PKU) MUI Kota Depok Angkatan X" [level=2] [ref=e168]
+              - generic [ref=e169]:
+                - generic [ref=e170]: By Administrator
+                - generic [ref=e171]: September 14, 2024
+          - link "Uncategorized Ketua Dewan Pendidikan Kota Depok H. Dedy Martoni, M.Si Hadiri Rakornas III Forum Dewan Pendidikan Indonesia di Makassar By Administrator September 12, 2024" [ref=e173] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/ketua-dewan-pendidikan-kota-depok-h-dedy-martoni-msi-hadiri-rakornas-iii-forum-dewan-pendidikan-indonesia-di-makassar
+            - generic [ref=e176]:
+              - generic [ref=e177]: Uncategorized
+              - heading "Ketua Dewan Pendidikan Kota Depok H. Dedy Martoni, M.Si Hadiri Rakornas III Forum Dewan Pendidikan Indonesia di Makassar" [level=2] [ref=e179]
+              - generic [ref=e180]:
+                - generic [ref=e181]: By Administrator
+                - generic [ref=e182]: September 12, 2024
+        - generic [ref=e184]:
+          - link "Uncategorized Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [ref=e185] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/kue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+            - generic [ref=e188]:
+              - generic [ref=e189]: Uncategorized
+              - heading "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [level=3] [ref=e191]
+          - link "Uncategorized Pelatihan Peningkatan Kapasitas Pengelola Rumah Ibadah Tingkat Kota Depok dan Kesiapsiagaan Bencana Berbasis Rumah Ibadah Tahun 2024" [ref=e192] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/pelatihan-peningkatan-kapasitas-pengelola-rumah-ibadah-tingkat-kota-depok-dan-kesiapsiagaan-bencana-berbasis-rumah-ibadah-tahun-2024
+            - generic [ref=e195]:
+              - generic [ref=e196]: Uncategorized
+              - heading "Pelatihan Peningkatan Kapasitas Pengelola Rumah Ibadah Tingkat Kota Depok dan Kesiapsiagaan Bencana Berbasis Rumah Ibadah Tahun 2024" [level=3] [ref=e198]
+      - generic [ref=e202]:
+        - link [ref=e204] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/supian-suri-buka-bbgrm-2025-ajak-warga-perkuat-budaya-gotong-royong
+          - img "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [ref=e206]
+          - paragraph [ref=e207]: By Administrator, Nov 06, 2025
+          - paragraph [ref=e208]: Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong
+        - link [ref=e210] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/khidmat-dan-meriah-maulid-di-masjid-al-barkah-itc-depok
+          - img "Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok" [ref=e212]
+          - paragraph [ref=e213]: By Administrator, Nov 02, 2025
+          - paragraph [ref=e214]: Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok
+        - link [ref=e216] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/pesan-wakil-walikota-depok-chandra-rahmansyah-pada-hari-ber-muhammadiyah
+          - img "Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah" [ref=e218]
+          - paragraph [ref=e219]: By Administrator, Aug 30, 2025
+          - paragraph [ref=e220]: Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah
+        - link [ref=e222] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/rawat-kemerdekaan-dan-cinta-tanah-air-dengan-akhlakul-karimah
+          - img "'Rawat Kemerdekaan dan Cinta Tanah Air Dengan Akhlakul Karimah'" [ref=e224]
+          - paragraph [ref=e225]: By Administrator, Aug 29, 2025
+          - paragraph [ref=e226]: "'Rawat Kemerdekaan dan Cinta Tanah Air Dengan Akhlakul Karimah'"
+        - link [ref=e228] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/ceramah-kocak-kh-abu-bakar-madris-meski-kocak-tidak-mengurangi-esensi-pesan-yang-disampaikan
+          - img "Ceramah Kocak KH. Abu Bakar Madris meski Kocak Tidak mengurangi esensi pesan yang disampaikan." [ref=e230]
+          - paragraph [ref=e231]: By Administrator, Jul 26, 2025
+          - paragraph [ref=e232]: Ceramah Kocak KH. Abu Bakar Madris meski Kocak Tidak mengurangi esensi pesan yang disampaikan.
+        - link [ref=e234] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/kue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+          - img "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [ref=e236]
+          - paragraph [ref=e237]: By Administrator, Nov 19, 2024
+          - paragraph [ref=e238]: Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset "Naik Kelas"
+        - link [ref=e240] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/pelatihan-peningkatan-kapasitas-pengelola-rumah-ibadah-tingkat-kota-depok-dan-kesiapsiagaan-bencana-berbasis-rumah-ibadah-tahun-2024
+          - img "Pelatihan Peningkatan Kapasitas Pengelola Rumah Ibadah Tingkat Kota Depok dan Kesiapsiagaan Bencana Berbasis Rumah Ibadah Tahun 2024" [ref=e242]
+          - paragraph [ref=e243]: By Administrator, Sep 24, 2024
+          - paragraph [ref=e244]: Pelatihan Peningkatan Kapasitas Pengelola Rumah Ibadah Tingkat Kota Depok dan Kesiapsiagaan Bencana Berbasis Rumah Ibadah Tahun 2024
+        - link [ref=e246] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/temu-ulama-meningkatkan-sinergi-ulama-dan-pimpinan-ormas-islam-kota-depok
+          - img "Temu Ulama \"Meningkatkan Sinergi Ulama dan Pimpinan Ormas Islam Kota Depok\"" [ref=e248]
+          - paragraph [ref=e249]: By Administrator, Sep 23, 2024
+          - paragraph [ref=e250]: Temu Ulama "Meningkatkan Sinergi Ulama dan Pimpinan Ormas Islam Kota Depok"
+        - link [ref=e252] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/wakil-walikota-depok-imam-budi-hartono-menutup-kegiatan-pendidikan-kader-ulama-pku-mui-kota-depok-angkatan-x
+          - img "Wakil Walikota Depok Imam Budi Hartono Menutup Kegiatan Pendidikan Kader Ulama (PKU) MUI Kota Depok Angkatan X" [ref=e254]
+          - paragraph [ref=e255]: By Administrator, Sep 14, 2024
+          - paragraph [ref=e256]: Wakil Walikota Depok Imam Budi Hartono Menutup Kegiatan Pendidikan Kader Ulama (PKU) MUI Kota Depok Angkatan X
+        - link [ref=e258] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/ketua-dewan-pendidikan-kota-depok-h-dedy-martoni-msi-hadiri-rakornas-iii-forum-dewan-pendidikan-indonesia-di-makassar
+          - img "Ketua Dewan Pendidikan Kota Depok H. Dedy Martoni, M.Si Hadiri Rakornas III Forum Dewan Pendidikan Indonesia di Makassar" [ref=e260]
+          - paragraph [ref=e261]: By Administrator, Sep 12, 2024
+          - paragraph [ref=e262]: Ketua Dewan Pendidikan Kota Depok H. Dedy Martoni, M.Si Hadiri Rakornas III Forum Dewan Pendidikan Indonesia di Makassar
+        - link [ref=e264] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/pengajian-ulama-dan-umaro-walikota-depok-mohammad-idris-buka-pendidikan-kader-ulama-angkatan-x
+          - 'img "Pengajian Ulama dan Umaro: Walikota Depok Mohammad Idris Buka Pendidikan Kader Ulama Angkatan X" [ref=e266]'
+          - paragraph [ref=e267]: By Administrator, Sep 06, 2024
+          - paragraph [ref=e268]: "Pengajian Ulama dan Umaro: Walikota Depok Mohammad Idris Buka Pendidikan Kader Ulama Angkatan X"
+        - link [ref=e270] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/halaqoh-dakwah-strategi-dakwah-dalam-mengatasi-fenomena-kekerasan-di-kalangan-remaja
+          - img "Halaqoh Dakwah \"Strategi Dakwah dalam Mengatasi Fenomena Kekerasan di Kalangan Remaja\"" [ref=e272]
+          - paragraph [ref=e273]: By Administrator, Sep 04, 2024
+          - paragraph [ref=e274]: Halaqoh Dakwah "Strategi Dakwah dalam Mengatasi Fenomena Kekerasan di Kalangan Remaja"
+        - link [ref=e276] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/pelantikan-anggota-dprd-kota-depok-periode-2024-2029-resmi-digelar
+          - img "Pelantikan Anggota DPRD Kota Depok Periode 2024-2029 Resmi Digelar" [ref=e278]
+          - paragraph [ref=e279]: By Administrator, Sep 03, 2024
+          - paragraph [ref=e280]: Pelantikan Anggota DPRD Kota Depok Periode 2024-2029 Resmi Digelar
+        - link [ref=e282] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/tiga-asn-di-lingkungan-pemkot-depok-terima-sk-pensiun-dari-wakil-wali-kota
+          - img "Tiga ASN di Lingkungan Pemkot Depok Terima SK Pensiun Dari Wakil Wali Kota" [ref=e284]
+          - paragraph [ref=e285]: By Administrator, Sep 02, 2024
+          - paragraph [ref=e286]: Tiga ASN di Lingkungan Pemkot Depok Terima SK Pensiun Dari Wakil Wali Kota
+        - link [ref=e288] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/blog/wakil-wali-kota-depok-ajak-asn-untuk-mengatasi-persoalan-sampah-hingga-tingkat-rt
+          - img "Wakil Wali Kota Depok Ajak ASN untuk Mengatasi Persoalan Sampah Hingga Tingkat RT" [ref=e290]
+          - paragraph [ref=e291]: By Administrator, Sep 02, 2024
+          - paragraph [ref=e292]: Wakil Wali Kota Depok Ajak ASN untuk Mengatasi Persoalan Sampah Hingga Tingkat RT
+      - generic [ref=e295]:
+        - generic [ref=e296]:
+          - heading "Recent Post" [level=2] [ref=e297]
+          - generic [ref=e298]:
+            - link "Uncategorized Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong By Administrator Nov 06, 2025" [ref=e299] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/supian-suri-buka-bbgrm-2025-ajak-warga-perkuat-budaya-gotong-royong
+              - generic [ref=e301]:
+                - generic [ref=e302]: Uncategorized
+                - heading "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [level=3] [ref=e303]
+                - paragraph [ref=e304]: By Administrator Nov 06, 2025
+            - link "Uncategorized Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok By Administrator Nov 02, 2025" [ref=e305] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/khidmat-dan-meriah-maulid-di-masjid-al-barkah-itc-depok
+              - generic [ref=e307]:
+                - generic [ref=e308]: Uncategorized
+                - heading "Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok" [level=3] [ref=e309]
+                - paragraph [ref=e310]: By Administrator Nov 02, 2025
+          - generic [ref=e311]:
+            - link [ref=e312] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/pesan-wakil-walikota-depok-chandra-rahmansyah-pada-hari-ber-muhammadiyah
+              - img "Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah" [ref=e313]
+              - generic [ref=e314]:
+                - paragraph [ref=e315]: By Administrator Aug 30, 2025
+                - heading "Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah" [level=4] [ref=e316]
+            - link [ref=e317] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/rawat-kemerdekaan-dan-cinta-tanah-air-dengan-akhlakul-karimah
+              - img "'Rawat Kemerdekaan dan Cinta Tanah Air Dengan Akhlakul Karimah'" [ref=e318]
+              - generic [ref=e319]:
+                - paragraph [ref=e320]: By Administrator Aug 29, 2025
+                - heading "'Rawat Kemerdekaan dan Cinta Tanah Air Dengan Akhlakul Karimah'" [level=4] [ref=e321]
+            - link [ref=e322] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/ceramah-kocak-kh-abu-bakar-madris-meski-kocak-tidak-mengurangi-esensi-pesan-yang-disampaikan
+              - img "Ceramah Kocak KH. Abu Bakar Madris meski Kocak Tidak mengurangi esensi pesan yang disampaikan." [ref=e323]
+              - generic [ref=e324]:
+                - paragraph [ref=e325]: By Administrator Jul 26, 2025
+                - heading "Ceramah Kocak KH. Abu Bakar Madris meski Kocak Tidak mengurangi esensi pesan yang disampaikan." [level=4] [ref=e326]
+            - link [ref=e327] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/blog/kue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+              - img "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [ref=e328]
+              - generic [ref=e329]:
+                - paragraph [ref=e330]: By Administrator Nov 19, 2024
+                - heading "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [level=4] [ref=e331]
+        - generic [ref=e332]:
+          - heading "Popular Post" [level=2] [ref=e333]
+          - list [ref=e334]:
+            - listitem [ref=e335]:
+              - generic [ref=e336]: "1"
+              - link "Uncategorized DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=e338] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                - generic [ref=e339]: Uncategorized
+                - paragraph [ref=e340]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+            - listitem [ref=e341]:
+              - generic [ref=e342]: "2"
+              - link "Uncategorized Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=e344] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
+                - generic [ref=e345]: Uncategorized
+                - paragraph [ref=e346]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+            - listitem [ref=e347]:
+              - generic [ref=e348]: "3"
+              - link "Uncategorized Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=e350] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
+                - generic [ref=e351]: Uncategorized
+                - paragraph [ref=e352]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+            - listitem [ref=e353]:
+              - generic [ref=e354]: "4"
+              - link "Uncategorized DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=e356] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
+                - generic [ref=e357]: Uncategorized
+                - paragraph [ref=e358]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+      - generic [ref=e360]:
+        - heading "Sports" [level=2] [ref=e361]
+        - generic [ref=e363]:
+          - link "Sports Earum iusto harum magni iusto. By Administrator May 10, 2026" [ref=e365] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/et-quis-aut-quidem-aut
+            - generic [ref=e367]:
+              - generic [ref=e368]: Sports
+              - heading "Earum iusto harum magni iusto." [level=3] [ref=e369]
+              - paragraph [ref=e370]: By Administrator May 10, 2026
+          - link "Sports Laboriosam quos hic optio ipsum quo ab unde. By Administrator Feb 22, 2026" [ref=e372] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/qui-aliquam-consequatur-sed-molestiae-quam-laborum
+            - generic [ref=e374]:
+              - generic [ref=e375]: Sports
+              - heading "Laboriosam quos hic optio ipsum quo ab unde." [level=3] [ref=e376]
+              - paragraph [ref=e377]: By Administrator Feb 22, 2026
+          - link "Sports In quod enim enim ut tempora quaerat. By Administrator Jan 23, 2026" [ref=e379] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/et-quia-occaecati-eius-molestiae-totam-voluptas
+            - generic [ref=e381]:
+              - generic [ref=e382]: Sports
+              - heading "In quod enim enim ut tempora quaerat." [level=3] [ref=e383]
+              - paragraph [ref=e384]: By Administrator Jan 23, 2026
+          - link "Sports Est et voluptatum enim hic laudantium et id. By Administrator Dec 05, 2025" [ref=e386] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/et-numquam-odit-similique
+            - generic [ref=e388]:
+              - generic [ref=e389]: Sports
+              - heading "Est et voluptatum enim hic laudantium et id." [level=3] [ref=e390]
+              - paragraph [ref=e391]: By Administrator Dec 05, 2025
+          - link "Sports Eaque rerum harum sed explicabo sed architecto. By Administrator Sep 13, 2025" [ref=e393] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/commodi-officia-officia-sunt-deserunt-nulla-sit-et
+            - generic [ref=e395]:
+              - generic [ref=e396]: Sports
+              - heading "Eaque rerum harum sed explicabo sed architecto." [level=3] [ref=e397]
+              - paragraph [ref=e398]: By Administrator Sep 13, 2025
+          - link "Sports Voluptatem ea velit fugit consequatur. By Administrator Sep 01, 2025" [ref=e400] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/et-animi-rerum-nesciunt-in-sint
+            - generic [ref=e402]:
+              - generic [ref=e403]: Sports
+              - heading "Voluptatem ea velit fugit consequatur." [level=3] [ref=e404]
+              - paragraph [ref=e405]: By Administrator Sep 01, 2025
+          - link "Sports Sunt voluptatem eius modi dolor. By Administrator Jul 24, 2025" [ref=e407] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/a-delectus-nihil-modi-et-expedita-et
+            - generic [ref=e409]:
+              - generic [ref=e410]: Sports
+              - heading "Sunt voluptatem eius modi dolor." [level=3] [ref=e411]
+              - paragraph [ref=e412]: By Administrator Jul 24, 2025
+          - link "Sports Sunt non et sint. By Administrator Jul 19, 2025" [ref=e414] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/blog/asperiores-nesciunt-occaecati-voluptatem-veritatis-sint-in
+            - generic [ref=e416]:
+              - generic [ref=e417]: Sports
+              - heading "Sunt non et sint." [level=3] [ref=e418]
+              - paragraph [ref=e419]: By Administrator Jul 19, 2025
+      - generic [ref=e420]:
+        - generic [ref=e421]:
+          - generic [ref=e423]:
+            - heading "Lifestyle" [level=2] [ref=e424]
+            - generic [ref=e425]:
+              - link "By Writer User May 23, 2026 Eos nobis doloremque tempore." [ref=e426] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/perferendis-est-quis-ex-veniam-animi
+                - generic [ref=e428]:
+                  - paragraph [ref=e429]: By Writer User May 23, 2026
+                  - heading "Eos nobis doloremque tempore." [level=3] [ref=e430]
+              - link "By Writer User Apr 29, 2026 Dignissimos error ea provident asperiores mollitia accusamus facilis." [ref=e431] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tenetur-minus-occaecati-animi-omnis-facilis
+                - generic [ref=e433]:
+                  - paragraph [ref=e434]: By Writer User Apr 29, 2026
+                  - heading "Dignissimos error ea provident asperiores mollitia accusamus facilis." [level=3] [ref=e435]
+              - link "By Writer User Apr 18, 2026 Veniam reiciendis consequatur iure natus perferendis voluptatem." [ref=e436] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/accusamus-officia-fuga-voluptate-reiciendis-necessitatibus
+                - generic [ref=e438]:
+                  - paragraph [ref=e439]: By Writer User Apr 18, 2026
+                  - heading "Veniam reiciendis consequatur iure natus perferendis voluptatem." [level=3] [ref=e440]
+              - link "By Writer User Mar 18, 2026 Voluptatem voluptatem deserunt velit velit quisquam ut." [ref=e441] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/corrupti-et-odit-minus-nesciunt
+                - generic [ref=e443]:
+                  - paragraph [ref=e444]: By Writer User Mar 18, 2026
+                  - heading "Voluptatem voluptatem deserunt velit velit quisquam ut." [level=3] [ref=e445]
+              - link "By Writer User Jan 17, 2026 Ducimus maxime aliquam atque harum consectetur totam." [ref=e446] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/inventore-minus-dolorem-voluptatem-in-impedit-aut-illo
+                - generic [ref=e448]:
+                  - paragraph [ref=e449]: By Writer User Jan 17, 2026
+                  - heading "Ducimus maxime aliquam atque harum consectetur totam." [level=3] [ref=e450]
+              - link "By Writer User Nov 14, 2025 Maxime exercitationem sed assumenda architecto quis minima." [ref=e451] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/voluptatem-velit-voluptas-magni-voluptatem-deleniti-est-voluptatem
+                - generic [ref=e453]:
+                  - paragraph [ref=e454]: By Writer User Nov 14, 2025
+                  - heading "Maxime exercitationem sed assumenda architecto quis minima." [level=3] [ref=e455]
+          - generic [ref=e457]:
+            - heading "Technology" [level=2] [ref=e458]
+            - generic [ref=e459]:
+              - link "Technology Fugiat dicta quod quos nostrum rerum quibusdam est. Eaque exercitationem officia sapiente dicta quisquam et et omnis. Tempora alias soluta alias officiis. Necessitatibus voluptatibus ut ex rerum reprehenderit tempora minus. Omnis sunt similique repellat sit mollitia. By Administrator Jun 04, 2026" [ref=e460] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/ut-est-aperiam-numquam-expedita
+                - generic [ref=e462]:
+                  - generic [ref=e463]: Technology
+                  - heading "Fugiat dicta quod quos nostrum rerum quibusdam est." [level=3] [ref=e464]
+                  - paragraph [ref=e465]: Eaque exercitationem officia sapiente dicta quisquam et et omnis. Tempora alias soluta alias officiis. Necessitatibus voluptatibus ut ex rerum reprehenderit tempora minus. Omnis sunt similique repellat sit mollitia.
+                  - paragraph [ref=e466]: By Administrator Jun 04, 2026
+              - link "Technology Facere iste sint accusantium itaque dolor ipsam. Maiores facere ut eveniet. Quisquam officiis officia est et aspernatur culpa eos neque. Vero omnis error voluptatem neque et nobis. Libero neque temporibus provident quo quos optio. By Administrator Apr 08, 2026" [ref=e467] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/rerum-autem-in-beatae-voluptas
+                - generic [ref=e469]:
+                  - generic [ref=e470]: Technology
+                  - heading "Facere iste sint accusantium itaque dolor ipsam." [level=3] [ref=e471]
+                  - paragraph [ref=e472]: Maiores facere ut eveniet. Quisquam officiis officia est et aspernatur culpa eos neque. Vero omnis error voluptatem neque et nobis. Libero neque temporibus provident quo quos optio.
+                  - paragraph [ref=e473]: By Administrator Apr 08, 2026
+              - link "Technology Illo minus voluptatem molestiae sapiente aliquam rerum. Et modi repudiandae beatae eos. Qui reprehenderit vel accusamus ex placeat velit. Sit soluta vitae dolorem similique explicabo ducimus. By Administrator Mar 24, 2026" [ref=e474] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/minima-et-rerum-dolores-quo-dolorem-reiciendis
+                - generic [ref=e476]:
+                  - generic [ref=e477]: Technology
+                  - heading "Illo minus voluptatem molestiae sapiente aliquam rerum." [level=3] [ref=e478]
+                  - paragraph [ref=e479]: Et modi repudiandae beatae eos. Qui reprehenderit vel accusamus ex placeat velit. Sit soluta vitae dolorem similique explicabo ducimus.
+                  - paragraph [ref=e480]: By Administrator Mar 24, 2026
+              - link "Technology Qui aliquam voluptate quia non provident saepe non. Nobis soluta modi enim culpa libero reiciendis mollitia. Aut quia fugit maxime tempora. Voluptatem molestias nulla sit ratione distinctio numquam. Vel architecto quia qui voluptatem mollitia ad. Quia eum libero vero maiores. By Administrator Dec 09, 2025" [ref=e481] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/qui-non-sapiente-sed-non
+                - generic [ref=e483]:
+                  - generic [ref=e484]: Technology
+                  - heading "Qui aliquam voluptate quia non provident saepe non." [level=3] [ref=e485]
+                  - paragraph [ref=e486]: Nobis soluta modi enim culpa libero reiciendis mollitia. Aut quia fugit maxime tempora. Voluptatem molestias nulla sit ratione distinctio numquam. Vel architecto quia qui voluptatem mollitia ad. Quia eum libero vero maiores.
+                  - paragraph [ref=e487]: By Administrator Dec 09, 2025
+          - navigation "Pagination" [ref=e489]:
+            - generic [ref=e490]: «
+            - generic [ref=e491]: "1"
+            - link "2" [ref=e492] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=2
+            - link "3" [ref=e493] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=3
+            - link "4" [ref=e494] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=4
+            - link "5" [ref=e495] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=5
+            - link "6" [ref=e496] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=6
+            - link "7" [ref=e497] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=7
+            - link "8" [ref=e498] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=8
+            - link "9" [ref=e499] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=9
+            - link "10" [ref=e500] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=10
+            - link "11" [ref=e501] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=11
+            - link "12" [ref=e502] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=12
+            - link "13" [ref=e503] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=13
+            - link "14" [ref=e504] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=14
+            - link "15" [ref=e505] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=15
+            - link "16" [ref=e506] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=16
+            - link "17" [ref=e507] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=17
+            - link "18" [ref=e508] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=18
+            - link "19" [ref=e509] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=19
+            - link "20" [ref=e510] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=20
+            - link "21" [ref=e511] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=21
+            - link "22" [ref=e512] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=22
+            - link "»" [ref=e513] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000?page=2
+        - complementary [ref=e514]:
+          - complementary [ref=e515]:
+            - heading "Latest Post" [level=2] [ref=e516]
+            - generic [ref=e517]:
+              - link [ref=e518] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/supian-suri-buka-bbgrm-2025-ajak-warga-perkuat-budaya-gotong-royong
+                - img "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [ref=e519]
+              - generic [ref=e520]: Uncategorized
+              - paragraph [ref=e521]: By Administrator Nov 06, 2025
+              - heading "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [level=3] [ref=e522]
+              - paragraph [ref=e523]: Wali Kota Depok, Supian Suri, membuka Bulan Bakti Gotong Royong Masyarakat (BBGRM) Tingkat Kota Depok Tahun 2025 di Taman Alun-alun dan Hutan Kota (Taman Albar) Wilayah Barat, Kamis (06/11/25). Dalam sambutannya, Wali Kota mengajak seluruh ele...
+              - link "Read More" [ref=e524] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/supian-suri-buka-bbgrm-2025-ajak-warga-perkuat-budaya-gotong-royong
+            - generic [ref=e525]:
+              - link [ref=e526] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/khidmat-dan-meriah-maulid-di-masjid-al-barkah-itc-depok
+                - img "Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok" [ref=e527]
+                - generic [ref=e528]:
+                  - paragraph [ref=e529]: By Administrator Nov 02, 2025
+                  - heading "Khidmat dan Meriah Maulid di masjid Al Barkah ITC Depok" [level=4] [ref=e530]
+              - link [ref=e531] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/pesan-wakil-walikota-depok-chandra-rahmansyah-pada-hari-ber-muhammadiyah
+                - img "Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah" [ref=e532]
+                - generic [ref=e533]:
+                  - paragraph [ref=e534]: By Administrator Aug 30, 2025
+                  - heading "Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah" [level=4] [ref=e535]
+            - heading "Stay Connected" [level=2] [ref=e536]
+            - generic [ref=e537]:
+              - link " 19,243 Fans Like" [ref=e538] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e539]:
+                  - generic [ref=e540]: 
+                  - text: 19,243 Fans
+                - button "Like" [ref=e541]
+              - link " 2,076 Followers Follow" [ref=e542] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e543]:
+                  - generic [ref=e544]: 
+                  - text: 2,076 Followers
+                - button "Follow" [ref=e545]
+              - link " 15,200 Followers Subscribe" [ref=e546] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e547]:
+                  - generic [ref=e548]: 
+                  - text: 15,200 Followers
+                - button "Subscribe" [ref=e549]
+            - heading "Tags" [level=2] [ref=e550]
+            - generic [ref=e551]:
+              - link "#Global" [ref=e552] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/global
+              - link "#Trending" [ref=e553] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/trending
+              - link "#Opinion" [ref=e554] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/opinion
+              - link "#Analysis" [ref=e555] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/analysis
+              - link "#Breaking News" [ref=e556] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/breaking-news
+              - link "#Featured" [ref=e557] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/featured
+              - link "#Local" [ref=e558] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/tag/local
+            - heading "Advertise" [level=2] [ref=e559]
+            - link "Advertisement":
+              - /url: "#"
+              - img "Advertisement"
+            - generic [ref=e561]:
+              - heading "Newsletter" [level=2] [ref=e562]
+              - paragraph [ref=e563]: The most important world news and events of the day.
+              - paragraph [ref=e564]: Get our daily newsletter on your inbox.
+              - generic [ref=e565]:
+                - textbox "Your email address" [ref=e566]
+                - button "Sign Up" [ref=e567]
+  - contentinfo [ref=e568]:
+    - contentinfo [ref=e569]:
+      - generic [ref=e570]:
+        - generic [ref=e571]:
+          - heading "World" [level=3] [ref=e572]
+          - list [ref=e574]:
+            - listitem [ref=e575]:
+              - link "Global Economy" [ref=e576] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e577]:
+              - link "Religion" [ref=e578] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e579]:
+              - link "Bitcoin" [ref=e580] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e581]:
+              - link "Conflict" [ref=e582] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e583]:
+              - link "Sports" [ref=e584] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e585]:
+              - link "Scandals" [ref=e586] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e587]:
+          - heading "Entertainment" [level=3] [ref=e588]
+          - list [ref=e590]:
+            - listitem [ref=e591]:
+              - link "Celebity News" [ref=e592] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e593]:
+              - link "Movies" [ref=e594] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e595]:
+              - link "Tv News" [ref=e596] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e597]:
+              - link "Music News" [ref=e598] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e599]:
+              - link "Life Style" [ref=e600] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e601]:
+              - link "Entertainment Video" [ref=e602] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e603]:
+          - heading "Health" [level=3] [ref=e604]
+          - list [ref=e606]:
+            - listitem [ref=e607]:
+              - link "Medical Research" [ref=e608] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e609]:
+              - link "Healthy Living" [ref=e610] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e611]:
+              - link "Mental Health" [ref=e612] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e613]:
+              - link "Virus Corona" [ref=e614] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e615]:
+              - link "Children's Health" [ref=e616] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e617]:
+          - heading "Business" [level=3] [ref=e618]
+          - list [ref=e620]:
+            - listitem [ref=e621]:
+              - link "Markets" [ref=e622] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e623]:
+              - link "Technology" [ref=e624] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e625]:
+              - link "Features" [ref=e626] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e627]:
+              - link "Property" [ref=e628] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e629]:
+              - link "Business Leaders" [ref=e630] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e632]:
+        - link "RET NEWS" [ref=e633] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+          - generic [ref=e634]: RET
+          - generic [ref=e637]: NEWS
+        - generic [ref=e638]:
+          - link "" [ref=e639] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=e641] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=e643] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=e645] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=e647] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e650]:
+        - generic [ref=e651]:
+          - link "Contact Us" [ref=e652] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/contact
+          - link "Terms Of Use" [ref=e653] [cursor=pointer]:
+            - /url: "#"
+          - link "Adchoice" [ref=e654] [cursor=pointer]:
+            - /url: "#"
+          - link "About Us" [ref=e655] [cursor=pointer]:
+            - /url: "#"
+          - link "Newsletters" [ref=e656] [cursor=pointer]:
+            - /url: "#"
+          - link "Sitemap" [ref=e657] [cursor=pointer]:
+            - /url: "#"
+          - link "Magrenvi Store" [ref=e658] [cursor=pointer]:
+            - /url: "#"
+        - paragraph [ref=e659]: Copyright © 2026 News and Magazine template based on Bootstrap 4 Theme by Retenvi.

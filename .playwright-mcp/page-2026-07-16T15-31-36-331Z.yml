@@ -1,0 +1,538 @@
+- generic [active] [ref=f42e1]:
+  - banner [ref=f42e2]:
+    - generic [ref=f42e4]:
+      - generic [ref=f42e5]: Kamis, 16 Juli 2026
+      - generic [ref=f42e6]:
+        - link "Contact Us" [ref=f42e7] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/contact
+        - link "Login / Register" [ref=f42e8] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/login
+        - generic [ref=f42e9]:
+          - link "Facebook" [ref=f42e10] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f42e11]: 
+          - link "Twitter" [ref=f42e12] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f42e13]: 
+          - link "Instagram" [ref=f42e14] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f42e15]: 
+    - banner [ref=f42e16]:
+      - generic [ref=f42e17]:
+        - link "RET NEWS" [ref=f42e18] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+          - generic [ref=f42e19]: RET
+          - generic [ref=f42e22]: NEWS
+        - navigation [ref=f42e23]:
+          - link "Home" [ref=f42e24] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000
+          - link "Pages" [ref=f42e27] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/pages
+          - link "About" [ref=f42e30] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/about
+          - link "News" [ref=f42e33] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/news
+          - link "Category" [ref=f42e36] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/category
+          - link "Contact" [ref=f42e37] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/contact
+        - button "Search" [ref=f42e38]:
+          - generic [ref=f42e39]: 
+  - main [ref=f42e42]:
+    - generic [ref=f42e43]:
+      - generic [ref=f42e44]:
+        - heading "Semua Artikel" [level=1] [ref=f42e45]
+        - paragraph [ref=f42e46]: Baca artikel dan berita terbaru dari kami
+      - generic [ref=f42e48]:
+        - textbox "Cari artikel..." [ref=f42e49]
+        - button "Cari" [ref=f42e50]
+      - generic [ref=f42e51]:
+        - generic [ref=f42e52]:
+          - generic [ref=f42e53]:
+            - article [ref=f42e54]:
+              - generic [ref=f42e55]:
+                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f42e57]
+                - generic [ref=f42e58]:
+                  - generic [ref=f42e59]:
+                    - generic [ref=f42e60]:
+                      - generic [ref=f42e61]: Warganet
+                      - generic [ref=f42e62]: 15 Jul 2026
+                    - heading [level=3] [ref=f42e63]:
+                      - link "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f42e64] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                    - paragraph [ref=f42e65]: "-DEPOK- Dewan Pimpinan Daerah (DPD) Forum Komunikasi Anak Bangsa (Forkabi) Kota Depok bakal menggelar kegiatan Musyawarah Daerah (Musda) untuk pemilih..."
+                  - generic [ref=f42e66]:
+                    - generic [ref=f42e67]: Administrator
+                    - link "Baca Selengkapnya →" [ref=f42e68] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+            - article [ref=f42e69]:
+              - generic [ref=f42e70]:
+                - img "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f42e72]
+                - generic [ref=f42e73]:
+                  - generic [ref=f42e74]:
+                    - generic [ref=f42e75]:
+                      - generic [ref=f42e76]: Warganet
+                      - generic [ref=f42e77]: 11 Jul 2026
+                    - heading [level=3] [ref=f42e78]:
+                      - link "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f42e79] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51
+                    - paragraph [ref=f42e80]: DEPOK-Komisi Dakwah dan Ukhuwah Majelis Ulama Indonesia (MUI) Kota Depok menggelar acara Gebyar Muharram dan Santunan Anak Yatim. Peringatan tersebut...
+                  - generic [ref=f42e81]:
+                    - generic [ref=f42e82]: Administrator
+                    - link "Baca Selengkapnya →" [ref=f42e83] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51
+            - article [ref=f42e84]:
+              - generic [ref=f42e85]:
+                - img "Ullam sit delectus nemo ut atque nobis eum." [ref=f42e87]
+                - generic [ref=f42e88]:
+                  - generic [ref=f42e89]:
+                    - generic [ref=f42e90]:
+                      - generic [ref=f42e91]: Pemerintahan
+                      - generic [ref=f42e92]: 08 Jul 2026
+                    - heading [level=3] [ref=f42e93]:
+                      - link "Ullam sit delectus nemo ut atque nobis eum." [ref=f42e94] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/architecto-sunt-sunt-fugit-optio-quibusdam
+                    - paragraph [ref=f42e95]: Sed laborum eveniet et explicabo totam et tempore. Laudantium id occaecati nihil dolorem accusamus dignissimos. Iure et et labore numquam et quia et sit. Atque aut rerum velit minus consequatur voluptas dolorem dolor.
+                  - generic [ref=f42e96]:
+                    - generic [ref=f42e97]: Editor User
+                    - link "Baca Selengkapnya →" [ref=f42e98] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/architecto-sunt-sunt-fugit-optio-quibusdam
+            - article [ref=f42e99]:
+              - generic [ref=f42e100]:
+                - img "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f42e102]
+                - generic [ref=f42e103]:
+                  - generic [ref=f42e104]:
+                    - generic [ref=f42e105]:
+                      - generic [ref=f42e106]: Warganet
+                      - generic [ref=f42e107]: 08 Jul 2026
+                    - heading [level=3] [ref=f42e108]:
+                      - link "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f42e109] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026
+                    - paragraph [ref=f42e110]: JAKARTA — Keluarga Besar Trah Kismo Djuhari menggelar agenda silaturahmi bertajuk “Dolan Bareng Ning Lampung” pada 3-5 Juli 2026. Kegiatan ini memaduk...
+                  - generic [ref=f42e111]:
+                    - generic [ref=f42e112]: Administrator
+                    - link "Baca Selengkapnya →" [ref=f42e113] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026
+            - article [ref=f42e114]:
+              - generic [ref=f42e115]:
+                - img "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f42e117]
+                - generic [ref=f42e118]:
+                  - generic [ref=f42e119]:
+                    - generic [ref=f42e120]:
+                      - generic [ref=f42e121]: Warganet
+                      - generic [ref=f42e122]: 07 Jul 2026
+                    - heading [level=3] [ref=f42e123]:
+                      - link "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f42e124] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta
+                    - paragraph [ref=f42e125]: CIPANAS, JABAR- Suasana sejuk kawasan Pangsalatan, Gunung Gede, Cibodas, Jawa Barat, menjadi saksi kebersamaan Keluarga Besar Majelis Taklim Balai War...
+                  - generic [ref=f42e126]:
+                    - generic [ref=f42e127]: Administrator
+                    - link "Baca Selengkapnya →" [ref=f42e128] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta
+            - article [ref=f42e129]:
+              - generic [ref=f42e130]:
+                - img "Iste harum cum aut error sit fuga fugit." [ref=f42e132]
+                - generic [ref=f42e133]:
+                  - generic [ref=f42e134]:
+                    - generic [ref=f42e135]:
+                      - generic [ref=f42e136]: Warganet
+                      - generic [ref=f42e137]: 07 Jul 2026
+                    - heading [level=3] [ref=f42e138]:
+                      - link "Iste harum cum aut error sit fuga fugit." [ref=f42e139] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/aliquid-eum-labore-voluptate-perferendis-earum-ab
+                    - paragraph [ref=f42e140]: Magnam voluptates harum earum odit harum. Similique enim et voluptatum culpa hic vel non asperiores. Quis quos saepe architecto cupiditate doloremque magni rem omnis.
+                  - generic [ref=f42e141]:
+                    - generic [ref=f42e142]: Editor User
+                    - link "Baca Selengkapnya →" [ref=f42e143] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/aliquid-eum-labore-voluptate-perferendis-earum-ab
+            - article [ref=f42e144]:
+              - generic [ref=f42e145]:
+                - 'img "Yeti Wulandari: Doa Lintas Agama Jadi Wujud Komitmen Polri Merawat Keberagaman" [ref=f42e147]'
+                - generic [ref=f42e148]:
+                  - generic [ref=f42e149]:
+                    - generic [ref=f42e150]:
+                      - generic [ref=f42e151]: Warganet
+                      - generic [ref=f42e152]: 03 Jul 2026
+                    - heading [level=3] [ref=f42e153]:
+                      - 'link "Yeti Wulandari: Doa Lintas Agama Jadi Wujud Komitmen Polri Merawat Keberagaman" [ref=f42e154] [cursor=pointer]':
+                        - /url: http://127.0.0.1:8000/blog/yeti-wulandari-doa-lintas-agama-jadi-wujud-komitmen-polri-merawat-keberagaman
+                    - paragraph [ref=f42e155]: Wakil Ketua DPRD Kota Depok, Yeti Wulandari, menilai doa lintas agama yang digelar Polres Metro Depok menjelang Hari Bhayangkara ke-80 merupakan wujud...
+                  - generic [ref=f42e156]:
+                    - generic [ref=f42e157]: Administrator
+                    - link "Baca Selengkapnya →" [ref=f42e158] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/yeti-wulandari-doa-lintas-agama-jadi-wujud-komitmen-polri-merawat-keberagaman
+            - article [ref=f42e159]:
+              - generic [ref=f42e160]:
+                - img "Officia hic rerum et ex temporibus." [ref=f42e162]
+                - generic [ref=f42e163]:
+                  - generic [ref=f42e164]:
+                    - generic [ref=f42e165]:
+                      - generic [ref=f42e166]: Pendidikan
+                      - generic [ref=f42e167]: 03 Jul 2026
+                    - heading [level=3] [ref=f42e168]:
+                      - link "Officia hic rerum et ex temporibus." [ref=f42e169] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/nesciunt-labore-magnam-ex-harum-voluptates-quia
+                    - paragraph [ref=f42e170]: Voluptatem modi quos quo commodi et magni et. Sint quae quod corrupti dolores dolores voluptatem.
+                  - generic [ref=f42e171]:
+                    - generic [ref=f42e172]: Editor User
+                    - link "Baca Selengkapnya →" [ref=f42e173] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/nesciunt-labore-magnam-ex-harum-voluptates-quia
+            - article [ref=f42e174]:
+              - generic [ref=f42e175]:
+                - img "Consequatur qui maxime veritatis reprehenderit exercitationem." [ref=f42e177]
+                - generic [ref=f42e178]:
+                  - generic [ref=f42e179]:
+                    - generic [ref=f42e180]:
+                      - generic [ref=f42e181]: Pendidikan
+                      - generic [ref=f42e182]: 02 Jul 2026
+                    - heading [level=3] [ref=f42e183]:
+                      - link "Consequatur qui maxime veritatis reprehenderit exercitationem." [ref=f42e184] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/minus-vel-quia-est-laudantium-voluptatem
+                    - paragraph [ref=f42e185]: Molestiae excepturi omnis doloremque sint a. Dignissimos rerum dolor enim perspiciatis quia harum nihil earum. Iste et quia eum iure. Perferendis sunt iste tempore saepe.
+                  - generic [ref=f42e186]:
+                    - generic [ref=f42e187]: Editor User
+                    - link "Baca Selengkapnya →" [ref=f42e188] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/minus-vel-quia-est-laudantium-voluptatem
+            - article [ref=f42e189]:
+              - generic [ref=f42e190]:
+                - img "Et et voluptas incidunt." [ref=f42e192]
+                - generic [ref=f42e193]:
+                  - generic [ref=f42e194]:
+                    - generic [ref=f42e195]:
+                      - generic [ref=f42e196]: Warganet
+                      - generic [ref=f42e197]: 30 Jun 2026
+                    - heading [level=3] [ref=f42e198]:
+                      - link "Et et voluptas incidunt." [ref=f42e199] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/repudiandae-nihil-odio-rerum-minus-saepe-fuga
+                    - paragraph [ref=f42e200]: Quae culpa quos iure aut officia rerum. Quasi qui commodi in impedit mollitia. Qui nobis doloremque iure eligendi. Et suscipit ducimus sint est deleniti. Atque voluptates consectetur non et possimus iusto.
+                  - generic [ref=f42e201]:
+                    - generic [ref=f42e202]: Editor User
+                    - link "Baca Selengkapnya →" [ref=f42e203] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/repudiandae-nihil-odio-rerum-minus-saepe-fuga
+            - article [ref=f42e204]:
+              - generic [ref=f42e205]:
+                - img "Dolorem reiciendis corrupti eos non nulla." [ref=f42e207]
+                - generic [ref=f42e208]:
+                  - generic [ref=f42e209]:
+                    - generic [ref=f42e210]:
+                      - generic [ref=f42e211]: Business
+                      - generic [ref=f42e212]: 28 Jun 2026
+                    - heading [level=3] [ref=f42e213]:
+                      - link "Dolorem reiciendis corrupti eos non nulla." [ref=f42e214] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/laborum-incidunt-sed-eligendi
+                    - paragraph [ref=f42e215]: Eligendi qui ad nostrum ut nam eveniet consequatur. Vitae architecto et dicta asperiores sit corrupti. Quia molestiae et quasi recusandae minima. Eaque et earum atque.
+                  - generic [ref=f42e216]:
+                    - generic [ref=f42e217]: Editor User
+                    - link "Baca Selengkapnya →" [ref=f42e218] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/laborum-incidunt-sed-eligendi
+            - article [ref=f42e219]:
+              - generic [ref=f42e220]:
+                - img "Nam tempore numquam aut sit." [ref=f42e222]
+                - generic [ref=f42e223]:
+                  - generic [ref=f42e224]:
+                    - generic [ref=f42e225]:
+                      - generic [ref=f42e226]: Pemerintahan
+                      - generic [ref=f42e227]: 28 Jun 2026
+                    - heading [level=3] [ref=f42e228]:
+                      - link "Nam tempore numquam aut sit." [ref=f42e229] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/laboriosam-explicabo-quia-quia-laudantium
+                    - paragraph [ref=f42e230]: A voluptas ad neque nemo voluptatem. Corrupti culpa non sed ipsam. Quia provident necessitatibus corrupti sed a aut. Et atque esse qui voluptatibus atque.
+                  - generic [ref=f42e231]:
+                    - generic [ref=f42e232]: Editor User
+                    - link "Baca Selengkapnya →" [ref=f42e233] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/blog/laboriosam-explicabo-quia-quia-laudantium
+          - navigation "Pagination Navigation" [ref=f42e235]:
+            - generic [ref=f42e236]:
+              - paragraph [ref=f42e238]: Showing 1 to 12 of 202 results
+              - generic [ref=f42e240]:
+                - generic "&laquo; Previous" [ref=f42e241]
+                - generic [ref=f42e245]: "1"
+                - link "Go to page 2" [ref=f42e247] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=2
+                  - text: "2"
+                - link "Go to page 3" [ref=f42e248] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=3
+                  - text: "3"
+                - link "Go to page 4" [ref=f42e249] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=4
+                  - text: "4"
+                - link "Go to page 5" [ref=f42e250] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=5
+                  - text: "5"
+                - link "Go to page 6" [ref=f42e251] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=6
+                  - text: "6"
+                - link "Go to page 7" [ref=f42e252] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=7
+                  - text: "7"
+                - link "Go to page 8" [ref=f42e253] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=8
+                  - text: "8"
+                - link "Go to page 9" [ref=f42e254] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=9
+                  - text: "9"
+                - link "Go to page 10" [ref=f42e255] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=10
+                  - text: "10"
+                - generic [ref=f42e256]: ...
+                - link "Go to page 16" [ref=f42e258] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=16
+                  - text: "16"
+                - link "Go to page 17" [ref=f42e259] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=17
+                  - text: "17"
+                - link "Next &raquo;" [ref=f42e260] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/blog/search?page=2
+        - complementary [ref=f42e263]:
+          - generic [ref=f42e264]:
+            - heading "Kategori" [level=3] [ref=f42e265]
+            - generic [ref=f42e266]:
+              - link "Politik 0" [ref=f42e267] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=politik
+                - generic [ref=f42e268]: Politik
+                - generic [ref=f42e269]: "0"
+              - link "Business 0" [ref=f42e270] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=business
+                - generic [ref=f42e271]: Business
+                - generic [ref=f42e272]: "0"
+              - link "Technology 0" [ref=f42e273] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=technology
+                - generic [ref=f42e274]: Technology
+                - generic [ref=f42e275]: "0"
+              - link "Entertainment 0" [ref=f42e276] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=entertainment
+                - generic [ref=f42e277]: Entertainment
+                - generic [ref=f42e278]: "0"
+              - link "Health 0" [ref=f42e279] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=health
+                - generic [ref=f42e280]: Health
+                - generic [ref=f42e281]: "0"
+              - link "Sports 0" [ref=f42e282] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=sports
+                - generic [ref=f42e283]: Sports
+                - generic [ref=f42e284]: "0"
+              - link "Uncategorized 0" [ref=f42e285] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=uncategorized
+                - generic [ref=f42e286]: Uncategorized
+                - generic [ref=f42e287]: "0"
+              - link "Pemerintahan 0" [ref=f42e288] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=pemerintahan
+                - generic [ref=f42e289]: Pemerintahan
+                - generic [ref=f42e290]: "0"
+              - link "Warganet 0" [ref=f42e291] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=warganet
+                - generic [ref=f42e292]: Warganet
+                - generic [ref=f42e293]: "0"
+              - link "Lifestyle 0" [ref=f42e294] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=lifestyle
+                - generic [ref=f42e295]: Lifestyle
+                - generic [ref=f42e296]: "0"
+              - link "Pendidikan 0" [ref=f42e297] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=pendidikan
+                - generic [ref=f42e298]: Pendidikan
+                - generic [ref=f42e299]: "0"
+              - link "Pemerintahan 0" [ref=f42e300] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=info-kota
+                - generic [ref=f42e301]: Pemerintahan
+                - generic [ref=f42e302]: "0"
+              - link "Warganet 0" [ref=f42e303] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=info-terkini
+                - generic [ref=f42e304]: Warganet
+                - generic [ref=f42e305]: "0"
+              - link "Pendidikan 0" [ref=f42e306] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?category=ilmu
+                - generic [ref=f42e307]: Pendidikan
+                - generic [ref=f42e308]: "0"
+          - generic [ref=f42e309]:
+            - heading "Artikel Populer" [level=3] [ref=f42e310]
+            - generic [ref=f42e311]:
+              - link [ref=f42e312] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/pemkot-depok-gelar-sholat-shubuh-jamaah-dan-kajian-bulanan-bersama-asn
+                - img "Pemkot Depok Gelar Sholat Shubuh Jama'ah dan Kajian Bulanan Bersama ASN" [ref=f42e314]
+                - generic [ref=f42e315]:
+                  - paragraph [ref=f42e316]: Pemkot Depok Gelar Sholat Shubuh Jama'ah dan Kajian Bulanan Bersama ASN
+                  - paragraph [ref=f42e317]: 0 views
+              - link [ref=f42e318] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/pelantikan-anggota-dprd-kota-depok-periode-2024-2029-resmi-digelar
+                - img "Pelantikan Anggota DPRD Kota Depok Periode 2024-2029 Resmi Digelar" [ref=f42e320]
+                - generic [ref=f42e321]:
+                  - paragraph [ref=f42e322]: Pelantikan Anggota DPRD Kota Depok Periode 2024-2029 Resmi Digelar
+                  - paragraph [ref=f42e323]: 0 views
+              - link [ref=f42e324] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/festival-depok-keren-tingkat-kecamatan-limo-resmi-dibuka-oleh-imam-budi-hartono
+                - img "Festival Depok Keren Tingkat Kecamatan Limo Resmi dibuka oleh Imam Budi Hartono" [ref=f42e326]
+                - generic [ref=f42e327]:
+                  - paragraph [ref=f42e328]: Festival Depok Keren Tingkat Kecamatan Limo Resmi dibuka oleh Imam Budi Hartono
+                  - paragraph [ref=f42e329]: 0 views
+              - link [ref=f42e330] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/seleksi-calon-peserta-pendidikan-kader-ulama-pku-mui-kota-depok-berlangsung-di-aula-gedung-mui
+                - img "Seleksi Calon Peserta Pendidikan Kader Ulama (PKU) MUI Kota Depok Berlangsung di Aula Gedung MUI" [ref=f42e332]
+                - generic [ref=f42e333]:
+                  - paragraph [ref=f42e334]: Seleksi Calon Peserta Pendidikan Kader Ulama (PKU) MUI Kota Depok Berlangsung di Aula Gedung MUI
+                  - paragraph [ref=f42e335]: 0 views
+              - link [ref=f42e336] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/komisi-hubungan-antar-ummat-beragama-mui-kota-depok-gelar-sarasehan
+                - img "Komisi Hubungan Antar Ummat Beragama MUI Kota Depok Gelar Sarasehan" [ref=f42e338]
+                - generic [ref=f42e339]:
+                  - paragraph [ref=f42e340]: Komisi Hubungan Antar Ummat Beragama MUI Kota Depok Gelar Sarasehan
+                  - paragraph [ref=f42e341]: 0 views
+          - generic [ref=f42e342]:
+            - heading "Terbaru" [level=3] [ref=f42e343]
+            - generic [ref=f42e344]:
+              - link [ref=f42e345] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                - paragraph [ref=f42e346]: 15 Jul 2026
+                - paragraph [ref=f42e347]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+              - link [ref=f42e348] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51
+                - paragraph [ref=f42e349]: 11 Jul 2026
+                - paragraph [ref=f42e350]: Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51
+              - link [ref=f42e351] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/architecto-sunt-sunt-fugit-optio-quibusdam
+                - paragraph [ref=f42e352]: 08 Jul 2026
+                - paragraph [ref=f42e353]: Ullam sit delectus nemo ut atque nobis eum.
+              - link [ref=f42e354] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026
+                - paragraph [ref=f42e355]: 08 Jul 2026
+                - paragraph [ref=f42e356]: Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026
+          - generic [ref=f42e357]:
+            - heading "Advertisement" [level=4] [ref=f42e358]
+            - paragraph [ref=f42e359]: Your Ad Here
+            - paragraph [ref=f42e360]: Contact us for advertising
+          - generic [ref=f42e361]:
+            - heading "Tag Populer" [level=3] [ref=f42e362]
+            - generic [ref=f42e363]:
+              - link "#Trending" [ref=f42e364] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=trending
+              - link "#Opinion" [ref=f42e365] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=opinion
+              - link "#Global" [ref=f42e366] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=global
+              - link "#Breaking News" [ref=f42e367] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=breaking-news
+              - link "#Analysis" [ref=f42e368] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=analysis
+              - link "#Featured" [ref=f42e369] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=featured
+              - link "#ulama" [ref=f42e370] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=ulama
+              - link "#pemkot" [ref=f42e371] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=pemkot
+              - link "#ormas islam" [ref=f42e372] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=ormas-islam
+              - link "#mui" [ref=f42e373] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/blog?tag=mui
+  - contentinfo [ref=f42e374]:
+    - contentinfo [ref=f42e375]:
+      - generic [ref=f42e376]:
+        - generic [ref=f42e377]:
+          - heading "World" [level=3] [ref=f42e378]
+          - list [ref=f42e380]:
+            - listitem [ref=f42e381]:
+              - link "Global Economy" [ref=f42e382] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e383]:
+              - link "Religion" [ref=f42e384] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e385]:
+              - link "Bitcoin" [ref=f42e386] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e387]:
+              - link "Conflict" [ref=f42e388] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e389]:
+              - link "Sports" [ref=f42e390] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e391]:
+              - link "Scandals" [ref=f42e392] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f42e393]:
+          - heading "Entertainment" [level=3] [ref=f42e394]
+          - list [ref=f42e396]:
+            - listitem [ref=f42e397]:
+              - link "Celebity News" [ref=f42e398] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e399]:
+              - link "Movies" [ref=f42e400] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e401]:
+              - link "Tv News" [ref=f42e402] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e403]:
+              - link "Music News" [ref=f42e404] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e405]:
+              - link "Life Style" [ref=f42e406] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e407]:
+              - link "Entertainment Video" [ref=f42e408] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f42e409]:
+          - heading "Health" [level=3] [ref=f42e410]
+          - list [ref=f42e412]:
+            - listitem [ref=f42e413]:
+              - link "Medical Research" [ref=f42e414] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e415]:
+              - link "Healthy Living" [ref=f42e416] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e417]:
+              - link "Mental Health" [ref=f42e418] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e419]:
+              - link "Virus Corona" [ref=f42e420] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e421]:
+              - link "Children's Health" [ref=f42e422] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f42e423]:
+          - heading "Business" [level=3] [ref=f42e424]
+          - list [ref=f42e426]:
+            - listitem [ref=f42e427]:
+              - link "Markets" [ref=f42e428] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e429]:
+              - link "Technology" [ref=f42e430] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e431]:
+              - link "Features" [ref=f42e432] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e433]:
+              - link "Property" [ref=f42e434] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f42e435]:
+              - link "Business Leaders" [ref=f42e436] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=f42e438]:
+        - link "RET NEWS" [ref=f42e439] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+          - generic [ref=f42e440]: RET
+          - generic [ref=f42e443]: NEWS
+        - generic [ref=f42e444]:
+          - link "" [ref=f42e445] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f42e447] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f42e449] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f42e451] [cursor=pointer]:
+            - /url: "#"
+          - link "" [ref=f42e453] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=f42e456]:
+        - generic [ref=f42e457]:
+          - link "Contact Us" [ref=f42e458] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/contact
+          - link "Terms Of Use" [ref=f42e459] [cursor=pointer]:
+            - /url: "#"
+          - link "Adchoice" [ref=f42e460] [cursor=pointer]:
+            - /url: "#"
+          - link "About Us" [ref=f42e461] [cursor=pointer]:
+            - /url: "#"
+          - link "Newsletters" [ref=f42e462] [cursor=pointer]:
+            - /url: "#"
+          - link "Sitemap" [ref=f42e463] [cursor=pointer]:
+            - /url: "#"
+          - link "Magrenvi Store" [ref=f42e464] [cursor=pointer]:
+            - /url: "#"
+        - paragraph [ref=f42e465]: Copyright © 2026 News and Magazine template based on Bootstrap 4 Theme by Retenvi.
