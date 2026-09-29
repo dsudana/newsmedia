@@ -1,84 +1,89 @@
-@extends('layouts.admin')
+<x-admin-layout-modern>
+    <div class="space-y-8 pr-4">
+        <!-- Hero Banner -->
+        <div class="hero-banner p-8 text-white rounded-xl shadow-lg"
+            style="background: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);">
+            <div class="relative z-10 max-w-2xl">
+                <div class="inline-block mb-4">
+                    <span class="text-xs font-semibold uppercase tracking-widest opacity-90">📢 Advertising</span>
+                </div>
+                <h1 class="text-4xl font-bold mb-3 leading-tight">Manage Your Advertisements</h1>
+                <p class="text-lg opacity-90 mb-6">Create and manage banner ads, AdSense, and custom script placements</p>
+                <a href="{{ route('admin.advertisements.create') }}"
+                    class="inline-flex px-6 py-3 bg-white text-pink-600 rounded-full font-semibold hover:bg-gray-50 transition items-center gap-2">
+                    <span>Create New Ad</span>
+                    <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
 
-@section('title', 'Kelola Iklan')
+        @if (session('success'))
+            <div class="p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg flex items-center gap-3">
+                <i class="fas fa-check-circle text-green-600"></i>
+                {{ session('success') }}
+            </div>
+        @endif
 
-@section('content')
-<div class="container mx-auto px-4 py-8">
-    <!-- Header -->
-    <div class="flex items-center justify-between mb-8">
+        <!-- Statistics -->
         <div>
-            <h1 class="text-3xl font-bold text-gray-900">Advertisements</h1>
-            <p class="text-gray-600 text-sm mt-1">Manage advertising campaigns and placements</p>
-        </div>
-        <a href="{{ route('admin.advertisements.create') }}" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition inline-flex items-center gap-2">
-            <i class="fas fa-plus"></i>New Ad
-        </a>
-    </div>
-
-    @if (session('success'))
-        <div class="mb-6 p-4 bg-green-100 text-green-800 rounded-lg flex items-center gap-3">
-            <i class="fas fa-check-circle"></i>
-            {{ session('success') }}
-        </div>
-    @endif
-
-    <!-- Stats Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <!-- Total Ads -->
-        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-blue-500">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-gray-600 text-sm font-medium">TOTAL ADS</p>
-                    <p class="text-3xl font-bold text-gray-900 mt-2">{{ $total_ads }}</p>
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">Advertisement Statistics</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Total Ads -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Total Ads</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $total_ads }}</p>
+                        </div>
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-image text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-blue-100 text-blue-600 rounded-lg p-3">
-                    <i class="fas fa-image text-2xl"></i>
+
+                <!-- Active Ads -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Active Ads</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $active_ads }}</p>
+                        </div>
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-100 to-green-50 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inactive Ads -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Inactive Ads</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $inactive_ads }}</p>
+                        </div>
+                        <div class="w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-50 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-times-circle text-gray-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placements -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Placements</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">{{ $placements_count }}</p>
+                        </div>
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-50 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-cube text-purple-600 text-xl"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Active Ads -->
-        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-green-500">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-gray-600 text-sm font-medium">ACTIVE</p>
-                    <p class="text-3xl font-bold text-green-600 mt-2">{{ $active_ads }}</p>
-                </div>
-                <div class="bg-green-100 text-green-600 rounded-lg p-3">
-                    <i class="fas fa-check-circle text-2xl"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Inactive Ads -->
-        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-gray-400">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-gray-600 text-sm font-medium">INACTIVE</p>
-                    <p class="text-3xl font-bold text-gray-600 mt-2">{{ $inactive_ads }}</p>
-                </div>
-                <div class="bg-gray-100 text-gray-600 rounded-lg p-3">
-                    <i class="fas fa-times-circle text-2xl"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Placements -->
-        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-purple-500">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-gray-600 text-sm font-medium">PLACEMENTS</p>
-                    <p class="text-3xl font-bold text-purple-600 mt-2">{{ $placements_count }}</p>
-                </div>
-                <div class="bg-purple-100 text-purple-600 rounded-lg p-3">
-                    <i class="fas fa-cube text-2xl"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Advertisements Table -->
-    <div class="bg-white rounded-lg shadow overflow-hidden">
+        <!-- Advertisements Table -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         <table class="w-full">
             <thead class="bg-gray-50 border-b">
                 <tr>
@@ -177,15 +182,16 @@
                 @endforelse
             </tbody>
         </table>
-    </div>
-
-    <!-- Pagination -->
-    @if ($advertisements->hasPages())
-        <div class="mt-6">
-            {{ $advertisements->links() }}
         </div>
-    @endif
-</div>
+
+        <!-- Pagination -->
+        @if ($advertisements->hasPages())
+            <div class="mt-6">
+                {{ $advertisements->links() }}
+            </div>
+        @endif
+    </div>
+</x-admin-layout-modern>
 
 <style>
     /* Pagination styling */
@@ -209,9 +215,9 @@
     }
 
     .pagination .active span {
-        background-color: #4f46e5;
+        background-color: #ec4899;
         color: white;
-        border-color: #4f46e5;
+        border-color: #ec4899;
     }
 
     .pagination .disabled span {
@@ -219,4 +225,3 @@
         cursor: not-allowed;
     }
 </style>
-@endsection
