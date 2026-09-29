@@ -3,6 +3,8 @@
 @section('title', 'NEWSMEDIA - Professional News Portal')
 
 @section('content')
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <!-- Top Breaking News Bar -->
     @if ($announcements->count() > 0)
         <div class="bg-slate-900 text-white py-3 sticky top-0 z-40">
@@ -20,24 +22,27 @@
     @endif
 
     <!-- Trending Topics Bar -->
-    <div class="bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-3 sticky top-12 z-30">
+    <div class="bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-3 sticky top-12 z-30" role="region" aria-label="Trending topics">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex items-center gap-3">
                 <span class="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide whitespace-nowrap shrink-0">Trending Now:</span>
                 <div class="overflow-hidden flex-1">
-                    <div class="flex gap-8 animate-marquee">
+                    <div class="flex gap-8 animate-marquee" role="marquee" aria-live="polite" aria-label="Trending articles">
                         @php
                             $trendingArticles = $latestArticles->take(6);
                         @endphp
                         @foreach ($trendingArticles as $article)
                             <a href="{{ route('blog.show', $article->slug) }}"
-                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap">
+                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 rounded px-2 py-1"
+                                title="{{ $article->title }}">
                                 {{ $article->title }}
                             </a>
                         @endforeach
                         @foreach ($trendingArticles as $article)
                             <a href="{{ route('blog.show', $article->slug) }}"
-                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap">
+                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 rounded px-2 py-1"
+                                title="{{ $article->title }}"
+                                aria-hidden="true">
                                 {{ $article->title }}
                             </a>
                         @endforeach
