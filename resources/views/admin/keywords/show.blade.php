@@ -14,10 +14,13 @@
                         class="inline-flex px-6 py-3 bg-white text-cyan-600 rounded-full font-semibold hover:bg-gray-50 transition items-center gap-2">
                         <i class="fas fa-edit"></i>Edit Keyword
                     </a>
-                    <a href="{{ route('admin.keywords.generate', $keyword) }}"
-                        class="inline-flex px-6 py-3 bg-cyan-400 text-white rounded-full font-semibold hover:bg-cyan-500 transition items-center gap-2">
-                        <i class="fas fa-sparkles"></i>Generate Article
-                    </a>
+                    <form action="{{ route('admin.keywords.generate', $keyword) }}" method="POST" class="inline">
+                        @csrf
+                        <button type="submit"
+                            class="inline-flex px-6 py-3 bg-cyan-400 text-white rounded-full font-semibold hover:bg-cyan-500 transition items-center gap-2">
+                            <i class="fas fa-sparkles"></i>Generate Article
+                        </button>
+                    </form>
                     <a href="{{ route('admin.keywords.index') }}"
                         class="inline-flex px-6 py-3 bg-white/20 text-white rounded-full font-semibold hover:bg-white/30 transition items-center gap-2">
                         <i class="fas fa-arrow-left"></i>Back to Keywords
@@ -101,9 +104,12 @@
                         <div class="text-center py-8">
                             <i class="fas fa-inbox text-4xl text-gray-300 mb-3 block"></i>
                             <p class="text-gray-500 mb-4">No articles generated yet from this keyword</p>
-                            <a href="{{ route('admin.keywords.generate', $keyword) }}" class="inline-block px-6 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition">
-                                <i class="fas fa-sparkles mr-2"></i>Generate First Article
-                            </a>
+                            <form action="{{ route('admin.keywords.generate', $keyword) }}" method="POST" class="inline">
+                                @csrf
+                                <button type="submit" class="inline-block px-6 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition">
+                                    <i class="fas fa-sparkles mr-2"></i>Generate First Article
+                                </button>
+                            </form>
                         </div>
                     @endif
                 </div>
