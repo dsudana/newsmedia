@@ -9,6 +9,7 @@ use App\Models\Tag;
 use App\Models\Announcement;
 use App\Models\Event;
 use App\Services\HomepageBuilderService;
+use Illuminate\Support\Facades\Cache;
 
 class HomepageController extends Controller
 {
@@ -34,31 +35,40 @@ class HomepageController extends Controller
             }
         }
 
-        // Get data for both modern and welcome views
-        $latestArticles = Article::published()
-            ->with(['category', 'user'])
-            ->latest('published_at')
-            ->take(20)
-            ->get();
+        // Get data for both modern and welcome views with caching
+        // Cache for 1 hour to reduce database queries
+        $latestArticles = Cache::remember('homepage_latest_articles', now()->addHours(1), function () {
+            return Article::published()
+                ->with(['category', 'user', 'comments' => fn($q) => $q->approved()])
+                ->latest('published_at')
+                ->take(20)
+                ->get();
+        });
 
-        $categories = Category::active()
-            ->with(['articles' => fn($q) => $q->published()->latest('published_at')->take(4)])
-            ->withCount('articles')
-            ->orderBy('articles_count', 'desc')
-            ->take(10)
-            ->get();
+        $categories = Cache::remember('homepage_categories', now()->addHours(1), function () {
+            return Category::active()
+                ->with(['articles' => fn($q) => $q->published()->latest('published_at')->take(4)])
+                ->withCount('articles')
+                ->orderBy('articles_count', 'desc')
+                ->take(10)
+                ->get();
+        });
 
-        // Get active announcements
-        $announcements = Announcement::active()
-            ->ordered()
-            ->take(3)
-            ->get();
+        // Get active announcements (shorter cache for more frequent updates)
+        $announcements = Cache::remember('homepage_announcements', now()->addMinutes(30), function () {
+            return Announcement::active()
+                ->ordered()
+                ->take(3)
+                ->get();
+        });
 
         // Get upcoming events
-        $upcomingEvents = Event::active()
-            ->upcoming()
-            ->take(6)
-            ->get();
+        $upcomingEvents = Cache::remember('homepage_events', now()->addHours(1), function () {
+            return Event::active()
+                ->upcoming()
+                ->take(6)
+                ->get();
+        });
 
         // Modern structured view (recommended)
         if ($viewType === 'modern') {

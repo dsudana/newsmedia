@@ -69,9 +69,15 @@
                 @if ($featured)
                     <article class="group h-96">
                         <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 h-full">
-                            <img src="{{ $featured->featured_image ? asset('storage/' . $featured->featured_image) : 'https://via.placeholder.com/1000x500?text=' . urlencode($featured->category->name) }}"
-                                alt="{{ $featured->title }}" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            @if ($featured->featured_image)
+                                <picture>
+                                    <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $featured->featured_image) }}?w=800&q=80" width="800" height="400">
+                                    <source media="(min-width: 640px)" srcset="{{ asset('storage/' . $featured->featured_image) }}?w=600&q=75" width="600" height="300">
+                                    <img src="{{ asset('storage/' . $featured->featured_image) }}?w=400&q=70" alt="{{ $featured->title }}" loading="lazy" width="400" height="200" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                </picture>
+                            @else
+                                <img src="https://via.placeholder.com/1000x500?text={{ urlencode($featured->category->name) }}" alt="{{ $featured->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            @endif
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
 
                             <div class="absolute bottom-0 left-0 right-0 p-6">
@@ -99,9 +105,14 @@
                     @foreach ($latestArticles->skip(1)->take(2) as $article)
                         <a href="{{ route('blog.show', $article->slug) }}" class="group flex h-44 hover:opacity-85 transition">
                             <div class="relative overflow-hidden rounded-lg w-40 flex-shrink-0">
-                                <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/300x300?text=' . urlencode($article->category->name ?? 'News') }}"
-                                    alt="{{ $article->title }}" loading="lazy"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                @if ($article->featured_image)
+                                    <picture>
+                                        <source media="(min-width: 640px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=200&q=80" width="200" height="200">
+                                        <img src="{{ asset('storage/' . $article->featured_image) }}?w=150&q=70" alt="{{ $article->title }}" loading="lazy" width="150" height="150" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                    </picture>
+                                @else
+                                    <img src="https://via.placeholder.com/300x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                @endif
                             </div>
                             <div class="flex-1 p-4 bg-slate-50 dark:bg-slate-800 rounded-r-lg flex flex-col justify-between">
                                 <div>
@@ -133,9 +144,15 @@
                         <a href="{{ route('blog.show', $article->slug) }}"
                             class="group flex flex-col h-full hover:opacity-85 transition">
                             <div class="relative overflow-hidden rounded-lg h-48 mb-4">
-                                <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/400x300?text=' . urlencode($article->category->name ?? 'News') }}"
-                                    alt="{{ $article->title }}" loading="lazy"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                @if ($article->featured_image)
+                                    <picture>
+                                        <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
+                                        <source media="(min-width: 640px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=300&q=75" width="300" height="225">
+                                        <img src="{{ asset('storage/' . $article->featured_image) }}?w=250&q=70" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                    </picture>
+                                @else
+                                    <img src="https://via.placeholder.com/400x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                @endif
                             </div>
                             <div class="flex-1 flex flex-col">
                                 <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide mb-2">
@@ -173,9 +190,15 @@
                                 <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
                                     <!-- Article Card with Image -->
                                     <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
-                                        <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/400x300?text=' . urlencode($article->category->name ?? 'News') }}"
-                                            alt="{{ $article->title }}" loading="lazy"
-                                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                        @if ($article->featured_image)
+                                            <picture>
+                                                <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
+                                                <source media="(min-width: 640px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=300&q=75" width="300" height="225">
+                                                <img src="{{ asset('storage/' . $article->featured_image) }}?w=250&q=70" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                            </picture>
+                                        @else
+                                            <img src="https://via.placeholder.com/400x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                        @endif
 
                                         <!-- Overlay with category badge -->
                                         <div class="absolute top-3 left-3 right-3">
@@ -235,9 +258,15 @@
                                     <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
                                         <!-- Article Card with Image -->
                                         <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
-                                            <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/400x300?text=' . urlencode($article->category->name ?? 'News') }}"
-                                                alt="{{ $article->title }}" loading="lazy"
-                                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                            @if ($article->featured_image)
+                                                <picture>
+                                                    <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
+                                                    <source media="(min-width: 640px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=300&q=75" width="300" height="225">
+                                                    <img src="{{ asset('storage/' . $article->featured_image) }}?w=250&q=70" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                                </picture>
+                                            @else
+                                                <img src="https://via.placeholder.com/400x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                            @endif
 
                                             <!-- Overlay with category badge -->
                                             <div class="absolute top-3 left-3 right-3">
