@@ -70,10 +70,15 @@
                     <article class="group h-96">
                         <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 h-full">
                             @if ($featured->featured_image)
+                                @php
+                                    $imageUrl = str_starts_with($featured->featured_image, 'http')
+                                        ? $featured->featured_image
+                                        : asset('storage/' . $featured->featured_image);
+                                @endphp
                                 <picture>
-                                    <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $featured->featured_image) }}?w=800&q=80" width="800" height="400">
-                                    <source media="(min-width: 640px)" srcset="{{ asset('storage/' . $featured->featured_image) }}?w=600&q=75" width="600" height="300">
-                                    <img src="{{ asset('storage/' . $featured->featured_image) }}?w=400&q=70" alt="{{ $featured->title }}" loading="lazy" width="400" height="200" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                    <source media="(min-width: 1024px)" srcset="{{ $imageUrl }}" width="800" height="400">
+                                    <source media="(min-width: 640px)" srcset="{{ $imageUrl }}" width="600" height="300">
+                                    <img src="{{ $imageUrl }}" alt="{{ $featured->title }}" loading="lazy" width="400" height="200" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                 </picture>
                             @else
                                 <img src="https://via.placeholder.com/1000x500?text={{ urlencode($featured->category->name) }}" alt="{{ $featured->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -106,9 +111,10 @@
                         <a href="{{ route('blog.show', $article->slug) }}" class="group flex h-44 hover:opacity-85 transition">
                             <div class="relative overflow-hidden rounded-lg w-40 flex-shrink-0">
                                 @if ($article->featured_image)
+                                    @php $imgUrl = str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image); @endphp
                                     <picture>
-                                        <source media="(min-width: 640px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=200&q=80" width="200" height="200">
-                                        <img src="{{ asset('storage/' . $article->featured_image) }}?w=150&q=70" alt="{{ $article->title }}" loading="lazy" width="150" height="150" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                        <source media="(min-width: 640px)" srcset="{{ $imgUrl }}" width="200" height="200">
+                                        <img src="{{ $imgUrl }}" alt="{{ $article->title }}" loading="lazy" width="150" height="150" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                     </picture>
                                 @else
                                     <img src="https://via.placeholder.com/300x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
@@ -145,10 +151,11 @@
                             class="group flex flex-col h-full hover:opacity-85 transition">
                             <div class="relative overflow-hidden rounded-lg h-48 mb-4">
                                 @if ($article->featured_image)
+                                    @php $imgUrl = str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image); @endphp
                                     <picture>
-                                        <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
-                                        <source media="(min-width: 640px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=300&q=75" width="300" height="225">
-                                        <img src="{{ asset('storage/' . $article->featured_image) }}?w=250&q=70" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                        <source media="(min-width: 1024px)" srcset="{{ $imgUrl }}" width="400" height="300">
+                                        <source media="(min-width: 640px)" srcset="{{ $imgUrl }}" width="300" height="225">
+                                        <img src="{{ $imgUrl }}" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                     </picture>
                                 @else
                                     <img src="https://via.placeholder.com/400x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
