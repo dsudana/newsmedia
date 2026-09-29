@@ -4,43 +4,18 @@ namespace App\Helpers;
 
 class ImageHelper
 {
-    /**
-     * Get article image URL with fallback to placeholder
-     */
-    public static function articleImage($article, $placeholder = true)
+    public static function getImageUrl($imagePath)
     {
-        if (empty($article->featured_image)) {
-            return $placeholder ? asset('images/placeholder.jpg') : null;
+        if (!$imagePath) {
+            return null;
         }
 
-        $imagePath = $article->featured_image;
-
-        // Remove leading slashes
-        $imagePath = ltrim($imagePath, '/');
-
-        // If path doesn't start with 'storage/', add it
-        if (!str_starts_with($imagePath, 'storage/')) {
-            $imagePath = 'storage/' . $imagePath;
+        // If it's already a URL, return it as-is
+        if (str_starts_with($imagePath, 'http://') || str_starts_with($imagePath, 'https://')) {
+            return $imagePath;
         }
 
-        return asset($imagePath);
-    }
-
-    /**
-     * Get image URL safely
-     */
-    public static function image($path, $placeholder = true)
-    {
-        if (empty($path)) {
-            return $placeholder ? asset('images/placeholder.jpg') : null;
-        }
-
-        $path = ltrim($path, '/');
-
-        if (!str_starts_with($path, 'storage/')) {
-            $path = 'storage/' . $path;
-        }
-
-        return asset($path);
+        // Otherwise, treat it as a file path and use asset()
+        return asset('storage/' . $imagePath);
     }
 }

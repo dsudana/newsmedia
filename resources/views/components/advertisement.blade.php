@@ -14,18 +14,21 @@
 
         @if ($ad->type === 'banner')
             {{-- Banner Image Ad --}}
+            @php
+                $imageUrl = str_starts_with($ad->image, 'http') ? $ad->image : asset('storage/' . $ad->image);
+            @endphp
             @if ($ad->url)
                 <a href="{{ $ad->url }}" target="_blank" rel="noopener noreferrer"
                     title="{{ $ad->name }}"
                     onclick="recordAdClick('{{ $ad->id }}')">
-                    <img src="{{ asset('storage/' . $ad->image) }}"
+                    <img src="{{ $imageUrl }}"
                         alt="{{ $ad->name }}"
                         class="w-full h-full object-cover hover:opacity-90 transition-opacity"
                         loading="lazy"
                         onerror="this.src='https://via.placeholder.com/{{ $width }}x{{ $height }}?text={{ urlencode($ad->name) }}'">
                 </a>
             @else
-                <img src="{{ asset('storage/' . $ad->image) }}"
+                <img src="{{ $imageUrl }}"
                     alt="{{ $ad->name }}"
                     class="w-full h-full object-cover"
                     loading="lazy"
