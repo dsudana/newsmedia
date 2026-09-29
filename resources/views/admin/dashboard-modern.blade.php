@@ -211,11 +211,11 @@
                     <p class="text-xs text-gray-500">Import posts</p>
                 </a>
 
-                <!-- Ads -->
-                <a href="{{ route('admin.ads.index') }}"
+                <!-- Advertisements -->
+                <a href="{{ route('admin.advertisements.index') }}"
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-teal-300">
                     <div class="text-3xl mb-2">📢</div>
-                    <p class="font-semibold text-gray-900 text-sm">Ads</p>
+                    <p class="font-semibold text-gray-900 text-sm">Advertisements</p>
                     <p class="text-xs text-gray-500">Manage ads</p>
                 </a>
 

@@ -16,10 +16,11 @@
 
         <!-- Search Bar -->
         <form method="GET" action="{{ route('blog.search') }}" class="flex gap-3">
-            <input type="text" name="search" placeholder="Search articles..." value="{{ request('search') }}"
-                   class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-base md:text-lg">
-            <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition transform hover:scale-105">
-                <i class="fas fa-search mr-2"></i>Search
+            <label for="search-articles" class="sr-only">Search articles</label>
+            <input type="text" id="search-articles" name="search" placeholder="Search articles..." value="{{ request('search') }}"
+                   class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 text-base md:text-lg">
+            <button type="submit" aria-label="Search articles" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition focus-visible:ring-2 ring-offset-2 ring-red-600">
+                <i class="fas fa-search mr-2" aria-hidden="true"></i>Search
             </button>
         </form>
     </div>
@@ -58,7 +59,7 @@
                             <article class="flex gap-4 p-5 border-b border-gray-200 hover:bg-gray-50 transition group cursor-pointer">
                                 <!-- Thumbnail -->
                                 <a href="{{ route('blog.show', $article->slug) }}" class="flex-shrink-0 w-24 h-24 overflow-hidden rounded">
-                                    <img src="{{ $article->image }}" alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                                    <img src="{{ $article->image }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
                                 </a>
 
                                 <!-- Content -->
@@ -158,14 +159,35 @@
                     @endif
 
                     <!-- Newsletter CTA -->
-                    <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white shadow-lg">
+                    <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white shadow-lg" x-data="{ loading: false, emailError: '', successMessage: '' }">
                         <h3 class="font-bold text-lg mb-2">Stay Updated</h3>
                         <p class="text-base text-red-100 mb-4">Get the latest news delivered to your inbox</p>
-                        <form action="{{ route('newsletter.subscribe') }}" method="POST" class="space-y-3">
+
+                        <div x-show="successMessage" x-transition class="bg-green-100 text-green-800 p-3 rounded mb-3 text-sm flex items-center gap-2">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>Subscribed successfully!</span>
+                        </div>
+
+                        <form @submit.prevent="async function(e) { this.loading = true; const form = e.target; const formData = new FormData(form); try { const response = await fetch('{{ route('newsletter.subscribe') }}', { method: 'POST', body: formData, headers: { 'X-Requested-With': 'XMLHttpRequest' } }); const data = await response.json(); if (data.success) { this.successMessage = true; form.reset(); this.emailError = ''; setTimeout(() => this.successMessage = '', 5000); } } catch (error) { this.emailError = 'Failed. Try again.'; } finally { this.loading = false; } }" class="space-y-3">
                             @csrf
-                            <input type="email" name="email" placeholder="Your email" class="w-full px-3 py-2 rounded bg-white/90 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-red-400" required>
-                            <button type="submit" class="w-full bg-white text-red-600 font-semibold py-2 rounded hover:bg-red-50 transition text-base">
-                                Subscribe
+                            <div>
+                                <label for="newsletter-email" class="sr-only">Email address</label>
+                                <input type="email" id="newsletter-email" name="email" placeholder="Your email" aria-label="Email address"
+                                    @blur="$el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($el.value) ? emailError = 'Invalid email' : emailError = ''"
+                                    :class="{'ring-2 ring-red-400': emailError}"
+                                    class="w-full px-3 py-2 rounded bg-white/90 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-red-400 disabled:opacity-50"
+                                    :disabled="loading"
+                                    required>
+                                <p x-show="emailError" class="text-red-200 text-xs mt-1">
+                                    <i class="fas fa-exclamation-circle mr-1" aria-hidden="true"></i>
+                                    <span x-text="emailError"></span>
+                                </p>
+                            </div>
+                            <button type="submit" aria-label="Subscribe to newsletter"
+                                :disabled="loading || emailError"
+                                class="w-full bg-white text-red-600 font-semibold py-2 rounded hover:bg-red-50 focus-visible:ring-2 ring-offset-2 ring-red-600 transition text-base disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
+                                <i :class="loading ? 'fas fa-spinner fa-spin' : 'fas fa-bell'" class="text-sm" aria-hidden="true"></i>
+                                <span x-text="loading ? 'Subscribing...' : 'Subscribe'"></span>
                             </button>
                         </form>
                     </div>

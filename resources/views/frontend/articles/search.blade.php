@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app-modern')
 
 @section('title', 'Search Results for ' . $query)
 

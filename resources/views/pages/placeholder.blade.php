@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $title ?? 'RET NEWS')
+@section('title', $title ?? 'NEWSMEDIA')
 @section('content')
     <div class="py-20 text-center">
         <h1 class="text-2xl font-bold text-rn-ink">{{ $title ?? 'Page' }}</h1>

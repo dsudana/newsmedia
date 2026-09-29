@@ -34,7 +34,7 @@
                             </label>
                             <input type="text" name="site_name" id="site_name"
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                value="{{ old('site_name', $settings['site_name'] ?? '') }}" placeholder="RET NEWS">
+                                value="{{ old('site_name', $settings['site_name'] ?? '') }}" placeholder="NEWSMEDIA">
                         </div>
 
                         <div>
@@ -94,7 +94,7 @@
                         <input type="text" name="footer_text" id="footer_text"
                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             value="{{ old('footer_text', $settings['footer_text'] ?? '') }}"
-                            placeholder="© 2026 RET NEWS. All rights reserved.">
+                            placeholder="© 2026 NEWSMEDIA. All rights reserved.">
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                         <input type="text" name="seo_title" id="seo_title"
                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             value="{{ old('seo_title', $settings['seo_title'] ?? '') }}"
-                            placeholder="RET NEWS - Latest News & Stories">
+                            placeholder="NEWSMEDIA - Latest News & Stories">
                     </div>
 
                     <div>
@@ -194,4 +194,4 @@
             </div>
         </form>
     </div>
-</x-x-admin-layout-modern>
+    </x-x-admin-layout-modern>

@@ -1,4 +1,4 @@
-# 🚀 RET NEWS - Feature Enhancement Roadmap
+# 🚀 NEWSMEDIA - Feature Enhancement Roadmap
 
 **Version:** 2.0 Planning  
 **Date:** July 15, 2026  
@@ -21,11 +21,13 @@
 ## 📈 Quick Wins (Week 1-2)
 
 ### 1. **Newsletter Subscription Enhancement** ⭐⭐⭐
+
 **Priority:** CRITICAL  
 **Effort:** 3-4 days  
 **Impact:** 25-30% email list growth
 
 #### What to Add:
+
 ```
 ✅ Segmented newsletters (by category/interest)
 ✅ Email templates (HTML, responsive)
@@ -37,11 +39,13 @@
 ```
 
 #### Business Impact:
+
 - Direct audience channel (not dependent on social media)
 - Recurring traffic from subscribers
 - Email list = asset worth millions
 
 **Implementation Stack:**
+
 - Mailgun/SendGrid API integration
 - Queue jobs untuk email sending
 - Segment table untuk tracking
@@ -49,11 +53,13 @@
 ---
 
 ### 2. **Social Sharing Widget** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 2-3 days  
 **Impact:** 15-20% traffic increase
 
 #### Features:
+
 ```
 ✅ Share buttons (Facebook, Twitter, WhatsApp, LinkedIn, Telegram)
 ✅ Share counter (number of shares)
@@ -63,6 +69,7 @@
 ```
 
 **Code Example:**
+
 ```blade
 <!-- Share buttons component -->
 <div class="share-buttons">
@@ -81,11 +88,13 @@
 ---
 
 ### 3. **Reading Time Indicator** ⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 1-2 days  
 **Impact:** Better UX, reduce bounce rate
 
 #### Features:
+
 ```
 ✅ Calculate reading time automatically
 ✅ Display on article card and article detail
@@ -94,6 +103,7 @@
 ```
 
 **Implementation:**
+
 ```php
 // In Article model
 public function getReadingTimeAttribute()
@@ -107,11 +117,13 @@ public function getReadingTimeAttribute()
 ---
 
 ### 4. **Related Articles** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 3-4 days  
 **Impact:** 20-25% increase in session duration
 
 #### Features:
+
 ```
 ✅ Show 5-6 related articles at bottom of post
 ✅ Based on same category
@@ -121,6 +133,7 @@ public function getReadingTimeAttribute()
 ```
 
 **Algorithm:**
+
 ```
 1. Get articles from same category (weight: 50%)
 2. Get articles with same tags (weight: 30%)
@@ -132,11 +145,13 @@ public function getReadingTimeAttribute()
 ---
 
 ### 5. **Rich Snippet/Schema Markup** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 2-3 days  
 **Impact:** 30-40% CTR increase in search results
 
 #### Features:
+
 ```
 ✅ JSON-LD schema for articles
 ✅ Author schema
@@ -146,6 +161,7 @@ public function getReadingTimeAttribute()
 ```
 
 **Implementation:**
+
 ```blade
 <!-- In article detail view -->
 <script type="application/ld+json">
@@ -162,7 +178,7 @@ public function getReadingTimeAttribute()
     },
     "publisher": {
         "@type": "Organization",
-        "name": "RET NEWS"
+        "name": "NEWSMEDIA"
     }
 }
 </script>
@@ -173,11 +189,13 @@ public function getReadingTimeAttribute()
 ## 🎯 High Impact Features (Month 1)
 
 ### 6. **Comment System** ⭐⭐⭐⭐
+
 **Priority:** CRITICAL  
 **Effort:** 5-7 days  
 **Impact:** 30-50% engagement increase
 
 #### Features:
+
 ```
 ✅ Nested comments (replies to comments)
 ✅ Comment moderation (approve/reject)
@@ -189,6 +207,7 @@ public function getReadingTimeAttribute()
 ```
 
 **Database Schema:**
+
 ```sql
 CREATE TABLE comments (
     id BIGINT PRIMARY KEY,
@@ -206,6 +225,7 @@ CREATE TABLE comments (
 ```
 
 **Business Value:**
+
 - User-generated content increases organic traffic
 - Community engagement = better rankings
 - Data on reader sentiment & interests
@@ -213,11 +233,13 @@ CREATE TABLE comments (
 ---
 
 ### 7. **User Profiles & History** ⭐⭐⭐⭐
+
 **Priority:** CRITICAL  
 **Effort:** 4-5 days  
 **Impact:** 20% user retention increase
 
 #### Features:
+
 ```
 ✅ User profile page (reading history, bookmarks, comments)
 ✅ Reading history (track viewed articles)
@@ -228,6 +250,7 @@ CREATE TABLE comments (
 ```
 
 **Implementation:**
+
 ```php
 // Reading history tracking
 class ArticleViewController extends Controller
@@ -235,14 +258,14 @@ class ArticleViewController extends Controller
     public function show($slug)
     {
         $article = Article::where('slug', $slug)->firstOrFail();
-        
+
         // Track view
         if (auth()->check()) {
             auth()->user()->readingHistory()->attach($article->id, [
                 'viewed_at' => now()
             ]);
         }
-        
+
         return view('article.show', ['article' => $article]);
     }
 }
@@ -262,11 +285,13 @@ class User extends Model
 ---
 
 ### 8. **Push Notifications** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 4-6 days  
 **Impact:** 40-50% re-engagement rate
 
 #### Features:
+
 ```
 ✅ Web push notifications (One Signal / Firebase)
 ✅ Breaking news alerts
@@ -277,6 +302,7 @@ class User extends Model
 ```
 
 **Use Cases:**
+
 - Breaking news: Send push untuk hot stories
 - Category alert: User subscribe ke Sports, langsung notif ada berita baru
 - Daily digest: Send summary tiap pagi
@@ -285,11 +311,13 @@ class User extends Model
 ---
 
 ### 9. **Video Content Support** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 5-7 days  
 **Impact:** 50-70% engagement increase
 
 #### Features:
+
 ```
 ✅ Embed YouTube/Vimeo videos in articles
 ✅ Auto-generate video thumbnail
@@ -300,6 +328,7 @@ class User extends Model
 ```
 
 **Schema:**
+
 ```php
 // Add to articles table
 $table->enum('type', ['article', 'video', 'gallery'])->default('article');
@@ -307,6 +336,7 @@ $table->string('video_url')->nullable(); // YouTube/Vimeo URL
 ```
 
 **Business Impact:**
+
 - Video gets 1200% more shares than text+image
 - Higher engagement time = better rankings
 - Video ads = higher CPM (revenue)
@@ -314,11 +344,13 @@ $table->string('video_url')->nullable(); // YouTube/Vimeo URL
 ---
 
 ### 10. **Image Gallery/Carousel** ⭐⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 3-4 days  
 **Impact:** Better visual storytelling
 
 #### Features:
+
 ```
 ✅ Multiple featured images/gallery
 ✅ Photo carousel in article detail
@@ -332,11 +364,13 @@ $table->string('video_url')->nullable(); // YouTube/Vimeo URL
 ## 📰 Content Management Enhancement (Month 1-2)
 
 ### 11. **Scheduled Publishing & Draft Management** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 3-4 days  
 **Impact:** Better content workflow
 
 #### Features:
+
 ```
 ✅ Publish at specific time/date (cron job)
 ✅ Draft auto-save (every 30 seconds)
@@ -346,6 +380,7 @@ $table->string('video_url')->nullable(); // YouTube/Vimeo URL
 ```
 
 **Implementation:**
+
 ```php
 // Schedule job untuk publish articles
 php artisan schedule:work
@@ -361,11 +396,13 @@ $schedule->call(function () {
 ---
 
 ### 12. **Article Series/Special Coverage** ⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 3-4 days  
 **Impact:** Better content organization
 
 #### Features:
+
 ```
 ✅ Create series (group related articles)
 ✅ Link articles together
@@ -377,11 +414,13 @@ $schedule->call(function () {
 ---
 
 ### 13. **Featured/Sticky Articles** ⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 2-3 days  
 **Impact:** Better content prioritization
 
 #### Features:
+
 ```
 ✅ Mark article as featured (show in special section)
 ✅ Sticky article (stay at top for X days)
@@ -392,20 +431,22 @@ $schedule->call(function () {
 ---
 
 ### 14. **Content Recommendation Engine** ⭐⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 7-10 days  
 **Impact:** 30-40% CTR increase, 50% session time
 
 #### Algorithms:
+
 ```
 1. Collaborative Filtering
    - Similar readers → similar interests
-   
+
 2. Content-Based
    - Category match
    - Tag similarity
    - Publishing time proximity
-   
+
 3. Popularity-Based
    - Trending articles (views last 24h)
    - Most shared
@@ -418,6 +459,7 @@ $schedule->call(function () {
 ```
 
 **Implementation Phase 1 (Rule-based):**
+
 ```php
 public function getRecommendedArticles($article, $limit = 6)
 {
@@ -427,16 +469,16 @@ public function getRecommendedArticles($article, $limit = 6)
         ->latest()
         ->take(3)
         ->get();
-        
+
     $tagArticles = Article::published()
-        ->whereHas('tags', fn($q) => 
+        ->whereHas('tags', fn($q) =>
             $q->whereIn('id', $article->tags->pluck('id'))
         )
         ->where('id', '!=', $article->id)
         ->latest()
         ->take(3)
         ->get();
-        
+
     return $categoryArticles->merge($tagArticles)->unique();
 }
 ```
@@ -446,11 +488,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ## 💬 Engagement & Community (Month 2-3)
 
 ### 15. **User Bookmarks/Save for Later** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 2-3 days  
 **Impact:** 15-20% repeat visits
 
 #### Features:
+
 ```
 ✅ Bookmark articles
 ✅ Manage bookmarks (list, search, filter)
@@ -462,11 +506,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ---
 
 ### 16. **Discussion Forum/Sections** ⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 5-7 days  
 **Impact:** Community building
 
 #### Features:
+
 ```
 ✅ Forum sections by category
 ✅ Thread discussions (not tied to articles)
@@ -478,11 +524,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ---
 
 ### 17. **Author Pages & Bio** ⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 2-3 days  
 **Impact:** Build author brand
 
 #### Features:
+
 ```
 ✅ Author profile page
 ✅ Author bio & social links
@@ -494,11 +542,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ---
 
 ### 18. **Trending/Popular Section** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 2-3 days  
 **Impact:** Drive traffic to popular content
 
 #### Features:
+
 ```
 ✅ Trending now (last 24h views)
 ✅ Most shared (last week)
@@ -510,11 +560,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ---
 
 ### 19. **User Ratings & Reviews** ⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 3-4 days  
 **Impact:** Content quality indicator
 
 #### Features:
+
 ```
 ✅ 5-star rating system
 ✅ User reviews/feedback
@@ -528,11 +580,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ## 💰 Monetization Features (Month 2-3)
 
 ### 20. **Advanced Ad Management** ⭐⭐⭐⭐
+
 **Priority:** CRITICAL  
 **Effort:** 5-7 days  
 **Impact:** 50-100% revenue increase
 
 #### Features:
+
 ```
 ✅ Multiple ad zones per article
 ✅ Ad scheduling (show specific times)
@@ -544,6 +598,7 @@ public function getRecommendedArticles($article, $limit = 6)
 ```
 
 **Ad Zones:**
+
 ```
 1. Header banner (728x90, 970x90)
 2. In-article (300x250, 336x280)
@@ -555,11 +610,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ---
 
 ### 21. **Premium Content/Paywall** ⭐⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 7-10 days  
 **Impact:** 20-30% revenue increase
 
 #### Features:
+
 ```
 ✅ Metered paywall (5 free articles/month)
 ✅ Article-level subscription
@@ -570,6 +627,7 @@ public function getRecommendedArticles($article, $limit = 6)
 ```
 
 **Paywall Strategy:**
+
 ```
 - Free: 5 articles/month
 - Premium: Unlimited access
@@ -579,11 +637,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ---
 
 ### 22. **Affiliate Links Manager** ⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 4-5 days  
 **Impact:** Additional revenue stream
 
 #### Features:
+
 ```
 ✅ Affiliate link tracking
 ✅ Shorten links (use bit.ly API)
@@ -596,11 +656,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ---
 
 ### 23. **Sponsored Content/Native Ads** ⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 3-4 days  
 **Impact:** Brand partnerships
 
 #### Features:
+
 ```
 ✅ Mark articles as "Sponsored"
 ✅ Custom styling untuk sponsored articles
@@ -614,11 +676,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ## 📊 Analytics & Insights (Month 3)
 
 ### 24. **Advanced Analytics Dashboard** ⭐⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 7-10 days  
 **Impact:** Data-driven decisions
 
 #### Metrics:
+
 ```
 ✅ Real-time dashboard (live visitors, pageviews)
 ✅ Article analytics (views, unique visitors, bounce rate)
@@ -631,6 +695,7 @@ public function getRecommendedArticles($article, $limit = 6)
 ```
 
 **Tools:**
+
 - Google Analytics 4 (GA4) integration
 - Custom Laravel dashboard
 - Export reports (PDF, CSV)
@@ -638,11 +703,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ---
 
 ### 25. **Reader Analytics** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 5-7 days  
 **Impact:** Understand audience
 
 #### Features:
+
 ```
 ✅ Reader demographics (age, gender, location)
 ✅ Reader interests (based on reading history)
@@ -654,11 +721,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ---
 
 ### 26. **Content Performance Reports** ⭐⭐⭐
+
 **Priority:** HIGH  
 **Effort:** 4-5 days  
 **Impact:** Content optimization
 
 #### Reports:
+
 ```
 ✅ Top performing articles
 ✅ Worst performing articles
@@ -674,11 +743,13 @@ public function getRecommendedArticles($article, $limit = 6)
 ## 🚀 Performance & SEO (Ongoing)
 
 ### 27. **SEO Optimization Suite** ⭐⭐⭐⭐
+
 **Priority:** CRITICAL  
 **Effort:** 7-10 days (ongoing)  
 **Impact:** 50-100% organic traffic increase
 
 #### Features:
+
 ```
 ✅ SEO meta fields validation
 ✅ Readability score (Flesch-Kincaid)
@@ -692,6 +763,7 @@ public function getRecommendedArticles($article, $limit = 6)
 ```
 
 **Implementation:**
+
 ```php
 // SEO Helper Class
 class SEOHelper
@@ -702,13 +774,13 @@ class SEOHelper
             'title_length' => strlen($article->title) <= 60,
             'meta_description' => strlen($article->meta_description) <= 160,
             'keyword_in_title' => str_contains(
-                strtolower($article->title), 
+                strtolower($article->title),
                 strtolower($article->keyword ?? '')
             ),
             'has_internal_links' => preg_match_all('/href=/', $article->content) >= 2,
             'readability_score' => self::calculateReadability($article->content) >= 60,
         ];
-        
+
         return $validations;
     }
 }
@@ -717,11 +789,13 @@ class SEOHelper
 ---
 
 ### 28. **Performance Optimization** ⭐⭐⭐⭐
+
 **Priority:** CRITICAL  
 **Effort:** Ongoing  
 **Impact:** 50% faster = 20% more conversions
 
 #### Features:
+
 ```
 ✅ Image optimization (WebP, compression)
 ✅ Lazy loading (images, iframes)
@@ -736,11 +810,13 @@ class SEOHelper
 ---
 
 ### 29. **Mobile App (Native or PWA)** ⭐⭐⭐
+
 **Priority:** MEDIUM-HIGH  
 **Effort:** 15-20 days  
 **Impact:** Massive engagement increase
 
 #### Options:
+
 ```
 1. Progressive Web App (PWA) - 10-12 days
    - Offline reading
@@ -756,6 +832,7 @@ class SEOHelper
 ```
 
 **PWA Features:**
+
 ```
 ✅ Install as app
 ✅ Offline support
@@ -768,11 +845,13 @@ class SEOHelper
 ---
 
 ### 30. **Internationalization (i18n)** ⭐⭐
+
 **Priority:** MEDIUM  
 **Effort:** 5-7 days  
 **Impact:** Expand to new markets
 
 #### Features:
+
 ```
 ✅ Multi-language support (Indonesian, English, etc.)
 ✅ Language switcher
@@ -786,6 +865,7 @@ class SEOHelper
 ## 📊 Implementation Priority Matrix
 
 ### Quick Wins (Week 1-2) - Start Here
+
 ```
 1. Newsletter Enhancement        | Effort: 3-4d | Impact: ⭐⭐⭐ | Revenue: $$$
 2. Social Sharing                | Effort: 2-3d | Impact: ⭐⭐⭐ | Traffic: ↑↑↑
@@ -795,6 +875,7 @@ class SEOHelper
 ```
 
 ### Month 1 - Core Features
+
 ```
 6. Comment System                | Effort: 5-7d | Impact: ⭐⭐⭐⭐ | Engagement: ↑↑↑↑
 7. User Profiles                 | Effort: 4-5d | Impact: ⭐⭐⭐⭐ | Retention: ↑↑↑
@@ -806,6 +887,7 @@ class SEOHelper
 ```
 
 ### Month 2-3 - Monetization & Advanced
+
 ```
 13. Advanced Ad Management       | Effort: 5-7d | Impact: ⭐⭐⭐⭐ | Revenue: $$$$$
 14. Paywall/Premium Content      | Effort: 7-10d| Impact: ⭐⭐⭐ | Revenue: $$$$$
@@ -819,6 +901,7 @@ class SEOHelper
 ## 💰 Revenue Impact Projection
 
 ### Year 1 Conservative Estimate
+
 ```
 Current (No features):     $5,000/month (Google Ads only)
 
@@ -849,6 +932,7 @@ After Phase 3 (Monetization):
 ## 🎯 Recommended Implementation Timeline
 
 ### Phase 1: Foundation (Week 1-2)
+
 ```
 Week 1:
 - Newsletter enhancement
@@ -862,6 +946,7 @@ Week 2:
 ```
 
 ### Phase 2: Core (Month 1)
+
 ```
 Week 1-2:
 - Comment system
@@ -874,6 +959,7 @@ Week 3-4:
 ```
 
 ### Phase 3: Monetization (Month 2-3)
+
 ```
 Month 2:
 - Advanced ad management
@@ -891,6 +977,7 @@ Month 3:
 ## 📋 Resource Requirements
 
 ### Team Size Recommendation
+
 ```
 For implementing all features (6 months):
 - 1 Project Manager
@@ -902,6 +989,7 @@ For implementing all features (6 months):
 ```
 
 ### Budget Estimate
+
 ```
 Development:        $150,000 - $200,000
 Infrastructure:     $5,000 - $10,000/month
@@ -912,6 +1000,7 @@ Total Year 1:       $300,000 - $500,000
 ```
 
 ### Expected ROI
+
 ```
 Year 1 Revenue:     $432,000 - $600,000 (conservative)
 Year 1 Cost:        $300,000 - $500,000
@@ -923,6 +1012,7 @@ Net Profit:         $132,000 - $300,000
 ## 🏆 Success Metrics to Track
 
 ### Traffic & Engagement
+
 ```
 ✅ Unique visitors/month
 ✅ Page views/session
@@ -933,6 +1023,7 @@ Net Profit:         $132,000 - $300,000
 ```
 
 ### Monetization
+
 ```
 ✅ RPM (Revenue per mille)
 ✅ CPM (Cost per mille)
@@ -942,6 +1033,7 @@ Net Profit:         $132,000 - $300,000
 ```
 
 ### Content
+
 ```
 ✅ Articles published/month
 ✅ Average article views
@@ -950,6 +1042,7 @@ Net Profit:         $132,000 - $300,000
 ```
 
 ### Community
+
 ```
 ✅ Comment count
 ✅ User registration rate
@@ -969,7 +1062,7 @@ Net Profit:         $132,000 - $300,000
 
 ---
 
-**Ready to transform RET NEWS into a powerhouse news platform? Let's go! 🚀**
+**Ready to transform NEWSMEDIA into a powerhouse news platform? Let's go! 🚀**
 
 Questions? Contact the development team.
 

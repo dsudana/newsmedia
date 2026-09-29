@@ -7,7 +7,10 @@
             <a href="#" class="hover:text-red-600 transition">Contact Us</a>
             <div class="flex items-center gap-3">
                 @auth
-                    <a href="{{ route('logout') }}" class="hover:text-red-600 transition">{{ Auth::user()->name }}</a>
+                    <form method="POST" action="{{ route('logout') }}" class="inline-block">
+                        @csrf
+                        <button type="submit" class="hover:text-red-600 transition bg-transparent border-none cursor-pointer text-white text-xs p-0">{{ Auth::user()->name }}</button>
+                    </form>
                 @else
                     <a href="{{ route('login') }}" class="hover:text-red-600 transition">Login</a>
                     <span>/</span>

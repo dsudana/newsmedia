@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RET NEWS - Latest News & Stories</title>
+        <title>NEWSMEDIA - Latest News & Stories</title>
         @vite('resources/css/app.css')
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
@@ -36,9 +36,9 @@
             <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center gap-1">
-                    <span class="text-2xl font-black text-black">RET</span>
+                    <span class="text-2xl font-black text-black">NEWS</span>
                     <span class="text-2xl font-black">
-                        <i class="fas fa-bolt text-red-600"></i><span class="text-red-600">NEWS</span>
+                        <i class="fas fa-bolt text-red-600"></i><span class="text-red-600">MEDIA</span>
                     </span>
                 </div>
 
@@ -329,9 +329,9 @@
                 <!-- Footer Bottom -->
                 <div class="border-t border-gray-800 pt-8 flex items-center justify-between">
                     <div class="flex items-center gap-1">
-                        <span class="text-xl font-black text-white">RET</span>
+                        <span class="text-xl font-black text-white">NEWS</span>
                         <i class="fas fa-bolt text-red-600 text-xl"></i><span
-                            class="text-xl font-black text-red-600">NEWS</span>
+                            class="text-xl font-black text-red-600">MEDIA</span>
                     </div>
                     <div class="flex items-center gap-4">
                         <a href="#" class="text-gray-400 hover:text-red-600"><i

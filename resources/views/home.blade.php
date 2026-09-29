@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'RET NEWS - World News & Magazine')
+@section('title', 'NEWSMEDIA - World News & Magazine')
 
 @section('content')
 

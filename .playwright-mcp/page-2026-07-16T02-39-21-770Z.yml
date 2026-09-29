@@ -1,294 +1,294 @@
 - generic [active] [ref=f13e1]:
-  - banner [ref=f13e2]:
-    - generic [ref=f13e4]:
-      - generic [ref=f13e5]: Kamis, 16 Juli 2026
-      - generic [ref=f13e6]:
-        - link "Contact Us" [ref=f13e7] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000/contact
-        - link "Login / Register" [ref=f13e8] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000/login
-        - generic [ref=f13e9]:
-          - link "Facebook" [ref=f13e10] [cursor=pointer]:
-            - /url: "#"
-            - generic [ref=f13e11]: 
-          - link "Twitter" [ref=f13e12] [cursor=pointer]:
-            - /url: "#"
-            - generic [ref=f13e13]: 
-          - link "Instagram" [ref=f13e14] [cursor=pointer]:
-            - /url: "#"
-            - generic [ref=f13e15]: 
-    - banner [ref=f13e16]:
-      - generic [ref=f13e17]:
-        - link "RET NEWS" [ref=f13e18] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000
-          - generic [ref=f13e19]: RET
-          - generic [ref=f13e22]: NEWS
-        - button "Search" [ref=f13e23]:
-          - generic [ref=f13e24]: 
-  - main [ref=f13e27]:
-    - generic [ref=f13e30]:
-      - article [ref=f13e32]:
-        - img "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [ref=f13e34]
-        - link "Uncategorized" [ref=f13e36] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000/blog/kategori/uncategorized
-        - heading "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [level=1] [ref=f13e37]
-        - generic [ref=f13e38]:
-          - generic [ref=f13e39]:
-            - generic [ref=f13e40]: A
-            - generic [ref=f13e42]:
-              - paragraph [ref=f13e43]: Administrator
-              - paragraph [ref=f13e44]: Author
-          - paragraph [ref=f13e46]: Nov 19, 2024
-          - paragraph [ref=f13e48]: 2 min read
-          - paragraph [ref=f13e50]:
-            - generic [ref=f13e51]: 
-            - text: 23 views
-        - generic [ref=f13e52]: Dalam rangka memberikan fasilitas akses pasar yang lebih luas, para pendamping program Wirausaha Baru (WUB) kota Depok membuat beberapa terobosan, salah satunya dengan hadirnya outlet "Kue Subuh JUARA". Kue Subuh JUARA yang buka setiap pagi...
-        - generic [ref=f13e53]: <figure class="wp-block-gallery has-nested-images columns-default is-cropped"> <figure class="wp-block-image size-large"><img src="https://margondatv.com/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-05.56.48-1024x611.jpeg" alt="" class="wp-image-552"/></figure> </figure> <p></p> <p>Dalam rangka memberikan fasilitas akses pasar yang lebih luas, para pendamping program Wirausaha Baru (WUB) kota Depok membuat beberapa terobosan, salah satunya dengan hadirnya outlet "Kue Subuh JUARA".</p> <p>Kue Subuh JUARA yang buka setiap pagi dan berada di Jl Asmawi Beji ini mengusung konsep yang berbeda dari kue subuh kebanyakan, dari sisi produk, branding, hingga supplier. Di bulan pertama berjalan, omsetnya sudah mencapai 4juta per harinya.</p> <p>"Produk yang dijual di Kue Subuh JUARA semuanya sudah melalui tahapan kurasi (seleksi) produk. Proses kurasinya meliputi keunikan produk, kualitas rasa, kemasan, harga, dan lainnya" jelas Muhammad Iman, Pendamping WUB Kelurahan Beji Timur yang juga koordinator Kue Subuh Juara.</p> <p>Iman menjelaskan, bahwa penanggung jawab kurasi produk adalah ibu Dewi, pendamping WUB yang juga merupakan pengajar cooking class, sehingga produk para supplier bisa diperbaiki terus menerus.</p> <p>Supplier di Kue Subuh JUARA juga hampir seluruhnya adalah peserta WUB, yang telah mengikuti berbagai pelatihan dan memiliki legalitas seperti NIB, Halal, dan PIRT.</p> <p>"Disini jadi semacam inkubator bisnis, ada yang merubah total produknya, dari belum ada penjualan sampai sekarang selalu habis dagangannya, ada yg jadi nambah karyawan, juga ada yang jadi bisa bantu keluarga. Yang penting mindsetnya mau belajar dan berubah." jelas Iman.</p> <p>Selain itu, strategi branding juga dilakukan agar para UMKM bisa "naik kelas". Saat ini mereka sudah mulai terima orderan besar, snack box, dengan brand JUARA.</p> <p>"Produk-produk pilihan dibranding, dikasih rekomendasi, kemasan diperbaiki. Ada produk UMKM yang sudah jadi unggulan seperti kue soes, pastel, arem-arem, sampai lontong sayur, yang favorit di Kue Subuh JUARA. Dijamin enak dan beda!", tutup Iman.</p> <p></p>
-        - generic [ref=f13e54]:
-          - paragraph [ref=f13e55]: Share This Article
-          - generic [ref=f13e56]:
-            - link " Facebook" [ref=f13e57] [cursor=pointer]:
-              - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fkue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
-              - generic [ref=f13e58]: 
-              - text: Facebook
-            - link " Twitter" [ref=f13e59] [cursor=pointer]:
-              - /url: https://twitter.com/intent/tweet?url=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fkue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas&text=Kue+Subuh+JUARA%2C+Fasilitasi+Alumni+WUB+agar+Produk+dan+Omset+%22Naik+Kelas%22
-              - generic [ref=f13e60]: 
-              - text: Twitter
-            - link " LinkedIn" [ref=f13e61] [cursor=pointer]:
-              - /url: https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fkue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
-              - generic [ref=f13e62]: 
-              - text: LinkedIn
-            - link " WhatsApp" [ref=f13e63] [cursor=pointer]:
-              - /url: https://wa.me/?text=Kue+Subuh+JUARA%2C+Fasilitasi+Alumni+WUB+agar+Produk+dan+Omset+%22Naik+Kelas%22+http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fkue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
-              - generic [ref=f13e64]: 
-              - text: WhatsApp
-            - button " Copy Link" [ref=f13e65]:
-              - generic [ref=f13e66]: 
-              - text: Copy Link
-        - generic [ref=f13e67]:
-          - link [ref=f13e68] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/blog/peringatan-maulid-nabi-muhammad-saw-di-masjid-al-barkah-itc-depok-berlangsung-meriah-NVoByx
-            - paragraph [ref=f13e69]: "â†\x90 Previous Article"
-            - paragraph [ref=f13e70]: Peringatan Maulid Nabi Muhammad SAW di Masjid Al Barkah ITC Depok Berlangsung Meriah
-          - link [ref=f13e71] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/blog/ketua-dewan-pendidikan-kota-depok-dedy-martoni-berikan-pencerahan-dalam-workshop-sinergitas-orang-tua-sekolah-dan-komite-sekolah-dalam-membina-gen-z
-            - paragraph [ref=f13e72]: Next Article â†’
-            - paragraph [ref=f13e73]: Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z
-        - generic [ref=f13e74]:
-          - heading "Comments (0)" [level=2] [ref=f13e75]
-          - paragraph [ref=f13e76]: No comments yet. Be the first to comment!
-          - generic [ref=f13e77]:
-            - heading "Leave a Comment" [level=3] [ref=f13e78]
-            - generic [ref=f13e79]:
-              - generic [ref=f13e80]:
-                - generic [ref=f13e81]:
-                  - generic [ref=f13e82]: Your Name *
-                  - textbox "John Doe" [ref=f13e83]
-                - generic [ref=f13e84]:
-                  - generic [ref=f13e85]: Your Email *
-                  - textbox "john@example.com" [ref=f13e86]
-              - generic [ref=f13e87]:
-                - generic [ref=f13e88]: Website
-                - textbox "https://example.com" [ref=f13e89]
-              - generic [ref=f13e90]:
-                - generic [ref=f13e91]: Comment *
-                - textbox "Share your thoughts..." [ref=f13e92]
-              - generic [ref=f13e93]:
-                - checkbox "Save my name, email, and website in this browser for the next time I comment." [ref=f13e94]
-                - generic [ref=f13e95]: Save my name, email, and website in this browser for the next time I comment.
-              - button "Post Comment" [ref=f13e96]
-      - complementary [ref=f13e97]:
-        - generic [ref=f13e98]:
-          - generic [ref=f13e100]:
-            - textbox "Search articles..." [ref=f13e101]
-            - button "" [ref=f13e102]
-          - generic [ref=f13e104]:
-            - heading "Related Articles" [level=3] [ref=f13e105]
-            - generic [ref=f13e106]:
-              - link [ref=f13e107] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
-                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f13e109]
-                - paragraph [ref=f13e110]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
-                - paragraph [ref=f13e111]: Jul 15, 2026
-              - link [ref=f13e112] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
-                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f13e114]
-                - paragraph [ref=f13e115]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
-                - paragraph [ref=f13e116]: Jul 15, 2026
-              - link [ref=f13e117] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
-                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f13e119]
-                - paragraph [ref=f13e120]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
-                - paragraph [ref=f13e121]: Jul 15, 2026
-              - link [ref=f13e122] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
-                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f13e124]
-                - paragraph [ref=f13e125]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
-                - paragraph [ref=f13e126]: Jul 15, 2026
-          - generic [ref=f13e127]:
-            - heading "Stay Connected" [level=3] [ref=f13e128]
-            - paragraph [ref=f13e129]: Get the latest news delivered to your inbox
-            - generic [ref=f13e130]:
-              - textbox "Your email address" [ref=f13e131]
-              - button "Subscribe" [ref=f13e132]
-          - generic [ref=f13e133]:
-            - heading "Recent Articles" [level=3] [ref=f13e134]
-            - generic [ref=f13e135]:
-              - link [ref=f13e136] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
-                - paragraph [ref=f13e137]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
-                - paragraph [ref=f13e138]: Jul 15, 2026
-              - link [ref=f13e139] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
-                - paragraph [ref=f13e140]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
-                - paragraph [ref=f13e141]: Jul 15, 2026
-              - link [ref=f13e142] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
-                - paragraph [ref=f13e143]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
-                - paragraph [ref=f13e144]: Jul 15, 2026
-              - link [ref=f13e145] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
-                - paragraph [ref=f13e146]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
-                - paragraph [ref=f13e147]: Jul 15, 2026
-              - link [ref=f13e148] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51-Pe64au
-                - paragraph [ref=f13e149]: Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51
-                - paragraph [ref=f13e150]: Jul 11, 2026
-          - generic [ref=f13e151]:
-            - heading "Popular Tags" [level=3] [ref=f13e152]
-            - generic [ref=f13e153]:
-              - link "#Global" [ref=f13e154] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/tag/global
-              - link "#Trending" [ref=f13e155] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/tag/trending
-              - link "#Opinion" [ref=f13e156] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/tag/opinion
-              - link "#Analysis" [ref=f13e157] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/tag/analysis
-              - link "#Breaking News" [ref=f13e158] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/tag/breaking-news
-              - link "#Featured" [ref=f13e159] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/tag/featured
-              - link "#Local" [ref=f13e160] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/tag/local
-          - generic [ref=f13e161]:
-            - paragraph [ref=f13e162]: Advertisement
-            - generic [ref=f13e163]:
-              - paragraph [ref=f13e164]: Your Ad Here
-              - paragraph [ref=f13e165]: Advertisement space available
-  - contentinfo [ref=f13e166]:
-    - contentinfo [ref=f13e167]:
-      - generic [ref=f13e168]:
-        - generic [ref=f13e169]:
-          - heading "World" [level=3] [ref=f13e170]
-          - list [ref=f13e172]:
-            - listitem [ref=f13e173]:
-              - link "Global Economy" [ref=f13e174] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e175]:
-              - link "Religion" [ref=f13e176] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e177]:
-              - link "Bitcoin" [ref=f13e178] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e179]:
-              - link "Conflict" [ref=f13e180] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e181]:
-              - link "Sports" [ref=f13e182] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e183]:
-              - link "Scandals" [ref=f13e184] [cursor=pointer]:
-                - /url: "#"
-        - generic [ref=f13e185]:
-          - heading "Entertainment" [level=3] [ref=f13e186]
-          - list [ref=f13e188]:
-            - listitem [ref=f13e189]:
-              - link "Celebity News" [ref=f13e190] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e191]:
-              - link "Movies" [ref=f13e192] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e193]:
-              - link "Tv News" [ref=f13e194] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e195]:
-              - link "Music News" [ref=f13e196] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e197]:
-              - link "Life Style" [ref=f13e198] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e199]:
-              - link "Entertainment Video" [ref=f13e200] [cursor=pointer]:
-                - /url: "#"
-        - generic [ref=f13e201]:
-          - heading "Health" [level=3] [ref=f13e202]
-          - list [ref=f13e204]:
-            - listitem [ref=f13e205]:
-              - link "Medical Research" [ref=f13e206] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e207]:
-              - link "Healthy Living" [ref=f13e208] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e209]:
-              - link "Mental Health" [ref=f13e210] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e211]:
-              - link "Virus Corona" [ref=f13e212] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e213]:
-              - link "Children's Health" [ref=f13e214] [cursor=pointer]:
-                - /url: "#"
-        - generic [ref=f13e215]:
-          - heading "Business" [level=3] [ref=f13e216]
-          - list [ref=f13e218]:
-            - listitem [ref=f13e219]:
-              - link "Markets" [ref=f13e220] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e221]:
-              - link "Technology" [ref=f13e222] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e223]:
-              - link "Features" [ref=f13e224] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e225]:
-              - link "Property" [ref=f13e226] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f13e227]:
-              - link "Business Leaders" [ref=f13e228] [cursor=pointer]:
-                - /url: "#"
-      - generic [ref=f13e230]:
-        - link "RET NEWS" [ref=f13e231] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000
-          - generic [ref=f13e232]: RET
-          - generic [ref=f13e235]: NEWS
-        - generic [ref=f13e236]:
-          - link "" [ref=f13e237] [cursor=pointer]:
-            - /url: "#"
-          - link "" [ref=f13e239] [cursor=pointer]:
-            - /url: "#"
-          - link "" [ref=f13e241] [cursor=pointer]:
-            - /url: "#"
-          - link "" [ref=f13e243] [cursor=pointer]:
-            - /url: "#"
-          - link "" [ref=f13e245] [cursor=pointer]:
-            - /url: "#"
-      - generic [ref=f13e248]:
-        - generic [ref=f13e249]:
-          - link "Contact Us" [ref=f13e250] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/contact
-          - link "Terms Of Use" [ref=f13e251] [cursor=pointer]:
-            - /url: "#"
-          - link "Adchoice" [ref=f13e252] [cursor=pointer]:
-            - /url: "#"
-          - link "About Us" [ref=f13e253] [cursor=pointer]:
-            - /url: "#"
-          - link "Newsletters" [ref=f13e254] [cursor=pointer]:
-            - /url: "#"
-          - link "Sitemap" [ref=f13e255] [cursor=pointer]:
-            - /url: "#"
-          - link "Magrenvi Store" [ref=f13e256] [cursor=pointer]:
-            - /url: "#"
-        - paragraph [ref=f13e257]: Copyright © 2026 News and Magazine template based on Bootstrap 4 Theme by Retenvi.
+    - banner [ref=f13e2]:
+        - generic [ref=f13e4]:
+            - generic [ref=f13e5]: Kamis, 16 Juli 2026
+            - generic [ref=f13e6]:
+                - link "Contact Us" [ref=f13e7] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/contact
+                - link "Login / Register" [ref=f13e8] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/login
+                - generic [ref=f13e9]:
+                    - link "Facebook" [ref=f13e10] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f13e11]: 
+                    - link "Twitter" [ref=f13e12] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f13e13]: 
+                    - link "Instagram" [ref=f13e14] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f13e15]: 
+        - banner [ref=f13e16]:
+            - generic [ref=f13e17]:
+                - link "NEWSMEDIA" [ref=f13e18] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000
+                    - generic [ref=f13e19]: RET
+                    - generic [ref=f13e22]: NEWS
+                - button "Search" [ref=f13e23]:
+                    - generic [ref=f13e24]: 
+    - main [ref=f13e27]:
+        - generic [ref=f13e30]:
+            - article [ref=f13e32]:
+                - img "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [ref=f13e34]
+                - link "Uncategorized" [ref=f13e36] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/blog/kategori/uncategorized
+                - heading "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [level=1] [ref=f13e37]
+                - generic [ref=f13e38]:
+                    - generic [ref=f13e39]:
+                        - generic [ref=f13e40]: A
+                        - generic [ref=f13e42]:
+                            - paragraph [ref=f13e43]: Administrator
+                            - paragraph [ref=f13e44]: Author
+                    - paragraph [ref=f13e46]: Nov 19, 2024
+                    - paragraph [ref=f13e48]: 2 min read
+                    - paragraph [ref=f13e50]:
+                        - generic [ref=f13e51]: 
+                        - text: 23 views
+                - generic [ref=f13e52]: Dalam rangka memberikan fasilitas akses pasar yang lebih luas, para pendamping program Wirausaha Baru (WUB) kota Depok membuat beberapa terobosan, salah satunya dengan hadirnya outlet "Kue Subuh JUARA". Kue Subuh JUARA yang buka setiap pagi...
+                - generic [ref=f13e53]: <figure class="wp-block-gallery has-nested-images columns-default is-cropped"> <figure class="wp-block-image size-large"><img src="https://margondatv.com/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-05.56.48-1024x611.jpeg" alt="" class="wp-image-552"/></figure> </figure> <p></p> <p>Dalam rangka memberikan fasilitas akses pasar yang lebih luas, para pendamping program Wirausaha Baru (WUB) kota Depok membuat beberapa terobosan, salah satunya dengan hadirnya outlet "Kue Subuh JUARA".</p> <p>Kue Subuh JUARA yang buka setiap pagi dan berada di Jl Asmawi Beji ini mengusung konsep yang berbeda dari kue subuh kebanyakan, dari sisi produk, branding, hingga supplier. Di bulan pertama berjalan, omsetnya sudah mencapai 4juta per harinya.</p> <p>"Produk yang dijual di Kue Subuh JUARA semuanya sudah melalui tahapan kurasi (seleksi) produk. Proses kurasinya meliputi keunikan produk, kualitas rasa, kemasan, harga, dan lainnya" jelas Muhammad Iman, Pendamping WUB Kelurahan Beji Timur yang juga koordinator Kue Subuh Juara.</p> <p>Iman menjelaskan, bahwa penanggung jawab kurasi produk adalah ibu Dewi, pendamping WUB yang juga merupakan pengajar cooking class, sehingga produk para supplier bisa diperbaiki terus menerus.</p> <p>Supplier di Kue Subuh JUARA juga hampir seluruhnya adalah peserta WUB, yang telah mengikuti berbagai pelatihan dan memiliki legalitas seperti NIB, Halal, dan PIRT.</p> <p>"Disini jadi semacam inkubator bisnis, ada yang merubah total produknya, dari belum ada penjualan sampai sekarang selalu habis dagangannya, ada yg jadi nambah karyawan, juga ada yang jadi bisa bantu keluarga. Yang penting mindsetnya mau belajar dan berubah." jelas Iman.</p> <p>Selain itu, strategi branding juga dilakukan agar para UMKM bisa "naik kelas". Saat ini mereka sudah mulai terima orderan besar, snack box, dengan brand JUARA.</p> <p>"Produk-produk pilihan dibranding, dikasih rekomendasi, kemasan diperbaiki. Ada produk UMKM yang sudah jadi unggulan seperti kue soes, pastel, arem-arem, sampai lontong sayur, yang favorit di Kue Subuh JUARA. Dijamin enak dan beda!", tutup Iman.</p> <p></p>
+                - generic [ref=f13e54]:
+                    - paragraph [ref=f13e55]: Share This Article
+                    - generic [ref=f13e56]:
+                        - link " Facebook" [ref=f13e57] [cursor=pointer]:
+                            - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fkue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+                            - generic [ref=f13e58]: 
+                            - text: Facebook
+                        - link " Twitter" [ref=f13e59] [cursor=pointer]:
+                            - /url: https://twitter.com/intent/tweet?url=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fkue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas&text=Kue+Subuh+JUARA%2C+Fasilitasi+Alumni+WUB+agar+Produk+dan+Omset+%22Naik+Kelas%22
+                            - generic [ref=f13e60]: 
+                            - text: Twitter
+                        - link " LinkedIn" [ref=f13e61] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fkue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+                            - generic [ref=f13e62]: 
+                            - text: LinkedIn
+                        - link " WhatsApp" [ref=f13e63] [cursor=pointer]:
+                            - /url: https://wa.me/?text=Kue+Subuh+JUARA%2C+Fasilitasi+Alumni+WUB+agar+Produk+dan+Omset+%22Naik+Kelas%22+http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fkue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+                            - generic [ref=f13e64]: 
+                            - text: WhatsApp
+                        - button " Copy Link" [ref=f13e65]:
+                            - generic [ref=f13e66]: 
+                            - text: Copy Link
+                - generic [ref=f13e67]:
+                    - link [ref=f13e68] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/peringatan-maulid-nabi-muhammad-saw-di-masjid-al-barkah-itc-depok-berlangsung-meriah-NVoByx
+                        - paragraph [ref=f13e69]: "â†\x90 Previous Article"
+                        - paragraph [ref=f13e70]: Peringatan Maulid Nabi Muhammad SAW di Masjid Al Barkah ITC Depok Berlangsung Meriah
+                    - link [ref=f13e71] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/blog/ketua-dewan-pendidikan-kota-depok-dedy-martoni-berikan-pencerahan-dalam-workshop-sinergitas-orang-tua-sekolah-dan-komite-sekolah-dalam-membina-gen-z
+                        - paragraph [ref=f13e72]: Next Article â†’
+                        - paragraph [ref=f13e73]: Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z
+                - generic [ref=f13e74]:
+                    - heading "Comments (0)" [level=2] [ref=f13e75]
+                    - paragraph [ref=f13e76]: No comments yet. Be the first to comment!
+                    - generic [ref=f13e77]:
+                        - heading "Leave a Comment" [level=3] [ref=f13e78]
+                        - generic [ref=f13e79]:
+                            - generic [ref=f13e80]:
+                                - generic [ref=f13e81]:
+                                    - generic [ref=f13e82]: Your Name *
+                                    - textbox "John Doe" [ref=f13e83]
+                                - generic [ref=f13e84]:
+                                    - generic [ref=f13e85]: Your Email *
+                                    - textbox "john@example.com" [ref=f13e86]
+                            - generic [ref=f13e87]:
+                                - generic [ref=f13e88]: Website
+                                - textbox "https://example.com" [ref=f13e89]
+                            - generic [ref=f13e90]:
+                                - generic [ref=f13e91]: Comment *
+                                - textbox "Share your thoughts..." [ref=f13e92]
+                            - generic [ref=f13e93]:
+                                - checkbox "Save my name, email, and website in this browser for the next time I comment." [ref=f13e94]
+                                - generic [ref=f13e95]: Save my name, email, and website in this browser for the next time I comment.
+                            - button "Post Comment" [ref=f13e96]
+            - complementary [ref=f13e97]:
+                - generic [ref=f13e98]:
+                    - generic [ref=f13e100]:
+                        - textbox "Search articles..." [ref=f13e101]
+                        - button "" [ref=f13e102]
+                    - generic [ref=f13e104]:
+                        - heading "Related Articles" [level=3] [ref=f13e105]
+                        - generic [ref=f13e106]:
+                            - link [ref=f13e107] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
+                                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f13e109]
+                                - paragraph [ref=f13e110]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+                                - paragraph [ref=f13e111]: Jul 15, 2026
+                            - link [ref=f13e112] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
+                                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f13e114]
+                                - paragraph [ref=f13e115]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+                                - paragraph [ref=f13e116]: Jul 15, 2026
+                            - link [ref=f13e117] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f13e119]
+                                - paragraph [ref=f13e120]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+                                - paragraph [ref=f13e121]: Jul 15, 2026
+                            - link [ref=f13e122] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
+                                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f13e124]
+                                - paragraph [ref=f13e125]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+                                - paragraph [ref=f13e126]: Jul 15, 2026
+                    - generic [ref=f13e127]:
+                        - heading "Stay Connected" [level=3] [ref=f13e128]
+                        - paragraph [ref=f13e129]: Get the latest news delivered to your inbox
+                        - generic [ref=f13e130]:
+                            - textbox "Your email address" [ref=f13e131]
+                            - button "Subscribe" [ref=f13e132]
+                    - generic [ref=f13e133]:
+                        - heading "Recent Articles" [level=3] [ref=f13e134]
+                        - generic [ref=f13e135]:
+                            - link [ref=f13e136] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
+                                - paragraph [ref=f13e137]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+                                - paragraph [ref=f13e138]: Jul 15, 2026
+                            - link [ref=f13e139] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
+                                - paragraph [ref=f13e140]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+                                - paragraph [ref=f13e141]: Jul 15, 2026
+                            - link [ref=f13e142] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                                - paragraph [ref=f13e143]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+                                - paragraph [ref=f13e144]: Jul 15, 2026
+                            - link [ref=f13e145] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
+                                - paragraph [ref=f13e146]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+                                - paragraph [ref=f13e147]: Jul 15, 2026
+                            - link [ref=f13e148] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51-Pe64au
+                                - paragraph [ref=f13e149]: Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51
+                                - paragraph [ref=f13e150]: Jul 11, 2026
+                    - generic [ref=f13e151]:
+                        - heading "Popular Tags" [level=3] [ref=f13e152]
+                        - generic [ref=f13e153]:
+                            - link "#Global" [ref=f13e154] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/tag/global
+                            - link "#Trending" [ref=f13e155] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/tag/trending
+                            - link "#Opinion" [ref=f13e156] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/tag/opinion
+                            - link "#Analysis" [ref=f13e157] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/tag/analysis
+                            - link "#Breaking News" [ref=f13e158] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/tag/breaking-news
+                            - link "#Featured" [ref=f13e159] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/tag/featured
+                            - link "#Local" [ref=f13e160] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/tag/local
+                    - generic [ref=f13e161]:
+                        - paragraph [ref=f13e162]: Advertisement
+                        - generic [ref=f13e163]:
+                            - paragraph [ref=f13e164]: Your Ad Here
+                            - paragraph [ref=f13e165]: Advertisement space available
+    - contentinfo [ref=f13e166]:
+        - contentinfo [ref=f13e167]:
+            - generic [ref=f13e168]:
+                - generic [ref=f13e169]:
+                    - heading "World" [level=3] [ref=f13e170]
+                    - list [ref=f13e172]:
+                        - listitem [ref=f13e173]:
+                            - link "Global Economy" [ref=f13e174] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e175]:
+                            - link "Religion" [ref=f13e176] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e177]:
+                            - link "Bitcoin" [ref=f13e178] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e179]:
+                            - link "Conflict" [ref=f13e180] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e181]:
+                            - link "Sports" [ref=f13e182] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e183]:
+                            - link "Scandals" [ref=f13e184] [cursor=pointer]:
+                                - /url: "#"
+                - generic [ref=f13e185]:
+                    - heading "Entertainment" [level=3] [ref=f13e186]
+                    - list [ref=f13e188]:
+                        - listitem [ref=f13e189]:
+                            - link "Celebity News" [ref=f13e190] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e191]:
+                            - link "Movies" [ref=f13e192] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e193]:
+                            - link "Tv News" [ref=f13e194] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e195]:
+                            - link "Music News" [ref=f13e196] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e197]:
+                            - link "Life Style" [ref=f13e198] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e199]:
+                            - link "Entertainment Video" [ref=f13e200] [cursor=pointer]:
+                                - /url: "#"
+                - generic [ref=f13e201]:
+                    - heading "Health" [level=3] [ref=f13e202]
+                    - list [ref=f13e204]:
+                        - listitem [ref=f13e205]:
+                            - link "Medical Research" [ref=f13e206] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e207]:
+                            - link "Healthy Living" [ref=f13e208] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e209]:
+                            - link "Mental Health" [ref=f13e210] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e211]:
+                            - link "Virus Corona" [ref=f13e212] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e213]:
+                            - link "Children's Health" [ref=f13e214] [cursor=pointer]:
+                                - /url: "#"
+                - generic [ref=f13e215]:
+                    - heading "Business" [level=3] [ref=f13e216]
+                    - list [ref=f13e218]:
+                        - listitem [ref=f13e219]:
+                            - link "Markets" [ref=f13e220] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e221]:
+                            - link "Technology" [ref=f13e222] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e223]:
+                            - link "Features" [ref=f13e224] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e225]:
+                            - link "Property" [ref=f13e226] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f13e227]:
+                            - link "Business Leaders" [ref=f13e228] [cursor=pointer]:
+                                - /url: "#"
+            - generic [ref=f13e230]:
+                - link "NEWSMEDIA" [ref=f13e231] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000
+                    - generic [ref=f13e232]: RET
+                    - generic [ref=f13e235]: NEWS
+                - generic [ref=f13e236]:
+                    - link "" [ref=f13e237] [cursor=pointer]:
+                        - /url: "#"
+                    - link "" [ref=f13e239] [cursor=pointer]:
+                        - /url: "#"
+                    - link "" [ref=f13e241] [cursor=pointer]:
+                        - /url: "#"
+                    - link "" [ref=f13e243] [cursor=pointer]:
+                        - /url: "#"
+                    - link "" [ref=f13e245] [cursor=pointer]:
+                        - /url: "#"
+            - generic [ref=f13e248]:
+                - generic [ref=f13e249]:
+                    - link "Contact Us" [ref=f13e250] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/contact
+                    - link "Terms Of Use" [ref=f13e251] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Adchoice" [ref=f13e252] [cursor=pointer]:
+                        - /url: "#"
+                    - link "About Us" [ref=f13e253] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Newsletters" [ref=f13e254] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Sitemap" [ref=f13e255] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Magrenvi Store" [ref=f13e256] [cursor=pointer]:
+                        - /url: "#"
+                - paragraph [ref=f13e257]: Copyright © 2026 News and Magazine template based on Bootstrap 4 Theme by Retenvi.

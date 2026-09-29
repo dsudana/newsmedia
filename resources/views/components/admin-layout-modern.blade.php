@@ -233,9 +233,9 @@
                     <i class="fas fa-users text-lg w-5"></i>
                     <span class="font-medium">Users</span>
                 </a>
-                <a href="{{ route('admin.ads.index') }}" class="sidebar-item {{ request()->routeIs('admin.ads*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
+                <a href="{{ route('admin.advertisements.index') }}" class="sidebar-item {{ request()->routeIs('admin.advertisements*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-image text-lg w-5"></i>
-                    <span class="font-medium">Ads</span>
+                    <span class="font-medium">Advertisements</span>
                 </a>
                 <a href="{{ route('admin.keywords.index') }}" class="sidebar-item {{ request()->routeIs('admin.keywords*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-key text-lg w-5"></i>

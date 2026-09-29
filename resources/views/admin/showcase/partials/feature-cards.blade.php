@@ -81,7 +81,7 @@
         </div>
         <h3 class="text-lg font-semibold text-gray-900 mb-2">Ad Management</h3>
         <p class="text-sm text-gray-600 mb-4">Create, schedule, and track ad placements</p>
-        <a href="{{ route('admin.ads.index') }}" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Manage Ads →</a>
+        <a href="{{ route('admin.advertisements.index') }}" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Manage Ads →</a>
     </div>
 
 </div>

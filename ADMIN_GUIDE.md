@@ -1,4 +1,4 @@
-# 📘 RET NEWS - Admin User Guide
+# 📘 NEWSMEDIA - Admin User Guide
 
 **Version:** 1.0  
 **Last Updated:** July 15, 2026
@@ -28,6 +28,7 @@
 4. You'll be redirected to the dashboard
 
 **Lost Password?**
+
 - Click "Forgot Password" on login page
 - Enter your email
 - Check email for reset link
@@ -41,12 +42,12 @@ The admin dashboard provides quick access to all management features.
 
 ### Key Sections
 
-| Section | Description |
-|---------|-------------|
-| **Statistics** | View article count, user statistics, etc |
-| **Quick Actions** | Create article, manage categories, export data |
-| **Recent Activity** | View recently created/edited articles |
-| **Navigation Menu** | Access all admin functions (sidebar) |
+| Section             | Description                                    |
+| ------------------- | ---------------------------------------------- |
+| **Statistics**      | View article count, user statistics, etc       |
+| **Quick Actions**   | Create article, manage categories, export data |
+| **Recent Activity** | View recently created/edited articles          |
+| **Navigation Menu** | Access all admin functions (sidebar)           |
 
 ### Sidebar Menu
 
@@ -71,22 +72,24 @@ Dashboard
 ### Create New Article
 
 **Steps:**
+
 1. Go to **Articles** → **Create Article**
 2. Fill in the form:
-   - **Title:** Article headline (required)
-   - **Slug:** URL-friendly name (auto-generated, can edit)
-   - **Content:** Article body (supports HTML)
-   - **Excerpt:** Short summary (optional)
-   - **Category:** Select from dropdown
-   - **Featured Image:** Upload article header image
-   - **Meta Title:** SEO title (60-70 chars recommended)
-   - **Meta Description:** SEO description (155-160 chars)
-   - **Status:** Published / Draft / Scheduled
-   - **Publish Date:** When to publish
+    - **Title:** Article headline (required)
+    - **Slug:** URL-friendly name (auto-generated, can edit)
+    - **Content:** Article body (supports HTML)
+    - **Excerpt:** Short summary (optional)
+    - **Category:** Select from dropdown
+    - **Featured Image:** Upload article header image
+    - **Meta Title:** SEO title (60-70 chars recommended)
+    - **Meta Description:** SEO description (155-160 chars)
+    - **Status:** Published / Draft / Scheduled
+    - **Publish Date:** When to publish
 
 3. Click **"Save"** or **"Publish"**
 
 **Tips:**
+
 - Use clear, descriptive titles for better SEO
 - Add relevant featured image (1200x630px recommended)
 - Fill SEO fields to improve search ranking
@@ -95,6 +98,7 @@ Dashboard
 ### Edit Article
 
 **Steps:**
+
 1. Go to **Articles**
 2. Find article in table
 3. Click **"Edit"** button
@@ -104,6 +108,7 @@ Dashboard
 ### Delete Article
 
 **Steps:**
+
 1. Go to **Articles**
 2. Find article
 3. Click **"Delete"** button
@@ -113,10 +118,10 @@ Dashboard
 
 ### Article Status
 
-| Status | Visibility | Description |
-|--------|-----------|-------------|
-| **Published** | ✅ Public | Visible on website |
-| **Draft** | ❌ Private | Only visible to admin |
+| Status        | Visibility | Description                 |
+| ------------- | ---------- | --------------------------- |
+| **Published** | ✅ Public  | Visible on website          |
+| **Draft**     | ❌ Private | Only visible to admin       |
 | **Scheduled** | ⏰ Pending | Published at scheduled date |
 
 ### Bulk Actions
@@ -130,6 +135,7 @@ Dashboard
 ### Create Category
 
 **Steps:**
+
 1. Go to **Categories** → **Create**
 2. Enter **Name** (e.g., "Technology", "Sports")
 3. Slug auto-generates (can edit)
@@ -164,6 +170,7 @@ Dashboard
 ### Create Tag
 
 **Steps:**
+
 1. Go to **Tags** → **Create**
 2. Enter **Name** (e.g., "AI", "Climate Change")
 3. Click **"Save"**
@@ -188,12 +195,14 @@ When creating/editing articles, search and select tags from the tag field.
 Export all articles to CSV format.
 
 **Steps:**
+
 1. Go to **Import/Export**
 2. Click **"Export CSV"**
 3. File downloads automatically
 4. Open in Excel or spreadsheet app
 
 **Exported columns:**
+
 - ID, Title, Slug, Content, Excerpt
 - Category, Author, Featured Image
 - Published At, Status
@@ -201,6 +210,7 @@ Export all articles to CSV format.
 ### Import Articles
 
 **Steps:**
+
 1. Go to **Import/Export**
 2. Click **"Choose File"** and select CSV
 3. Check **"Skip Duplicates"** if needed
@@ -208,12 +218,14 @@ Export all articles to CSV format.
 5. Review results
 
 **CSV Format:**
+
 ```
 Title,Slug,Content,Excerpt,Category,Author,Featured Image,Published At,Status
 My Article,my-article,Article content here,Short summary,News,Admin User,https://example.com/image.jpg,2026-07-15 10:00:00,published
 ```
 
 **Rules:**
+
 - **Title, Slug, Content** are required
 - **Slug** must be unique and lowercase with hyphens only
 - **Featured Image** must be valid URL
@@ -221,16 +233,17 @@ My Article,my-article,Article content here,Short summary,News,Admin User,https:/
 - **Status** must be: published / draft / scheduled
 
 **Download Template:**
+
 - Click **"Download Template"** to see example CSV format
 
 ### Common Import Errors
 
-| Error | Solution |
-|-------|----------|
+| Error                                                    | Solution                                             |
+| -------------------------------------------------------- | ---------------------------------------------------- |
 | "Slug hanya boleh berisi huruf, angka, dan tanda hubung" | Use lowercase, no spaces, only alphanumeric + hyphen |
-| "Featured Image URL tidak valid" | Ensure URL starts with `http://` or `https://` |
-| "Format Published At harus YYYY-MM-DD HH:mm:ss" | Use exact format with date and time |
-| "Kolom yang diperlukan tidak ditemukan" | Ensure CSV has Title, Slug, Content columns |
+| "Featured Image URL tidak valid"                         | Ensure URL starts with `http://` or `https://`       |
+| "Format Published At harus YYYY-MM-DD HH:mm:ss"          | Use exact format with date and time                  |
+| "Kolom yang diperlukan tidak ditemukan"                  | Ensure CSV has Title, Slug, Content columns          |
 
 ---
 
@@ -245,12 +258,13 @@ See list of all admin users and their roles.
 ### Create User
 
 **Steps:**
+
 1. **Users** → **Create User**
 2. Fill in:
-   - **Name:** Full name
-   - **Email:** Unique email
-   - **Password:** Strong password (min 8 chars)
-   - **Role:** Admin / Editor / Viewer
+    - **Name:** Full name
+    - **Email:** Unique email
+    - **Password:** Strong password (min 8 chars)
+    - **Role:** Admin / Editor / Viewer
 3. Click **"Create"**
 
 ### Edit User
@@ -268,11 +282,11 @@ See list of all admin users and their roles.
 
 ### User Roles
 
-| Role | Permissions |
-|------|------------|
-| **Admin** | Full access (create, edit, delete) |
-| **Editor** | Create & edit articles, view all |
-| **Viewer** | Read-only access |
+| Role       | Permissions                        |
+| ---------- | ---------------------------------- |
+| **Admin**  | Full access (create, edit, delete) |
+| **Editor** | Create & edit articles, view all   |
+| **Viewer** | Read-only access                   |
 
 ---
 
@@ -290,12 +304,14 @@ See list of all admin users and their roles.
 ### Q: My article isn't showing on website
 
 **Possible causes:**
+
 - [ ] Status is "Draft" (not Published)
 - [ ] Published date is in the future
 - [ ] Category is hidden
 - [ ] Cache needs clearing
 
 **Solution:**
+
 1. Edit article
 2. Set Status to "Published"
 3. Set Published Date to current date
@@ -304,6 +320,7 @@ See list of all admin users and their roles.
 ### Q: How do I add images to article content?
 
 **In the WYSIWYG editor:**
+
 1. Click **"Insert Image"** button
 2. Upload or paste image URL
 3. Click **"Insert"**
@@ -313,6 +330,7 @@ See list of all admin users and their roles.
 ### Q: Can I schedule an article?
 
 **Yes!**
+
 1. Create/Edit article
 2. Set Status to "Scheduled"
 3. Set "Publish Date" to future date
@@ -336,10 +354,11 @@ The article will publish automatically on that date.
 **Yes!** Export from WordPress as CSV and import here.
 
 Steps:
+
 1. In WordPress: **Tools** → **Export** → **Select "Posts"**
 2. Download XML file
 3. Convert XML to CSV (use online tool)
-4. Import to RET NEWS
+4. Import to NEWSMEDIA
 
 ### Q: How do I change admin password?
 
@@ -353,11 +372,12 @@ Steps:
 ### Q: The admin panel is slow
 
 **Solutions:**
+
 1. Clear browser cache (Ctrl+Shift+Delete)
 2. Clear application cache:
-   ```bash
-   php artisan cache:clear
-   ```
+    ```bash
+    php artisan cache:clear
+    ```
 3. Check internet connection
 4. Try different browser
 

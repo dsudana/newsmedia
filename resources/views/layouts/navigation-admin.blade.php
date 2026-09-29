@@ -57,7 +57,7 @@
             @endcan
 
             @can('manage_ads')
-                <a href="{{ route('admin.ads.index') }}" class="block py-2.5 px-4 rounded transition duration-200 {{ request()->routeIs('admin.ads.*') ? 'bg-indigo-100 text-indigo-900 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
+                <a href="{{ route('admin.advertisements.index') }}" class="block py-2.5 px-4 rounded transition duration-200 {{ request()->routeIs('admin.advertisements.*') ? 'bg-indigo-100 text-indigo-900 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
                     {{ __('Ads') }}
                 </a>
             @endcan

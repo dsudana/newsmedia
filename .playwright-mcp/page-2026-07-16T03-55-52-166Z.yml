@@ -1,491 +1,491 @@
 - generic [active] [ref=f57e1]:
-  - banner [ref=f57e2]:
-    - generic [ref=f57e4]:
-      - generic [ref=f57e5]: Kamis, 16 Juli 2026
-      - generic [ref=f57e6]:
-        - link "Contact Us" [ref=f57e7] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000/contact
-        - link "Login / Register" [ref=f57e8] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000/login
-        - generic [ref=f57e9]:
-          - link "Facebook" [ref=f57e10] [cursor=pointer]:
-            - /url: "#"
-            - generic [ref=f57e11]: 
-          - link "Twitter" [ref=f57e12] [cursor=pointer]:
-            - /url: "#"
-            - generic [ref=f57e13]: 
-          - link "Instagram" [ref=f57e14] [cursor=pointer]:
-            - /url: "#"
-            - generic [ref=f57e15]: 
-    - banner [ref=f57e16]:
-      - generic [ref=f57e17]:
-        - link "RET NEWS" [ref=f57e18] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000
-          - generic [ref=f57e19]: RET
-          - generic [ref=f57e22]: NEWS
-        - button "Search" [ref=f57e23]:
-          - generic [ref=f57e24]: 
-  - main [ref=f57e27]:
-    - generic [ref=f57e28]:
-      - generic [ref=f57e29]:
-        - heading "Semua Artikel" [level=1] [ref=f57e30]
-        - paragraph [ref=f57e31]: Baca artikel dan berita terbaru dari kami
-      - generic [ref=f57e33]:
-        - textbox "Cari artikel..." [ref=f57e34]
-        - button "Cari" [ref=f57e35]
-      - generic [ref=f57e36]:
-        - generic [ref=f57e37]:
-          - generic [ref=f57e38]:
-            - article [ref=f57e39]:
-              - generic [ref=f57e40]:
-                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e42]
-                - generic [ref=f57e43]:
-                  - generic [ref=f57e44]:
-                    - generic [ref=f57e45]:
-                      - generic [ref=f57e46]: Uncategorized
-                      - generic [ref=f57e47]: 15 Jul 2026
-                    - heading [level=3] [ref=f57e48]:
-                      - link "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e49] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
-                    - paragraph [ref=f57e50]: Depok, 19 April 2026 – Mengusung tema “Indahnya Kebersamaan”, Dewan Masjid Indonesia (DMI) Kota Depok menggelar Silaturrahim dan Halal Bihalal pada Ahad (19/4/2026). Kegiatan yang berlangsung hangat ini bertempat di kediaman Syeikh Iqbal Khan Jal...
-                  - generic [ref=f57e51]:
-                    - generic [ref=f57e52]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e53] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
-            - article [ref=f57e54]:
-              - generic [ref=f57e55]:
-                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e57]
-                - generic [ref=f57e58]:
-                  - generic [ref=f57e59]:
-                    - generic [ref=f57e60]:
-                      - generic [ref=f57e61]: Uncategorized
-                      - generic [ref=f57e62]: 15 Jul 2026
-                    - heading [level=3] [ref=f57e63]:
-                      - link "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e64] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
-                    - paragraph [ref=f57e65]: Depok, 19 April 2026 – Mengusung tema “Indahnya Kebersamaan”, Dewan Masjid Indonesia (DMI) Kota Depok menggelar Silaturrahim dan Halal Bihalal pada Ahad (19/4/2026). Kegiatan yang berlangsung hangat ini bertempat di kediaman Syeikh Iqbal Khan Jal...
-                  - generic [ref=f57e66]:
-                    - generic [ref=f57e67]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e68] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
-            - article [ref=f57e69]:
-              - generic [ref=f57e70]:
-                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e72]
-                - generic [ref=f57e73]:
-                  - generic [ref=f57e74]:
-                    - generic [ref=f57e75]:
-                      - generic [ref=f57e76]: Uncategorized
-                      - generic [ref=f57e77]: 15 Jul 2026
-                    - heading [level=3] [ref=f57e78]:
-                      - link "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e79] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
-                    - paragraph [ref=f57e80]: "-DEPOK- Dewan Pimpinan Daerah (DPD) Forum Komunikasi Anak Bangsa (Forkabi) Kota Depok bakal menggelar kegiatan Musyawarah Daerah (Musda) untuk pemilihan ketua baru yang rencananya akan dilaksanakan pada bulan Agustus 2026. Ketua DPD Forkabi Kota Depok..."
-                  - generic [ref=f57e81]:
-                    - generic [ref=f57e82]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e83] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
-            - article [ref=f57e84]:
-              - generic [ref=f57e85]:
-                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e87]
-                - generic [ref=f57e88]:
-                  - generic [ref=f57e89]:
-                    - generic [ref=f57e90]:
-                      - generic [ref=f57e91]: Uncategorized
-                      - generic [ref=f57e92]: 15 Jul 2026
-                    - heading [level=3] [ref=f57e93]:
-                      - link "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e94] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
-                    - paragraph [ref=f57e95]: "-DEPOK- Dewan Pimpinan Daerah (DPD) Forum Komunikasi Anak Bangsa (Forkabi) Kota Depok bakal menggelar kegiatan Musyawarah Daerah (Musda) untuk pemilihan ketua baru yang rencananya akan dilaksanakan pada bulan Agustus 2026. Ketua DPD Forkabi Kota Depok..."
-                  - generic [ref=f57e96]:
-                    - generic [ref=f57e97]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e98] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
-            - article [ref=f57e99]:
-              - generic [ref=f57e100]:
-                - img "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f57e102]
-                - generic [ref=f57e103]:
-                  - generic [ref=f57e104]:
-                    - generic [ref=f57e105]:
-                      - generic [ref=f57e106]: Uncategorized
-                      - generic [ref=f57e107]: 11 Jul 2026
-                    - heading [level=3] [ref=f57e108]:
-                      - link "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f57e109] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51
-                    - paragraph [ref=f57e110]: DEPOK-Komisi Dakwah dan Ukhuwah Majelis Ulama Indonesia (MUI) Kota Depok menggelar acara Gebyar Muharram dan Santunan Anak Yatim. Peringatan tersebut juga dalam rangka menyambut Milad MUI ke-51 (26 Juli 1975-26 Juli 2026)."Melalui Gebyar Muha...
-                  - generic [ref=f57e111]:
-                    - generic [ref=f57e112]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e113] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51
-            - article [ref=f57e114]:
-              - generic [ref=f57e115]:
-                - img "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f57e117]
-                - generic [ref=f57e118]:
-                  - generic [ref=f57e119]:
-                    - generic [ref=f57e120]:
-                      - generic [ref=f57e121]: Uncategorized
-                      - generic [ref=f57e122]: 11 Jul 2026
-                    - heading [level=3] [ref=f57e123]:
-                      - link "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f57e124] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51-Pe64au
-                    - paragraph [ref=f57e125]: DEPOK-Komisi Dakwah dan Ukhuwah Majelis Ulama Indonesia (MUI) Kota Depok menggelar acara Gebyar Muharram dan Santunan Anak Yatim. Peringatan tersebut juga dalam rangka menyambut Milad MUI ke-51 (26 Juli 1975-26 Juli 2026)."Melalui Gebyar Muha...
-                  - generic [ref=f57e126]:
-                    - generic [ref=f57e127]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e128] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51-Pe64au
-            - article [ref=f57e129]:
-              - generic [ref=f57e130]:
-                - img "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e132]
-                - generic [ref=f57e133]:
-                  - generic [ref=f57e134]:
-                    - generic [ref=f57e135]:
-                      - generic [ref=f57e136]: Uncategorized
-                      - generic [ref=f57e137]: 08 Jul 2026
-                    - heading [level=3] [ref=f57e138]:
-                      - link "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e139] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026
-                    - paragraph [ref=f57e140]: JAKARTA — Keluarga Besar Trah Kismo Djuhari menggelar agenda silaturahmi bertajuk “Dolan Bareng Ning Lampung” pada 3-5 Juli 2026. Kegiatan ini memadukan ziarah, wisata, dan temu kangen anggota keluarga dari Jakarta, Depok, Cimahi, Bandung dan sekitar...
-                  - generic [ref=f57e141]:
-                    - generic [ref=f57e142]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e143] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026
-            - article [ref=f57e144]:
-              - generic [ref=f57e145]:
-                - img "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e147]
-                - generic [ref=f57e148]:
-                  - generic [ref=f57e149]:
-                    - generic [ref=f57e150]:
-                      - generic [ref=f57e151]: Uncategorized
-                      - generic [ref=f57e152]: 08 Jul 2026
-                    - heading [level=3] [ref=f57e153]:
-                      - link "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e154] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026-UbmLPV
-                    - paragraph [ref=f57e155]: JAKARTA — Keluarga Besar Trah Kismo Djuhari menggelar agenda silaturahmi bertajuk “Dolan Bareng Ning Lampung” pada 3-5 Juli 2026. Kegiatan ini memadukan ziarah, wisata, dan temu kangen anggota keluarga dari Jakarta, Depok, Cimahi, Bandung dan sekitar...
-                  - generic [ref=f57e156]:
-                    - generic [ref=f57e157]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e158] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026-UbmLPV
-            - article [ref=f57e159]:
-              - generic [ref=f57e160]:
-                - img "Sit occaecati esse est sed id." [ref=f57e162]
-                - generic [ref=f57e163]:
-                  - generic [ref=f57e164]:
-                    - generic [ref=f57e165]:
-                      - generic [ref=f57e166]: Politik
-                      - generic [ref=f57e167]: 08 Jul 2026
-                    - heading [level=3] [ref=f57e168]:
-                      - link "Sit occaecati esse est sed id." [ref=f57e169] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
-                    - paragraph [ref=f57e170]: Laboriosam rem corporis cum impedit maxime mollitia. Assumenda pariatur sunt consequatur tenetur nisi non similique. Repudiandae dolores pariatur perferendis consequatur. Consequuntur aperiam error labore fuga exercitationem maxime eos vero.
-                  - generic [ref=f57e171]:
-                    - generic [ref=f57e172]: Writer User
-                    - link "Baca Selengkapnya →" [ref=f57e173] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
-            - article [ref=f57e174]:
-              - generic [ref=f57e175]:
-                - img "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f57e177]
-                - generic [ref=f57e178]:
-                  - generic [ref=f57e179]:
-                    - generic [ref=f57e180]:
-                      - generic [ref=f57e181]: Uncategorized
-                      - generic [ref=f57e182]: 07 Jul 2026
-                    - heading [level=3] [ref=f57e183]:
-                      - link "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f57e184] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta-EWN0IU
-                    - paragraph [ref=f57e185]: CIPANAS, JABAR- Suasana sejuk kawasan Pangsalatan, Gunung Gede, Cibodas, Jawa Barat, menjadi saksi kebersamaan Keluarga Besar Majelis Taklim Balai Wartawan Kota Depok (MT Balai Wartawan) dalam kegiatan Tadabur Alam yang berlangsung selama dua hari, Sabtu...
-                  - generic [ref=f57e186]:
-                    - generic [ref=f57e187]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e188] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta-EWN0IU
-            - article [ref=f57e189]:
-              - generic [ref=f57e190]:
-                - img "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f57e192]
-                - generic [ref=f57e193]:
-                  - generic [ref=f57e194]:
-                    - generic [ref=f57e195]:
-                      - generic [ref=f57e196]: Uncategorized
-                      - generic [ref=f57e197]: 07 Jul 2026
-                    - heading [level=3] [ref=f57e198]:
-                      - link "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f57e199] [cursor=pointer]:
-                        - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta
-                    - paragraph [ref=f57e200]: CIPANAS, JABAR- Suasana sejuk kawasan Pangsalatan, Gunung Gede, Cibodas, Jawa Barat, menjadi saksi kebersamaan Keluarga Besar Majelis Taklim Balai Wartawan Kota Depok (MT Balai Wartawan) dalam kegiatan Tadabur Alam yang berlangsung selama dua hari, Sabtu...
-                  - generic [ref=f57e201]:
-                    - generic [ref=f57e202]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e203] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta
-            - article [ref=f57e204]:
-              - generic [ref=f57e205]:
-                - 'img "Yeti Wulandari: Doa Lintas Agama Jadi Wujud Komitmen Polri Merawat Keberagaman" [ref=f57e207]'
-                - generic [ref=f57e208]:
-                  - generic [ref=f57e209]:
-                    - generic [ref=f57e210]:
-                      - generic [ref=f57e211]: Uncategorized
-                      - generic [ref=f57e212]: 03 Jul 2026
-                    - heading [level=3] [ref=f57e213]:
-                      - 'link "Yeti Wulandari: Doa Lintas Agama Jadi Wujud Komitmen Polri Merawat Keberagaman" [ref=f57e214] [cursor=pointer]':
-                        - /url: http://127.0.0.1:8000/blog/yeti-wulandari-doa-lintas-agama-jadi-wujud-komitmen-polri-merawat-keberagaman-6azlPX
-                    - paragraph [ref=f57e215]: Wakil Ketua DPRD Kota Depok, Yeti Wulandari, menilai doa lintas agama yang digelar Polres Metro Depok menjelang Hari Bhayangkara ke-80 merupakan wujud komitmen Polri dalam merawat keberagaman sekaligus memperkuat persatuan bangsa. “Doa lintas agam...
-                  - generic [ref=f57e216]:
-                    - generic [ref=f57e217]: Administrator
-                    - link "Baca Selengkapnya →" [ref=f57e218] [cursor=pointer]:
-                      - /url: http://127.0.0.1:8000/blog/yeti-wulandari-doa-lintas-agama-jadi-wujud-komitmen-polri-merawat-keberagaman-6azlPX
-          - navigation "Pagination Navigation" [ref=f57e220]:
-            - generic [ref=f57e221]:
-              - paragraph [ref=f57e223]: Showing 1 to 12 of 255 results
-              - generic [ref=f57e225]:
-                - generic "&laquo; Previous" [ref=f57e226]
-                - generic [ref=f57e230]: "1"
-                - link "Go to page 2" [ref=f57e232] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=2
-                  - text: "2"
-                - link "Go to page 3" [ref=f57e233] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=3
-                  - text: "3"
-                - link "Go to page 4" [ref=f57e234] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=4
-                  - text: "4"
-                - link "Go to page 5" [ref=f57e235] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=5
-                  - text: "5"
-                - link "Go to page 6" [ref=f57e236] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=6
-                  - text: "6"
-                - link "Go to page 7" [ref=f57e237] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=7
-                  - text: "7"
-                - link "Go to page 8" [ref=f57e238] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=8
-                  - text: "8"
-                - link "Go to page 9" [ref=f57e239] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=9
-                  - text: "9"
-                - link "Go to page 10" [ref=f57e240] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=10
-                  - text: "10"
-                - generic [ref=f57e241]: ...
-                - link "Go to page 21" [ref=f57e243] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=21
-                  - text: "21"
-                - link "Go to page 22" [ref=f57e244] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=22
-                  - text: "22"
-                - link "Next &raquo;" [ref=f57e245] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/news?page=2
-        - complementary [ref=f57e248]:
-          - generic [ref=f57e249]:
-            - heading "Kategori" [level=3] [ref=f57e250]
-            - generic [ref=f57e251]:
-              - link "Politik 0" [ref=f57e252] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?category=politik
-                - generic [ref=f57e253]: Politik
-                - generic [ref=f57e254]: "0"
-              - link "Business 0" [ref=f57e255] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?category=business
-                - generic [ref=f57e256]: Business
-                - generic [ref=f57e257]: "0"
-              - link "Technology 0" [ref=f57e258] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?category=technology
-                - generic [ref=f57e259]: Technology
-                - generic [ref=f57e260]: "0"
-              - link "Entertainment 0" [ref=f57e261] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?category=entertainment
-                - generic [ref=f57e262]: Entertainment
-                - generic [ref=f57e263]: "0"
-              - link "Health 0" [ref=f57e264] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?category=health
-                - generic [ref=f57e265]: Health
-                - generic [ref=f57e266]: "0"
-              - link "Sports 0" [ref=f57e267] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?category=sports
-                - generic [ref=f57e268]: Sports
-                - generic [ref=f57e269]: "0"
-              - link "Uncategorized 0" [ref=f57e270] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?category=uncategorized
-                - generic [ref=f57e271]: Uncategorized
-                - generic [ref=f57e272]: "0"
-          - generic [ref=f57e273]:
-            - heading "Artikel Populer" [level=3] [ref=f57e274]
-            - generic [ref=f57e275]:
-              - link [ref=f57e276] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/kue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
-                - img "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [ref=f57e278]
-                - generic [ref=f57e279]:
-                  - paragraph [ref=f57e280]: Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset "Naik Kelas"
-                  - paragraph [ref=f57e281]: 102 views
-              - link [ref=f57e282] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
-                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e284]
-                - generic [ref=f57e285]:
-                  - paragraph [ref=f57e286]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
-                  - paragraph [ref=f57e287]: 13 views
-              - link [ref=f57e288] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026
-                - img "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e290]
-                - generic [ref=f57e291]:
-                  - paragraph [ref=f57e292]: Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026
-                  - paragraph [ref=f57e293]: 5 views
-              - link [ref=f57e294] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
-                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e296]
-                - generic [ref=f57e297]:
-                  - paragraph [ref=f57e298]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
-                  - paragraph [ref=f57e299]: 5 views
-              - link [ref=f57e300] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
-                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e302]
-                - generic [ref=f57e303]:
-                  - paragraph [ref=f57e304]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
-                  - paragraph [ref=f57e305]: 3 views
-          - generic [ref=f57e306]:
-            - heading "Terbaru" [level=3] [ref=f57e307]
-            - generic [ref=f57e308]:
-              - link [ref=f57e309] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
-                - paragraph [ref=f57e310]: 15 Jul 2026
-                - paragraph [ref=f57e311]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
-              - link [ref=f57e312] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
-                - paragraph [ref=f57e313]: 15 Jul 2026
-                - paragraph [ref=f57e314]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
-              - link [ref=f57e315] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
-                - paragraph [ref=f57e316]: 15 Jul 2026
-                - paragraph [ref=f57e317]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
-              - link [ref=f57e318] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
-                - paragraph [ref=f57e319]: 15 Jul 2026
-                - paragraph [ref=f57e320]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
-          - generic [ref=f57e321]:
-            - heading "Advertisement" [level=4] [ref=f57e322]
-            - paragraph [ref=f57e323]: Your Ad Here
-            - paragraph [ref=f57e324]: Contact us for advertising
-          - generic [ref=f57e325]:
-            - heading "Tag Populer" [level=3] [ref=f57e326]
-            - generic [ref=f57e327]:
-              - link "#Global" [ref=f57e328] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?tag=global
-              - link "#Trending" [ref=f57e329] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?tag=trending
-              - link "#Opinion" [ref=f57e330] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?tag=opinion
-              - link "#Analysis" [ref=f57e331] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?tag=analysis
-              - link "#Breaking News" [ref=f57e332] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?tag=breaking-news
-              - link "#Featured" [ref=f57e333] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?tag=featured
-              - link "#Local" [ref=f57e334] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/blog?tag=local
-  - contentinfo [ref=f57e335]:
-    - contentinfo [ref=f57e336]:
-      - generic [ref=f57e337]:
-        - generic [ref=f57e338]:
-          - heading "World" [level=3] [ref=f57e339]
-          - list [ref=f57e341]:
-            - listitem [ref=f57e342]:
-              - link "Global Economy" [ref=f57e343] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e344]:
-              - link "Religion" [ref=f57e345] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e346]:
-              - link "Bitcoin" [ref=f57e347] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e348]:
-              - link "Conflict" [ref=f57e349] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e350]:
-              - link "Sports" [ref=f57e351] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e352]:
-              - link "Scandals" [ref=f57e353] [cursor=pointer]:
-                - /url: "#"
-        - generic [ref=f57e354]:
-          - heading "Entertainment" [level=3] [ref=f57e355]
-          - list [ref=f57e357]:
-            - listitem [ref=f57e358]:
-              - link "Celebity News" [ref=f57e359] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e360]:
-              - link "Movies" [ref=f57e361] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e362]:
-              - link "Tv News" [ref=f57e363] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e364]:
-              - link "Music News" [ref=f57e365] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e366]:
-              - link "Life Style" [ref=f57e367] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e368]:
-              - link "Entertainment Video" [ref=f57e369] [cursor=pointer]:
-                - /url: "#"
-        - generic [ref=f57e370]:
-          - heading "Health" [level=3] [ref=f57e371]
-          - list [ref=f57e373]:
-            - listitem [ref=f57e374]:
-              - link "Medical Research" [ref=f57e375] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e376]:
-              - link "Healthy Living" [ref=f57e377] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e378]:
-              - link "Mental Health" [ref=f57e379] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e380]:
-              - link "Virus Corona" [ref=f57e381] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e382]:
-              - link "Children's Health" [ref=f57e383] [cursor=pointer]:
-                - /url: "#"
-        - generic [ref=f57e384]:
-          - heading "Business" [level=3] [ref=f57e385]
-          - list [ref=f57e387]:
-            - listitem [ref=f57e388]:
-              - link "Markets" [ref=f57e389] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e390]:
-              - link "Technology" [ref=f57e391] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e392]:
-              - link "Features" [ref=f57e393] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e394]:
-              - link "Property" [ref=f57e395] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=f57e396]:
-              - link "Business Leaders" [ref=f57e397] [cursor=pointer]:
-                - /url: "#"
-      - generic [ref=f57e399]:
-        - link "RET NEWS" [ref=f57e400] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000
-          - generic [ref=f57e401]: RET
-          - generic [ref=f57e404]: NEWS
-        - generic [ref=f57e405]:
-          - link "" [ref=f57e406] [cursor=pointer]:
-            - /url: "#"
-          - link "" [ref=f57e408] [cursor=pointer]:
-            - /url: "#"
-          - link "" [ref=f57e410] [cursor=pointer]:
-            - /url: "#"
-          - link "" [ref=f57e412] [cursor=pointer]:
-            - /url: "#"
-          - link "" [ref=f57e414] [cursor=pointer]:
-            - /url: "#"
-      - generic [ref=f57e417]:
-        - generic [ref=f57e418]:
-          - link "Contact Us" [ref=f57e419] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/contact
-          - link "Terms Of Use" [ref=f57e420] [cursor=pointer]:
-            - /url: "#"
-          - link "Adchoice" [ref=f57e421] [cursor=pointer]:
-            - /url: "#"
-          - link "About Us" [ref=f57e422] [cursor=pointer]:
-            - /url: "#"
-          - link "Newsletters" [ref=f57e423] [cursor=pointer]:
-            - /url: "#"
-          - link "Sitemap" [ref=f57e424] [cursor=pointer]:
-            - /url: "#"
-          - link "Magrenvi Store" [ref=f57e425] [cursor=pointer]:
-            - /url: "#"
-        - paragraph [ref=f57e426]: Copyright © 2026 News and Magazine template based on Bootstrap 4 Theme by Retenvi.
+    - banner [ref=f57e2]:
+        - generic [ref=f57e4]:
+            - generic [ref=f57e5]: Kamis, 16 Juli 2026
+            - generic [ref=f57e6]:
+                - link "Contact Us" [ref=f57e7] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/contact
+                - link "Login / Register" [ref=f57e8] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/login
+                - generic [ref=f57e9]:
+                    - link "Facebook" [ref=f57e10] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f57e11]: 
+                    - link "Twitter" [ref=f57e12] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f57e13]: 
+                    - link "Instagram" [ref=f57e14] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f57e15]: 
+        - banner [ref=f57e16]:
+            - generic [ref=f57e17]:
+                - link "NEWSMEDIA" [ref=f57e18] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000
+                    - generic [ref=f57e19]: RET
+                    - generic [ref=f57e22]: NEWS
+                - button "Search" [ref=f57e23]:
+                    - generic [ref=f57e24]: 
+    - main [ref=f57e27]:
+        - generic [ref=f57e28]:
+            - generic [ref=f57e29]:
+                - heading "Semua Artikel" [level=1] [ref=f57e30]
+                - paragraph [ref=f57e31]: Baca artikel dan berita terbaru dari kami
+            - generic [ref=f57e33]:
+                - textbox "Cari artikel..." [ref=f57e34]
+                - button "Cari" [ref=f57e35]
+            - generic [ref=f57e36]:
+                - generic [ref=f57e37]:
+                    - generic [ref=f57e38]:
+                        - article [ref=f57e39]:
+                            - generic [ref=f57e40]:
+                                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e42]
+                                - generic [ref=f57e43]:
+                                    - generic [ref=f57e44]:
+                                        - generic [ref=f57e45]:
+                                            - generic [ref=f57e46]: Uncategorized
+                                            - generic [ref=f57e47]: 15 Jul 2026
+                                        - heading [level=3] [ref=f57e48]:
+                                            - link "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e49] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
+                                        - paragraph [ref=f57e50]: Depok, 19 April 2026 – Mengusung tema “Indahnya Kebersamaan”, Dewan Masjid Indonesia (DMI) Kota Depok menggelar Silaturrahim dan Halal Bihalal pada Ahad (19/4/2026). Kegiatan yang berlangsung hangat ini bertempat di kediaman Syeikh Iqbal Khan Jal...
+                                    - generic [ref=f57e51]:
+                                        - generic [ref=f57e52]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e53] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
+                        - article [ref=f57e54]:
+                            - generic [ref=f57e55]:
+                                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e57]
+                                - generic [ref=f57e58]:
+                                    - generic [ref=f57e59]:
+                                        - generic [ref=f57e60]:
+                                            - generic [ref=f57e61]: Uncategorized
+                                            - generic [ref=f57e62]: 15 Jul 2026
+                                        - heading [level=3] [ref=f57e63]:
+                                            - link "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e64] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
+                                        - paragraph [ref=f57e65]: Depok, 19 April 2026 – Mengusung tema “Indahnya Kebersamaan”, Dewan Masjid Indonesia (DMI) Kota Depok menggelar Silaturrahim dan Halal Bihalal pada Ahad (19/4/2026). Kegiatan yang berlangsung hangat ini bertempat di kediaman Syeikh Iqbal Khan Jal...
+                                    - generic [ref=f57e66]:
+                                        - generic [ref=f57e67]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e68] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
+                        - article [ref=f57e69]:
+                            - generic [ref=f57e70]:
+                                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e72]
+                                - generic [ref=f57e73]:
+                                    - generic [ref=f57e74]:
+                                        - generic [ref=f57e75]:
+                                            - generic [ref=f57e76]: Uncategorized
+                                            - generic [ref=f57e77]: 15 Jul 2026
+                                        - heading [level=3] [ref=f57e78]:
+                                            - link "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e79] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                                        - paragraph [ref=f57e80]: "-DEPOK- Dewan Pimpinan Daerah (DPD) Forum Komunikasi Anak Bangsa (Forkabi) Kota Depok bakal menggelar kegiatan Musyawarah Daerah (Musda) untuk pemilihan ketua baru yang rencananya akan dilaksanakan pada bulan Agustus 2026. Ketua DPD Forkabi Kota Depok..."
+                                    - generic [ref=f57e81]:
+                                        - generic [ref=f57e82]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e83] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                        - article [ref=f57e84]:
+                            - generic [ref=f57e85]:
+                                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e87]
+                                - generic [ref=f57e88]:
+                                    - generic [ref=f57e89]:
+                                        - generic [ref=f57e90]:
+                                            - generic [ref=f57e91]: Uncategorized
+                                            - generic [ref=f57e92]: 15 Jul 2026
+                                        - heading [level=3] [ref=f57e93]:
+                                            - link "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e94] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
+                                        - paragraph [ref=f57e95]: "-DEPOK- Dewan Pimpinan Daerah (DPD) Forum Komunikasi Anak Bangsa (Forkabi) Kota Depok bakal menggelar kegiatan Musyawarah Daerah (Musda) untuk pemilihan ketua baru yang rencananya akan dilaksanakan pada bulan Agustus 2026. Ketua DPD Forkabi Kota Depok..."
+                                    - generic [ref=f57e96]:
+                                        - generic [ref=f57e97]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e98] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
+                        - article [ref=f57e99]:
+                            - generic [ref=f57e100]:
+                                - img "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f57e102]
+                                - generic [ref=f57e103]:
+                                    - generic [ref=f57e104]:
+                                        - generic [ref=f57e105]:
+                                            - generic [ref=f57e106]: Uncategorized
+                                            - generic [ref=f57e107]: 11 Jul 2026
+                                        - heading [level=3] [ref=f57e108]:
+                                            - link "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f57e109] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51
+                                        - paragraph [ref=f57e110]: DEPOK-Komisi Dakwah dan Ukhuwah Majelis Ulama Indonesia (MUI) Kota Depok menggelar acara Gebyar Muharram dan Santunan Anak Yatim. Peringatan tersebut juga dalam rangka menyambut Milad MUI ke-51 (26 Juli 1975-26 Juli 2026)."Melalui Gebyar Muha...
+                                    - generic [ref=f57e111]:
+                                        - generic [ref=f57e112]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e113] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51
+                        - article [ref=f57e114]:
+                            - generic [ref=f57e115]:
+                                - img "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f57e117]
+                                - generic [ref=f57e118]:
+                                    - generic [ref=f57e119]:
+                                        - generic [ref=f57e120]:
+                                            - generic [ref=f57e121]: Uncategorized
+                                            - generic [ref=f57e122]: 11 Jul 2026
+                                        - heading [level=3] [ref=f57e123]:
+                                            - link "Komisi Dakwah dan Ukhuwah Islamiyah MUI Kota Depok Gelar Acara Gebyar Muharram dan Santunan Anak Yatim Tandai Milad MUI ke-51" [ref=f57e124] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51-Pe64au
+                                        - paragraph [ref=f57e125]: DEPOK-Komisi Dakwah dan Ukhuwah Majelis Ulama Indonesia (MUI) Kota Depok menggelar acara Gebyar Muharram dan Santunan Anak Yatim. Peringatan tersebut juga dalam rangka menyambut Milad MUI ke-51 (26 Juli 1975-26 Juli 2026)."Melalui Gebyar Muha...
+                                    - generic [ref=f57e126]:
+                                        - generic [ref=f57e127]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e128] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/komisi-dakwah-dan-ukhuwah-islamiyah-mui-kota-depok-gelar-acara-gebyar-muharram-dan-santunan-anak-yatim-tandai-milad-mui-ke-51-Pe64au
+                        - article [ref=f57e129]:
+                            - generic [ref=f57e130]:
+                                - img "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e132]
+                                - generic [ref=f57e133]:
+                                    - generic [ref=f57e134]:
+                                        - generic [ref=f57e135]:
+                                            - generic [ref=f57e136]: Uncategorized
+                                            - generic [ref=f57e137]: 08 Jul 2026
+                                        - heading [level=3] [ref=f57e138]:
+                                            - link "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e139] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026
+                                        - paragraph [ref=f57e140]: JAKARTA — Keluarga Besar Trah Kismo Djuhari menggelar agenda silaturahmi bertajuk “Dolan Bareng Ning Lampung” pada 3-5 Juli 2026. Kegiatan ini memadukan ziarah, wisata, dan temu kangen anggota keluarga dari Jakarta, Depok, Cimahi, Bandung dan sekitar...
+                                    - generic [ref=f57e141]:
+                                        - generic [ref=f57e142]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e143] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026
+                        - article [ref=f57e144]:
+                            - generic [ref=f57e145]:
+                                - img "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e147]
+                                - generic [ref=f57e148]:
+                                    - generic [ref=f57e149]:
+                                        - generic [ref=f57e150]:
+                                            - generic [ref=f57e151]: Uncategorized
+                                            - generic [ref=f57e152]: 08 Jul 2026
+                                        - heading [level=3] [ref=f57e153]:
+                                            - link "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e154] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026-UbmLPV
+                                        - paragraph [ref=f57e155]: JAKARTA — Keluarga Besar Trah Kismo Djuhari menggelar agenda silaturahmi bertajuk “Dolan Bareng Ning Lampung” pada 3-5 Juli 2026. Kegiatan ini memadukan ziarah, wisata, dan temu kangen anggota keluarga dari Jakarta, Depok, Cimahi, Bandung dan sekitar...
+                                    - generic [ref=f57e156]:
+                                        - generic [ref=f57e157]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e158] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026-UbmLPV
+                        - article [ref=f57e159]:
+                            - generic [ref=f57e160]:
+                                - img "Sit occaecati esse est sed id." [ref=f57e162]
+                                - generic [ref=f57e163]:
+                                    - generic [ref=f57e164]:
+                                        - generic [ref=f57e165]:
+                                            - generic [ref=f57e166]: Politik
+                                            - generic [ref=f57e167]: 08 Jul 2026
+                                        - heading [level=3] [ref=f57e168]:
+                                            - link "Sit occaecati esse est sed id." [ref=f57e169] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
+                                        - paragraph [ref=f57e170]: Laboriosam rem corporis cum impedit maxime mollitia. Assumenda pariatur sunt consequatur tenetur nisi non similique. Repudiandae dolores pariatur perferendis consequatur. Consequuntur aperiam error labore fuga exercitationem maxime eos vero.
+                                    - generic [ref=f57e171]:
+                                        - generic [ref=f57e172]: Writer User
+                                        - link "Baca Selengkapnya →" [ref=f57e173] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/itaque-quo-voluptate-assumenda-accusantium-placeat-sit-iusto
+                        - article [ref=f57e174]:
+                            - generic [ref=f57e175]:
+                                - img "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f57e177]
+                                - generic [ref=f57e178]:
+                                    - generic [ref=f57e179]:
+                                        - generic [ref=f57e180]:
+                                            - generic [ref=f57e181]: Uncategorized
+                                            - generic [ref=f57e182]: 07 Jul 2026
+                                        - heading [level=3] [ref=f57e183]:
+                                            - link "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f57e184] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta-EWN0IU
+                                        - paragraph [ref=f57e185]: CIPANAS, JABAR- Suasana sejuk kawasan Pangsalatan, Gunung Gede, Cibodas, Jawa Barat, menjadi saksi kebersamaan Keluarga Besar Majelis Taklim Balai Wartawan Kota Depok (MT Balai Wartawan) dalam kegiatan Tadabur Alam yang berlangsung selama dua hari, Sabtu...
+                                    - generic [ref=f57e186]:
+                                        - generic [ref=f57e187]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e188] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta-EWN0IU
+                        - article [ref=f57e189]:
+                            - generic [ref=f57e190]:
+                                - img "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f57e192]
+                                - generic [ref=f57e193]:
+                                    - generic [ref=f57e194]:
+                                        - generic [ref=f57e195]:
+                                            - generic [ref=f57e196]: Uncategorized
+                                            - generic [ref=f57e197]: 07 Jul 2026
+                                        - heading [level=3] [ref=f57e198]:
+                                            - link "Tadabur Alam Balwan Kota Depok Bersama di Alam Dekatkan Diri Pada Pencipta" [ref=f57e199] [cursor=pointer]:
+                                                - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta
+                                        - paragraph [ref=f57e200]: CIPANAS, JABAR- Suasana sejuk kawasan Pangsalatan, Gunung Gede, Cibodas, Jawa Barat, menjadi saksi kebersamaan Keluarga Besar Majelis Taklim Balai Wartawan Kota Depok (MT Balai Wartawan) dalam kegiatan Tadabur Alam yang berlangsung selama dua hari, Sabtu...
+                                    - generic [ref=f57e201]:
+                                        - generic [ref=f57e202]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e203] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/tadabur-alam-balwan-kota-depok-bersama-di-alam-dekatkan-diri-pada-pencipta
+                        - article [ref=f57e204]:
+                            - generic [ref=f57e205]:
+                                - 'img "Yeti Wulandari: Doa Lintas Agama Jadi Wujud Komitmen Polri Merawat Keberagaman" [ref=f57e207]'
+                                - generic [ref=f57e208]:
+                                    - generic [ref=f57e209]:
+                                        - generic [ref=f57e210]:
+                                            - generic [ref=f57e211]: Uncategorized
+                                            - generic [ref=f57e212]: 03 Jul 2026
+                                        - heading [level=3] [ref=f57e213]:
+                                            - 'link "Yeti Wulandari: Doa Lintas Agama Jadi Wujud Komitmen Polri Merawat Keberagaman" [ref=f57e214] [cursor=pointer]':
+                                                - /url: http://127.0.0.1:8000/blog/yeti-wulandari-doa-lintas-agama-jadi-wujud-komitmen-polri-merawat-keberagaman-6azlPX
+                                        - paragraph [ref=f57e215]: Wakil Ketua DPRD Kota Depok, Yeti Wulandari, menilai doa lintas agama yang digelar Polres Metro Depok menjelang Hari Bhayangkara ke-80 merupakan wujud komitmen Polri dalam merawat keberagaman sekaligus memperkuat persatuan bangsa. “Doa lintas agam...
+                                    - generic [ref=f57e216]:
+                                        - generic [ref=f57e217]: Administrator
+                                        - link "Baca Selengkapnya →" [ref=f57e218] [cursor=pointer]:
+                                            - /url: http://127.0.0.1:8000/blog/yeti-wulandari-doa-lintas-agama-jadi-wujud-komitmen-polri-merawat-keberagaman-6azlPX
+                    - navigation "Pagination Navigation" [ref=f57e220]:
+                        - generic [ref=f57e221]:
+                            - paragraph [ref=f57e223]: Showing 1 to 12 of 255 results
+                            - generic [ref=f57e225]:
+                                - generic "&laquo; Previous" [ref=f57e226]
+                                - generic [ref=f57e230]: "1"
+                                - link "Go to page 2" [ref=f57e232] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=2
+                                    - text: "2"
+                                - link "Go to page 3" [ref=f57e233] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=3
+                                    - text: "3"
+                                - link "Go to page 4" [ref=f57e234] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=4
+                                    - text: "4"
+                                - link "Go to page 5" [ref=f57e235] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=5
+                                    - text: "5"
+                                - link "Go to page 6" [ref=f57e236] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=6
+                                    - text: "6"
+                                - link "Go to page 7" [ref=f57e237] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=7
+                                    - text: "7"
+                                - link "Go to page 8" [ref=f57e238] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=8
+                                    - text: "8"
+                                - link "Go to page 9" [ref=f57e239] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=9
+                                    - text: "9"
+                                - link "Go to page 10" [ref=f57e240] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=10
+                                    - text: "10"
+                                - generic [ref=f57e241]: ...
+                                - link "Go to page 21" [ref=f57e243] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=21
+                                    - text: "21"
+                                - link "Go to page 22" [ref=f57e244] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=22
+                                    - text: "22"
+                                - link "Next &raquo;" [ref=f57e245] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/news?page=2
+                - complementary [ref=f57e248]:
+                    - generic [ref=f57e249]:
+                        - heading "Kategori" [level=3] [ref=f57e250]
+                        - generic [ref=f57e251]:
+                            - link "Politik 0" [ref=f57e252] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?category=politik
+                                - generic [ref=f57e253]: Politik
+                                - generic [ref=f57e254]: "0"
+                            - link "Business 0" [ref=f57e255] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?category=business
+                                - generic [ref=f57e256]: Business
+                                - generic [ref=f57e257]: "0"
+                            - link "Technology 0" [ref=f57e258] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?category=technology
+                                - generic [ref=f57e259]: Technology
+                                - generic [ref=f57e260]: "0"
+                            - link "Entertainment 0" [ref=f57e261] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?category=entertainment
+                                - generic [ref=f57e262]: Entertainment
+                                - generic [ref=f57e263]: "0"
+                            - link "Health 0" [ref=f57e264] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?category=health
+                                - generic [ref=f57e265]: Health
+                                - generic [ref=f57e266]: "0"
+                            - link "Sports 0" [ref=f57e267] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?category=sports
+                                - generic [ref=f57e268]: Sports
+                                - generic [ref=f57e269]: "0"
+                            - link "Uncategorized 0" [ref=f57e270] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?category=uncategorized
+                                - generic [ref=f57e271]: Uncategorized
+                                - generic [ref=f57e272]: "0"
+                    - generic [ref=f57e273]:
+                        - heading "Artikel Populer" [level=3] [ref=f57e274]
+                        - generic [ref=f57e275]:
+                            - link [ref=f57e276] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/kue-subuh-juara-fasilitasi-alumni-wub-agar-produk-dan-omset-naik-kelas
+                                - img "Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset \"Naik Kelas\"" [ref=f57e278]
+                                - generic [ref=f57e279]:
+                                    - paragraph [ref=f57e280]: Kue Subuh JUARA, Fasilitasi Alumni WUB agar Produk dan Omset "Naik Kelas"
+                                    - paragraph [ref=f57e281]: 102 views
+                            - link [ref=f57e282] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                                - img "DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026" [ref=f57e284]
+                                - generic [ref=f57e285]:
+                                    - paragraph [ref=f57e286]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+                                    - paragraph [ref=f57e287]: 13 views
+                            - link [ref=f57e288] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/keluarga-besar-trah-kismo-djuhari-gelar-dolan-bareng-ke-lampung-3-5-juli-2026
+                                - img "Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026" [ref=f57e290]
+                                - generic [ref=f57e291]:
+                                    - paragraph [ref=f57e292]: Keluarga Besar Trah Kismo Djuhari Gelar “Dolan Bareng” ke Lampung 3-5 Juli 2026
+                                    - paragraph [ref=f57e293]: 5 views
+                            - link [ref=f57e294] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
+                                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e296]
+                                - generic [ref=f57e297]:
+                                    - paragraph [ref=f57e298]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+                                    - paragraph [ref=f57e299]: 5 views
+                            - link [ref=f57e300] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
+                                - img "Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok" [ref=f57e302]
+                                - generic [ref=f57e303]:
+                                    - paragraph [ref=f57e304]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+                                    - paragraph [ref=f57e305]: 3 views
+                    - generic [ref=f57e306]:
+                        - heading "Terbaru" [level=3] [ref=f57e307]
+                        - generic [ref=f57e308]:
+                            - link [ref=f57e309] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok-IbLJd0
+                                - paragraph [ref=f57e310]: 15 Jul 2026
+                                - paragraph [ref=f57e311]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+                            - link [ref=f57e312] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/indahnya-kebersamaan-warnai-silaturrahim-dan-halal-bihalal-dmi-kota-depok
+                                - paragraph [ref=f57e313]: 15 Jul 2026
+                                - paragraph [ref=f57e314]: Indahnya Kebersamaan Warnai Silaturrahim dan Halal Bihalal DMI Kota Depok
+                            - link [ref=f57e315] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026
+                                - paragraph [ref=f57e316]: 15 Jul 2026
+                                - paragraph [ref=f57e317]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+                            - link [ref=f57e318] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog/dpd-forkabi-kota-depok-siap-laksanakan-musyawarah-daerah-tahun-2026-utdpFG
+                                - paragraph [ref=f57e319]: 15 Jul 2026
+                                - paragraph [ref=f57e320]: DPD Forkabi Kota Depok Siap Laksanakan Musyawarah Daerah Tahun 2026
+                    - generic [ref=f57e321]:
+                        - heading "Advertisement" [level=4] [ref=f57e322]
+                        - paragraph [ref=f57e323]: Your Ad Here
+                        - paragraph [ref=f57e324]: Contact us for advertising
+                    - generic [ref=f57e325]:
+                        - heading "Tag Populer" [level=3] [ref=f57e326]
+                        - generic [ref=f57e327]:
+                            - link "#Global" [ref=f57e328] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?tag=global
+                            - link "#Trending" [ref=f57e329] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?tag=trending
+                            - link "#Opinion" [ref=f57e330] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?tag=opinion
+                            - link "#Analysis" [ref=f57e331] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?tag=analysis
+                            - link "#Breaking News" [ref=f57e332] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?tag=breaking-news
+                            - link "#Featured" [ref=f57e333] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?tag=featured
+                            - link "#Local" [ref=f57e334] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/blog?tag=local
+    - contentinfo [ref=f57e335]:
+        - contentinfo [ref=f57e336]:
+            - generic [ref=f57e337]:
+                - generic [ref=f57e338]:
+                    - heading "World" [level=3] [ref=f57e339]
+                    - list [ref=f57e341]:
+                        - listitem [ref=f57e342]:
+                            - link "Global Economy" [ref=f57e343] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e344]:
+                            - link "Religion" [ref=f57e345] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e346]:
+                            - link "Bitcoin" [ref=f57e347] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e348]:
+                            - link "Conflict" [ref=f57e349] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e350]:
+                            - link "Sports" [ref=f57e351] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e352]:
+                            - link "Scandals" [ref=f57e353] [cursor=pointer]:
+                                - /url: "#"
+                - generic [ref=f57e354]:
+                    - heading "Entertainment" [level=3] [ref=f57e355]
+                    - list [ref=f57e357]:
+                        - listitem [ref=f57e358]:
+                            - link "Celebity News" [ref=f57e359] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e360]:
+                            - link "Movies" [ref=f57e361] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e362]:
+                            - link "Tv News" [ref=f57e363] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e364]:
+                            - link "Music News" [ref=f57e365] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e366]:
+                            - link "Life Style" [ref=f57e367] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e368]:
+                            - link "Entertainment Video" [ref=f57e369] [cursor=pointer]:
+                                - /url: "#"
+                - generic [ref=f57e370]:
+                    - heading "Health" [level=3] [ref=f57e371]
+                    - list [ref=f57e373]:
+                        - listitem [ref=f57e374]:
+                            - link "Medical Research" [ref=f57e375] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e376]:
+                            - link "Healthy Living" [ref=f57e377] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e378]:
+                            - link "Mental Health" [ref=f57e379] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e380]:
+                            - link "Virus Corona" [ref=f57e381] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e382]:
+                            - link "Children's Health" [ref=f57e383] [cursor=pointer]:
+                                - /url: "#"
+                - generic [ref=f57e384]:
+                    - heading "Business" [level=3] [ref=f57e385]
+                    - list [ref=f57e387]:
+                        - listitem [ref=f57e388]:
+                            - link "Markets" [ref=f57e389] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e390]:
+                            - link "Technology" [ref=f57e391] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e392]:
+                            - link "Features" [ref=f57e393] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e394]:
+                            - link "Property" [ref=f57e395] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=f57e396]:
+                            - link "Business Leaders" [ref=f57e397] [cursor=pointer]:
+                                - /url: "#"
+            - generic [ref=f57e399]:
+                - link "NEWSMEDIA" [ref=f57e400] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000
+                    - generic [ref=f57e401]: RET
+                    - generic [ref=f57e404]: NEWS
+                - generic [ref=f57e405]:
+                    - link "" [ref=f57e406] [cursor=pointer]:
+                        - /url: "#"
+                    - link "" [ref=f57e408] [cursor=pointer]:
+                        - /url: "#"
+                    - link "" [ref=f57e410] [cursor=pointer]:
+                        - /url: "#"
+                    - link "" [ref=f57e412] [cursor=pointer]:
+                        - /url: "#"
+                    - link "" [ref=f57e414] [cursor=pointer]:
+                        - /url: "#"
+            - generic [ref=f57e417]:
+                - generic [ref=f57e418]:
+                    - link "Contact Us" [ref=f57e419] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/contact
+                    - link "Terms Of Use" [ref=f57e420] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Adchoice" [ref=f57e421] [cursor=pointer]:
+                        - /url: "#"
+                    - link "About Us" [ref=f57e422] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Newsletters" [ref=f57e423] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Sitemap" [ref=f57e424] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Magrenvi Store" [ref=f57e425] [cursor=pointer]:
+                        - /url: "#"
+                - paragraph [ref=f57e426]: Copyright © 2026 News and Magazine template based on Bootstrap 4 Theme by Retenvi.

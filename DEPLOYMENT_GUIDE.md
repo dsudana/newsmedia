@@ -1,4 +1,4 @@
-# 🚀 RET NEWS - Deployment Guide
+# 🚀 NEWSMEDIA - Deployment Guide
 
 **Version:** 1.0  
 **Last Updated:** July 15, 2026  
@@ -24,6 +24,7 @@
 ## System Requirements
 
 ### Minimum Requirements
+
 - **PHP:** 8.3+
 - **MySQL:** 8.0+ or PostgreSQL 12+
 - **Node.js:** 18+ (for asset compilation)
@@ -32,17 +33,18 @@
 - **Disk Space:** 5GB
 
 ### Recommended Requirements
+
 - **PHP:** 8.3+ with extensions:
-  - `php-bcmath`
-  - `php-ctype`
-  - `php-fileinfo`
-  - `php-json`
-  - `php-mbstring`
-  - `php-pdo`
-  - `php-tokenizer`
-  - `php-xml`
-  - `php-zip`
-  - `php-redis` (optional, for caching)
+    - `php-bcmath`
+    - `php-ctype`
+    - `php-fileinfo`
+    - `php-json`
+    - `php-mbstring`
+    - `php-pdo`
+    - `php-tokenizer`
+    - `php-xml`
+    - `php-zip`
+    - `php-redis` (optional, for caching)
 - **MySQL:** 8.0.23+
 - **Node.js:** 20+ LTS
 - **SSL Certificate:** Let's Encrypt or commercial
@@ -171,6 +173,7 @@ find $BACKUP_DIR -name "*.gz" -mtime +30 -delete
 ```
 
 Add to crontab:
+
 ```bash
 0 2 * * * /path/to/backup-script.sh
 ```
@@ -183,7 +186,7 @@ Add to crontab:
 
 ```env
 # Application
-APP_NAME="RET NEWS"
+APP_NAME="NEWSMEDIA"
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://retnews.com
@@ -213,7 +216,7 @@ MAIL_PORT=465
 MAIL_USERNAME=your_username
 MAIL_PASSWORD=your_password
 MAIL_FROM_ADDRESS=noreply@retnews.com
-MAIL_FROM_NAME="RET NEWS"
+MAIL_FROM_NAME="NEWSMEDIA"
 
 # File Storage
 FILESYSTEM_DISK=public
@@ -420,7 +423,7 @@ systemctl status php8.3-fpm
 ```bash
 # Setup with external service (UptimeRobot, New Relic, etc)
 # Or use local monitoring:
-*/5 * * * * curl -s https://retnews.com/api/health > /dev/null || mail -s "RET NEWS Down" admin@example.com
+*/5 * * * * curl -s https://retnews.com/api/health > /dev/null || mail -s "NEWSMEDIA Down" admin@example.com
 ```
 
 ### 4. Error Tracking (Sentry)

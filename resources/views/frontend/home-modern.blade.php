@@ -1,17 +1,17 @@
 @extends('layouts.app-modern')
 
-@section('title', 'RET NEWS - Professional News Portal')
+@section('title', 'NEWSMEDIA - Professional News Portal')
 
 @section('content')
     <!-- Top Breaking News Bar -->
     @if ($announcements->count() > 0)
-        <div class="bg-red-700 text-white py-3 sticky top-0 z-40">
-            <div class="max-w-6xl mx-auto px-4 flex items-center gap-4">
-                <span class="bg-red-900 px-3 py-1 rounded text-xs font-bold uppercase">BREAKING</span>
+        <div class="bg-slate-900 text-white py-3 sticky top-0 z-40">
+            <div class="max-w-6xl mx-auto px-6 flex items-center gap-4">
+                <span class="bg-red-600 px-3 py-1 rounded text-xs font-bold uppercase tracking-wide">Breaking</span>
                 <div class="overflow-hidden flex-1">
-                    <div class="animate-marquee whitespace-nowrap text-base">
+                    <div class="animate-marquee whitespace-nowrap text-sm">
                         @foreach ($announcements as $announcement)
-                            <span class="mr-12">• {{ $announcement->title }}</span>
+                            <span class="mr-16">{{ $announcement->title }}</span>
                         @endforeach
                     </div>
                 </div>
@@ -19,446 +19,396 @@
         </div>
     @endif
 
-    <!-- Trending Topics -->
-    <div class="bg-gray-900 text-white py-2 sticky top-16 z-30">
-        <div class="max-w-6xl mx-auto px-4 flex items-center gap-3">
-            <span class="text-xs font-bold uppercase whitespace-nowrap">🔥 Trending:</span>
-            <div class="overflow-hidden flex-1">
-                <div class="animate-marquee whitespace-nowrap text-sm">
-                    @php
-                        $trendingArticles = $latestArticles->take(10);
-                    @endphp
-                    @foreach ($trendingArticles as $article)
-                        <span class="mr-8">
-                            <a href="{{ route('blog.show', $article->slug) }}" class="hover:text-red-500 transition">
+    <!-- Trending Topics Bar -->
+    <div class="bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-3 sticky top-12 z-30">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center gap-3">
+                <span class="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide whitespace-nowrap shrink-0">Trending Now:</span>
+                <div class="overflow-hidden flex-1">
+                    <div class="flex gap-8 animate-marquee">
+                        @php
+                            $trendingArticles = $latestArticles->take(6);
+                        @endphp
+                        @foreach ($trendingArticles as $article)
+                            <a href="{{ route('blog.show', $article->slug) }}"
+                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap">
                                 {{ $article->title }}
                             </a>
-                        </span>
-                    @endforeach
+                        @endforeach
+                        @foreach ($trendingArticles as $article)
+                            <a href="{{ route('blog.show', $article->slug) }}"
+                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap">
+                                {{ $article->title }}
+                            </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Advertisement Section -->
-    <div class="bg-white border-b border-gray-200 py-6">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="bg-gray-200 rounded-lg h-32 flex items-center justify-center">
-                <div class="text-center">
-                    <p class="text-gray-600 font-semibold text-lg">Advertisement</p>
-                    <p class="text-gray-500 text-sm mt-1">Space for ads - 1200x128px</p>
-                </div>
-            </div>
+    <!-- Advertisement Banner -->
+    <div class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-6">
+        <div class="max-w-6xl mx-auto px-6">
+            <x-advertisement placement="header_banner" />
         </div>
     </div>
 
-    <!-- Main Hero Section -->
-    <div class="bg-white border-b border-gray-200">
-        <div class="max-w-6xl mx-auto px-4 py-8">
-            <div class="grid grid-cols-3 gap-6 items-stretch">
-                <!-- Large Featured Article (Col 1-2) -->
+    <!-- Main Content -->
+    <main class="bg-white dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <!-- Featured Hero Section (Full Width, 2 Columns) -->
+            <div class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left Column: 1 Large Article -->
                 @php $featured = $latestArticles->first() @endphp
                 @if ($featured)
-                    <div class="col-span-2 group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition">
-                        <div class="absolute inset-0">
-                            <img src="{{ $featured->image }}" alt="{{ $featured->title }}"
-                                class="w-full h-96 object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        </div>
-                        <div class="relative h-96 p-8 flex flex-col justify-end">
-                            <div class="mb-3">
-                                <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded">
-                                    {{ $featured->category->name }}
-                                </span>
+                    <article class="group h-96">
+                        <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 h-full">
+                            <img src="{{ $featured->featured_image ? asset('storage/' . $featured->featured_image) : 'https://via.placeholder.com/1000x500?text=' . urlencode($featured->category->name) }}"
+                                alt="{{ $featured->title }}" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <div class="mb-3">
+                                    <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                                        {{ $featured->category->name }}
+                                    </span>
+                                </div>
+                                <h2 class="text-3xl font-bold text-white mb-2 leading-tight line-clamp-3">
+                                    {{ $featured->title }}
+                                </h2>
+                                <div class="flex items-center gap-4 text-xs text-slate-300">
+                                    <span>{{ $featured->published_at->format('M d, Y') }}</span>
+                                    @if ($featured->read_time)
+                                        <span>{{ $featured->read_time }} min read</span>
+                                    @endif
+                                </div>
                             </div>
-                            <h1 class="text-4xl font-bold text-white mb-2 leading-tight">{{ $featured->title }}</h1>
-                            <p class="text-gray-200 text-base mb-4">{{ $featured->excerpt }}</p>
-                            <div class="flex items-center gap-4 text-xs text-gray-300">
-                                <span>{{ $featured->date }}</span>
-                                <span>{{ $featured->read_time }} min read</span>
-                                <a href="{{ $featured->url }}" class="text-red-400 font-semibold hover:text-red-300">Read
-                                    →</a>
-                            </div>
                         </div>
-                    </div>
+                    </article>
                 @endif
 
-                <!-- Side Featured Articles (Col 3) -->
+                <!-- Right Column: 2 Articles Stacked -->
                 <div class="space-y-4">
                     @foreach ($latestArticles->skip(1)->take(2) as $article)
-                        <a href="{{ $article->url }}" class="block group">
-                            <div class="relative overflow-hidden rounded-lg h-40 mb-3">
-                                <img src="{{ $article->image }}" alt="{{ $article->title }}"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <a href="{{ route('blog.show', $article->slug) }}" class="group flex h-44 hover:opacity-85 transition">
+                            <div class="relative overflow-hidden rounded-lg w-40 flex-shrink-0">
+                                <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/300x300?text=' . urlencode($article->category->name ?? 'News') }}"
+                                    alt="{{ $article->title }}" loading="lazy"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             </div>
-                            <h3 class="font-bold text-base text-gray-900 line-clamp-2 group-hover:text-red-600">
-                                {{ $article->title }}</h3>
-                            <p class="text-sm text-gray-500 mt-1">{{ $article->date }}</p>
+                            <div class="flex-1 p-4 bg-slate-50 dark:bg-slate-800 rounded-r-lg flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">
+                                        {{ $article->category->name }}
+                                    </span>
+                                    <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mt-1">
+                                        {{ $article->title }}
+                                    </h3>
+                                </div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">
+                                    {{ $article->published_at->format('M d, Y') }}
+                                </p>
+                            </div>
                         </a>
                     @endforeach
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Secondary Featured Grid -->
-    <div class="bg-gray-50 border-b border-gray-200">
-        <div class="max-w-6xl mx-auto px-4 py-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">Latest Stories</h2>
-            <div class="grid grid-cols-4 gap-4">
-                @foreach ($latestArticles->skip(4)->take(4) as $article)
-                    <a href="{{ $article->url }}" class="group">
-                        <div class="relative overflow-hidden rounded-lg h-40 mb-3 bg-gray-200">
-                            <img src="{{ $article->image }}" alt="{{ $article->title }}"
-                                class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        </div>
-                        <div class="text-sm font-bold text-red-600 mb-1 uppercase">{{ $article->category->name }}</div>
-                        <h3 class="font-bold text-base text-gray-900 line-clamp-2 group-hover:text-red-600">
-                            {{ $article->title }}</h3>
-                    </a>
-                @endforeach
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content Area -->
-    <div class="bg-white">
-        <div class="max-w-6xl mx-auto px-4 py-8">
-            <div class="grid grid-cols-3 gap-8">
-                <!-- Main Content (2/3) -->
-                <div class="col-span-2">
-                    <!-- Most Read Section -->
-                    <section class="mb-12">
-                        <div class="flex items-center justify-between mb-6 pb-3 border-b-2 border-red-600">
-                            <h2 class="text-3xl font-bold text-gray-900">Most Read</h2>
-                            <a href="{{ route('blog.index') }}"
-                                class="text-red-600 font-semibold text-base hover:text-red-700">View All →</a>
-                        </div>
-                        <div class="grid grid-cols-3 gap-4">
-                            @foreach ($latestArticles->skip(8)->take(6) as $article)
-                                <a href="{{ route('blog.show', $article->slug) }}" class="group">
-                                    <!-- Image -->
-                                    <div class="relative overflow-hidden rounded-lg h-48 mb-3 bg-gray-200">
-                                        <img src="{{ $article->image }}" alt="{{ $article->title }}"
-                                            class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                                    </div>
-                                    <!-- Category -->
-                                    <div class="text-sm font-bold text-red-600 mb-2 uppercase">{{ $article->category->name }}</div>
-                                    <!-- Title -->
-                                    <h3 class="font-bold text-base text-gray-900 line-clamp-2 group-hover:text-red-600 mb-2">
-                                        {{ $article->title }}</h3>
-                                    <!-- Date -->
-                                    <p class="text-sm text-gray-500">{{ $article->date }}</p>
-                                </a>
-                            @endforeach
-                        </div>
-                    </section>
-
-                    <!-- Advertisement Section -->
-                    <div class="mb-12 bg-gray-200 rounded-lg h-40 flex items-center justify-center">
-                        <div class="text-center">
-                            <p class="text-gray-600 font-semibold text-lg">Advertisement</p>
-                            <p class="text-gray-500 text-sm mt-1">Space for ads</p>
-                        </div>
-                    </div>
-
-                    <!-- Regular News Section -->
-                    <section class="mb-12">
-                        <div class="mb-6 pb-3 border-b-2 border-gray-300">
-                            <h2 class="text-3xl font-bold text-gray-900">News</h2>
-                        </div>
-                        <div class="grid grid-cols-2 gap-6">
-                            @foreach ($latestArticles->skip(13)->take(4) as $article)
-                                <article class="group">
-                                    <div class="relative overflow-hidden rounded-lg h-48 mb-4 bg-gray-200">
-                                        <img src="{{ $article->image }}" alt="{{ $article->title }}"
-                                            class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                                    </div>
-                                    <div class="text-sm font-bold text-red-600 mb-2 uppercase">
-                                        {{ $article->category->name }}</div>
-                                    <h3
-                                        class="font-bold text-base text-gray-900 line-clamp-2 group-hover:text-red-600 mb-2">
-                                        <a href="{{ $article->url }}">{{ $article->title }}</a>
-                                    </h3>
-                                    <p class="text-sm text-gray-500">{{ $article->date }}</p>
-                                </article>
-                            @endforeach
-                        </div>
-                    </section>
-
-                    <!-- Categories Spotlight Section -->
-                    @if ($categories->count() > 0)
-                        @php
-                            $categoryArticles = [];
-                            $dummyTitles = [
-                                'Inovasi Terbaru dalam Industri Teknologi',
-                                'Tren Global yang Mengubah Perspektif Bisnis',
-                                'Wawancara Eksklusif dengan Tokoh Inspiratif',
-                                'Analisis Mendalam tentang Perkembangan Pasar',
-                            ];
-
-                            foreach ($categories->take(3) as $category) {
-                                $articles = $category->articles()->published()->latest('published_at')->take(3)->get();
-
-                                // Tambahkan dummy articles jika kurang
-                                while ($articles->count() < 3) {
-                                    $dummyArticle = (object)[
-                                        'id' => 'dummy-' . $category->id . '-' . ($articles->count() + 1),
-                                        'slug' => 'dummy-article-' . $category->id,
-                                        'title' => $dummyTitles[($articles->count() + ($category->id % 4)) % 4] . ' - ' . $category->name,
-                                        'image' => 'https://via.placeholder.com/400x300?text=' . urlencode($category->name),
-                                        'excerpt' => 'Artikel menarik tentang ' . $category->name,
-                                        'published_at' => now()->subDays(5 - $articles->count()),
-                                        'category' => $category,
-                                        'slug' => '#',
-                                    ];
-                                    $articles->push($dummyArticle);
-                                }
-
-                                $categoryArticles[$category->id] = $articles;
-                            }
-                        @endphp
-                        @foreach ($categories->take(3) as $category)
-                            <section class="mb-12 last:mb-0">
-                                <!-- Category Header -->
-                                <div class="flex items-center justify-between mb-6 pb-3 border-b-2 border-gray-300">
-                                    <h2 class="text-3xl font-bold text-gray-900">{{ $category->name }}</h2>
-                                    <a href="{{ route('blog.category', $category->slug) }}"
-                                        class="text-red-600 font-semibold text-base hover:text-red-700">View All →</a>
-                                </div>
-
-                                <!-- Category Content - 3 Column Grid -->
-                                @if ($categoryArticles[$category->id]->count() > 0)
-                                    <div class="grid grid-cols-3 gap-6">
-                                        @foreach ($categoryArticles[$category->id]->take(3) as $article)
-                                            <article class="group">
-                                                <div class="relative overflow-hidden rounded-lg h-48 mb-4 bg-gray-200">
-                                                    <img src="{{ $article->image }}" alt="{{ $article->title }}"
-                                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                                                </div>
-                                                <h3 class="font-bold text-base text-gray-900 line-clamp-2 group-hover:text-red-600 mb-2">
-                                                    <a href="{{ $article->slug === '#' ? '#' : route('blog.show', $article->slug) }}">{{ $article->title }}</a>
-                                                </h3>
-                                                <p class="text-sm text-gray-500">{{ $article->published_at->format('M d, Y') }}</p>
-                                            </article>
-                                        @endforeach
-                                    </div>
-                                @endif
-                            </section>
-                        @endforeach
-                    @endif
+            <!-- Latest News Grid (Full Width, 4 Columns) -->
+            <section class="mb-12">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Latest News</h2>
+                    <div class="h-1 w-16 bg-gradient-to-r from-red-600 to-red-400 mt-3 rounded-full"></div>
                 </div>
 
-                <!-- Sidebar (1/3) -->
-                <aside class="space-y-6">
-                    <!-- Search Box -->
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <form action="{{ route('blog.search') }}" method="GET" class="space-y-3">
-                            <input type="text" name="search" placeholder="Search news..."
-                                value="{{ request('search') }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-red-600">
-                            <button type="submit"
-                                class="w-full bg-red-600 text-white py-2 rounded font-semibold text-sm hover:bg-red-700">
-                                Search
-                            </button>
-                        </form>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    @foreach ($latestArticles->skip(3)->take(4) as $article)
+                        <a href="{{ route('blog.show', $article->slug) }}"
+                            class="group flex flex-col h-full hover:opacity-85 transition">
+                            <div class="relative overflow-hidden rounded-lg h-48 mb-4">
+                                <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/400x300?text=' . urlencode($article->category->name ?? 'News') }}"
+                                    alt="{{ $article->title }}" loading="lazy"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="flex-1 flex flex-col">
+                                <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide mb-2">
+                                    {{ $article->category->name }}
+                                </span>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-3">
+                                    {{ $article->title }}
+                                </h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">
+                                    {{ $article->published_at->format('M d, Y') }}
+                                </p>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </section>
 
-                    <!-- Trending Now -->
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h3 class="font-bold text-xl text-gray-900 mb-4 pb-3 border-b-2 border-red-600">Trending Now</h3>
-                        <div class="space-y-0 -mx-6 -mb-6">
-                            @foreach ($latestArticles->take(5) as $article)
-                                <a href="{{ route('blog.show', $article->slug) }}"
-                                    class="flex gap-3 p-4 hover:bg-white transition group border-b border-gray-200 last:border-0">
-                                    <!-- Thumbnail -->
-                                    <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded">
-                                        <img src="{{ $article->image }}" alt="{{ $article->title }}"
-                                            class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Content (2/3) -->
+                <div class="lg:col-span-2 space-y-12">
+                    <!-- Category/News Update Section -->
+                    <section>
+                        <div class="flex items-center justify-between mb-8">
+                            <h2 class="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                News Update
+                                <span class="text-red-600 text-2xl">›</span>
+                            </h2>
+                            <a href="#" class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-2xl transition">
+                                ›
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            @foreach ($latestArticles->skip(7)->take(3) as $article)
+                                <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
+                                    <!-- Article Card with Image -->
+                                    <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
+                                        <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/400x300?text=' . urlencode($article->category->name ?? 'News') }}"
+                                            alt="{{ $article->title }}" loading="lazy"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+                                        <!-- Overlay with category badge -->
+                                        <div class="absolute top-3 left-3 right-3">
+                                            <span class="inline-block bg-red-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
+                                                {{ $article->category->name }}
+                                            </span>
+                                        </div>
                                     </div>
 
                                     <!-- Content -->
-                                    <div class="flex-1 min-w-0">
-                                        <p
-                                            class="font-semibold text-base text-gray-900 line-clamp-2 group-hover:text-red-600">
+                                    <div class="flex-1 flex flex-col">
+                                        <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
                                             {{ $article->title }}
+                                        </h3>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-auto">
+                                            @php
+                                                $minutes = (int) abs($article->published_at->diffInMinutes(now()));
+                                                if ($minutes < 60) {
+                                                    echo $minutes . ' menit lalu';
+                                                } elseif ($minutes < 1440) {
+                                                    echo floor($minutes / 60) . ' jam lalu';
+                                                } else {
+                                                    echo $article->published_at->format('d M Y');
+                                                }
+                                            @endphp
                                         </p>
-                                        <p class="text-sm text-gray-500 mt-1">{{ $article->date }}</p>
-                                    </div>
-
-                                    <!-- Comment Count -->
-                                    <div class="flex-shrink-0 text-right">
-                                        @php
-                                            $commentCount = $article->comments
-                                                ? $article->comments->where('is_approved', true)->count()
-                                                : 0;
-                                        @endphp
-                                        <div class="text-sm font-semibold text-gray-900">
-                                            <i class="fas fa-comment text-gray-400"></i>
-                                        </div>
-                                        <div class="text-sm text-gray-500">{{ $commentCount }}</div>
                                     </div>
                                 </a>
                             @endforeach
                         </div>
-                    </div>
+                    </section>
 
-                    <!-- Social Media -->
-                    <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                        <h3 class="font-bold text-lg text-gray-900 mb-4">Follow Us</h3>
-                        <div class="flex gap-3 justify-center">
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition">
-                                <i class="fab fa-facebook-f text-base"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition">
-                                <i class="fab fa-x-twitter text-base"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-400 text-white flex items-center justify-center hover:scale-110 transition">
-                                <i class="fab fa-telegram text-base"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center hover:scale-110 transition">
-                                <i class="fab fa-instagram text-base"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center hover:scale-110 transition">
-                                <i class="fab fa-youtube text-base"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center hover:scale-110 transition">
-                                <i class="fab fa-whatsapp text-base"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition">
-                                <i class="fab fa-tiktok text-base"></i>
-                            </a>
+                    <!-- Category Sections -->
+                    @php
+                        // Get unique categories (limit to 3 for display)
+                        $categoryGroups = $latestArticles->groupBy('category_id')->take(3);
+                    @endphp
+                    @foreach ($categoryGroups as $categoryId => $categoryArticles)
+                        @php
+                            // Get the first article to get category name
+                            $firstArticle = $categoryArticles->first();
+                            $categoryName = $firstArticle->category->name ?? 'News';
+                        @endphp
+                        <section>
+                            <div class="flex items-center justify-between mb-8">
+                                <h2 class="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    {{ $categoryName }}
+                                    <span class="text-red-600 text-2xl">›</span>
+                                </h2>
+                                <a href="{{ route('blog.category', $firstArticle->category->slug ?? '') }}" class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-2xl transition">
+                                    ›
+                                </a>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                @foreach ($categoryArticles->take(3) as $article)
+                                    <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
+                                        <!-- Article Card with Image -->
+                                        <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
+                                            <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/400x300?text=' . urlencode($article->category->name ?? 'News') }}"
+                                                alt="{{ $article->title }}" loading="lazy"
+                                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+                                            <!-- Overlay with category badge -->
+                                            <div class="absolute top-3 left-3 right-3">
+                                                <span class="inline-block bg-red-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
+                                                    {{ $article->category->name }}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Content -->
+                                        <div class="flex-1 flex flex-col">
+                                            <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
+                                                {{ $article->title }}
+                                            </h3>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-auto">
+                                                @php
+                                                    $minutes = (int) abs($article->published_at->diffInMinutes(now()));
+                                                    if ($minutes < 60) {
+                                                        echo $minutes . ' menit lalu';
+                                                    } elseif ($minutes < 1440) {
+                                                        echo floor($minutes / 60) . ' jam lalu';
+                                                    } else {
+                                                        echo $article->published_at->format('d M Y');
+                                                    }
+                                                @endphp
+                                            </p>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </section>
+                    @endforeach
+                </div>
+
+                <!-- Right Sidebar (1/3) -->
+                <aside class="space-y-8">
+                    <!-- Social Media Section -->
+                    <section class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Follow Us</h3>
+                        <div class="flex flex-wrap gap-3">
+                            @php
+                                $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
+                            @endphp
+                            @forelse ($socialLinks as $social)
+                                <a href="{{ $social->url }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   title="{{ $social->platform }}"
+                                   class="w-10 h-10 flex items-center justify-center rounded-lg bg-red-600 hover:bg-red-700 text-white transition duration-300 transform hover:scale-110">
+                                    <i class="{{ $social->icon }}"></i>
+                                </a>
+                            @empty
+                                <p class="text-sm text-slate-500 dark:text-slate-400">No social media links available</p>
+                            @endforelse
                         </div>
-                    </div>
+                    </section>
 
-                    <!-- Advertisement Section -->
-                    <div class="bg-gray-200 rounded-lg h-40 flex items-center justify-center">
+                    <!-- Advertisement Top -->
+                    <div
+                        class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 h-80 flex items-center justify-center border border-slate-200 dark:border-slate-700">
                         <div class="text-center">
-                            <p class="text-gray-600 font-semibold text-base">Advertisement</p>
-                            <p class="text-gray-500 text-sm mt-1">Space for ads</p>
+                            <div class="w-12 h-12 bg-slate-300 dark:bg-slate-600 rounded-lg mx-auto mb-3"></div>
+                            <p class="text-slate-600 dark:text-slate-400 font-semibold text-sm">Advertisement</p>
+                            <p class="text-slate-500 dark:text-slate-500 text-xs mt-1">300×250</p>
                         </div>
                     </div>
+
+                    <!-- Popular Articles -->
+                    <section
+                        class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                            <span class="w-1 h-6 bg-red-600 rounded-full"></span>
+                            Popular
+                        </h3>
+                        <div class="space-y-5">
+                            @foreach ($latestArticles->skip(11)->take(5) as $article)
+                                <a href="{{ route('blog.show', $article->slug) }}"
+                                    class="group flex gap-4 pb-5 border-b border-slate-200 dark:border-slate-700 last:pb-0 last:border-0 hover:opacity-75 transition">
+                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                        <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/100x100?text=' . urlencode($article->category->name ?? 'News') }}"
+                                            alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4
+                                            class="text-sm font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-1">
+                                            {{ $article->title }}
+                                        </h4>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400">
+                                            {{ $article->published_at->format('M d, Y') }}
+                                        </p>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
+                    </section>
 
                     <!-- Newsletter -->
-                    <div class="bg-gradient-to-b from-blue-600 to-blue-700 text-white p-6 rounded-lg">
-                        <h3 class="font-bold text-xl mb-2">Newsletter</h3>
-                        <p class="text-base text-blue-100 mb-4">Get the latest news delivered to your inbox daily.</p>
-                        <form action="{{ route('newsletter.subscribe') }}" method="POST" class="space-y-3">
+                    <section class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white">
+                        <h3 class="text-lg font-bold mb-2">Newsletter</h3>
+                        <p class="text-sm text-red-100 mb-4">Get the latest stories delivered to your inbox daily</p>
+
+                        <form action="{{ route('newsletter.subscribe') }}" method="POST" class="space-y-3"
+                            x-data="{ loading: false, email: '' }" @submit.prevent="submitNewsletter">
                             @csrf
-                            <input type="email" name="email" required placeholder="Your email"
-                                class="w-full px-4 py-2 rounded text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-blue-300">
-                            <button type="submit"
-                                class="w-full bg-red-600 text-white py-2 rounded font-semibold text-base hover:bg-red-700">
-                                Subscribe
+                            <input type="email" name="email" x-model="email" placeholder="your@email.com"
+                                class="w-full px-4 py-3 rounded-lg text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-red-300 placeholder-slate-500"
+                                required>
+                            <button type="submit" :disabled="loading"
+                                class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg text-sm transition disabled:opacity-50">
+                                <span x-show="!loading">Subscribe</span>
+                                <span x-show="loading"><i class="fas fa-spinner fa-spin mr-2"></i>Subscribing</span>
                             </button>
                         </form>
+                    </section>
+
+                    <!-- Advertisement Bottom -->
+                    <div
+                        class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 h-80 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-slate-300 dark:bg-slate-600 rounded-lg mx-auto mb-3"></div>
+                            <p class="text-slate-600 dark:text-slate-400 font-semibold text-sm">Advertisement</p>
+                            <p class="text-slate-500 dark:text-slate-500 text-xs mt-1">300×250</p>
+                        </div>
                     </div>
 
-                    <!-- Rekomendasi (Affiliasi) -->
-                    <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                        <h3 class="font-bold text-lg text-gray-900 mb-4">Rekomendasi</h3>
-                        <div class="space-y-4">
+                    <!-- Categories -->
+                    <section
+                        class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                            <span class="w-1 h-6 bg-red-600 rounded-full"></span>
+                            Categories
+                        </h3>
+                        <div class="space-y-2">
                             @php
-                                $recommendedProducts = [
-                                    [
-                                        'title' => 'Paket Internet Unlimited 100Mbps',
-                                        'price' => 'Rp 299.000',
-                                        'image' => 'https://via.placeholder.com/150x100?text=Internet',
-                                    ],
-                                    [
-                                        'title' => 'VPS Cloud Hosting Pro',
-                                        'price' => 'Rp 149.000',
-                                        'image' => 'https://via.placeholder.com/150x100?text=Hosting',
-                                    ],
-                                    [
-                                        'title' => 'Domain .COM 1 Tahun',
-                                        'price' => 'Rp 79.000',
-                                        'image' => 'https://via.placeholder.com/150x100?text=Domain',
-                                    ],
-                                    [
-                                        'title' => 'SSL Certificate Pro',
-                                        'price' => 'Rp 199.000',
-                                        'image' => 'https://via.placeholder.com/150x100?text=SSL',
-                                    ],
-                                ];
+                                $categories = ['Technology', 'Business', 'Entertainment', 'Sports', 'Health'];
                             @endphp
-                            @foreach ($recommendedProducts as $product)
-                                <a href="#" class="group flex gap-3 pb-4 border-b border-gray-200 last:border-0 last:pb-0 hover:opacity-80 transition">
-                                    <!-- Thumbnail -->
-                                    <div class="flex-shrink-0 w-20 h-20 overflow-hidden rounded bg-gray-200">
-                                        <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}"
-                                            class="w-full h-full object-cover">
-                                    </div>
-
-                                    <!-- Content -->
-                                    <div class="flex-1 min-w-0">
-                                        <h4 class="text-sm font-bold text-gray-900 line-clamp-2 group-hover:text-red-600 mb-1">
-                                            {{ $product['title'] }}</h4>
-                                        <p class="text-sm font-semibold text-red-600">{{ $product['price'] }}/bulan</p>
-                                    </div>
+                            @foreach ($categories as $category)
+                                <a href="#"
+                                    class="block px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition">
+                                    {{ $category }}
                                 </a>
                             @endforeach
                         </div>
-                    </div>
+                    </section>
                 </aside>
             </div>
         </div>
-    </div>
-
-    <!-- Events Section -->
-    @if ($upcomingEvents->count() > 0)
-        <div class="bg-white border-b border-gray-200">
-            <div class="max-w-6xl mx-auto px-4 py-12">
-                <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-3xl font-bold text-gray-900">Upcoming Events</h2>
-                    <a href="#" class="text-red-600 font-semibold text-sm hover:text-red-700">View All →</a>
-                </div>
-                <div class="grid grid-cols-3 gap-6">
-                    @foreach ($upcomingEvents->take(3) as $event)
-                        <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
-                            <div class="bg-red-600 text-white p-6">
-                                <div class="text-5xl font-bold leading-none mb-2">{{ $event->event_date->format('d') }}
-                                </div>
-                                <div class="text-base font-semibold">{{ $event->event_date->format('F Y') }}</div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="font-bold text-xl text-gray-900 mb-2">{{ $event->title }}</h3>
-                                <p class="text-base text-gray-600 mb-4 line-clamp-2">{{ $event->description }}</p>
-                                <button class="text-red-600 font-semibold text-base hover:text-red-700">Learn More →</button>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    @endif
-
-    <!-- Advertisement Banner -->
-    <div class="bg-gray-100 py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="bg-gray-300 rounded-lg h-32 flex items-center justify-center">
-                <p class="text-gray-600 font-semibold">Advertisement Space</p>
-            </div>
-        </div>
-    </div>
-
-    <style>
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        .animate-marquee {
-            animation: marquee 30s linear infinite;
-        }
-
-        .animate-marquee:hover {
-            animation-play-state: paused;
-        }
-    </style>
+    </main>
 @endsection
+
+<script>
+    function submitNewsletter() {
+        this.loading = true;
+        fetch('{{ route('newsletter.subscribe') }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: this.email
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                this.loading = false;
+                if (data.success) {
+                    alert('Subscribed successfully!');
+                    this.email = '';
+                } else {
+                    alert(data.message || 'Subscription failed');
+                }
+            })
+            .catch(error => {
+                this.loading = false;
+                alert('Error subscribing');
+            });
+    }
+</script>

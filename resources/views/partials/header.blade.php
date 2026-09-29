@@ -3,13 +3,13 @@
 
          
 
-        {{-- Logo: "RET" ink black + red lightning bolt + "NEWS" red --}}
+        {{-- Logo: "NEWS" ink black + red lightning bolt + "MEDIA" red --}}
         <a id="logo" href="{{ route('home') }}" class="flex items-center gap-1 select-none">
-            <span class="text-2xl font-extrabold text-rn-ink tracking-tight">RET</span>
+            <span class="text-2xl font-extrabold text-rn-ink tracking-tight">NEWS</span>
             <svg class="w-5 h-7 text-rn-red -mx-0.5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z" />
             </svg>
-            <span class="text-2xl font-extrabold text-rn-red tracking-tight">NEWS</span>
+            <span class="text-2xl font-extrabold text-rn-red tracking-tight">MEDIA</span>
         </a>
 
         {{-- Primary nav --}}

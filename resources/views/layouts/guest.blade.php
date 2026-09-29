@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,13 +20,27 @@
 
         <style>
             @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
 
             @keyframes slideInRight {
-                from { opacity: 0; transform: translateX(20px); }
-                to { opacity: 1; transform: translateX(0); }
+                from {
+                    opacity: 0;
+                    transform: translateX(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
             }
 
             body {
@@ -178,6 +193,7 @@
             }
         </style>
     </head>
+
     <body>
         <div class="min-h-screen flex items-center justify-center px-4 py-6">
             <div class="login-container w-full max-w-md">
@@ -186,7 +202,7 @@
                         <div class="logo-icon">
                             <i class="fas fa-newspaper"></i>
                         </div>
-                        <h1>RET NEWS</h1>
+                        <h1>NEWSMEDIA</h1>
                         <p>Admin Dashboard</p>
                     </div>
 
@@ -197,4 +213,5 @@
             </div>
         </div>
     </body>
+
 </html>

@@ -7,7 +7,6 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdController;
 use App\Http\Controllers\AffiliateLinkController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\KeywordController;
@@ -22,12 +21,18 @@ use App\Http\Controllers\SeoSettingController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Admin\SocialMediaController;
+use App\Http\Controllers\AdvertisementController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendHomepageController::class, 'index'])->name('home');
 
 // Newsletter subscription
 Route::post('/newsletter/subscribe', [SubscriberController::class, 'subscribe'])->name('newsletter.subscribe');
+
+// Advertisement tracking (API endpoints)
+Route::post('/api/advertisements/{id}/view', [AdvertisementController::class, 'recordView'])->name('advertisements.view');
+Route::post('/api/advertisements/{id}/click', [AdvertisementController::class, 'recordClick'])->name('advertisements.click');
 
 // Blog routes (from retnews) - with rate limiting
 Route::get('/blog', [PublicArticleController::class, 'index'])->name('blog.index')->middleware('throttle:100,60');
@@ -85,13 +90,17 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('tags', TagController::class);
     Route::resource('articles', ArticleController::class);
     Route::resource('users', UserController::class);
-    Route::resource('ads', AdController::class);
     Route::resource('affiliates', AffiliateLinkController::class);
     Route::resource('keywords', KeywordController::class);
     Route::resource('seo-settings', SeoSettingController::class);
     Route::resource('announcements', AnnouncementController::class);
     Route::resource('events', EventController::class);
     Route::resource('videos', VideoController::class);
+    Route::resource('advertisements', AdvertisementController::class);
+    Route::post('/advertisements/{id}/restore', [AdvertisementController::class, 'restore'])->name('advertisements.restore');
+
+    // Social media management
+    Route::resource('social-media', SocialMediaController::class);
 
     // Comment moderation
     Route::get('/comments', [\App\Http\Controllers\CommentModerationController::class, 'index'])->name('comments.index');

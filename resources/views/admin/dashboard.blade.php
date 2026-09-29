@@ -185,7 +185,7 @@
                                 <i class="fas fa-download"></i>
                                 WP Import
                             </a>
-                            <a href="{{ route('admin.ads.index') }}"
+                            <a href="{{ route('admin.advertisements.index') }}"
                                 class="text-sm px-3 py-2 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-lg transition-colors font-medium flex items-center gap-2">
                                 <i class="fas fa-bullhorn"></i>
                                 Ads
