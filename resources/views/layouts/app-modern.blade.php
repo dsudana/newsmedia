@@ -24,6 +24,11 @@
         <meta property="twitter:description" content="@yield('twitter:description', 'Get the latest news and stories from around the world')">
         <meta property="twitter:image" content="@yield('twitter:image', url('/images/og-default.png'))">
 
+        <!-- Google Fonts: Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
             crossorigin="anonymous" referrerpolicy="no-referrer">
