@@ -22,23 +22,23 @@ class DummyArticlesSeeder extends Seeder
             ]);
         }
 
-        // Image URLs for different categories
+        // Image URLs for different categories (using Picsum Photos - reliable image service)
         $ekonomiImages = [
-            'https://images.unsplash.com/photo-1611432579699-484f7990f556?w=800&q=80',
-            'https://images.unsplash.com/photo-1460925895917-adf4198897bb?w=800&q=80',
-            'https://images.unsplash.com/photo-1518186285646-354e2e4db6b1?w=800&q=80',
+            'https://picsum.photos/800/500?random=1',
+            'https://picsum.photos/800/500?random=2',
+            'https://picsum.photos/800/500?random=3',
         ];
 
         $pendidikanImages = [
-            'https://images.unsplash.com/photo-1427504494785-1a4a2a5fb82e?w=800&q=80',
-            'https://images.unsplash.com/photo-1497633762265-25c6b28e8025?w=800&q=80',
-            'https://images.unsplash.com/photo-1509662176150-766266f84a0e?w=800&q=80',
+            'https://picsum.photos/800/500?random=4',
+            'https://picsum.photos/800/500?random=5',
+            'https://picsum.photos/800/500?random=6',
         ];
 
         $olahragaImages = [
-            'https://images.unsplash.com/photo-1517836357463-d25ddfcb52c2?w=800&q=80',
-            'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80',
-            'https://images.unsplash.com/photo-1540747913ee8516a959ad16biased1aaeeb3?w=800&q=80',
+            'https://picsum.photos/800/500?random=7',
+            'https://picsum.photos/800/500?random=8',
+            'https://picsum.photos/800/500?random=9',
         ];
 
         // Get or create categories
