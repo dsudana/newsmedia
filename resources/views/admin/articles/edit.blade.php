@@ -301,7 +301,6 @@
                         var ui = $.summernote.ui;
                         var button = ui.button({
                             contents: '<i class="fa fa-video-camera"/>',
-                            tooltip: 'Embed YouTube Video',
                             click: function() {
                                 var url = prompt('Enter YouTube URL:');
                                 if (url) {
