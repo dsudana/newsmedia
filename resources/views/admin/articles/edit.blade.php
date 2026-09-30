@@ -435,20 +435,89 @@
     </script>
 
     <style>
+        /* Summernote Styling */
         .summernote {
+            border: 1px solid #d1d5db !important;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .note-editor {
             border: 1px solid #d1d5db;
             border-radius: 0.5rem;
+            overflow: hidden;
         }
 
         .note-editor .note-toolbar {
             background-color: #f9fafb;
             border-bottom: 1px solid #e5e7eb;
-            border-radius: 0.5rem 0.5rem 0 0;
+            padding: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+
+        .note-toolbar .note-btn-group {
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .note-toolbar .note-btn {
+            padding: 0.375rem 0.5rem;
+            font-size: 0.875rem;
+            line-height: 1;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            background-color: white;
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .note-toolbar .note-btn:hover {
+            background-color: #e5e7eb;
+            border-color: #9ca3af;
+        }
+
+        .note-toolbar .note-btn.active {
+            background-color: #4f46e5;
+            color: white;
+            border-color: #4f46e5;
+        }
+
+        .note-toolbar .note-btn-group > div {
+            display: flex;
+            gap: 0.25rem;
         }
 
         .note-editor .note-editable {
             background-color: white;
             border-radius: 0 0 0.5rem 0.5rem;
+            padding: 1rem;
+            min-height: 500px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+        }
+
+        .note-editor .note-editable p {
+            margin-bottom: 1rem;
+        }
+
+        .note-editor .note-editable h1,
+        .note-editor .note-editable h2,
+        .note-editor .note-editable h3,
+        .note-editor .note-editable h4,
+        .note-editor .note-editable h5,
+        .note-editor .note-editable h6 {
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Dropdown menus for font selection */
+        .note-toolbar .note-btn-group .note-dropdown-menu {
+            min-width: 150px;
         }
 
         .embed-container {
@@ -457,6 +526,7 @@
             height: 0;
             overflow: hidden;
             margin: 1rem 0;
+            border-radius: 0.375rem;
         }
 
         .embed-container iframe {
@@ -465,6 +535,36 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: none;
+            border-radius: 0.375rem;
+        }
+
+        /* Improve Select2 styling */
+        .select2-container--default .select2-selection--multiple {
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+        }
+
+        .select2-container--default.select2-container--focus .select2-selection--multiple {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        /* Responsive toolbar on mobile */
+        @media (max-width: 768px) {
+            .note-editor .note-toolbar {
+                padding: 0.375rem;
+            }
+
+            .note-toolbar .note-btn {
+                padding: 0.25rem 0.375rem;
+                font-size: 0.75rem;
+            }
+
+            .note-editor .note-editable {
+                padding: 0.75rem;
+                min-height: 300px;
+            }
         }
     </style>
 </x-admin-layout-modern>
