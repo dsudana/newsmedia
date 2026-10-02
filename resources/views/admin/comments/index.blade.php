@@ -77,8 +77,8 @@
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-6 py-4">
                                 <div>
-                                    <p class="font-medium text-gray-900">{{ $comment->author_name }}</p>
-                                    <p class="text-xs text-gray-500">{{ $comment->author_email }}</p>
+                                    <p class="font-medium text-gray-900">{{ $comment->name }}</p>
+                                    <p class="text-xs text-gray-500">{{ $comment->email }}</p>
                                 </div>
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-600 max-w-md">
