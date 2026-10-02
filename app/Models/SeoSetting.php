@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Cache;
 
 class SeoSetting extends Model
 {
+    use HasFactory;
     protected $table = 'seo_settings';
 
     protected $fillable = [
