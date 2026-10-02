@@ -246,7 +246,7 @@
                             @foreach ($latestArticles->skip(7)->take(3) as $article)
                                 <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
                                     <!-- Article Card with Image -->
-                                    <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
+                                    <div class="relative overflow-hidden rounded-xl h-40 mb-4 bg-slate-200 dark:bg-slate-700">
                                         @if ($article->featured_image)
                                             <picture>
                                                 <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
@@ -313,7 +313,7 @@
                                 @foreach ($categoryArticles->take(3) as $article)
                                     <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
                                         <!-- Article Card with Image -->
-                                        <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
+                                        <div class="relative overflow-hidden rounded-xl h-40 mb-4 bg-slate-200 dark:bg-slate-700">
                                             @if ($article->featured_image)
                                                 <picture>
                                                     <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
