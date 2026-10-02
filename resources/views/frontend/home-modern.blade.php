@@ -22,80 +22,171 @@
     <main class="bg-white dark:bg-slate-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 py-12">
             <!-- Featured Hero Section (Full Width, 2 Columns) -->
-            <div class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Left Column: 1 Large Article -->
-                @php $featured = $latestArticles->first() @endphp
-                @if ($featured)
-                    <article class="group h-96">
-                        <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300 h-full">
-                            @if ($featured->featured_image)
-                                @php
-                                    $imageUrl = str_starts_with($featured->featured_image, 'http')
-                                        ? $featured->featured_image
-                                        : asset('storage/' . $featured->featured_image);
-                                @endphp
-                                <picture>
-                                    <source media="(min-width: 1024px)" srcset="{{ $imageUrl }}" width="800" height="400">
-                                    <source media="(min-width: 640px)" srcset="{{ $imageUrl }}" width="600" height="300">
-                                    <img src="{{ $imageUrl }}" alt="{{ $featured->title }}" loading="lazy" width="400" height="200" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                                </picture>
-                            @else
-                                <img src="/images/default.jpg" alt="{{ $featured->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="mb-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 items-stretch">
+
+        {{-- ========================================
+            LEFT: FEATURED ARTICLE
+        ========================================= --}}
+        @php
+            $featured = $latestArticles->first();
+        @endphp
+
+        @if($featured)
+            <article class="group h-[380px] lg:h-[420px]">
+                <a
+                    href="{{ route('blog.show', $featured->slug) }}"
+                    class="relative block h-full overflow-hidden rounded-2xl bg-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+
+                    {{-- Featured Image --}}
+                    @if($featured->featured_image)
+                        @php
+                            $imageUrl = str_starts_with($featured->featured_image, 'http')
+                                ? $featured->featured_image
+                                : asset('storage/' . $featured->featured_image);
+                        @endphp
+
+                        <img
+                            src="{{ $imageUrl }}"
+                            alt="{{ $featured->title }}"
+                            loading="lazy"
+                            width="800"
+                            height="420"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        >
+                    @else
+                        <img
+                            src="/images/default.jpg"
+                            alt="{{ $featured->title }}"
+                            loading="lazy"
+                            width="800"
+                            height="420"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        >
+                    @endif
+
+                    {{-- Overlay --}}
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+
+                    {{-- Content --}}
+                    <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+
+                        @if($featured->category)
+                            <span class="mb-2 inline-flex rounded-full bg-red-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+                                {{ $featured->category->name }}
+                            </span>
+                        @endif
+
+                        <h2 class="line-clamp-3 text-2xl font-bold leading-tight text-white sm:text-3xl">
+                            {{ $featured->title }}
+                        </h2>
+
+                        <div class="mt-3 flex items-center gap-3 text-xs text-slate-300">
+                            <time>
+                                {{ $featured->published_at?->format('M d, Y') }}
+                            </time>
+
+                            @if($featured->read_time)
+                                <span>•</span>
+                                <span>{{ $featured->read_time }} min read</span>
                             @endif
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-
-                            <div class="absolute bottom-0 left-0 right-0 p-6">
-                                <div class="mb-3">
-                                    <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                                        {{ $featured->category->name }}
-                                    </span>
-                                </div>
-                                <h2 class="text-3xl font-bold text-white mb-2 leading-tight line-clamp-3">
-                                    {{ $featured->title }}
-                                </h2>
-                                <div class="flex items-center gap-4 text-xs text-slate-300">
-                                    <span>{{ $featured->published_at->format('M d, Y') }}</span>
-                                    @if ($featured->read_time)
-                                        <span>{{ $featured->read_time }} min read</span>
-                                    @endif
-                                </div>
-                            </div>
                         </div>
-                    </article>
-                @endif
 
-                <!-- Right Column: 2 Articles Stacked -->
-                <div class="space-y-4">
-                    @foreach ($latestArticles->skip(1)->take(2) as $article)
-                        <a href="{{ route('blog.show', $article->slug) }}" class="group flex h-44 hover:opacity-85 transition">
-                            <div class="relative overflow-hidden rounded-lg w-40 flex-shrink-0">
-                                @if ($article->featured_image)
-                                    @php $imgUrl = str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image); @endphp
-                                    <picture>
-                                        <source media="(min-width: 640px)" srcset="{{ $imgUrl }}" width="200" height="200">
-                                        <img src="{{ $imgUrl }}" alt="{{ $article->title }}" loading="lazy" width="150" height="150" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                    </picture>
-                                @else
-                                    <img src="/images/default.jpg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                @endif
-                            </div>
-                            <div class="flex-1 p-4 bg-slate-50 dark:bg-slate-800 rounded-r-lg flex flex-col justify-between">
-                                <div>
-                                    <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">
+                    </div>
+                </a>
+            </article>
+        @endif
+
+
+        {{-- ========================================
+            RIGHT: 3 ARTICLES
+        ========================================= --}}
+        <div class="grid grid-rows-3 gap-3 lg:h-[420px]">
+
+            @foreach($latestArticles->skip(1)->take(3) as $article)
+
+                <article class="group min-h-0">
+                    <a
+                        href="{{ route('blog.show', $article->slug) }}"
+                        class="flex h-full overflow-hidden rounded-xl bg-slate-50 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:bg-slate-800 dark:ring-slate-700"
+                    >
+
+                        {{-- Image --}}
+                        <div class="relative w-32 flex-shrink-0 overflow-hidden sm:w-36 lg:w-40">
+
+                            @if($article->featured_image)
+
+                                @php
+                                    $imgUrl = str_starts_with($article->featured_image, 'http')
+                                        ? $article->featured_image
+                                        : asset('storage/' . $article->featured_image);
+                                @endphp
+
+                                <img
+                                    src="{{ $imgUrl }}"
+                                    alt="{{ $article->title }}"
+                                    loading="lazy"
+                                    width="400"
+                                    height="250"
+                                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                >
+
+                            @else
+
+                                <img
+                                    src="/images/default.jpg"
+                                    alt="{{ $article->title }}"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                >
+
+                            @endif
+
+                        </div>
+
+
+                        {{-- Content --}}
+                        <div class="flex min-w-0 flex-1 flex-col justify-between p-3 sm:p-4">
+
+                            <div>
+
+                                @if($article->category)
+                                    <span class="text-[9px] font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
                                         {{ $article->category->name }}
                                     </span>
-                                    <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mt-1">
-                                        {{ $article->title }}
-                                    </h3>
-                                </div>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">
-                                    {{ $article->published_at->format('M d, Y') }}
-                                </p>
+                                @endif
+
+                                <h3 class="mt-1.5 line-clamp-2 text-sm font-bold leading-snug text-slate-900 transition-colors group-hover:text-red-600 sm:text-base dark:text-white dark:group-hover:text-red-400">
+                                    {{ $article->title }}
+                                </h3>
+
                             </div>
-                        </a>
-                    @endforeach
-                </div>
-            </div>
+
+                            <div class="mt-2 flex items-center gap-2 text-[10px] text-slate-500 dark:text-slate-400">
+
+                                <time>
+                                    {{ $article->published_at?->format('M d, Y') }}
+                                </time>
+
+                                @if($article->read_time)
+                                    <span>•</span>
+                                    <span>{{ $article->read_time }} min</span>
+                                @endif
+
+                            </div>
+
+                        </div>
+
+                    </a>
+                </article>
+
+            @endforeach
+
+        </div>
+
+    </div>
+</div>
 
             <!-- Latest News Grid (Full Width, 4 Columns) -->
             <section class="mb-12">
@@ -108,7 +199,7 @@
                     @foreach ($latestArticles->skip(3)->take(4) as $article)
                         <a href="{{ route('blog.show', $article->slug) }}"
                             class="group flex flex-col h-full hover:opacity-85 transition">
-                            <div class="relative overflow-hidden rounded-lg h-48 mb-4">
+                            <div class="relative overflow-hidden rounded-lg h-36 mb-4">
                                 @if ($article->featured_image)
                                     @php $imgUrl = str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image); @endphp
                                     <picture>
