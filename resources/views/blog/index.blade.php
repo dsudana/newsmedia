@@ -1,227 +1,233 @@
 @extends('layouts.app-modern')
 
 @section('content')
-<!-- Hero Section with Search -->
-<div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-12 md:py-20">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="mb-8">
-            <nav class="flex items-center gap-2 text-indigo-200 text-base mb-4">
-                <a href="/" class="hover:text-white transition">Home</a>
-                <span>/</span>
-                <span>{{ $title ?? 'All Articles' }}</span>
-            </nav>
-            <h1 class="text-5xl md:text-6xl font-bold mb-2">{{ $title ?? 'All Articles' }}</h1>
-            <p class="text-xl text-indigo-100">Discover the latest news and stories from our publication</p>
+<!-- Advertisement Section (Full Width) -->
+<div class="bg-white border-b border-gray-200 py-3 sm:py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gray-200 rounded-lg flex items-center justify-center min-h-16 sm:min-h-24">
+            @component('components.advertisement', ['placement' => 'header_banner'])
+            @endcomponent
         </div>
+    </div>
+</div>
 
-        <!-- Search Bar -->
-        <form method="GET" action="{{ route('blog.search') }}" class="flex gap-3">
-            <label for="search-articles" class="sr-only">Search articles</label>
-            <input type="text" id="search-articles" name="search" placeholder="Search articles..." value="{{ request('search') }}"
-                   class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 text-base md:text-lg">
-            <button type="submit" aria-label="Search articles" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition focus-visible:ring-2 ring-offset-2 ring-red-600">
-                <i class="fas fa-search mr-2" aria-hidden="true"></i>Search
-            </button>
-        </form>
+<!-- Hero Section with Breadcrumb -->
+<div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-red-200 mb-6 text-xs sm:text-sm">
+            <a href="{{ route('home') }}" class="hover:text-white transition">Home</a>
+            @if($category ?? null)
+                <span class="text-red-300">/</span>
+                <span class="text-white font-semibold">{{ $category->name }}</span>
+            @else
+                <span class="text-red-300">/</span>
+                <span class="text-white font-semibold">{{ $title ?? 'Semua Artikel' }}</span>
+            @endif
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div class="lg:col-span-2">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                    {{ $title ?? 'Semua Artikel' }}
+                </h1>
+                @if($category ?? null)
+                    @if($category->description)
+                        <p class="text-base sm:text-lg text-red-100 leading-relaxed max-w-2xl">
+                            {{ $category->description }}
+                        </p>
+                    @endif
+                    <div class="mt-6 flex items-center gap-4 text-sm">
+                        <div class="flex items-center gap-2 bg-white/20 px-3 py-2 rounded-lg">
+                            <i class="fas fa-newspaper text-red-200"></i>
+                            <span>{{ $articles->total() }} Artikel</span>
+                        </div>
+                    </div>
+                @else
+                    <p class="text-base sm:text-lg text-red-100 leading-relaxed">
+                        Temukan berita terbaru dan cerita menarik dari publikasi kami
+                    </p>
+                @endif
+            </div>
+
+            <!-- Search Bar in Hero -->
+            <div class="lg:col-span-1">
+                <form action="{{ route('blog.search') }}" method="GET" class="flex gap-2">
+                    <input type="text" name="search" placeholder="Cari artikel..."
+                        class="flex-1 px-4 py-3 text-sm text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 placeholder-gray-500" required>
+                    <button type="submit" class="bg-white text-red-600 px-4 py-3 rounded-lg hover:bg-red-50 transition font-semibold">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- Main Content -->
-<div class="bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <!-- Articles List -->
-            <div class="lg:col-span-3">
-                <!-- Filter Bar -->
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-gray-200">
-                    <div class="flex items-center gap-2 text-base text-gray-600">
-                        <i class="fas fa-filter"></i>
-                        <span>Showing <strong>{{ $articles->count() }}</strong> of <strong>{{ $articles->total() }}</strong> articles</span>
-                    </div>
-
-                    <select class="px-4 py-2 border border-gray-300 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white" onchange="window.location.href = this.value">
-                        <option value="{{ route('blog.index') }}?sort=latest" {{ request('sort') === 'latest' || !request('sort') ? 'selected' : '' }}>
-                            Newest First
-                        </option>
-                        <option value="{{ route('blog.index') }}?sort=oldest" {{ request('sort') === 'oldest' ? 'selected' : '' }}>
-                            Oldest First
-                        </option>
-                        <option value="{{ route('blog.index') }}?sort=popular" {{ request('sort') === 'popular' ? 'selected' : '' }}>
-                            Most Viewed
-                        </option>
-                    </select>
-                </div>
-
-                <!-- Articles List -->
+<div class="bg-white py-8 sm:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Articles Section (Left - 2 columns) -->
+            <div class="lg:col-span-2">
+                <!-- Featured Article (1st Article) -->
                 @if($articles->count() > 0)
-                    <div class="space-y-0 mb-12">
-                        @foreach($articles as $article)
-                            <article class="flex gap-4 p-5 border-b border-gray-200 hover:bg-gray-50 transition group cursor-pointer">
-                                <!-- Thumbnail -->
-                                <a href="{{ route('blog.show', $article->slug) }}" class="flex-shrink-0 w-24 h-24 overflow-hidden rounded">
-                                    <img src="{{ $article->image }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                                </a>
-
-                                <!-- Content -->
-                                <div class="flex-1 min-w-0 flex flex-col justify-center">
-                                    <h3 class="text-lg font-bold text-gray-900 line-clamp-2 group-hover:text-red-600 transition mb-2">
-                                        <a href="{{ route('blog.show', $article->slug) }}">{{ $article->title }}</a>
-                                    </h3>
-
-                                    <div class="flex items-center gap-3 text-sm text-gray-500">
-                                        <a href="{{ route('blog.category', $article->category->slug) }}" class="text-red-600 font-semibold hover:text-red-700">
-                                            {{ $article->category->name }}
-                                        </a>
+                    @php $featuredArticle = $articles->first(); @endphp
+                    <div class="mb-12">
+                        <a href="{{ route('blog.show', $featuredArticle->slug) }}" class="group block">
+                            <div class="rounded-lg overflow-hidden mb-4 aspect-video bg-gray-100">
+                                @if($featuredArticle->featured_image)
+                                    <img src="{{ asset('storage/' . $featuredArticle->featured_image) }}" alt="{{ $featuredArticle->title }}"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
+                                @else
+                                    <img src="/images/default.jpg" alt="{{ $featuredArticle->title }}"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
+                                @endif
+                            </div>
+                            <div class="space-y-3">
+                                <div>
+                                    <span class="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+                                        {{ $featuredArticle->category->name }}
+                                    </span>
+                                </div>
+                                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-red-600 transition leading-tight">
+                                    {{ $featuredArticle->title }}
+                                </h2>
+                                <p class="text-gray-600 text-base leading-relaxed">
+                                    {{ $featuredArticle->excerpt ?? Str::limit(strip_tags($featuredArticle->content), 150) }}
+                                </p>
+                                <div class="flex items-center gap-4 text-sm text-gray-500 pt-2">
+                                    <span>{{ $featuredArticle->user->name }}</span>
+                                    <span>•</span>
+                                    <span>{{ $featuredArticle->published_at->format('d M Y') }}</span>
+                                    @if($featuredArticle->read_time)
                                         <span>•</span>
-                                        <span>{{ $article->published_at->format('M d, Y') }}</span>
-                                    </div>
+                                        <span><i class="fas fa-clock mr-1"></i>{{ $featuredArticle->read_time }} min</span>
+                                    @endif
                                 </div>
-
-                                <!-- Comment Count -->
-                                <div class="flex-shrink-0 text-right">
-                                    @php
-                                        $commentCount = $article->comments ? $article->comments->where('is_approved', true)->count() : 0;
-                                    @endphp
-                                    <div class="text-base font-semibold text-gray-900">
-                                        <i class="fas fa-comment text-gray-400 mr-1"></i>{{ $commentCount }}
-                                    </div>
-                                    <div class="text-sm text-gray-500">
-                                        {{ $commentCount === 1 ? 'Comment' : 'Comments' }}
-                                    </div>
-                                </div>
-                            </article>
-                        @endforeach
+                            </div>
+                        </a>
                     </div>
 
-                    <!-- Pagination -->
-                    <div class="flex justify-center">
-                        {{ $articles->links() }}
-                    </div>
+                    @if($articles->count() > 1)
+                        <div class="border-t-2 border-gray-300 pt-12 mb-8">
+                            <h3 class="text-xl font-bold text-gray-900 mb-6">Artikel Lainnya</h3>
+                        </div>
+
+                        <!-- Article Grid (3 Columns) -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                            @foreach($articles->slice(1) as $article)
+                                <a href="{{ route('blog.show', $article->slug) }}" class="group">
+                                    <div class="rounded-lg overflow-hidden mb-3 aspect-video bg-gray-100">
+                                        @if($article->featured_image)
+                                            <img src="{{ asset('storage/' . $article->featured_image) }}" alt="{{ $article->title }}"
+                                                class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
+                                        @else
+                                            <img src="/images/default.jpg" alt="{{ $article->title }}"
+                                                class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
+                                        @endif
+                                    </div>
+                                    <h3 class="font-bold text-gray-900 group-hover:text-red-600 transition line-clamp-2 mb-2">
+                                        {{ $article->title }}
+                                    </h3>
+                                    <p class="text-xs text-gray-600 mb-3">
+                                        {{ $article->published_at->format('d M Y') }}
+                                    </p>
+                                    <p class="text-xs text-gray-600 group-hover:text-red-600 transition">
+                                        <i class="fas fa-eye mr-1"></i>{{ number_format($article->views_count ?? 0) }} dibaca
+                                    </p>
+                                </a>
+                            @endforeach
+                        </div>
+                    @endif
                 @else
                     <!-- Empty State -->
-                    <div class="bg-white rounded-lg p-16 text-center">
+                    <div class="bg-gray-50 rounded-lg p-12 text-center">
                         <i class="fas fa-search text-5xl text-gray-300 mb-4"></i>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">No articles found</h3>
-                        <p class="text-gray-500 mb-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Tidak ada artikel</h3>
+                        <p class="text-gray-600 mb-6">
                             @if(request('search'))
-                                We couldn't find any articles matching "<strong>{{ request('search') }}</strong>"
+                                Kami tidak menemukan artikel yang cocok dengan "{{ request('search') }}"
+                            @elseif($category ?? null)
+                                Belum ada artikel di kategori ini
                             @else
-                                No articles available in this category
+                                Tidak ada artikel yang tersedia
                             @endif
                         </p>
-                        <a href="{{ route('blog.index') }}" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-indigo-700 transition">
-                            Back to All Articles
+                        <a href="{{ route('blog.index') }}"
+                            class="inline-block bg-red-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-red-700 transition">
+                            Kembali ke Semua Artikel
                         </a>
+                    </div>
+                @endif
+
+                <!-- Pagination -->
+                @if($articles->hasPages())
+                    <div class="flex justify-center mt-12">
+                        {{ $articles->links() }}
                     </div>
                 @endif
             </div>
 
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                <div class="sticky top-4 space-y-6">
-                    <!-- Filters Card -->
-                    <div class="bg-white rounded-lg p-6 shadow-md">
-                        <h3 class="font-bold text-lg text-gray-900 mb-4 pb-3 border-b border-gray-200">Filters</h3>
-
-                        <!-- Category Filter -->
-                        <div class="mb-6">
-                            <label class="block text-base font-semibold text-gray-900 mb-3">Category</label>
-                            <div class="space-y-2">
-                                <a href="{{ route('blog.index') }}" class="flex items-center gap-2 p-2 rounded hover:bg-indigo-50 transition {{ !request('category') ? 'bg-indigo-50 text-indigo-600' : 'text-gray-700' }}">
-                                    <i class="fas fa-check {{ !request('category') ? 'text-indigo-600' : 'text-gray-300' }}"></i>
-                                    <span class="text-base font-medium">All Categories</span>
-                                </a>
-
-                                @forelse($categories as $category)
-                                    <a href="{{ route('blog.index', ['category' => $category->slug]) }}" class="flex items-center justify-between p-2 rounded hover:bg-indigo-50 transition {{ request('category') === $category->slug ? 'bg-indigo-50 text-indigo-600' : 'text-gray-700' }}">
-                                        <span class="text-base font-medium">{{ $category->name }}</span>
-                                        <span class="text-sm bg-gray-200 text-gray-700 px-2 py-1 rounded-full">{{ $category->articles_count ?? 0 }}</span>
-                                    </a>
-                                @empty
-                                    <p class="text-base text-gray-500">No categories available</p>
-                                @endforelse
-                            </div>
-                        </div>
+            <!-- Right Sidebar -->
+            <aside class="lg:col-span-1">
+                <div class="sticky top-24 space-y-6">
+                    <!-- Advertisement Top -->
+                    <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
+                        @component('components.advertisement', ['placement' => 'sidebar_top'])
+                        @endcomponent
                     </div>
 
-                    <!-- Tags Card -->
-                    @if($popularTags && $popularTags->count() > 0)
-                        <div class="bg-white rounded-lg p-6 shadow-md">
-                            <h3 class="font-bold text-lg text-gray-900 mb-4 pb-3 border-b border-gray-200">Popular Tags</h3>
-                            <div class="flex flex-wrap gap-2">
-                                @foreach($popularTags->take(15) as $tag)
-                                    <a href="{{ route('blog.tag', $tag->slug) }}" class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-indigo-100 hover:text-indigo-700 transition">
-                                        #{{ $tag->name }}
+                    <!-- Filter Categories -->
+                    @if($categories && $categories->count() > 0)
+                        <div class="bg-white rounded-lg p-6 border border-gray-200">
+                            <h3 class="text-lg font-bold text-gray-900 mb-4">Kategori</h3>
+                            <div class="space-y-2">
+                                <a href="{{ route('blog.index') }}"
+                                    class="block p-2 rounded hover:bg-red-50 transition {{ !isset($category) ? 'bg-red-50 text-red-600 font-semibold' : 'text-gray-700' }}">
+                                    Semua Kategori
+                                </a>
+                                @foreach($categories as $cat)
+                                    <a href="{{ route('blog.index', ['category' => $cat->slug]) }}"
+                                        class="block p-2 rounded hover:bg-red-50 transition {{ (isset($category) && $category->id === $cat->id) ? 'bg-red-50 text-red-600 font-semibold' : 'text-gray-700' }}">
+                                        {{ $cat->name }}
                                     </a>
                                 @endforeach
                             </div>
                         </div>
                     @endif
 
-                    <!-- Newsletter CTA -->
-                    <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white shadow-lg" x-data="{ loading: false, emailError: '', successMessage: '' }">
-                        <h3 class="font-bold text-lg mb-2">Stay Updated</h3>
-                        <p class="text-base text-red-100 mb-4">Get the latest news delivered to your inbox</p>
-
-                        <div x-show="successMessage" x-transition class="bg-green-100 text-green-800 p-3 rounded mb-3 text-sm flex items-center gap-2">
-                            <i class="fas fa-check-circle" aria-hidden="true"></i>
-                            <span>Subscribed successfully!</span>
-                        </div>
-
-                        <form @submit.prevent="async function(e) { this.loading = true; const form = e.target; const formData = new FormData(form); try { const response = await fetch('{{ route('newsletter.subscribe') }}', { method: 'POST', body: formData, headers: { 'X-Requested-With': 'XMLHttpRequest' } }); const data = await response.json(); if (data.success) { this.successMessage = true; form.reset(); this.emailError = ''; setTimeout(() => this.successMessage = '', 5000); } } catch (error) { this.emailError = 'Failed. Try again.'; } finally { this.loading = false; } }" class="space-y-3">
-                            @csrf
-                            <div>
-                                <label for="newsletter-email" class="sr-only">Email address</label>
-                                <input type="email" id="newsletter-email" name="email" placeholder="Your email" aria-label="Email address"
-                                    @blur="$el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($el.value) ? emailError = 'Invalid email' : emailError = ''"
-                                    :class="{'ring-2 ring-red-400': emailError}"
-                                    class="w-full px-3 py-2 rounded bg-white/90 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-red-400 disabled:opacity-50"
-                                    :disabled="loading"
-                                    required>
-                                <p x-show="emailError" class="text-red-200 text-xs mt-1">
-                                    <i class="fas fa-exclamation-circle mr-1" aria-hidden="true"></i>
-                                    <span x-text="emailError"></span>
-                                </p>
-                            </div>
-                            <button type="submit" aria-label="Subscribe to newsletter"
-                                :disabled="loading || emailError"
-                                class="w-full bg-white text-red-600 font-semibold py-2 rounded hover:bg-red-50 focus-visible:ring-2 ring-offset-2 ring-red-600 transition text-base disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
-                                <i :class="loading ? 'fas fa-spinner fa-spin' : 'fas fa-bell'" class="text-sm" aria-hidden="true"></i>
-                                <span x-text="loading ? 'Subscribing...' : 'Subscribe'"></span>
-                            </button>
-                        </form>
+                    <!-- Newsletter -->
+                    <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white">
+                        <h3 class="text-lg font-bold mb-2">Tetap Update</h3>
+                        <p class="text-sm text-red-100 mb-4">Dapatkan berita terbaru langsung ke email</p>
+                        <x-newsletter-form placeholder="Email Anda" buttonText="Berlangganan" />
                     </div>
 
-                    <!-- Statistics -->
-                    <div class="bg-white rounded-lg p-6 shadow-md">
-                        <h3 class="font-bold text-lg text-gray-900 mb-4">Statistics</h3>
-                        <div class="space-y-3 text-base">
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Total Articles</span>
-                                <span class="font-bold text-indigo-600">{{ $articles->total() }}</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Categories</span>
-                                <span class="font-bold text-indigo-600">{{ $categories->count() }}</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Tags</span>
-                                <span class="font-bold text-indigo-600">{{ $popularTags ? $popularTags->count() : 0 }}</span>
+                    <!-- Advertisement Bottom -->
+                    <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
+                        @component('components.advertisement', ['placement' => 'sidebar_bottom'])
+                        @endcomponent
+                    </div>
+
+                    <!-- Popular Tags -->
+                    @if($popularTags && $popularTags->count() > 0)
+                        <div class="bg-white rounded-lg p-6 border border-gray-200">
+                            <h3 class="text-lg font-bold text-gray-900 mb-4">Tag Populer</h3>
+                            <div class="flex flex-wrap gap-2">
+                                @foreach($popularTags->take(12) as $tag)
+                                    <a href="{{ route('blog.tag', $tag->slug) }}"
+                                        class="bg-gray-100 text-gray-700 px-2.5 py-1.5 rounded text-xs hover:bg-red-100 hover:text-red-700 transition">
+                                        #{{ $tag->name }}
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
-            </div>
+            </aside>
         </div>
     </div>
 </div>
-
-<style>
-.line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-</style>
 @endsection
