@@ -5,58 +5,14 @@
 @section('content')
     <!-- Skip to main content link for accessibility -->
    
-    <!-- Top Breaking News Bar -->
-    @if ($announcements->count() > 0)
-        <div class="bg-slate-900 text-white py-3 sticky top-0 z-40">
-            <div class="max-w-7xl mx-auto px-4 flex items-center gap-4">
-                <span class="bg-red-600 px-3 py-1 rounded text-xs font-bold uppercase tracking-wide shrink-0">Breaking</span>
-                <div class="overflow-hidden flex-1 min-w-0">
-                    <div class="animate-marquee-slow inline-flex gap-16 whitespace-nowrap text-sm" style="min-width: 200%">
-                        @foreach ($announcements as $announcement)
-                            <span class="shrink-0">{{ $announcement->title }}</span>
-                        @endforeach
-                        @foreach ($announcements as $announcement)
-                            <span class="shrink-0" aria-hidden="true">{{ $announcement->title }}</span>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
-
-    <!-- Trending Topics Bar -->
-    <div class="bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-3 sticky top-12 z-30" role="region" aria-label="Trending topics">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center gap-3 min-w-0">
-                <span class="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide whitespace-nowrap shrink-0">Trending Now:</span>
-                <div class="overflow-hidden flex-1 min-w-0">
-                    <div class="animate-marquee inline-flex gap-8 whitespace-nowrap" style="min-width: 200%">
-                        @php
-                            $trendingArticles = $latestArticles->take(6);
-                        @endphp
-                        @foreach ($trendingArticles as $article)
-                            <a href="{{ route('blog.show', $article->slug) }}"
-                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 rounded px-2 py-1 shrink-0"
-                                title="{{ $article->title }}">
-                                {{ $article->title }}
-                            </a>
-                        @endforeach
-                        @foreach ($trendingArticles as $article)
-                            <a href="{{ route('blog.show', $article->slug) }}"
-                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 rounded px-2 py-1 shrink-0"
-                                title="{{ $article->title }}"
-                                aria-hidden="true">
-                                {{ $article->title }}
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Breaking News Carousel & Trending Section -->
+    <div class="max-w-7xl mx-auto px-4 mt-6">
+        <x-breaking-news-carousel :announcements="$announcements" :articles="$latestArticles" />
+        <x-trending-section :categories="$categories" />
     </div>
 
     <!-- Advertisement Banner -->
-    <div class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-6">
+    <div class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-6 mb-6">
         <div class="max-w-7xl mx-auto px-4">
             <x-advertisement placement="header_banner" />
         </div>
