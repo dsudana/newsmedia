@@ -186,14 +186,7 @@
                     <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-4 sm:p-6 text-white shadow-lg">
                         <h3 class="text-base sm:text-lg font-bold mb-2">Stay Updated</h3>
                         <p class="text-xs sm:text-sm text-red-100 mb-3 sm:mb-4">Get {{ $category->name }} news to your inbox</p>
-                        <form class="space-y-2 sm:space-y-3" x-data="{ loading: false, email: '', submitNewsletter() { this.loading = true; fetch('{{ route('newsletter.subscribe') }}', { method: 'POST', headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name=\"csrf-token\"]').getAttribute('content'), 'Content-Type': 'application/json' }, body: JSON.stringify({ email: this.email }) }).then(r => r.json()).then(d => { this.loading = false; if (d.success) { Swal.fire({ icon: 'success', title: 'Subscribed!', text: 'Check your inbox', timer: 3000 }); this.email = ''; } else { alert(d.message || 'Failed'); } }).catch(e => { this.loading = false; alert('Error'); }); } }" @submit.prevent="submitNewsletter">
-                            @csrf
-                            <input type="email" name="email" placeholder="Your email" x-model="email" class="w-full px-3 sm:px-4 py-2 rounded-lg bg-white/90 text-gray-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-red-400" required>
-                            <button type="submit" :disabled="loading" class="w-full bg-white text-red-600 font-semibold py-2 rounded-lg hover:bg-red-50 transition text-xs sm:text-sm disabled:opacity-50">
-                                <span x-show="!loading">Subscribe</span>
-                                <span x-show="loading"><i class="fas fa-spinner fa-spin mr-2"></i>Subscribing...</span>
-                            </button>
-                        </form>
+                        <x-newsletter-form placeholder="Your email" buttonText="Subscribe" />
                     </div>
 
                     <!-- Advertisement Bottom -->

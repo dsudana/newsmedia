@@ -375,18 +375,7 @@
                         <h3 class="text-lg font-bold mb-2">Newsletter</h3>
                         <p class="text-sm text-red-100 mb-4">Get the latest stories delivered to your inbox daily</p>
 
-                        <form class="space-y-3"
-                            x-data="{ loading: false, email: '', submitNewsletter() { this.loading = true; fetch('{{ route('newsletter.subscribe') }}', { method: 'POST', headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name=\"csrf-token\"]').getAttribute('content'), 'Content-Type': 'application/json' }, body: JSON.stringify({ email: this.email }) }).then(r => r.json()).then(d => { this.loading = false; if (d.success) { Swal.fire({ icon: 'success', title: 'Subscribed!', text: 'Check your inbox', timer: 3000 }); this.email = ''; } else { alert(d.message || 'Failed'); } }).catch(e => { this.loading = false; alert('Error'); }); } }" @submit.prevent="submitNewsletter">
-                            @csrf
-                            <input type="email" name="email" x-model="email" placeholder="your@email.com"
-                                class="w-full px-4 py-3 rounded-lg text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-red-300 placeholder-slate-500"
-                                required>
-                            <button type="submit" :disabled="loading"
-                                class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg text-sm transition disabled:opacity-50">
-                                <span x-show="!loading">Subscribe</span>
-                                <span x-show="loading"><i class="fas fa-spinner fa-spin mr-2"></i>Subscribing</span>
-                            </button>
-                        </form>
+                        <x-newsletter-form placeholder="your@email.com" buttonText="Subscribe" />
                     </section>
 
                     <!-- Advertisement Bottom -->
