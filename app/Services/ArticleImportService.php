@@ -54,13 +54,20 @@ class ArticleImportService
     public function extractArticles($xml)
     {
         $articles = [];
+        $attachments = $this->extractAttachments($xml);
 
         if (!isset($xml->channel->item)) {
             return $articles;
         }
 
         foreach ($xml->channel->item as $item) {
-            $featuredImage = $this->extractFeaturedImage($item);
+            $attachmentId = $this->extractFeaturedImageId($item);
+            $featuredImageUrl = null;
+
+            // If attachment ID found, look up the URL from attachments
+            if ($attachmentId && isset($attachments[$attachmentId])) {
+                $featuredImageUrl = $attachments[$attachmentId];
+            }
 
             $articles[] = [
                 'title' => (string)$item->title,
@@ -71,7 +78,7 @@ class ArticleImportService
                 'meta_title' => (string)($item->title ?? ''),
                 'status' => $this->mapStatus((string)$item->children('wp', true)->status ?? 'draft'),
                 'published_at' => $this->parsePubDate((string)$item->pubDate ?? null),
-                'featured_image' => $featuredImage,
+                'featured_image' => $featuredImageUrl,
             ];
         }
 
@@ -79,9 +86,41 @@ class ArticleImportService
     }
 
     /**
-     * Extract featured image URL from WordPress attachment
+     * Extract all attachments from WordPress XML
+     * Returns array of attachment_id => image_url
      */
-    protected function extractFeaturedImage($item)
+    protected function extractAttachments($xml)
+    {
+        $attachments = [];
+
+        if (!isset($xml->channel->item)) {
+            return $attachments;
+        }
+
+        foreach ($xml->channel->item as $item) {
+            $wp = $item->children('wp', true);
+            $type = (string)($wp->post_type ?? '');
+
+            // Only process attachment items
+            if ($type !== 'attachment') {
+                continue;
+            }
+
+            $attachmentId = (string)($wp->post_id ?? '');
+            $attachmentUrl = (string)($item->children('wp', true)->attachment_url ?? '');
+
+            if ($attachmentId && $attachmentUrl) {
+                $attachments[$attachmentId] = $attachmentUrl;
+            }
+        }
+
+        return $attachments;
+    }
+
+    /**
+     * Extract featured image ID from WordPress post meta
+     */
+    protected function extractFeaturedImageId($item)
     {
         $wp = $item->children('wp', true);
 
@@ -89,8 +128,7 @@ class ArticleImportService
             foreach ($wp->post_meta as $postMeta) {
                 $metaKey = (string)$postMeta->children('wp', true)->meta_key;
                 if ($metaKey === '_thumbnail_id') {
-                    $attachmentId = (string)$postMeta->children('wp', true)->meta_value;
-                    return $attachmentId;
+                    return (string)$postMeta->children('wp', true)->meta_value;
                 }
             }
         }
