@@ -240,22 +240,21 @@
 
                     <!-- Category Sections -->
                     @php
-                        // Get unique categories (limit to 3 for display)
-                        $categoryGroups = $latestArticles->groupBy('category_id')->take(3);
+                        // Get all active categories with their articles
+                        $allCategories = \App\Models\Category::active()
+                            ->with(['articles' => fn($q) => $q->published()->latest('published_at')->take(3)])
+                            ->whereHas('articles', fn($q) => $q->published())
+                            ->get();
                     @endphp
-                    @foreach ($categoryGroups as $categoryId => $categoryArticles)
-                        @php
-                            // Get the first article to get category name
-                            $firstArticle = $categoryArticles->first();
-                            $categoryName = $firstArticle->category->name ?? 'News';
-                        @endphp
+                    @foreach ($allCategories as $category)
+                        @php $categoryArticles = $category->articles; @endphp
                         <section>
                             <div class="flex items-center justify-between mb-8">
                                 <h2 class="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                                    {{ $categoryName }}
+                                    {{ $category->name }}
                                     <span class="text-red-600 text-2xl">›</span>
                                 </h2>
-                                <a href="{{ route('blog.category', $firstArticle->category->slug ?? '') }}" class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-2xl transition">
+                                <a href="{{ route('blog.category', $category->slug) }}" class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-2xl transition">
                                     ›
                                 </a>
                             </div>
