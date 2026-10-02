@@ -153,7 +153,7 @@
                                 <a href="{{ route('blog.show', $related->slug) }}" class="group">
                                     <div class="overflow-hidden rounded-lg">
                                         @if($related->featured_image)
-                                            <img src="{{ asset('/storage/' . $related->featured_image) }}" alt="" class="w-full h-40 object-cover group-hover:scale-105 transition" loading="lazy">
+                                            <img src="{{ featuredImageUrl($related->featured_image) }}" alt="{{ $related->title }}" class="w-full h-40 object-cover group-hover:scale-105 transition" loading="lazy">
                                         @else
                                             <div class="w-full h-40 bg-gray-300 flex items-center justify-center">
                                                 <i class="fas fa-image text-gray-400 text-3xl"></i>
