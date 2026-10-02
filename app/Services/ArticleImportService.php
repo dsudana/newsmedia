@@ -265,7 +265,7 @@ class ArticleImportService
     }
 
     /**
-     * Download and save featured image with SSRF/security validation
+     * Download and save featured image with SSRF/DNS-pinning protection
      */
     public function downloadFeaturedImage($imageUrl, $articleSlug)
     {
@@ -289,36 +289,36 @@ class ArticleImportService
                 return null;
             }
 
-            // SSRF prevention: validate resolved IP
-            $ips = gethostbynamel($url['host']);
-            if ($ips === false) {
+            // Resolve hostname once to prevent TOCTOU
+            $resolvedIp = gethostbyname($url['host']);
+            if ($resolvedIp === $url['host']) {
                 Log::warning('Failed to resolve hostname: ' . $url['host']);
                 return null;
             }
 
-            foreach ($ips as $ip) {
-                if ($this->isPrivateIP($ip)) {
-                    Log::warning('Blocked private/internal IP: ' . $ip);
-                    return null;
-                }
+            if ($this->isPrivateIP($resolvedIp)) {
+                Log::warning('Blocked private/internal IP: ' . $resolvedIp);
+                return null;
             }
 
-            // Download with strict constraints
-            $context = stream_context_create([
-                'http' => [
-                    'timeout' => 10,
-                    'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-                    'follow_location' => 0,
-                    'max_redirects' => 0,
-                ],
-                'ssl' => [
-                    'verify_peer' => true,
-                    'verify_peer_name' => true,
-                ]
+            // Use cURL with DNS pinning to prevent TOCTOU
+            $ch = curl_init();
+            curl_setopt_array($ch, [
+                CURLOPT_URL => $imageUrl,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_TIMEOUT => 10,
+                CURLOPT_FOLLOWLOCATION => false,
+                CURLOPT_SSL_VERIFYPEER => true,
+                CURLOPT_SSL_VERIFYHOST => 2,
+                CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                CURLOPT_RESOLVE => [$url['host'] . ':' . ($url['scheme'] === 'https' ? 443 : 80) . ':' . $resolvedIp],
             ]);
 
-            $imageContent = @file_get_contents($imageUrl, false, $context);
-            if (!$imageContent) {
+            $imageContent = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+
+            if (!$imageContent || $httpCode !== 200) {
                 Log::warning('Failed to download image: ' . $imageUrl);
                 return null;
             }
