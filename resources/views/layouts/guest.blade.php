@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }} - Admin Login</title>
+        <title>{{ config('app.name', 'Laravel') }} - Sign In</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -174,10 +174,24 @@
                 background-color: #fee2e2;
                 border: 1px solid #fca5a5;
                 color: #b91c1c;
-                padding: 10px 12px;
+                padding: 12px 14px;
                 border-radius: 6px;
                 font-size: 13px;
                 margin-bottom: 16px;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .error-message strong {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+
+            .error-message i {
+                flex-shrink: 0;
+                margin-top: 2px;
             }
 
             .logo-icon {

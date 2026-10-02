@@ -1,14 +1,13 @@
 <x-guest-layout>
-    @if ($errors->any())
+    <!-- Throttle/Rate Limit Error -->
+    @if ($errors->has('throttle'))
         <div class="error-message">
-            <strong><i class="fas fa-exclamation-circle"></i> Login Failed</strong><br>
-            @foreach ($errors->all() as $error)
-                {{ $error }}
-            @endforeach
+            <strong><i class="fas fa-exclamation-circle"></i> Too Many Attempts</strong><br>
+            {{ $errors->first('throttle') }}
         </div>
     @endif
 
-    <form method="POST" action="{{ route('login') }}" class="space-y-4">
+    <form method="POST" action="{{ route('login') }}" class="space-y-4" x-data="{ loading: false }" @submit="loading = true">
         @csrf
 
         <!-- Email Address -->
@@ -22,10 +21,18 @@
                 name="email"
                 class="form-input @error('email') border-red-500 @enderror"
                 value="{{ old('email') }}"
-                placeholder="admin@retnews.com"
+                placeholder="admin@newsmedia.com"
                 required
                 autofocus
-                autocomplete="username">
+                autocomplete="username"
+                aria-label="Email address"
+                aria-describedby="email-error">
+            @error('email')
+                <div id="email-error" class="text-red-500 text-sm mt-2 flex items-center gap-1">
+                    <i class="fas fa-exclamation-circle"></i>
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <!-- Password -->
@@ -40,7 +47,15 @@
                 class="form-input @error('password') border-red-500 @enderror"
                 placeholder="••••••••"
                 required
-                autocomplete="current-password">
+                autocomplete="current-password"
+                aria-label="Password"
+                aria-describedby="password-error">
+            @error('password')
+                <div id="password-error" class="text-red-500 text-sm mt-2 flex items-center gap-1">
+                    <i class="fas fa-exclamation-circle"></i>
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <!-- Remember Me & Forgot Password -->
@@ -62,8 +77,13 @@
         </div>
 
         <!-- Login Button -->
-        <button type="submit" class="btn-login">
-            <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>{{ __('Sign In to Admin') }}
+        <button type="submit" class="btn-login" :disabled="loading" :class="{ 'opacity-75 cursor-not-allowed': loading }">
+            <span x-show="!loading">
+                <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>{{ __('Sign In') }}
+            </span>
+            <span x-show="loading">
+                <i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Signing in...
+            </span>
         </button>
     </form>
 
