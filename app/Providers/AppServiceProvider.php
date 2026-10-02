@@ -55,5 +55,10 @@ class AppServiceProvider extends ServiceProvider
             });
             $view->with('navsGroup', $navsGroup);
         });
+
+        // Blade helper for featured images - ensure it's always available
+        \Blade::directive('imageUrl', function ($expression) {
+            return "<?php echo \App\Helpers\ImageHelper::featuredImageUrl({$expression}); ?>";
+        });
     }
 }

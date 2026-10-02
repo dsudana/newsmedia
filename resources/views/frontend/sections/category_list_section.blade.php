@@ -8,7 +8,7 @@
             @forelse ($data['articles'] ?? [] as $article)
                 <a href="{{ route('blog.show', $article->slug) }}" class="flex gap-4 group hover:opacity-80 transition-opacity">
                     <div class="w-40 h-32 overflow-hidden shrink-0 bg-gray-900 rounded-lg"
-                        style="background-image: url('{{ $article->featured_image ? featuredImageUrl($article->featured_image) : '/images/placeholder.jpg' }}'); background-size: cover; background-position: center;">
+                        style="background-image: url('{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/placeholder.jpg' }}'); background-size: cover; background-position: center;">
                     </div>
                     <div class="flex-1">
                         <span class="inline-block px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded mb-2">

@@ -94,7 +94,7 @@
                 <!-- Featured Image -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-sm">
                     @if($article->featured_image)
-                        <img src="{{ featuredImageUrl($article->featured_image) }}" alt="{{ $article->title }}" class="w-full h-48 sm:h-64 object-cover" loading="lazy">
+                        <img src="{{ asset('storage/' . $article->featured_image) }}" alt="{{ $article->title }}" class="w-full h-48 sm:h-64 object-cover" loading="lazy">
                     @else
                         <div class="w-full h-48 sm:h-64 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
                             <i class="fas fa-image text-5xl sm:text-6xl text-gray-300"></i>
@@ -153,7 +153,7 @@
                                 <a href="{{ route('blog.show', $related->slug) }}" class="group">
                                     <div class="overflow-hidden rounded-lg">
                                         @if($related->featured_image)
-                                            <img src="{{ featuredImageUrl($related->featured_image) }}" alt="{{ $related->title }}" class="w-full h-40 object-cover group-hover:scale-105 transition" loading="lazy">
+                                            <img src="{{ asset('storage/' . $related->featured_image) }}" alt="{{ $related->title }}" class="w-full h-40 object-cover group-hover:scale-105 transition" loading="lazy">
                                         @else
                                             <div class="w-full h-40 bg-gray-300 flex items-center justify-center">
                                                 <i class="fas fa-image text-gray-400 text-3xl"></i>
@@ -248,7 +248,7 @@
                                         <!-- Square Image Left -->
                                         <div class="flex-shrink-0 w-20 h-20">
                                             @if($popular->featured_image)
-                                                <img src="{{ featuredImageUrl($popular->featured_image) }}" alt="" class="w-20 h-20 object-cover rounded group-hover:opacity-80 transition" loading="lazy">
+                                                <img src="{{ asset('storage/' . $popular->featured_image) }}" alt="" class="w-20 h-20 object-cover rounded group-hover:opacity-80 transition" loading="lazy">
                                             @else
                                                 <div class="w-20 h-20 bg-gray-300 rounded flex items-center justify-center">
                                                     <i class="fas fa-image text-gray-400 text-lg"></i>

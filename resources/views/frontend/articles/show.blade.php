@@ -7,7 +7,7 @@
         <h5 class="text-xs lg:text-sm mb-6">Created on {{ $article->created_at->format('d M Y') }} by <a
                 href="/articles?author={{$article->user?->id}}"
                 class="text-blue-500">{{ $article->user?->name ?? 'Unknown' }}</a></h5>
-        <img src="{{ $article->featured_image ? featuredImageUrl($article->featured_image) : '/images/default.jpg' }}"
+        <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/default.jpg' }}"
             alt="{{ $article->title }}" class="w-full rounded-lg" />
         <div class="flex gap-3 lg:gap-10 flex-col lg:flex-row mt-5">
             <div class="w-full lg:w-[65%]">

@@ -10,7 +10,7 @@
                     @foreach (($data['recent_articles'] ?? [])->take(2) as $article)
                         <a href="{{ route('blog.show', $article->slug) }}" class="group overflow-hidden">
                             <div class="aspect-[4/3] overflow-hidden mb-3 bg-gray-900 group-hover:opacity-90 transition-opacity"
-                                style="background-image: url('{{ $article->featured_image ? featuredImageUrl($article->featured_image) : '/images/placeholder.jpg' }}'); background-size: cover; background-position: center;">
+                                style="background-image: url('{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/placeholder.jpg' }}'); background-size: cover; background-position: center;">
                             </div>
                             <div>
                                 <span class="inline-block px-3 py-1 bg-red-100 text-red-600 text-xs font-bold rounded">
@@ -29,7 +29,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     @foreach (($data['recent_articles'] ?? [])->skip(2)->take(4) as $article)
                         <a href="{{ route('blog.show', $article->slug) }}" class="group flex gap-3 pb-4 hover:opacity-80 transition-opacity">
-                            <img src="{{ $article->featured_image ? featuredImageUrl($article->featured_image) : '/images/placeholder.jpg' }}"
+                            <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/placeholder.jpg' }}"
                                  alt="{{ $article->title }}" class="w-20 h-16 object-cover rounded flex-shrink-0">
                             <div class="flex-1 min-w-0">
                                 <p class="text-xs text-gray-500">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d, Y') }}</p>

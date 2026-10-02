@@ -35,7 +35,7 @@
                     @if (in_array('image', $section->config['show_fields'] ?? []))
                         <div class="h-56 w-full overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 relative">
                             @if ($article->featured_image)
-                                <img src="{{ featuredImageUrl($article->featured_image) }}" alt="{{ $article->title }}"
+                                <img src="@imageUrl($article->featured_image)" alt="{{ $article->title }}"
                                     class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                             @else
                                 <div

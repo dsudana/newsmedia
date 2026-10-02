@@ -20,7 +20,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="h-64 md:h-96 w-full">
                         @if($latestFeatured->featured_image)
-                            <img src="{{ featuredImageUrl($latestFeatured->featured_image) }}" alt="{{ $latestFeatured->title }}"
+                            <img src="@imageUrl($latestFeatured->featured_image)" alt="{{ $latestFeatured->title }}"
                                 class="w-full h-full object-cover">
                         @else
                             <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">No Image</div>
@@ -57,7 +57,7 @@
                         <div class="h-48 w-full overflow-hidden rounded-t">
                             <a href="{{ route('articles.show', $article) }}">
                                 @if($article->featured_image)
-                                    <img src="{{ featuredImageUrl($article->featured_image) }}" alt="{{ $article->title }}"
+                                    <img src="@imageUrl($article->featured_image)" alt="{{ $article->title }}"
                                         class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
                                 @else
                                     <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">No Image</div>
@@ -103,7 +103,7 @@
                                 <div class="h-40 w-full overflow-hidden rounded-t">
                                     <a href="{{ route('articles.show', $article) }}">
                                         @if($article->featured_image)
-                                            <img src="{{ featuredImageUrl($article->featured_image) }}" alt="{{ $article->title }}"
+                                            <img src="@imageUrl($article->featured_image)" alt="{{ $article->title }}"
                                                 class="w-full h-full object-cover">
                                         @else
                                             <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">No Image</div>
