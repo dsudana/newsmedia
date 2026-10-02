@@ -37,9 +37,11 @@ class HomepageController extends Controller
 
         // Get data for both modern and welcome views with caching
         // Cache for 1 hour to reduce database queries
+        // Prioritize articles with featured images
         $latestArticles = Cache::remember('homepage_latest_articles', now()->addHours(1), function () {
             return Article::published()
                 ->with(['category', 'user', 'comments' => fn($q) => $q->approved()])
+                ->whereNotNull('featured_image')
                 ->latest('published_at')
                 ->take(20)
                 ->get();
