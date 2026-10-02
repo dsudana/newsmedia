@@ -109,7 +109,7 @@
 
                 <!-- Article Content -->
                 <div class="bg-white rounded-lg p-4 sm:p-6 md:p-8 shadow-sm">
-                    <div class="prose prose-sm sm:prose-base md:prose-lg prose-gray max-w-none space-y-4 sm:space-y-6 text-gray-700 leading-relaxed">
+                    <div class="article-content">
                         {!! $article->content !!}
                     </div>
                 </div>

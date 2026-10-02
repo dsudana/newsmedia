@@ -12,7 +12,7 @@
         <div class="flex gap-3 lg:gap-10 flex-col lg:flex-row mt-5">
             <div class="w-full lg:w-[65%]">
                 <!-- Render Description as HTML -->
-                <div class="text-gray-600 prose max-w-3xl">
+                <div class="article-content text-gray-700 leading-relaxed">
                     {!! $article->content !!}
                 </div>
             </div>
