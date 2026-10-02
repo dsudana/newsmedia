@@ -1,59 +1,52 @@
-@extends('layouts.admin')
+<x-admin-layout-modern>
+    <x-slot name="header">
+        Edit Advertisement
+    </x-slot>
 
-@section('title', 'Edit Iklan')
-
-@section('content')
-<div class="container mx-auto px-4 py-8">
-    <div class="flex items-center gap-4 mb-8">
-        <a href="{{ route('admin.advertisements.index') }}" class="text-gray-600 hover:text-gray-900">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-        <h1 class="text-3xl font-bold text-gray-900">Edit Iklan</h1>
-    </div>
-
-    <div class="bg-white rounded-lg shadow-lg p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <form action="{{ route('admin.advertisements.update', $advertisement) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
             @method('PUT')
 
             <!-- Nama Iklan -->
             <div>
-                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Nama Iklan *</label>
-                <input type="text" id="name" name="name" required placeholder="Contoh: Iklan Google Ads"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 @error('name') border-red-500 @enderror"
+                <label for="name" class="block text-sm font-semibold text-gray-900 mb-2">Advertisement Name</label>
+                <input type="text" id="name" name="name" required placeholder="e.g., Google Ads Banner"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 @error('name') border-red-500 @enderror"
                     value="{{ old('name', $advertisement->name) }}">
                 @error('name')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                 @enderror
             </div>
 
             <!-- Tipe Iklan -->
             <div>
-                <label for="type" class="block text-sm font-semibold text-gray-700 mb-2">Tipe Iklan *</label>
+                <label for="type" class="block text-sm font-semibold text-gray-900 mb-2">Advertisement Type</label>
                 <select id="type" name="type" required onchange="updateAdType()"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 @error('type') border-red-500 @enderror">
-                    <option value="">-- Pilih Tipe --</option>
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 @error('type') border-red-500 @enderror">
+                    <option value="">-- Select Type --</option>
                     @foreach($types as $key => $value)
                         <option value="{{ $key }}" {{ old('type', $advertisement->type) == $key ? 'selected' : '' }}>{{ $value }}</option>
                     @endforeach
                 </select>
                 @error('type')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                 @enderror
             </div>
 
             <!-- Posisi Iklan -->
             <div>
-                <label for="placement" class="block text-sm font-semibold text-gray-700 mb-2">Posisi Iklan *</label>
+                <label for="placement" class="block text-sm font-semibold text-gray-900 mb-2">Placement Position</label>
                 <select id="placement" name="placement" required onchange="updateSize()"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 @error('placement') border-red-500 @enderror">
-                    <option value="">-- Pilih Posisi --</option>
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 @error('placement') border-red-500 @enderror">
+                    <option value="">-- Select Placement --</option>
                     @foreach($placements as $key => $value)
                         <option value="{{ $key }}" {{ old('placement', $advertisement->placement) == $key ? 'selected' : '' }}>{{ $value }}</option>
                     @endforeach
                 </select>
                 @error('placement')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                 @enderror
             </div>
 
@@ -61,93 +54,93 @@
             <div id="imageField">
                 <!-- Upload Gambar -->
                 <div>
-                    <label for="image" class="block text-sm font-semibold text-gray-700 mb-2">Gambar Iklan (JPG, PNG)</label>
+                    <label for="image" class="block text-sm font-semibold text-gray-900 mb-2">Advertisement Image (JPG, PNG)</label>
                     @if ($advertisement->image)
                         <div class="mb-4">
                             <img src="{{ asset('storage/' . $advertisement->image) }}" alt="{{ $advertisement->name }}" class="max-h-64 rounded-lg">
-                            <p class="text-sm text-gray-600 mt-2">Gambar saat ini</p>
+                            <p class="text-sm text-gray-600 mt-2">Current image</p>
                         </div>
                     @endif
-                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-red-600 transition">
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-indigo-500 transition">
                         <input type="file" id="image" name="image" accept="image/*" class="hidden" onchange="previewImage(event)">
                         <label for="image" class="cursor-pointer">
                             <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
-                            <p class="text-gray-600 font-medium">Klik untuk upload atau drag & drop</p>
-                            <p class="text-gray-500 text-sm">Max 5MB (opsional)</p>
+                            <p class="text-gray-600 font-medium">Click to upload or drag & drop</p>
+                            <p class="text-gray-500 text-sm">Max 5MB (optional)</p>
                         </label>
                     </div>
                     <img id="imagePreview" src="" alt="Preview" class="mt-4 rounded-lg max-h-64 hidden">
                     @error('image')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <!-- URL Tujuan -->
                 <div>
-                    <label for="url" class="block text-sm font-semibold text-gray-700 mb-2">URL Tujuan (opsional)</label>
-                    <input type="url" id="url" name="url" placeholder="https://contoh.com"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 @error('url') border-red-500 @enderror"
+                    <label for="url" class="block text-sm font-semibold text-gray-900 mb-2">Destination URL</label>
+                    <input type="url" id="url" name="url" placeholder="https://example.com"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 @error('url') border-red-500 @enderror"
                         value="{{ old('url', $advertisement->url) }}">
                     @error('url')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
 
             <!-- Deskripsi -->
             <div>
-                <label for="description" class="block text-sm font-semibold text-gray-700 mb-2">Deskripsi (opsional)</label>
-                <textarea id="description" name="description" rows="4" placeholder="Deskripsi iklan..."
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 @error('description') border-red-500 @enderror">{{ old('description', $advertisement->description) }}</textarea>
+                <label for="description" class="block text-sm font-semibold text-gray-900 mb-2">Description</label>
+                <textarea id="description" name="description" rows="4" placeholder="Enter advertisement description..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 @error('description') border-red-500 @enderror">{{ old('description', $advertisement->description) }}</textarea>
                 @error('description')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                 @enderror
             </div>
 
             <!-- Script (untuk AdSense & Custom Script) -->
             <div id="scriptField" style="display: none;">
-                <label for="script" class="block text-sm font-semibold text-gray-700 mb-2">Script Code (untuk AdSense/Custom Script) *</label>
-                <textarea id="script" name="script" rows="6" placeholder="Paste AdSense script atau custom script di sini..."
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 @error('script') border-red-500 @enderror font-mono text-sm">{{ old('script', $advertisement->script) }}</textarea>
-                <p class="text-gray-500 text-xs mt-2">Contoh AdSense: &lt;script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"&gt;&lt;/script&gt;</p>
+                <label for="script" class="block text-sm font-semibold text-gray-900 mb-2">Script Code (AdSense/Custom)</label>
+                <textarea id="script" name="script" rows="6" placeholder="Paste your AdSense or custom script here..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 @error('script') border-red-500 @enderror font-mono text-sm">{{ old('script', $advertisement->script) }}</textarea>
+                <p class="text-gray-500 text-xs mt-2">Example: &lt;script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"&gt;&lt;/script&gt;</p>
                 @error('script')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                 @enderror
             </div>
 
             <!-- Ukuran Iklan -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                    <label for="size" class="block text-sm font-semibold text-gray-700 mb-2">Ukuran Preset *</label>
+                    <label for="size" class="block text-sm font-semibold text-gray-900 mb-2">Size Preset</label>
                     <select id="size" name="size" onchange="updateDimensions()"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
-                        <option value="">-- Pilih Ukuran --</option>
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                        <option value="">-- Select Size --</option>
                         @foreach($sizes as $key => $value)
                             <option value="{{ $key }}" {{ old('size', $advertisement->size) == $key ? 'selected' : '' }}>{{ $value }}</option>
                         @endforeach
                     </select>
                     @error('size')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="width" class="block text-sm font-semibold text-gray-700 mb-2">Lebar (px) *</label>
+                    <label for="width" class="block text-sm font-semibold text-gray-900 mb-2">Width (px)</label>
                     <input type="number" id="width" name="width" required min="100"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 @error('width') border-red-500 @enderror"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 @error('width') border-red-500 @enderror"
                         value="{{ old('width', $advertisement->width) }}">
                     @error('width')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="height" class="block text-sm font-semibold text-gray-700 mb-2">Tinggi (px) *</label>
+                    <label for="height" class="block text-sm font-semibold text-gray-900 mb-2">Height (px)</label>
                     <input type="number" id="height" name="height" required min="50"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 @error('height') border-red-500 @enderror"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 @error('height') border-red-500 @enderror"
                         value="{{ old('height', $advertisement->height) }}">
                     @error('height')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
@@ -155,22 +148,22 @@
             <!-- Tanggal Tayang -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <label for="start_date" class="block text-sm font-semibold text-gray-700 mb-2">Tanggal Mulai (opsional)</label>
+                    <label for="start_date" class="block text-sm font-semibold text-gray-900 mb-2">Start Date</label>
                     <input type="date" id="start_date" name="start_date"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         value="{{ old('start_date', $advertisement->start_date?->format('Y-m-d')) }}">
                     @error('start_date')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="end_date" class="block text-sm font-semibold text-gray-700 mb-2">Tanggal Berakhir (opsional)</label>
+                    <label for="end_date" class="block text-sm font-semibold text-gray-900 mb-2">End Date</label>
                     <input type="date" id="end_date" name="end_date"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         value="{{ old('end_date', $advertisement->end_date?->format('Y-m-d')) }}">
                     @error('end_date')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
@@ -179,21 +172,21 @@
             <div>
                 <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" name="is_active" value="1" {{ old('is_active', $advertisement->is_active) ? 'checked' : '' }}
-                        class="w-5 h-5 text-red-600 border-gray-300 rounded focus:ring-2 focus:ring-red-600">
-                    <span class="text-sm font-semibold text-gray-700">Aktifkan Iklan</span>
+                        class="w-5 h-5 text-indigo-600 border-gray-300 rounded focus:ring-2 focus:ring-indigo-500">
+                    <span class="text-sm font-semibold text-gray-900">Active Advertisement</span>
                 </label>
             </div>
 
             <!-- Statistik -->
             <div class="bg-gray-50 p-4 rounded-lg">
-                <h3 class="font-semibold text-gray-900 mb-3">Statistik</h3>
+                <h3 class="font-semibold text-gray-900 mb-3">Statistics</h3>
                 <div class="grid grid-cols-2 gap-4 text-sm">
                     <div>
                         <p class="text-gray-600">Views</p>
                         <p class="text-2xl font-bold text-blue-600">{{ $advertisement->view_count }}</p>
                     </div>
                     <div>
-                        <p class="text-gray-600">Klik</p>
+                        <p class="text-gray-600">Clicks</p>
                         <p class="text-2xl font-bold text-green-600">{{ $advertisement->click_count }}</p>
                     </div>
                 </div>
@@ -201,16 +194,16 @@
 
             <!-- Tombol -->
             <div class="flex gap-4 pt-6 border-t">
-                <button type="submit" class="bg-red-600 text-white px-8 py-2 rounded-lg hover:bg-red-700 transition font-semibold">
-                    <i class="fas fa-save mr-2"></i>Perbarui Iklan
+                <button type="submit" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-semibold">
+                    <i class="fas fa-save mr-2"></i>Update Advertisement
                 </button>
-                <a href="{{ route('admin.advertisements.index') }}" class="bg-gray-200 text-gray-900 px-8 py-2 rounded-lg hover:bg-gray-300 transition font-semibold">
-                    Batal
+                <a href="{{ route('admin.advertisements.index') }}" class="inline-flex items-center px-4 py-2 bg-gray-200 text-gray-900 rounded-lg hover:bg-gray-300 transition font-semibold">
+                    Cancel
                 </a>
             </div>
         </form>
+        </div>
     </div>
-</div>
 
 <script>
 function updateAdType() {
@@ -279,4 +272,4 @@ document.addEventListener('DOMContentLoaded', function() {
     updateAdType();
 });
 </script>
-@endsection
+</x-admin-layout-modern>
