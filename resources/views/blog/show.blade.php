@@ -108,8 +108,8 @@
                 </div>
 
                 <!-- Article Content -->
-                <div class="bg-white rounded-lg p-4 sm:p-6 md:p-8 shadow-sm">
-                    <div class="article-content">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="article-content p-6 sm:p-8 md:p-10 max-w-none">
                         {!! $article->content !!}
                     </div>
                 </div>

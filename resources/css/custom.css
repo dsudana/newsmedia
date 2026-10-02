@@ -369,16 +369,27 @@ input[type="submit"] {
 
 /* Article Content Styling */
 .article-content {
-  font-size: 1.0625rem;
-  line-height: 1.8;
-  word-spacing: 0.05em;
+  font-size: 1.125rem;
+  line-height: 1.9;
+  word-spacing: 0.08em;
+  letter-spacing: 0.3px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #374151;
 }
 
 .article-content > p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   text-align: justify;
+  text-indent: 0;
+}
+
+.article-content > p:first-child {
+  text-indent: 2em;
+}
+
+.article-content > p + p {
+  text-indent: 2em;
 }
 
 .article-content > h2,
@@ -386,53 +397,70 @@ input[type="submit"] {
 .article-content > h4,
 .article-content > h5,
 .article-content > h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
   color: #1f2937;
   font-weight: 700;
+  line-height: 1.4;
 }
 
 .article-content > h2 {
   font-size: 1.875rem;
-  border-bottom: 3px solid #e5e7eb;
-  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #dc2626;
+  padding-bottom: 0.75rem;
+  margin-top: 3rem;
 }
 
 .article-content > h3 {
   font-size: 1.5rem;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 0.5rem;
 }
 
 .article-content > h4 {
   font-size: 1.25rem;
+  color: #374151;
 }
 
 .article-content > h5 {
   font-size: 1.125rem;
+  color: #4b5563;
 }
 
 .article-content > h6 {
   font-size: 1rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .article-content > ul,
 .article-content > ol {
-  margin: 1.5rem 0;
-  margin-left: 2rem;
+  margin: 1.75rem 0;
+  margin-left: 2.5rem;
 }
 
 .article-content > ul > li,
 .article-content > ol > li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.875rem;
   line-height: 1.8;
+  color: #374151;
 }
 
 .article-content > ul > li::marker {
-  color: var(--primary-color, #dc2626);
+  color: #dc2626;
+  font-size: 1.125em;
 }
 
 .article-content > ol > li::marker {
-  color: var(--primary-color, #dc2626);
+  color: #dc2626;
   font-weight: 700;
+  font-size: 1.125em;
+}
+
+.article-content > ul > li > strong,
+.article-content > ol > li > strong {
+  color: #1f2937;
 }
 
 .article-content > blockquote {
