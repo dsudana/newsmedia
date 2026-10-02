@@ -19,6 +19,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Register Blade helper for featured images
+        if (!function_exists('featuredImageUrl')) {
+            function featuredImageUrl($image) {
+                return \App\Helpers\ImageHelper::featuredImageUrl($image);
+            }
+        }
+
         view()->composer('*', function ($view) {
             $settings = \App\Models\Setting::all()->pluck('value', 'key');
             $view->with('settings', $settings);

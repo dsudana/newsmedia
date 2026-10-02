@@ -94,7 +94,7 @@
                 <!-- Featured Image -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-sm">
                     @if($article->featured_image)
-                        <img src="{{ asset('/storage/' . $article->featured_image) }}" alt="{{ $article->title }}" class="w-full h-48 sm:h-64 object-cover" loading="lazy">
+                        <img src="{{ featuredImageUrl($article->featured_image) }}" alt="{{ $article->title }}" class="w-full h-48 sm:h-64 object-cover" loading="lazy">
                     @else
                         <div class="w-full h-48 sm:h-64 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
                             <i class="fas fa-image text-5xl sm:text-6xl text-gray-300"></i>

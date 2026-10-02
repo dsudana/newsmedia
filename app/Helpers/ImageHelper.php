@@ -4,18 +4,21 @@ namespace App\Helpers;
 
 class ImageHelper
 {
-    public static function getImageUrl($imagePath)
+    /**
+     * Get featured image URL - handles both local paths and external URLs
+     */
+    public static function featuredImageUrl($image)
     {
-        if (!$imagePath) {
+        if (empty($image)) {
             return null;
         }
 
-        // If it's already a URL, return it as-is
-        if (str_starts_with($imagePath, 'http://') || str_starts_with($imagePath, 'https://')) {
-            return $imagePath;
+        // If it's already a full URL (http/https), return as-is
+        if (str_starts_with($image, 'http://') || str_starts_with($image, 'https://')) {
+            return $image;
         }
 
-        // Otherwise, treat it as a file path and use asset()
-        return asset('storage/' . $imagePath);
+        // Otherwise it's a local path, prepend storage
+        return asset('storage/' . $image);
     }
 }
