@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\HomepageBuilderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArticleImportController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AffiliateLinkController;
 use App\Http\Controllers\SettingController;
@@ -89,6 +90,12 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('categories', CategoryController::class);
     Route::resource('tags', TagController::class);
     Route::resource('articles', ArticleController::class);
+
+    // Article import routes
+    Route::get('/articles/import/create', [ArticleImportController::class, 'create'])->name('articles.import.create');
+    Route::post('/articles/import', [ArticleImportController::class, 'store'])->name('articles.import');
+    Route::post('/articles/import-file', [ArticleImportController::class, 'importFile'])->name('articles.import-file');
+
     Route::resource('users', UserController::class);
     Route::resource('affiliates', AffiliateLinkController::class);
     Route::resource('keywords', KeywordController::class);
