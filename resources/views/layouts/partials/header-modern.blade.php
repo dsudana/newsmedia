@@ -12,11 +12,22 @@
         <!-- Navigation -->
         <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
             <a href="{{ route('home') }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1">HOME</a>
-            <a href="{{ route('home') }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1">PAGES</a>
-            <a href="{{ route('home') }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1">ABOUT</a>
-            <a href="{{ route('blog.index') }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1">NEWS</a>
-            <a href="{{ route('home') }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1">CATEGORY</a>
-            <a href="{{ route('home') }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1">CONTACT</a>
+            <a href="{{ route('news.index') }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1">NEWS</a>
+            @php
+                $navCategories = \App\Models\Category::active()
+                    ->withCount(['articles' => fn($q) => $q->published()])
+                    ->having('articles_count', '>', 0)
+                    ->orderBy('articles_count', 'desc')
+                    ->limit(4)
+                    ->get();
+            @endphp
+            @foreach ($navCategories as $category)
+                <a href="{{ route('blog.category', $category->slug) }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1 uppercase">
+                    {{ $category->name }}
+                </a>
+            @endforeach
+            <a href="{{ route('about') }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1">ABOUT</a>
+            <a href="{{ route('contact') }}" class="font-bold text-xs text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 py-1">CONTACT</a>
         </nav>
 
         <!-- Dark Mode Toggle -->
@@ -39,11 +50,22 @@
     <nav x-show="mobileMenuOpen" x-transition class="md:hidden bg-gray-900 border-t border-gray-700" aria-label="Mobile navigation">
         <div class="max-w-6xl mx-auto px-4 py-4 space-y-2">
             <a href="{{ route('home') }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">HOME</a>
-            <a href="{{ route('home') }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">PAGES</a>
-            <a href="{{ route('home') }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">ABOUT</a>
-            <a href="{{ route('blog.index') }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">NEWS</a>
-            <a href="{{ route('home') }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">CATEGORY</a>
-            <a href="{{ route('home') }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">CONTACT</a>
+            <a href="{{ route('news.index') }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">NEWS</a>
+            @php
+                $navCategories = \App\Models\Category::active()
+                    ->withCount(['articles' => fn($q) => $q->published()])
+                    ->having('articles_count', '>', 0)
+                    ->orderBy('articles_count', 'desc')
+                    ->limit(4)
+                    ->get();
+            @endphp
+            @foreach ($navCategories as $category)
+                <a href="{{ route('blog.category', $category->slug) }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 uppercase">
+                    {{ $category->name }}
+                </a>
+            @endforeach
+            <a href="{{ route('about') }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">ABOUT</a>
+            <a href="{{ route('contact') }}" class="block py-2 text-white hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">CONTACT</a>
         </div>
     </nav>
 

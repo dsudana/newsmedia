@@ -35,11 +35,12 @@ export default {
                 wrap: "1200px",
             },
             animation: {
-                marquee: 'marquee 30s linear infinite',
+                marquee: 'marquee 60s linear infinite',
+                'marquee-slow': 'marquee 90s linear infinite',
             },
             keyframes: {
                 marquee: {
-                    '0%': { transform: 'translateX(100%)' },
+                    '0%': { transform: 'translateX(0)' },
                     '100%': { transform: 'translateX(-100%)' },
                 },
             },
