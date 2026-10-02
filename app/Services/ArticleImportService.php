@@ -83,6 +83,9 @@ class ArticleImportService
                 $featuredImageUrl = $this->extractImageFromContent($content);
             }
 
+            // Extract categories
+            $categories = $this->extractArticleCategories($item);
+
             $articles[] = [
                 'title' => (string)$item->title,
                 'slug' => (string)$item->children('wp', true)->post_name ?? Str::slug((string)$item->title),
@@ -93,10 +96,28 @@ class ArticleImportService
                 'status' => $this->mapStatus((string)$item->children('wp', true)->status ?? 'draft'),
                 'published_at' => $this->parsePubDate((string)$item->pubDate ?? null),
                 'featured_image' => $featuredImageUrl,
+                'categories' => $categories,
             ];
         }
 
         return $articles;
+    }
+
+    /**
+     * Extract categories from article item
+     */
+    protected function extractArticleCategories($item)
+    {
+        $categories = [];
+        if (isset($item->category)) {
+            foreach ($item->category as $category) {
+                $categoryName = (string)$category;
+                if ($categoryName) {
+                    $categories[] = $categoryName;
+                }
+            }
+        }
+        return $categories;
     }
 
     /**
@@ -274,10 +295,21 @@ class ArticleImportService
                 throw new Exception('Article with slug "' . $articleData['slug'] . '" already exists');
             }
 
-            // Get or create category
-            $categoryId = $this->resolveCategoryId($categoryMapping);
+            // Get or create category from article data
+            $categoryId = null;
+
+            // Try to map categories from WordPress to local database
+            if (!empty($articleData['categories'])) {
+                $categoryId = $this->resolveCategoryFromArticle($articleData['categories']);
+            }
+
+            // Fallback to mapping or default
             if (!$categoryId) {
-                throw new Exception('Default category not found');
+                $categoryId = $this->resolveCategoryId($categoryMapping);
+            }
+
+            if (!$categoryId) {
+                throw new Exception('Category could not be resolved');
             }
 
             // Download featured image if URL provided and enabled
@@ -332,6 +364,48 @@ class ArticleImportService
 
             return null;
         }
+    }
+
+    /**
+     * Resolve category from article's WordPress categories
+     * Try to find or create matching category in database
+     */
+    protected function resolveCategoryFromArticle($wpCategories = [])
+    {
+        if (empty($wpCategories)) {
+            return null;
+        }
+
+        // Try to find existing category by name (case-insensitive)
+        foreach ($wpCategories as $wpCategoryName) {
+            $category = Category::whereRaw('LOWER(name) = ?', [strtolower($wpCategoryName)])
+                ->where('is_active', true)
+                ->first();
+
+            if ($category) {
+                return $category->id;
+            }
+        }
+
+        // Try to create new category from first WordPress category
+        $primaryCategory = $wpCategories[0] ?? null;
+        if ($primaryCategory) {
+            try {
+                $newCategory = Category::create([
+                    'name' => $primaryCategory,
+                    'slug' => Str::slug($primaryCategory),
+                    'description' => 'Imported from WordPress',
+                    'is_active' => true,
+                    'parent_id' => null,
+                ]);
+                Log::info('Created new category from import: ' . $primaryCategory);
+                return $newCategory->id;
+            } catch (Exception $e) {
+                Log::warning('Failed to create category: ' . $primaryCategory . ' - ' . $e->getMessage());
+            }
+        }
+
+        return null;
     }
 
     /**
