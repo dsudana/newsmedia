@@ -188,8 +188,8 @@
                     @if($relatedArticles && $relatedArticles->count() > 0)
                         <div class="border-t-2 border-gray-300 pt-8 mb-12">
                             <h2 class="text-2xl font-bold text-gray-900 mb-6">Artikel Terkait</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                @foreach($relatedArticles->take(4) as $related)
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                @foreach($relatedArticles->take(7) as $related)
                                     <a href="{{ route('blog.show', $related->slug) }}" class="group">
                                         <div class="overflow-hidden rounded-lg mb-3 aspect-video bg-gray-100">
                                             @if($related->featured_image)
