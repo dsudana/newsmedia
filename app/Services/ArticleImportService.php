@@ -61,12 +61,26 @@ class ArticleImportService
         }
 
         foreach ($xml->channel->item as $item) {
+            $wp = $item->children('wp', true);
+            $postType = (string)($wp->post_type ?? '');
+
+            // Skip non-post items
+            if ($postType !== 'post') {
+                continue;
+            }
+
             $attachmentId = $this->extractFeaturedImageId($item);
             $featuredImageUrl = null;
 
             // If attachment ID found, look up the URL from attachments
             if ($attachmentId && isset($attachments[$attachmentId])) {
                 $featuredImageUrl = $attachments[$attachmentId];
+            }
+
+            // Fallback: Extract image from article content if no featured image
+            if (!$featuredImageUrl) {
+                $content = (string)$item->children('content', true)->encoded ?? '';
+                $featuredImageUrl = $this->extractImageFromContent($content);
             }
 
             $articles[] = [
@@ -134,6 +148,62 @@ class ArticleImportService
         }
 
         return null;
+    }
+
+    /**
+     * Extract first image URL from article content (WordPress blocks or HTML)
+     * Fallback when no featured image is set
+     */
+    protected function extractImageFromContent($content)
+    {
+        if (empty($content)) {
+            return null;
+        }
+
+        // Try to extract from WordPress image blocks first (priority)
+        // Pattern: <!-- wp:image {"id":123} --><figure...><img src="URL" /></figure><!-- /wp:image -->
+        if (preg_match('/<!--\s*wp:image[^>]*?-->.*?<img[^>]+src="([^"]+)"[^>]*?>/s', $content, $matches)) {
+            $imageUrl = $matches[1];
+            // Skip placeholder images
+            if (!$this->isPlaceholderImage($imageUrl)) {
+                return $imageUrl;
+            }
+        }
+
+        // Fallback: Try standard HTML img tags
+        // Pattern: <img src="URL" ... />
+        if (preg_match('/<img[^>]+src="([^"]+)"[^>]*?>/i', $content, $matches)) {
+            $imageUrl = $matches[1];
+            // Skip placeholder images
+            if (!$this->isPlaceholderImage($imageUrl)) {
+                return $imageUrl;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Check if image URL is a placeholder/dummy image
+     */
+    protected function isPlaceholderImage($imageUrl)
+    {
+        $placeholderPatterns = [
+            'via.placeholder.com',
+            'placeholder.com',
+            'dummyimage.com',
+            'via.placeholder',
+            'lorempicsum',
+            'picsum.photos/c',
+        ];
+
+        foreach ($placeholderPatterns as $pattern) {
+            if (stripos($imageUrl, $pattern) !== false) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
