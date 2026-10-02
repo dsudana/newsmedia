@@ -20,8 +20,7 @@ class TagController extends Controller
 
     public function index()
     {
-        $tags = $this->tagRepository->all([], ['*']);
-        $tags = collect($tags)->paginate(10);
+        $tags = Tag::latest()->paginate(10);
         return view('admin.tags.index', compact('tags'));
     }
 
