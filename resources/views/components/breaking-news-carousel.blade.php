@@ -2,67 +2,76 @@
 
 @if ($announcements->count() > 0 || $articles->count() > 0)
     <div class="bg-gradient-to-r from-red-900 to-red-800 rounded-2xl overflow-hidden mb-8">
-        <div class="p-8 flex flex-col lg:flex-row items-center gap-8">
-            <!-- Left: Carousel -->
+        <div class="p-6 lg:p-8 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
+            <!-- Left: Carousel Section -->
             <div class="flex-1 min-w-0" x-data="breakingCarousel()" x-init="init()">
                 <!-- Header -->
                 <div class="mb-6 flex items-center gap-3">
                     <div class="bg-white px-3 py-1 rounded-full">
-                        <span class="text-red-900 font-black text-sm">BREAKING</span>
+                        <span class="text-red-900 font-black text-sm">● BREAKING</span>
                     </div>
                     <div class="bg-blue-400 px-3 py-1 rounded-full">
                         <span class="text-white font-bold text-sm">NEWS</span>
                     </div>
-                    <h3 class="text-white font-black text-xl lg:text-2xl ml-4">{{ $announcements->first()?->title ?? 'Breaking News' }}</h3>
+                    <h3 class="text-white font-black text-lg lg:text-xl ml-2">{{ $announcements->first()?->title ?? 'Breaking News' }}</h3>
                 </div>
 
-                <!-- Carousel -->
+                <!-- Carousel Container -->
                 <div class="relative">
                     <div class="overflow-hidden">
                         <div class="flex gap-4 transition-transform duration-500" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                             @php
-                                $carouselItems = $articles->take(5);
+                                $carouselItems = $articles->take(10);
+                                $totalSlides = ceil($carouselItems->count() / 3);
                             @endphp
-                            @foreach ($carouselItems as $article)
-                                <div class="min-w-full flex items-center gap-4">
-                                    <!-- Image -->
-                                    <div class="w-48 h-32 flex-shrink-0 rounded-lg overflow-hidden">
-                                        @if ($article->featured_image)
-                                            @php
-                                                $imageUrl = str_starts_with($article->featured_image, 'http')
-                                                    ? $article->featured_image
-                                                    : asset('storage/' . $article->featured_image);
-                                            @endphp
-                                            <img src="{{ $imageUrl }}" alt="{{ $article->title }}" class="w-full h-full object-cover">
-                                        @else
-                                            <img src="/images/default.jpg" alt="{{ $article->title }}" class="w-full h-full object-cover">
-                                        @endif
-                                    </div>
+                            @for ($slideIdx = 0; $slideIdx < $totalSlides; $slideIdx++)
+                                <div class="min-w-full flex gap-4">
+                                    @for ($i = 0; $i < 3; $i++)
+                                        @php
+                                            $article = $carouselItems->skip($slideIdx * 3 + $i)->first();
+                                        @endphp
+                                        @if ($article)
+                                            <div class="flex-1 flex flex-col group cursor-pointer">
+                                                <!-- Image -->
+                                                <div class="relative overflow-hidden rounded-lg mb-3 aspect-video flex-shrink-0">
+                                                    @if ($article->featured_image)
+                                                        @php
+                                                            $imageUrl = str_starts_with($article->featured_image, 'http')
+                                                                ? $article->featured_image
+                                                                : asset('storage/' . $article->featured_image);
+                                                        @endphp
+                                                        <img src="{{ $imageUrl }}" alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                                    @else
+                                                        <img src="/images/default.jpg" alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                                    @endif
+                                                </div>
 
-                                    <!-- Title & Meta -->
-                                    <div class="flex-1 min-w-0">
-                                        <h4 class="text-white font-bold text-lg line-clamp-3 mb-2">{{ $article->title }}</h4>
-                                        <p class="text-red-100 text-sm">{{ $article->published_at->format('M d, Y') }}</p>
-                                    </div>
+                                                <!-- Title -->
+                                                <h4 class="text-white font-bold text-sm line-clamp-3 leading-tight">{{ $article->title }}</h4>
+                                            </div>
+                                        @else
+                                            <div class="flex-1"></div>
+                                        @endif
+                                    @endfor
                                 </div>
-                            @endforeach
+                            @endfor
                         </div>
                     </div>
 
                     <!-- Navigation Arrows -->
-                    <button @click="prev()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 lg:translate-x-0 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition" aria-label="Previous">
-                        <i class="fas fa-chevron-left text-xl"></i>
+                    <button @click="prev()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 lg:translate-x-0 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center transition" aria-label="Previous">
+                        <i class="fas fa-chevron-left text-lg"></i>
                     </button>
-                    <button @click="next()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 lg:translate-x-0 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition" aria-label="Next">
-                        <i class="fas fa-chevron-right text-xl"></i>
+                    <button @click="next()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 lg:translate-x-0 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center transition" aria-label="Next">
+                        <i class="fas fa-chevron-right text-lg"></i>
                     </button>
 
                     <!-- Dots -->
-                    <div class="flex justify-center gap-2 mt-4">
-                        @for ($i = 0; $i < $carouselItems->count(); $i++)
+                    <div class="flex justify-center gap-2 mt-6">
+                        @for ($i = 0; $i < $totalSlides; $i++)
                             <button @click="currentSlide = {{ $i }}"
-                                :class="currentSlide === {{ $i }} ? 'bg-white' : 'bg-white/50'"
-                                class="w-2 h-2 rounded-full transition" aria-label="Slide {{ $i + 1 }}">
+                                :class="currentSlide === {{ $i }} ? 'bg-white w-3' : 'bg-white/50 w-2'"
+                                class="h-2 rounded-full transition" aria-label="Slide {{ $i + 1 }}">
                             </button>
                         @endfor
                     </div>
@@ -70,8 +79,8 @@
             </div>
 
             <!-- Right: QR Code -->
-            <div class="flex-shrink-0 text-center">
-                <div class="bg-white p-4 rounded-lg mb-4 inline-block">
+            <div class="flex-shrink-0 text-center w-full lg:w-auto">
+                <div class="bg-white p-4 rounded-lg mb-3 inline-block mx-auto lg:mx-0">
                     <svg class="w-24 h-24" viewBox="0 0 24 24">
                         <rect x="2" y="2" width="6" height="6" fill="currentColor"/>
                         <rect x="9" y="2" width="1" height="1" fill="currentColor"/>
@@ -88,7 +97,7 @@
                         <rect x="14" y="14" width="6" height="6" fill="currentColor"/>
                     </svg>
                 </div>
-                <p class="text-white text-sm font-medium">Ikuti berita terupdate di<br>App NEWSMEDIA.<br><span class="font-bold">Scan & unduh sekarang</span></p>
+                <p class="text-white text-xs lg:text-sm font-medium">Ikuti berita terupdate di<br>App NEWSMEDIA.<br><span class="font-bold">Scan & unduh sekarang</span></p>
             </div>
         </div>
     </div>
@@ -97,11 +106,11 @@
         function breakingCarousel() {
             return {
                 currentSlide: 0,
-                totalSlides: {{ $carouselItems->count() }},
+                totalSlides: {{ $totalSlides }},
                 init() {
                     setInterval(() => {
                         this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-                    }, 5000);
+                    }, 6000);
                 },
                 next() {
                     this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
