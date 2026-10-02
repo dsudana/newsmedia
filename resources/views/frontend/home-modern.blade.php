@@ -8,7 +8,7 @@
     <!-- Top Breaking News Bar -->
     @if ($announcements->count() > 0)
         <div class="bg-slate-900 text-white py-3 sticky top-0 z-40">
-            <div class="max-w-6xl mx-auto px-6 flex items-center gap-4">
+            <div class="max-w-7xl mx-auto px-4 flex items-center gap-4">
                 <span class="bg-red-600 px-3 py-1 rounded text-xs font-bold uppercase tracking-wide shrink-0">Breaking</span>
                 <div class="overflow-hidden flex-1 min-w-0">
                     <div class="animate-marquee-slow inline-flex gap-16 whitespace-nowrap text-sm" style="min-width: 200%">
@@ -26,7 +26,7 @@
 
     <!-- Trending Topics Bar -->
     <div class="bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-3 sticky top-12 z-30" role="region" aria-label="Trending topics">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="flex items-center gap-3 min-w-0">
                 <span class="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide whitespace-nowrap shrink-0">Trending Now:</span>
                 <div class="overflow-hidden flex-1 min-w-0">
@@ -57,14 +57,14 @@
 
     <!-- Advertisement Banner -->
     <div class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-6">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4">
             <x-advertisement placement="header_banner" />
         </div>
     </div>
 
     <!-- Main Content -->
     <main class="bg-white dark:bg-slate-900 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="max-w-7xl mx-auto px-4 py-12">
             <!-- Featured Hero Section (Full Width, 2 Columns) -->
             <div class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Left Column: 1 Large Article -->
