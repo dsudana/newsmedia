@@ -10,7 +10,7 @@
                     <div class="swiper-slide">
                         <a href="{{ route('blog.show', $article->slug) }}" class="group block overflow-hidden">
                             <div class="aspect-[3/2] overflow-hidden mb-3 bg-gray-900 group-hover:opacity-90 transition-opacity">
-                                <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}"
+                                <img src="{{ $article->featured_image ? featuredImageUrl($article->featured_image) : '/images/placeholder.jpg' }}"
                                      alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
                             <div>

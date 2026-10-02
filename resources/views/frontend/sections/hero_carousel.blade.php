@@ -21,7 +21,7 @@
                                         @php
                                             $backgroundStyle = $mainArticle->featured_image
                                                 ? "background-image: url('" .
-                                                    addslashes(e('/storage/' . $mainArticle->featured_image)) .
+                                                    addslashes(e(featuredImageUrl($mainArticle->featured_image))) .
                                                     "'); background-size: cover; background-position: center;"
                                                 : "background-image: url('/images/placeholder.jpg'); background-size: cover; background-position: center;";
                                         @endphp
@@ -79,7 +79,7 @@
                                 @php
                                     $sideBackgroundStyle = $sideArticle->featured_image
                                         ? "background-image: url('" .
-                                            addslashes(e('/storage/' . $sideArticle->featured_image)) .
+                                            addslashes(e(featuredImageUrl($sideArticle->featured_image))) .
                                             "'); background-size: cover; background-position: center;"
                                         : "background-image: url('/images/placeholder.jpg'); background-size: cover; background-position: center;";
                                 @endphp

@@ -9,7 +9,7 @@
                 @forelse ($data['articles'] ?? [] as $article)
                     <div class="swiper-slide">
                         <a href="{{ route('blog.show', $article->slug) }}" class="flex items-center gap-3 group">
-                            <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}"
+                            <img src="{{ $article->featured_image ? featuredImageUrl($article->featured_image) : '/images/placeholder.jpg' }}"
                                  alt="{{ $article->title }}"
                                  class="w-16 h-16 object-cover rounded shrink-0">
                             <div class="flex-1 min-w-0">

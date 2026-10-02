@@ -14,7 +14,7 @@
                 <div class="h-48 w-full overflow-hidden rounded-t">
                     <a href="{{ route('articles.show', $article) }}">
                         @if($article->featured_image)
-                            <img src="/storage/{{ $article->featured_image }}" alt="{{ $article->title }}"
+                            <img src="{{ featuredImageUrl($article->featured_image) }}" alt="{{ $article->title }}"
                                 class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
                         @else
                             <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">No Image</div>

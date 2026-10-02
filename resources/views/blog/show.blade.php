@@ -248,7 +248,7 @@
                                         <!-- Square Image Left -->
                                         <div class="flex-shrink-0 w-20 h-20">
                                             @if($popular->featured_image)
-                                                <img src="{{ asset('/storage/' . $popular->featured_image) }}" alt="" class="w-20 h-20 object-cover rounded group-hover:opacity-80 transition" loading="lazy">
+                                                <img src="{{ featuredImageUrl($popular->featured_image) }}" alt="" class="w-20 h-20 object-cover rounded group-hover:opacity-80 transition" loading="lazy">
                                             @else
                                                 <div class="w-20 h-20 bg-gray-300 rounded flex items-center justify-center">
                                                     <i class="fas fa-image text-gray-400 text-lg"></i>
