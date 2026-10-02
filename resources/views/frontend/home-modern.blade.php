@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+   
     <!-- Top Breaking News Bar -->
     @if ($announcements->count() > 0)
         <div class="bg-slate-900 text-white py-3 sticky top-0 z-40">
@@ -81,7 +81,7 @@
                                     <img src="{{ $imageUrl }}" alt="{{ $featured->title }}" loading="lazy" width="400" height="200" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                 </picture>
                             @else
-                                <img src="https://via.placeholder.com/1000x500?text={{ urlencode($featured->category->name) }}" alt="{{ $featured->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <img src="/images/default.jpg" alt="{{ $featured->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             @endif
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
 
@@ -117,7 +117,7 @@
                                         <img src="{{ $imgUrl }}" alt="{{ $article->title }}" loading="lazy" width="150" height="150" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                     </picture>
                                 @else
-                                    <img src="https://via.placeholder.com/300x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                    <img src="/images/default.jpg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                 @endif
                             </div>
                             <div class="flex-1 p-4 bg-slate-50 dark:bg-slate-800 rounded-r-lg flex flex-col justify-between">
@@ -158,7 +158,7 @@
                                         <img src="{{ $imgUrl }}" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                     </picture>
                                 @else
-                                    <img src="https://via.placeholder.com/400x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                    <img src="/images/default.jpg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                 @endif
                             </div>
                             <div class="flex-1 flex flex-col">
@@ -204,7 +204,7 @@
                                                 <img src="{{ asset('storage/' . $article->featured_image) }}?w=250&q=70" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                             </picture>
                                         @else
-                                            <img src="https://via.placeholder.com/400x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                            <img src="/images/default.jpg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                         @endif
 
                                         <!-- Overlay with category badge -->
@@ -271,7 +271,7 @@
                                                     <img src="{{ asset('storage/' . $article->featured_image) }}?w=250&q=70" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                                 </picture>
                                             @else
-                                                <img src="https://via.placeholder.com/400x300?text={{ urlencode($article->category->name ?? 'News') }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                                <img src="/images/default.jpg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                             @endif
 
                                             <!-- Overlay with category badge -->
@@ -352,7 +352,7 @@
                                 <a href="{{ route('blog.show', $article->slug) }}"
                                     class="group flex gap-4 pb-5 border-b border-slate-200 dark:border-slate-700 last:pb-0 last:border-0 hover:opacity-75 transition">
                                     <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                                        <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : 'https://via.placeholder.com/100x100?text=' . urlencode($article->category->name ?? 'News') }}"
+                                        <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/default.jpg' }}"
                                             alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover">
                                     </div>
                                     <div class="flex-1 min-w-0">
