@@ -1,5 +1,11 @@
 @extends('layouts.app-modern')
 
+@section('extra_head')
+<!-- SweetAlert2 for notifications -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+@endsection
+
 @section('content')
 <!-- Advertisement Section (Like Homepage) -->
 <div class="bg-white border-b border-gray-200 py-3 sm:py-6">
@@ -14,6 +20,17 @@
 <!-- Main Content -->
 <div class="bg-gray-50 py-6 sm:py-12">
     <div class="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+        <!-- Success Message (for non-JS users) -->
+        @if(session('success'))
+            <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
+                <i class="fas fa-check-circle text-green-600 mt-0.5 text-lg flex-shrink-0"></i>
+                <div>
+                    <h3 class="font-semibold text-green-900">Terima kasih!</h3>
+                    <p class="text-sm text-green-800 mt-0.5">{{ session('success') }}</p>
+                </div>
+            </div>
+        @endif
+
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             <!-- Article Content (Main) -->
             <div class="lg:col-span-2 space-y-6">
@@ -293,9 +310,39 @@
 </div>
 
 <script>
+// Show success alert when comment is submitted
+@if(session('success'))
+document.addEventListener('DOMContentLoaded', function() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Komentar Terkirim!',
+        html: '<p class="text-gray-600">{{ session("success") }}</p>',
+        confirmButtonText: 'Tutup',
+        confirmButtonColor: '#dc2626',
+        allowOutsideClick: false,
+        didOpen: function() {
+            // Auto close after 5 seconds
+            setTimeout(function() {
+                Swal.close();
+            }, 5000);
+        }
+    });
+});
+@endif
+
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
-        alert('Link copied to clipboard!');
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: 'Link telah disalin ke clipboard',
+            timer: 2000,
+            showConfirmButton: false,
+            position: 'bottom-end',
+            toast: true,
+            background: '#1f2937',
+            color: '#fff'
+        });
     });
 }
 
@@ -313,13 +360,25 @@ function submitNewsletter() {
     .then(data => {
         this.loading = false;
         if (data.success) {
-            alert('Subscribed successfully!');
+            Swal.fire({
+                icon: 'success',
+                title: 'Subscription Berhasil!',
+                text: 'Terima kasih telah berlangganan newsletter kami',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#dc2626'
+            });
             this.email = '';
         }
     })
     .catch(() => {
         this.loading = false;
-        alert('Error subscribing');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops!',
+            text: 'Terjadi kesalahan saat berlangganan',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#dc2626'
+        });
     });
 }
 </script>
