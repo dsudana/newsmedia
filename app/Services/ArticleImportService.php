@@ -27,7 +27,18 @@ class ArticleImportService
     public function parseXML($xmlContent)
     {
         try {
-            $xml = simplexml_load_string($xmlContent);
+            if (stripos($xmlContent, '<!DOCTYPE') !== false) {
+                throw new Exception('DOCTYPE declarations are not allowed for security reasons');
+            }
+
+            $prev = libxml_use_internal_errors(true);
+            $xml = simplexml_load_string(
+                $xmlContent,
+                'SimpleXMLElement',
+                LIBXML_NONET
+            );
+            libxml_use_internal_errors($prev);
+
             if (!$xml) {
                 throw new Exception('Invalid XML format');
             }
@@ -49,6 +60,8 @@ class ArticleImportService
         }
 
         foreach ($xml->channel->item as $item) {
+            $featuredImage = $this->extractFeaturedImage($item);
+
             $articles[] = [
                 'title' => (string)$item->title,
                 'slug' => (string)$item->children('wp', true)->post_name ?? Str::slug((string)$item->title),
@@ -58,11 +71,31 @@ class ArticleImportService
                 'meta_title' => (string)($item->title ?? ''),
                 'status' => $this->mapStatus((string)$item->children('wp', true)->status ?? 'draft'),
                 'published_at' => $this->parsePubDate((string)$item->pubDate ?? null),
-                'featured_image' => null, // Will be set if image exists
+                'featured_image' => $featuredImage,
             ];
         }
 
         return $articles;
+    }
+
+    /**
+     * Extract featured image URL from WordPress attachment
+     */
+    protected function extractFeaturedImage($item)
+    {
+        $wp = $item->children('wp', true);
+
+        if (isset($wp->post_meta)) {
+            foreach ($wp->post_meta as $postMeta) {
+                $metaKey = (string)$postMeta->children('wp', true)->meta_key;
+                if ($metaKey === '_thumbnail_id') {
+                    $attachmentId = (string)$postMeta->children('wp', true)->meta_value;
+                    return $attachmentId;
+                }
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -139,6 +172,15 @@ class ArticleImportService
                 throw new Exception('Default category not found');
             }
 
+            // Download featured image if URL provided and enabled
+            $featuredImagePath = null;
+            if ($downloadImages && !empty($articleData['featured_image'])) {
+                $featuredImagePath = $this->downloadFeaturedImage(
+                    $articleData['featured_image'],
+                    $articleData['slug']
+                );
+            }
+
             // Calculate word count
             $wordCount = str_word_count(strip_tags($articleData['content']));
 
@@ -154,7 +196,7 @@ class ArticleImportService
                 'meta_description' => $articleData['meta_description'],
                 'status' => $articleData['status'],
                 'published_at' => $articleData['published_at'],
-                'featured_image' => $articleData['featured_image'],
+                'featured_image' => $featuredImagePath,
                 'word_count' => $wordCount,
                 'views_count' => 0,
                 'is_featured' => false,
@@ -223,7 +265,7 @@ class ArticleImportService
     }
 
     /**
-     * Download and save featured image
+     * Download and save featured image with SSRF/security validation
      */
     public function downloadFeaturedImage($imageUrl, $articleSlug)
     {
@@ -232,19 +274,50 @@ class ArticleImportService
         }
 
         try {
-            // Skip if already local path
             if (!filter_var($imageUrl, FILTER_VALIDATE_URL)) {
                 return null;
             }
 
-            // Download image
-            $imageContent = file_get_contents($imageUrl, false, stream_context_create([
+            $url = parse_url($imageUrl);
+            if (!isset($url['scheme']) || !in_array($url['scheme'], ['http', 'https'])) {
+                Log::warning('Invalid URL scheme: ' . $imageUrl);
+                return null;
+            }
+
+            if (!isset($url['host'])) {
+                Log::warning('Invalid URL host: ' . $imageUrl);
+                return null;
+            }
+
+            // SSRF prevention: validate resolved IP
+            $ips = gethostbynamel($url['host']);
+            if ($ips === false) {
+                Log::warning('Failed to resolve hostname: ' . $url['host']);
+                return null;
+            }
+
+            foreach ($ips as $ip) {
+                if ($this->isPrivateIP($ip)) {
+                    Log::warning('Blocked private/internal IP: ' . $ip);
+                    return null;
+                }
+            }
+
+            // Download with strict constraints
+            $context = stream_context_create([
                 'http' => [
                     'timeout' => 10,
                     'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                    'follow_location' => 0,
+                    'max_redirects' => 0,
+                ],
+                'ssl' => [
+                    'verify_peer' => true,
+                    'verify_peer_name' => true,
                 ]
-            ]));
+            ]);
 
+            $imageContent = @file_get_contents($imageUrl, false, $context);
             if (!$imageContent) {
                 Log::warning('Failed to download image: ' . $imageUrl);
                 return null;
@@ -255,15 +328,16 @@ class ArticleImportService
             $mimeType = finfo_buffer($finfo, $imageContent);
             finfo_close($finfo);
 
-            // Determine extension
+            // Determine extension (no SVG allowed)
             $ext = $this->getMimeExtension($mimeType);
             if (!$ext) {
-                Log::warning('Unknown image type: ' . $mimeType);
+                Log::warning('Unknown or unsupported image type: ' . $mimeType);
                 return null;
             }
 
-            // Save to storage
-            $filename = 'articles/' . $articleSlug . '-' . time() . '.' . $ext;
+            // Sanitize filename to prevent path traversal
+            $safeSlug = Str::slug($articleSlug) ?: Str::random(16);
+            $filename = 'articles/' . $safeSlug . '-' . time() . '.' . $ext;
             $path = Storage::disk('public')->put($filename, $imageContent);
 
             Log::info('Image downloaded: ' . $path);
@@ -275,7 +349,77 @@ class ArticleImportService
     }
 
     /**
-     * Get file extension from MIME type
+     * Check if IP is private/internal (SSRF prevention)
+     */
+    protected function isPrivateIP($ip)
+    {
+        $privateRanges = [
+            '10.0.0.0/8',
+            '172.16.0.0/12',
+            '192.168.0.0/16',
+            '127.0.0.0/8',
+            '169.254.0.0/16',
+            '::1/128',
+            'fc00::/7',
+        ];
+
+        foreach ($privateRanges as $range) {
+            if ($this->ipInRange($ip, $range)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if IP is in CIDR range
+     */
+    protected function ipInRange($ip, $range)
+    {
+        if (strpos($range, ':') !== false) {
+            return $this->ipv6InRange($ip, $range);
+        }
+
+        [$subnet, $bits] = explode('/', $range);
+        $ip = ip2long($ip);
+        $subnet = ip2long($subnet);
+        $mask = -1 << (32 - $bits);
+        $subnet &= $mask;
+
+        return ($ip & $mask) === $subnet;
+    }
+
+    /**
+     * Check if IPv6 is in CIDR range
+     */
+    protected function ipv6InRange($ip, $range)
+    {
+        [$subnet, $bits] = explode('/', $range);
+
+        if (inet_pton($ip) === false || inet_pton($subnet) === false) {
+            return false;
+        }
+
+        $ipBin = inet_pton($ip);
+        $subnetBin = inet_pton($subnet);
+        $maskBin = '';
+
+        for ($i = 0; $i < $bits; $i++) {
+            $maskBin .= (int)($i / 8) === ($i / 8) ? '1' : '0';
+        }
+
+        while (strlen($maskBin) < 128) {
+            $maskBin .= '0';
+        }
+
+        $maskBin = hex2bin(base_convert($maskBin, 2, 16));
+
+        return ($ipBin & $maskBin) === ($subnetBin & $maskBin);
+    }
+
+    /**
+     * Get file extension from MIME type (no SVG for security)
      */
     protected function getMimeExtension($mimeType)
     {
@@ -284,7 +428,6 @@ class ArticleImportService
             'image/png' => 'png',
             'image/gif' => 'gif',
             'image/webp' => 'webp',
-            'image/svg+xml' => 'svg',
         ];
 
         return $mapping[$mimeType] ?? null;
