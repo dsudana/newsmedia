@@ -446,10 +446,15 @@ class ArticleImportService
             // Sanitize filename to prevent path traversal
             $safeSlug = Str::slug($articleSlug) ?: Str::random(16);
             $filename = 'articles/' . $safeSlug . '-' . time() . '.' . $ext;
-            $path = Storage::disk('public')->put($filename, $imageContent);
+            $saved = Storage::disk('public')->put($filename, $imageContent);
 
-            Log::info('Image downloaded: ' . $path);
-            return $path;
+            if (!$saved) {
+                Log::warning('Failed to save image to storage: ' . $filename);
+                return null;
+            }
+
+            Log::info('Image downloaded: ' . $filename);
+            return $filename;
         } catch (Exception $e) {
             Log::warning('Failed to download featured image: ' . $e->getMessage());
             return null;
