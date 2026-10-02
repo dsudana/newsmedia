@@ -172,38 +172,110 @@
 
             <!-- Right Sidebar -->
             <aside class="lg:col-span-1">
-                <div class="sticky top-24 space-y-6">
+                <div class="sticky top-24 space-y-8">
+                    <!-- Social Media Section -->
+                    <section class="bg-slate-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Ikuti Kami</h3>
+                        <div class="flex flex-wrap gap-3">
+                            @php
+                                $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
+                            @endphp
+                            @forelse ($socialLinks as $social)
+                                <a href="{{ $social->url }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   title="{{ $social->platform }}"
+                                   class="w-10 h-10 flex items-center justify-center rounded-lg bg-red-600 hover:bg-red-700 text-white transition duration-300 transform hover:scale-110">
+                                    <i class="{{ $social->icon }}"></i>
+                                </a>
+                            @empty
+                                <p class="text-sm text-gray-500">Tidak ada social media</p>
+                            @endforelse
+                        </div>
+                    </section>
+
                     <!-- Advertisement Top -->
                     <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
                         @component('components.advertisement', ['placement' => 'sidebar_top'])
                         @endcomponent
                     </div>
 
-                    <!-- Filter Categories -->
-                    @if($categories && $categories->count() > 0)
-                        <div class="bg-white rounded-lg p-6 border border-gray-200">
-                            <h3 class="text-lg font-bold text-gray-900 mb-4">Kategori</h3>
-                            <div class="space-y-2">
-                                <a href="{{ route('blog.index') }}"
-                                    class="block p-2 rounded hover:bg-red-50 transition {{ !isset($category) ? 'bg-red-50 text-red-600 font-semibold' : 'text-gray-700' }}">
-                                    Semua Kategori
-                                </a>
-                                @foreach($categories as $cat)
-                                    <a href="{{ route('blog.index', ['category' => $cat->slug]) }}"
-                                        class="block p-2 rounded hover:bg-red-50 transition {{ (isset($category) && $category->id === $cat->id) ? 'bg-red-50 text-red-600 font-semibold' : 'text-gray-700' }}">
-                                        {{ $cat->name }}
+                    <!-- Recent Articles -->
+                    @php
+                        $recentArticles = isset($category)
+                            ? \App\Models\Article::published()->where('category_id', $category->id)->latest('published_at')->take(5)->get()
+                            : \App\Models\Article::published()->latest('published_at')->take(5)->get();
+                    @endphp
+                    @if($recentArticles && $recentArticles->count() > 0)
+                        <section class="bg-slate-50 rounded-lg p-6 border border-gray-200">
+                            <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
+                                <span class="w-1 h-6 bg-red-600 rounded-full"></span>
+                                Artikel Terbaru
+                            </h3>
+                            <div class="space-y-5">
+                                @foreach ($recentArticles as $article)
+                                    <a href="{{ route('blog.show', $article->slug) }}"
+                                        class="group flex gap-4 pb-5 border-b border-gray-200 last:pb-0 last:border-0 hover:opacity-75 transition">
+                                        <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                            <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/default.jpg' }}"
+                                                alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h4
+                                                class="text-sm font-bold text-gray-900 line-clamp-2 group-hover:text-red-600 transition mb-1">
+                                                {{ $article->title }}
+                                            </h4>
+                                            <p class="text-xs text-gray-500">
+                                                {{ $article->published_at->format('M d, Y') }}
+                                            </p>
+                                        </div>
                                     </a>
                                 @endforeach
                             </div>
-                        </div>
+                        </section>
+                    @endif
+
+                    <!-- Popular Articles -->
+                    @php
+                        $popularArticles = isset($category)
+                            ? \App\Models\Article::published()->where('category_id', $category->id)->orderByDesc('views_count')->take(5)->get()
+                            : \App\Models\Article::published()->orderByDesc('views_count')->take(5)->get();
+                    @endphp
+                    @if($popularArticles && $popularArticles->count() > 0)
+                        <section class="bg-slate-50 rounded-lg p-6 border border-gray-200">
+                            <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
+                                <span class="w-1 h-6 bg-red-600 rounded-full"></span>
+                                Artikel Populer
+                            </h3>
+                            <div class="space-y-5">
+                                @foreach ($popularArticles as $article)
+                                    <a href="{{ route('blog.show', $article->slug) }}"
+                                        class="group flex gap-4 pb-5 border-b border-gray-200 last:pb-0 last:border-0 hover:opacity-75 transition">
+                                        <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                            <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/default.jpg' }}"
+                                                alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h4
+                                                class="text-sm font-bold text-gray-900 line-clamp-2 group-hover:text-red-600 transition mb-1">
+                                                {{ $article->title }}
+                                            </h4>
+                                            <p class="text-xs text-gray-500">
+                                                <i class="fas fa-eye mr-1"></i>{{ number_format($article->views_count ?? 0) }} dibaca
+                                            </p>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </section>
                     @endif
 
                     <!-- Newsletter -->
-                    <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white">
+                    <section class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white">
                         <h3 class="text-lg font-bold mb-2">Tetap Update</h3>
                         <p class="text-sm text-red-100 mb-4">Dapatkan berita terbaru langsung ke email</p>
                         <x-newsletter-form placeholder="Email Anda" buttonText="Berlangganan" />
-                    </div>
+                    </section>
 
                     <!-- Advertisement Bottom -->
                     <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
@@ -211,19 +283,29 @@
                         @endcomponent
                     </div>
 
-                    <!-- Popular Tags -->
-                    @if($popularTags && $popularTags->count() > 0)
-                        <div class="bg-white rounded-lg p-6 border border-gray-200">
-                            <h3 class="text-lg font-bold text-gray-900 mb-4">Tag Populer</h3>
-                            <div class="flex flex-wrap gap-2">
-                                @foreach($popularTags->take(12) as $tag)
-                                    <a href="{{ route('blog.tag', $tag->slug) }}"
-                                        class="bg-gray-100 text-gray-700 px-2.5 py-1.5 rounded text-xs hover:bg-red-100 hover:text-red-700 transition">
-                                        #{{ $tag->name }}
+                    <!-- Categories (Only with articles) -->
+                    @php
+                        $categoriesWithArticles = \App\Models\Category::active()
+                            ->withCount(['articles' => fn($q) => $q->published()])
+                            ->having('articles_count', '>', 0)
+                            ->orderByDesc('articles_count')
+                            ->get();
+                    @endphp
+                    @if($categoriesWithArticles && $categoriesWithArticles->count() > 0)
+                        <section class="bg-slate-50 rounded-lg p-6 border border-gray-200">
+                            <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
+                                <span class="w-1 h-6 bg-red-600 rounded-full"></span>
+                                Kategori
+                            </h3>
+                            <div class="space-y-2">
+                                @foreach ($categoriesWithArticles as $cat)
+                                    <a href="{{ route('blog.index', ['category' => $cat->slug]) }}"
+                                        class="block px-3 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-600 rounded-lg transition {{ (isset($category) && $category->id === $cat->id) ? 'bg-red-100 text-red-600 font-semibold' : '' }}">
+                                        {{ $cat->name }} <span class="text-xs text-gray-500">({{ $cat->articles_count }})</span>
                                     </a>
                                 @endforeach
                             </div>
-                        </div>
+                        </section>
                     @endif
                 </div>
             </aside>
