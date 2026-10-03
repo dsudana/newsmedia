@@ -1,7 +1,7 @@
 @props(['announcements', 'articles'])
 
 @if ($announcements->count() > 0 || $articles->count() > 0)
-    <div class="bg-gradient-to-r from-red-900 to-red-800 rounded-2xl overflow-hidden mb-8" x-data="breakingCarousel()" x-init="init()">
+    <div class="bg-gradient-to-r from-red-600 via-red-700 to-red-800 rounded-2xl overflow-hidden mb-8 shadow-lg" x-data="breakingCarousel()" x-init="init()">
         <div class="p-6 lg:p-8 flex items-center justify-between gap-4 lg:gap-6">
             <!-- Left: Header Section -->
             <div class="flex-shrink-0 pr-4 border-r border-red-700">
