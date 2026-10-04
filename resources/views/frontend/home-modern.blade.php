@@ -12,7 +12,7 @@
     </div>
 
     <!-- Advertisement Banner -->
-    <div class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 py-6 mb-8">
+    <div class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-6 mb-6">
         <div class="max-w-7xl mx-auto px-4">
             <x-advertisement placement="header_banner" />
         </div>
@@ -199,7 +199,7 @@
                     @foreach ($latestArticles->skip(3)->take(4) as $article)
                         <a href="{{ route('blog.show', $article->slug) }}"
                             class="group flex flex-col h-full hover:opacity-85 transition">
-                            <div class="relative overflow-hidden rounded-xl h-40 mb-4 bg-slate-200 dark:bg-slate-700">
+                            <div class="relative overflow-hidden rounded-lg h-36 mb-4">
                                 @if ($article->featured_image)
                                     @php $imgUrl = str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image); @endphp
                                     <picture>
@@ -246,7 +246,7 @@
                             @foreach ($latestArticles->skip(7)->take(3) as $article)
                                 <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
                                     <!-- Article Card with Image -->
-                                    <div class="relative overflow-hidden rounded-xl h-40 mb-4 bg-slate-200 dark:bg-slate-700">
+                                    <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
                                         @if ($article->featured_image)
                                             <picture>
                                                 <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
@@ -313,7 +313,7 @@
                                 @foreach ($categoryArticles->take(3) as $article)
                                     <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
                                         <!-- Article Card with Image -->
-                                        <div class="relative overflow-hidden rounded-xl h-40 mb-4 bg-slate-200 dark:bg-slate-700">
+                                        <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
                                             @if ($article->featured_image)
                                                 <picture>
                                                     <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
@@ -446,14 +446,24 @@
                         </h3>
                         <div class="space-y-2">
                             @php
-                                $categories = ['Technology', 'Business', 'Entertainment', 'Sports', 'Health'];
+                                $sidebarCategories = \App\Models\Category::active()
+                                    ->withCount(['articles' => fn($q) => $q->published()])
+                                    ->having('articles_count', '>', 0)
+                                    ->orderBy('articles_count', 'desc')
+                                    ->limit(8)
+                                    ->get();
                             @endphp
-                            @foreach ($categories as $category)
-                                <a href="#"
-                                    class="block px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition">
-                                    {{ $category }}
+                            @forelse ($sidebarCategories as $category)
+                                <a href="{{ route('blog.category', $category->slug) }}"
+                                    class="group flex items-center justify-between px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition">
+                                    <span>{{ $category->name }}</span>
+                                    <span class="text-xs bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 group-hover:bg-red-200 dark:group-hover:bg-red-900/50 px-2 py-1 rounded transition">
+                                        {{ $category->articles_count }}
+                                    </span>
                                 </a>
-                            @endforeach
+                            @empty
+                                <p class="text-sm text-slate-500 dark:text-slate-400 px-3 py-2">No categories available</p>
+                            @endforelse
                         </div>
                     </section>
                 </aside>
