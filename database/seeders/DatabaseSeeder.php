@@ -62,5 +62,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ContentSeeder::class);
         $this->call(KeywordSeeder::class);
         $this->call(HomePageSettingSeeder::class);
+        $this->call(SocialMediaSeeder::class);
     }
 }
