@@ -14,21 +14,21 @@
 
                 <!-- Social Media Icons -->
                 <div class="flex gap-4 mt-6">
-                    <a href="#" aria-label="Ikuti kami di Facebook" title="Facebook" class="w-10 h-10 rounded-full bg-gray-800 dark:bg-gray-700 text-gray-400 hover:text-red-600 hover:bg-gray-700 dark:hover:bg-gray-600 flex items-center justify-center transition focus-visible:ring-2 ring-offset-2 ring-red-600">
-                        <i class="fab fa-facebook text-base" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" aria-label="Ikuti kami di Twitter" title="Twitter" class="w-10 h-10 rounded-full bg-gray-800 dark:bg-gray-700 text-gray-400 hover:text-red-600 hover:bg-gray-700 dark:hover:bg-gray-600 flex items-center justify-center transition focus-visible:ring-2 ring-offset-2 ring-red-600">
-                        <i class="fab fa-x-twitter text-base" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" aria-label="Ikuti kami di Instagram" title="Instagram" class="w-10 h-10 rounded-full bg-gray-800 dark:bg-gray-700 text-gray-400 hover:text-red-600 hover:bg-gray-700 dark:hover:bg-gray-600 flex items-center justify-center transition focus-visible:ring-2 ring-offset-2 ring-red-600">
-                        <i class="fab fa-instagram text-base" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" aria-label="Ikuti kami di LinkedIn" title="LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 dark:bg-gray-700 text-gray-400 hover:text-red-600 hover:bg-gray-700 dark:hover:bg-gray-600 flex items-center justify-center transition focus-visible:ring-2 ring-offset-2 ring-red-600">
-                        <i class="fab fa-linkedin text-base" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" aria-label="Ikuti kami di YouTube" title="YouTube" class="w-10 h-10 rounded-full bg-gray-800 dark:bg-gray-700 text-gray-400 hover:text-red-600 hover:bg-gray-700 dark:hover:bg-gray-600 flex items-center justify-center transition focus-visible:ring-2 ring-offset-2 ring-red-600">
-                        <i class="fab fa-youtube text-base" aria-hidden="true"></i>
-                    </a>
+                    @php
+                        $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
+                    @endphp
+                    @forelse($socialLinks as $social)
+                        <a href="{{ $social->url }}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Ikuti kami di {{ $social->platform }}"
+                           title="{{ $social->platform }}"
+                           class="w-10 h-10 rounded-full bg-gray-800 dark:bg-gray-700 text-gray-400 hover:text-red-600 hover:bg-gray-700 dark:hover:bg-gray-600 flex items-center justify-center transition focus-visible:ring-2 ring-offset-2 ring-red-600">
+                            <i class="{{ $social->icon }} text-base" aria-hidden="true"></i>
+                        </a>
+                    @empty
+                        <p class="text-sm text-gray-600">Tidak ada social media</p>
+                    @endforelse
                 </div>
             </div>
 
@@ -48,10 +48,20 @@
                 <h3 class="font-bold text-white dark:text-gray-100 text-sm mb-4 uppercase tracking-wide">Kategori</h3>
                 <ul class="space-y-3 text-sm">
                     @php
-                        $categories = \App\Models\Category::active()->limit(4)->get();
+                        $categories = \App\Models\Category::active()
+                            ->withCount(['articles' => fn($q) => $q->published()])
+                            ->having('articles_count', '>', 0)
+                            ->orderByDesc('articles_count')
+                            ->limit(6)
+                            ->get();
                     @endphp
                     @forelse($categories as $category)
-                        <li><a href="{{ route('blog.category', $category->slug) }}" class="hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">{{ $category->name }}</a></li>
+                        <li>
+                            <a href="{{ route('blog.category', $category->slug) }}" class="hover:text-red-600 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2">
+                                {{ $category->name }}
+                                <span class="text-gray-600 dark:text-gray-700 text-xs ml-1">({{ $category->articles_count }})</span>
+                            </a>
+                        </li>
                     @empty
                         <li><span class="text-gray-600">Tidak ada kategori</span></li>
                     @endforelse
