@@ -86,7 +86,7 @@
                     </div>
 
                     <!-- Article Title -->
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
                         {{ $article->title }}
                     </h1>
 
