@@ -311,22 +311,20 @@
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 @foreach ($categoryArticles->take(3) as $article)
-                                    <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
-                                        <!-- Article Card with Image -->
-                                        <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
+                                    <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                                        <!-- Article Card with Image 16:9 -->
+                                        <div class="relative overflow-hidden rounded-xl aspect-video mb-4 bg-slate-200 dark:bg-slate-700">
                                             @if ($article->featured_image)
-                                                <picture>
-                                                    <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
-                                                    <source media="(min-width: 640px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=300&q=75" width="300" height="225">
-                                                    <img src="{{ asset('storage/' . $article->featured_image) }}?w=250&q=70" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                                </picture>
+                                                <img src="{{ asset('storage/' . $article->featured_image) }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                             @else
-                                                <img src="/images/default.jpg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                                <div class="w-full h-full bg-gradient-to-br from-slate-300 to-slate-400 flex items-center justify-center">
+                                                    <i class="fas fa-image text-slate-500 text-4xl"></i>
+                                                </div>
                                             @endif
 
                                             <!-- Overlay with category badge -->
-                                            <div class="absolute top-3 left-3 right-3">
-                                                <span class="inline-block bg-red-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
+                                            <div class="absolute top-3 left-3">
+                                                <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-sm uppercase">
                                                     {{ $article->category->name }}
                                                 </span>
                                             </div>
@@ -338,16 +336,7 @@
                                                 {{ $article->title }}
                                             </h3>
                                             <p class="text-xs text-slate-500 dark:text-slate-400 mt-auto">
-                                                @php
-                                                    $minutes = (int) abs($article->published_at->diffInMinutes(now()));
-                                                    if ($minutes < 60) {
-                                                        echo $minutes . ' menit lalu';
-                                                    } elseif ($minutes < 1440) {
-                                                        echo floor($minutes / 60) . ' jam lalu';
-                                                    } else {
-                                                        echo $article->published_at->format('d M Y');
-                                                    }
-                                                @endphp
+                                                {{ $article->published_at->format('d M Y') }}
                                             </p>
                                         </div>
                                     </a>
