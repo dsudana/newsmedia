@@ -15,7 +15,7 @@
 <div class="bg-gradient-to-r from-red-600 via-red-600 to-red-700 text-white py-4 md:py-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Breadcrumb -->
-        <nav class="flex items-center gap-2 text-red-100 mb-2 text-xs sm:text-sm">
+        <nav class="flex items-center gap-2 text-red-100 mb-6 text-xs sm:text-sm">
             <a href="{{ route('home') }}" class="hover:text-white transition">Home</a>
             @if($category ?? null)
                 <span class="text-red-300">/</span>
@@ -80,7 +80,7 @@
                     @php $featuredArticle = $articles->first(); @endphp
                     <div class="mb-12">
                         <a href="{{ route('blog.show', $featuredArticle->slug) }}" class="group block">
-                            <div class="rounded-lg overflow-hidden mb-4 aspect-4/3 bg-gray-100">
+                            <div class="rounded-lg overflow-hidden mb-4 aspect-video bg-gray-100">
                                 @if($featuredArticle->featured_image)
                                     <img src="{{ asset('storage/' . $featuredArticle->featured_image) }}" alt="{{ $featuredArticle->title }}"
                                         class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
@@ -90,9 +90,11 @@
                                 @endif
                             </div>
                             <div class="space-y-3">
-                                <span class="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">
-                                    {{ $featuredArticle->category->name }}
-                                </span>
+                                <div>
+                                    <span class="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+                                        {{ $featuredArticle->category->name }}
+                                    </span>
+                                </div>
                                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-red-600 transition leading-tight">
                                     {{ $featuredArticle->title }}
                                 </h2>
@@ -121,7 +123,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                             @foreach($articles->slice(1) as $article)
                                 <a href="{{ route('blog.show', $article->slug) }}" class="group">
-                                    <div class="rounded-lg overflow-hidden mb-3 aspect-4/3 bg-gray-100">
+                                    <div class="rounded-lg overflow-hidden mb-3 aspect-video bg-gray-100">
                                         @if($article->featured_image)
                                             <img src="{{ asset('storage/' . $article->featured_image) }}" alt="{{ $article->title }}"
                                                 class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
@@ -130,7 +132,6 @@
                                                 class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
                                         @endif
                                     </div>
-                                    <span class="text-xs font-bold text-red-600 uppercase mb-2 inline-block">{{ $article->category->name }}</span>
                                     <h3 class="font-bold text-gray-900 group-hover:text-red-600 transition line-clamp-2 mb-2">
                                         {{ $article->title }}
                                     </h3>
