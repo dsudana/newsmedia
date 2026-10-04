@@ -150,11 +150,14 @@ class ArticleController extends Controller
             ->limit(10)
             ->get();
 
+        $title = $category->name;
+
         return view('blog.index', compact(
             'articles',
             'categories',
             'popularTags',
-            'category'
+            'category',
+            'title'
         ));
     }
 

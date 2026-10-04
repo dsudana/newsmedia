@@ -12,10 +12,10 @@
 </div>
 
 <!-- Hero Section with Breadcrumb -->
-<div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-12 md:py-16">
+<div class="bg-gradient-to-r from-red-600 via-red-600 to-red-700 text-white py-4 md:py-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Breadcrumb -->
-        <nav class="flex items-center gap-2 text-red-200 mb-6 text-xs sm:text-sm">
+        <nav class="flex items-center gap-2 text-red-100 mb-6 text-xs sm:text-sm">
             <a href="{{ route('home') }}" class="hover:text-white transition">Home</a>
             @if($category ?? null)
                 <span class="text-red-300">/</span>
@@ -30,22 +30,26 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             <div class="lg:col-span-2">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-                    {{ $title ?? 'Semua Artikel' }}
+                    @if($category ?? null)
+                        {{ $category->name }}
+                    @else
+                        {{ $title ?? 'Semua Artikel' }}
+                    @endif
                 </h1>
                 @if($category ?? null)
                     @if($category->description)
-                        <p class="text-base sm:text-lg text-red-100 leading-relaxed max-w-2xl">
+                        <p class="text-base sm:text-lg text-red-50 leading-relaxed max-w-2xl">
                             {{ $category->description }}
                         </p>
                     @endif
                     <div class="mt-6 flex items-center gap-4 text-sm">
-                        <div class="flex items-center gap-2 bg-white/20 px-3 py-2 rounded-lg">
-                            <i class="fas fa-newspaper text-red-200"></i>
+                        <div class="flex items-center gap-2 bg-white/20 px-3 py-2 rounded-lg hover:bg-white/30 transition">
+                            <i class="fas fa-newspaper text-red-100"></i>
                             <span>{{ $articles->total() }} Artikel</span>
                         </div>
                     </div>
                 @else
-                    <p class="text-base sm:text-lg text-red-100 leading-relaxed">
+                    <p class="text-base sm:text-lg text-red-50 leading-relaxed">
                         Temukan berita terbaru dan cerita menarik dari publikasi kami
                     </p>
                 @endif
@@ -55,8 +59,8 @@
             <div class="lg:col-span-1">
                 <form action="{{ route('blog.search') }}" method="GET" class="flex gap-2">
                     <input type="text" name="search" placeholder="Cari artikel..."
-                        class="flex-1 px-4 py-3 text-sm text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 placeholder-gray-500" required>
-                    <button type="submit" class="bg-white text-red-600 px-4 py-3 rounded-lg hover:bg-red-50 transition font-semibold">
+                        class="flex-1 px-4 py-3 text-sm text-gray-900 rounded-lg border-2 border-white/40 focus:outline-none focus:ring-2 focus:ring-white focus:border-white bg-white/95 hover:bg-white transition placeholder-gray-600" required>
+                    <button type="submit" class="bg-white text-red-600 px-4 py-3 rounded-lg hover:bg-red-50 transition font-semibold border-2 border-white hover:border-red-50 shadow-lg hover:shadow-xl">
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
