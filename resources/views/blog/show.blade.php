@@ -191,7 +191,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 @foreach($relatedArticles->take(7) as $related)
                                     <a href="{{ route('blog.show', $related->slug) }}" class="group">
-                                        <div class="overflow-hidden rounded-lg mb-3 aspect-video bg-gray-100">
+                                        <div class="overflow-hidden rounded-lg mb-3 aspect-4/3 bg-gray-100">
                                             @if($related->featured_image)
                                                 <img src="{{ asset('storage/' . $related->featured_image) }}" alt="{{ $related->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
                                             @else
@@ -200,6 +200,7 @@
                                                 </div>
                                             @endif
                                         </div>
+                                        <span class="text-xs font-bold text-red-600 uppercase mb-2 inline-block">{{ $related->category->name }}</span>
                                         <p class="font-semibold text-gray-900 group-hover:text-red-600 line-clamp-2 mb-1">{{ $related->title }}</p>
                                         <p class="text-xs text-gray-500">{{ $related->published_at->format('d M Y') }}</p>
                                     </a>
