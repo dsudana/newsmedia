@@ -59,7 +59,7 @@
 
 @section('content')
 <!-- Advertisement Section -->
-<div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-2 sm:py-3 lg:py-4 transition-colors duration-300">
+<div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 py-2 sm:py-3 lg:py-4 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center h-14 sm:h-20 lg:h-24 overflow-hidden">
             <x-frontend.advertisement placement="header_banner" />
@@ -297,7 +297,7 @@
                             ->get();
                     @endphp
                     @if($recentArticles && $recentArticles->count() > 0)
-                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
                             <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                                 <span class="w-1 h-6 bg-red-600 dark:bg-red-500 rounded-full"></span>
                                 Artikel Terbaru
@@ -343,7 +343,7 @@
 
                     <!-- Popular Tags -->
                     @if($popularTags && $popularTags->count() > 0)
-                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
                             <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                                 <i class="fas fa-tags text-red-600 dark:text-red-500"></i>
                                 Tag Populer
