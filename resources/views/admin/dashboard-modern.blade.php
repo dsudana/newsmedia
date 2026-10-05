@@ -171,14 +171,6 @@
                     <p class="text-sm text-gray-600">Tag content</p>
                 </a>
 
-                <!-- Homepage Builder -->
-                <a href="{{ route('admin.homepage-builder.index') }}"
-                    class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-purple-300">
-                    <div class="text-3xl mb-2">🎨</div>
-                    <p class="font-semibold text-gray-900 text-sm">Builder</p>
-                    <p class="text-sm text-gray-600">Design pages</p>
-                </a>
-
                 <!-- Users -->
                 <a href="{{ route('admin.users.index') }}"
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-indigo-300">

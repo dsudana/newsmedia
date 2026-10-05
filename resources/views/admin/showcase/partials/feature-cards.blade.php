@@ -10,17 +10,7 @@
         <a href="{{ route('admin.articles.index') }}" class="text-blue-600 hover:text-blue-700 font-medium text-sm">View Dashboard →</a>
     </div>
 
-    <!-- Card 2: Homepage Builder -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition">
-        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-2xl mb-4">
-            🎨
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">Homepage Builder</h3>
-        <p class="text-sm text-gray-600 mb-4">Drag-and-drop page builder with 8 section types</p>
-        <a href="{{ route('admin.homepage-builder.index') }}" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Configure →</a>
-    </div>
-
-    <!-- Card 3: Search & Discovery -->
+    <!-- Card 2: Search & Discovery -->
     <div class="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition">
         <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center text-white text-2xl mb-4">
             🔍

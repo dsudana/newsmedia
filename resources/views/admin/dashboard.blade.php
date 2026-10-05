@@ -141,11 +141,6 @@
                                 <i class="fas fa-tags"></i>
                                 Tags
                             </a>
-                            <a href="{{ route('admin.homepage-builder.index') }}"
-                                class="text-sm px-3 py-2 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors font-medium flex items-center gap-2">
-                                <i class="fas fa-paint-brush"></i>
-                                Builder
-                            </a>
                         </div>
                     </div>
 
