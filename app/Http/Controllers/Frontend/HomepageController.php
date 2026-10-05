@@ -36,16 +36,46 @@ class HomepageController extends Controller
             }
         }
 
-        // Get data for both modern and welcome views with caching
-        // Cache for 1 hour to reduce database queries
-        $latestArticles = Cache::remember('homepage_latest_articles', now()->addHours(1), function () {
+        // ============================================
+        // TIERED CONTENT STRATEGY - No Duplicate Articles
+        // ============================================
+        $shownIds = []; // Track all shown article IDs
+
+        // TIER 1: Featured Articles (Top 2 - highest viewed/commented)
+        $featuredArticles = Cache::remember('homepage_featured_articles', now()->addHours(1), function () {
             return Article::published()
                 ->whereNotNull('featured_image')
                 ->with(['category:id,name,slug', 'user:id,name'])
-                ->latest('published_at')
-                ->take(20)
+                ->orderByDesc('views_count')
+                ->take(2)
                 ->get();
         });
+        $shownIds = array_merge($shownIds, $featuredArticles->pluck('id')->toArray());
+
+        // TIER 2: Latest Articles (Recent posts - next 10, excluding featured)
+        $latestArticles = Cache::remember('homepage_latest_articles', now()->addHours(1), function () use ($shownIds) {
+            return Article::published()
+                ->whereNotNull('featured_image')
+                ->with(['category:id,name,slug', 'user:id,name'])
+                ->whereNotIn('id', $shownIds)
+                ->latest('published_at')
+                ->take(10)
+                ->get();
+        });
+        $shownIds = array_merge($shownIds, $latestArticles->pluck('id')->toArray());
+
+        // TIER 3: Trending Articles (Recent with engagement - last 7 days, excluding featured & latest)
+        $trendingArticles = Cache::remember('homepage_trending_articles', now()->addHours(1), function () use ($shownIds) {
+            return Article::published()
+                ->whereNotNull('featured_image')
+                ->with(['category:id,name,slug', 'user:id,name'])
+                ->whereNotIn('id', $shownIds)
+                ->where('created_at', '>=', now()->subDays(7))
+                ->orderByDesc('views_count')
+                ->take(5)
+                ->get();
+        });
+        $shownIds = array_merge($shownIds, $trendingArticles->pluck('id')->toArray());
 
         $categories = Cache::remember('homepage_categories', now()->addHours(1), function () {
             return Category::active()
@@ -66,10 +96,8 @@ class HomepageController extends Controller
                 ->get(['id', 'name', 'slug']);
         });
 
-        // Get sidebar articles (recent, limited to 5)
-        // Deduplicate: exclude articles already shown in main sections
-        $sidebarArticles = Cache::remember('homepage_sidebar_articles', now()->addHours(1), function () use ($latestArticles) {
-            $shownIds = $latestArticles->take(11)->pluck('id')->toArray(); // First 11 articles shown in main content
+        // Sidebar articles (exclude all above tiers)
+        $sidebarArticles = Cache::remember('homepage_sidebar_articles', now()->addHours(1), function () use ($shownIds) {
             return Article::published()
                 ->with(['category:id,name,slug', 'user:id,name'])
                 ->whereNotIn('id', $shownIds)
@@ -113,10 +141,10 @@ class HomepageController extends Controller
 
         // Modern structured view (recommended)
         if ($viewType === 'modern') {
-            return view('frontend.home-modern', compact('latestArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
+            return view('frontend.home-modern', compact('featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
         }
 
         // Legacy welcome blade view
-        return view('welcome', compact('latestArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
+        return view('welcome', compact('featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
     }
 }
