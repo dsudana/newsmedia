@@ -161,7 +161,7 @@ class Article extends Model
 
     public function affiliateLinks()
     {
-        return $this->hasMany(AffiliateLink::class);
+        return $this->belongsToMany(AffiliateLink::class, 'article_affiliate_link');
     }
 
     public function articleViews()

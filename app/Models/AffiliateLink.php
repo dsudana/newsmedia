@@ -8,7 +8,6 @@ class AffiliateLink extends Model
 {
     use \Illuminate\Database\Eloquent\Factories\HasFactory;
     protected $fillable = [
-        'article_id',
         'name',
         'slug',
         'destination_url',
@@ -22,9 +21,9 @@ class AffiliateLink extends Model
         'is_active' => 'boolean',
     ];
 
-    public function article()
+    public function articles()
     {
-        return $this->belongsTo(Article::class);
+        return $this->belongsToMany(Article::class, 'article_affiliate_link');
     }
 
     public function clicks()
