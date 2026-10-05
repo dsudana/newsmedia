@@ -12,6 +12,9 @@
         </div>
 
         <!-- Categories Grid -->
+        @php
+            $categories = \App\Models\Category::withCount(['articles' => fn($q) => $q->where('status', 'published')])->get();
+        @endphp
         @if($categories->isNotEmpty())
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($categories as $category)

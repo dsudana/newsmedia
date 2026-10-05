@@ -11,15 +11,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::query()
-            ->selectRaw('categories.*, COUNT(articles.id) as articles_count')
-            ->leftJoin('articles', function($join) {
-                $join->on('articles.category_id', '=', 'categories.id')
-                    ->where('articles.status', '=', 'published');
-            })
-            ->groupBy('categories.id')
-            ->get();
-
+        $categories = Category::all();
         return view('frontend.categories.index', compact('categories'));
     }
 
