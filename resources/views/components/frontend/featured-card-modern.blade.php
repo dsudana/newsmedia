@@ -1,6 +1,6 @@
 <!-- Featured Card Component - Modern RET/NEWS Style -->
 <a href="{{ route('articles.show', $article->slug) }}" class="group block">
-    <div class="relative overflow-hidden {{ $height ?? 'h-40' }} bg-gray-200">
+    <div class="relative overflow-hidden {{ $height ?? 'h-40' }} bg-gray-200 dark:bg-gray-800 rounded-lg shadow-sm dark:shadow-md transition-shadow duration-300">
         @if($article->featured_image)
             <img src="{{ asset('storage/' . $article->featured_image) }}"
                  alt="{{ $article->title }}"
