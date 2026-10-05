@@ -5,9 +5,9 @@
 
 @section('content')
 <!-- Advertisement Section (Full Width) -->
-<div class="bg-white border-b border-gray-200 py-3 sm:py-6">
+<div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3 sm:py-6 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-gray-200 rounded-lg flex items-center justify-center min-h-16 sm:min-h-24">
+        <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center min-h-16 sm:min-h-24">
             @component('components.advertisement', ['placement' => 'header_banner'])
             @endcomponent
         </div>
@@ -59,7 +59,7 @@
 </div>
 
 <!-- Main Content with Sidebar -->
-<div class="bg-white py-8 sm:py-12">
+<div class="bg-white dark:bg-gray-900 py-8 sm:py-12 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Articles Section (Left - 2 columns) -->
@@ -85,10 +85,10 @@
                                 <div>
                                     <span class="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">{{ $featuredArticle->category->name }}</span>
                                 </div>
-                                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-red-600 transition leading-tight">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white group-hover:text-red-600 transition leading-tight">
                                     {{ $featuredArticle->title }}
                                 </h2>
-                                <p class="text-gray-600 text-base leading-relaxed">
+                                <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
                                     {{ $featuredArticle->excerpt ?? Str::limit(strip_tags($featuredArticle->content), 150) }}
                                 </p>
                                 <div class="flex items-center gap-4 text-sm text-gray-500 pt-2">
@@ -104,7 +104,7 @@
                         </a>
                     </div>
 
-                    <div class="border-t-2 border-gray-300 pt-12 mb-8">
+                    <div class="border-t-2 border-gray-300 dark:border-gray-700 pt-12 mb-8">
                         <h3 class="text-xl font-bold text-gray-900 mb-6">Artikel Lainnya</h3>
                     </div>
                 @endif
@@ -127,7 +127,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <h3 class="font-bold text-gray-900 group-hover:text-red-600 transition line-clamp-2 mb-2">
+                                <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-red-600 transition line-clamp-2 mb-2">
                                     {{ $article->title }}
                                 </h3>
                                 <p class="text-xs text-gray-600 mb-3">
@@ -158,7 +158,7 @@
             <aside class="lg:col-span-1">
                 <div class="sticky top-24 space-y-6">
                     <!-- Advertisement Top -->
-                    <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
+                    <div class="bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
                         @component('components.advertisement', ['placement' => 'sidebar_top'])
                         @endcomponent
                     </div>
@@ -172,11 +172,11 @@
                             ->get();
                     @endphp
                     @if($popularArticles && $popularArticles->count() > 0)
-                        <div class="bg-white rounded-lg p-6 border border-gray-200">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                             <h3 class="text-lg font-bold text-gray-900 mb-4">Artikel Populer</h3>
                             <div class="space-y-4">
                                 @foreach($popularArticles as $popular)
-                                    <a href="{{ route('blog.show', $popular->slug) }}" class="group flex gap-3 pb-4 border-b border-gray-200 last:border-0 last:pb-0">
+                                    <a href="{{ route('blog.show', $popular->slug) }}" class="group flex gap-3 pb-4 border-b border-gray-200 dark:border-gray-700 last:border-0 last:pb-0">
                                         <div class="flex-shrink-0 w-20 h-20">
                                             @if($popular->featured_image)
                                                 <img src="{{ asset('storage/' . $popular->featured_image) }}" alt=""
@@ -188,7 +188,7 @@
                                             @endif
                                         </div>
                                         <div class="flex-1 min-w-0">
-                                            <p class="font-semibold text-sm text-gray-900 group-hover:text-red-600 line-clamp-2">{{ $popular->title }}</p>
+                                            <p class="font-semibold text-sm text-gray-900 dark:text-white group-hover:text-red-600 line-clamp-2">{{ $popular->title }}</p>
                                             <p class="text-xs text-gray-500 mt-2">
                                                 <i class="fas fa-eye mr-1"></i>{{ number_format($popular->views_count ?? 0) }} dibaca
                                             </p>
@@ -207,7 +207,7 @@
                     </div>
 
                     <!-- Advertisement Bottom -->
-                    <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
+                    <div class="bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
                         @component('components.advertisement', ['placement' => 'sidebar_bottom'])
                         @endcomponent
                     </div>
@@ -219,7 +219,7 @@
                         })->withCount('articles')->orderByDesc('articles_count')->take(12)->get();
                     @endphp
                     @if($popularTags && $popularTags->count() > 0)
-                        <div class="bg-white rounded-lg p-6 border border-gray-200">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                             <h3 class="text-lg font-bold text-gray-900 mb-4">Tag Populer</h3>
                             <div class="flex flex-wrap gap-2">
                                 @foreach($popularTags as $tag)
