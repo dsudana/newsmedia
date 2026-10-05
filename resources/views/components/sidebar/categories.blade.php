@@ -12,7 +12,7 @@
 @endphp
 
 @if($categoriesToShow && $categoriesToShow->count() > 0)
-    <section class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition-shadow duration-300">
+    <section class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition-shadow duration-300">
         <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
             <span class="w-1 h-6 bg-red-600 dark:bg-red-500 rounded-full"></span>
             {{ $slot }}

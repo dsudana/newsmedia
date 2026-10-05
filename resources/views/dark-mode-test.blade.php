@@ -35,7 +35,7 @@
                 <!-- Card Component -->
                 <div>
                     <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Card Component</h2>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md">
+                    <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md">
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Sample Card</h3>
                         <p class="text-gray-600 dark:text-gray-400">This card should change background color when switching between light and dark modes.</p>
                     </div>
@@ -69,7 +69,7 @@
                 <!-- Sidebar Component -->
                 <div>
                     <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Sidebar Component</h2>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md">
+                    <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md">
                         <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                             <span class="w-1 h-6 bg-red-600 dark:bg-red-500 rounded-full"></span>
                             Recent Articles

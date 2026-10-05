@@ -34,16 +34,18 @@ class SecurityHeaders
         // Only apply strict CSP in production, disable in development for Vite dev server
         if (app()->environment('production')) {
             $csp = "default-src 'self'; "
-                . "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; "
-                . "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; "
-                . "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; "
+                . "script-src 'self' 'unsafe-inline'; "  // Bundled scripts only
+                . "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+                . "font-src 'self' data: https://fonts.gstatic.com; "
                 . "img-src 'self' data: https:; "
-                . "connect-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net; "
-                . "frame-ancestors 'none';";
+                . "connect-src 'self'; "
+                . "frame-ancestors 'none'; "
+                . "base-uri 'self'; "
+                . "form-action 'self';";
 
             $response->header('Content-Security-Policy', $csp);
         }
-        // In development (local, testing), CSP is disabled to allow Vite dev server
+        // In development, CSP is disabled to allow Vite dev server and hot module reloading
 
         return $response;
     }

@@ -10,7 +10,7 @@
         </div>
 
         <div class="text-gray-700 leading-relaxed">
-            {!! $page->content !!}
+            {!! $page->getSafeContent() !!}
         </div>
     </article>
 

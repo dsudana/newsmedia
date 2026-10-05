@@ -159,7 +159,7 @@
 
                     <!-- Article Content -->
                     <div class="article-content mb-12">
-                        {!! $article->content !!}
+                        {!! $article->getSafeContent() !!}
                     </div>
 
                     <!-- Tags -->
