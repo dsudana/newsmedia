@@ -84,11 +84,11 @@
             </div>
 
             <!-- Right: QR Code (Hidden on mobile and tablet, show on lg+) -->
-            <div class="hidden lg:flex flex-col items-center justify-center shrink-0 pl-3 lg:pl-4 border-l border-red-700 min-w-max">
+            <div class="hidden lg:flex flex-col items-center justify-center shrink-0 pl-2 border-l border-red-700 w-24">
                 <!-- QR Code -->
                 <div class="text-center">
-                    <div class="bg-white p-2 rounded-lg mb-1.5 inline-block">
-                        <svg class="w-16 h-16" viewBox="0 0 24 24">
+                    <div class="bg-white p-1 rounded-md mb-1 inline-block">
+                        <svg class="w-12 h-12" viewBox="0 0 24 24">
                             <rect x="2" y="2" width="6" height="6" fill="currentColor"/>
                             <rect x="9" y="2" width="1" height="1" fill="currentColor"/>
                             <rect x="12" y="2" width="1" height="1" fill="currentColor"/>
@@ -104,7 +104,7 @@
                             <rect x="14" y="14" width="6" height="6" fill="currentColor"/>
                         </svg>
                     </div>
-                    <p class="text-white text-xs font-medium max-w-xs leading-tight">Ikuti berita terupdate di App KOMPAS.com. Scan & unduh sekarang</p>
+                    <p class="text-white text-xs font-medium max-w-20 leading-tight text-center line-clamp-2">Scan & unduh</p>
                 </div>
             </div>
         </div>
