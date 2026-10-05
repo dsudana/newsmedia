@@ -228,29 +228,6 @@
                 </div>
             </section>
 
-            <!-- Featured Videos Carousel Section -->
-            @if($videoGallery && $videoGallery->count() > 0)
-                <section class="mb-12">
-                    <div class="flex items-center justify-between mb-8">
-                        <h2 class="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                            Featured Videos
-                            <span class="text-red-600 text-2xl">›</span>
-                        </h2>
-                        <a href="{{ route('gallery.index') }}" class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-sm font-semibold transition">
-                            Lihat Semua Videos →
-                        </a>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        @foreach($videoGallery as $video)
-                            <a href="{{ $video->youtube_url }}" target="_blank" rel="noopener noreferrer" class="group">
-                                <x-video-card :$video />
-                            </a>
-                        @endforeach
-                    </div>
-                </section>
-            @endif
-
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Content (2/3) -->
                 <div class="lg:col-span-2 space-y-12">
@@ -311,6 +288,29 @@
                             @endforeach
                         </div>
                     </section>
+
+                    <!-- Featured Videos Section -->
+                    @if($videoGallery && $videoGallery->count() > 0)
+                        <section>
+                            <div class="flex items-center justify-between mb-8">
+                                <h2 class="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    Featured Videos
+                                    <span class="text-red-600 text-2xl">›</span>
+                                </h2>
+                                <a href="{{ route('gallery.index') }}" class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-2xl transition">
+                                    ›
+                                </a>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                @foreach($videoGallery->take(3) as $video)
+                                    <a href="{{ $video->youtube_url }}" target="_blank" rel="noopener noreferrer" class="group">
+                                        <x-video-card :$video />
+                                    </a>
+                                @endforeach
+                            </div>
+                        </section>
+                    @endif
 
                     <!-- Category Sections -->
                     @php
