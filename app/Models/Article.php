@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
 
 class Article extends Model
 {
@@ -62,6 +63,22 @@ class Article extends Model
                 $article->read_time = max(1, ceil($article->word_count / 200));
             }
         });
+
+        static::saved(function ($article) {
+            self::clearHomepageCache();
+        });
+
+        static::deleted(function ($article) {
+            self::clearHomepageCache();
+        });
+    }
+
+    private static function clearHomepageCache(): void
+    {
+        Cache::forget('homepage_latest_articles');
+        Cache::forget('homepage_categories');
+        Cache::forget('homepage_sidebar_categories');
+        Cache::forget('homepage_sidebar_articles');
     }
 
     private static function uniqueSlug($title, $exceptId = null)

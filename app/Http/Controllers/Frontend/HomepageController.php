@@ -37,25 +37,22 @@ class HomepageController extends Controller
 
         // Get data for both modern and welcome views with caching
         // Cache for 1 hour to reduce database queries
-        // Prioritize articles with featured images - take more then filter
         $latestArticles = Cache::remember('homepage_latest_articles', now()->addHours(1), function () {
             return Article::published()
-                ->with(['category', 'user', 'comments' => fn($q) => $q->approved()])
+                ->whereNotNull('featured_image')
+                ->with(['category:id,name,slug', 'user:id,name'])
                 ->latest('published_at')
-                ->take(100)  // Take more articles first
-                ->get()
-                ->filter(fn($a) => !empty($a->featured_image))  // Filter to only those with images
-                ->take(20)   // Then take top 20 with images
-                ->values();   // Re-index collection
+                ->take(20)
+                ->get();
         });
 
         $categories = Cache::remember('homepage_categories', now()->addHours(1), function () {
             return Category::active()
-                ->with(['articles' => fn($q) => $q->published()->latest('published_at')->take(4)])
-                ->withCount('articles')
+                ->withCount(['articles' => fn($q) => $q->published()])
+                ->having('articles_count', '>', 0)
                 ->orderBy('articles_count', 'desc')
                 ->take(10)
-                ->get();
+                ->get(['id', 'name', 'slug', 'icon', 'description']);
         });
 
         // Get sidebar categories (limited to 8, with article counts)
@@ -65,16 +62,16 @@ class HomepageController extends Controller
                 ->having('articles_count', '>', 0)
                 ->orderBy('articles_count', 'desc')
                 ->limit(8)
-                ->get();
+                ->get(['id', 'name', 'slug']);
         });
 
         // Get sidebar articles (recent, limited to 5)
         $sidebarArticles = Cache::remember('homepage_sidebar_articles', now()->addHours(1), function () {
             return Article::published()
-                ->with(['category', 'user'])
+                ->with(['category:id,name,slug', 'user:id,name'])
                 ->latest('published_at')
                 ->take(5)
-                ->get();
+                ->get(['id', 'title', 'slug', 'published_at', 'category_id', 'user_id', 'featured_image']);
         });
 
         // Get active announcements (shorter cache for more frequent updates)
@@ -82,7 +79,7 @@ class HomepageController extends Controller
             return Announcement::active()
                 ->ordered()
                 ->take(3)
-                ->get();
+                ->get(['id', 'title', 'description', 'type', 'background_color']);
         });
 
         // Get upcoming events
@@ -90,7 +87,7 @@ class HomepageController extends Controller
             return Event::active()
                 ->upcoming()
                 ->take(6)
-                ->get();
+                ->get(['id', 'title', 'description', 'date', 'location']);
         });
 
         // Modern structured view (recommended)
