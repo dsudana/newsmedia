@@ -263,6 +263,33 @@
             <!-- Right Sidebar -->
             <aside class="lg:col-span-1">
                 <div class="sticky top-24 space-y-6">
+                    <!-- Social Media Share Icons -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Bagikan Artikel</h3>
+                        <div class="flex gap-3">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->url()) }}" target="_blank" rel="noopener noreferrer"
+                                class="w-12 h-12 rounded-lg bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition shadow-sm hover:shadow-md"
+                                title="Bagikan di Facebook">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->url()) }}&text={{ urlencode($article->title) }}" target="_blank" rel="noopener noreferrer"
+                                class="w-12 h-12 rounded-lg bg-sky-500 hover:bg-sky-600 text-white flex items-center justify-center transition shadow-sm hover:shadow-md"
+                                title="Bagikan di Twitter">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="https://wa.me/?text={{ urlencode($article->title . ' ' . request()->url()) }}" target="_blank" rel="noopener noreferrer"
+                                class="w-12 h-12 rounded-lg bg-green-600 hover:bg-green-700 text-white flex items-center justify-center transition shadow-sm hover:shadow-md"
+                                title="Bagikan di WhatsApp">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                            <button onclick="copyToClipboard('{{ request()->url() }}')"
+                                class="w-12 h-12 rounded-lg bg-gray-400 hover:bg-gray-500 dark:bg-gray-700 dark:hover:bg-gray-600 text-white flex items-center justify-center transition shadow-sm hover:shadow-md"
+                                title="Salin Tautan">
+                                <i class="fas fa-link text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- Affiliate Links Widget -->
                     <x-frontend.affiliate-links :article="$article" />
 
@@ -285,6 +312,53 @@
                         buttonText="Berlangganan"
                     />
 
+                    <!-- Recent Articles -->
+                    @php
+                        $recentArticles = \App\Models\Article::published()
+                            ->where('id', '!=', $article->id)
+                            ->latest('published_at')
+                            ->take(5)
+                            ->get();
+                    @endphp
+                    @if($recentArticles && $recentArticles->count() > 0)
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                                <span class="w-1 h-6 bg-red-600 dark:bg-red-500 rounded-full"></span>
+                                Artikel Terbaru
+                            </h3>
+                            <div class="space-y-3">
+                                @foreach($recentArticles as $recent)
+                                    <a href="{{ route('blog.show', $recent->slug) }}"
+                                        class="flex gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition group">
+                                        <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200 dark:bg-gray-700">
+                                            @if($recent->featured_image)
+                                                @php
+                                                    $recentImgUrl = str_starts_with($recent->featured_image, 'http')
+                                                        ? $recent->featured_image
+                                                        : asset('storage/' . $recent->featured_image);
+                                                @endphp
+                                                <img src="{{ $recentImgUrl }}" alt="{{ $recent->title }}"
+                                                    class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
+                                            @else
+                                                <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center">
+                                                    <i class="fas fa-image text-gray-500 dark:text-gray-400"></i>
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h4 class="text-sm font-semibold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition">
+                                                {{ $recent->title }}
+                                            </h4>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                                {{ $recent->published_at->format('M d, Y') }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+
                     <!-- Advertisement Bottom -->
                     <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_bottom" />
@@ -293,9 +367,12 @@
 
                     <!-- Popular Tags -->
                     @if($popularTags && $popularTags->count() > 0)
-                        <div class= dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Tag Populer</h3>
-                            <x-frontend.tag-cloud :tags="$popularTags->take(12)" />
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                                <i class="fas fa-tags text-red-600 dark:text-red-500"></i>
+                                Tag Populer
+                            </h3>
+                            <x-frontend.tag-cloud :tags="$popularTags->take(15)" />
                         </div>
                     @endif
                 </div>
