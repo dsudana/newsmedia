@@ -18,7 +18,8 @@ class SecurityHeaders
         // Cache control headers for performance
         if ($request->isMethodSafe() && !$request->routeIs('*.show', '*.index')) {
             // Cache static assets for 1 year
-            if ($request->path() !== '/' && str_contains($request->path(), ['build/', 'storage/', 'images/'])) {
+            $path = $request->path();
+            if ($path !== '/' && (str_contains($path, 'build/') || str_contains($path, 'storage/') || str_contains($path, 'images/'))) {
                 $response->header('Cache-Control', 'public, max-age=31536000, immutable');
             }
         }
