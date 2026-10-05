@@ -263,32 +263,8 @@
             <!-- Right Sidebar -->
             <aside class="lg:col-span-1">
                 <div class="sticky top-24 space-y-6">
-                    <!-- Social Media Share Icons -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Bagikan Artikel</h3>
-                        <div class="flex gap-3">
-                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->url()) }}" target="_blank" rel="noopener noreferrer"
-                                class="w-12 h-12 rounded-lg bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition shadow-sm hover:shadow-md"
-                                title="Bagikan di Facebook">
-                                <i class="fab fa-facebook-f text-lg"></i>
-                            </a>
-                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->url()) }}&text={{ urlencode($article->title) }}" target="_blank" rel="noopener noreferrer"
-                                class="w-12 h-12 rounded-lg bg-sky-500 hover:bg-sky-600 text-white flex items-center justify-center transition shadow-sm hover:shadow-md"
-                                title="Bagikan di Twitter">
-                                <i class="fab fa-twitter text-lg"></i>
-                            </a>
-                            <a href="https://wa.me/?text={{ urlencode($article->title . ' ' . request()->url()) }}" target="_blank" rel="noopener noreferrer"
-                                class="w-12 h-12 rounded-lg bg-green-600 hover:bg-green-700 text-white flex items-center justify-center transition shadow-sm hover:shadow-md"
-                                title="Bagikan di WhatsApp">
-                                <i class="fab fa-whatsapp text-lg"></i>
-                            </a>
-                            <button onclick="copyToClipboard({{ @json(request()->url()) }})"
-                                class="w-12 h-12 rounded-lg bg-gray-400 hover:bg-gray-500 dark:bg-gray-700 dark:hover:bg-gray-600 text-white flex items-center justify-center transition shadow-sm hover:shadow-md"
-                                title="Salin Tautan">
-                                <i class="fas fa-link text-lg"></i>
-                            </button>
-                        </div>
-                    </div>
+                    <!-- Social Media Links -->
+                    <x-sidebar.social-links title="Follow Us" />
 
                     <!-- Affiliate Links Widget -->
                     <x-frontend.affiliate-links :article="$article" />
