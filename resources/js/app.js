@@ -1,10 +1,12 @@
 // Dark mode harus dijalankan sebelum Alpine
-import './dark-mode.js';
+import { initializeDarkMode } from './dark-mode.js';
 
 import Alpine from 'alpinejs';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import Swal from 'sweetalert2';
+import '@fortawesome/fontawesome-free/css/all.css';
+import 'sweetalert2/dist/sweetalert2.min.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -12,6 +14,18 @@ import 'swiper/css/pagination';
 window.Alpine = Alpine;
 window.Swal = Swal;
 Alpine.start();
+
+// Initialize dark mode after Alpine is started
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('[App] DOM Content Loaded - initializing dark mode');
+    initializeDarkMode();
+});
+
+// Also try immediate initialization in case DOMContentLoaded already fired
+if (document.readyState !== 'loading') {
+    console.log('[App] Document already loaded - initializing dark mode immediately');
+    initializeDarkMode();
+}
 
 // Initialize Swiper carousels when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {

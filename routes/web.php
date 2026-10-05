@@ -27,6 +27,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendHomepageController::class, 'index'])->name('home');
 
+// Dark mode test page (for development only)
+Route::get('/dark-mode-test', fn() => view('dark-mode-test'))->name('dark-mode-test');
+
 // Newsletter subscription
 Route::post('/newsletter/subscribe', [SubscriberController::class, 'subscribe'])->name('newsletter.subscribe');
 

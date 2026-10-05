@@ -16,12 +16,17 @@ function initializeDarkMode() {
 
     function updateDarkModeIcon() {
         const icon = darkModeToggle.querySelector('i');
-        if (!icon) return;
+        if (!icon) {
+            console.warn('[Dark Mode] Icon element not found!');
+            return;
+        }
 
         if (html.classList.contains('dark')) {
             icon.className = 'text-lg fas fa-sun';
+            console.log('[Dark Mode] Icon updated to sun');
         } else {
             icon.className = 'text-lg fas fa-moon';
+            console.log('[Dark Mode] Icon updated to moon');
         }
     }
 
@@ -42,6 +47,7 @@ function initializeDarkMode() {
     // Listen for dark mode changes from other tabs/windows
     window.addEventListener('storage', function(e) {
         if (e.key === 'darkMode') {
+            console.log('[Dark Mode] Storage changed from another tab:', e.newValue);
             if (e.newValue === 'true') {
                 html.classList.add('dark');
             } else {
@@ -54,7 +60,10 @@ function initializeDarkMode() {
     console.log('[Dark Mode] Initialized successfully');
 }
 
-// Initialize when DOM is ready
+// Export function for module usage
+export { initializeDarkMode };
+
+// Initialize when DOM is ready (for inline script execution too)
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeDarkMode);
 } else {
