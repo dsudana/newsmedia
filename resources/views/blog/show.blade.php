@@ -106,7 +106,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold text-sm text-gray-900 dark:text-gray-100">{{ $article->user->name }}</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">{{ $article->published_at->format('d M Y H:i') }}</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">{{ $article->published_at->format('d M Y H:i') }}</p>
                                 </div>
                             @endif
                         </div>
@@ -218,7 +218,7 @@
                                             @endif
                                         </div>
                                         <p class="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-red-600 line-clamp-2 mb-1">{{ $related->title }}</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">{{ $related->published_at->format('d M Y') }}</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">{{ $related->published_at->format('d M Y') }}</p>
                                     </a>
                                 @endforeach
                             </div>
@@ -325,7 +325,7 @@
                                             <h4 class="text-sm font-semibold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition">
                                                 {{ $recent->title }}
                                             </h4>
-                                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
                                                 {{ $recent->published_at->translatedFormat('d M Y') }}
                                             </p>
                                         </div>

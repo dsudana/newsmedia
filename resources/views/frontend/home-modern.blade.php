@@ -84,9 +84,9 @@
                             {{ $featured->title }}
                         </h2>
 
-                        <div class="mt-3 flex items-center gap-3 text-xs text-slate-300">
+                        <div class="mt-3 flex items-center gap-3 text-sm text-slate-400">
                             <time>
-                                {{ $featured->published_at?->translatedFormat('d M Y') }}
+                                {{ AppHelpersDateHelper::relativeTime($featured->published_at) }}
                             </time>
 
                             @if($featured->read_time)
@@ -167,7 +167,7 @@
                             <div class="mt-2 flex items-center gap-2 text-[10px] text-slate-500 dark:text-gray-400">
 
                                 <time>
-                                    {{ $article->published_at?->translatedFormat('d M Y') }}
+                                    {{ AppHelpersDateHelper::relativeTime($article->published_at) }}
                                 </time>
 
                                 @if($article->read_time)
@@ -219,8 +219,8 @@
                                 <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-3">
                                     {{ $article->title }}
                                 </h3>
-                                <p class="text-xs text-slate-600 dark:text-gray-400">
-                                    {{ $article->published_at->translatedFormat('d M Y') }}
+                                <p class="text-sm text-slate-700 dark:text-gray-400">
+                                    {{ AppHelpersDateHelper::relativeTime($article->published_at) }}
                                 </p>
                             </div>
                         </a>
@@ -271,7 +271,7 @@
                                         <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
                                             {{ $article->title }}
                                         </h3>
-                                        <p class="text-xs text-slate-500 dark:text-gray-400 mt-auto">
+                                        <p class="text-sm text-slate-600 dark:text-gray-400 mt-auto">
                                             @php
                                                 $minutes = (int) abs($article->published_at->diffInMinutes(now()));
                                                 if ($minutes < 60) {
@@ -363,7 +363,7 @@
                                             <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
                                                 {{ $article->title }}
                                             </h3>
-                                            <p class="text-xs text-slate-500 dark:text-gray-400 mt-auto">
+                                            <p class="text-sm text-slate-600 dark:text-gray-400 mt-auto">
                                                 {{ $article->published_at->format('d M Y') }}
                                             </p>
                                         </div>
@@ -375,7 +375,7 @@
                 </div>
 
                 <!-- Right Sidebar (1/3) -->
-                <aside class="space-y-8">
+                <aside class="space-y-8 sticky top-32 max-h-[calc(100vh-8rem)] overflow-y-auto">
                     <!-- Social Media Section -->
                     <x-sidebar.social-links title="Follow Us" />
 

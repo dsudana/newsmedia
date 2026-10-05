@@ -13,7 +13,7 @@
                                 <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/placeholder.jpg' }}"
                                      alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
-                            <p class="text-xs text-gray-500">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d') }}</p>
+                            <p class="text-sm text-gray-600">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d') }}</p>
                             <p class="text-sm font-bold text-gray-900 line-clamp-2 group-hover:text-red-600 transition-colors">
                                 {{ $article->title }}
                             </p>

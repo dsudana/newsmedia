@@ -24,7 +24,7 @@
                 </label>
                 <input type="url" id="image_url_image_banner" name="config[image_url]" placeholder="https://example.com/image.jpg"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <p class="text-xs text-gray-500 mt-1">Full URL to the banner image</p>
+                <p class="text-sm text-gray-600 mt-1">Full URL to the banner image</p>
             </div>
 
             <!-- Title -->

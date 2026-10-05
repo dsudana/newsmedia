@@ -14,7 +14,7 @@
                 </div>
                 <div class="min-w-0">
                     <p class="font-semibold text-gray-900">{{ $section->title ?? ucfirst(str_replace('_', ' ', $section->section_type)) }}</p>
-                    <p class="text-xs text-gray-500">{{ ucfirst(str_replace('_', ' ', $section->section_type)) }} • {{ $section->created_at->translatedFormat('d M Y') }}</p>
+                    <p class="text-sm text-gray-600">{{ ucfirst(str_replace('_', ' ', $section->section_type)) }} • {{ $section->created_at->translatedFormat('d M Y') }}</p>
                 </div>
             </div>
         </div>

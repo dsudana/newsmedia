@@ -40,7 +40,7 @@
                         <option value="4">4 Columns</option>
                         <option value="5">5 Columns</option>
                     </select>
-                    <p class="text-xs text-gray-500 mt-1">Articles shown per slide</p>
+                    <p class="text-sm text-gray-600 mt-1">Articles shown per slide</p>
                 </div>
 
                 <!-- Article Limit -->
@@ -50,7 +50,7 @@
                     </label>
                     <input type="number" name="limit" value="12" min="3" max="50"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
-                    <p class="text-xs text-gray-500 mt-1">Total articles to display</p>
+                    <p class="text-sm text-gray-600 mt-1">Total articles to display</p>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                                oninput="document.querySelector('[data-width-display]').textContent = this.value + '%'">
                         <span data-width-display class="text-sm font-bold text-orange-600 min-w-12">100%</span>
                     </div>
-                    <p class="text-xs text-gray-500 mt-1">Set carousel width percentage</p>
+                    <p class="text-sm text-gray-600 mt-1">Set carousel width percentage</p>
                 </div>
 
                 <!-- Slider Speed -->
@@ -77,7 +77,7 @@
                     </label>
                     <input type="number" name="slider_speed" value="3000" min="1000" max="10000" step="100"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
-                    <p class="text-xs text-gray-500 mt-1">Auto-scroll speed in milliseconds</p>
+                    <p class="text-sm text-gray-600 mt-1">Auto-scroll speed in milliseconds</p>
                 </div>
             </div>
 
@@ -91,7 +91,7 @@
                     <option value="popular">Most Popular</option>
                     <option value="latest">Latest Published</option>
                 </select>
-                <p class="text-xs text-gray-500 mt-1">How to sort articles in carousel</p>
+                <p class="text-sm text-gray-600 mt-1">How to sort articles in carousel</p>
             </div>
 
             <!-- Slide Padding -->
@@ -105,7 +105,7 @@
                     <option value="px-4" selected>Large (16px)</option>
                     <option value="px-6">Extra Large (24px)</option>
                 </select>
-                <p class="text-xs text-gray-500 mt-1">Space around each slide</p>
+                <p class="text-sm text-gray-600 mt-1">Space around each slide</p>
             </div>
 
             <!-- Info Box -->

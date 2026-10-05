@@ -42,7 +42,7 @@
                                 </p>
                             </div>
 
-                            <div class="text-xs text-gray-500 dark:text-gray-500 pt-2 border-t border-gray-200 dark:border-gray-700">
+                            <div class="text-sm text-gray-600 dark:text-gray-500 pt-2 border-t border-gray-200 dark:border-gray-700">
                                 {{ $event->status ? ucfirst($event->status) : 'Scheduled' }}
                             </div>
                         </div>

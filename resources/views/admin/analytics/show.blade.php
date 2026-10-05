@@ -24,7 +24,7 @@
                 </div>
                 <div>
                     <p class="text-xs text-gray-600 font-semibold uppercase">Published</p>
-                    <p class="text-lg font-semibold text-gray-900 mt-1">{{ $article->published_at->translatedFormat('d M Y') }}</p>
+                    <p class="text-lg font-semibold text-gray-900 mt-1">{{ AppHelpersDateHelper::relativeTime($article->published_at) }}</p>
                 </div>
             </div>
         </div>

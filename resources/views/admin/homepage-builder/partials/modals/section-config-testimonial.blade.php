@@ -24,7 +24,7 @@
                 </label>
                 <input type="number" id="limit_testimonial" name="config[limit]" min="1" max="20" value="5"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <p class="text-xs text-gray-500 mt-1">Number of testimonials to display</p>
+                <p class="text-sm text-gray-600 mt-1">Number of testimonials to display</p>
             </div>
 
             <!-- Background Color -->
@@ -38,7 +38,7 @@
                     <input type="text" id="background_color_text_testimonial" name="config[background_color_text]" value="#F9FAFB"
                            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent font-mono text-sm">
                 </div>
-                <p class="text-xs text-gray-500 mt-1">Choose a background color for the testimonials section</p>
+                <p class="text-sm text-gray-600 mt-1">Choose a background color for the testimonials section</p>
             </div>
 
             <!-- Modal Footer -->

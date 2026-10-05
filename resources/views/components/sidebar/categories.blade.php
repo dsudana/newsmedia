@@ -42,7 +42,7 @@
                         class="block px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition {{ (isset($activeId) && $activeId === $cat->id) ? 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 font-semibold' : '' }}">
                         {{ $cat->name }}
                         @if($showCount)
-                            <span class="text-xs text-gray-500 dark:text-gray-400">({{ $cat->articles_count }})</span>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">({{ $cat->articles_count }})</span>
                         @endif
                     </a>
                 @else

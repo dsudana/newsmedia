@@ -90,13 +90,13 @@
                                     <div>
                                         <p class="text-xs font-semibold text-gray-900">{{ $article->user->name }}</p>
                                         @if (in_array('date', $section->config['show_fields'] ?? []))
-                                            <p class="text-xs text-gray-500">
+                                            <p class="text-sm text-gray-600">
                                                 {{ $article->published_at ? $article->published_at->format('M d') : 'Draft' }}
                                             </p>
                                         @endif
                                     </div>
                                 @elseif(in_array('date', $section->config['show_fields'] ?? []))
-                                    <p class="text-xs text-gray-500">
+                                    <p class="text-sm text-gray-600">
                                         <i class="fas fa-calendar mr-1"></i>
                                         {{ $article->published_at ? $article->published_at->translatedFormat('d M Y') : 'Draft' }}
                                     </p>

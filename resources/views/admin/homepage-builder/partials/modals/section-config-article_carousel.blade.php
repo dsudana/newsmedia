@@ -24,7 +24,7 @@
                 </label>
                 <input type="number" id="limit_article_carousel" name="config[limit]" min="1" max="50" value="10"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <p class="text-xs text-gray-500 mt-1">Maximum number of articles to display</p>
+                <p class="text-sm text-gray-600 mt-1">Maximum number of articles to display</p>
             </div>
 
             <!-- Columns -->

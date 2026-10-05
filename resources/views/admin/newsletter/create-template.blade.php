@@ -46,7 +46,7 @@
                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent font-mono text-sm"
                               placeholder="<h1>Hello Newsletter!</h1>
 <p>Your HTML content here...</p>">{{ old('html_content') }}</textarea>
-                    <p class="text-xs text-gray-500 mt-2">Gunakan HTML murni. Gunakan {{site_name}}, {{contact_email}} untuk variable dinamis.</p>
+                    <p class="text-sm text-gray-600 mt-2">Gunakan HTML murni. Gunakan {{site_name}}, {{contact_email}} untuk variable dinamis.</p>
                     @error('html_content')<span class="text-red-600 text-sm">{{ $message }}</span>@enderror
                 </div>
 

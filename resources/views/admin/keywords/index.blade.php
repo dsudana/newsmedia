@@ -94,7 +94,7 @@
                                 <td class="px-6 py-4">
                                     <div>
                                         <p class="text-sm font-semibold text-gray-900">{{ $keyword->keyword }}</p>
-                                        <p class="text-xs text-gray-500 mt-1">
+                                        <p class="text-sm text-gray-600 mt-1">
                                             {{ Str::limit($keyword->description, 60) }}</p>
                                     </div>
                                 </td>

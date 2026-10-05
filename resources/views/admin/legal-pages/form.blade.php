@@ -39,7 +39,7 @@
                     <textarea name="content" rows="12"
                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent font-mono text-sm"
                               placeholder="<h1>Privacy Policy</h1><p>Your content here...</p>" required>{{ isset($page) ? $page->content : old('content') }}</textarea>
-                    <p class="text-xs text-gray-500 mt-2">Gunakan HTML untuk formatting. Link akan dibuka di /{{ isset($page) ? $page->slug : 'privacy-policy' }}</p>
+                    <p class="text-sm text-gray-600 mt-2">Gunakan HTML untuk formatting. Link akan dibuka di /{{ isset($page) ? $page->slug : 'privacy-policy' }}</p>
                     @error('content')<span class="text-red-600 text-sm">{{ $message }}</span>@enderror
                 </div>
 

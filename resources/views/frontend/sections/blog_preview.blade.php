@@ -87,7 +87,7 @@
                                     <div>
                                         <p class="text-xs font-semibold text-gray-900">{{ $article->user->name }}</p>
                                         @if (in_array('date', $section->config['fields'] ?? []))
-                                            <p class="text-xs text-gray-500">
+                                            <p class="text-sm text-gray-600">
                                                 {{ $article->published_at ? $article->published_at->format('M d') : 'Draft' }}
                                             </p>
                                         @endif

@@ -20,7 +20,7 @@
                         <p class="text-xs text-gray-600 mt-2 leading-relaxed line-clamp-2">
                             {{ $article->excerpt ?? 'Read more...' }}
                         </p>
-                        <p class="text-xs text-gray-500 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->translatedFormat('d M Y') }}</p>
+                        <p class="text-sm text-gray-600 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ AppHelpersDateHelper::relativeTime($article->published_at) }}</p>
                     </div>
                 </a>
             @empty

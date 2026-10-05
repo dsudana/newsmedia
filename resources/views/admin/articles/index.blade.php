@@ -105,7 +105,7 @@
                                         <div>
                                             <p class="text-sm font-semibold text-gray-900">
                                                 {{ Str::limit($article->title, 40) }}</p>
-                                            <p class="text-xs text-gray-500 mt-0.5">
+                                            <p class="text-sm text-gray-600 mt-0.5">
                                                 {{ Str::limit($article->excerpt ?? $article->content, 60) }}</p>
                                         </div>
                                     </div>

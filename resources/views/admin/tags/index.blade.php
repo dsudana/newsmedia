@@ -45,7 +45,7 @@
                                 <i class="fas fa-tag text-indigo-600"></i>
                                 <h3 class="text-lg font-bold text-gray-900">{{ $tag->name }}</h3>
                             </div>
-                            <p class="text-xs text-gray-500 font-mono">{{ $tag->slug }}</p>
+                            <p class="text-sm text-gray-600 font-mono">{{ $tag->slug }}</p>
                         </div>
                         <div class="flex gap-2 opacity-0 group-hover:opacity-100 transition">
                             <a href="{{ route('admin.tags.edit', $tag) }}"

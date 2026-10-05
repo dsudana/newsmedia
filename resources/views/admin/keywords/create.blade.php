@@ -131,7 +131,7 @@
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                                 placeholder="e.g., 2000" min="500" max="5000"
                                 value="{{ old('target_words', 2000) }}" required>
-                            <p class="text-xs text-gray-500 mt-2">Minimum: 500 words, Maximum: 5000 words</p>
+                            <p class="text-sm text-gray-600 mt-2">Minimum: 500 words, Maximum: 5000 words</p>
                         </div>
                         @error('target_words')
                             <div class="mt-2 flex items-center gap-2 text-red-600 text-sm">

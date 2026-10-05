@@ -119,7 +119,7 @@
                                 <div>
                                     <p class="font-semibold text-gray-900">{{ $ad->name }}</p>
                                     @if ($ad->type === 'banner')
-                                        <p class="text-xs text-gray-500">{{ $ad->width }}×{{ $ad->height }} px</p>
+                                        <p class="text-sm text-gray-600">{{ $ad->width }}×{{ $ad->height }} px</p>
                                     @endif
                                     @if ($ad->deleted_at)
                                         <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded inline-block mt-1">Dihapus</span>

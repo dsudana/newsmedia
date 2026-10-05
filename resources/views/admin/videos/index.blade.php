@@ -57,7 +57,7 @@
                                 {{ $video->description ?? 'Tidak ada deskripsi' }}
                             </p>
 
-                            <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                            <div class="flex items-center justify-between text-sm text-gray-600 mb-4">
                                 <span>👁️ {{ $video->views_count }} views</span>
                                 <span>{{ $video->published_at?->format('d M Y') }}</span>
                             </div>

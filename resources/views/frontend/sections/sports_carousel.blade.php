@@ -20,7 +20,7 @@
                                 <h3 class="text-sm font-bold text-gray-900 leading-snug line-clamp-2 group-hover:text-red-600 transition-colors">
                                     {{ $article->title }}
                                 </h3>
-                                <p class="text-xs text-gray-500 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d') }}</p>
+                                <p class="text-sm text-gray-600 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d') }}</p>
                             </div>
                         </a>
                     </div>

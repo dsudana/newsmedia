@@ -25,7 +25,7 @@
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-xs font-bold text-blue-600 uppercase">{{ $article->category->name }}</span>
                         <span
-                            class="text-xs text-gray-500">{{ $article->published_at ? $article->published_at->diffForHumans() : '' }}</span>
+                            class="text-sm text-gray-600">{{ $article->published_at ? $article->published_at->diffForHumans() : '' }}</span>
                     </div>
                     <h3 class="text-lg font-bold mb-2 leading-tight hover:text-blue-600">
                         <a href="{{ route('articles.show', $article) }}">

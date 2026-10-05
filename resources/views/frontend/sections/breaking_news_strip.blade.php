@@ -13,7 +13,7 @@
                                  alt="{{ $article->title }}"
                                  class="w-16 h-16 object-cover rounded shrink-0">
                             <div class="flex-1 min-w-0">
-                                <p class="text-xs text-gray-500">{{ $article->published_at?->translatedFormat('d M Y') }}</p>
+                                <p class="text-sm text-gray-600">{{ AppHelpersDateHelper::relativeTime($article->published_at) }}</p>
                                 <p class="text-sm font-semibold text-gray-900 line-clamp-2 group-hover:text-red-600 transition-colors">
                                     {{ $article->title }}
                                 </p>

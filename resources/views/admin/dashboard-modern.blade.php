@@ -108,7 +108,7 @@
                                     class="badge badge-blue text-xs font-semibold px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
                                     {{ $article->category?->name ?? 'Uncategorized' }}
                                 </span>
-                                <span class="text-xs text-gray-500">{{ $article->status }}</span>
+                                <span class="text-sm text-gray-600">{{ $article->status }}</span>
                             </div>
                             <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2">{{ $article->title }}</h3>
 
@@ -120,7 +120,7 @@
                                 </div>
                                 <div class="text-sm">
                                     <p class="font-medium text-gray-900">{{ $article->user?->name ?? 'Unknown' }}</p>
-                                    <p class="text-xs text-gray-500">{{ $article->published_at?->format('d M Y') }}</p>
+                                    <p class="text-sm text-gray-600">{{ $article->published_at?->format('d M Y') }}</p>
                                 </div>
                             </div>
 
@@ -152,7 +152,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-blue-300">
                     <div class="text-3xl mb-2">📰</div>
                     <p class="font-semibold text-gray-900 text-sm">Articles</p>
-                    <p class="text-xs text-gray-500">Manage content</p>
+                    <p class="text-sm text-gray-600">Manage content</p>
                 </a>
 
                 <!-- Categories -->
@@ -160,7 +160,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-green-300">
                     <div class="text-3xl mb-2">📁</div>
                     <p class="font-semibold text-gray-900 text-sm">Categories</p>
-                    <p class="text-xs text-gray-500">Organize news</p>
+                    <p class="text-sm text-gray-600">Organize news</p>
                 </a>
 
                 <!-- Tags -->
@@ -168,7 +168,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-yellow-300">
                     <div class="text-3xl mb-2">🏷️</div>
                     <p class="font-semibold text-gray-900 text-sm">Tags</p>
-                    <p class="text-xs text-gray-500">Tag content</p>
+                    <p class="text-sm text-gray-600">Tag content</p>
                 </a>
 
                 <!-- Homepage Builder -->
@@ -176,7 +176,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-purple-300">
                     <div class="text-3xl mb-2">🎨</div>
                     <p class="font-semibold text-gray-900 text-sm">Builder</p>
-                    <p class="text-xs text-gray-500">Design pages</p>
+                    <p class="text-sm text-gray-600">Design pages</p>
                 </a>
 
                 <!-- Users -->
@@ -184,7 +184,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-indigo-300">
                     <div class="text-3xl mb-2">👥</div>
                     <p class="font-semibold text-gray-900 text-sm">Users</p>
-                    <p class="text-xs text-gray-500">Manage team</p>
+                    <p class="text-sm text-gray-600">Manage team</p>
                 </a>
 
                 <!-- Analytics -->
@@ -192,7 +192,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-red-300">
                     <div class="text-3xl mb-2">📊</div>
                     <p class="font-semibold text-gray-900 text-sm">Analytics</p>
-                    <p class="text-xs text-gray-500">View insights</p>
+                    <p class="text-sm text-gray-600">View insights</p>
                 </a>
 
                 <!-- Showcase -->
@@ -200,7 +200,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-pink-300">
                     <div class="text-3xl mb-2">💎</div>
                     <p class="font-semibold text-gray-900 text-sm">Showcase</p>
-                    <p class="text-xs text-gray-500">Platform stats</p>
+                    <p class="text-sm text-gray-600">Platform stats</p>
                 </a>
 
                 <!-- WordPress Import -->
@@ -208,7 +208,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-orange-300">
                     <div class="text-3xl mb-2">📥</div>
                     <p class="font-semibold text-gray-900 text-sm">WP Import</p>
-                    <p class="text-xs text-gray-500">Import posts</p>
+                    <p class="text-sm text-gray-600">Import posts</p>
                 </a>
 
                 <!-- Advertisements -->
@@ -216,7 +216,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-teal-300">
                     <div class="text-3xl mb-2">📢</div>
                     <p class="font-semibold text-gray-900 text-sm">Advertisements</p>
-                    <p class="text-xs text-gray-500">Manage ads</p>
+                    <p class="text-sm text-gray-600">Manage ads</p>
                 </a>
 
                 <!-- Keywords -->
@@ -224,7 +224,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-cyan-300">
                     <div class="text-3xl mb-2">🔑</div>
                     <p class="font-semibold text-gray-900 text-sm">Keywords</p>
-                    <p class="text-xs text-gray-500">SEO keywords</p>
+                    <p class="text-sm text-gray-600">SEO keywords</p>
                 </a>
 
                 <!-- Affiliates -->
@@ -232,7 +232,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-lime-300">
                     <div class="text-3xl mb-2">🔗</div>
                     <p class="font-semibold text-gray-900 text-sm">Affiliates</p>
-                    <p class="text-xs text-gray-500">Affiliate links</p>
+                    <p class="text-sm text-gray-600">Affiliate links</p>
                 </a>
 
                 <!-- Settings -->
@@ -240,7 +240,7 @@
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-slate-300">
                     <div class="text-3xl mb-2">⚙️</div>
                     <p class="font-semibold text-gray-900 text-sm">Settings</p>
-                    <p class="text-xs text-gray-500">Configure</p>
+                    <p class="text-sm text-gray-600">Configure</p>
                 </a>
             </div>
         </div>

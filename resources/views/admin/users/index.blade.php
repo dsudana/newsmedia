@@ -100,7 +100,7 @@
                                         </div>
                                         <div>
                                             <p class="text-sm font-semibold text-gray-900">{{ $user->name }}</p>
-                                            <p class="text-xs text-gray-500 mt-0.5">ID: {{ $user->id }}</p>
+                                            <p class="text-sm text-gray-600 mt-0.5">ID: {{ $user->id }}</p>
                                         </div>
                                     </div>
                                 </td>
@@ -118,7 +118,7 @@
                                                 {{ ucfirst($role->name) }}
                                             </span>
                                         @empty
-                                            <span class="text-xs text-gray-500">No role</span>
+                                            <span class="text-sm text-gray-600">No role</span>
                                         @endforelse
                                     </div>
                                 </td>

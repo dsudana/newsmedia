@@ -26,7 +26,7 @@
                     <input type="text" name="slug" id="slug"
                         class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         placeholder="URL-friendly slug" value="{{ old('slug', $article->slug ?? '') }}" required>
-                    <p class="text-xs text-gray-500 mt-1">Used for article URL. Auto-generated from title.</p>
+                    <p class="text-sm text-gray-600 mt-1">Used for article URL. Auto-generated from title.</p>
                     @error('slug')
                         <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                     @enderror
@@ -173,7 +173,7 @@
                                 {{ $link->name }} ({{ $link->commission_type === 'percentage' ? $link->commission_value . '%' : 'Rp ' . number_format($link->commission_value) }})</option>
                         @endforeach
                     </select>
-                    <p class="text-xs text-gray-500 mt-2">Leave empty if you don't want to feature any affiliate products in this article</p>
+                    <p class="text-sm text-gray-600 mt-2">Leave empty if you don't want to feature any affiliate products in this article</p>
                 </div>
 
                 <!-- SEO Section -->
@@ -185,7 +185,7 @@
                             <input type="text" name="meta_title" id="meta_title"
                                 class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                                 placeholder="SEO title (50-60 characters)" value="{{ old('meta_title', $article->meta->meta_title ?? '') }}">
-                            <p class="text-xs text-gray-500 mt-1">Optimal length: 50-60 characters</p>
+                            <p class="text-sm text-gray-600 mt-1">Optimal length: 50-60 characters</p>
                             @error('meta_title')
                                 <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                             @enderror
@@ -196,7 +196,7 @@
                             <textarea name="meta_description" id="meta_description" rows="2"
                                 class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                                 placeholder="SEO description (150-160 characters)">{{ old('meta_description', $article->meta->meta_description ?? '') }}</textarea>
-                            <p class="text-xs text-gray-500 mt-1">Optimal length: 150-160 characters</p>
+                            <p class="text-sm text-gray-600 mt-1">Optimal length: 150-160 characters</p>
                             @error('meta_description')
                                 <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                             @enderror

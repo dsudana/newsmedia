@@ -157,10 +157,10 @@
                                             class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
                                             {{ $article->title }}
                                         </h3>
-                                        <p class="text-xs text-gray-400 mb-3">
+                                        <p class="text-sm text-gray-500 mb-3">
                                             {{ $article->published_at->format('d M Y') }}
                                         </p>
-                                        <p class="text-xs text-gray-400 group-hover:text-red-600 transition">
+                                        <p class="text-sm text-gray-500 group-hover:text-red-600 transition">
                                             <i class="fas fa-eye mr-1"></i>{{ number_format($article->views_count ?? 0) }}
                                             dibaca
                                         </p>
@@ -246,8 +246,8 @@
                                                     class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-1">
                                                     {{ $article->title }}
                                                 </h4>
-                                                <p class="text-xs text-gray-500 dark:text-gray-400">
-                                                    {{ $article->published_at->translatedFormat('d M Y') }}
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                                    {{ AppHelpersDateHelper::relativeTime($article->published_at) }}
                                                 </p>
                                             </div>
                                         </a>

@@ -29,7 +29,7 @@
         <h3 class="font-bold text-sm text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
             {{ $article->title }}
         </h3>
-        <p class="text-xs text-gray-500 dark:text-gray-400 mt-auto">
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-auto">
             {{ $article->published_at?->format('d M Y') ?? 'No date' }}
         </p>
     </div>

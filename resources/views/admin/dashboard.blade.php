@@ -12,7 +12,7 @@
                     <div>
                         <p class="text-sm font-medium text-gray-600">Total Articles</p>
                         <p class="text-3xl font-bold text-gray-900 mt-2">{{ \App\Models\Article::count() }}</p>
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-sm text-gray-600 mt-2">
                             <i class="fas fa-arrow-up text-green-500 mr-1"></i>
                             <span class="text-green-600">+12% this month</span>
                         </p>
@@ -30,7 +30,7 @@
                     <div>
                         <p class="text-sm font-medium text-gray-600">Total Users</p>
                         <p class="text-3xl font-bold text-gray-900 mt-2">{{ \App\Models\User::count() }}</p>
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-sm text-gray-600 mt-2">
                             <i class="fas fa-arrow-up text-green-500 mr-1"></i>
                             <span class="text-green-600">+5% this month</span>
                         </p>
@@ -48,7 +48,7 @@
                     <div>
                         <p class="text-sm font-medium text-gray-600">Total Categories</p>
                         <p class="text-3xl font-bold text-gray-900 mt-2">{{ \App\Models\Category::count() }}</p>
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-sm text-gray-600 mt-2">
                             <i class="fas fa-arrow-right text-gray-500 mr-1"></i>
                             <span>No change</span>
                         </p>
@@ -66,7 +66,7 @@
                     <div>
                         <p class="text-sm font-medium text-gray-600">Total Tags</p>
                         <p class="text-3xl font-bold text-gray-900 mt-2">{{ \App\Models\Tag::count() }}</p>
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-sm text-gray-600 mt-2">
                             <i class="fas fa-arrow-up text-green-500 mr-1"></i>
                             <span class="text-green-600">+8% this month</span>
                         </p>

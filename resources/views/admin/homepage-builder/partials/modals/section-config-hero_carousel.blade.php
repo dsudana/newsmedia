@@ -38,7 +38,7 @@
                     </label>
                     <input type="number" id="main_limit_hero" name="config[main_limit]" value="5" min="2" max="10"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
-                    <p class="text-xs text-gray-500 mt-1">Articles in main carousel (left)</p>
+                    <p class="text-sm text-gray-600 mt-1">Articles in main carousel (left)</p>
                 </div>
 
                 <div>
@@ -47,7 +47,7 @@
                     </label>
                     <input type="number" id="side_limit_hero" name="config[side_limit]" value="2" min="1" max="5"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
-                    <p class="text-xs text-gray-500 mt-1">Static cards (right side)</p>
+                    <p class="text-sm text-gray-600 mt-1">Static cards (right side)</p>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                     </label>
                     <input type="number" id="autoplay_hero" name="config[autoplay_speed]" value="4000" min="1000" max="10000" step="500"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
-                    <p class="text-xs text-gray-500 mt-1">Time before auto-advance</p>
+                    <p class="text-sm text-gray-600 mt-1">Time before auto-advance</p>
                 </div>
 
                 <div>

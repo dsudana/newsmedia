@@ -35,7 +35,7 @@
                     </label>
                     <input type="number" name="main_limit" value="5" min="2" max="10"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
-                    <p class="text-xs text-gray-500 mt-1">Articles in main carousel (left side)</p>
+                    <p class="text-sm text-gray-600 mt-1">Articles in main carousel (left side)</p>
                 </div>
 
                 <div>
@@ -44,7 +44,7 @@
                     </label>
                     <input type="number" name="side_limit" value="2" min="1" max="5"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
-                    <p class="text-xs text-gray-500 mt-1">Static featured cards (right side)</p>
+                    <p class="text-sm text-gray-600 mt-1">Static featured cards (right side)</p>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
                     </label>
                     <input type="number" name="autoplay_speed" value="4000" min="1000" max="10000" step="500"
                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
-                    <p class="text-xs text-gray-500 mt-1">Time before slide auto-advance</p>
+                    <p class="text-sm text-gray-600 mt-1">Time before slide auto-advance</p>
                 </div>
 
                 <!-- Container Width -->
@@ -71,7 +71,7 @@
                                oninput="document.querySelector('[data-hero-width-display]').textContent = this.value + '%'">
                         <span data-hero-width-display class="text-sm font-bold text-red-600 min-w-12">100%</span>
                     </div>
-                    <p class="text-xs text-gray-500 mt-1">Set carousel width percentage</p>
+                    <p class="text-sm text-gray-600 mt-1">Set carousel width percentage</p>
                 </div>
             </div>
 

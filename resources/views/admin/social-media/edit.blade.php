@@ -20,7 +20,7 @@
                         @error('icon')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
-                        <p class="mt-1 text-xs text-gray-500">e.g., fab fa-facebook-f, fab fa-twitter, fab fa-instagram</p>
+                        <p class="mt-1 text-sm text-gray-600">e.g., fab fa-facebook-f, fab fa-twitter, fab fa-instagram</p>
                     </div>
 
                     <div class="mb-6">

@@ -24,7 +24,7 @@
                 </label>
                 <input type="number" id="limit_category_highlight" name="config[limit]" min="1" max="20" value="6"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <p class="text-xs text-gray-500 mt-1">Number of categories to display</p>
+                <p class="text-sm text-gray-600 mt-1">Number of categories to display</p>
             </div>
 
             <!-- Columns -->
@@ -48,7 +48,7 @@
                            class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-2 focus:ring-indigo-500">
                     <span class="ml-3 text-gray-700 font-semibold">Display Article Count</span>
                 </label>
-                <p class="text-xs text-gray-500 mt-1">Show the number of articles in each category</p>
+                <p class="text-sm text-gray-600 mt-1">Show the number of articles in each category</p>
             </div>
 
             <!-- Modal Footer -->

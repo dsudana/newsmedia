@@ -24,7 +24,7 @@
                 </label>
                 <input type="text" id="tag_filter_lookbook" name="config[tag_filter]" placeholder="e.g., summer, promotion, featured"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <p class="text-xs text-gray-500 mt-1">Filter lookbook items by tag (comma-separated)</p>
+                <p class="text-sm text-gray-600 mt-1">Filter lookbook items by tag (comma-separated)</p>
             </div>
 
             <!-- Title -->
@@ -46,7 +46,7 @@
                     <option value="light" selected>Light</option>
                     <option value="dark">Dark</option>
                 </select>
-                <p class="text-xs text-gray-500 mt-1">Choose the color scheme for the lookbook display</p>
+                <p class="text-sm text-gray-600 mt-1">Choose the color scheme for the lookbook display</p>
             </div>
 
             <!-- Modal Footer -->

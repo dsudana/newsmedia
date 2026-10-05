@@ -81,7 +81,7 @@
                                             <div>
                                                 <p class="text-xs font-semibold text-gray-900">
                                                     {{ $article->user->name ?? 'Editor' }}</p>
-                                                <p class="text-xs text-gray-500">
+                                                <p class="text-sm text-gray-600">
                                                     {{ $article->created_at->format('M d') }}</p>
                                             </div>
                                         </div>

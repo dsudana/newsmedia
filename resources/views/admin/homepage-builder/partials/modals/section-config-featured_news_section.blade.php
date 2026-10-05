@@ -59,7 +59,7 @@
                                    class="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-2 focus:ring-red-500">
                             <span class="ml-3 text-sm font-semibold text-gray-900">Enable Carousel</span>
                         </label>
-                        <p class="text-xs text-gray-500 mt-1">Main article rotates automatically</p>
+                        <p class="text-sm text-gray-600 mt-1">Main article rotates automatically</p>
                     </div>
 
                     <div>
@@ -112,7 +112,7 @@
                 </div>
 
                 <input type="hidden" id="selected_articles" name="config[selected_articles]" value="">
-                <p class="text-xs text-gray-500 mt-2">
+                <p class="text-sm text-gray-600 mt-2">
                     <i class="fas fa-info-circle mr-1"></i>
                     Leave empty to use auto-selection based on sort order
                 </p>
@@ -186,7 +186,7 @@
                 <input type="checkbox" class="article-checkbox mt-1" value="${article.id}">
                 <div class="ml-3 flex-1">
                     <p class="text-sm font-semibold text-gray-900">${article.title}</p>
-                    <p class="text-xs text-gray-500">
+                    <p class="text-sm text-gray-600">
                         ${article.category_name} • ${article.published_at}
                     </p>
                 </div>

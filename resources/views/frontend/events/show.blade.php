@@ -180,7 +180,7 @@
                                     <p class="font-semibold text-slate-900 dark:text-white text-sm line-clamp-2 hover:text-blue-600 dark:hover:text-blue-400">
                                         {{ $relEvent->title }}
                                     </p>
-                                    <p class="text-xs text-slate-500 dark:text-gray-400 mt-1">
+                                    <p class="text-sm text-slate-600 dark:text-gray-400 mt-1">
                                         {{ $relEvent->formatted_date }}
                                     </p>
                                 </a>

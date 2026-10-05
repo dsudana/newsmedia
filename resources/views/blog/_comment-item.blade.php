@@ -37,7 +37,7 @@
                         <div class="flex-1">
                             <div class="flex items-center justify-between mb-1">
                                 <p class="font-semibold text-gray-900 dark:text-gray-100">{{ $reply->name }}</p>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">{{ $reply->created_at->format('M d, Y H:i') }}</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">{{ $reply->created_at->format('M d, Y H:i') }}</p>
                             </div>
                             <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-2">{{ $reply->content }}</p>
                             @can('delete', $reply)

@@ -41,13 +41,13 @@
                 <div>
                     <label for="meta_title" class="block text-sm font-semibold text-gray-900 mb-2">Meta Title (max 60 chars)</label>
                     <input type="text" id="meta_title" name="meta_title" maxlength="60" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="{{ old('meta_title') }}" placeholder="Used in search engine results">
-                    <p class="text-xs text-gray-500 mt-1">Used in search engine results</p>
+                    <p class="text-sm text-gray-600 mt-1">Used in search engine results</p>
                 </div>
 
                 <div>
                     <label for="meta_description" class="block text-sm font-semibold text-gray-900 mb-2">Meta Description (max 160 chars)</label>
                     <textarea id="meta_description" name="meta_description" rows="3" maxlength="160" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Shown in search engine results">{{ old('meta_description') }}</textarea>
-                    <p class="text-xs text-gray-500 mt-1">Shown in search engine results</p>
+                    <p class="text-sm text-gray-600 mt-1">Shown in search engine results</p>
                 </div>
 
                 <div>

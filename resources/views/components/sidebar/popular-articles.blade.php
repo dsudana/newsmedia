@@ -35,7 +35,7 @@
                     <div class="flex-1 min-w-0">
                         <p class="font-semibold text-sm text-gray-900 dark:text-gray-100 group-hover:text-red-600 line-clamp-2">{{ $article->title }}</p>
                         @if($showDate || $showViews)
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
                                 @if($showDate)
                                     <i class="fas fa-calendar mr-1"></i>{{ $article->published_at->format('d M Y') }}
                                 @endif

@@ -92,7 +92,7 @@
                             </span>
                             <span class="text-gray-300">|</span>
                             <span class="news-card__date">
-                                {{ $article->published_at?->translatedFormat('d M Y') }}
+                                {{ AppHelpersDateHelper::relativeTime($article->published_at) }}
                             </span>
                         </div>
                     </div>

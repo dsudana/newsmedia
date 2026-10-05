@@ -34,7 +34,7 @@
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="px-6 py-4">
                                     <p class="text-sm font-semibold text-gray-900">{{ $template->name }}</p>
-                                    <p class="text-xs text-gray-500">{{ $template->subject }}</p>
+                                    <p class="text-sm text-gray-600">{{ $template->subject }}</p>
                                 </td>
                                 <td class="px-6 py-4">
                                     <span class="text-sm font-semibold text-gray-600">{{ ucfirst($template->type) }}</span>

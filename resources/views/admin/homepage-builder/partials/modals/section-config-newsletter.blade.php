@@ -24,7 +24,7 @@
                 </label>
                 <input type="text" id="button_text_newsletter" name="config[button_text]" value="Subscribe"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <p class="text-xs text-gray-500 mt-1">Text displayed on the subscribe button</p>
+                <p class="text-sm text-gray-600 mt-1">Text displayed on the subscribe button</p>
             </div>
 
             <!-- Placeholder Text -->
@@ -34,7 +34,7 @@
                 </label>
                 <input type="text" id="placeholder_text_newsletter" name="config[placeholder_text]" value="Enter your email address"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <p class="text-xs text-gray-500 mt-1">Placeholder text in the email input field</p>
+                <p class="text-sm text-gray-600 mt-1">Placeholder text in the email input field</p>
             </div>
 
             <!-- Background Color -->
@@ -48,7 +48,7 @@
                     <input type="text" id="background_color_text_newsletter" name="config[background_color_text]" value="#4F46E5"
                            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent font-mono text-sm">
                 </div>
-                <p class="text-xs text-gray-500 mt-1">Choose a background color for the newsletter section</p>
+                <p class="text-sm text-gray-600 mt-1">Choose a background color for the newsletter section</p>
             </div>
 
             <!-- Modal Footer -->

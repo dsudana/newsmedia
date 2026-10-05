@@ -62,7 +62,7 @@
 
         <!-- Footer Note -->
         <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
-            <p class="text-xs text-gray-500 dark:text-gray-400">
+            <p class="text-sm text-gray-600 dark:text-gray-400">
                 <i class="fas fa-info-circle mr-1"></i>
                 Produk rekomendasi yang kami percaya. Jika Anda melakukan pembelian, kami dapat memperoleh komisi tanpa biaya tambahan bagi Anda.
             </p>
