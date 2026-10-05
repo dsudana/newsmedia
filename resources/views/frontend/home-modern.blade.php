@@ -291,13 +291,13 @@
 
                     <!-- Featured Videos Section -->
                     @if($videoGallery && $videoGallery->count() > 0)
-                        <section>
+                        <section class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-gray-800 dark:to-gray-900 rounded-xl p-8 shadow-lg">
                             <div class="flex items-center justify-between mb-8">
-                                <h2 class="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <h2 class="text-3xl font-bold text-white flex items-center gap-2">
                                     Featured Videos
                                     <span class="text-red-600 text-2xl">›</span>
                                 </h2>
-                                <a href="{{ route('gallery.index') }}" class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-2xl transition">
+                                <a href="{{ route('gallery.index') }}" class="text-red-600 hover:text-red-500 text-2xl transition">
                                     ›
                                 </a>
                             </div>
