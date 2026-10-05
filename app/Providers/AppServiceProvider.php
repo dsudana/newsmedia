@@ -19,13 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Register Blade helper for featured images
-        if (!function_exists('featuredImageUrl')) {
-            function featuredImageUrl($image) {
-                return \App\Helpers\ImageHelper::featuredImageUrl($image);
-            }
-        }
-
         view()->composer('*', function ($view) {
             $settings = \App\Models\Setting::all()->pluck('value', 'key');
             $view->with('settings', $settings);
@@ -56,7 +49,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('navsGroup', $navsGroup);
         });
 
-        // Blade helper for featured images - ensure it's always available
+        // Blade directive for featured images
         \Blade::directive('imageUrl', function ($expression) {
             return "<?php echo \App\Helpers\ImageHelper::featuredImageUrl({$expression}); ?>";
         });

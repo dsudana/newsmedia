@@ -4,11 +4,13 @@ import './dark-mode.js';
 import Alpine from 'alpinejs';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Swal from 'sweetalert2';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 window.Alpine = Alpine;
+window.Swal = Swal;
 Alpine.start();
 
 // Initialize Swiper carousels when DOM is ready

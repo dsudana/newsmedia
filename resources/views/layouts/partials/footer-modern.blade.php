@@ -13,7 +13,7 @@
                 </a>
 
                 <!-- Social Media Icons -->
-                <div class="flex gap-4 mt-6">
+                <div class="flex gap-3 mt-6">
                     @php
                         $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
                     @endphp
@@ -23,8 +23,8 @@
                            rel="noopener noreferrer"
                            aria-label="Ikuti kami di {{ $social->platform }}"
                            title="{{ $social->platform }}"
-                           class="w-10 h-10 rounded-full bg-gray-800 dark:bg-gray-700 text-gray-400 hover:text-red-600 hover:bg-gray-700 dark:hover:bg-gray-600 flex items-center justify-center transition focus-visible:ring-2 ring-offset-2 ring-red-600">
-                            <i class="{{ $social->icon }} text-base" aria-hidden="true"></i>
+                           class="w-10 h-10 rounded-lg bg-gray-800 dark:bg-gray-700 text-gray-400 hover:text-white hover:bg-red-600 dark:hover:bg-red-600 flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus-visible:ring-2 ring-offset-2 ring-red-600">
+                            <i class="{{ $social->icon }} text-sm" aria-hidden="true"></i>
                         </a>
                     @empty
                         <p class="text-sm text-gray-600">Tidak ada social media</p>

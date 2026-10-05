@@ -54,4 +54,12 @@ class Category extends Model
     {
         return $query->orderBy('order');
     }
+
+    public function getDescriptionAttribute($value)
+    {
+        if (empty($value) || $value === 'Imported from WordPress') {
+            return "Berita tentang {$this->name}";
+        }
+        return $value;
+    }
 }

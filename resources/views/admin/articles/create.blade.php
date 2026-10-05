@@ -220,9 +220,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
 
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-
     <script>
         const errorAfterInput = [];
 
@@ -275,19 +272,11 @@
             $('.summernote').summernote({
                 height: 500,
                 toolbar: [
-                    ['fontsize', ['fontsize']],
-                    ['fontname', ['fontname']],
-                    ['style', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['height', ['height']],
-                    ['color', ['color']],
-                    ['float', ['floatLeft', 'floatRight', 'floatNone']],
-                    ['remove', ['removeMedia']],
-                    ['table', ['table']],
-                    ['insert', ['link', 'unlink', 'audio', 'hr', 'picture']],
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['para', ['ul', 'ol']],
+                    ['insert', ['link', 'picture', 'hr']],
                     ['mybutton', ['myVideo']],
                     ['view', ['fullscreen', 'codeview']],
-                    ['help', ['help']],
                 ],
                 buttons: {
                     myVideo: function(context) {

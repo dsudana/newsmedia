@@ -1,9 +1,6 @@
 @extends('layouts.app-modern')
 
 @section('extra_head')
-<!-- SweetAlert2 for notifications -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
 <style>
     .article-content {
         font-size: 1.0625rem;
@@ -236,7 +233,7 @@
                         @endif
 
                         <!-- Comment Form -->
-                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                        <div class="border border-gray-300 dark:border-gray-600 dark:bg-gray-800 p-6 rounded-lg">
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Tinggalkan Komentar</h3>
                             <form action="{{ route('comments.store', $article->slug) }}" method="POST" class="space-y-4">
                                 @csrf

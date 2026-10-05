@@ -41,7 +41,9 @@ class ArticleController extends Controller
         $articles = $query->recent()->paginate(self::PER_PAGE);
 
         $categories = Category::active()
-            ->withCount('articles')
+            ->withCount(['articles' => function ($q) {
+                $q->published()->whereNull('deleted_at');
+            }])
             ->orderBy('order')
             ->get();
 
@@ -110,7 +112,9 @@ class ArticleController extends Controller
 
         // Sidebar data
         $categories = Category::active()
-            ->withCount('articles')
+            ->withCount(['articles' => function ($q) {
+                $q->published()->whereNull('deleted_at');
+            }])
             ->orderBy('order')
             ->get();
 
@@ -148,7 +152,9 @@ class ArticleController extends Controller
             ->paginate(self::PER_PAGE);
 
         $categories = Category::active()
-            ->withCount('articles')
+            ->withCount(['articles' => function ($q) {
+                $q->published()->whereNull('deleted_at');
+            }])
             ->orderBy('order')
             ->get();
 
@@ -186,7 +192,9 @@ class ArticleController extends Controller
             ->paginate(self::PER_PAGE);
 
         $categories = Category::active()
-            ->withCount('articles')
+            ->withCount(['articles' => function ($q) {
+                $q->published()->whereNull('deleted_at');
+            }])
             ->orderBy('order')
             ->get();
 

@@ -34,16 +34,23 @@ Route::post('/newsletter/subscribe', [SubscriberController::class, 'subscribe'])
 Route::post('/api/advertisements/{id}/view', [AdvertisementController::class, 'recordView'])->name('advertisements.view');
 Route::post('/api/advertisements/{id}/click', [AdvertisementController::class, 'recordClick'])->name('advertisements.click');
 
-// Blog routes (from retnews) - with rate limiting
-Route::get('/blog', [PublicArticleController::class, 'index'])->name('blog.index')->middleware('throttle:100,60');
-Route::get('/blog/search', [PublicArticleController::class, 'search'])->name('blog.search')->middleware('throttle:50,60');
-Route::get('/blog/kategori/{category:slug}', [PublicArticleController::class, 'category'])->name('blog.category')->middleware('throttle:100,60');
-Route::get('/blog/tag/{tag:slug}', [PublicArticleController::class, 'tag'])->name('blog.tag')->middleware('throttle:100,60');
-Route::get('/blog/{article:slug}', [PublicArticleController::class, 'show'])->name('blog.show')->middleware('throttle:100,60');
+// Berita routes (from retnews) - with rate limiting
+Route::get('/berita', [PublicArticleController::class, 'index'])->name('blog.index')->middleware('throttle:100,60');
+Route::get('/berita/search', [PublicArticleController::class, 'search'])->name('blog.search')->middleware('throttle:50,60');
+Route::get('/berita/kategori/{category:slug}', [PublicArticleController::class, 'category'])->name('blog.category')->middleware('throttle:100,60');
+Route::get('/berita/tag/{tag:slug}', [PublicArticleController::class, 'tag'])->name('blog.tag')->middleware('throttle:100,60');
+Route::get('/berita/{article:slug}', [PublicArticleController::class, 'show'])->name('blog.show')->middleware('throttle:100,60');
 
 // Comment routes
-Route::post('/blog/{article:slug}/comments', [\App\Http\Controllers\PublicCommentController::class, 'store'])->name('comments.store')->middleware('throttle:30,60');
+Route::post('/berita/{article:slug}/comments', [\App\Http\Controllers\PublicCommentController::class, 'store'])->name('comments.store')->middleware('throttle:30,60');
 Route::delete('/comments/{comment}', [\App\Http\Controllers\PublicCommentController::class, 'destroy'])->name('comments.destroy')->middleware('auth');
+
+// Legacy blog routes (for backward compatibility)
+Route::get('/blog', [PublicArticleController::class, 'index'])->name('blog.index.legacy')->middleware('throttle:100,60');
+Route::get('/blog/search', [PublicArticleController::class, 'search'])->name('blog.search.legacy')->middleware('throttle:50,60');
+Route::get('/blog/kategori/{category:slug}', [PublicArticleController::class, 'category'])->name('blog.category.legacy')->middleware('throttle:100,60');
+Route::get('/blog/tag/{tag:slug}', [PublicArticleController::class, 'tag'])->name('blog.tag.legacy')->middleware('throttle:100,60');
+Route::get('/blog/{article:slug}', [PublicArticleController::class, 'show'])->name('blog.show.legacy')->middleware('throttle:100,60');
 
 // Legacy articles routes (for backward compatibility)
 Route::get('/articles', [PublicArticleController::class, 'index'])->name('articles.index');

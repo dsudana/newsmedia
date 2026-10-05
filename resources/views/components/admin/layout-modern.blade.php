@@ -9,9 +9,7 @@
     <title>{{ $header }} - NewSMedia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
-    @vite(['resources/css/app.css'])
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         [x-cloak] { display: none !important; }
         * { font-family: 'Inter', sans-serif; }
@@ -148,13 +146,13 @@
         }
     </style>
 </head>
-<body>
-    <div class="flex h-screen gap-4 p-4 lg:p-6 relative" x-data="{ sidebarOpen: false }">
+<body class="m-0 p-0">
+    <div class="flex h-screen gap-0 relative" x-data="{ sidebarOpen: false }">
         <!-- Mobile Overlay -->
         <div class="fixed inset-0 bg-black/50 z-30 md:hidden cursor-pointer" x-show="sidebarOpen" @click="sidebarOpen = false" x-transition></div>
 
         <!-- Left Sidebar -->
-        <div class="sidebar hidden md:flex fixed md:relative md:flex-shrink-0 w-64 md:w-80 h-full md:h-auto rounded-none md:rounded-2xl p-6 scroll-container flex-col z-40 transform transition-transform duration-300 md:translate-x-0" :class="{'!flex': sidebarOpen}" x-cloak>
+        <div class="sidebar hidden md:flex fixed md:relative md:flex-shrink-0 w-64 md:w-80 h-full md:h-auto rounded-none p-6 scroll-container flex-col z-40 transform transition-transform duration-300 md:translate-x-0" :class="{'!flex': sidebarOpen}" x-cloak>
             <!-- Logo -->
             <div class="mb-8">
                 <div class="flex items-center gap-3 mb-2">
@@ -275,7 +273,7 @@
         </div>
 
         <!-- Main Content -->
-        <div class="flex-1 scroll-container flex flex-col w-full min-w-0">
+        <div class="flex-1 flex flex-col w-full min-w-0 p-4 lg:p-6 overflow-y-auto">
             <!-- Header with Search -->
             <div class="flex items-center justify-between mb-6 lg:mb-8 gap-2 lg:gap-4 flex-wrap lg:flex-nowrap">
                 <!-- Mobile Menu Button -->
@@ -300,8 +298,13 @@
             </div>
 
             <!-- Main Content Slot -->
-            <div class="flex-1 overflow-y-auto">
+            <div>
                 {{ $slot }}
+            </div>
+
+            <!-- Footer -->
+            <div class="pt-8 border-t border-gray-200">
+                <x-admin.footer />
             </div>
         </div>
 
