@@ -2,12 +2,10 @@
 
 @section('content')
     <!-- Advertisement Section (Full Width) -->
-    <div
-        class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3 sm:py-6 transition-colors duration-300">
+    <div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-2 sm:py-3 lg:py-4 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center min-h-16 sm:min-h-24">
+            <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center h-14 sm:h-20 lg:h-24 overflow-hidden">
                 <x-frontend.advertisement placement="header_banner" />
-
             </div>
         </div>
     </div>

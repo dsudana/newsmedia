@@ -12,9 +12,11 @@
     </div>
 
     <!-- Advertisement Banner -->
-    <div class="bg-white dark:bg-gray-900 border-b border-slate-200 dark:border-gray-800 py-6 mb-6">
+    <div class="bg-white dark:bg-gray-900 border-b border-slate-200 dark:border-gray-800 py-2 sm:py-3 lg:py-4 mb-6 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4">
-            <x-frontend.advertisement placement="header_banner" />
+            <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center h-14 sm:h-20 lg:h-24 overflow-hidden">
+                <x-frontend.advertisement placement="header_banner" />
+            </div>
         </div>
     </div>
 
