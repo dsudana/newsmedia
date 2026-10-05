@@ -45,6 +45,11 @@ class ArticleController extends Controller
             ->orderBy('order')
             ->get();
 
+        // Get truly popular articles (by views) - category-aware
+        $sidebarArticles = $category
+            ? Article::published()->where('category_id', $category->id)->orderByDesc('views_count')->with(['category', 'user'])->take(5)->get()
+            : Article::published()->orderByDesc('views_count')->with(['category', 'user'])->take(5)->get();
+
         $popularTags = Tag::whereHas('articles', fn($q) => $q->published())
             ->withCount('articles')
             ->orderByDesc('articles_count')
@@ -58,7 +63,7 @@ class ArticleController extends Controller
             $title = 'Kategori: ' . $category->name;
         }
 
-        return view('blog.index', compact('articles', 'categories', 'popularTags', 'category', 'title'));
+        return view('blog.index', compact('articles', 'categories', 'sidebarArticles', 'popularTags', 'category', 'title'));
     }
 
     public function search(Request $request)
@@ -109,7 +114,7 @@ class ArticleController extends Controller
             ->orderBy('order')
             ->get();
 
-        $recentArticles = Article::published()
+        $sidebarArticles = Article::published()
             ->recent()
             ->with(['user', 'category'])
             ->limit(5)
@@ -127,7 +132,7 @@ class ArticleController extends Controller
             'previousArticle',
             'nextArticle',
             'categories',
-            'recentArticles',
+            'sidebarArticles',
             'popularTags'
         ));
     }

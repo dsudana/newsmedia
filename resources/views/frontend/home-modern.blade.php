@@ -357,34 +357,10 @@
                         @endcomponent
                     </div>
 
-                    <!-- Popular Articles -->
-                    <section
-                        class=" dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                            <span class="w-1 h-6 bg-red-600 rounded-full"></span>
-                            Popular
-                        </h3>
-                        <div class="space-y-5">
-                            @foreach ($latestArticles->skip(11)->take(5) as $article)
-                                <a href="{{ route('blog.show', $article->slug) }}"
-                                    class="group flex gap-4 pb-5 border-b border-gray-200 dark:border-gray-700 last:pb-0 last:border-0 hover:opacity-75 transition">
-                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                                        <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/default.jpg' }}"
-                                            alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <h4
-                                            class="text-sm font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-1">
-                                            {{ $article->title }}
-                                        </h4>
-                                        <p class="text-xs text-slate-500 dark:text-gray-400">
-                                            {{ $article->published_at->format('M d, Y') }}
-                                        </p>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                    </section>
+                    <!-- Latest Articles (Note: labeled "Popular" but actually Recent) -->
+                    <x-sidebar.popular-articles :articles="$sidebarArticles" :limit="5" :showThumbnail="true" :showDate="true">
+                        Popular
+                    </x-sidebar.popular-articles>
 
                     <!-- Newsletter -->
                     <x-sidebar.newsletter-card

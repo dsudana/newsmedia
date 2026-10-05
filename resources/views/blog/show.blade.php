@@ -263,33 +263,10 @@
                         @endcomponent
                     </div>
 
-                    <!-- Popular Articles -->
-                    @if($recentArticles && $recentArticles->count() > 0)
-                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Artikel Populer</h3>
-                            <div class="space-y-4">
-                                @foreach($recentArticles->take(5) as $popular)
-                                    <a href="{{ route('blog.show', $popular->slug) }}" class="group flex gap-3 pb-4 border-b border-gray-200 dark:border-gray-700 last:border-0 last:pb-0">
-                                        <div class="flex-shrink-0 w-20 h-20">
-                                            @if($popular->featured_image)
-                                                <img src="{{ asset('storage/' . $popular->featured_image) }}" alt="" class="w-20 h-20 object-cover rounded group-hover:opacity-80 transition" loading="lazy">
-                                            @else
-                                                <div class="w-20 h-20 bg-gray-300 dark:bg-gray-700 rounded flex items-center justify-center">
-                                                    <i class="fas fa-image text-gray-400 dark:text-gray-500 text-lg"></i>
-                                                </div>
-                                            @endif
-                                        </div>
-                                        <div class="flex-1 min-w-0">
-                                            <p class="font-semibold text-sm text-gray-900 dark:text-gray-100 group-hover:text-red-600 line-clamp-2">{{ $popular->title }}</p>
-                                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                                                <i class="fas fa-eye mr-1"></i>{{ number_format($popular->views_count ?? 0) }} dibaca
-                                            </p>
-                                        </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endif
+                    <!-- Recent Articles (labeled "Populer" for consistency) -->
+                    <x-sidebar.popular-articles :articles="$sidebarArticles" :limit="5" :showThumbnail="true" :showDate="false" :showViews="true">
+                        Artikel Populer
+                    </x-sidebar.popular-articles>
 
                     <!-- Newsletter -->
                     <x-sidebar.newsletter-card
