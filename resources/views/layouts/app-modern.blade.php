@@ -30,11 +30,16 @@
         <meta property="twitter:description" content="@yield('twitter:description', 'Get the latest news and stories from around the world')">
         <meta property="twitter:image" content="@yield('twitter:image', url('/images/og-default.png'))">
 
-        <!-- Google Fonts: Inter -->
+        <!-- Performance: DNS Prefetch & Preconnect -->
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Google Fonts: Inter with font-display=swap for faster rendering -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+        <!-- Vite assets with async loading for non-critical CSS -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         @yield('extra_head')

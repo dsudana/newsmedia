@@ -15,6 +15,32 @@ class SecurityHeaders
     {
         $response = $next($request);
 
+        // Cache control headers for performance
+        if ($request->isMethodSafe() && !$request->routeIs('*.show', '*.index')) {
+            // Cache static assets for 1 year
+            if ($request->path() !== '/' && str_contains($request->path(), ['build/', 'storage/', 'images/'])) {
+                $response->header('Cache-Control', 'public, max-age=31536000, immutable');
+            }
+        }
+
+        // Cache homepage and article lists for 1 hour
+        if ($request->routeIs('home', 'blog.index', 'blog.category', 'blog.tag')) {
+            $response->header('Cache-Control', 'public, max-age=3600, s-maxage=3600');
+            $response->header('Vary', 'Accept-Encoding');
+        }
+
+        // Cache individual articles for 24 hours (revalidate daily)
+        if ($request->routeIs('blog.show')) {
+            $response->header('Cache-Control', 'public, max-age=86400, s-maxage=86400');
+            $response->header('Vary', 'Accept-Encoding');
+        }
+
+        // Don't cache dynamic/personalized pages
+        if ($request->routeIs('admin.*', '*.edit', '*.create', '*.store', '*.update', '*.destroy')) {
+            $response->header('Cache-Control', 'no-cache, no-store, must-revalidate, private');
+            $response->header('Pragma', 'no-cache');
+        }
+
         // Prevent MIME type sniffing
         $response->header('X-Content-Type-Options', 'nosniff');
 
