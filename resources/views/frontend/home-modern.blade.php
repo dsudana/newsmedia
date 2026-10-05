@@ -353,8 +353,8 @@
 
                     <!-- Advertisement Top -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
-                        @component('components.advertisement', ['placement' => 'sidebar_home_top'])
-                        @endcomponent
+                        <x-frontend.advertisement placement="sidebar_home_top" />
+                        
                     </div>
 
                     <!-- Latest Articles (Note: labeled "Popular" but actually Recent) -->
@@ -372,8 +372,8 @@
 
                     <!-- Advertisement Bottom -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
-                        @component('components.advertisement', ['placement' => 'sidebar_home_bottom'])
-                        @endcomponent
+                        <x-frontend.advertisement placement="sidebar_home_bottom" />
+                        
                     </div>
 
                     <!-- Categories -->

@@ -65,8 +65,8 @@
 <div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3 sm:py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center min-h-16 sm:min-h-24">
-            @component('components.advertisement', ['placement' => 'header_banner'])
-            @endcomponent
+            <x-frontend.advertisement placement="header_banner" />
+            
         </div>
     </div>
 </div>
@@ -259,8 +259,8 @@
                 <div class="sticky top-24 space-y-6">
                     <!-- Advertisement Top -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
-                        @component('components.advertisement', ['placement' => 'sidebar_top'])
-                        @endcomponent
+                        <x-frontend.advertisement placement="sidebar_top" />
+                        
                     </div>
 
                     <!-- Recent Articles (labeled "Populer" for consistency) -->
@@ -278,8 +278,8 @@
 
                     <!-- Advertisement Bottom -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
-                        @component('components.advertisement', ['placement' => 'sidebar_bottom'])
-                        @endcomponent
+                        <x-frontend.advertisement placement="sidebar_bottom" />
+                        
                     </div>
 
                     <!-- Popular Tags -->
