@@ -1,595 +1,595 @@
 - generic [active] [ref=e1]:
-  - generic [ref=e3]:
-    - generic [ref=e4]: Senin, 05 Oktober 2026
-    - generic [ref=e5]:
-      - link "Contact Us" [ref=e6] [cursor=pointer]:
-        - /url: http://127.0.0.1:8000/contact
-      - link "Login / Register" [ref=e7] [cursor=pointer]:
-        - /url: http://127.0.0.1:8000/login
-      - generic [ref=e8]:
-        - link "Facebook" [ref=e9] [cursor=pointer]:
-          - /url: "#"
-          - generic [ref=e10]: 
-        - link "Twitter" [ref=e11] [cursor=pointer]:
-          - /url: "#"
-          - generic [ref=e12]: 
-        - link "Instagram" [ref=e13] [cursor=pointer]:
-          - /url: "#"
-          - generic [ref=e14]: 
-  - banner [ref=e15]:
-    - generic [ref=e16]:
-      - link "NEWS MEDIA" [ref=e17] [cursor=pointer]:
-        - /url: http://127.0.0.1:8000
-        - generic [ref=e18]: NEWS
-        - generic [ref=e19]:
-          - generic [aria-hidden] [ref=e20]: 
-          - text: MEDIA
-      - navigation "Category navigation" [ref=e21]:
-        - link "Warganet" [ref=e22] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000/berita/kategori/warganet
-        - link "Pemerintahan" [ref=e23] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000/berita/kategori/pemerintahan
-        - link "Pendidikan" [ref=e24] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000/berita/kategori/pendidikan
-        - link "Lifestyle" [ref=e25] [cursor=pointer]:
-          - /url: http://127.0.0.1:8000/berita/kategori/lifestyle
-      - generic [ref=e26]:
-        - button "Toggle dark mode" [ref=e27]:
-          - generic [aria-hidden] [ref=e28]: 
-        - text: 
-  - main [ref=e29]:
-    - generic [ref=e30]:
-      - generic [ref=e32]:
-        - generic [ref=e34]:
-          - img [ref=e35]:
-            - generic [ref=e37]: BREAKING
-            - generic [ref=e40]: NEWS
-          - heading "Consequatur impedit dolorum quo suscipit qui explicabo ut inventore." [level=3] [ref=e41]
-        - generic [ref=e44]:
-          - generic [ref=e45]:
-            - link [ref=e46] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/tak-hanya-menulis-berita-wartawan-depok-gelar-maulid-dan-santunan
-              - img "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [ref=e48]
-              - heading "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [level=4] [ref=e49]
-            - link [ref=e50] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/tangis-pecah-di-tpu-mutiara-syekh-iqbal-khan-turun-langsung-ke-liang-lahat-antar-kepergian-menantu-tercinta
-              - img "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [ref=e52]
-              - heading "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [level=4] [ref=e53]
-            - link [ref=e54] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/lahirkan-kader-mufassir-modern-takhasus-tafsir-pku-mui-kota-depok-resmi-ditutup
-              - img "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [ref=e56]
-              - heading "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [level=4] [ref=e57]
-            - link [ref=e58] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/hari-ke-3-takhassus-tafsir-pku-mui-kota-depok-makin-bergengsi-hadirkan-tgb-zainul-majdi-hingga-bahas-tafsir-ilmiah-pentashihan-mushaf
-              - img "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [ref=e60]
-              - heading "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [level=4] [ref=e61]
-          - generic [ref=e62]:
-            - link [ref=e63] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/hari-ketiga-semakin-bergengsi-tgb-zainul-majdi-hadir-jadi-narasumber-takhassus-tafsir-pku-mui-kota-depok
-              - img "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK" [ref=e65]
-              - heading "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK" [level=4] [ref=e66]
-            - link [ref=e67] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/tanpa-pesaing-barok-dan-ade-suwardi-nahkodai-forkabi-kota-depok-5-tahun-kedepan
-              - img "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan" [ref=e69]
-              - heading "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan" [level=4] [ref=e70]
-            - link [ref=e71] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/takhassus-tafsir-pku-mui-kota-depok-hari-kedua-semakin-menarik-pemateri-kompeten-dibidangnya
-              - img "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA" [ref=e73]
-              - heading "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA" [level=4] [ref=e74]
-            - link [ref=e75] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/resmi-dibuka-mui-kota-depok-gelar-takhasus-tafsir-dan-ilmu-tafsir-pendidikan-kader-ulama
-              - img "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA" [ref=e77]
-              - heading "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA" [level=4] [ref=e78]
-          - generic [ref=e79]:
-            - link [ref=e80] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/keluarga-besar-h-syamsuddin-gelar-takziah-peringatan-6-hari-wafatnya-dra-hj-maryam-m-m-pd
-              - img "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd." [ref=e82]
-              - heading "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd." [level=4] [ref=e83]
-            - link [ref=e84] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/kolaborasi-ulama-wartawan-dan-pemerintah-warnai-maulid-pin-al-bahrain-cipayung
-              - img "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung" [ref=e86]
-              - heading "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung" [level=4] [ref=e87]
-            - link [ref=e88] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/kopi-tani-ngopi-bareng-sembari-belajar-bertani-digagas-kelompok-tani-lahan-hijau-depok
-              - 'img "Kopi Tani: Ngopi Bareng Sembari Belajar Bertani, Digagas Kelompok Tani Lahan Hijau Depok" [ref=e90]'
-              - 'heading "Kopi Tani: Ngopi Bareng Sembari Belajar Bertani, Digagas Kelompok Tani Lahan Hijau Depok" [level=4] [ref=e91]'
-            - link [ref=e92] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/meriahnya-hajatan-warga-rt-02-06-rw-05-tirtajaya-gelar-pentas-seni-hut-ke-81-ri
-              - img "MERIAHNYA HAJATAN WARGA RT 02 &amp; 06 RW 05 TIRTAJAYA GELAR PENTAS SENI HUT KE 81 RI" [ref=e94]
-              - heading "MERIAHNYA HAJATAN WARGA RT 02 &amp; 06 RW 05 TIRTAJAYA GELAR PENTAS SENI HUT KE 81 RI" [level=4] [ref=e95]
-        - paragraph [ref=e113]: Scan & unduh
-      - generic [ref=e115]:
-        - generic [ref=e116]: "TRENDING:"
-        - generic [ref=e117]:
-          - link "#imam budi hartono" [ref=e118] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/imam-budi-hartono
-          - link "#Travel" [ref=e119] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/travel
-          - link "#Environment" [ref=e120] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/environment
-          - link "#Entertainment" [ref=e121] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/entertainment
-          - link "#pemkot depok" [ref=e122] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/pemkot-depok
-          - link "#Health" [ref=e123] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/health
-          - link "#ulama" [ref=e124] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/ulama
-          - link "#Food & Drink" [ref=e125] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/food-drink
-          - link "#pendidikan" [ref=e126] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/pendidikan
-          - link "#pemkot" [ref=e127] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000/berita/tag/pemkot
-        - button " " [ref=e128]:
-          - generic [ref=e129]: 
-          - generic [ref=e130]: 
-    - main [ref=e136]:
-      - generic [ref=e137]:
-        - generic [ref=e139]:
-          - article [ref=e140]:
-            - link "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN Warganet TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN Sep 25, 2026 • 4 min read" [ref=e141] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/tak-hanya-menulis-berita-wartawan-depok-gelar-maulid-dan-santunan
-              - img "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [ref=e142]
-              - generic [ref=e144]:
-                - generic [ref=e145]: Warganet
-                - heading "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [level=2] [ref=e146]
-                - generic [ref=e147]:
-                  - time [ref=e148]: Sep 25, 2026
-                  - generic [ref=e149]: •
-                  - generic [ref=e150]: 4 min read
-          - generic [ref=e151]:
-            - article [ref=e152]:
-              - link "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta Warganet Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta Sep 23, 2026 • 1 min" [ref=e153] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/berita/tangis-pecah-di-tpu-mutiara-syekh-iqbal-khan-turun-langsung-ke-liang-lahat-antar-kepergian-menantu-tercinta
-                - img "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [ref=e155]
-                - generic [ref=e156]:
-                  - generic [ref=e157]:
-                    - text: Warganet
-                    - heading "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [level=3] [ref=e158]
-                  - generic [ref=e159]:
-                    - time [ref=e160]: Sep 23, 2026
-                    - generic [ref=e161]: •
-                    - generic [ref=e162]: 1 min
-            - article [ref=e163]:
-              - link "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP Warganet LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP Sep 17, 2026 • 1 min" [ref=e164] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/berita/lahirkan-kader-mufassir-modern-takhasus-tafsir-pku-mui-kota-depok-resmi-ditutup
-                - img "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [ref=e166]
-                - generic [ref=e167]:
-                  - generic [ref=e168]:
-                    - text: Warganet
-                    - heading "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [level=3] [ref=e169]
-                  - generic [ref=e170]:
-                    - time [ref=e171]: Sep 17, 2026
-                    - generic [ref=e172]: •
-                    - generic [ref=e173]: 1 min
-            - article [ref=e174]:
-              - link "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF Warganet HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF Sep 16, 2026 • 2 min" [ref=e175] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/berita/hari-ke-3-takhassus-tafsir-pku-mui-kota-depok-makin-bergengsi-hadirkan-tgb-zainul-majdi-hingga-bahas-tafsir-ilmiah-pentashihan-mushaf
-                - img "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [ref=e177]
-                - generic [ref=e178]:
-                  - generic [ref=e179]:
-                    - text: Warganet
-                    - heading "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [level=3] [ref=e180]
-                  - generic [ref=e181]:
-                    - time [ref=e182]: Sep 16, 2026
-                    - generic [ref=e183]: •
-                    - generic [ref=e184]: 2 min
-        - generic [ref=e185]:
-          - heading "Latest News" [level=2] [ref=e187]
-          - generic [ref=e189]:
-            - link "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF Warganet HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF Sep 16, 2026" [ref=e190] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/hari-ke-3-takhassus-tafsir-pku-mui-kota-depok-makin-bergengsi-hadirkan-tgb-zainul-majdi-hingga-bahas-tafsir-ilmiah-pentashihan-mushaf
-              - img "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [ref=e193]
-              - generic [ref=e194]:
-                - generic [ref=e195]: Warganet
-                - heading "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [level=3] [ref=e196]
-                - paragraph [ref=e197]: Sep 16, 2026
-            - link "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK Warganet HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK Sep 16, 2026" [ref=e198] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/hari-ketiga-semakin-bergengsi-tgb-zainul-majdi-hadir-jadi-narasumber-takhassus-tafsir-pku-mui-kota-depok
-              - img "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK" [ref=e201]
-              - generic [ref=e202]:
-                - generic [ref=e203]: Warganet
-                - heading "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK" [level=3] [ref=e204]
-                - paragraph [ref=e205]: Sep 16, 2026
-            - link "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan Warganet Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan Sep 16, 2026" [ref=e206] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/tanpa-pesaing-barok-dan-ade-suwardi-nahkodai-forkabi-kota-depok-5-tahun-kedepan
-              - img "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan" [ref=e209]
-              - generic [ref=e210]:
-                - generic [ref=e211]: Warganet
-                - heading "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan" [level=3] [ref=e212]
-                - paragraph [ref=e213]: Sep 16, 2026
-            - link "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA Warganet TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA Sep 15, 2026" [ref=e214] [cursor=pointer]:
-              - /url: http://127.0.0.1:8000/berita/takhassus-tafsir-pku-mui-kota-depok-hari-kedua-semakin-menarik-pemateri-kompeten-dibidangnya
-              - img "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA" [ref=e217]
-              - generic [ref=e218]:
-                - generic [ref=e219]: Warganet
-                - heading "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA" [level=3] [ref=e220]
-                - paragraph [ref=e221]: Sep 15, 2026
-        - generic [ref=e222]:
-          - generic [ref=e223]:
-            - generic [ref=e224]:
-              - generic [ref=e225]:
-                - heading "News Update ›" [level=2] [ref=e226]:
-                  - text: News Update
-                  - generic [ref=e227]: ›
-                - link "›" [ref=e228] [cursor=pointer]:
-                  - /url: "#"
-              - generic [ref=e229]:
-                - link "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA Warganet RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA 14 Sep 2026" [ref=e230] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/resmi-dibuka-mui-kota-depok-gelar-takhasus-tafsir-dan-ilmu-tafsir-pendidikan-kader-ulama
-                  - generic [ref=e231]:
-                    - img "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA" [ref=e233]
-                    - generic [ref=e234]: Warganet
-                  - generic [ref=e236]:
-                    - heading "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA" [level=3] [ref=e237]
-                    - paragraph [ref=e238]: 14 Sep 2026
-                - link "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd. Warganet Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd. 28 Aug 2026" [ref=e239] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/keluarga-besar-h-syamsuddin-gelar-takziah-peringatan-6-hari-wafatnya-dra-hj-maryam-m-m-pd
-                  - generic [ref=e240]:
-                    - img "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd." [ref=e242]
-                    - generic [ref=e243]: Warganet
-                  - generic [ref=e245]:
-                    - heading "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd." [level=3] [ref=e246]
-                    - paragraph [ref=e247]: 28 Aug 2026
-                - link "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung Warganet Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung 26 Aug 2026" [ref=e248] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/kolaborasi-ulama-wartawan-dan-pemerintah-warnai-maulid-pin-al-bahrain-cipayung
-                  - generic [ref=e249]:
-                    - img "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung" [ref=e251]
-                    - generic [ref=e252]: Warganet
-                  - generic [ref=e254]:
-                    - heading "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung" [level=3] [ref=e255]
-                    - paragraph [ref=e256]: 26 Aug 2026
-            - generic [ref=e257]:
-              - generic [ref=e258]:
-                - heading "Featured Videos ›" [level=2] [ref=e259]:
-                  - text: Featured Videos
-                  - generic [ref=e260]: ›
-                - link "›" [ref=e261] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/galeri
-              - generic [ref=e262]:
-                - link [ref=e263] [cursor=pointer]:
-                  - /url: https://www.youtube.com/watch?v=RgKAFK5djSk
-                  - generic [ref=e264]:
-                    - img "Global News Roundup" [ref=e266]
-                    - heading "Global News Roundup" [level=3] [ref=e269]
-                - link [ref=e270] [cursor=pointer]:
-                  - /url: https://www.youtube.com/watch?v=ZmG2Ym4cP-k
-                  - generic [ref=e271]:
-                    - img "Expert Panel Discussion" [ref=e273]
-                    - heading "Expert Panel Discussion" [level=3] [ref=e276]
-                - link [ref=e277] [cursor=pointer]:
-                  - /url: https://www.youtube.com/watch?v=jNQXAC9IVRw
-                  - generic [ref=e278]:
-                    - img "Tech Innovations Explained" [ref=e280]
-                    - heading "Tech Innovations Explained" [level=3] [ref=e283]
-            - generic [ref=e284]:
-              - generic [ref=e285]:
-                - heading "📅 Acara Mendatang ›" [level=2] [ref=e286]:
-                  - text: 📅 Acara Mendatang
-                  - generic [ref=e287]: ›
-                - link "Lihat Semua Acara →" [ref=e288] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/acara
-              - generic [ref=e289]:
-                - link "📅 Event At aut officiis rem. 📍 Sipesview 🕐 Oct 06, 2026, 09:27 Scheduled" [ref=e290] [cursor=pointer]:
-                  - /url: /acara/
-                  - generic [ref=e291]:
-                    - generic [ref=e292]: 📅
-                    - generic [ref=e294]:
-                      - generic [ref=e295]: Event
-                      - heading "At aut officiis rem." [level=3] [ref=e296]
-                      - generic [ref=e297]:
-                        - paragraph [ref=e298]:
-                          - generic [ref=e299]: 📍
-                          - generic [ref=e300]: Sipesview
-                        - paragraph [ref=e301]:
-                          - generic [ref=e302]: 🕐
-                          - generic [ref=e303]: Oct 06, 2026, 09:27
-                      - generic [ref=e304]: Scheduled
-                - link "📅 Event Ea quibusdam quia velit quae est quidem. 📍 North Caleighburgh 🕐 Oct 07, 2026, 04:00 Scheduled" [ref=e305] [cursor=pointer]:
-                  - /url: /acara/
-                  - generic [ref=e306]:
-                    - generic [ref=e307]: 📅
-                    - generic [ref=e309]:
-                      - generic [ref=e310]: Event
-                      - heading "Ea quibusdam quia velit quae est quidem." [level=3] [ref=e311]
-                      - generic [ref=e312]:
-                        - paragraph [ref=e313]:
-                          - generic [ref=e314]: 📍
-                          - generic [ref=e315]: North Caleighburgh
-                        - paragraph [ref=e316]:
-                          - generic [ref=e317]: 🕐
-                          - generic [ref=e318]: Oct 07, 2026, 04:00
-                      - generic [ref=e319]: Scheduled
-                - link "📅 Event Maxime placeat quia corporis. 📍 North Nikki 🕐 Oct 07, 2026, 19:24 Scheduled" [ref=e320] [cursor=pointer]:
-                  - /url: /acara/
-                  - generic [ref=e321]:
-                    - generic [ref=e322]: 📅
-                    - generic [ref=e324]:
-                      - generic [ref=e325]: Event
-                      - heading "Maxime placeat quia corporis." [level=3] [ref=e326]
-                      - generic [ref=e327]:
-                        - paragraph [ref=e328]:
-                          - generic [ref=e329]: 📍
-                          - generic [ref=e330]: North Nikki
-                        - paragraph [ref=e331]:
-                          - generic [ref=e332]: 🕐
-                          - generic [ref=e333]: Oct 07, 2026, 19:24
-                      - generic [ref=e334]: Scheduled
-            - generic [ref=e335]:
-              - generic [ref=e336]:
-                - heading "Lifestyle ›" [level=2] [ref=e337]:
-                  - text: Lifestyle
-                  - generic [ref=e338]: ›
-                - link "›" [ref=e339] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/kategori/lifestyle
-              - generic [ref=e340]:
-                - link " Lifestyle Halaqoh Dakwah \"Strategi Dakwah dalam Mengatasi Fenomena Kekerasan di Kalangan Remaja\" 04 Sep 2024" [ref=e341] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/halaqoh-dakwah-strategi-dakwah-dalam-mengatasi-fenomena-kekerasan-di-kalangan-remaja
-                  - generic [ref=e342]: 
-                  - generic [ref=e345]:
-                    - generic [ref=e346]: Lifestyle
-                    - heading "Halaqoh Dakwah \"Strategi Dakwah dalam Mengatasi Fenomena Kekerasan di Kalangan Remaja\"" [level=3] [ref=e347]
-                    - paragraph [ref=e348]: 04 Sep 2024
-                - link " Lifestyle Festival Depok Keren Tingkat Kecamatan Limo Resmi dibuka oleh Imam Budi Hartono 30 Aug 2024" [ref=e349] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/festival-depok-keren-tingkat-kecamatan-limo-resmi-dibuka-oleh-imam-budi-hartono
-                  - generic [ref=e350]: 
-                  - generic [ref=e353]:
-                    - generic [ref=e354]: Lifestyle
-                    - heading "Festival Depok Keren Tingkat Kecamatan Limo Resmi dibuka oleh Imam Budi Hartono" [level=3] [ref=e355]
-                    - paragraph [ref=e356]: 30 Aug 2024
-            - generic [ref=e357]:
-              - generic [ref=e358]:
-                - heading "Pemerintahan ›" [level=2] [ref=e359]:
-                  - text: Pemerintahan
-                  - generic [ref=e360]: ›
-                - link "›" [ref=e361] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/kategori/pemerintahan
-              - generic [ref=e362]:
-                - 'link "\"MTQH ke-XXIV Kota Depok: Bang Supian Ingatkan Pentingnya Nilai Keagamaan bagi Generasi Muda\" Pemerintahan \"MTQH ke-XXIV Kota Depok: Bang Supian Ingatkan Pentingnya Nilai Keagamaan bagi Generasi Muda\" 11 Nov 2025" [ref=e363] [cursor=pointer]':
-                  - /url: http://127.0.0.1:8000/berita/mtqh-ke-xxiv-kota-depok-bang-supian-ingatkan-pentingnya-nilai-keagamaan-bagi-generasi-muda
-                  - 'img "\"MTQH ke-XXIV Kota Depok: Bang Supian Ingatkan Pentingnya Nilai Keagamaan bagi Generasi Muda\"" [ref=e365]'
-                  - generic [ref=e366]:
-                    - generic [ref=e367]: Pemerintahan
-                    - 'heading "\"MTQH ke-XXIV Kota Depok: Bang Supian Ingatkan Pentingnya Nilai Keagamaan bagi Generasi Muda\"" [level=3] [ref=e368]'
-                    - paragraph [ref=e369]: 11 Nov 2025
-                - link "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong Pemerintahan Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong 06 Nov 2025" [ref=e370] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/supian-suri-buka-bbgrm-2025-ajak-warga-perkuat-budaya-gotong-royong
-                  - img "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [ref=e372]
-                  - generic [ref=e373]:
-                    - generic [ref=e374]: Pemerintahan
-                    - heading "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [level=3] [ref=e375]
-                    - paragraph [ref=e376]: 06 Nov 2025
-                - link " Pemerintahan Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah 30 Aug 2025" [ref=e377] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/pesan-wakil-walikota-depok-chandra-rahmansyah-pada-hari-ber-muhammadiyah
-                  - generic [ref=e378]: 
-                  - generic [ref=e381]:
-                    - generic [ref=e382]: Pemerintahan
-                    - heading "Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah" [level=3] [ref=e383]
-                    - paragraph [ref=e384]: 30 Aug 2025
-            - generic [ref=e385]:
-              - generic [ref=e386]:
-                - heading "Warganet ›" [level=2] [ref=e387]:
-                  - text: Warganet
-                  - generic [ref=e388]: ›
-                - link "›" [ref=e389] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/kategori/warganet
-              - generic [ref=e390]:
-                - link "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN Warganet TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN 25 Sep 2026" [ref=e391] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/tak-hanya-menulis-berita-wartawan-depok-gelar-maulid-dan-santunan
-                  - img "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [ref=e393]
-                  - generic [ref=e394]:
-                    - generic [ref=e395]: Warganet
-                    - heading "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [level=3] [ref=e396]
-                    - paragraph [ref=e397]: 25 Sep 2026
-                - link "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta Warganet Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta 23 Sep 2026" [ref=e398] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/tangis-pecah-di-tpu-mutiara-syekh-iqbal-khan-turun-langsung-ke-liang-lahat-antar-kepergian-menantu-tercinta
-                  - img "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [ref=e400]
-                  - generic [ref=e401]:
-                    - generic [ref=e402]: Warganet
-                    - heading "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [level=3] [ref=e403]
-                    - paragraph [ref=e404]: 23 Sep 2026
-                - link "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP Warganet LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP 17 Sep 2026" [ref=e405] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/lahirkan-kader-mufassir-modern-takhasus-tafsir-pku-mui-kota-depok-resmi-ditutup
-                  - img "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [ref=e407]
-                  - generic [ref=e408]:
-                    - generic [ref=e409]: Warganet
-                    - heading "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [level=3] [ref=e410]
-                    - paragraph [ref=e411]: 17 Sep 2026
-            - generic [ref=e412]:
-              - generic [ref=e413]:
-                - heading "Pendidikan ›" [level=2] [ref=e414]:
-                  - text: Pendidikan
-                  - generic [ref=e415]: ›
-                - link "›" [ref=e416] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/kategori/pendidikan
-              - generic [ref=e417]:
-                - link "MUI Kota Depok Buka Pendaftaran Pendidikan Kader Ulama Angkatan XI tahun 2025 M/1447 H Pendidikan MUI Kota Depok Buka Pendaftaran Pendidikan Kader Ulama Angkatan XI tahun 2025 M/1447 H 16 Aug 2025" [ref=e418] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/jumat-15-agustus-2025-komisi-pendidikan-kader-ulama-pku-dan-pengurus-harian-mui-kota-depok-mengadakan-rapat-persiapan-pku-tahun-2025-kegiatan-yang-dilaksanakan-di-ruang-rapat-gedung-mui-j
-                  - img "MUI Kota Depok Buka Pendaftaran Pendidikan Kader Ulama Angkatan XI tahun 2025 M/1447 H" [ref=e420]
-                  - generic [ref=e421]:
-                    - generic [ref=e422]: Pendidikan
-                    - heading "MUI Kota Depok Buka Pendaftaran Pendidikan Kader Ulama Angkatan XI tahun 2025 M/1447 H" [level=3] [ref=e423]
-                    - paragraph [ref=e424]: 16 Aug 2025
-                - link "Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z Pendidikan Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z 21 Nov 2024" [ref=e425] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/ketua-dewan-pendidikan-kota-depok-dedy-martoni-berikan-pencerahan-dalam-workshop-sinergitas-orang-tua-sekolah-dan-komite-sekolah-dalam-membina-gen-z
-                  - img "Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z" [ref=e427]
-                  - generic [ref=e428]:
-                    - generic [ref=e429]: Pendidikan
-                    - heading "Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z" [level=3] [ref=e430]
-                    - paragraph [ref=e431]: 21 Nov 2024
-                - link " Pendidikan Ketua Dewan Pendidikan Kota Depok H. Dedy Martoni, M.Si Hadiri Rakornas III Forum Dewan Pendidikan Indonesia di Makassar 12 Sep 2024" [ref=e432] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/ketua-dewan-pendidikan-kota-depok-h-dedy-martoni-m-si-hadiri-rakornas-iii-forum-dewan-pendidikan-indonesia-di-makassar
-                  - generic [ref=e433]: 
-                  - generic [ref=e436]:
-                    - generic [ref=e437]: Pendidikan
-                    - heading "Ketua Dewan Pendidikan Kota Depok H. Dedy Martoni, M.Si Hadiri Rakornas III Forum Dewan Pendidikan Indonesia di Makassar" [level=3] [ref=e438]
-                    - paragraph [ref=e439]: 12 Sep 2024
-          - complementary [ref=e440]:
-            - generic [ref=e441]:
-              - heading "Follow Us" [level=3] [ref=e442]
-              - generic [ref=e444]:
-                - link "" [ref=e445] [cursor=pointer]:
-                  - /url: https://facebook.com
-                - link "" [ref=e447] [cursor=pointer]:
-                  - /url: https://twitter.com
-                - link "" [ref=e449] [cursor=pointer]:
-                  - /url: https://instagram.com
-                - link "" [ref=e451] [cursor=pointer]:
-                  - /url: https://linkedin.com
-                - link "" [ref=e453] [cursor=pointer]:
-                  - /url: https://youtube.com
-            - generic [ref=e457]:
-              - paragraph [ref=e461]: Advertisement Space
-              - paragraph [ref=e462]: 300 × 250px
-            - generic [ref=e463]:
-              - heading "Popular" [level=3] [ref=e464]
-              - generic [ref=e466]:
-                - link "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN  25 Sep 2026" [ref=e467] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/tak-hanya-menulis-berita-wartawan-depok-gelar-maulid-dan-santunan
-                  - generic [ref=e469]:
-                    - paragraph [ref=e470]: TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN
-                    - paragraph [ref=e471]:
-                      - generic [ref=e472]: 
-                      - text: 25 Sep 2026
-                - link "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta  23 Sep 2026" [ref=e473] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/tangis-pecah-di-tpu-mutiara-syekh-iqbal-khan-turun-langsung-ke-liang-lahat-antar-kepergian-menantu-tercinta
-                  - generic [ref=e475]:
-                    - paragraph [ref=e476]: Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta
-                    - paragraph [ref=e477]:
-                      - generic [ref=e478]: 
-                      - text: 23 Sep 2026
-                - link "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP  17 Sep 2026" [ref=e479] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/lahirkan-kader-mufassir-modern-takhasus-tafsir-pku-mui-kota-depok-resmi-ditutup
-                  - generic [ref=e481]:
-                    - paragraph [ref=e482]: LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP
-                    - paragraph [ref=e483]:
-                      - generic [ref=e484]: 
-                      - text: 17 Sep 2026
-                - link "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF  16 Sep 2026" [ref=e485] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/hari-ke-3-takhassus-tafsir-pku-mui-kota-depok-makin-bergengsi-hadirkan-tgb-zainul-majdi-hingga-bahas-tafsir-ilmiah-pentashihan-mushaf
-                  - generic [ref=e487]:
-                    - paragraph [ref=e488]: HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF
-                    - paragraph [ref=e489]:
-                      - generic [ref=e490]: 
-                      - text: 16 Sep 2026
-                - link "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK  16 Sep 2026" [ref=e491] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/hari-ketiga-semakin-bergengsi-tgb-zainul-majdi-hadir-jadi-narasumber-takhassus-tafsir-pku-mui-kota-depok
-                  - generic [ref=e493]:
-                    - paragraph [ref=e494]: HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK
-                    - paragraph [ref=e495]:
-                      - generic [ref=e496]: 
-                      - text: 16 Sep 2026
-            - generic [ref=e497]:
-              - heading "Newsletter" [level=3] [ref=e498]
-              - paragraph [ref=e499]: Get the latest stories delivered to your inbox daily
-              - generic [ref=e500]:
-                - textbox "your@email.com" [ref=e501]
-                - button "Subscribe" [ref=e502]: Subscribe 
-            - generic [ref=e505]:
-              - paragraph [ref=e509]: Advertisement Space
-              - paragraph [ref=e510]: 300 × 250px
-            - generic [ref=e511]:
-              - heading "Categories" [level=3] [ref=e512]
-              - generic [ref=e514]:
-                - link "Lifestyle 2" [ref=e515] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/kategori/lifestyle
-                  - generic [ref=e516]: Lifestyle
-                  - generic [ref=e517]: "2"
-                - link "Pemerintahan 10" [ref=e518] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/kategori/pemerintahan
-                  - generic [ref=e519]: Pemerintahan
-                  - generic [ref=e520]: "10"
-                - link "Warganet 111" [ref=e521] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/kategori/warganet
-                  - generic [ref=e522]: Warganet
-                  - generic [ref=e523]: "111"
-                - link "Pendidikan 4" [ref=e524] [cursor=pointer]:
-                  - /url: http://127.0.0.1:8000/berita/kategori/pendidikan
-                  - generic [ref=e525]: Pendidikan
-                  - generic [ref=e526]: "4"
-  - contentinfo [ref=e527]:
-    - generic [ref=e528]:
-      - generic [ref=e529]:
-        - generic [ref=e530]:
-          - link "NEWS MEDIA" [ref=e531] [cursor=pointer]:
-            - /url: http://127.0.0.1:8000
-            - generic [ref=e532]: NEWS
-            - generic [aria-hidden] [ref=e533]: 
-            - generic [ref=e534]: MEDIA
-          - generic [ref=e535]:
-            - link "Ikuti kami di Facebook" [ref=e536] [cursor=pointer]:
-              - /url: https://facebook.com
-              - generic [aria-hidden] [ref=e537]: 
-            - link "Ikuti kami di Twitter" [ref=e538] [cursor=pointer]:
-              - /url: https://twitter.com
-              - generic [aria-hidden] [ref=e539]: 
-            - link "Ikuti kami di Instagram" [ref=e540] [cursor=pointer]:
-              - /url: https://instagram.com
-              - generic [aria-hidden] [ref=e541]: 
-            - link "Ikuti kami di LinkedIn" [ref=e542] [cursor=pointer]:
-              - /url: https://linkedin.com
-              - generic [aria-hidden] [ref=e543]: 
-            - link "Ikuti kami di YouTube" [ref=e544] [cursor=pointer]:
-              - /url: https://youtube.com
-              - generic [aria-hidden] [ref=e545]: 
-        - generic [ref=e546]:
-          - heading "Menu" [level=3] [ref=e547]
-          - list [ref=e548]:
-            - listitem [ref=e549]:
-              - link "Beranda" [ref=e550] [cursor=pointer]:
+    - generic [ref=e3]:
+        - generic [ref=e4]: Senin, 05 Oktober 2026
+        - generic [ref=e5]:
+            - link "Contact Us" [ref=e6] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/contact
+            - link "Login / Register" [ref=e7] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/login
+            - generic [ref=e8]:
+                - link "Facebook" [ref=e9] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=e10]: 
+                - link "Twitter" [ref=e11] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=e12]: 
+                - link "Instagram" [ref=e13] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=e14]: 
+    - banner [ref=e15]:
+        - generic [ref=e16]:
+            - link "NEWS MEDIA" [ref=e17] [cursor=pointer]:
                 - /url: http://127.0.0.1:8000
-            - listitem [ref=e551]:
-              - link "Semua Berita" [ref=e552] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/berita
-            - listitem [ref=e553]:
-              - link "Tentang Kami" [ref=e554] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=e555]:
-              - link "Kontak" [ref=e556] [cursor=pointer]:
-                - /url: "#"
-        - generic [ref=e557]:
-          - heading "Kategori" [level=3] [ref=e558]
-          - list [ref=e559]:
-            - listitem [ref=e560]:
-              - link "Warganet (111)" [ref=e561] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/berita/kategori/warganet
-            - listitem [ref=e562]:
-              - link "Pemerintahan (10)" [ref=e563] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/berita/kategori/pemerintahan
-            - listitem [ref=e564]:
-              - link "Pendidikan (4)" [ref=e565] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/berita/kategori/pendidikan
-            - listitem [ref=e566]:
-              - link "Lifestyle (2)" [ref=e567] [cursor=pointer]:
-                - /url: http://127.0.0.1:8000/berita/kategori/lifestyle
-        - generic [ref=e568]:
-          - heading "Perusahaan" [level=3] [ref=e569]
-          - list [ref=e570]:
-            - listitem [ref=e571]:
-              - link "Tentang Kami" [ref=e572] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=e573]:
-              - link "Kebijakan Privasi" [ref=e574] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=e575]:
-              - link "Syarat & Ketentuan" [ref=e576] [cursor=pointer]:
-                - /url: "#"
-            - listitem [ref=e577]:
-              - link "Hubungi Kami" [ref=e578] [cursor=pointer]:
-                - /url: "#"
-        - generic [ref=e579]:
-          - heading "Newsletter" [level=3] [ref=e580]
-          - paragraph [ref=e581]: Dapatkan berita terbaru langsung ke inbox Anda
-          - generic [ref=e582]:
-            - textbox "Email Anda" [ref=e583]
-            - button "Subscribe" [ref=e584]
-      - generic [ref=e586]:
-        - paragraph [ref=e587]: © 2026 NEWS MEDIA. Hak cipta dilindungi.
-        - generic [ref=e588]:
-          - link "Sitemap" [ref=e589] [cursor=pointer]:
-            - /url: "#"
-          - link "Disclaimer" [ref=e590] [cursor=pointer]:
-            - /url: "#"
-          - link "Iklan" [ref=e591] [cursor=pointer]:
-            - /url: "#"
+                - generic [ref=e18]: NEWS
+                - generic [ref=e19]:
+                    - generic [aria-hidden] [ref=e20]: 
+                    - text: MEDIA
+            - navigation "Category navigation" [ref=e21]:
+                - link "Warganet" [ref=e22] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/berita/kategori/warganet
+                - link "Pemerintahan" [ref=e23] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/berita/kategori/pemerintahan
+                - link "Pendidikan" [ref=e24] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/berita/kategori/pendidikan
+                - link "Lifestyle" [ref=e25] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/berita/kategori/lifestyle
+            - generic [ref=e26]:
+                - button "Toggle dark mode" [ref=e27]:
+                    - generic [aria-hidden] [ref=e28]: 
+                - text: 
+    - main [ref=e29]:
+        - generic [ref=e30]:
+            - generic [ref=e32]:
+                - generic [ref=e34]:
+                    - img [ref=e35]:
+                        - generic [ref=e37]: BREAKING
+                        - generic [ref=e40]: NEWS
+                    - heading "Consequatur impedit dolorum quo suscipit qui explicabo ut inventore." [level=3] [ref=e41]
+                - generic [ref=e44]:
+                    - generic [ref=e45]:
+                        - link [ref=e46] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/tak-hanya-menulis-berita-wartawan-depok-gelar-maulid-dan-santunan
+                            - img "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [ref=e48]
+                            - heading "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [level=4] [ref=e49]
+                        - link [ref=e50] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/tangis-pecah-di-tpu-mutiara-syekh-iqbal-khan-turun-langsung-ke-liang-lahat-antar-kepergian-menantu-tercinta
+                            - img "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [ref=e52]
+                            - heading "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [level=4] [ref=e53]
+                        - link [ref=e54] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/lahirkan-kader-mufassir-modern-takhasus-tafsir-pku-mui-kota-depok-resmi-ditutup
+                            - img "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [ref=e56]
+                            - heading "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [level=4] [ref=e57]
+                        - link [ref=e58] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/hari-ke-3-takhassus-tafsir-pku-mui-kota-depok-makin-bergengsi-hadirkan-tgb-zainul-majdi-hingga-bahas-tafsir-ilmiah-pentashihan-mushaf
+                            - img "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [ref=e60]
+                            - heading "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [level=4] [ref=e61]
+                    - generic [ref=e62]:
+                        - link [ref=e63] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/hari-ketiga-semakin-bergengsi-tgb-zainul-majdi-hadir-jadi-narasumber-takhassus-tafsir-pku-mui-kota-depok
+                            - img "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK" [ref=e65]
+                            - heading "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK" [level=4] [ref=e66]
+                        - link [ref=e67] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/tanpa-pesaing-barok-dan-ade-suwardi-nahkodai-forkabi-kota-depok-5-tahun-kedepan
+                            - img "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan" [ref=e69]
+                            - heading "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan" [level=4] [ref=e70]
+                        - link [ref=e71] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/takhassus-tafsir-pku-mui-kota-depok-hari-kedua-semakin-menarik-pemateri-kompeten-dibidangnya
+                            - img "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA" [ref=e73]
+                            - heading "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA" [level=4] [ref=e74]
+                        - link [ref=e75] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/resmi-dibuka-mui-kota-depok-gelar-takhasus-tafsir-dan-ilmu-tafsir-pendidikan-kader-ulama
+                            - img "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA" [ref=e77]
+                            - heading "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA" [level=4] [ref=e78]
+                    - generic [ref=e79]:
+                        - link [ref=e80] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/keluarga-besar-h-syamsuddin-gelar-takziah-peringatan-6-hari-wafatnya-dra-hj-maryam-m-m-pd
+                            - img "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd." [ref=e82]
+                            - heading "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd." [level=4] [ref=e83]
+                        - link [ref=e84] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/kolaborasi-ulama-wartawan-dan-pemerintah-warnai-maulid-pin-al-bahrain-cipayung
+                            - img "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung" [ref=e86]
+                            - heading "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung" [level=4] [ref=e87]
+                        - link [ref=e88] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/kopi-tani-ngopi-bareng-sembari-belajar-bertani-digagas-kelompok-tani-lahan-hijau-depok
+                            - 'img "Kopi Tani: Ngopi Bareng Sembari Belajar Bertani, Digagas Kelompok Tani Lahan Hijau Depok" [ref=e90]'
+                            - 'heading "Kopi Tani: Ngopi Bareng Sembari Belajar Bertani, Digagas Kelompok Tani Lahan Hijau Depok" [level=4] [ref=e91]'
+                        - link [ref=e92] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/meriahnya-hajatan-warga-rt-02-06-rw-05-tirtajaya-gelar-pentas-seni-hut-ke-81-ri
+                            - img "MERIAHNYA HAJATAN WARGA RT 02 &amp; 06 RW 05 TIRTAJAYA GELAR PENTAS SENI HUT KE 81 RI" [ref=e94]
+                            - heading "MERIAHNYA HAJATAN WARGA RT 02 &amp; 06 RW 05 TIRTAJAYA GELAR PENTAS SENI HUT KE 81 RI" [level=4] [ref=e95]
+                - paragraph [ref=e113]: Scan & unduh
+            - generic [ref=e115]:
+                - generic [ref=e116]: "TRENDING:"
+                - generic [ref=e117]:
+                    - link "#imam budi hartono" [ref=e118] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/imam-budi-hartono
+                    - link "#Travel" [ref=e119] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/travel
+                    - link "#Environment" [ref=e120] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/environment
+                    - link "#Entertainment" [ref=e121] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/entertainment
+                    - link "#pemkot depok" [ref=e122] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/pemkot-depok
+                    - link "#Health" [ref=e123] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/health
+                    - link "#ulama" [ref=e124] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/ulama
+                    - link "#Food & Drink" [ref=e125] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/food-drink
+                    - link "#pendidikan" [ref=e126] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/pendidikan
+                    - link "#pemkot" [ref=e127] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/berita/tag/pemkot
+                - button " " [ref=e128]:
+                    - generic [ref=e129]: 
+                    - generic [ref=e130]: 
+        - main [ref=e136]:
+            - generic [ref=e137]:
+                - generic [ref=e139]:
+                    - article [ref=e140]:
+                        - link "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN Warganet TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN Sep 25, 2026 • 4 min read" [ref=e141] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/tak-hanya-menulis-berita-wartawan-depok-gelar-maulid-dan-santunan
+                            - img "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [ref=e142]
+                            - generic [ref=e144]:
+                                - generic [ref=e145]: Warganet
+                                - heading "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [level=2] [ref=e146]
+                                - generic [ref=e147]:
+                                    - time [ref=e148]: Sep 25, 2026
+                                    - generic [ref=e149]: •
+                                    - generic [ref=e150]: 4 min read
+                    - generic [ref=e151]:
+                        - article [ref=e152]:
+                            - link "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta Warganet Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta Sep 23, 2026 • 1 min" [ref=e153] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/berita/tangis-pecah-di-tpu-mutiara-syekh-iqbal-khan-turun-langsung-ke-liang-lahat-antar-kepergian-menantu-tercinta
+                                - img "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [ref=e155]
+                                - generic [ref=e156]:
+                                    - generic [ref=e157]:
+                                        - text: Warganet
+                                        - heading "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [level=3] [ref=e158]
+                                    - generic [ref=e159]:
+                                        - time [ref=e160]: Sep 23, 2026
+                                        - generic [ref=e161]: •
+                                        - generic [ref=e162]: 1 min
+                        - article [ref=e163]:
+                            - link "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP Warganet LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP Sep 17, 2026 • 1 min" [ref=e164] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/berita/lahirkan-kader-mufassir-modern-takhasus-tafsir-pku-mui-kota-depok-resmi-ditutup
+                                - img "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [ref=e166]
+                                - generic [ref=e167]:
+                                    - generic [ref=e168]:
+                                        - text: Warganet
+                                        - heading "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [level=3] [ref=e169]
+                                    - generic [ref=e170]:
+                                        - time [ref=e171]: Sep 17, 2026
+                                        - generic [ref=e172]: •
+                                        - generic [ref=e173]: 1 min
+                        - article [ref=e174]:
+                            - link "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF Warganet HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF Sep 16, 2026 • 2 min" [ref=e175] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/berita/hari-ke-3-takhassus-tafsir-pku-mui-kota-depok-makin-bergengsi-hadirkan-tgb-zainul-majdi-hingga-bahas-tafsir-ilmiah-pentashihan-mushaf
+                                - img "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [ref=e177]
+                                - generic [ref=e178]:
+                                    - generic [ref=e179]:
+                                        - text: Warganet
+                                        - heading "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [level=3] [ref=e180]
+                                    - generic [ref=e181]:
+                                        - time [ref=e182]: Sep 16, 2026
+                                        - generic [ref=e183]: •
+                                        - generic [ref=e184]: 2 min
+                - generic [ref=e185]:
+                    - heading "Latest News" [level=2] [ref=e187]
+                    - generic [ref=e189]:
+                        - link "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF Warganet HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF Sep 16, 2026" [ref=e190] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/hari-ke-3-takhassus-tafsir-pku-mui-kota-depok-makin-bergengsi-hadirkan-tgb-zainul-majdi-hingga-bahas-tafsir-ilmiah-pentashihan-mushaf
+                            - img "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [ref=e193]
+                            - generic [ref=e194]:
+                                - generic [ref=e195]: Warganet
+                                - heading "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF" [level=3] [ref=e196]
+                                - paragraph [ref=e197]: Sep 16, 2026
+                        - link "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK Warganet HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK Sep 16, 2026" [ref=e198] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/hari-ketiga-semakin-bergengsi-tgb-zainul-majdi-hadir-jadi-narasumber-takhassus-tafsir-pku-mui-kota-depok
+                            - img "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK" [ref=e201]
+                            - generic [ref=e202]:
+                                - generic [ref=e203]: Warganet
+                                - heading "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK" [level=3] [ref=e204]
+                                - paragraph [ref=e205]: Sep 16, 2026
+                        - link "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan Warganet Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan Sep 16, 2026" [ref=e206] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/tanpa-pesaing-barok-dan-ade-suwardi-nahkodai-forkabi-kota-depok-5-tahun-kedepan
+                            - img "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan" [ref=e209]
+                            - generic [ref=e210]:
+                                - generic [ref=e211]: Warganet
+                                - heading "Tanpa Pesaing “Barok dan Ade Suwardi Nahkodai Forkabi Kota Depok 5 Tahun Kedepan" [level=3] [ref=e212]
+                                - paragraph [ref=e213]: Sep 16, 2026
+                        - link "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA Warganet TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA Sep 15, 2026" [ref=e214] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8000/berita/takhassus-tafsir-pku-mui-kota-depok-hari-kedua-semakin-menarik-pemateri-kompeten-dibidangnya
+                            - img "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA" [ref=e217]
+                            - generic [ref=e218]:
+                                - generic [ref=e219]: Warganet
+                                - heading "TAKHASSUS TAFSIR PKU MUI KOTA DEPOK HARI KEDUA SEMAKIN MENARIK, PEMATERI KOMPETEN DIBIDANGNYA" [level=3] [ref=e220]
+                                - paragraph [ref=e221]: Sep 15, 2026
+                - generic [ref=e222]:
+                    - generic [ref=e223]:
+                        - generic [ref=e224]:
+                            - generic [ref=e225]:
+                                - heading "News Update ›" [level=2] [ref=e226]:
+                                    - text: News Update
+                                    - generic [ref=e227]: ›
+                                - link "›" [ref=e228] [cursor=pointer]:
+                                    - /url: "#"
+                            - generic [ref=e229]:
+                                - link "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA Warganet RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA 14 Sep 2026" [ref=e230] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/resmi-dibuka-mui-kota-depok-gelar-takhasus-tafsir-dan-ilmu-tafsir-pendidikan-kader-ulama
+                                    - generic [ref=e231]:
+                                        - img "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA" [ref=e233]
+                                        - generic [ref=e234]: Warganet
+                                    - generic [ref=e236]:
+                                        - heading "RESMI DIBUKA, MUI KOTA DEPOK GELAR TAKHASUS TAFSIR DAN ILMU TAFSIR PENDIDIKAN KADER ULAMA" [level=3] [ref=e237]
+                                        - paragraph [ref=e238]: 14 Sep 2026
+                                - link "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd. Warganet Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd. 28 Aug 2026" [ref=e239] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/keluarga-besar-h-syamsuddin-gelar-takziah-peringatan-6-hari-wafatnya-dra-hj-maryam-m-m-pd
+                                    - generic [ref=e240]:
+                                        - img "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd." [ref=e242]
+                                        - generic [ref=e243]: Warganet
+                                    - generic [ref=e245]:
+                                        - heading "Keluarga Besar H. Syamsuddin Gelar Takziah Peringatan 6 Hari Wafatnya Dra. Hj. Maryam, M.M.Pd." [level=3] [ref=e246]
+                                        - paragraph [ref=e247]: 28 Aug 2026
+                                - link "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung Warganet Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung 26 Aug 2026" [ref=e248] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/kolaborasi-ulama-wartawan-dan-pemerintah-warnai-maulid-pin-al-bahrain-cipayung
+                                    - generic [ref=e249]:
+                                        - img "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung" [ref=e251]
+                                        - generic [ref=e252]: Warganet
+                                    - generic [ref=e254]:
+                                        - heading "Kolaborasi Ulama, Wartawan dan Pemerintah Warnai Maulid PIN Al Bahrain Cipayung" [level=3] [ref=e255]
+                                        - paragraph [ref=e256]: 26 Aug 2026
+                        - generic [ref=e257]:
+                            - generic [ref=e258]:
+                                - heading "Featured Videos ›" [level=2] [ref=e259]:
+                                    - text: Featured Videos
+                                    - generic [ref=e260]: ›
+                                - link "›" [ref=e261] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/galeri
+                            - generic [ref=e262]:
+                                - link [ref=e263] [cursor=pointer]:
+                                    - /url: https://www.youtube.com/watch?v=RgKAFK5djSk
+                                    - generic [ref=e264]:
+                                        - img "Global News Roundup" [ref=e266]
+                                        - heading "Global News Roundup" [level=3] [ref=e269]
+                                - link [ref=e270] [cursor=pointer]:
+                                    - /url: https://www.youtube.com/watch?v=ZmG2Ym4cP-k
+                                    - generic [ref=e271]:
+                                        - img "Expert Panel Discussion" [ref=e273]
+                                        - heading "Expert Panel Discussion" [level=3] [ref=e276]
+                                - link [ref=e277] [cursor=pointer]:
+                                    - /url: https://www.youtube.com/watch?v=jNQXAC9IVRw
+                                    - generic [ref=e278]:
+                                        - img "Tech Innovations Explained" [ref=e280]
+                                        - heading "Tech Innovations Explained" [level=3] [ref=e283]
+                        - generic [ref=e284]:
+                            - generic [ref=e285]:
+                                - heading "📅 Acara Mendatang ›" [level=2] [ref=e286]:
+                                    - text: 📅 Acara Mendatang
+                                    - generic [ref=e287]: ›
+                                - link "Lihat Semua Acara →" [ref=e288] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/acara
+                            - generic [ref=e289]:
+                                - link "📅 Event At aut officiis rem. 📍 Sipesview 🕐 Oct 06, 2026, 09:27 Scheduled" [ref=e290] [cursor=pointer]:
+                                    - /url: /acara/
+                                    - generic [ref=e291]:
+                                        - generic [ref=e292]: 📅
+                                        - generic [ref=e294]:
+                                            - generic [ref=e295]: Event
+                                            - heading "At aut officiis rem." [level=3] [ref=e296]
+                                            - generic [ref=e297]:
+                                                - paragraph [ref=e298]:
+                                                    - generic [ref=e299]: 📍
+                                                    - generic [ref=e300]: Sipesview
+                                                - paragraph [ref=e301]:
+                                                    - generic [ref=e302]: 🕐
+                                                    - generic [ref=e303]: Oct 06, 2026, 09:27
+                                            - generic [ref=e304]: Scheduled
+                                - link "📅 Event Ea quibusdam quia velit quae est quidem. 📍 North Caleighburgh 🕐 Oct 07, 2026, 04:00 Scheduled" [ref=e305] [cursor=pointer]:
+                                    - /url: /acara/
+                                    - generic [ref=e306]:
+                                        - generic [ref=e307]: 📅
+                                        - generic [ref=e309]:
+                                            - generic [ref=e310]: Event
+                                            - heading "Ea quibusdam quia velit quae est quidem." [level=3] [ref=e311]
+                                            - generic [ref=e312]:
+                                                - paragraph [ref=e313]:
+                                                    - generic [ref=e314]: 📍
+                                                    - generic [ref=e315]: North Caleighburgh
+                                                - paragraph [ref=e316]:
+                                                    - generic [ref=e317]: 🕐
+                                                    - generic [ref=e318]: Oct 07, 2026, 04:00
+                                            - generic [ref=e319]: Scheduled
+                                - link "📅 Event Maxime placeat quia corporis. 📍 North Nikki 🕐 Oct 07, 2026, 19:24 Scheduled" [ref=e320] [cursor=pointer]:
+                                    - /url: /acara/
+                                    - generic [ref=e321]:
+                                        - generic [ref=e322]: 📅
+                                        - generic [ref=e324]:
+                                            - generic [ref=e325]: Event
+                                            - heading "Maxime placeat quia corporis." [level=3] [ref=e326]
+                                            - generic [ref=e327]:
+                                                - paragraph [ref=e328]:
+                                                    - generic [ref=e329]: 📍
+                                                    - generic [ref=e330]: North Nikki
+                                                - paragraph [ref=e331]:
+                                                    - generic [ref=e332]: 🕐
+                                                    - generic [ref=e333]: Oct 07, 2026, 19:24
+                                            - generic [ref=e334]: Scheduled
+                        - generic [ref=e335]:
+                            - generic [ref=e336]:
+                                - heading "Lifestyle ›" [level=2] [ref=e337]:
+                                    - text: Lifestyle
+                                    - generic [ref=e338]: ›
+                                - link "›" [ref=e339] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/kategori/lifestyle
+                            - generic [ref=e340]:
+                                - link " Lifestyle Halaqoh Dakwah \"Strategi Dakwah dalam Mengatasi Fenomena Kekerasan di Kalangan Remaja\" 04 Sep 2024" [ref=e341] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/halaqoh-dakwah-strategi-dakwah-dalam-mengatasi-fenomena-kekerasan-di-kalangan-remaja
+                                    - generic [ref=e342]: 
+                                    - generic [ref=e345]:
+                                        - generic [ref=e346]: Lifestyle
+                                        - heading "Halaqoh Dakwah \"Strategi Dakwah dalam Mengatasi Fenomena Kekerasan di Kalangan Remaja\"" [level=3] [ref=e347]
+                                        - paragraph [ref=e348]: 04 Sep 2024
+                                - link " Lifestyle Festival Depok Keren Tingkat Kecamatan Limo Resmi dibuka oleh Imam Budi Hartono 30 Aug 2024" [ref=e349] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/festival-depok-keren-tingkat-kecamatan-limo-resmi-dibuka-oleh-imam-budi-hartono
+                                    - generic [ref=e350]: 
+                                    - generic [ref=e353]:
+                                        - generic [ref=e354]: Lifestyle
+                                        - heading "Festival Depok Keren Tingkat Kecamatan Limo Resmi dibuka oleh Imam Budi Hartono" [level=3] [ref=e355]
+                                        - paragraph [ref=e356]: 30 Aug 2024
+                        - generic [ref=e357]:
+                            - generic [ref=e358]:
+                                - heading "Pemerintahan ›" [level=2] [ref=e359]:
+                                    - text: Pemerintahan
+                                    - generic [ref=e360]: ›
+                                - link "›" [ref=e361] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/kategori/pemerintahan
+                            - generic [ref=e362]:
+                                - 'link "\"MTQH ke-XXIV Kota Depok: Bang Supian Ingatkan Pentingnya Nilai Keagamaan bagi Generasi Muda\" Pemerintahan \"MTQH ke-XXIV Kota Depok: Bang Supian Ingatkan Pentingnya Nilai Keagamaan bagi Generasi Muda\" 11 Nov 2025" [ref=e363] [cursor=pointer]':
+                                    - /url: http://127.0.0.1:8000/berita/mtqh-ke-xxiv-kota-depok-bang-supian-ingatkan-pentingnya-nilai-keagamaan-bagi-generasi-muda
+                                    - 'img "\"MTQH ke-XXIV Kota Depok: Bang Supian Ingatkan Pentingnya Nilai Keagamaan bagi Generasi Muda\"" [ref=e365]'
+                                    - generic [ref=e366]:
+                                        - generic [ref=e367]: Pemerintahan
+                                        - 'heading "\"MTQH ke-XXIV Kota Depok: Bang Supian Ingatkan Pentingnya Nilai Keagamaan bagi Generasi Muda\"" [level=3] [ref=e368]'
+                                        - paragraph [ref=e369]: 11 Nov 2025
+                                - link "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong Pemerintahan Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong 06 Nov 2025" [ref=e370] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/supian-suri-buka-bbgrm-2025-ajak-warga-perkuat-budaya-gotong-royong
+                                    - img "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [ref=e372]
+                                    - generic [ref=e373]:
+                                        - generic [ref=e374]: Pemerintahan
+                                        - heading "Supian Suri Buka BBGRM 2025, Ajak Warga Perkuat Budaya Gotong Royong" [level=3] [ref=e375]
+                                        - paragraph [ref=e376]: 06 Nov 2025
+                                - link " Pemerintahan Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah 30 Aug 2025" [ref=e377] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/pesan-wakil-walikota-depok-chandra-rahmansyah-pada-hari-ber-muhammadiyah
+                                    - generic [ref=e378]: 
+                                    - generic [ref=e381]:
+                                        - generic [ref=e382]: Pemerintahan
+                                        - heading "Pesan Wakil Walikota Depok Chandra Rahmansyah Pada Hari Ber Muhammadiyah" [level=3] [ref=e383]
+                                        - paragraph [ref=e384]: 30 Aug 2025
+                        - generic [ref=e385]:
+                            - generic [ref=e386]:
+                                - heading "Warganet ›" [level=2] [ref=e387]:
+                                    - text: Warganet
+                                    - generic [ref=e388]: ›
+                                - link "›" [ref=e389] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/kategori/warganet
+                            - generic [ref=e390]:
+                                - link "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN Warganet TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN 25 Sep 2026" [ref=e391] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/tak-hanya-menulis-berita-wartawan-depok-gelar-maulid-dan-santunan
+                                    - img "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [ref=e393]
+                                    - generic [ref=e394]:
+                                        - generic [ref=e395]: Warganet
+                                        - heading "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN" [level=3] [ref=e396]
+                                        - paragraph [ref=e397]: 25 Sep 2026
+                                - link "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta Warganet Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta 23 Sep 2026" [ref=e398] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/tangis-pecah-di-tpu-mutiara-syekh-iqbal-khan-turun-langsung-ke-liang-lahat-antar-kepergian-menantu-tercinta
+                                    - img "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [ref=e400]
+                                    - generic [ref=e401]:
+                                        - generic [ref=e402]: Warganet
+                                        - heading "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta" [level=3] [ref=e403]
+                                        - paragraph [ref=e404]: 23 Sep 2026
+                                - link "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP Warganet LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP 17 Sep 2026" [ref=e405] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/lahirkan-kader-mufassir-modern-takhasus-tafsir-pku-mui-kota-depok-resmi-ditutup
+                                    - img "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [ref=e407]
+                                    - generic [ref=e408]:
+                                        - generic [ref=e409]: Warganet
+                                        - heading "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP" [level=3] [ref=e410]
+                                        - paragraph [ref=e411]: 17 Sep 2026
+                        - generic [ref=e412]:
+                            - generic [ref=e413]:
+                                - heading "Pendidikan ›" [level=2] [ref=e414]:
+                                    - text: Pendidikan
+                                    - generic [ref=e415]: ›
+                                - link "›" [ref=e416] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/kategori/pendidikan
+                            - generic [ref=e417]:
+                                - link "MUI Kota Depok Buka Pendaftaran Pendidikan Kader Ulama Angkatan XI tahun 2025 M/1447 H Pendidikan MUI Kota Depok Buka Pendaftaran Pendidikan Kader Ulama Angkatan XI tahun 2025 M/1447 H 16 Aug 2025" [ref=e418] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/jumat-15-agustus-2025-komisi-pendidikan-kader-ulama-pku-dan-pengurus-harian-mui-kota-depok-mengadakan-rapat-persiapan-pku-tahun-2025-kegiatan-yang-dilaksanakan-di-ruang-rapat-gedung-mui-j
+                                    - img "MUI Kota Depok Buka Pendaftaran Pendidikan Kader Ulama Angkatan XI tahun 2025 M/1447 H" [ref=e420]
+                                    - generic [ref=e421]:
+                                        - generic [ref=e422]: Pendidikan
+                                        - heading "MUI Kota Depok Buka Pendaftaran Pendidikan Kader Ulama Angkatan XI tahun 2025 M/1447 H" [level=3] [ref=e423]
+                                        - paragraph [ref=e424]: 16 Aug 2025
+                                - link "Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z Pendidikan Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z 21 Nov 2024" [ref=e425] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/ketua-dewan-pendidikan-kota-depok-dedy-martoni-berikan-pencerahan-dalam-workshop-sinergitas-orang-tua-sekolah-dan-komite-sekolah-dalam-membina-gen-z
+                                    - img "Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z" [ref=e427]
+                                    - generic [ref=e428]:
+                                        - generic [ref=e429]: Pendidikan
+                                        - heading "Ketua Dewan Pendidikan Kota Depok Dedy Martoni Berikan Pencerahan dalam Workshop Sinergitas Orang Tua, Sekolah, dan Komite Sekolah dalam Membina Gen Z" [level=3] [ref=e430]
+                                        - paragraph [ref=e431]: 21 Nov 2024
+                                - link " Pendidikan Ketua Dewan Pendidikan Kota Depok H. Dedy Martoni, M.Si Hadiri Rakornas III Forum Dewan Pendidikan Indonesia di Makassar 12 Sep 2024" [ref=e432] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/ketua-dewan-pendidikan-kota-depok-h-dedy-martoni-m-si-hadiri-rakornas-iii-forum-dewan-pendidikan-indonesia-di-makassar
+                                    - generic [ref=e433]: 
+                                    - generic [ref=e436]:
+                                        - generic [ref=e437]: Pendidikan
+                                        - heading "Ketua Dewan Pendidikan Kota Depok H. Dedy Martoni, M.Si Hadiri Rakornas III Forum Dewan Pendidikan Indonesia di Makassar" [level=3] [ref=e438]
+                                        - paragraph [ref=e439]: 12 Sep 2024
+                    - complementary [ref=e440]:
+                        - generic [ref=e441]:
+                            - heading "Follow Sosial Media kami:" [level=3] [ref=e442]
+                            - generic [ref=e444]:
+                                - link "" [ref=e445] [cursor=pointer]:
+                                    - /url: https://facebook.com
+                                - link "" [ref=e447] [cursor=pointer]:
+                                    - /url: https://twitter.com
+                                - link "" [ref=e449] [cursor=pointer]:
+                                    - /url: https://instagram.com
+                                - link "" [ref=e451] [cursor=pointer]:
+                                    - /url: https://linkedin.com
+                                - link "" [ref=e453] [cursor=pointer]:
+                                    - /url: https://youtube.com
+                        - generic [ref=e457]:
+                            - paragraph [ref=e461]: Advertisement Space
+                            - paragraph [ref=e462]: 300 × 250px
+                        - generic [ref=e463]:
+                            - heading "Popular" [level=3] [ref=e464]
+                            - generic [ref=e466]:
+                                - link "TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN  25 Sep 2026" [ref=e467] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/tak-hanya-menulis-berita-wartawan-depok-gelar-maulid-dan-santunan
+                                    - generic [ref=e469]:
+                                        - paragraph [ref=e470]: TAK HANYA MENULIS BERITA WARTAWAN DEPOK GELAR MAULID DAN SANTUNAN
+                                        - paragraph [ref=e471]:
+                                            - generic [ref=e472]: 
+                                            - text: 25 Sep 2026
+                                - link "Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta  23 Sep 2026" [ref=e473] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/tangis-pecah-di-tpu-mutiara-syekh-iqbal-khan-turun-langsung-ke-liang-lahat-antar-kepergian-menantu-tercinta
+                                    - generic [ref=e475]:
+                                        - paragraph [ref=e476]: Tangis Pecah di TPU Mutiara, Syekh Iqbal Khan Turun Langsung ke Liang Lahat Antar Kepergian Menantu Tercinta
+                                        - paragraph [ref=e477]:
+                                            - generic [ref=e478]: 
+                                            - text: 23 Sep 2026
+                                - link "LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP  17 Sep 2026" [ref=e479] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/lahirkan-kader-mufassir-modern-takhasus-tafsir-pku-mui-kota-depok-resmi-ditutup
+                                    - generic [ref=e481]:
+                                        - paragraph [ref=e482]: LAHIRKAN KADER MUFASSIR MODERN, TAKHASUS TAFSIR PKU MUI KOTA DEPOK RESMI DITUTUP
+                                        - paragraph [ref=e483]:
+                                            - generic [ref=e484]: 
+                                            - text: 17 Sep 2026
+                                - link "HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF  16 Sep 2026" [ref=e485] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/hari-ke-3-takhassus-tafsir-pku-mui-kota-depok-makin-bergengsi-hadirkan-tgb-zainul-majdi-hingga-bahas-tafsir-ilmiah-pentashihan-mushaf
+                                    - generic [ref=e487]:
+                                        - paragraph [ref=e488]: HARI KE-3 TAKHASSUS TAFSIR PKU MUI KOTA DEPOK MAKIN BERGENGSI, HADIRKAN TGB ZAINUL MAJDI HINGGA BAHAS TAFSIR ILMIAH &amp; PENTASHIHAN MUSHAF
+                                        - paragraph [ref=e489]:
+                                            - generic [ref=e490]: 
+                                            - text: 16 Sep 2026
+                                - link "HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK  16 Sep 2026" [ref=e491] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/hari-ketiga-semakin-bergengsi-tgb-zainul-majdi-hadir-jadi-narasumber-takhassus-tafsir-pku-mui-kota-depok
+                                    - generic [ref=e493]:
+                                        - paragraph [ref=e494]: HARI KETIGA SEMAKIN BERGENGSI, TGB ZAINUL MAJDI HADIR JADI NARASUMBER TAKHASSUS TAFSIR PKU MUI KOTA DEPOK
+                                        - paragraph [ref=e495]:
+                                            - generic [ref=e496]: 
+                                            - text: 16 Sep 2026
+                        - generic [ref=e497]:
+                            - heading "Newsletter" [level=3] [ref=e498]
+                            - paragraph [ref=e499]: Get the latest stories delivered to your inbox daily
+                            - generic [ref=e500]:
+                                - textbox "your@email.com" [ref=e501]
+                                - button "Subscribe" [ref=e502]: Subscribe 
+                        - generic [ref=e505]:
+                            - paragraph [ref=e509]: Advertisement Space
+                            - paragraph [ref=e510]: 300 × 250px
+                        - generic [ref=e511]:
+                            - heading "Categories" [level=3] [ref=e512]
+                            - generic [ref=e514]:
+                                - link "Lifestyle 2" [ref=e515] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/kategori/lifestyle
+                                    - generic [ref=e516]: Lifestyle
+                                    - generic [ref=e517]: "2"
+                                - link "Pemerintahan 10" [ref=e518] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/kategori/pemerintahan
+                                    - generic [ref=e519]: Pemerintahan
+                                    - generic [ref=e520]: "10"
+                                - link "Warganet 111" [ref=e521] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/kategori/warganet
+                                    - generic [ref=e522]: Warganet
+                                    - generic [ref=e523]: "111"
+                                - link "Pendidikan 4" [ref=e524] [cursor=pointer]:
+                                    - /url: http://127.0.0.1:8000/berita/kategori/pendidikan
+                                    - generic [ref=e525]: Pendidikan
+                                    - generic [ref=e526]: "4"
+    - contentinfo [ref=e527]:
+        - generic [ref=e528]:
+            - generic [ref=e529]:
+                - generic [ref=e530]:
+                    - link "NEWS MEDIA" [ref=e531] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000
+                        - generic [ref=e532]: NEWS
+                        - generic [aria-hidden] [ref=e533]: 
+                        - generic [ref=e534]: MEDIA
+                    - generic [ref=e535]:
+                        - link "Ikuti kami di Facebook" [ref=e536] [cursor=pointer]:
+                            - /url: https://facebook.com
+                            - generic [aria-hidden] [ref=e537]: 
+                        - link "Ikuti kami di Twitter" [ref=e538] [cursor=pointer]:
+                            - /url: https://twitter.com
+                            - generic [aria-hidden] [ref=e539]: 
+                        - link "Ikuti kami di Instagram" [ref=e540] [cursor=pointer]:
+                            - /url: https://instagram.com
+                            - generic [aria-hidden] [ref=e541]: 
+                        - link "Ikuti kami di LinkedIn" [ref=e542] [cursor=pointer]:
+                            - /url: https://linkedin.com
+                            - generic [aria-hidden] [ref=e543]: 
+                        - link "Ikuti kami di YouTube" [ref=e544] [cursor=pointer]:
+                            - /url: https://youtube.com
+                            - generic [aria-hidden] [ref=e545]: 
+                - generic [ref=e546]:
+                    - heading "Menu" [level=3] [ref=e547]
+                    - list [ref=e548]:
+                        - listitem [ref=e549]:
+                            - link "Beranda" [ref=e550] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000
+                        - listitem [ref=e551]:
+                            - link "Semua Berita" [ref=e552] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/berita
+                        - listitem [ref=e553]:
+                            - link "Tentang Kami" [ref=e554] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=e555]:
+                            - link "Kontak" [ref=e556] [cursor=pointer]:
+                                - /url: "#"
+                - generic [ref=e557]:
+                    - heading "Kategori" [level=3] [ref=e558]
+                    - list [ref=e559]:
+                        - listitem [ref=e560]:
+                            - link "Warganet (111)" [ref=e561] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/berita/kategori/warganet
+                        - listitem [ref=e562]:
+                            - link "Pemerintahan (10)" [ref=e563] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/berita/kategori/pemerintahan
+                        - listitem [ref=e564]:
+                            - link "Pendidikan (4)" [ref=e565] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/berita/kategori/pendidikan
+                        - listitem [ref=e566]:
+                            - link "Lifestyle (2)" [ref=e567] [cursor=pointer]:
+                                - /url: http://127.0.0.1:8000/berita/kategori/lifestyle
+                - generic [ref=e568]:
+                    - heading "Perusahaan" [level=3] [ref=e569]
+                    - list [ref=e570]:
+                        - listitem [ref=e571]:
+                            - link "Tentang Kami" [ref=e572] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=e573]:
+                            - link "Kebijakan Privasi" [ref=e574] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=e575]:
+                            - link "Syarat & Ketentuan" [ref=e576] [cursor=pointer]:
+                                - /url: "#"
+                        - listitem [ref=e577]:
+                            - link "Hubungi Kami" [ref=e578] [cursor=pointer]:
+                                - /url: "#"
+                - generic [ref=e579]:
+                    - heading "Newsletter" [level=3] [ref=e580]
+                    - paragraph [ref=e581]: Dapatkan berita terbaru langsung ke inbox Anda
+                    - generic [ref=e582]:
+                        - textbox "Email Anda" [ref=e583]
+                        - button "Subscribe" [ref=e584]
+            - generic [ref=e586]:
+                - paragraph [ref=e587]: © 2026 NEWS MEDIA. Hak cipta dilindungi.
+                - generic [ref=e588]:
+                    - link "Sitemap" [ref=e589] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Disclaimer" [ref=e590] [cursor=pointer]:
+                        - /url: "#"
+                    - link "Iklan" [ref=e591] [cursor=pointer]:
+                        - /url: "#"

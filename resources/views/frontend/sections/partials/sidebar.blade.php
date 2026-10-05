@@ -110,7 +110,7 @@
         </div>
 
         <div class="mb-6 bg-gray-100 rounded-md p-4">
-            <p class="text-sm font-semibold text-gray-900 mb-3">Follow us:</p>
+            <p class="text-sm font-semibold text-gray-900 mb-3">Follow Sosial Media kami::</p>
 
             <div class="flex gap-3 flex-wrap justify-center">
                 <!-- Facebook -->
@@ -204,4 +204,3 @@
         </div>
     </div>
 </div>
-

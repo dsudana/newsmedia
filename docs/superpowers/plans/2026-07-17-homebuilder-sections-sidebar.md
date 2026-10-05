@@ -4,7 +4,8 @@
 
 **Goal:** Add 6 new homebuilder section types (breaking_news_strip, recent_and_popular, category_strip_carousel, category_grid_section, category_list_section, sports_carousel) and create a comprehensive sidebar with tag cloud, social media links, ads, and newsletter components.
 
-**Architecture:** 
+**Architecture:**
+
 - Each section type follows existing pattern: database model (HomepageSection), service method for data resolution, Blade view for rendering, admin config modal for settings
 - Sidebar components are reusable partials placed in `resources/views/partials/sidebar/` with their own data fetching logic
 - Section types are registered in HomepageSection model's SECTION_TYPES constant with metadata (label, icon, description, color)
@@ -28,12 +29,14 @@
 **New Files to Create:**
 
 Sidebar Components:
+
 - `resources/views/partials/sidebar/tag-cloud.blade.php` - Tag cloud display
 - `resources/views/partials/sidebar/social-media.blade.php` - Social media links
 - `resources/views/partials/sidebar/ads.blade.php` - Advertisement section
 - `resources/views/partials/sidebar/newsletter.blade.php` - Newsletter signup form
 
 Section Views:
+
 - `resources/views/frontend/sections/breaking_news_strip.blade.php`
 - `resources/views/frontend/sections/recent_and_popular.blade.php`
 - `resources/views/frontend/sections/category_strip_carousel.blade.php`
@@ -42,6 +45,7 @@ Section Views:
 - `resources/views/frontend/sections/sports_carousel.blade.php`
 
 Admin Config Modals:
+
 - `resources/views/admin/homepage-builder/partials/modals/section-config-breaking_news_strip.blade.php`
 - `resources/views/admin/homepage-builder/partials/modals/section-config-recent_and_popular.blade.php`
 - `resources/views/admin/homepage-builder/partials/modals/section-config-category_strip_carousel.blade.php`
@@ -50,6 +54,7 @@ Admin Config Modals:
 - `resources/views/admin/homepage-builder/partials/modals/section-config-sports_carousel.blade.php`
 
 **Files to Modify:**
+
 - `app/Models/HomepageSection.php` - Add 6 new section types to SECTION_TYPES constant
 - `app/Services/HomepageBuilderService.php` - Add 6 data resolver methods
 - `resources/views/admin/homepage-builder/index.blade.php` - Include 6 new config modals
@@ -60,6 +65,7 @@ Admin Config Modals:
 ### Task 1: Create Sidebar Infrastructure & Tag Cloud Component
 
 **Files:**
+
 - Create: `resources/views/partials/sidebar/tag-cloud.blade.php`
 - Create: `resources/views/partials/sidebar/social-media.blade.php`
 - Create: `resources/views/partials/sidebar/ads.blade.php`
@@ -67,6 +73,7 @@ Admin Config Modals:
 - Modify: `app/Models/HomepageSection.php` - Add 6 new section type entries
 
 **Interfaces:**
+
 - Consumes: Existing Article model with tags, existing database schema
 - Produces: Reusable sidebar partials that can be included in any layout
 
@@ -75,6 +82,7 @@ Admin Config Modals:
 - [ ] **Step 1: Create sidebar directory structure**
 
 Run:
+
 ```bash
 mkdir -p resources/views/partials/sidebar
 ```
@@ -82,21 +90,22 @@ mkdir -p resources/views/partials/sidebar
 - [ ] **Step 2: Create tag-cloud sidebar component**
 
 Create `resources/views/partials/sidebar/tag-cloud.blade.php`:
+
 ```blade
 <div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
     <h3 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">
         <i class="fas fa-tag text-red-600 mr-2"></i>Tags
     </h3>
-    
+
     @php
         $tags = $tags ?? \App\Models\Tag::orderByDesc('articles_count')
             ->limit(30)
             ->pluck('name', 'slug');
     @endphp
-    
+
     <div class="flex flex-wrap gap-2">
         @forelse ($tags as $slug => $name)
-            <a href="{{ route('tags.show', $slug) }}" 
+            <a href="{{ route('tags.show', $slug) }}"
                class="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded hover:bg-red-50 hover:text-red-600 transition-colors">
                 {{ $name }}
             </a>
@@ -110,14 +119,15 @@ Create `resources/views/partials/sidebar/tag-cloud.blade.php`:
 - [ ] **Step 3: Create social-media sidebar component**
 
 Create `resources/views/partials/sidebar/social-media.blade.php`:
+
 ```blade
 <div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
     <h3 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">
-        <i class="fas fa-share-alt text-red-600 mr-2"></i>Follow Us
+        <i class="fas fa-share-alt text-red-600 mr-2"></i>Follow Sosial Media kami:
     </h3>
-    
+
     <div class="flex gap-3">
-        <a href="https://facebook.com" target="_blank" rel="noopener" 
+        <a href="https://facebook.com" target="_blank" rel="noopener"
            class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
             <i class="fab fa-facebook-f"></i>
         </a>
@@ -144,12 +154,13 @@ Create `resources/views/partials/sidebar/social-media.blade.php`:
 - [ ] **Step 4: Create ads sidebar component**
 
 Create `resources/views/partials/sidebar/ads.blade.php`:
+
 ```blade
 <div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
     <h3 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">
         <i class="fas fa-bullhorn text-red-600 mr-2"></i>Advertisement
     </h3>
-    
+
     {{-- Ad Space (Placeholder) --}}
     <div class="bg-gray-100 rounded-lg p-8 text-center">
         <div class="aspect-square flex items-center justify-center">
@@ -160,7 +171,7 @@ Create `resources/views/partials/sidebar/ads.blade.php`:
             </div>
         </div>
     </div>
-    
+
     {{-- Configurable ads would go here in production --}}
     @if(isset($ads) && count($ads) > 0)
         @foreach($ads as $ad)
@@ -176,13 +187,14 @@ Create `resources/views/partials/sidebar/ads.blade.php`:
 - [ ] **Step 5: Create newsletter sidebar component**
 
 Create `resources/views/partials/sidebar/newsletter.blade.php`:
+
 ```blade
 <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-lg border border-red-200 p-6 mb-6">
     <h3 class="text-lg font-bold text-gray-900 mb-2">
         <i class="fas fa-envelope text-red-600 mr-2"></i>Newsletter
     </h3>
     <p class="text-sm text-gray-600 mb-4">Subscribe to get latest news and updates</p>
-    
+
     <form class="space-y-3" onsubmit="handleNewsletterSubscribe(event)">
         @csrf
         <input type="email" name="email" placeholder="Enter your email" required
@@ -192,7 +204,7 @@ Create `resources/views/partials/sidebar/newsletter.blade.php`:
             Subscribe
         </button>
     </form>
-    
+
     <p class="text-xs text-gray-500 mt-3">We don't spam. Unsubscribe at any time.</p>
 </div>
 
@@ -200,7 +212,7 @@ Create `resources/views/partials/sidebar/newsletter.blade.php`:
     function handleNewsletterSubscribe(e) {
         e.preventDefault();
         const email = e.target.email.value;
-        
+
         fetch('/api/newsletter/subscribe', {
             method: 'POST',
             headers: {
@@ -284,9 +296,11 @@ git commit -m "feat: add sidebar components and section type constants"
 ### Task 2: Add Service Methods for Breaking News Strip & Recent & Popular
 
 **Files:**
+
 - Modify: `app/Services/HomepageBuilderService.php` - Add 2 data resolver methods
 
 **Interfaces:**
+
 - Consumes: Article model queries, view needs to receive `$breakingNews` and `$recentPopular` arrays
 - Produces: `getBreakingNewsStripData()` method returning articles, `getRecentAndPopularData()` method returning recent + popular arrays
 
@@ -304,12 +318,12 @@ public function getBreakingNewsStripData($config = []): array
 {
     $limit = $config['limit'] ?? 12;
     $sliderSpeed = $config['slider_speed'] ?? 3000;
-    
+
     $articles = Article::where('status', 'published')
         ->orderByDesc('published_at')
         ->limit($limit)
         ->get(['id', 'title', 'slug', 'featured_image', 'published_at']);
-    
+
     return [
         'articles' => $articles,
         'slider_speed' => $sliderSpeed,
@@ -329,17 +343,17 @@ public function getRecentAndPopularData($config = []): array
 {
     $recentLimit = $config['recent_limit'] ?? 6;
     $popularLimit = $config['popular_limit'] ?? 4;
-    
+
     $recent = Article::where('status', 'published')
         ->orderByDesc('published_at')
         ->limit($recentLimit)
         ->get();
-    
+
     $popular = Article::where('status', 'published')
         ->orderByDesc('views_count')
         ->limit($popularLimit)
         ->get();
-    
+
     return [
         'recent_articles' => $recent,
         'popular_articles' => $popular,
@@ -363,11 +377,13 @@ git commit -m "feat: add breaking news and recent/popular data resolvers"
 ### Task 3: Create Breaking News Strip Section View & Admin Config
 
 **Files:**
+
 - Create: `resources/views/frontend/sections/breaking_news_strip.blade.php`
 - Create: `resources/views/admin/homepage-builder/partials/modals/section-config-breaking_news_strip.blade.php`
 - Modify: `resources/views/admin/homepage-builder/index.blade.php` - Include new modal
 
 **Interfaces:**
+
 - Consumes: `$articles` array, `$slider_speed` config value
 - Produces: Rendered section view with Swiper carousel
 
@@ -383,13 +399,13 @@ Create `resources/views/frontend/sections/breaking_news_strip.blade.php`:
         @if($title ?? null)
             <h2 class="text-xl font-bold text-gray-900 mb-4">{{ $title }}</h2>
         @endif
-        
+
         <div class="carousel-breaking-strip-{{ $section->id }} swiper">
             <div class="swiper-wrapper">
                 @forelse ($data['articles'] ?? [] as $article)
                     <div class="swiper-slide">
                         <a href="{{ route('blog.show', $article->slug) }}" class="flex items-center gap-3 group">
-                            <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}" 
+                            <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}"
                                  alt="{{ $article->title }}"
                                  class="w-16 h-16 object-cover rounded shrink-0">
                             <div class="flex-1 min-w-0">
@@ -513,6 +529,7 @@ git commit -m "feat: add breaking news strip section type"
 ### Task 4: Create Recent & Popular Section View & Admin Config
 
 **Files:**
+
 - Create: `resources/views/frontend/sections/recent_and_popular.blade.php`
 - Create: `resources/views/admin/homepage-builder/partials/modals/section-config-recent_and_popular.blade.php`
 - Modify: `resources/views/admin/homepage-builder/index.blade.php` - Include modal
@@ -555,7 +572,7 @@ Create `resources/views/frontend/sections/recent_and_popular.blade.php`:
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     @foreach (($data['recent_articles'] ?? [])->skip(2)->take(4) as $article)
                         <a href="{{ route('blog.show', $article->slug) }}" class="group flex gap-3 pb-4 hover:opacity-80 transition-opacity">
-                            <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}" 
+                            <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}"
                                  alt="{{ $article->title }}" class="w-20 h-16 object-cover rounded flex-shrink-0">
                             <div class="flex-1 min-w-0">
                                 <p class="text-xs text-gray-500">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d, Y') }}</p>
@@ -681,6 +698,7 @@ git commit -m "feat: add recent and popular section type"
 ### Task 5: Add Service Methods for Carousel Section Types
 
 **Files:**
+
 - Modify: `app/Services/HomepageBuilderService.php` - Add 3 data resolver methods
 
 ---
@@ -698,18 +716,18 @@ public function getCategoryStripCarouselData($config = []): array
     $limit = $config['limit'] ?? 12;
     $category = $config['category'] ?? null;
     $sliderSpeed = $config['slider_speed'] ?? 3000;
-    
+
     $query = Article::where('status', 'published')
         ->orderByDesc('published_at');
-    
+
     if ($category) {
         $query->whereHas('category', function($q) use ($category) {
             $q->where('slug', $category);
         });
     }
-    
+
     $articles = $query->limit($limit)->get();
-    
+
     return [
         'articles' => $articles,
         'slider_speed' => $sliderSpeed,
@@ -729,18 +747,18 @@ public function getCategoryGridSectionData($config = []): array
 {
     $limit = $config['limit'] ?? 8;
     $category = $config['category'] ?? null;
-    
+
     $query = Article::where('status', 'published')
         ->orderByDesc('published_at');
-    
+
     if ($category) {
         $query->whereHas('category', function($q) use ($category) {
             $q->where('slug', $category);
         });
     }
-    
+
     $articles = $query->limit($limit)->get();
-    
+
     return ['articles' => $articles];
 }
 ```
@@ -757,18 +775,18 @@ public function getCategoryListSectionData($config = []): array
 {
     $limit = $config['limit'] ?? 6;
     $category = $config['category'] ?? null;
-    
+
     $query = Article::where('status', 'published')
         ->orderByDesc('published_at');
-    
+
     if ($category) {
         $query->whereHas('category', function($q) use ($category) {
             $q->where('slug', $category);
         });
     }
-    
+
     $articles = $query->limit($limit)->get();
-    
+
     return ['articles' => $articles];
 }
 ```
@@ -785,7 +803,7 @@ public function getSportsCarouselData($config = []): array
 {
     $limit = $config['limit'] ?? 10;
     $sliderSpeed = $config['slider_speed'] ?? 3000;
-    
+
     $articles = Article::where('status', 'published')
         ->whereHas('category', function($q) {
             $q->where('slug', 'sports');
@@ -793,7 +811,7 @@ public function getSportsCarouselData($config = []): array
         ->orderByDesc('published_at')
         ->limit($limit)
         ->get();
-    
+
     return [
         'articles' => $articles,
         'slider_speed' => $sliderSpeed,
@@ -813,6 +831,7 @@ git commit -m "feat: add carousel section data resolvers"
 ### Task 6: Create Category Strip Carousel & Category Grid Section Views
 
 **Files:**
+
 - Create: `resources/views/frontend/sections/category_strip_carousel.blade.php`
 - Create: `resources/views/frontend/sections/category_grid_section.blade.php`
 - Create: Admin config modals for both
@@ -830,14 +849,14 @@ Create `resources/views/frontend/sections/category_strip_carousel.blade.php`:
         @if($title ?? null)
             <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ $title }}</h2>
         @endif
-        
+
         <div class="carousel-category-strip-{{ $section->id }} swiper">
             <div class="swiper-wrapper">
                 @forelse ($data['articles'] ?? [] as $article)
                     <div class="swiper-slide">
                         <a href="{{ route('blog.show', $article->slug) }}" class="block group">
                             <div class="overflow-hidden aspect-[4/3] mb-3 bg-gray-900 group-hover:opacity-90 transition-opacity">
-                                <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}" 
+                                <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}"
                                      alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
                             <p class="text-xs text-gray-500">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d') }}</p>
@@ -963,12 +982,12 @@ Create `resources/views/frontend/sections/category_grid_section.blade.php`:
         @if($title ?? null)
             <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ $title }}</h2>
         @endif
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             @forelse ($data['articles'] ?? [] as $article)
                 <a href="{{ route('blog.show', $article->slug) }}" class="group block overflow-hidden">
                     <div class="aspect-video overflow-hidden mb-3 bg-gray-900 group-hover:opacity-90 transition-opacity">
-                        <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}" 
+                        <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}"
                              alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -1077,6 +1096,7 @@ git commit -m "feat: add category strip carousel and grid section types"
 ### Task 7: Create Category List & Sports Carousel Section Views
 
 **Files:**
+
 - Create: `resources/views/frontend/sections/category_list_section.blade.php`
 - Create: `resources/views/frontend/sections/sports_carousel.blade.php`
 - Create: Admin config modals for both
@@ -1094,7 +1114,7 @@ Create `resources/views/frontend/sections/category_list_section.blade.php`:
         @if($title ?? null)
             <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ $title }}</h2>
         @endif
-        
+
         <div class="space-y-6">
             @forelse ($data['articles'] ?? [] as $article)
                 <a href="{{ route('blog.show', $article->slug) }}" class="flex gap-4 group hover:opacity-80 transition-opacity">
@@ -1204,14 +1224,14 @@ Create `resources/views/frontend/sections/sports_carousel.blade.php`:
         @if($title ?? null)
             <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ $title }}</h2>
         @endif
-        
+
         <div class="carousel-sports-{{ $section->id }} swiper">
             <div class="swiper-wrapper">
                 @forelse ($data['articles'] ?? [] as $article)
                     <div class="swiper-slide">
                         <a href="{{ route('blog.show', $article->slug) }}" class="group block overflow-hidden">
                             <div class="aspect-[3/2] overflow-hidden mb-3 bg-gray-900 group-hover:opacity-90 transition-opacity">
-                                <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}" 
+                                <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}"
                                      alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
                             <div>
@@ -1334,6 +1354,7 @@ git commit -m "feat: add category list and sports carousel section types"
 ### Task 8: Final Setup - Clear Caches & Test All Sections
 
 **Files:**
+
 - No files to create/modify
 
 ---
@@ -1341,6 +1362,7 @@ git commit -m "feat: add category list and sports carousel section types"
 - [ ] **Step 1: Clear all caches**
 
 Run:
+
 ```bash
 php artisan cache:clear && php artisan view:clear && php artisan route:clear && php artisan config:clear
 ```
@@ -1350,6 +1372,7 @@ Expected: All cache cleared successfully messages.
 - [ ] **Step 2: Test homebuilder access**
 
 Navigate to `http://localhost/admin/homepage-builder` in browser. Verify:
+
 - All 16 section types visible in "Add Section" modal
 - No console errors
 - Admin interface responsive
@@ -1357,6 +1380,7 @@ Navigate to `http://localhost/admin/homepage-builder` in browser. Verify:
 - [ ] **Step 3: Test adding each new section**
 
 For each section type, click card → config modal opens → set values → click Save. Verify:
+
 - Section appears in list
 - Success toast displays
 - Form values persisted on re-edit
@@ -1364,6 +1388,7 @@ For each section type, click card → config modal opens → set values → clic
 - [ ] **Step 4: Test frontend rendering**
 
 Add one section of each type to homepage. View homepage at `http://localhost/`. Verify:
+
 - All sections render without errors
 - Carousels auto-scroll
 - Images load
@@ -1382,6 +1407,7 @@ git commit -m "chore: clear caches and verify all section types working"
 ## Summary
 
 This plan adds:
+
 - **4 Sidebar Components** (Tag Cloud, Social Media, Ads, Newsletter)
 - **6 New Section Types** (Breaking News Strip, Recent & Popular, Category Strip Carousel, Category Grid, Category List, Sports Carousel)
 - **Service methods** for data resolution
