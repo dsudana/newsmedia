@@ -1,4 +1,5 @@
-<div id="configModal_image_slider" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+<div id="configModal_image_slider"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-md shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <!-- Header -->
         <div class="sticky top-0 bg-gradient-to-r from-purple-600 to-purple-700 text-white p-6 border-b">
@@ -9,7 +10,8 @@
                     </h3>
                     <p class="text-sm text-purple-50 mt-1">Manage slider images, captions and CTAs</p>
                 </div>
-                <button type="button" onclick="closeConfigModal('image_slider')" class="p-2 hover:bg-purple-500 rounded-md transition-colors">
+                <button type="button" onclick="closeConfigModal('image_slider')"
+                    class="p-2 hover:bg-purple-500 rounded-md transition-colors">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
@@ -27,7 +29,7 @@
                         <i class="fas fa-heading text-purple-600 mr-2"></i>Section Title (Optional)
                     </label>
                     <input type="text" id="title_image_slider" name="title" placeholder="e.g., Featured Campaign"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                 </div>
 
                 <!-- Slider Items Management -->
@@ -41,7 +43,7 @@
                     </div>
 
                     <button type="button" onclick="addSliderItem('image_slider')"
-                            class="w-full px-4 py-3 border-2 border-dashed border-purple-300 text-purple-700 rounded-md hover:bg-purple-50 transition font-semibold flex items-center justify-center gap-2">
+                        class="w-full px-4 py-3 border-2 border-dashed border-purple-300 text-purple-700 rounded-md hover:bg-purple-50 transition font-semibold flex items-center justify-center gap-2">
                         <i class="fas fa-plus"></i>Add Slider Item
                     </button>
                 </div>
@@ -68,11 +70,11 @@
         <!-- Footer -->
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('image_slider')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition font-semibold">
+                class="px-6 py-2 border border-gray-400 text-gray-700 rounded-md hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('image_slider')"
-                    class="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-md hover:opacity-90 transition font-semibold flex items-center gap-2">
+                class="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-md hover:opacity-90 transition font-semibold flex items-center gap-2">
                 <i class="fas fa-save"></i>Save Settings
             </button>
         </div>
@@ -106,7 +108,7 @@
     function renderSliderItem(sectionType, index, item) {
         const container = document.getElementById(`sliderItemsContainer_${sectionType}`);
         const itemHtml = `
-            <div class="slider-item-card border border-gray-300 rounded-md p-4 bg-gray-50">
+            <div class="slider-item-card border border-gray-400 rounded-md p-4 bg-gray-50">
                 <div class="flex justify-between items-center mb-4">
                     <h5 class="font-semibold text-gray-900">Slide #${index + 1}</h5>
                     <button type="button" onclick="removeSliderItem(this)" class="text-red-600 hover:text-red-800 text-sm font-semibold">
@@ -122,7 +124,7 @@
                     <div class="flex gap-2">
                         <div class="flex-1">
                             <input type="hidden" class="slider-image-url" name="config[items][${index}][image_url]" value="${item.image_url || ''}">
-                            <div class="slider-image-preview bg-gray-200 rounded border-2 border-dashed border-gray-300 p-3 text-center cursor-pointer hover:bg-gray-300 transition"
+                            <div class="slider-image-preview bg-gray-200 rounded border-2 border-dashedborder-gray-400 p-3 text-center cursor-pointer hover:bg-gray-300 transition"
                                  onclick="document.querySelector('.slider-image-input-${index}').click()">
                                 ${item.image_url ? `<img src="${item.image_url}" alt="Preview" class="max-h-32 mx-auto rounded">` : '<i class="fas fa-cloud-upload-alt text-3xl text-gray-500 mb-2"></i><p class="text-xs text-gray-600">Click to upload</p>'}
                             </div>
@@ -138,7 +140,7 @@
                         <i class="fas fa-heading text-purple-600 mr-1"></i>Short Caption
                     </label>
                     <textarea name="config[items][${index}][caption]" maxlength="100" rows="2" placeholder="Max 100 characters..."
-                              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm resize-none">${item.caption || ''}</textarea>
+                              class="w-full px-3 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm resize-none">${item.caption || ''}</textarea>
                 </div>
 
                 <!-- CTA Text -->
@@ -147,7 +149,7 @@
                         <i class="fas fa-button text-purple-600 mr-1"></i>CTA Button Text
                     </label>
                     <input type="text" name="config[items][${index}][cta_text]" maxlength="50" placeholder="e.g., Learn More"
-                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
+                           class="w-full px-3 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
                            value="${item.cta_text || ''}">
                 </div>
 
@@ -157,7 +159,7 @@
                         <i class="fas fa-link text-purple-600 mr-1"></i>CTA URL
                     </label>
                     <input type="url" name="config[items][${index}][cta_url]" placeholder="https://example.com"
-                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
+                           class="w-full px-3 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
                            value="${item.cta_url || ''}">
                 </div>
             </div>
@@ -191,37 +193,39 @@
         preview.innerHTML = '<p class="text-sm text-gray-600">Uploading...</p>';
 
         fetch('/admin/upload-section-image', {
-            method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': csrfToken.getAttribute('content'),
-            },
-            body: formData
-        })
-        .then(response => {
-            // Log response for debugging
-            if (!response.ok) {
-                return response.text().then(text => {
-                    console.error('Server response:', text);
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                });
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success && data.url) {
-                const urlInput = input.closest('.slider-item-card').querySelector('.slider-image-url');
-                const preview = input.closest('.slider-item-card').querySelector('.slider-image-preview');
-                urlInput.value = data.url;
-                preview.innerHTML = `<img src="${data.url}" alt="Preview" class="max-h-32 mx-auto rounded">`;
-            } else if (data.message) {
-                alert('Upload error: ' + data.message);
-                preview.innerHTML = '<i class="fas fa-cloud-upload-alt text-3xl text-gray-500 mb-2"></i><p class="text-xs text-gray-600">Click to upload</p>';
-            }
-        })
-        .catch(error => {
-            console.error('Upload error:', error);
-            alert('Upload failed: ' + error.message);
-            preview.innerHTML = '<i class="fas fa-cloud-upload-alt text-3xl text-gray-500 mb-2"></i><p class="text-xs text-gray-600">Click to upload</p>';
-        });
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken.getAttribute('content'),
+                },
+                body: formData
+            })
+            .then(response => {
+                // Log response for debugging
+                if (!response.ok) {
+                    return response.text().then(text => {
+                        console.error('Server response:', text);
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success && data.url) {
+                    const urlInput = input.closest('.slider-item-card').querySelector('.slider-image-url');
+                    const preview = input.closest('.slider-item-card').querySelector('.slider-image-preview');
+                    urlInput.value = data.url;
+                    preview.innerHTML = `<img src="${data.url}" alt="Preview" class="max-h-32 mx-auto rounded">`;
+                } else if (data.message) {
+                    alert('Upload error: ' + data.message);
+                    preview.innerHTML =
+                        '<i class="fas fa-cloud-upload-alt text-3xl text-gray-500 mb-2"></i><p class="text-xs text-gray-600">Click to upload</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Upload error:', error);
+                alert('Upload failed: ' + error.message);
+                preview.innerHTML =
+                    '<i class="fas fa-cloud-upload-alt text-3xl text-gray-500 mb-2"></i><p class="text-xs text-gray-600">Click to upload</p>';
+            });
     }
 </script>

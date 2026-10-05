@@ -2,9 +2,11 @@
 
 @section('content')
     <!-- Advertisement Section (Full Width) -->
-    <div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-2 sm:py-3 lg:py-4 transition-colors duration-300">
+    <div
+        class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-2 sm:py-3 lg:py-4 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center h-14 sm:h-20 lg:h-24 overflow-hidden">
+            <div
+                class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center h-14 sm:h-20 lg:h-24 overflow-hidden">
                 <x-frontend.advertisement placement="header_banner" />
             </div>
         </div>
@@ -85,12 +87,14 @@
                                 <div class="rounded-lg overflow-hidden mb-4 aspect-video bg-gray-200 dark:bg-gray-900">
                                     @if ($featuredArticle->featured_image)
                                         @php
-                                            $featuredImageUrl = str_starts_with($featuredArticle->featured_image, 'http')
+                                            $featuredImageUrl = str_starts_with(
+                                                $featuredArticle->featured_image,
+                                                'http',
+                                            )
                                                 ? $featuredArticle->featured_image
                                                 : asset('storage/' . $featuredArticle->featured_image);
                                         @endphp
-                                        <img src="{{ $featuredImageUrl }}"
-                                            alt="{{ $featuredArticle->title }}"
+                                        <img src="{{ $featuredImageUrl }}" alt="{{ $featuredArticle->title }}"
                                             class="w-full h-full object-cover group-hover:scale-105 transition"
                                             loading="lazy">
                                     @else
@@ -128,7 +132,7 @@
                         </div>
 
                         @if ($articles->count() > 1)
-                            <div class="border-t-2 border-gray-300 pt-12 mb-8">
+                            <div class="border-t-2border-gray-400 pt-12 mb-8">
                                 <h3 class="text-xl font-bold text-gray-900 mb-6">Artikel Lainnya</h3>
                             </div>
 
@@ -136,15 +140,15 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                                 @foreach ($articles->slice(1) as $article)
                                     <a href="{{ route('blog.show', $article->slug) }}" class="group">
-                                        <div class="rounded-lg overflow-hidden mb-3 aspect-video bg-gray-200 dark:bg-gray-900">
+                                        <div
+                                            class="rounded-lg overflow-hidden mb-3 aspect-video bg-gray-200 dark:bg-gray-900">
                                             @if ($article->featured_image)
                                                 @php
                                                     $gridImageUrl = str_starts_with($article->featured_image, 'http')
                                                         ? $article->featured_image
                                                         : asset('storage/' . $article->featured_image);
                                                 @endphp
-                                                <img src="{{ $gridImageUrl }}"
-                                                    alt="{{ $article->title }}"
+                                                <img src="{{ $gridImageUrl }}" alt="{{ $article->title }}"
                                                     class="w-full h-full object-cover group-hover:scale-105 transition"
                                                     loading="lazy">
                                             @else
@@ -234,12 +238,13 @@
                                             <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
                                                 @php
                                                     $recentImageUrl = $article->featured_image
-                                                        ? (str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image))
+                                                        ? (str_starts_with($article->featured_image, 'http')
+                                                            ? $article->featured_image
+                                                            : asset('storage/' . $article->featured_image))
                                                         : '/images/placeholder-news-media.svg';
                                                 @endphp
-                                                <img src="{{ $recentImageUrl }}"
-                                                    alt="{{ $article->title }}" loading="lazy"
-                                                    class="w-full h-full object-cover">
+                                                <img src="{{ $recentImageUrl }}" alt="{{ $article->title }}"
+                                                    loading="lazy" class="w-full h-full object-cover">
                                             </div>
                                             <div class="flex-1 min-w-0">
                                                 <h4

@@ -6,7 +6,8 @@
                 <h1 class="text-3xl font-bold text-gray-900">{{ $article->title }}</h1>
                 <p class="text-sm text-gray-600 mt-1">Article Analytics & SEO Performance</p>
             </div>
-            <a href="{{ route('admin.analytics.index') }}" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition">
+            <a href="{{ route('admin.analytics.index') }}"
+                class="px-4 py-2 border border-gray-400 text-gray-700 rounded-md hover:bg-gray-50 transition">
                 <i class="fas fa-arrow-left mr-2"></i>Back to Analytics
             </a>
         </div>
@@ -16,7 +17,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                     <p class="text-xs text-gray-600 font-semibold uppercase">Category</p>
-                    <p class="text-lg font-semibold text-gray-900 mt-1">{{ $article->category->name ?? 'Uncategorized' }}</p>
+                    <p class="text-lg font-semibold text-gray-900 mt-1">
+                        {{ $article->category->name ?? 'Uncategorized' }}</p>
                 </div>
                 <div>
                     <p class="text-xs text-gray-600 font-semibold uppercase">Author</p>
@@ -24,7 +26,8 @@
                 </div>
                 <div>
                     <p class="text-xs text-gray-600 font-semibold uppercase">Published</p>
-                    <p class="text-lg font-semibold text-gray-900 mt-1">{{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}</p>
+                    <p class="text-lg font-semibold text-gray-900 mt-1">
+                        {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}</p>
                 </div>
             </div>
         </div>
@@ -47,7 +50,8 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-xs text-gray-600 font-semibold uppercase">Avg Scroll Depth</p>
-                        <p class="text-2xl font-bold text-purple-600 mt-1">{{ number_format($analytics->avg('scroll_depth') ?? 0, 1) }}%</p>
+                        <p class="text-2xl font-bold text-purple-600 mt-1">
+                            {{ number_format($analytics->avg('scroll_depth') ?? 0, 1) }}%</p>
                     </div>
                     <div class="w-12 h-12 bg-purple-100 rounded-md flex items-center justify-center">
                         <i class="fas fa-arrow-down text-purple-600 text-xl"></i>
@@ -59,7 +63,8 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-xs text-gray-600 font-semibold uppercase">Avg Time</p>
-                        <p class="text-2xl font-bold text-orange-600 mt-1">{{ number_format($analytics->avg('avg_time_on_page') ?? 0, 0) }}s</p>
+                        <p class="text-2xl font-bold text-orange-600 mt-1">
+                            {{ number_format($analytics->avg('avg_time_on_page') ?? 0, 0) }}s</p>
                     </div>
                     <div class="w-12 h-12 bg-orange-100 rounded-md flex items-center justify-center">
                         <i class="fas fa-hourglass text-orange-600 text-xl"></i>
@@ -71,7 +76,8 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-xs text-gray-600 font-semibold uppercase">Unique Visitors</p>
-                        <p class="text-2xl font-bold text-green-600 mt-1">{{ number_format($analytics->sum('unique_visitors') ?? 0) }}</p>
+                        <p class="text-2xl font-bold text-green-600 mt-1">
+                            {{ number_format($analytics->sum('unique_visitors') ?? 0) }}</p>
                     </div>
                     <div class="w-12 h-12 bg-green-100 rounded-md flex items-center justify-center">
                         <i class="fas fa-users text-green-600 text-xl"></i>
@@ -90,7 +96,8 @@
                 <div class="p-6">
                     <div class="text-center">
                         <p class="text-xs text-gray-600 font-semibold uppercase">Overall Score</p>
-                        <p class="text-4xl font-bold text-blue-600 mt-2">{{ is_array($seoScore) ? 75 : $seoScore ?? 75 }}%</p>
+                        <p class="text-4xl font-bold text-blue-600 mt-2">
+                            {{ is_array($seoScore) ? 75 : $seoScore ?? 75 }}%</p>
                         <p class="text-sm text-gray-600 mt-2">Article is well-optimized</p>
                     </div>
                 </div>
@@ -135,28 +142,35 @@
                         <tr class="bg-gray-50 border-b border-gray-200">
                             <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Date</th>
                             <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Views</th>
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Unique Visitors</th>
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Avg Time (s)</th>
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Scroll Depth</th>
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Unique
+                                Visitors</th>
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Avg Time (s)
+                            </th>
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Scroll Depth
+                            </th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
                         @forelse($analytics as $analytic)
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="px-6 py-4">
-                                    <span class="text-sm font-semibold text-gray-900">{{ $analytic->date->translatedFormat('d M Y') }}</span>
+                                    <span
+                                        class="text-sm font-semibold text-gray-900">{{ $analytic->date->translatedFormat('d M Y') }}</span>
                                 </td>
                                 <td class="px-6 py-4">
                                     <span class="text-sm text-gray-600">{{ number_format($analytic->views) }}</span>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <span class="text-sm text-gray-600">{{ number_format($analytic->unique_visitors) }}</span>
+                                    <span
+                                        class="text-sm text-gray-600">{{ number_format($analytic->unique_visitors) }}</span>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <span class="text-sm text-gray-600">{{ number_format($analytic->avg_time_on_page, 0) }}</span>
+                                    <span
+                                        class="text-sm text-gray-600">{{ number_format($analytic->avg_time_on_page, 0) }}</span>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <span class="text-sm text-gray-600">{{ number_format($analytic->scroll_depth, 1) }}%</span>
+                                    <span
+                                        class="text-sm text-gray-600">{{ number_format($analytic->scroll_depth, 1) }}%</span>
                                 </td>
                             </tr>
                         @empty
@@ -172,7 +186,9 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-eNQQvSIFFRGvgvgR+A2MgAJ2afd+sJEs3+B2VfEHRo7/djMLHeOIy4j2L0+VRJQT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+        integrity="sha384-eNQQvSIFFRGvgvgR+A2MgAJ2afd+sJEs3+B2VfEHRo7/djMLHeOIy4j2L0+VRJQT" crossorigin="anonymous">
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const ctx = document.getElementById('analyticsChart');
@@ -181,8 +197,7 @@
                     type: 'line',
                     data: {
                         labels: @json($chartData['dates']),
-                        datasets: [
-                            {
+                        datasets: [{
                                 label: 'Views',
                                 data: @json($chartData['views']),
                                 borderColor: '#3b82f6',
@@ -235,4 +250,3 @@
         });
     </script>
 </x-admin.layout-modern>
-

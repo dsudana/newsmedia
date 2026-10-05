@@ -8,7 +8,7 @@
             </span>
         @else
             <a href="{{ $paginator->previousPageUrl() }}"
-               class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all flex items-center gap-2 font-medium">
+                class="px-4 py-2 rounded-lg border border-gray-400 text-gray-700 hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all flex items-center gap-2 font-medium">
                 <i class="fas fa-chevron-left text-sm"></i>
                 <span class="hidden sm:inline text-sm">Previous</span>
             </a>
@@ -39,7 +39,7 @@
         <!-- First page -->
         @if ($start > 1)
             <a href="{{ $paginator->url(1) }}"
-               class="w-10 h-10 flex items-center justify-center text-sm font-semibold border border-gray-300 text-gray-700 rounded-lg hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all">
+                class="w-10 h-10 flex items-center justify-center text-sm font-semibold border border-gray-400 text-gray-700 rounded-lg hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all">
                 1
             </a>
             @if ($start > 2)
@@ -50,12 +50,13 @@
         <!-- Page range -->
         @foreach ($paginator->getUrlRange($start, $end) as $page => $url)
             @if ($page == $currentPage)
-                <span class="w-10 h-10 flex items-center justify-center text-sm font-bold rounded-lg bg-red-600 text-white shadow-md">
+                <span
+                    class="w-10 h-10 flex items-center justify-center text-sm font-bold rounded-lg bg-red-600 text-white shadow-md">
                     {{ $page }}
                 </span>
             @else
                 <a href="{{ $url }}"
-                   class="w-10 h-10 flex items-center justify-center text-sm font-semibold border border-gray-300 text-gray-700 rounded-lg hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all">
+                    class="w-10 h-10 flex items-center justify-center text-sm font-semibold border border-gray-400 text-gray-700 rounded-lg hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all">
                     {{ $page }}
                 </a>
             @endif
@@ -67,7 +68,7 @@
                 <span class="w-10 h-10 flex items-center justify-center text-gray-500">...</span>
             @endif
             <a href="{{ $paginator->url($totalPages) }}"
-               class="w-10 h-10 flex items-center justify-center text-sm font-semibold border border-gray-300 text-gray-700 rounded-lg hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all">
+                class="w-10 h-10 flex items-center justify-center text-sm font-semibold border border-gray-400 text-gray-700 rounded-lg hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all">
                 {{ $totalPages }}
             </a>
         @endif
@@ -77,7 +78,7 @@
     <div>
         @if ($paginator->hasMorePages())
             <a href="{{ $paginator->nextPageUrl() }}"
-               class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all flex items-center gap-2 font-medium">
+                class="px-4 py-2 rounded-lg border border-gray-400 text-gray-700 hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all flex items-center gap-2 font-medium">
                 <span class="hidden sm:inline text-sm">Next</span>
                 <i class="fas fa-chevron-right text-sm"></i>
             </a>

@@ -6,7 +6,8 @@
 
 **Architecture:** Reuse existing `Video` model and database. Create new `Frontend\GalleryController` for public gallery page. Add video carousel section to home page via `HomepageController`. Create reusable `video-card` component and `video-carousel` partial. All views built with Tailwind CSS following existing design patterns.
 
-**Tech Stack:** 
+**Tech Stack:**
+
 - Laravel 12 (existing)
 - Tailwind CSS (existing)
 - Blade templating (existing)
@@ -37,17 +38,20 @@
 ## File Structure
 
 ### New Files
+
 - `app/Http/Controllers/Frontend/GalleryController.php` — Public gallery page logic with filtering and sorting
 - `resources/views/gallery/index.blade.php` — Full gallery page with filter bar, grid, pagination
 - `resources/views/layouts/partials/video-carousel.blade.php` — Carousel component for home page
 - `resources/views/components/video-card.blade.php` — Reusable video card (thumbnail, title, metadata)
 
 ### Modified Files
+
 - `app/Http/Controllers/Frontend/HomepageController.php` — Add video gallery data query
 - `resources/views/frontend/home-modern.blade.php` — Include video carousel partial
 - `routes/web.php` — Add gallery routes
 
 ### No Changes
+
 - `app/Models/Video.php` — Already complete
 - `database/migrations/*create_videos_table.php` — Already created and has all fields
 - `app/Http/Controllers/Admin/VideoController.php` — Already complete
@@ -60,13 +64,15 @@
 ### Task 1: Create Frontend\GalleryController
 
 **Files:**
+
 - Create: `app/Http/Controllers/Frontend/GalleryController.php`
 
 **Interfaces:**
+
 - Consumes: `Video` model (published scope, relations with category/user), `Category` model (active scope)
 - Produces: `GalleryController` class with `index()` and `category()` methods
-  - `index(Request $request)` → returns view with `$videos` (paginated), `$categories`, optional `$category`
-  - `category(Category $category, Request $request)` → returns filtered view
+    - `index(Request $request)` → returns view with `$videos` (paginated), `$categories`, optional `$category`
+    - `category(Category $category, Request $request)` → returns filtered view
 
 - [ ] **Step 1: Create the GalleryController file with proper namespace**
 
@@ -85,27 +91,27 @@ class GalleryController extends Controller
     public function index(Request $request)
     {
         $categories = Category::active()->orderBy('name')->get();
-        
+
         $videos = Video::published()
-            ->when($request->category_id, 
+            ->when($request->category_id,
                 fn($q) => $q->where('category_id', $request->category_id)
             )
-            ->when($request->sort === 'popular', 
+            ->when($request->sort === 'popular',
                 fn($q) => $q->orderBy('views_count', 'desc')
             )
-            ->when($request->sort === 'oldest', 
+            ->when($request->sort === 'oldest',
                 fn($q) => $q->orderBy('published_at', 'asc')
             )
             ->orderBy('published_at', 'desc') // default
             ->paginate(12);
-        
+
         return view('gallery.index', compact('videos', 'categories'));
     }
-    
+
     public function category(Category $category, Request $request)
     {
         $categories = Category::active()->orderBy('name')->get();
-        
+
         $videos = Video::published()
             ->where('category_id', $category->id)
             ->when($request->sort === 'popular',
@@ -116,7 +122,7 @@ class GalleryController extends Controller
             )
             ->orderBy('published_at', 'desc')
             ->paginate(12);
-        
+
         return view('gallery.index', compact('videos', 'categories', 'category'));
     }
 }
@@ -125,6 +131,7 @@ class GalleryController extends Controller
 - [ ] **Step 2: Verify the file is created and syntax is correct**
 
 Run: `php artisan tinker` and test the controller loads without errors:
+
 ```
 >>> use App\Http\Controllers\Frontend\GalleryController;
 >>> class_exists('App\Http\Controllers\Frontend\GalleryController')
@@ -144,9 +151,11 @@ git commit -m "feat: create frontend GalleryController for public video gallery"
 ### Task 2: Add Gallery Routes
 
 **Files:**
+
 - Modify: `routes/web.php` (add 2 new routes)
 
 **Interfaces:**
+
 - Consumes: `Frontend\GalleryController` with methods `index()` and `category(Category $category, Request $request)`
 - Produces: Two public routes: `/galeri` and `/galeri/kategori/{category:slug}`
 
@@ -177,6 +186,7 @@ Check if `Frontend` is already imported. If not, add this line near the other `u
 Run: `php artisan route:list | grep galeri`
 
 Expected output: Two routes listed:
+
 ```
 GET       /galeri                           gallery.index
 GET       /galeri/kategori/{category:slug}  gallery.category
@@ -194,9 +204,11 @@ git commit -m "feat: add public gallery routes /galeri and /galeri/kategori/{slu
 ### Task 3: Create Video Card Component
 
 **Files:**
+
 - Create: `resources/views/components/video-card.blade.php`
 
 **Interfaces:**
+
 - Consumes: `$video` (Video model with title, thumbnail_url, views_count, published_at, category, youtube_url)
 - Produces: Reusable Blade component `<x-video-card :$video />`
 
@@ -209,13 +221,13 @@ git commit -m "feat: add public gallery routes /galeri and /galeri/kategori/{slu
     <!-- Thumbnail Container -->
     <div class="relative h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
         <!-- Thumbnail Image -->
-        <img 
-            src="{{ $video->thumbnail_url }}" 
+        <img
+            src="{{ $video->thumbnail_url }}"
             alt="{{ $video->title }}"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             loading="lazy"
         >
-        
+
         <!-- YouTube Play Icon Overlay -->
         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
             <div class="bg-red-600 rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity transform scale-0 group-hover:scale-100 transition-transform">
@@ -224,27 +236,27 @@ git commit -m "feat: add public gallery routes /galeri and /galeri/kategori/{slu
                 </svg>
             </div>
         </div>
-        
+
         <!-- Status Badge -->
         <span class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
             {{ $video->status === 'published' ? 'Live' : 'Draft' }}
         </span>
     </div>
-    
+
     <!-- Content -->
     <div class="p-4">
         <!-- Title -->
         <h3 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2 mb-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
             {{ $video->title }}
         </h3>
-        
+
         <!-- Category Badge -->
         @if($video->category)
             <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold px-2.5 py-1 rounded mb-3">
                 {{ $video->category->name }}
             </span>
         @endif
-        
+
         <!-- Metadata -->
         <div class="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
             <span class="flex items-center gap-1">
@@ -260,6 +272,7 @@ git commit -m "feat: add public gallery routes /galeri and /galeri/kategori/{slu
 - [ ] **Step 2: Verify component renders without errors**
 
 Test in a Blade view by adding this line temporarily:
+
 ```blade
 <x-video-card :video="$videos->first()" />
 ```
@@ -278,9 +291,11 @@ git commit -m "feat: create video-card component with thumbnail and metadata"
 ### Task 4: Create Video Carousel Partial
 
 **Files:**
+
 - Create: `resources/views/layouts/partials/video-carousel.blade.php`
 
 **Interfaces:**
+
 - Consumes: `$videoGallery` (Collection of 8 Video models)
 - Produces: Swiper carousel HTML for embedding in home page
 
@@ -360,6 +375,7 @@ git commit -m "feat: create video-card component with thumbnail and metadata"
 - [ ] **Step 2: Verify partial structure**
 
 Ensure the file:
+
 - Has correct Blade syntax
 - Uses existing `<x-video-card>` component
 - Has Swiper configuration for responsive slides
@@ -377,9 +393,11 @@ git commit -m "feat: create video-carousel partial with Swiper configuration"
 ### Task 5: Create Gallery Index Page
 
 **Files:**
+
 - Create: `resources/views/gallery/index.blade.php`
 
 **Interfaces:**
+
 - Consumes: `$videos` (LengthAwarePaginator), `$categories` (Collection), optional `$category` (Category model)
 - Produces: Gallery page view with filter, sort, grid, pagination
 
@@ -408,10 +426,10 @@ git commit -m "feat: create video-carousel partial with Swiper configuration"
                     <label for="category" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Category
                     </label>
-                    <select 
-                        id="category" 
-                        name="category_id" 
-                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    <select
+                        id="category"
+                        name="category_id"
+                        class="w-full px-4 py-2 border border-gray-400 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                     >
                         <option value="">All Categories</option>
                         @foreach($categories as $cat)
@@ -427,10 +445,10 @@ git commit -m "feat: create video-carousel partial with Swiper configuration"
                     <label for="sort" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Sort By
                     </label>
-                    <select 
-                        id="sort" 
-                        name="sort" 
-                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    <select
+                        id="sort"
+                        name="sort"
+                        class="w-full px-4 py-2 border border-gray-400 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                     >
                         <option value="newest" @selected(request('sort') === 'newest' || !request('sort'))>Newest</option>
                         <option value="popular" @selected(request('sort') === 'popular')>Most Popular</option>
@@ -440,14 +458,14 @@ git commit -m "feat: create video-carousel partial with Swiper configuration"
 
                 <!-- Submit Button -->
                 <div class="md:col-span-2">
-                    <button 
-                        type="submit" 
+                    <button
+                        type="submit"
                         class="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-2 rounded-lg transition"
                     >
                         Filter Videos
                     </button>
-                    <a 
-                        href="{{ route('gallery.index') }}" 
+                    <a
+                        href="{{ route('gallery.index') }}"
                         class="ml-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm"
                     >
                         Clear Filters
@@ -496,8 +514,8 @@ git commit -m "feat: create video-carousel partial with Swiper configuration"
                 <p class="text-gray-600 dark:text-gray-400 mb-6">
                     Try adjusting your filters or check back later for new content.
                 </p>
-                <a 
-                    href="{{ route('gallery.index') }}" 
+                <a
+                    href="{{ route('gallery.index') }}"
                     class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-lg transition"
                 >
                     Reset Filters
@@ -511,6 +529,7 @@ git commit -m "feat: create video-carousel partial with Swiper configuration"
 - [ ] **Step 2: Verify the gallery directory exists**
 
 Check if `resources/views/gallery/` directory exists. If not, create it:
+
 ```bash
 mkdir -p resources/views/gallery
 ```
@@ -518,6 +537,7 @@ mkdir -p resources/views/gallery
 - [ ] **Step 3: Test page structure**
 
 Verify the file:
+
 - Has proper Blade extends and sections
 - Uses existing `<x-video-card>` component
 - Has filter form with category and sort dropdowns
@@ -536,9 +556,11 @@ git commit -m "feat: create gallery index page with filtering and pagination"
 ### Task 6: Update HomepageController with Video Data
 
 **Files:**
+
 - Modify: `app/Http/Controllers/Frontend/HomepageController.php` (add video gallery query)
 
 **Interfaces:**
+
 - Consumes: `Video` model with published scope
 - Produces: `$videoGallery` variable passed to view (collection of 8 videos)
 
@@ -570,11 +592,13 @@ $videoGallery = Cache::remember('homepage_video_gallery', now()->addHours(1), fu
 On line 95, modify the `compact()` call to include `'videoGallery'`:
 
 Change:
+
 ```php
 return view('frontend.home-modern', compact('latestArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents'));
 ```
 
 To:
+
 ```php
 return view('frontend.home-modern', compact('latestArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
 ```
@@ -582,6 +606,7 @@ return view('frontend.home-modern', compact('latestArticles', 'categories', 'sid
 - [ ] **Step 4: Verify the changes**
 
 Check that:
+
 - Video model is imported
 - Cache key is unique: `homepage_video_gallery`
 - Query uses eager loading with `with()`
@@ -600,9 +625,11 @@ git commit -m "feat: add video gallery query to HomepageController with caching"
 ### Task 7: Update Home-Modern View with Video Carousel
 
 **Files:**
+
 - Modify: `resources/views/frontend/home-modern.blade.php` (add video carousel section)
 
 **Interfaces:**
+
 - Consumes: `$videoGallery` (passed from HomepageController)
 - Produces: Rendered video carousel section in home page
 
@@ -642,6 +669,7 @@ Insert this code right before the `<!-- Category/News Update Section -->` commen
 - [ ] **Step 3: Verify the placement**
 
 Make sure the new section:
+
 - Is placed between featured hero and news update sections
 - Uses the same header styling as other sections
 - Has "Lihat Semua Videos" link pointing to gallery
@@ -664,11 +692,13 @@ git commit -m "feat: add featured video section to home page"
 - [ ] **Step 1: Test database connectivity and data**
 
 Run artisan tinker:
+
 ```bash
 php artisan tinker
 ```
 
 Inside tinker:
+
 ```php
 $videos = \App\Models\Video::published()->take(8)->get();
 $videos->count()
@@ -686,6 +716,7 @@ php artisan serve
 Visit `http://localhost:8000` in browser.
 
 Expected:
+
 - Page loads without errors
 - "Featured Videos" section appears
 - Up to 8 video cards display in a 4-column grid
@@ -695,6 +726,7 @@ Expected:
 - On tablet: grid shows 2 columns
 
 **Testing checklist:**
+
 - [ ] Videos load with thumbnails
 - [ ] Hover effect on cards (thumbnail scale, shadow change)
 - [ ] Category badge displays
@@ -707,6 +739,7 @@ Expected:
 Visit `http://localhost:8000/galeri` in browser.
 
 Expected:
+
 - Page loads with "Video Gallery" header
 - Filter dropdown for categories shows
 - Sort dropdown shows 3 options
@@ -715,6 +748,7 @@ Expected:
 - Empty state message shows (if no videos)
 
 **Testing checklist:**
+
 - [ ] Filter form submits without errors
 - [ ] Category filter works (page shows only selected category)
 - [ ] Sort options work (displays in correct order)
@@ -730,6 +764,7 @@ Assuming a category exists (e.g., with slug "technology"):
 Visit `http://localhost:8000/galeri/kategori/technology` in browser.
 
 Expected:
+
 - Page loads
 - Only videos in "Technology" category display
 - Category dropdown shows "Technology" selected
@@ -738,6 +773,7 @@ Expected:
 - [ ] **Step 5: Test edge cases**
 
 **No videos published:**
+
 ```bash
 php artisan tinker
 \App\Models\Video::query()->update(['status' => 'draft']);
@@ -747,11 +783,13 @@ exit
 Visit home page and gallery page.
 
 Expected:
+
 - Home page: Video section hidden (no "Featured Videos" heading)
 - Gallery page: Empty state message displays
 - No pagination shows
 
 Restore videos:
+
 ```bash
 php artisan tinker
 \App\Models\Video::query()->update(['status' => 'published']);
@@ -763,6 +801,7 @@ exit
 Visit `http://localhost:8000/galeri/kategori/nonexistent`
 
 Expected:
+
 - 404 error or graceful redirect (depending on Laravel's implicit route model binding)
 
 **Performance check:**
@@ -772,6 +811,7 @@ Open browser DevTools → Network tab
 Visit home page.
 
 Expected:
+
 - Single database query for `$videoGallery` (not N+1 queries)
 - Page loads in < 1 second
 - No console errors
@@ -785,12 +825,14 @@ If all tests passed, proceed to step 7.
 - [ ] **Step 7: Commit (if needed)**
 
 If no code changes were made during testing:
+
 ```bash
 git status
 # Expected: working tree clean
 ```
 
 If any bug fixes were made:
+
 ```bash
 git add .
 git commit -m "fix: [description of what was fixed]"
@@ -801,24 +843,31 @@ git commit -m "fix: [description of what was fixed]"
 ## Implementation Notes
 
 ### Routes Import
+
 Make sure to import `Frontend\GalleryController` or use the full namespace in routes. Check existing route imports for consistency.
 
 ### Swiper.js
+
 The carousel uses Swiper.js which should already be available in the project (used by category-strip). If not, ensure it's included in the layout's `@push('scripts')` section.
 
 ### Pagination View
+
 The gallery page uses `{{ $videos->links('pagination::tailwind') }}` which should work with Laravel 12's default Tailwind pagination view. If custom pagination view exists, adjust the path accordingly.
 
 ### Component Path
+
 Ensure `resources/views/components/` directory exists. Blade automatically looks there for components referenced as `<x-component-name />`.
 
 ### Database Indexes
+
 The migration already has indexes on `status`, `published_at`, and `category_id` columns which will optimize the gallery queries. No additional indexes needed.
 
 ### Caching
+
 Both `HomepageController` and `GalleryController` cache-friendly queries use eager loading to prevent N+1 issues. The `videoGallery` is cached for 1 hour on home page. Consider adding cache invalidation in admin when videos are created/updated/deleted (optional future enhancement).
 
 ### Testing Tools
+
 - Laravel Tinker for database testing
 - Browser DevTools for performance and responsive testing
 - PHP artisan serve for local development

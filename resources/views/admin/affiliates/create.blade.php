@@ -10,7 +10,7 @@
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 font-bold mb-2">Internal Name</label>
                 <input type="text" name="name" id="name"
-                    class="w-full border-gray-300 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    class="w-fullborder-gray-400 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     value="{{ old('name') }}" required>
                 @error('name')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -21,7 +21,7 @@
                 <label for="destination_url" class="block text-gray-700 font-bold mb-2">Target URL (Affiliate
                     Link)</label>
                 <input type="url" name="destination_url" id="destination_url"
-                    class="w-full border-gray-300 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    class="w-fullborder-gray-400 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     value="{{ old('destination_url') }}" required>
                 @error('destination_url')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -33,11 +33,11 @@
                     empty)</label>
                 <div class="flex">
                     <span
-                        class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                        class="inline-flex items-center px-3 rounded-l-md border border-r-0border-gray-400 bg-gray-50 text-gray-500 text-sm">
                         {{ url('go/') }}/
                     </span>
                     <input type="text" name="slug" id="slug"
-                        class="flex-1 min-w-0 block w-full px-3 py-2 rounded-none rounded-r-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="flex-1 min-w-0 block w-full px-3 py-2 rounded-none rounded-r-mdborder-gray-400 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         value="{{ old('slug') }}">
                 </div>
                 @error('slug')
@@ -48,7 +48,7 @@
             <div class="mb-4">
                 <label class="inline-flex items-center">
                     <input type="checkbox" name="is_active" value="1"
-                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                        class="roundedborder-gray-400 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                         {{ old('is_active', true) ? 'checked' : '' }}>
                     <span class="ml-2 font-bold text-gray-700">Active</span>
                 </label>
@@ -62,4 +62,4 @@
             </div>
         </form>
     </div>
-    </x-admin.layout-modern>
+</x-admin.layout-modern>

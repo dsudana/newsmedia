@@ -10,7 +10,7 @@
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
                 <input type="text" name="name" id="name"
-                    class="w-full border-gray-300 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    class="w-fullborder-gray-400 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     value="{{ old('name') }}" required>
                 @error('name')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -20,7 +20,7 @@
             <div class="mb-4">
                 <label for="parent_id" class="block text-gray-700 font-bold mb-2">Parent Category (Optional)</label>
                 <select name="parent_id" id="parent_id"
-                    class="w-full border-gray-300 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    class="w-fullborder-gray-400 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                     <option value="">None</option>
                     @foreach ($parents as $parent)
                         <option value="{{ $parent->id }}" {{ old('parent_id') == $parent->id ? 'selected' : '' }}>
@@ -35,7 +35,7 @@
             <div class="mb-4">
                 <label for="description" class="block text-gray-700 font-bold mb-2">Description</label>
                 <textarea name="description" id="description" rows="3"
-                    class="w-full border-gray-300 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500">{{ old('description') }}</textarea>
+                    class="w-fullborder-gray-400 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500">{{ old('description') }}</textarea>
                 @error('description')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
@@ -44,7 +44,7 @@
             <div class="mb-4">
                 <label for="meta_title" class="block text-gray-700 font-bold mb-2">Meta Title</label>
                 <input type="text" name="meta_title" id="meta_title"
-                    class="w-full border-gray-300 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    class="w-fullborder-gray-400 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     value="{{ old('meta_title') }}">
                 @error('meta_title')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -54,7 +54,7 @@
             <div class="mb-4">
                 <label for="meta_description" class="block text-gray-700 font-bold mb-2">Meta Description</label>
                 <textarea name="meta_description" id="meta_description" rows="2"
-                    class="w-full border-gray-300 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500">{{ old('meta_description') }}</textarea>
+                    class="w-fullborder-gray-400 rounded shadow-sm focus:border-indigo-500 focus:ring-indigo-500">{{ old('meta_description') }}</textarea>
                 @error('meta_description')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
@@ -68,4 +68,4 @@
             </div>
         </form>
     </div>
-    </x-admin.layout-modern>
+</x-admin.layout-modern>

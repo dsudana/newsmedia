@@ -20,13 +20,10 @@
                     <label for="category" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Category
                     </label>
-                    <select
-                        id="category"
-                        name="category_id"
-                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    >
+                    <select id="category" name="category_id"
+                        class="w-full px-4 py-2 border border-gray-400 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
                         <option value="">All Categories</option>
-                        @foreach($categories as $cat)
+                        @foreach ($categories as $cat)
                             <option value="{{ $cat->id }}" @selected(request('category_id') == $cat->id)>
                                 {{ $cat->name }}
                             </option>
@@ -39,11 +36,8 @@
                     <label for="sort" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Sort By
                     </label>
-                    <select
-                        id="sort"
-                        name="sort"
-                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    >
+                    <select id="sort" name="sort"
+                        class="w-full px-4 py-2 border border-gray-400 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
                         <option value="newest" @selected(request('sort') === 'newest' || !request('sort'))>Newest</option>
                         <option value="popular" @selected(request('sort') === 'popular')>Most Popular</option>
                         <option value="oldest" @selected(request('sort') === 'oldest')>Oldest</option>
@@ -52,16 +46,12 @@
 
                 <!-- Submit Button -->
                 <div class="md:col-span-2">
-                    <button
-                        type="submit"
-                        class="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-2 rounded-lg transition"
-                    >
+                    <button type="submit"
+                        class="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-2 rounded-lg transition">
                         Filter Videos
                     </button>
-                    <a
-                        href="{{ route('gallery.index') }}"
-                        class="ml-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm"
-                    >
+                    <a href="{{ route('gallery.index') }}"
+                        class="ml-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm">
                         Clear Filters
                     </a>
                 </div>
@@ -69,17 +59,17 @@
         </div>
 
         <!-- Active Filters Display -->
-        @if(request('category_id') || (request('sort') && request('sort') !== 'newest'))
+        @if (request('category_id') || (request('sort') && request('sort') !== 'newest'))
             <div class="mb-6 p-4 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg">
                 <p class="text-sm text-blue-800 dark:text-blue-300">
                     <strong>Filters:</strong>
-                    @if(request('category_id'))
+                    @if (request('category_id'))
                         Category: {{ $categories->find(request('category_id'))?->name ?? 'Unknown' }}
-                        @if(request('sort') && request('sort') !== 'newest')
+                        @if (request('sort') && request('sort') !== 'newest')
                             •
                         @endif
                     @endif
-                    @if(request('sort') && request('sort') !== 'newest')
+                    @if (request('sort') && request('sort') !== 'newest')
                         Sort: {{ ucfirst(request('sort')) }}
                     @endif
                 </p>
@@ -87,9 +77,9 @@
         @endif
 
         <!-- Videos Grid -->
-        @if($videos->count() > 0)
+        @if ($videos->count() > 0)
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                @foreach($videos as $video)
+                @foreach ($videos as $video)
                     <a href="{{ $video->youtube_url }}" target="_blank" rel="noopener noreferrer" class="group">
                         <x-video-card :$video />
                     </a>
@@ -108,10 +98,8 @@
                 <p class="text-gray-600 dark:text-gray-400 mb-6">
                     Try adjusting your filters or check back later for new content.
                 </p>
-                <a
-                    href="{{ route('gallery.index') }}"
-                    class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-lg transition"
-                >
+                <a href="{{ route('gallery.index') }}"
+                    class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-lg transition">
                     Reset Filters
                 </a>
             </div>

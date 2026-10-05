@@ -1,5 +1,5 @@
 <!-- Header (Kompas.com style) -->
-<header class="bg-black dark:bg-black border-b border-gray-800 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-300" x-data="{ categoryMenuOpen: false, mobileMenuOpen: false }">
+<header class="bg-black dark:bg-black border-b border-gray-800 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-300 w-full" x-data="{ categoryMenuOpen: false, mobileMenuOpen: false }">
     <!-- Logo & Navigation Row -->
     <div class="max-w-7xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
         <!-- Logo -->
@@ -11,7 +11,7 @@
         </a>
 
         <!-- Category Navigation (Desktop) -->
-        <nav class="hidden lg:flex items-center gap-6 flex-1 mx-8" aria-label="Category navigation">
+        <nav class="hidden lg:flex items-center gap-3 lg:gap-6" aria-label="Category navigation">
             @php
                 $allCategories = \App\Models\Category::active()
                     ->withCount(['articles' => fn($q) => $q->published()])
@@ -31,9 +31,8 @@
 
             @if ($moreCategories->isNotEmpty())
                 <div class="relative" x-data="{ open: false }">
-                    <button @click="open = !open" class="flex items-center gap-1 text-sm font-bold text-white hover:text-red-500 transition uppercase tracking-wide">
-                        <span>Lainnya</span>
-                        <i class="fas fa-chevron-down text-xs"></i>
+                    <button @click="open = !open" class="flex items-center justify-center text-white hover:text-red-500 transition p-1.5 rounded" aria-label="More categories">
+                        <i class="fas fa-bars text-lg"></i>
                     </button>
                     <div x-show="open" @click.outside="open = false" x-transition class="absolute top-full left-0 mt-2 bg-gray-900 dark:bg-gray-900 rounded-lg shadow-lg border border-gray-700 dark:border-gray-700 min-w-max z-50">
                         @foreach ($moreCategories as $category)
@@ -46,15 +45,10 @@
                 </div>
             @endif
 
-            <!-- News Index (Indeks Berita) -->
-            <a href="{{ route('categories.index') }}"
-                class="text-sm font-bold text-white hover:text-red-500 transition whitespace-nowrap uppercase tracking-wide ml-auto">
-                📑 Indeks Berita
-            </a>
         </nav>
 
         <!-- Right Actions -->
-        <div class="flex items-center gap-1 sm:gap-2" x-data="{ searchOpen: false }">
+        <div class="flex items-center gap-1 sm:gap-2 ml-auto" x-data="{ searchOpen: false }">
             <!-- Search Button -->
             <button @click="searchOpen = !searchOpen; if (searchOpen) { $nextTick(() => document.querySelector('#search-input')?.focus()) }" aria-label="Search" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-1.5 sm:p-2">
                 <i class="text-base sm:text-lg fas fa-magnifying-glass" aria-hidden="true"></i>

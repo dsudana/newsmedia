@@ -1,4 +1,5 @@
-<div id="configModal_video_grid" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+<div id="configModal_video_grid"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <!-- Header -->
         <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white p-6 border-b">
@@ -9,7 +10,8 @@
                     </h3>
                     <p class="text-sm text-red-50 mt-1">Configure YouTube video section with preview</p>
                 </div>
-                <button type="button" onclick="closeConfigModal('video_grid')" class="p-2 hover:bg-red-500 rounded-lg transition-colors">
+                <button type="button" onclick="closeConfigModal('video_grid')"
+                    class="p-2 hover:bg-red-500 rounded-lg transition-colors">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
@@ -27,16 +29,18 @@
                         <label for="title_video_grid" class="block text-sm font-semibold text-gray-900 mb-2">
                             <i class="fas fa-heading text-red-600 mr-2"></i>Section Title
                         </label>
-                        <input type="text" id="title_video_grid" name="title" placeholder="e.g., Our Latest Videos" required
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        <input type="text" id="title_video_grid" name="title" placeholder="e.g., Our Latest Videos"
+                            required
+                            class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
                     </div>
 
                     <div>
                         <label for="limit_video_grid" class="block text-sm font-semibold text-gray-900 mb-2">
                             <i class="fas fa-list text-red-600 mr-2"></i>Number of Videos
                         </label>
-                        <input type="number" id="limit_video_grid" name="config[limit]" value="9" min="1" max="50"
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        <input type="number" id="limit_video_grid" name="config[limit]" value="9" min="1"
+                            max="50"
+                            class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
                     </div>
                 </div>
 
@@ -45,8 +49,9 @@
                     <label for="description_video_grid" class="block text-sm font-semibold text-gray-900 mb-2">
                         <i class="fas fa-align-left text-red-600 mr-2"></i>Section Description
                     </label>
-                    <textarea id="description_video_grid" name="config[description]" rows="2" placeholder="Optional subtitle or description..."
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"></textarea>
+                    <textarea id="description_video_grid" name="config[description]" rows="2"
+                        placeholder="Optional subtitle or description..."
+                        class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"></textarea>
                 </div>
 
                 <!-- Layout Options -->
@@ -61,7 +66,7 @@
                                 Columns (Desktop)
                             </label>
                             <select id="columns_video_grid" name="config[columns]"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm">
+                                class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm">
                                 <option value="1">1 Column</option>
                                 <option value="2">2 Columns</option>
                                 <option value="3" selected>3 Columns</option>
@@ -76,7 +81,7 @@
                                 Thumbnail Ratio
                             </label>
                             <select id="aspect_ratio_video_grid" name="config[aspect_ratio]"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm">
+                                class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm">
                                 <option value="16/9" selected>16:9 (Widescreen)</option>
                                 <option value="4/3">4:3 (Standard)</option>
                                 <option value="1/1">1:1 (Square)</option>
@@ -89,9 +94,9 @@
                                 Filter by Category
                             </label>
                             <select id="category_video_grid" name="config[category_id]"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm">
+                                class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm">
                                 <option value="">All Videos</option>
-                                @foreach(\App\Models\Category::orderBy('name')->get() as $cat)
+                                @foreach (\App\Models\Category::orderBy('name')->get() as $cat)
                                     <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                                 @endforeach
                             </select>
@@ -106,36 +111,42 @@
                     </h4>
 
                     <div class="space-y-3">
-                        <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                            <input type="checkbox" id="show_title_video_grid" name="config[show_title]" value="1" checked
-                                   class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-500">
+                        <label
+                            class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" id="show_title_video_grid" name="config[show_title]" value="1"
+                                checked class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-500">
                             <div>
                                 <span class="text-sm font-semibold text-gray-900">Show Video Title</span>
                                 <p class="text-xs text-gray-600">Display video name below thumbnail</p>
                             </div>
                         </label>
 
-                        <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                            <input type="checkbox" id="show_category_video_grid" name="config[show_category]" value="1" checked
-                                   class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-500">
+                        <label
+                            class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" id="show_category_video_grid" name="config[show_category]"
+                                value="1" checked
+                                class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-500">
                             <div>
                                 <span class="text-sm font-semibold text-gray-900">Show Category Badge</span>
                                 <p class="text-xs text-gray-600">Display category tag on thumbnail</p>
                             </div>
                         </label>
 
-                        <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                            <input type="checkbox" id="show_views_video_grid" name="config[show_views]" value="1" checked
-                                   class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-500">
+                        <label
+                            class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" id="show_views_video_grid" name="config[show_views]" value="1"
+                                checked class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-500">
                             <div>
                                 <span class="text-sm font-semibold text-gray-900">Show View Count</span>
                                 <p class="text-xs text-gray-600">Display number of views on thumbnail</p>
                             </div>
                         </label>
 
-                        <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                            <input type="checkbox" id="open_youtube_video_grid" name="config[open_youtube]" value="1" checked
-                                   class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-500">
+                        <label
+                            class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" id="open_youtube_video_grid" name="config[open_youtube]"
+                                value="1" checked
+                                class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-500">
                             <div>
                                 <span class="text-sm font-semibold text-gray-900">Open on YouTube (New Tab)</span>
                                 <p class="text-xs text-gray-600">Click video opens YouTube in new window</p>
@@ -164,7 +175,8 @@
                 <!-- Quick Links -->
                 <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
                     <p class="text-xs font-semibold text-amber-900 mb-2">💡 Need to manage videos?</p>
-                    <a href="{{ route('admin.videos.index') }}" target="_blank" class="inline-flex items-center gap-2 text-sm text-amber-700 hover:text-amber-900 font-semibold">
+                    <a href="{{ route('admin.videos.index') }}" target="_blank"
+                        class="inline-flex items-center gap-2 text-sm text-amber-700 hover:text-amber-900 font-semibold">
                         <i class="fas fa-arrow-right"></i>Go to Video Management
                     </a>
                 </div>
@@ -174,11 +186,11 @@
         <!-- Footer -->
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('video_grid')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
+                class="px-6 py-2 border border-gray-400 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('video_grid')"
-                    class="px-6 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg hover:opacity-90 transition font-semibold flex items-center gap-2">
+                class="px-6 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg hover:opacity-90 transition font-semibold flex items-center gap-2">
                 <i class="fas fa-save"></i>Save Settings
             </button>
         </div>

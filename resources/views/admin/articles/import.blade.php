@@ -9,7 +9,8 @@
             <i class="fas fa-info-circle text-blue-600 mt-1 flex-shrink-0"></i>
             <div>
                 <h3 class="font-semibold text-blue-900">Import from WordPress XML</h3>
-                <p class="text-sm text-blue-800 mt-1">Import articles from ndskreasi project or other WordPress exports. You can either paste XML content or upload a .xml file.</p>
+                <p class="text-sm text-blue-800 mt-1">Import articles from ndskreasi project or other WordPress exports.
+                    You can either paste XML content or upload a .xml file.</p>
             </div>
         </div>
 
@@ -31,7 +32,7 @@
                             Default Category <span class="text-red-500">*</span>
                         </label>
                         <select name="category_id" id="category_id" required
-                            class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                            class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
                             <option value="">Select a category</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -48,7 +49,7 @@
                             XML Content <span class="text-red-500">*</span>
                         </label>
                         <textarea name="xml_content" id="xml_content" required rows="10"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 font-mono text-sm"
+                            class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 font-mono text-sm"
                             placeholder="Paste your WordPress XML export here...">{{ old('xml_content') }}</textarea>
                         @error('xml_content')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
@@ -59,13 +60,14 @@
                     <div>
                         <label class="flex items-center gap-2">
                             <input type="checkbox" name="download_images" value="1" checked
-                                class="rounded border-gray-300 text-indigo-600 shadow-sm">
+                                class="roundedborder-gray-400 text-indigo-600 shadow-sm">
                             <span class="text-sm text-gray-700">Download and store featured images</span>
                         </label>
                     </div>
 
                     <!-- Submit -->
-                    <button type="submit" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium flex items-center justify-center gap-2">
+                    <button type="submit"
+                        class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium flex items-center justify-center gap-2">
                         <i class="fas fa-upload"></i>Import Articles
                     </button>
                 </form>
@@ -78,7 +80,8 @@
                     <h2 class="text-lg font-semibold text-gray-900">Upload XML File</h2>
                 </div>
 
-                <form action="{{ route('admin.articles.import-file') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+                <form action="{{ route('admin.articles.import-file') }}" method="POST" enctype="multipart/form-data"
+                    class="space-y-4">
                     @csrf
 
                     <!-- Category Selection -->
@@ -87,7 +90,7 @@
                             Default Category <span class="text-red-500">*</span>
                         </label>
                         <select name="category_id" id="category_id_2" required
-                            class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-green-500 focus:ring-1 focus:ring-green-500">
+                            class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-green-500 focus:ring-1 focus:ring-green-500">
                             <option value="">Select a category</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -100,7 +103,8 @@
                         <label for="xml_file" class="block text-sm font-semibold text-gray-900 mb-2">
                             XML File <span class="text-red-500">*</span>
                         </label>
-                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-green-500 hover:bg-green-50 transition cursor-pointer" id="dropZone">
+                        <div class="border-2 border-dashedborder-gray-400 rounded-lg p-6 text-center hover:border-green-500 hover:bg-green-50 transition cursor-pointer"
+                            id="dropZone">
                             <input type="file" name="xml_file" id="xml_file" class="hidden" accept=".xml" required>
                             <div class="flex flex-col items-center">
                                 <i class="fas fa-file-xml text-3xl text-gray-400 mb-2"></i>
@@ -118,13 +122,14 @@
                     <div>
                         <label class="flex items-center gap-2">
                             <input type="checkbox" name="download_images" value="1" checked
-                                class="rounded border-gray-300 text-green-600 shadow-sm">
+                                class="roundedborder-gray-400 text-green-600 shadow-sm">
                             <span class="text-sm text-gray-700">Download and store featured images</span>
                         </label>
                     </div>
 
                     <!-- Submit -->
-                    <button type="submit" class="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
+                    <button type="submit"
+                        class="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
                         <i class="fas fa-upload"></i>Import from File
                     </button>
                 </form>

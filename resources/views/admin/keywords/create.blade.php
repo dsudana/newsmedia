@@ -24,7 +24,7 @@
                             <i class="fas fa-key mr-2 text-indigo-600"></i>Keyword
                         </label>
                         <input type="text" name="keyword" id="keyword"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+                            class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                             placeholder="e.g., best digital marketing strategies" value="{{ old('keyword') }}" required>
                         @error('keyword')
                             <div class="mt-2 flex items-center gap-2 text-red-600 text-sm">
@@ -39,7 +39,7 @@
                             <i class="fas fa-folder mr-2 text-indigo-600"></i>Category
                         </label>
                         <select name="category_id" id="category_id"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900"
+                            class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900"
                             required>
                             <option value="">Select Category</option>
                             @foreach ($categories as $category)
@@ -62,7 +62,7 @@
                             <i class="fas fa-align-left mr-2 text-indigo-600"></i>Description (Optional)
                         </label>
                         <textarea name="description" id="description" rows="3"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+                            class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                             placeholder="Describe what this keyword is about...">{{ old('description') }}</textarea>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                                 <i class="fas fa-bullseye mr-2 text-indigo-600"></i>Search Intent
                             </label>
                             <select name="intent" id="intent"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900"
+                                class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900"
                                 required>
                                 <option value="">Select Intent</option>
                                 <option value="informational" {{ old('intent') == 'informational' ? 'selected' : '' }}>
@@ -110,7 +110,7 @@
                                 <i class="fas fa-microphone mr-2 text-indigo-600"></i>Focus Tone
                             </label>
                             <input type="text" name="focus_tone" id="focus_tone"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+                                class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                                 placeholder="e.g., professional, casual, academic" value="{{ old('focus_tone') }}"
                                 required>
                             @error('focus_tone')
@@ -128,7 +128,7 @@
                         </label>
                         <div class="relative">
                             <input type="number" name="target_words" id="target_words"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+                                class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                                 placeholder="e.g., 2000" min="500" max="5000"
                                 value="{{ old('target_words', 2000) }}" required>
                             <p class="text-sm text-gray-600 mt-2">Minimum: 500 words, Maximum: 5000 words</p>
@@ -153,7 +153,7 @@
                     <label
                         class="flex items-center gap-3 p-4 bg-indigo-50 border border-indigo-200 rounded-lg cursor-pointer hover:bg-indigo-100 transition">
                         <input type="checkbox" name="use_humanizer" value="1"
-                            class="w-5 h-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                            class="w-5 h-5 text-indigo-600border-gray-400 rounded focus:ring-indigo-500"
                             {{ old('use_humanizer') ? 'checked' : '' }}>
                         <span class="font-semibold text-gray-900">Use AI Humanizer for generated content</span>
                     </label>
@@ -185,4 +185,4 @@
             </form>
         </div>
     </div>
-</x-x-admin-layout-modern>
+    </x-x-admin-layout-modern>

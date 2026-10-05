@@ -4,7 +4,8 @@
     </x-slot>
 
     <div class="max-w-5xl mx-auto">
-        <form action="{{ route('admin.articles.update', $article) }}" method="POST" enctype="multipart/form-data" id="ArticleForm">
+        <form action="{{ route('admin.articles.update', $article) }}" method="POST" enctype="multipart/form-data"
+            id="ArticleForm">
             @csrf
             @method('PUT')
 
@@ -13,7 +14,7 @@
                 <div>
                     <label for="title" class="block text-sm font-semibold text-gray-900 mb-2">Article Title</label>
                     <input type="text" name="title" id="title"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                        class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         placeholder="Enter article title" value="{{ old('title', $article->title) }}" required>
                     @error('title')
                         <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
@@ -24,7 +25,7 @@
                 <div>
                     <label for="slug" class="block text-sm font-semibold text-gray-900 mb-2">Slug</label>
                     <input type="text" name="slug" id="slug"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                        class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         placeholder="URL-friendly slug" value="{{ old('slug', $article->slug ?? '') }}" required>
                     <p class="text-sm text-gray-600 mt-1">Used for article URL. Auto-generated from title.</p>
                     @error('slug')
@@ -36,7 +37,7 @@
                 <div>
                     <label for="excerpt" class="block text-sm font-semibold text-gray-900 mb-2">Excerpt</label>
                     <textarea name="excerpt" id="excerpt" rows="3"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                        class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         placeholder="Short description of the article" required>{{ old('excerpt', $article->excerpt) }}</textarea>
                     @error('excerpt')
                         <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
@@ -58,7 +59,7 @@
                     <div>
                         <label for="category_id" class="block text-sm font-semibold text-gray-900 mb-2">Category</label>
                         <select name="category_id" id="category_id"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                            class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                             required>
                             <option value="">Select Category</option>
                             @foreach ($categories as $category)
@@ -74,9 +75,10 @@
 
                     <!-- Published Date -->
                     <div>
-                        <label for="published_at" class="block text-sm font-semibold text-gray-900 mb-2">Publish Date</label>
+                        <label for="published_at" class="block text-sm font-semibold text-gray-900 mb-2">Publish
+                            Date</label>
                         <input type="date" name="published_at" id="published_at"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                            class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                             value="{{ old('published_at', $article->published_at ? $article->published_at->format('Y-m-d') : now()->format('Y-m-d')) }}">
                         @error('published_at')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
@@ -101,14 +103,16 @@
 
                 <!-- Featured Image -->
                 <div>
-                    <label for="featured_image" class="block text-sm font-semibold text-gray-900 mb-2">Featured Image</label>
+                    <label for="featured_image" class="block text-sm font-semibold text-gray-900 mb-2">Featured
+                        Image</label>
                     @if ($article->featured_image)
                         <div class="mb-4 p-4 bg-gray-100 rounded-lg">
                             <img src="{{ str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image) }}"
                                 alt="Current featured image" class="max-h-48 rounded">
                         </div>
                     @endif
-                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-indigo-500 transition cursor-pointer" id="imageDropZone">
+                    <div class="border-2 border-dashedborder-gray-400 rounded-lg p-6 text-center hover:border-indigo-500 transition cursor-pointer"
+                        id="imageDropZone">
                         <input type="file" name="featured_image" id="featured_image" class="hidden" accept="image/*">
                         <div class="flex flex-col items-center">
                             <i class="fas fa-image text-3xl text-gray-400 mb-2"></i>
@@ -132,13 +136,13 @@
                         <div class="space-y-2">
                             <label class="inline-flex items-center">
                                 <input type="radio" name="status" value="draft"
-                                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                    class="roundedborder-gray-400 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                     {{ old('status', $article->status) == 'draft' ? 'checked' : '' }}>
                                 <span class="ml-2 text-gray-700">Draft</span>
                             </label>
                             <label class="inline-flex items-center ml-4">
                                 <input type="radio" name="status" value="published"
-                                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                    class="roundedborder-gray-400 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                     {{ old('status', $article->status) == 'published' ? 'checked' : '' }}>
                                 <span class="ml-2 text-gray-700">Publish</span>
                             </label>
@@ -153,7 +157,7 @@
                         <label class="block text-sm font-semibold text-gray-900 mb-3">Options</label>
                         <label class="inline-flex items-center">
                             <input type="checkbox" name="is_featured" value="1"
-                                class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                class="roundedborder-gray-400 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 {{ old('is_featured', $article->is_featured) ? 'checked' : '' }}>
                             <span class="ml-2 text-gray-700">Make this a featured/headline article</span>
                         </label>
@@ -166,14 +170,18 @@
                         <i class="fas fa-link text-amber-600 mr-2"></i>Affiliate Links
                     </h3>
                     <p class="text-sm text-gray-600 mb-4">Select products to feature in this article</p>
-                    <select name="affiliate_links[]" id="affiliate_links" class="w-full" multiple style="width: 100%;">
+                    <select name="affiliate_links[]" id="affiliate_links" class="w-full" multiple
+                        style="width: 100%;">
                         @foreach ($affiliateLinks ?? [] as $link)
                             <option value="{{ $link->id }}"
                                 {{ in_array($link->id, old('affiliate_links', $article->affiliateLinks()->select('affiliate_links.id')->pluck('id')->toArray() ?? [])) ? 'selected' : '' }}>
-                                {{ $link->name }} ({{ $link->commission_type === 'percentage' ? $link->commission_value . '%' : 'Rp ' . number_format($link->commission_value) }})</option>
+                                {{ $link->name }}
+                                ({{ $link->commission_type === 'percentage' ? $link->commission_value . '%' : 'Rp ' . number_format($link->commission_value) }})
+                            </option>
                         @endforeach
                     </select>
-                    <p class="text-sm text-gray-600 mt-2">Leave empty if you don't want to feature any affiliate products in this article</p>
+                    <p class="text-sm text-gray-600 mt-2">Leave empty if you don't want to feature any affiliate
+                        products in this article</p>
                 </div>
 
                 <!-- SEO Section -->
@@ -181,10 +189,12 @@
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Search Engine Optimization</h3>
                     <div class="grid grid-cols-1 gap-4">
                         <div>
-                            <label for="meta_title" class="block text-sm font-semibold text-gray-900 mb-2">Meta Title</label>
+                            <label for="meta_title" class="block text-sm font-semibold text-gray-900 mb-2">Meta
+                                Title</label>
                             <input type="text" name="meta_title" id="meta_title"
-                                class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
-                                placeholder="SEO title (50-60 characters)" value="{{ old('meta_title', $article->meta->meta_title ?? '') }}">
+                                class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                                placeholder="SEO title (50-60 characters)"
+                                value="{{ old('meta_title', $article->meta->meta_title ?? '') }}">
                             <p class="text-sm text-gray-600 mt-1">Optimal length: 50-60 characters</p>
                             @error('meta_title')
                                 <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
@@ -192,9 +202,10 @@
                         </div>
 
                         <div>
-                            <label for="meta_description" class="block text-sm font-semibold text-gray-900 mb-2">Meta Description</label>
+                            <label for="meta_description" class="block text-sm font-semibold text-gray-900 mb-2">Meta
+                                Description</label>
                             <textarea name="meta_description" id="meta_description" rows="2"
-                                class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                                class="w-full px-3 py-2 border border-gray-400 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                                 placeholder="SEO description (150-160 characters)">{{ old('meta_description', $article->meta->meta_description ?? '') }}</textarea>
                             <p class="text-sm text-gray-600 mt-1">Optimal length: 150-160 characters</p>
                             @error('meta_description')
@@ -204,8 +215,10 @@
 
                         @if (isset($keywords))
                             <div>
-                                <label for="keywords" class="block text-sm font-semibold text-gray-900 mb-2">Keywords (SEO)</label>
-                                <select name="keywords[]" id="keywords" class="w-full" multiple style="width: 100%;">
+                                <label for="keywords" class="block text-sm font-semibold text-gray-900 mb-2">Keywords
+                                    (SEO)</label>
+                                <select name="keywords[]" id="keywords" class="w-full" multiple
+                                    style="width: 100%;">
                                     @foreach ($keywords as $keyword)
                                         <option value="{{ $keyword->id }}"
                                             {{ in_array($keyword->id, old('keywords', $article->keywords?->pluck('id')?->toArray() ?? [])) ? 'selected' : '' }}>
@@ -314,7 +327,8 @@
                                         var div = document.createElement('div');
                                         div.classList.add('embed-container');
                                         var iframe = document.createElement('iframe');
-                                        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=0&fs=1&showinfo=1&rel=0&cc_load_policy=1&controls=1`;
+                                        iframe.src =
+                                            `https://www.youtube.com/embed/${videoId}?autoplay=0&fs=1&showinfo=1&rel=0&cc_load_policy=1&controls=1`;
                                         iframe.setAttribute('frameborder', 0);
                                         iframe.setAttribute('width', '100%');
                                         iframe.setAttribute('height', '500px');
@@ -387,7 +401,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route("admin.articles.update", $article) }}',
+                    url: '{{ route('admin.articles.update', $article) }}',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -426,14 +440,16 @@
                         });
                     },
                     complete: function() {
-                        setBtnLoading('button[type=submit]', '<i class="fas fa-save"></i>Update Article', false);
+                        setBtnLoading('button[type=submit]',
+                            '<i class="fas fa-save"></i>Update Article', false);
                     }
                 });
             });
         });
 
         function youtube_parser(url) {
-            var regExp = /^https?\:\/\/(?:www\.youtube(?:\-nocookie)?\.com\/|m\.youtube\.com\/|youtube\.com\/)?(?:ytscreeningroom\?vi?=|youtu\.be\/|vi?\/|user\/.+\/u\/\w{1,2}\/|embed\/|watch\?(?:.*\&)?vi?=|\&vi?=|\?(?:.*\&)?vi?=)([^#\&\?\n\/<>"']*)/i;
+            var regExp =
+                /^https?\:\/\/(?:www\.youtube(?:\-nocookie)?\.com\/|m\.youtube\.com\/|youtube\.com\/)?(?:ytscreeningroom\?vi?=|youtu\.be\/|vi?\/|user\/.+\/u\/\w{1,2}\/|embed\/|watch\?(?:.*\&)?vi?=|\&vi?=|\?(?:.*\&)?vi?=)([^#\&\?\n\/<>"']*)/i;
             var match = url.match(regExp);
             return (match && match[1].length == 11) ? match[1] : false;
         }
@@ -492,7 +508,7 @@
             border-color: #4f46e5;
         }
 
-        .note-toolbar .note-btn-group > div {
+        .note-toolbar .note-btn-group>div {
             display: flex;
             gap: 0.25rem;
         }

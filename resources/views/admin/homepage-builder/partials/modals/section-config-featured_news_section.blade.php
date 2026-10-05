@@ -1,4 +1,5 @@
-<div id="configModal_featured_news_section" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+<div id="configModal_featured_news_section"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-md shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white p-6 border-b">
             <h3 class="text-2xl font-bold">Featured News Section Settings</h3>
@@ -15,7 +16,7 @@
                     <i class="fas fa-heading text-red-600 mr-2"></i>Section Title
                 </label>
                 <input type="text" id="title_featured" name="title" placeholder="e.g., Featured News"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                    class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
             </div>
 
             <!-- Basic Settings -->
@@ -25,9 +26,9 @@
                         <i class="fas fa-folder text-red-600 mr-2"></i>Category Filter (Optional)
                     </label>
                     <select id="category_featured" name="config[category]" onchange="loadFeaturedArticles()"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
                         <option value="">All Categories</option>
-                        @foreach($categories ?? [] as $cat)
+                        @foreach ($categories ?? [] as $cat)
                             <option value="{{ $cat->slug }}">{{ $cat->name }}</option>
                         @endforeach
                     </select>
@@ -38,7 +39,7 @@
                         <i class="fas fa-sort text-red-600 mr-2"></i>Default Sort
                     </label>
                     <select id="sort_featured" name="config[sort_by]"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
                         <option value="latest" selected>Latest</option>
                         <option value="popular">Most Popular</option>
                         <option value="views">Most Viewed</option>
@@ -56,7 +57,7 @@
                     <div>
                         <label for="carousel_enabled" class="flex items-center cursor-pointer">
                             <input type="checkbox" id="carousel_enabled" name="config[carousel_enabled]" value="1"
-                                   class="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-2 focus:ring-red-500">
+                                class="w-4 h-4 text-red-600border-gray-400 rounded focus:ring-2 focus:ring-red-500">
                             <span class="ml-3 text-sm font-semibold text-gray-900">Enable Carousel</span>
                         </label>
                         <p class="text-sm text-gray-600 mt-1">Main article rotates automatically</p>
@@ -66,16 +67,18 @@
                         <label for="carousel_speed" class="block text-sm font-semibold text-gray-900 mb-2">
                             <i class="fas fa-tachometer-alt text-red-600 mr-2"></i>Carousel Speed (ms)
                         </label>
-                        <input type="number" id="carousel_speed" name="config[carousel_speed]" value="5000" min="2000" max="10000" step="500"
-                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        <input type="number" id="carousel_speed" name="config[carousel_speed]" value="5000"
+                            min="2000" max="10000" step="500"
+                            class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
                     </div>
 
                     <div>
                         <label for="main_articles_count" class="block text-sm font-semibold text-gray-900 mb-2">
                             <i class="fas fa-images text-red-600 mr-2"></i>Main Articles
                         </label>
-                        <input type="number" id="main_articles_count" name="config[main_limit]" value="5" min="1" max="20"
-                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        <input type="number" id="main_articles_count" name="config[main_limit]" value="5"
+                            min="1" max="20"
+                            class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
                     </div>
                 </div>
 
@@ -83,8 +86,9 @@
                     <label for="side_articles_count" class="block text-sm font-semibold text-gray-900 mb-2">
                         <i class="fas fa-list text-red-600 mr-2"></i>Side Articles (Right Column)
                     </label>
-                    <input type="number" id="side_articles_count" name="config[side_limit]" value="2" min="1" max="10"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                    <input type="number" id="side_articles_count" name="config[side_limit]" value="2"
+                        min="1" max="10"
+                        class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent">
                 </div>
             </div>
 
@@ -95,17 +99,20 @@
                         <i class="fas fa-hand-pointer text-red-600 mr-2"></i>Manual Article Selection
                     </h4>
                     <div class="flex gap-2">
-                        <button type="button" id="selectAllBtn" class="px-3 py-1 text-xs bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition">
+                        <button type="button" id="selectAllBtn"
+                            class="px-3 py-1 text-xs bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition">
                             Select All
                         </button>
-                        <button type="button" id="deselectAllBtn" class="px-3 py-1 text-xs bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition">
+                        <button type="button" id="deselectAllBtn"
+                            class="px-3 py-1 text-xs bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition">
                             Deselect All
                         </button>
                     </div>
                 </div>
 
                 <!-- Article List -->
-                <div id="articlesList" class="space-y-2 max-h-96 overflow-y-auto border border-gray-200 rounded-md p-4 bg-gray-50">
+                <div id="articlesList"
+                    class="space-y-2 max-h-96 overflow-y-auto border border-gray-200 rounded-md p-4 bg-gray-50">
                     <div class="text-center py-8 text-gray-500">
                         <i class="fas fa-spinner fa-spin mr-2"></i>Loading articles...
                     </div>
@@ -121,18 +128,19 @@
             <div class="bg-blue-50 border border-blue-200 rounded-md p-4">
                 <p class="text-sm text-blue-700">
                     <i class="fas fa-info-circle mr-2"></i>
-                    <strong>Layout:</strong> 1 featured article (carousel) on left (66%), side articles stacked on right (33%)
+                    <strong>Layout:</strong> 1 featured article (carousel) on left (66%), side articles stacked on right
+                    (33%)
                 </p>
             </div>
         </form>
 
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('featured_news_section')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition font-semibold">
+                class="px-6 py-2 border border-gray-400 text-gray-700 rounded-md hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('featured_news_section')"
-                    class="px-6 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-md hover:opacity-90 transition font-semibold">
+                class="px-6 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-md hover:opacity-90 transition font-semibold">
                 <i class="fas fa-save mr-2"></i>Save Settings
             </button>
         </div>
@@ -147,7 +155,7 @@
         ->latest('published_at')
         ->limit(100)
         ->get()
-        ->map(function($a) {
+        ->map(function ($a) {
             return [
                 'id' => $a->id,
                 'title' => $a->title,

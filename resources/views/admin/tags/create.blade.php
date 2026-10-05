@@ -17,7 +17,7 @@
                         <i class="fas fa-tag mr-2 text-indigo-600"></i>Tag Name
                     </label>
                     <input type="text" name="name" id="name"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+                        class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                         placeholder="e.g., Technology, Business, Health" value="{{ old('name') }}" required>
                     @error('name')
                         <div class="mt-2 flex items-center gap-2 text-red-600 text-sm">
@@ -33,7 +33,7 @@
                         <i class="fas fa-align-left mr-2 text-indigo-600"></i>Description (Optional)
                     </label>
                     <textarea name="description" id="description" rows="3"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+                        class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                         placeholder="Describe what this tag is for...">{{ old('description') }}</textarea>
                     @error('description')
                         <div class="mt-2 flex items-center gap-2 text-red-600 text-sm">
@@ -77,4 +77,4 @@
             namePreview.textContent = e.target.value || 'Tag Name';
         });
     </script>
-</x-x-admin-layout-modern>
+    </x-x-admin-layout-modern>

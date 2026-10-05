@@ -78,7 +78,7 @@ class ContentSeeder extends Seeder
             'name' => 'Demo Home Banner',
             'type' => 'script',
             'placement' => 'header',
-            'script' => '<div class="p-4 bg-gray-200 text-center text-gray-500 border border-dashed border-gray-400"><strong>728x90 Ad Banner Placeholder</strong><br>Put your AdSense code here</div>',
+            'script' => '<div class="p-4 bg-gray-200 text-center text-gray-500 border border-dashed border-gray-300"><strong>728x90 Ad Banner Placeholder</strong><br>Put your AdSense code here</div>',
             'is_active' => true,
         ]);
 
@@ -86,11 +86,43 @@ class ContentSeeder extends Seeder
             'name' => 'Demo Sidebar Ad',
             'type' => 'script',
             'placement' => 'sidebar',
-            'script' => '<div class="p-4 bg-gray-200 text-center text-gray-500 border border-dashed border-gray-400 h-64 flex items-center justify-center"><strong>300x250 Ad</strong></div>',
+            'script' => '<div class="p-4 bg-gray-200 text-center text-gray-500 border border-dashed border-gray-300 h-64 flex items-center justify-center"><strong>300x250 Ad</strong></div>',
             'is_active' => true,
         ]);
 
         // 6. Create Affiliate Links
         \App\Models\AffiliateLink::factory(5)->create();
+
+        // 7. Create Social Media Links
+        $socialMediaLinks = [
+            ['platform' => 'Facebook', 'icon' => 'fa-brands fa-facebook', 'url' => 'https://www.facebook.com/newsmedia', 'is_active' => true, 'sort_order' => 1],
+            ['platform' => 'Instagram', 'icon' => 'fa-brands fa-instagram', 'url' => 'https://www.instagram.com/newsmedia', 'is_active' => true, 'sort_order' => 2],
+            ['platform' => 'X', 'icon' => 'fa-brands fa-x-twitter', 'url' => 'https://x.com/newsmedia', 'is_active' => true, 'sort_order' => 3],
+            ['platform' => 'Pinterest', 'icon' => 'fa-brands fa-pinterest', 'url' => 'https://www.pinterest.com/newsmedia', 'is_active' => true, 'sort_order' => 4],
+            ['platform' => 'WhatsApp', 'icon' => 'fa-brands fa-whatsapp', 'url' => 'https://wa.me/628123456789', 'is_active' => true, 'sort_order' => 5],
+        ];
+
+        foreach ($socialMediaLinks as $social) {
+            \App\Models\SocialMedia::updateOrCreate(
+                ['platform' => $social['platform']],
+                $social
+            );
+        }
+
+        // Also store in settings table for reference
+        $socialMediaSettings = [
+            ['key' => 'social_facebook', 'value' => 'https://www.facebook.com/newsmedia'],
+            ['key' => 'social_instagram', 'value' => 'https://www.instagram.com/newsmedia'],
+            ['key' => 'social_x', 'value' => 'https://x.com/newsmedia'],
+            ['key' => 'social_pinterest', 'value' => 'https://www.pinterest.com/newsmedia'],
+            ['key' => 'social_whatsapp', 'value' => 'https://wa.me/628123456789'],
+        ];
+
+        foreach ($socialMediaSettings as $social) {
+            \Illuminate\Support\Facades\DB::table('settings')->updateOrInsert(
+                ['key' => $social['key']],
+                ['value' => $social['value'], 'updated_at' => now()]
+            );
+        }
     }
 }

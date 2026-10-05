@@ -749,7 +749,7 @@ Create `resources/views/admin/homepage-builder/index.blade.php`:
                 Homepage Builder
             </h2>
             <div class="flex gap-2">
-                <a href="{{ url('/') }}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                <a href="{{ url('/') }}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-gray-400 rounded-lg text-gray-700 hover:bg-gray-50">
                     <i class="fas fa-eye"></i> Preview
                 </a>
                 <button type="button" id="btnAddSection" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
@@ -779,7 +779,7 @@ Create `resources/views/admin/homepage-builder/index.blade.php`:
             @forelse($sections as $section)
                 @include('admin.homepage-builder.partials.section-item', compact('section'))
             @empty
-                <div class="bg-white rounded-lg border-2 border-dashed border-gray-300 p-12 text-center">
+                <div class="bg-white rounded-lg border-2 border-dashedborder-gray-400 p-12 text-center">
                     <i class="fas fa-layer-group text-5xl text-gray-300 mb-4"></i>
                     <h3 class="text-gray-600 font-semibold mb-2">Belum ada section</h3>
                     <p class="text-gray-500 text-sm mb-4">Mulai dengan menambahkan section pertama.</p>
@@ -948,12 +948,12 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ar
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Limit</label>
-                <input type="number" name="config[limit]" value="10" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                <input type="number" name="config[limit]" value="10" class="w-full px-3 py-2 border border-gray-400 rounded-lg">
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Columns</label>
-                <select name="config[columns]" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                <select name="config[columns]" class="w-full px-3 py-2 border border-gray-400 rounded-lg">
                     <option value="2">2 Columns</option>
                     <option value="3" selected>3 Columns</option>
                     <option value="4">4 Columns</option>
@@ -988,7 +988,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ar
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Sort By</label>
-                <select name="config[sort_by]" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                <select name="config[sort_by]" class="w-full px-3 py-2 border border-gray-400 rounded-lg">
                     <option value="latest" selected>Latest</option>
                     <option value="popular">Most Popular</option>
                 </select>
@@ -998,7 +998,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ar
                 <button type="submit" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                     Save
                 </button>
-                <button type="button" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50" onclick="closeConfigModal()">
+                <button type="button" class="flex-1 px-4 py-2 border border-gray-400 rounded-lg text-gray-700 hover:bg-gray-50" onclick="closeConfigModal()">
                     Cancel
                 </button>
             </div>
@@ -1035,11 +1035,11 @@ For brevity, create minimal versions of each with required fields:
             @csrf
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Limit</label>
-                <input type="number" name="config[limit]" value="6" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                <input type="number" name="config[limit]" value="6" class="w-full px-3 py-2 border border-gray-400 rounded-lg">
             </div>
             <div class="flex gap-2 pt-4">
                 <button type="submit" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg">Save</button>
-                <button type="button" onclick="closeConfigModal()" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg">Cancel</button>
+                <button type="button" onclick="closeConfigModal()" class="flex-1 px-4 py-2 border border-gray-400 rounded-lg">Cancel</button>
             </div>
         </form>
     </div>
@@ -1481,7 +1481,7 @@ Create these with minimal content:
         <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">{{ $section->title ?? 'Subscribe' }}</h2>
         <form method="POST" action="{{ route('newsletter.subscribe') }}" class="flex gap-2">
             @csrf
-            <input type="email" name="email" placeholder="{{ $section->config['placeholder_text'] ?? 'Enter your email' }}" required class="flex-1 px-4 py-2 border border-gray-300 rounded-lg">
+            <input type="email" name="email" placeholder="{{ $section->config['placeholder_text'] ?? 'Enter your email' }}" required class="flex-1 px-4 py-2 border border-gray-400 rounded-lg">
             <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                 {{ $section->config['button_text'] ?? 'Subscribe' }}
             </button>

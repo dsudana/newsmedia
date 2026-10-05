@@ -1,5 +1,6 @@
 <!-- Trending News Carousel Configuration Modal -->
-<div id="trendingCarouselModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+<div id="trendingCarouselModal"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-96 overflow-y-auto">
         <!-- Header -->
         <div class="sticky top-0 bg-gradient-to-r from-orange-500 to-yellow-600 text-white p-6 border-b">
@@ -15,7 +16,7 @@
                     <i class="fas fa-heading text-orange-500 mr-2"></i>Section Title
                 </label>
                 <input type="text" name="title" placeholder="e.g., Trending Now"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                    class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
             </div>
 
             <!-- Description -->
@@ -24,7 +25,7 @@
                     <i class="fas fa-align-left text-orange-500 mr-2"></i>Description
                 </label>
                 <textarea name="description" rows="2" placeholder="Optional description for this section"
-                          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"></textarea>
+                    class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"></textarea>
             </div>
 
             <!-- Grid: Columns Per Slide -->
@@ -33,7 +34,8 @@
                     <label class="block text-sm font-bold text-gray-700 mb-2">
                         <i class="fas fa-columns text-orange-500 mr-2"></i>Columns Per Slide
                     </label>
-                    <select name="columns" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                    <select name="columns"
+                        class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                         <option value="1">1 Column</option>
                         <option value="2">2 Columns</option>
                         <option value="3" selected>3 Columns</option>
@@ -49,7 +51,7 @@
                         <i class="fas fa-list text-orange-500 mr-2"></i>Total Articles
                     </label>
                     <input type="number" name="limit" value="12" min="3" max="50"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                     <p class="text-sm text-gray-600 mt-1">Total articles to display</p>
                 </div>
             </div>
@@ -62,9 +64,9 @@
                         <i class="fas fa-expand text-orange-500 mr-2"></i>Container Width
                     </label>
                     <div class="flex items-center gap-2">
-                        <input type="range" name="container_width" value="100" min="50" max="100" step="5"
-                               class="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-                               oninput="document.querySelector('[data-width-display]').textContent = this.value + '%'">
+                        <input type="range" name="container_width" value="100" min="50" max="100"
+                            step="5" class="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                            oninput="document.querySelector('[data-width-display]').textContent = this.value + '%'">
                         <span data-width-display class="text-sm font-bold text-orange-600 min-w-12">100%</span>
                     </div>
                     <p class="text-sm text-gray-600 mt-1">Set carousel width percentage</p>
@@ -75,8 +77,9 @@
                     <label class="block text-sm font-bold text-gray-700 mb-2">
                         <i class="fas fa-tachometer-alt text-orange-500 mr-2"></i>Slider Speed (ms)
                     </label>
-                    <input type="number" name="slider_speed" value="3000" min="1000" max="10000" step="100"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                    <input type="number" name="slider_speed" value="3000" min="1000" max="10000"
+                        step="100"
+                        class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                     <p class="text-sm text-gray-600 mt-1">Auto-scroll speed in milliseconds</p>
                 </div>
             </div>
@@ -86,7 +89,8 @@
                 <label class="block text-sm font-bold text-gray-700 mb-2">
                     <i class="fas fa-sort text-orange-500 mr-2"></i>Sort By
                 </label>
-                <select name="sort_by" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                <select name="sort_by"
+                    class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                     <option value="views" selected>Most Views (Trending)</option>
                     <option value="popular">Most Popular</option>
                     <option value="latest">Latest Published</option>
@@ -99,7 +103,8 @@
                 <label class="block text-sm font-bold text-gray-700 mb-2">
                     <i class="fas fa-ruler-horizontal text-orange-500 mr-2"></i>Slide Padding
                 </label>
-                <select name="slide_padding" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                <select name="slide_padding"
+                    class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                     <option value="px-2">Small (8px)</option>
                     <option value="px-3">Medium (12px)</option>
                     <option value="px-4" selected>Large (16px)</option>
@@ -120,11 +125,11 @@
         <!-- Footer -->
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeTrendingCarouselModal()"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
+                class="px-6 py-2 border border-gray-400 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveTrendingCarouselConfig()"
-                    class="px-6 py-2 bg-gradient-to-r from-orange-500 to-yellow-600 text-white rounded-lg hover:opacity-90 transition font-semibold">
+                class="px-6 py-2 bg-gradient-to-r from-orange-500 to-yellow-600 text-white rounded-lg hover:opacity-90 transition font-semibold">
                 <i class="fas fa-save mr-2"></i>Save Configuration
             </button>
         </div>

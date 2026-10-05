@@ -118,7 +118,7 @@
 
                         <!-- Meta Information -->
                         <div
-                            class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b-2 border-gray-300 dark:border-gray-700/50 mb-6">
+                            class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b-2border-gray-400 dark:border-gray-700/50 mb-6">
                             <div class="flex items-center gap-4">
                                 @if ($article->user)
                                     <div
@@ -211,7 +211,7 @@
 
                         <!-- Tags -->
                         @if ($article->tags && $article->tags->count() > 0)
-                            <div class="border-t-2 border-gray-300 dark:border-gray-700/50 pt-6 mb-8">
+                            <div class="border-t-2border-gray-400 dark:border-gray-700/50 pt-6 mb-8">
                                 <h3 class="text-sm font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase">Tags Terkait
                                 </h3>
                                 <div class="flex flex-wrap gap-2">
@@ -251,7 +251,7 @@
 
                         <!-- Related Articles -->
                         @if ($relatedArticles && $relatedArticles->count() > 0)
-                            <div class="border-t-2 border-gray-300 dark:border-gray-700/50 pt-8 mb-12">
+                            <div class="border-t-2border-gray-400 dark:border-gray-700/50 pt-8 mb-12">
                                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Artikel Terkait</h2>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     @foreach ($relatedArticles->take(7) as $related)
@@ -290,7 +290,7 @@
                         @endif
 
                         <!-- Comments Section -->
-                        <div class="border-t-2 border-gray-300 dark:border-gray-700/50 pt-8">
+                        <div class="border-t-2border-gray-400 dark:border-gray-700/50 pt-8">
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Komentar</h2>
 
                             @php $approvedComments = $article->comments?->where('is_approved', true)->whereNull('parent_id') ?? collect(); @endphp
@@ -310,19 +310,19 @@
                             @endif
 
                             <!-- Comment Form -->
-                            <div class="border border-gray-300 dark:border-gray-600 dark:bg-gray-800 p-6 rounded-lg">
+                            <div class="border border-gray-400 dark:border-gray-600 dark:bg-gray-800 p-6 rounded-lg">
                                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Tinggalkan Komentar</h3>
                                 <form action="{{ route('comments.store', $article->slug) }}" method="POST"
                                     class="space-y-4">
                                     @csrf
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <input type="text" name="name" required placeholder="Nama Anda"
-                                            class="px-4 py-3 text-sm border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500">
+                                            class="px-4 py-3 text-sm border border-gray-400 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500">
                                         <input type="email" name="email" required placeholder="Email Anda"
-                                            class="px-4 py-3 text-sm border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500">
+                                            class="px-4 py-3 text-sm border border-gray-400 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500">
                                     </div>
                                     <textarea name="content" required rows="5" placeholder="Komentar Anda..."
-                                        class="w-full px-4 py-3 text-sm border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none placeholder-gray-400 dark:placeholder-gray-500"></textarea>
+                                        class="w-full px-4 py-3 text-sm border border-gray-400 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none placeholder-gray-400 dark:placeholder-gray-500"></textarea>
                                     <button type="submit"
                                         class="bg-red-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-red-700 transition text-sm">
                                         Kirim Komentar

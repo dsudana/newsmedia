@@ -128,7 +128,8 @@
     </div>
 
     <!-- Category Modal -->
-    <div id="categoryModal" class="hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4" onclick="if(event.target.id === 'categoryModal') closeCategoryModal()">
+    <div id="categoryModal" class="hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4"
+        onclick="if(event.target.id === 'categoryModal') closeCategoryModal()">
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden transform transition-all">
             <!-- Header -->
             <div class="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-4 flex items-center justify-between">
@@ -147,29 +148,34 @@
                 <!-- Name Field -->
                 <div>
                     <label class="block text-sm font-semibold text-gray-900 mb-1.5">Category Name *</label>
-                    <input type="text" id="categoryName" name="name" required placeholder="Enter category name" class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
+                    <input type="text" id="categoryName" name="name" required placeholder="Enter category name"
+                        class="w-full px-3 py-2 text-sm border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
                 </div>
 
                 <!-- Description Field -->
                 <div>
                     <label class="block text-sm font-semibold text-gray-900 mb-1.5">Description</label>
-                    <textarea id="categoryDescription" name="description" rows="2" placeholder="Add a brief description..." class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition resize-none"></textarea>
+                    <textarea id="categoryDescription" name="description" rows="2" placeholder="Add a brief description..."
+                        class="w-full px-3 py-2 text-sm border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition resize-none"></textarea>
                 </div>
 
                 <!-- Parent Category Field -->
                 <div>
                     <label class="block text-sm font-semibold text-gray-900 mb-1.5">Parent Category</label>
-                    <select id="categoryParent" name="parent_id" class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition bg-white">
+                    <select id="categoryParent" name="parent_id"
+                        class="w-full px-3 py-2 text-sm border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition bg-white">
                         <option value="">None</option>
                     </select>
                 </div>
 
                 <!-- Action Buttons -->
                 <div class="flex gap-2 pt-2">
-                    <button type="submit" class="flex-1 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 font-medium text-sm transition transform hover:scale-105">
+                    <button type="submit"
+                        class="flex-1 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 font-medium text-sm transition transform hover:scale-105">
                         <i class="fas fa-check mr-1.5"></i>Save
                     </button>
-                    <button type="button" onclick="closeCategoryModal()" class="flex-1 bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 font-medium text-sm transition">
+                    <button type="button" onclick="closeCategoryModal()"
+                        class="flex-1 bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 font-medium text-sm transition">
                         Cancel
                     </button>
                 </div>
@@ -191,27 +197,29 @@
 
         function editCategoryModal(id) {
             fetch(`${baseUrl}/${id}/edit`, {
-                headers: {'X-Requested-With': 'XMLHttpRequest'}
-            })
-            .then(r => r.json())
-            .then(data => {
-                document.getElementById('modalTitle').textContent = 'Edit Category';
-                document.getElementById('categoryId').value = id;
-                document.getElementById('methodField').value = 'PUT';
-                document.getElementById('categoryName').value = data.category.name;
-                document.getElementById('categoryDescription').value = data.category.description || '';
-                document.getElementById('categoryParent').value = data.category.parent_id || '';
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById('modalTitle').textContent = 'Edit Category';
+                    document.getElementById('categoryId').value = id;
+                    document.getElementById('methodField').value = 'PUT';
+                    document.getElementById('categoryName').value = data.category.name;
+                    document.getElementById('categoryDescription').value = data.category.description || '';
+                    document.getElementById('categoryParent').value = data.category.parent_id || '';
 
-                // Populate parents
-                const select = document.getElementById('categoryParent');
-                select.innerHTML = '<option value="">None</option>';
-                data.parents.forEach(p => {
-                    select.innerHTML += `<option value="${p.id}">${p.name}</option>`;
-                });
+                    // Populate parents
+                    const select = document.getElementById('categoryParent');
+                    select.innerHTML = '<option value="">None</option>';
+                    data.parents.forEach(p => {
+                        select.innerHTML += `<option value="${p.id}">${p.name}</option>`;
+                    });
 
-                document.getElementById('categoryModal').classList.remove('hidden');
-            })
-            .catch(err => console.error('Error loading category:', err));
+                    document.getElementById('categoryModal').classList.remove('hidden');
+                })
+                .catch(err => console.error('Error loading category:', err));
         }
 
         function closeCategoryModal() {
@@ -220,17 +228,19 @@
 
         function loadParentCategories() {
             fetch(`${baseUrl}/create`, {
-                headers: {'X-Requested-With': 'XMLHttpRequest'}
-            })
-            .then(r => r.json())
-            .then(data => {
-                const select = document.getElementById('categoryParent');
-                select.innerHTML = '<option value="">None</option>';
-                data.parents.forEach(p => {
-                    select.innerHTML += `<option value="${p.id}">${p.name}</option>`;
-                });
-            })
-            .catch(err => console.error('Error loading parents:', err));
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(r => r.json())
+                .then(data => {
+                    const select = document.getElementById('categoryParent');
+                    select.innerHTML = '<option value="">None</option>';
+                    data.parents.forEach(p => {
+                        select.innerHTML += `<option value="${p.id}">${p.name}</option>`;
+                    });
+                })
+                .catch(err => console.error('Error loading parents:', err));
         }
 
         function deleteCategory(id) {
@@ -246,25 +256,25 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     fetch(`${baseUrl}/${id}`, {
-                        method: 'DELETE',
-                        headers: {
-                            'X-CSRF-Token': '{{ csrf_token() }}',
-                            'X-Requested-With': 'XMLHttpRequest'
-                        }
-                    })
-                    .then(r => r.json())
-                    .then(data => {
-                        if (data.success) {
-                            Swal.fire('Deleted!', 'Category has been deleted.', 'success');
-                            setTimeout(() => location.reload(), 1500);
-                        } else {
-                            Swal.fire('Error!', 'Failed to delete category.', 'error');
-                        }
-                    })
-                    .catch(err => {
-                        console.error('Error deleting category:', err);
-                        Swal.fire('Error!', 'An error occurred while deleting.', 'error');
-                    });
+                            method: 'DELETE',
+                            headers: {
+                                'X-CSRF-Token': '{{ csrf_token() }}',
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        })
+                        .then(r => r.json())
+                        .then(data => {
+                            if (data.success) {
+                                Swal.fire('Deleted!', 'Category has been deleted.', 'success');
+                                setTimeout(() => location.reload(), 1500);
+                            } else {
+                                Swal.fire('Error!', 'Failed to delete category.', 'error');
+                            }
+                        })
+                        .catch(err => {
+                            console.error('Error deleting category:', err);
+                            Swal.fire('Error!', 'An error occurred while deleting.', 'error');
+                        });
                 }
             });
         }
@@ -279,21 +289,21 @@
             const data = Object.fromEntries(formData);
 
             fetch(url, {
-                method,
-                headers: {
-                    'X-CSRF-Token': '{{ csrf_token() }}',
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(r => r.json())
-            .then(data => {
-                if (data.success) {
-                    location.reload();
-                }
-            })
-            .catch(err => console.error('Error saving category:', err));
+                    method,
+                    headers: {
+                        'X-CSRF-Token': '{{ csrf_token() }}',
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        location.reload();
+                    }
+                })
+                .catch(err => console.error('Error saving category:', err));
         });
 
         // Close modal on outside click
@@ -301,4 +311,4 @@
             if (e.target.id === 'categoryModal') closeCategoryModal();
         });
     </script>
-</x-x-admin-layout-modern>
+    </x-x-admin-layout-modern>

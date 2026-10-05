@@ -18,7 +18,7 @@
                     URL YouTube <span class="text-red-600">*</span>
                 </label>
                 <input type="text" id="youtube_url" name="youtube_url"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" value="{{ old('youtube_url') }}" required>
                 @error('youtube_url')
                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
@@ -33,7 +33,7 @@
                     Judul Video <span class="text-red-600">*</span>
                 </label>
                 <input type="text" id="title" name="title"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Judul video" value="{{ old('title') }}" required>
                 @error('title')
                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
@@ -46,7 +46,7 @@
                     Deskripsi
                 </label>
                 <textarea id="description" name="description" rows="4"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Deskripsi video (opsional)">{{ old('description') }}</textarea>
                 @error('description')
                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
@@ -59,7 +59,7 @@
                     Kategori
                 </label>
                 <select id="category_id" name="category_id"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     <option value="">-- Pilih Kategori --</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
@@ -78,7 +78,7 @@
                     Status <span class="text-red-600">*</span>
                 </label>
                 <select id="status" name="status"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     <option value="published" {{ old('status') === 'published' ? 'selected' : '' }}>Dipublikasikan
                     </option>
                     <option value="draft" {{ old('status') === 'draft' ? 'selected' : '' }}>Draft</option>
@@ -94,7 +94,7 @@
                     Tanggal Publikasi
                 </label>
                 <input type="datetime-local" id="published_at" name="published_at"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     value="{{ old('published_at') }}">
                 @error('published_at')
                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>

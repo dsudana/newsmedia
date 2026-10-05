@@ -72,7 +72,7 @@
                             </label>
                             <div class="relative">
                                 <input type="file" id="xml_file" name="xml_file" accept=".xml" required
-                                    class="block w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
+                                    class="block w-full px-4 py-3 border-2 border-dashedborder-gray-400 rounded-lg focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
                                     onchange="updateFileName(this)">
                                 <p class="mt-2 text-sm text-gray-500">
                                     <i class="fas fa-info-circle mr-1"></i>
@@ -225,4 +225,4 @@
             }
         }
     </script>
-    </x-admin.layout-modern>
+</x-admin.layout-modern>

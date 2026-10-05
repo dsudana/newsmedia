@@ -1,6 +1,6 @@
 <!-- News Ticker Carousel -->
 @if (isset($latestArticles) && $latestArticles->count() > 0)
-    <div class="bg-gray-100 py-4 border-b border-gray-300">
+    <div class="bg-gray-100 py-4 border-bborder-gray-400">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex items-center gap-6 overflow-x-auto pb-2 scrollbar-hide">
                 @foreach ($latestArticles->take(3) as $article)

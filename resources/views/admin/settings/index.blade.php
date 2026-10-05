@@ -33,7 +33,7 @@
                                 <i class="fas fa-globe mr-2 text-indigo-600"></i>Site Name
                             </label>
                             <input type="text" name="site_name" id="site_name"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                 value="{{ old('site_name', $settings['site_name'] ?? '') }}" placeholder="NEWSMEDIA">
                         </div>
 
@@ -42,7 +42,7 @@
                                 <i class="fas fa-envelope mr-2 text-indigo-600"></i>Contact Email
                             </label>
                             <input type="email" name="contact_email" id="contact_email"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                 value="{{ old('contact_email', $settings['contact_email'] ?? '') }}"
                                 placeholder="admin@retnews.com">
                         </div>
@@ -53,7 +53,7 @@
                             <i class="fas fa-align-left mr-2 text-indigo-600"></i>Site Description
                         </label>
                         <textarea name="site_description" id="site_description" rows="3"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="Describe your site...">{{ old('site_description', $settings['site_description'] ?? '') }}</textarea>
                     </div>
 
@@ -69,7 +69,7 @@
                                 </div>
                             @endif
                             <input type="file" name="site_logo" id="site_logo" accept="image/*"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         </div>
 
                         <div>
@@ -83,7 +83,7 @@
                                 </div>
                             @endif
                             <input type="file" name="site_favicon" id="site_favicon" accept="image/*"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@
                             <i class="fas fa-minus mr-2 text-indigo-600"></i>Footer Text
                         </label>
                         <input type="text" name="footer_text" id="footer_text"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             value="{{ old('footer_text', $settings['footer_text'] ?? '') }}"
                             placeholder="© 2026 NEWSMEDIA. All rights reserved.">
                     </div>
@@ -114,7 +114,7 @@
                             Default SEO Title
                         </label>
                         <input type="text" name="seo_title" id="seo_title"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             value="{{ old('seo_title', $settings['seo_title'] ?? '') }}"
                             placeholder="NEWSMEDIA - Berita Terbaru & Stories">
                     </div>
@@ -124,7 +124,7 @@
                             Default SEO Description
                         </label>
                         <textarea name="seo_description" id="seo_description" rows="2"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="Enter default SEO description...">{{ old('seo_description', $settings['seo_description'] ?? '') }}</textarea>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                                 <i class="fab fa-facebook mr-2 text-blue-600"></i>Facebook URL
                             </label>
                             <input type="url" name="social_facebook" id="social_facebook"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                 value="{{ old('social_facebook', $settings['social_facebook'] ?? '') }}"
                                 placeholder="https://facebook.com/...">
                         </div>
@@ -156,7 +156,7 @@
                                 <i class="fab fa-twitter mr-2 text-blue-400"></i>Twitter URL
                             </label>
                             <input type="url" name="social_twitter" id="social_twitter"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                 value="{{ old('social_twitter', $settings['social_twitter'] ?? '') }}"
                                 placeholder="https://twitter.com/...">
                         </div>
@@ -166,7 +166,7 @@
                                 <i class="fab fa-instagram mr-2 text-pink-600"></i>Instagram URL
                             </label>
                             <input type="url" name="social_instagram" id="social_instagram"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                 value="{{ old('social_instagram', $settings['social_instagram'] ?? '') }}"
                                 placeholder="https://instagram.com/...">
                         </div>
@@ -176,7 +176,7 @@
                                 <i class="fab fa-youtube mr-2 text-red-600"></i>YouTube URL
                             </label>
                             <input type="url" name="social_youtube" id="social_youtube"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                 value="{{ old('social_youtube', $settings['social_youtube'] ?? '') }}"
                                 placeholder="https://youtube.com/...">
                         </div>

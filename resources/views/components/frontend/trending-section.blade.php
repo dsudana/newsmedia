@@ -23,18 +23,22 @@
             ->orderByDesc('articles_count')
             ->limit(10)
             ->get()
-            ->map(fn($tag) => (object)[
-                'keyword' => $tag->name,
-                'slug' => $tag->slug,
-                'articles_count' => $tag->articles_count,
-                'is_tag' => true
-            ]);
+            ->map(
+                fn($tag) => (object) [
+                    'keyword' => $tag->name,
+                    'slug' => $tag->slug,
+                    'articles_count' => $tag->articles_count,
+                    'is_tag' => true,
+                ],
+            );
     } else {
-        $trendingKeywords = $trendingKeywords->map(fn($kw) => (object)[
-            'keyword' => $kw->keyword,
-            'articles_count' => $kw->articles_count,
-            'is_tag' => false
-        ]);
+        $trendingKeywords = $trendingKeywords->map(
+            fn($kw) => (object) [
+                'keyword' => $kw->keyword,
+                'articles_count' => $kw->articles_count,
+                'is_tag' => false,
+            ],
+        );
     }
 @endphp
 
@@ -42,13 +46,12 @@
     <div class="mb-8">
         <div class="flex items-center gap-3 pb-2">
             <!-- Fixed Label -->
-            <span class="text-red-600 dark:text-red-500 font-bold text-sm uppercase whitespace-nowrap sticky left-0 z-10 bg-white dark:bg-gray-900">TRENDING:</span>
+            <span
+                class="text-red-600 dark:text-red-500 font-bold text-sm uppercase whitespace-nowrap sticky left-0 z-10 bg-white dark:bg-gray-900">TRENDING:</span>
 
             <!-- Scrollable Container -->
-            <div class="flex items-center gap-3 flex-1 overflow-x-auto scroll-smooth select-none"
-                 id="trendingContainer"
-                 data-dragging="false"
-                 style="scrollbar-width: none; -ms-overflow-style: none;">
+            <div class="flex items-center gap-3 flex-1 overflow-x-auto scroll-smooth select-none" id="trendingContainer"
+                data-dragging="false" style="scrollbar-width: none; -ms-overflow-style: none;">
 
                 <!-- Trending Keywords/Tags from Articles -->
                 @foreach ($trendingKeywords as $item)
@@ -61,9 +64,8 @@
                         </a>
                     @else
                         <a href="{{ route('blog.search') }}?q={{ urlencode($item->keyword) }}"
-                            class="px-4 py-2.5 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 transition text-sm font-bold border border-gray-300 dark:border-gray-700/60 whitespace-nowrap cursor-pointer shrink-0"
-                            title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)"
-                            draggable="false">
+                            class="px-4 py-2.5 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 transition text-sm font-bold border border-gray-400 dark:border-gray-700/60 whitespace-nowrap cursor-pointer shrink-0"
+                            title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)" draggable="false">
                             {{ $item->keyword }}
                         </a>
                     @endif
@@ -72,8 +74,8 @@
 
             <!-- Right Chevron Button -->
             <button id="trendingNextBtn"
-                    class="shrink-0 text-red-600 dark:text-red-500 hover:text-red-700 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 p-2.5 rounded transition"
-                    title="Scroll right">
+                class="shrink-0 text-red-600 dark:text-red-500 hover:text-red-700 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 p-2.5 rounded transition"
+                title="Scroll right">
                 <i class="fas fa-chevron-right text-lg"></i><i class="fas fa-chevron-right text-lg -ml-2"></i>
             </button>
         </div>

@@ -181,7 +181,7 @@
 
             @forelse($categories as $category)
                 <a href="{{ route('blog.category', $category->slug) }}"
-                    class="inline-block text-xs font-bold uppercase px-4 py-2 border-2 border-gray-400 text-gray-700 rounded-md hover:border-red-600 hover:text-red-600 hover:bg-red-50 transition duration-300">
+                    class="inline-block text-xs font-bold uppercase px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-md hover:border-red-600 hover:text-red-600 hover:bg-red-50 transition duration-300">
                     {{ $category->name }}
                 </a>
             @empty

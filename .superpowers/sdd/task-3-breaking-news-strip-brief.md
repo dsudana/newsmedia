@@ -1,13 +1,16 @@
 # Task 3: Create Breaking News Strip Section View & Admin Config
 
 ## Overview
+
 Create the Blade view for breaking news strip carousel section and the admin configuration modal. This is the first section type that uses the data resolver from Task 2.
 
 ## Files to Create
+
 1. `resources/views/frontend/sections/breaking_news_strip.blade.php` - Section view with Swiper carousel
 2. `resources/views/admin/homepage-builder/partials/modals/section-config-breaking_news_strip.blade.php` - Admin config modal
 
 ## Files to Modify
+
 - `resources/views/admin/homepage-builder/index.blade.php` - Include new modal (one line)
 
 ## Step 1: Create breaking news strip section view
@@ -20,13 +23,13 @@ File: `resources/views/frontend/sections/breaking_news_strip.blade.php`
         @if($title ?? null)
             <h2 class="text-xl font-bold text-gray-900 mb-4">{{ $title }}</h2>
         @endif
-        
+
         <div class="carousel-breaking-strip-{{ $section->id }} swiper">
             <div class="swiper-wrapper">
                 @forelse ($data['articles'] ?? [] as $article)
                     <div class="swiper-slide">
                         <a href="{{ route('blog.show', $article->slug) }}" class="flex items-center gap-3 group">
-                            <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}" 
+                            <img src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder.jpg' }}"
                                  alt="{{ $article->title }}"
                                  class="w-16 h-16 object-cover rounded shrink-0">
                             <div class="flex-1 min-w-0">
@@ -85,7 +88,7 @@ File: `resources/views/admin/homepage-builder/partials/modals/section-config-bre
                     <i class="fas fa-heading text-red-600 mr-2"></i>Section Title (Optional)
                 </label>
                 <input type="text" id="title_breaking" name="title" placeholder="e.g., Breaking News"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                       class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
             </div>
 
             <div class="grid grid-cols-2 gap-4">
@@ -94,7 +97,7 @@ File: `resources/views/admin/homepage-builder/partials/modals/section-config-bre
                         <i class="fas fa-list text-red-600 mr-2"></i>Number of Articles
                     </label>
                     <input type="number" id="limit_breaking" name="config[limit]" value="12" min="4" max="30"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
                 </div>
 
                 <div>
@@ -102,14 +105,14 @@ File: `resources/views/admin/homepage-builder/partials/modals/section-config-bre
                         <i class="fas fa-tachometer-alt text-red-600 mr-2"></i>Auto-scroll Speed (ms)
                     </label>
                     <input type="number" id="speed_breaking" name="config[slider_speed]" value="3000" min="1000" max="10000" step="500"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
                 </div>
             </div>
         </form>
 
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('breaking_news_strip')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
+                    class="px-6 py-2 border border-gray-400 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('breaking_news_strip')"
@@ -148,6 +151,7 @@ git commit -m "feat: add breaking news strip section type"
 ```
 
 ## Acceptance Criteria
+
 - ✅ Section view file created with Swiper carousel
 - ✅ Carousel uses unique ID based on section->id
 - ✅ Admin config modal created with title and slider configuration fields
@@ -157,6 +161,7 @@ git commit -m "feat: add breaking news strip section type"
 - ✅ All 3 files committed with proper message
 
 ## Data Flow
+
 1. Admin creates "Breaking News Strip" section → POST to /admin/homepage-builder
 2. Controller calls HomepageBuilderService::resolveSection() with section.section_type = 'breaking_news_strip'
 3. Service calls getBreakingNewsStripData() with section.config

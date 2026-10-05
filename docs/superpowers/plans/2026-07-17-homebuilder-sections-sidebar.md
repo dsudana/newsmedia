@@ -198,7 +198,7 @@ Create `resources/views/partials/sidebar/newsletter.blade.php`:
     <form class="space-y-3" onsubmit="handleNewsletterSubscribe(event)">
         @csrf
         <input type="email" name="email" placeholder="Enter your email" required
-               class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent">
+               class="w-full px-4 py-2 border border-gray-400 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent">
         <button type="submit"
                 class="w-full px-4 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm">
             Subscribe
@@ -464,7 +464,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-br
                     <i class="fas fa-heading text-red-600 mr-2"></i>Section Title (Optional)
                 </label>
                 <input type="text" id="title_breaking" name="title" placeholder="e.g., Breaking News"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                       class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
             </div>
 
             <div class="grid grid-cols-2 gap-4">
@@ -473,7 +473,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-br
                         <i class="fas fa-list text-red-600 mr-2"></i>Number of Articles
                     </label>
                     <input type="number" id="limit_breaking" name="config[limit]" value="12" min="4" max="30"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
                 </div>
 
                 <div>
@@ -481,14 +481,14 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-br
                         <i class="fas fa-tachometer-alt text-red-600 mr-2"></i>Auto-scroll Speed (ms)
                     </label>
                     <input type="number" id="speed_breaking" name="config[slider_speed]" value="3000" min="1000" max="10000" step="500"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
                 </div>
             </div>
         </form>
 
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('breaking_news_strip')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
+                    class="px-6 py-2 border border-gray-400 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('breaking_news_strip')"
@@ -637,7 +637,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-re
                     <i class="fas fa-heading text-purple-600 mr-2"></i>Section Title (Optional)
                 </label>
                 <input type="text" id="title_recentpop" name="title" placeholder="e.g., Latest Updates"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                       class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
             </div>
 
             <div class="grid grid-cols-2 gap-4">
@@ -646,7 +646,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-re
                         <i class="fas fa-clock text-purple-600 mr-2"></i>Recent Articles
                     </label>
                     <input type="number" id="recent_limit" name="config[recent_limit]" value="6" min="2" max="12"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                 </div>
 
                 <div>
@@ -654,14 +654,14 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-re
                         <i class="fas fa-fire text-purple-600 mr-2"></i>Popular Articles
                     </label>
                     <input type="number" id="popular_limit" name="config[popular_limit]" value="4" min="2" max="10"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                 </div>
             </div>
         </form>
 
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('recent_and_popular')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
+                    class="px-6 py-2 border border-gray-400 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('recent_and_popular')"
@@ -913,7 +913,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                     <i class="fas fa-heading text-blue-600 mr-2"></i>Section Title
                 </label>
                 <input type="text" id="title_catstrip" name="title" placeholder="e.g., Latest News"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                       class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
             </div>
 
             <div class="grid grid-cols-2 gap-4">
@@ -922,7 +922,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                         <i class="fas fa-folder text-blue-600 mr-2"></i>Category
                     </label>
                     <select id="category_catstrip" name="config[category]"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         <option value="">All Categories</option>
                         @foreach(\App\Models\Category::all() as $cat)
                             <option value="{{ $cat->slug }}">{{ $cat->name }}</option>
@@ -935,7 +935,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                         <i class="fas fa-list text-blue-600 mr-2"></i>Number of Articles
                     </label>
                     <input type="number" id="limit_catstrip" name="config[limit]" value="12" min="6" max="30"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                 </div>
             </div>
 
@@ -944,13 +944,13 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                     <i class="fas fa-tachometer-alt text-blue-600 mr-2"></i>Auto-scroll Speed (ms)
                 </label>
                 <input type="number" id="speed_catstrip" name="config[slider_speed]" value="3000" min="1000" max="10000" step="500"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                       class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
             </div>
         </form>
 
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('category_strip_carousel')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
+                    class="px-6 py-2 border border-gray-400 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('category_strip_carousel')"
@@ -1031,7 +1031,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                     <i class="fas fa-heading text-teal-600 mr-2"></i>Section Title
                 </label>
                 <input type="text" id="title_catgrid" name="title" placeholder="e.g., Lifestyle"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                       class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
             </div>
 
             <div class="grid grid-cols-2 gap-4">
@@ -1040,7 +1040,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                         <i class="fas fa-folder text-teal-600 mr-2"></i>Category
                     </label>
                     <select id="category_catgrid" name="config[category]"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                            class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
                         @foreach(\App\Models\Category::all() as $cat)
                             <option value="{{ $cat->slug }}">{{ $cat->name }}</option>
                         @endforeach
@@ -1052,14 +1052,14 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                         <i class="fas fa-list text-teal-600 mr-2"></i>Number of Articles
                     </label>
                     <input type="number" id="limit_catgrid" name="config[limit]" value="8" min="4" max="20"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
                 </div>
             </div>
         </form>
 
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('category_grid_section')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
+                    class="px-6 py-2 border border-gray-400 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('category_grid_section')"
@@ -1165,7 +1165,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                     <i class="fas fa-heading text-orange-600 mr-2"></i>Section Title
                 </label>
                 <input type="text" id="title_catlist" name="title" placeholder="e.g., Technology"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                       class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
             </div>
 
             <div class="grid grid-cols-2 gap-4">
@@ -1174,7 +1174,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                         <i class="fas fa-folder text-orange-600 mr-2"></i>Category
                     </label>
                     <select id="category_catlist" name="config[category]"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                            class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                         @foreach(\App\Models\Category::all() as $cat)
                             <option value="{{ $cat->slug }}">{{ $cat->name }}</option>
                         @endforeach
@@ -1186,14 +1186,14 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-ca
                         <i class="fas fa-list text-orange-600 mr-2"></i>Number of Articles
                     </label>
                     <input type="number" id="limit_catlist" name="config[limit]" value="6" min="3" max="15"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                 </div>
             </div>
         </form>
 
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('category_list_section')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
+                    class="px-6 py-2 border border-gray-400 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('category_list_section')"
@@ -1293,7 +1293,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-sp
                     <i class="fas fa-heading text-red-600 mr-2"></i>Section Title
                 </label>
                 <input type="text" id="title_sports" name="title" placeholder="e.g., Sports News"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                       class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
             </div>
 
             <div class="grid grid-cols-2 gap-4">
@@ -1302,7 +1302,7 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-sp
                         <i class="fas fa-list text-red-600 mr-2"></i>Number of Articles
                     </label>
                     <input type="number" id="limit_sports" name="config[limit]" value="10" min="5" max="25"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
                 </div>
 
                 <div>
@@ -1310,14 +1310,14 @@ Create `resources/views/admin/homepage-builder/partials/modals/section-config-sp
                         <i class="fas fa-tachometer-alt text-red-600 mr-2"></i>Auto-scroll Speed (ms)
                     </label>
                     <input type="number" id="speed_sports" name="config[slider_speed]" value="3000" min="1000" max="10000" step="500"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                           class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
                 </div>
             </div>
         </form>
 
         <div class="sticky bottom-0 bg-gray-50 px-6 py-4 border-t flex justify-end gap-3">
             <button type="button" onclick="closeConfigModal('sports_carousel')"
-                    class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
+                    class="px-6 py-2 border border-gray-400 text-gray-700 rounded-lg hover:bg-gray-100 transition font-semibold">
                 Cancel
             </button>
             <button type="button" onclick="saveSectionConfig('sports_carousel')"

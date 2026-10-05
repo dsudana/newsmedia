@@ -134,7 +134,7 @@ File: `resources/views/partials/sidebar/newsletter.blade.php`
     <form class="space-y-3" onsubmit="handleNewsletterSubscribe(event)">
         @csrf
         <input type="email" name="email" placeholder="Enter your email" required
-               class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent">
+               class="w-full px-4 py-2 border border-gray-400 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent">
         <button type="submit"
                 class="w-full px-4 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm">
             Subscribe
