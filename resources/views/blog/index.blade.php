@@ -132,7 +132,7 @@
                                                 class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
                                         @endif
                                     </div>
-                                    <h3 class="font-bold text-gray-200 group-hover:text-red-600 transition line-clamp-2 mb-2">
+                                    <h3 class="font-bold text-gray-600 group-hover:text-red-600 transition line-clamp-2 mb-2">
                                         {{ $article->title }}
                                     </h3>
                                     <p class="text-xs text-gray-400 mb-3">
@@ -181,9 +181,9 @@
                     <x-sidebar.social-links title="Ikuti Kami" />
 
                     <!-- Advertisement Top -->
-                    <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
+                    <div class="bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition-shadow duration-300 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_top" />
-                        
+
                     </div>
 
                     <!-- Recent Articles -->
@@ -193,25 +193,25 @@
                             : \App\Models\Article::published()->latest('published_at')->take(5)->get();
                     @endphp
                     @if($recentArticles && $recentArticles->count() > 0)
-                        <section class=" dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                            <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <span class="w-1 h-6 bg-red-600 rounded-full"></span>
+                        <section class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition-shadow duration-300">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                                <span class="w-1 h-6 bg-red-600 dark:bg-red-500 rounded-full"></span>
                                 Artikel Terbaru
                             </h3>
                             <div class="space-y-5">
                                 @foreach ($recentArticles as $article)
                                     <a href="{{ route('blog.show', $article->slug) }}"
-                                        class="group flex gap-4 pb-5 border-b border-gray-200 last:pb-0 last:border-0 hover:opacity-75 transition">
+                                        class="group flex gap-4 pb-5 border-b border-gray-200 dark:border-gray-700 last:pb-0 last:border-0 hover:opacity-75 transition">
                                         <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
                                             <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/default.jpg' }}"
                                                 alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover">
                                         </div>
                                         <div class="flex-1 min-w-0">
                                             <h4
-                                                class="text-sm font-bold text-gray-900 line-clamp-2 group-hover:text-red-600 transition mb-1">
+                                                class="text-sm font-bold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-1">
                                                 {{ $article->title }}
                                             </h4>
-                                            <p class="text-xs text-gray-500">
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">
                                                 {{ $article->published_at->format('M d, Y') }}
                                             </p>
                                         </div>
