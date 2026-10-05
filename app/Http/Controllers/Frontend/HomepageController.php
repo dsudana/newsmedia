@@ -67,9 +67,12 @@ class HomepageController extends Controller
         });
 
         // Get sidebar articles (recent, limited to 5)
-        $sidebarArticles = Cache::remember('homepage_sidebar_articles', now()->addHours(1), function () {
+        // Deduplicate: exclude articles already shown in main sections
+        $sidebarArticles = Cache::remember('homepage_sidebar_articles', now()->addHours(1), function () use ($latestArticles) {
+            $shownIds = $latestArticles->take(11)->pluck('id')->toArray(); // First 11 articles shown in main content
             return Article::published()
                 ->with(['category:id,name,slug', 'user:id,name'])
+                ->whereNotIn('id', $shownIds)
                 ->latest('published_at')
                 ->take(5)
                 ->get(['id', 'title', 'slug', 'published_at', 'category_id', 'user_id', 'featured_image']);
