@@ -31,21 +31,21 @@
             </div>
 
             <!-- Center: Carousel Section -->
-            <div class="flex-1 min-w-0 px-2 sm:px-3 lg:px-4">
+            <div class="flex-1 min-w-0 px-2 sm:px-3 lg:px-4" @touchstart="handleTouchStart($event)" @touchend="handleTouchEnd($event)" @mousedown="handleMouseDown($event)" @mouseup="handleMouseUp($event)">
                 <div class="overflow-hidden">
-                    <div class="flex gap-2 sm:gap-3 lg:gap-4 transition-transform duration-500" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+                    <div class="flex gap-2 sm:gap-3 lg:gap-4 transition-transform duration-500 cursor-grab active:cursor-grabbing" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                         @php
-                            $carouselItems = $articles->take(10);
-                            $totalSlides = ceil($carouselItems->count() / 3);
+                            $carouselItems = $articles->take(12);
+                            $totalSlides = ceil($carouselItems->count() / 4);
                         @endphp
                         @for ($slideIdx = 0; $slideIdx < $totalSlides; $slideIdx++)
                             <div class="min-w-full flex gap-2 sm:gap-2.5 lg:gap-3">
-                                @for ($i = 0; $i < 3; $i++)
+                                @for ($i = 0; $i < 4; $i++)
                                     @php
-                                        $article = $carouselItems->skip($slideIdx * 3 + $i)->first();
+                                        $article = $carouselItems->skip($slideIdx * 4 + $i)->first();
                                     @endphp
                                     @if ($article)
-                                        <div class="flex-1 flex flex-col group">
+                                        <a href="{{ route('blog.show', $article->slug) }}" class="flex-1 flex flex-col group">
                                             <!-- Image -->
                                             <div class="relative overflow-hidden rounded-md lg:rounded-lg mb-1.5 lg:mb-2 aspect-square sm:aspect-video shrink-0">
                                                 @if ($article->featured_image)
@@ -61,8 +61,8 @@
                                             </div>
 
                                             <!-- Title -->
-                                            <h4 class="text-white font-bold text-xs lg:text-sm line-clamp-2 lg:line-clamp-2 leading-tight">{{ $article->title }}</h4>
-                                        </div>
+                                            <h4 class="text-white font-bold text-xs lg:text-sm line-clamp-2 lg:line-clamp-2 leading-tight group-hover:text-red-200 transition-colors">{{ $article->title }}</h4>
+                                        </a>
                                     @else
                                         <div class="flex-1"></div>
                                     @endif
@@ -70,16 +70,6 @@
                             </div>
                         @endfor
                     </div>
-                </div>
-
-                <!-- Dots -->
-                <div class="flex justify-center gap-1.5 sm:gap-2 mt-2 lg:mt-3">
-                    @for ($i = 0; $i < $totalSlides; $i++)
-                        <button @click="currentSlide = {{ $i }}"
-                            :class="currentSlide === {{ $i }} ? 'bg-white w-2.5' : 'bg-white/50 w-2'"
-                            class="h-2 rounded-full transition" aria-label="Slide {{ $i + 1 }}">
-                        </button>
-                    @endfor
                 </div>
             </div>
 
@@ -116,6 +106,10 @@
                 currentSlide: 0,
                 totalSlides: {{ $totalSlides }},
                 autoplayInterval: null,
+                touchStartX: 0,
+                touchEndX: 0,
+                mouseStartX: 0,
+                isDown: false,
                 init() {
                     this.startAutoplay();
                 },
@@ -124,6 +118,41 @@
                     this.autoplayInterval = setInterval(() => {
                         this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
                     }, 6000);
+                },
+                handleTouchStart(e) {
+                    this.touchStartX = e.changedTouches[0].screenX;
+                },
+                handleTouchEnd(e) {
+                    this.touchEndX = e.changedTouches[0].screenX;
+                    this.handleSwipe();
+                },
+                handleMouseDown(e) {
+                    this.isDown = true;
+                    this.mouseStartX = e.clientX;
+                },
+                handleMouseUp(e) {
+                    if (!this.isDown) return;
+                    this.isDown = false;
+                    const diff = e.clientX - this.mouseStartX;
+                    if (Math.abs(diff) > 50) { // Minimum swipe distance
+                        if (diff > 0) {
+                            this.prev();
+                        } else {
+                            this.next();
+                        }
+                    }
+                },
+                handleSwipe() {
+                    const swipeThreshold = 50;
+                    const diff = this.touchStartX - this.touchEndX;
+
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            this.next();
+                        } else {
+                            this.prev();
+                        }
+                    }
                 },
                 next() {
                     this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
