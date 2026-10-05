@@ -1,4 +1,4 @@
-<section class="py-8">
+﻿<section class="py-8">
     <div class="max-w-6xl mx-auto px-4 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
             {{-- Left: Recent Posts --}}
@@ -19,7 +19,7 @@
                                 <h3 class="text-sm font-bold text-gray-900 dark:text-white leading-snug mt-2 line-clamp-2 group-hover:text-red-600 transition-colors">
                                     {{ $article->title }}
                                 </h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ AppHelpersDateHelper::relativeTime($article->published_at) }}</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">By {{ $article->user?->name ?? 'Admin' }} â€¢ {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}</p>
                             </div>
                         </a>
                     @endforeach
@@ -32,7 +32,7 @@
                             <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/placeholder.jpg' }}"
                                  alt="{{ $article->title }}" class="w-20 h-16 object-cover rounded flex-shrink-0">
                             <div class="flex-1 min-w-0">
-                                <p class="text-sm text-gray-600 dark:text-gray-400">By {{ $article->user?->name ?? 'Admin' }} • {{ AppHelpersDateHelper::relativeTime($article->published_at) }}</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">By {{ $article->user?->name ?? 'Admin' }} â€¢ {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}</p>
                                 <h4 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 transition-colors">
                                     {{ $article->title }}
                                 </h4>
@@ -71,3 +71,4 @@
         </div>
     </div>
 </section>
+

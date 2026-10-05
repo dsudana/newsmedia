@@ -1,4 +1,4 @@
-<x-admin.layout-modern>
+﻿<x-admin.layout-modern>
     <div class="space-y-6 pr-4">
         <!-- Header -->
         <div class="flex items-center justify-between">
@@ -24,7 +24,7 @@
                 </div>
                 <div>
                     <p class="text-xs text-gray-600 font-semibold uppercase">Published</p>
-                    <p class="text-lg font-semibold text-gray-900 mt-1">{{ AppHelpersDateHelper::relativeTime($article->published_at) }}</p>
+                    <p class="text-lg font-semibold text-gray-900 mt-1">{{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}</p>
                 </div>
             </div>
         </div>
@@ -235,3 +235,4 @@
         });
     </script>
 </x-admin.layout-modern>
+

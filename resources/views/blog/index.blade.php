@@ -247,7 +247,7 @@
                                                     {{ $article->title }}
                                                 </h4>
                                                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                                                    {{ AppHelpersDateHelper::relativeTime($article->published_at) }}
+                                                    {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}
                                                 </p>
                                             </div>
                                         </a>

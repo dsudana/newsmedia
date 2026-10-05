@@ -1,4 +1,4 @@
-<section class="py-8">
+﻿<section class="py-8">
     <div class="max-w-6xl mx-auto px-4 lg:px-8">
         @if($title ?? null)
             <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ $title }}</h2>
@@ -20,7 +20,7 @@
                         <p class="text-xs text-gray-600 mt-2 leading-relaxed line-clamp-2">
                             {{ $article->excerpt ?? 'Read more...' }}
                         </p>
-                        <p class="text-sm text-gray-600 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ AppHelpersDateHelper::relativeTime($article->published_at) }}</p>
+                        <p class="text-sm text-gray-600 mt-2">By {{ $article->user?->name ?? 'Admin' }} â€¢ {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}</p>
                     </div>
                 </a>
             @empty
@@ -31,3 +31,4 @@
         </div>
     </div>
 </section>
+

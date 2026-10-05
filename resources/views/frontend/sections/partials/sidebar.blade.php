@@ -92,7 +92,7 @@
                             </span>
                             <span class="text-gray-300">|</span>
                             <span class="news-card__date">
-                                {{ AppHelpersDateHelper::relativeTime($article->published_at) }}
+                                {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}
                             </span>
                         </div>
                     </div>
@@ -204,3 +204,4 @@
         </div>
     </div>
 </div>
+

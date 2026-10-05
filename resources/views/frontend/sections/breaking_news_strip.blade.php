@@ -1,4 +1,4 @@
-<section class="bg-gray-50 border-y border-gray-200 py-4">
+﻿<section class="bg-gray-50 border-y border-gray-200 py-4">
     <div class="max-w-6xl mx-auto px-4 lg:px-8">
         @if($title ?? null)
             <h2 class="text-xl font-bold text-gray-900 mb-4">{{ $title }}</h2>
@@ -13,7 +13,7 @@
                                  alt="{{ $article->title }}"
                                  class="w-16 h-16 object-cover rounded shrink-0">
                             <div class="flex-1 min-w-0">
-                                <p class="text-sm text-gray-600">{{ AppHelpersDateHelper::relativeTime($article->published_at) }}</p>
+                                <p class="text-sm text-gray-600">{{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}</p>
                                 <p class="text-sm font-semibold text-gray-900 line-clamp-2 group-hover:text-red-600 transition-colors">
                                     {{ $article->title }}
                                 </p>
@@ -45,3 +45,4 @@
         },
     });
 </script>
+
