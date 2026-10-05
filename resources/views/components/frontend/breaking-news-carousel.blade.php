@@ -5,7 +5,7 @@
         <div class="p-3 sm:p-4 lg:p-6 flex items-center justify-between gap-2 sm:gap-3 lg:gap-4">
             <!-- Left: Header Section (Hidden on mobile) -->
             <div class="hidden sm:flex flex-shrink-0 pr-3 lg:pr-4 border-r border-red-700 min-w-max">
-                <div class="flex flex-col">
+                <div class="flex flex-col justify-center">
                     <div class="flex items-center gap-1.5 mb-2 lg:mb-3">
                         <div class="bg-white px-1.5 py-0.5 rounded-full">
                             <span class="text-red-900 font-black text-xs">● BREAKING</span>
@@ -15,11 +15,6 @@
                         </div>
                     </div>
                     <h3 class="text-white font-black text-sm lg:text-base max-w-xs line-clamp-2">{{ $announcements->first()?->title ?? 'Breaking News' }}</h3>
-
-                    <!-- Left Arrow -->
-                    <button @click="prev()" class="mt-3 lg:mt-4 bg-white/20 hover:bg-white/40 text-white w-8 h-8 lg:w-10 lg:h-10 rounded-full flex items-center justify-center transition mx-auto flex-shrink-0" aria-label="Previous">
-                        <i class="fas fa-chevron-left text-sm lg:text-base"></i>
-                    </button>
                 </div>
             </div>
 
@@ -76,15 +71,10 @@
                 </div>
             </div>
 
-            <!-- Right: Navigation Arrow + QR Code (Hidden on mobile, Compact on tablet) -->
-            <div class="hidden sm:flex flex-col items-center gap-3 lg:gap-4 shrink-0 pl-3 lg:pl-4 border-l border-red-700 min-w-max">
-                <!-- Right Arrow -->
-                <button @click="next()" class="bg-white/20 hover:bg-white/40 text-white w-8 h-8 lg:w-10 lg:h-10 rounded-full flex items-center justify-center transition" aria-label="Next">
-                    <i class="fas fa-chevron-right text-sm lg:text-base"></i>
-                </button>
-
-                <!-- QR Code (Hidden on tablet, show on lg+) -->
-                <div class="hidden lg:block text-center">
+            <!-- Right: QR Code (Hidden on mobile and tablet, show on lg+) -->
+            <div class="hidden lg:flex flex-col items-center justify-center shrink-0 pl-3 lg:pl-4 border-l border-red-700 min-w-max">
+                <!-- QR Code -->
+                <div class="text-center">
                     <div class="bg-white p-2 rounded-lg mb-1.5 inline-block">
                         <svg class="w-16 h-16" viewBox="0 0 24 24">
                             <rect x="2" y="2" width="6" height="6" fill="currentColor"/>
@@ -105,11 +95,6 @@
                     <p class="text-white text-xs font-medium max-w-xs leading-tight">Ikuti berita terupdate di App KOMPAS.com. Scan & unduh sekarang</p>
                 </div>
             </div>
-
-            <!-- Mobile Navigation Arrow (Show only on mobile) -->
-            <button @click="next()" class="sm:hidden bg-white/20 hover:bg-white/40 text-white w-8 h-8 rounded-full flex items-center justify-center transition shrink-0" aria-label="Next">
-                <i class="fas fa-chevron-right text-sm"></i>
-            </button>
         </div>
     </div>
 
