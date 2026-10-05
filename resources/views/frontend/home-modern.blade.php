@@ -305,7 +305,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 @foreach($videoGallery->take(3) as $video)
                                     <a href="{{ $video->youtube_url }}" target="_blank" rel="noopener noreferrer" class="group">
-                                        <x-video-card :$video />
+                                        <x-video-card-minimal :$video />
                                     </a>
                                 @endforeach
                             </div>
