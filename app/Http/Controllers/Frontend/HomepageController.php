@@ -92,10 +92,14 @@ class HomepageController extends Controller
 
         // Get upcoming events
         $upcomingEvents = Cache::remember('homepage_events', now()->addHours(1), function () {
-            return Event::active()
-                ->upcoming()
-                ->take(6)
-                ->get(['id', 'title', 'description', 'event_date', 'location', 'featured_image']);
+            try {
+                return Event::active()
+                    ->upcoming()
+                    ->take(6)
+                    ->get(['id', 'title', 'description', 'event_date', 'location', 'featured_image']);
+            } catch (\Exception $e) {
+                return collect();
+            }
         });
 
         // Get featured videos for gallery section
