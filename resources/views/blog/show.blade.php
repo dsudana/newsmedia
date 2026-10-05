@@ -133,7 +133,7 @@
                             <a href="https://wa.me/?text={{ urlencode($article->title . ' ' . request()->url()) }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-green-600 text-white flex items-center justify-center hover:bg-green-700 transition" title="WhatsApp">
                                 <i class="fab fa-whatsapp text-sm"></i>
                             </a>
-                            <button onclick="copyToClipboard({{ @json(request()->url()) }})" class="w-9 h-9 rounded-full bg-gray-400 text-white flex items-center justify-center hover:bg-gray-500 transition" title="Salin tautan">
+                            <button data-copy-url="{{ request()->url() }}" onclick="copyToClipboard(this.dataset.copyUrl)" class="w-9 h-9 rounded-full bg-gray-400 text-white flex items-center justify-center hover:bg-gray-500 transition" title="Salin tautan">
                                 <i class="fas fa-link text-xs"></i>
                             </button>
                         </div>
