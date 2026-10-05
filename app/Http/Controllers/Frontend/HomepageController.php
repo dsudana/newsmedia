@@ -79,7 +79,7 @@ class HomepageController extends Controller
             return Announcement::active()
                 ->ordered()
                 ->take(3)
-                ->get(['id', 'title', 'description', 'type', 'background_color']);
+                ->get(['id', 'title', 'content', 'category', 'priority']);
         });
 
         // Get upcoming events
@@ -87,7 +87,7 @@ class HomepageController extends Controller
             return Event::active()
                 ->upcoming()
                 ->take(6)
-                ->get(['id', 'title', 'description', 'date', 'location']);
+                ->get(['id', 'title', 'description', 'event_date', 'location', 'featured_image']);
         });
 
         // Modern structured view (recommended)
