@@ -5,8 +5,13 @@
 @section('content')
     <!-- Skip to main content link for accessibility -->
    
-    <!-- Breaking News Carousel & Trending Section -->
+    <!-- Breaking News Card (Tier 0) -->
     <div class="max-w-7xl mx-auto px-4 mt-6">
+        <x-frontend.breaking-news-card :breakingNews="$breakingNews" />
+    </div>
+
+    <!-- Breaking News Carousel & Trending Section -->
+    <div class="max-w-7xl mx-auto px-4">
         <x-frontend.breaking-news-carousel :announcements="$announcements" :articles="$latestArticles" />
         <x-frontend.trending-section :categories="$categories" />
     </div>

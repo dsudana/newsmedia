@@ -41,6 +41,22 @@ class HomepageController extends Controller
         // ============================================
         $shownIds = []; // Track all shown article IDs
 
+        // TIER 0: Breaking News (Urgent - highest priority, 15 min cache)
+        $breakingNews = Cache::remember('homepage_breaking_news', now()->addMinutes(15), function () {
+            return Article::published()
+                ->whereNotNull('featured_image')
+                ->where(function ($q) {
+                    $q->where('is_breaking', true)
+                      ->orWhere('priority', '>=', 8);
+                })
+                ->where('created_at', '>=', now()->subHours(24))
+                ->orderByDesc('created_at')
+                ->take(2)
+                ->with(['category:id,name,slug', 'user:id,name'])
+                ->get();
+        });
+        $shownIds = array_merge($shownIds, $breakingNews->pluck('id')->toArray());
+
         // TIER 1: Featured Articles (Top 2 - highest viewed/commented)
         $featuredArticles = Cache::remember('homepage_featured_articles', now()->addHours(1), function () {
             return Article::published()
@@ -141,10 +157,10 @@ class HomepageController extends Controller
 
         // Modern structured view (recommended)
         if ($viewType === 'modern') {
-            return view('frontend.home-modern', compact('featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
+            return view('frontend.home-modern', compact('breakingNews', 'featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
         }
 
         // Legacy welcome blade view
-        return view('welcome', compact('featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
+        return view('welcome', compact('breakingNews', 'featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
     }
 }

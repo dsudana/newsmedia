@@ -31,14 +31,20 @@ class Article extends Model
         'word_count',
         'ai_provider',
         'seo_score',
+        'is_breaking',
+        'priority',
+        'breaking_at',
     ];
 
     protected $casts = [
         'published_at' => 'datetime',
         'scheduled_at' => 'datetime',
+        'breaking_at' => 'datetime',
         'is_featured' => 'boolean',
+        'is_breaking' => 'boolean',
         'read_time' => 'integer',
         'word_count' => 'integer',
+        'priority' => 'integer',
         'seo_score' => 'integer',
     ];
 
