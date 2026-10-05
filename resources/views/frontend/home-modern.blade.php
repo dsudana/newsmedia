@@ -310,7 +310,7 @@
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 @foreach ($categoryArticles->take(3) as $article)
-                                    <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                                    <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full">
                                         <!-- Article Card with Image 16:9 -->
                                         <div class="relative overflow-hidden rounded-xl aspect-video mb-4 bg-slate-200 dark:bg-gray-700">
                                             @if ($article->featured_image)
