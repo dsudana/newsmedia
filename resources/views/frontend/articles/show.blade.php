@@ -1,9 +1,9 @@
 <x-layout :$title :$appname>
     <x-navbar :$appname :$navs :navsgroup="$navsGroup"></x-navbar>
-    <div class="px-4 lg:px-0 lg:max-w-5xl mx-auto py-5 lg:py-16">
+    <div class="px-4 lg:px-0 lg:max-w-5xl mx-auto py-5 lg:py-16 bg-white dark:bg-gray-900 transition-colors duration-300 min-h-screen">
         <span
             class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{$article->category->name ?? 'Uncategorized'}}</span>
-        <h1 class="text-2xl lg:text-6xl mt-3 mb-6 text-gray-800 font-bold">{{$article->title}}</h1>
+        <h1 class="text-2xl lg:text-6xl mt-3 mb-6 text-gray-800 dark:text-white font-bold">{{$article->title}}</h1>
         <h5 class="text-xs lg:text-sm mb-6">Created on {{ $article->created_at->format('d M Y') }} by <a
                 href="/articles?author={{$article->user?->id}}"
                 class="text-blue-500">{{ $article->user?->name ?? 'Unknown' }}</a></h5>
@@ -12,7 +12,7 @@
         <div class="flex gap-3 lg:gap-10 flex-col lg:flex-row mt-5">
             <div class="w-full lg:w-[65%]">
                 <!-- Render Description as HTML -->
-                <div class="article-content text-gray-700 leading-relaxed">
+                <div class="article-content text-gray-700 dark:text-gray-300 leading-relaxed">
                     {!! $article->content !!}
                 </div>
             </div>

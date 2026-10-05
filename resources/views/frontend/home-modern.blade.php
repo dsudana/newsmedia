@@ -109,7 +109,7 @@
                 <article class="group min-h-0">
                     <a
                         href="{{ route('blog.show', $article->slug) }}"
-                        class="flex h-full overflow-hidden rounded-xl bg-slate-50 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:bg-gray-800 dark:ring-gray-700"
+                        class="flex h-full overflow-hidden rounded-xl bg-slate-50 dark:bg-gray-800 shadow-sm ring-1 ring-slate-200/70 dark:ring-gray-700/70 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-lg"
                     >
 
                         {{-- Image --}}
@@ -350,7 +350,7 @@
                 <!-- Right Sidebar (1/3) -->
                 <aside class="space-y-8">
                     <!-- Social Media Section -->
-                    <section class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-slate-200 dark:border-gray-700">
+                    <section class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Follow Us</h3>
                         <div class="flex flex-wrap gap-3">
                             @php
@@ -372,7 +372,7 @@
 
                     <!-- Advertisement Top -->
                     <div
-                        class="bg-slate-100 dark:bg-gray-800 rounded-lg p-6 h-80 flex items-center justify-center border border-slate-200 dark:border-gray-700">
+                        class="bg-slate-100 dark:bg-gray-800 rounded-lg p-6 h-80 flex items-center justify-center border border-gray-200 dark:border-gray-700">
                         <div class="text-center">
                             <div class="w-12 h-12 bg-slate-300 dark:bg-gray-600 rounded-lg mx-auto mb-3"></div>
                             <p class="text-slate-600 dark:text-gray-400 font-semibold text-sm">Advertisement</p>
@@ -382,7 +382,7 @@
 
                     <!-- Popular Articles -->
                     <section
-                        class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-slate-200 dark:border-gray-700">
+                        class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                             <span class="w-1 h-6 bg-red-600 rounded-full"></span>
                             Popular
@@ -390,7 +390,7 @@
                         <div class="space-y-5">
                             @foreach ($latestArticles->skip(11)->take(5) as $article)
                                 <a href="{{ route('blog.show', $article->slug) }}"
-                                    class="group flex gap-4 pb-5 border-b border-slate-200 dark:border-gray-700 last:pb-0 last:border-0 hover:opacity-75 transition">
+                                    class="group flex gap-4 pb-5 border-b border-gray-200 dark:border-gray-700 last:pb-0 last:border-0 hover:opacity-75 transition">
                                     <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
                                         <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/default.jpg' }}"
                                             alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover">
@@ -419,7 +419,7 @@
 
                     <!-- Advertisement Bottom -->
                     <div
-                        class="bg-slate-100 dark:bg-gray-800 rounded-lg p-6 h-80 flex items-center justify-center border border-slate-200 dark:border-gray-700">
+                        class="bg-slate-100 dark:bg-gray-800 rounded-lg p-6 h-80 flex items-center justify-center border border-gray-200 dark:border-gray-700">
                         <div class="text-center">
                             <div class="w-12 h-12 bg-slate-300 dark:bg-gray-600 rounded-lg mx-auto mb-3"></div>
                             <p class="text-slate-600 dark:text-gray-400 font-semibold text-sm">Advertisement</p>
@@ -429,7 +429,7 @@
 
                     <!-- Categories -->
                     <section
-                        class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-slate-200 dark:border-gray-700">
+                        class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                             <span class="w-1 h-6 bg-red-600 rounded-full"></span>
                             Categories

@@ -2,9 +2,9 @@
 
 @section('content')
 <!-- Advertisement Section (Full Width) -->
-<div class="bg-white border-b border-gray-200 py-3 sm:py-6">
+<div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3 sm:py-6 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-gray-200 rounded-lg flex items-center justify-center min-h-16 sm:min-h-24">
+        <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center min-h-16 sm:min-h-24">
             @component('components.advertisement', ['placement' => 'header_banner'])
             @endcomponent
         </div>
@@ -70,7 +70,7 @@
 </div>
 
 <!-- Main Content -->
-<div class="bg-white py-8 sm:py-12">
+<div class="bg-white dark:bg-gray-900 py-8 sm:py-12 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Articles Section (Left - 2 columns) -->
@@ -95,7 +95,7 @@
                                         {{ $featuredArticle->category->name }}
                                     </span>
                                 </div>
-                                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-red-600 transition leading-tight">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white group-hover:text-red-600 transition leading-tight">
                                     {{ $featuredArticle->title }}
                                 </h2>
                                 <p class="text-gray-600 text-base leading-relaxed">
@@ -178,7 +178,7 @@
             <aside class="lg:col-span-1">
                 <div class="sticky top-24 space-y-8">
                     <!-- Social Media Section -->
-                    <section class="bg-slate-50 rounded-lg p-6 border border-gray-200">
+                    <section class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                         <h3 class="text-lg font-bold text-gray-900 mb-4">Ikuti Kami</h3>
                         <div class="flex flex-wrap gap-3">
                             @php
@@ -211,7 +211,7 @@
                             : \App\Models\Article::published()->latest('published_at')->take(5)->get();
                     @endphp
                     @if($recentArticles && $recentArticles->count() > 0)
-                        <section class="bg-slate-50 rounded-lg p-6 border border-gray-200">
+                        <section class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                             <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                                 <span class="w-1 h-6 bg-red-600 rounded-full"></span>
                                 Artikel Terbaru
@@ -246,7 +246,7 @@
                             : \App\Models\Article::published()->orderByDesc('views_count')->take(5)->get();
                     @endphp
                     @if($popularArticles && $popularArticles->count() > 0)
-                        <section class="bg-slate-50 rounded-lg p-6 border border-gray-200">
+                        <section class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                             <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                                 <span class="w-1 h-6 bg-red-600 rounded-full"></span>
                                 Artikel Populer
@@ -296,7 +296,7 @@
                             ->get();
                     @endphp
                     @if($categoriesWithArticles && $categoriesWithArticles->count() > 0)
-                        <section class="bg-slate-50 rounded-lg p-6 border border-gray-200">
+                        <section class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                             <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                                 <span class="w-1 h-6 bg-red-600 rounded-full"></span>
                                 Kategori
