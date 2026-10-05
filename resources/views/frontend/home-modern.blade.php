@@ -86,7 +86,7 @@
 
                         <div class="mt-3 flex items-center gap-3 text-sm text-slate-400">
                             <time>
-                                {{ AppHelpersDateHelper::relativeTime($featured->published_at) }}
+                                {{ \App\Helpers\DateHelper::relativeTime($featured->published_at) }}
                             </time>
 
                             @if($featured->read_time)
@@ -167,7 +167,7 @@
                             <div class="mt-2 flex items-center gap-2 text-[10px] text-slate-500 dark:text-gray-400">
 
                                 <time>
-                                    {{ AppHelpersDateHelper::relativeTime($article->published_at) }}
+                                    {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}
                                 </time>
 
                                 @if($article->read_time)
@@ -220,7 +220,7 @@
                                     {{ $article->title }}
                                 </h3>
                                 <p class="text-sm text-slate-700 dark:text-gray-400">
-                                    {{ AppHelpersDateHelper::relativeTime($article->published_at) }}
+                                    {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}
                                 </p>
                             </div>
                         </a>
