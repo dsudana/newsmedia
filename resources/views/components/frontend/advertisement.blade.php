@@ -1,7 +1,11 @@
 @php
-    $ad = \App\Models\Advertisement::active()
-        ->byPlacement($placement)
-        ->first();
+    try {
+        $ad = \App\Models\Advertisement::active()
+            ->byPlacement($placement)
+            ->first();
+    } catch (\Exception $e) {
+        $ad = null;
+    }
 
     // Set default dimensions based on placement
     $width = $ad->width ?? ($placement === 'header_banner' ? 1200 : 300);

@@ -15,7 +15,11 @@
                 <!-- Social Media Icons -->
                 <div class="flex gap-3 mt-6">
                     @php
-                        $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
+                        try {
+                            $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
+                        } catch (\Exception $e) {
+                            $socialLinks = collect();
+                        }
                     @endphp
                     @forelse($socialLinks as $social)
                         <a href="{{ $social->url }}"

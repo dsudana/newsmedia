@@ -1,7 +1,11 @@
 @props(['title' => 'Follow Us'])
 
 @php
-    $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
+    try {
+        $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
+    } catch (\Exception $e) {
+        $socialLinks = collect();
+    }
 @endphp
 
 <section class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700/50 shadow-sm dark:shadow-md transition-shadow duration-300">
