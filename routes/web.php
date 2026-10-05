@@ -12,7 +12,6 @@ use App\Http\Controllers\AffiliateLinkController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\KeywordController;
 use App\Http\Controllers\ArticleAnalyticsController;
-use App\Http\Controllers\HomePageSettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Frontend\ArticleController as PublicArticleController;
 use App\Http\Controllers\Frontend\CategoryController as PublicCategoryController;
@@ -133,9 +132,6 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
     Route::get('/analytics', [ArticleAnalyticsController::class, 'index'])->name('analytics.index');
     Route::get('/analytics/{article}', [ArticleAnalyticsController::class, 'show'])->name('analytics.show');
     Route::post('/analytics/{article}/record-view', [ArticleAnalyticsController::class, 'recordView'])->name('analytics.record-view');
-
-    Route::get('/home-page-settings', [HomePageSettingController::class, 'index'])->name('home-page-settings.index');
-    Route::post('/home-page-settings', [HomePageSettingController::class, 'update'])->name('home-page-settings.update');
 
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');

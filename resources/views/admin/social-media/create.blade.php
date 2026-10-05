@@ -1,11 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="py-12">
-    <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900">
-                <h1 class="text-2xl font-bold mb-6">Add Social Media Link</h1>
+<x-admin-layout-modern>
+    <div class="space-y-6">
+        <h1 class="text-2xl font-bold">Add Social Media Link</h1>
 
                 <form method="POST" action="{{ route('admin.social-media.store') }}">
                     @csrf
@@ -50,17 +45,14 @@
                         </label>
                     </div>
 
-                    <div class="flex gap-3">
-                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                            Create
-                        </button>
-                        <a href="{{ route('admin.social-media.index') }}" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400">
-                            Cancel
-                        </a>
-                    </div>
-                </form>
-            </div>
+        <div class="flex gap-3">
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                Create
+            </button>
+            <a href="{{ route('admin.social-media.index') }}" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400">
+                Cancel
+            </a>
         </div>
+        </form>
     </div>
-</div>
-@endsection
+</x-admin-layout-modern>

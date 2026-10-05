@@ -1,10 +1,5 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900">
+<x-admin-layout-modern>
+    <div class="space-y-6">
                 <div class="flex justify-between items-center mb-6">
                     <h1 class="text-2xl font-bold">Social Media Links</h1>
                     <a href="{{ route('admin.social-media.create') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
@@ -72,11 +67,8 @@
                     </table>
                 </div>
 
-                <div class="mt-6">
-                    {{ $socialMedias->links() }}
-                </div>
-            </div>
+        <div class="mt-6">
+            {{ $socialMedias->links() }}
         </div>
     </div>
-</div>
-@endsection
+</x-admin-layout-modern>
