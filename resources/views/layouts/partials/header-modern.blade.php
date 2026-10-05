@@ -1,5 +1,5 @@
 <!-- Header (Kompas.com style) -->
-<header class="bg-black dark:bg-black border-b border-gray-800 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-300" x-data="{ categoryMenuOpen: false, mobileMenuOpen: false, darkMode: localStorage.getItem('darkMode') === 'true' }">
+<header class="bg-black dark:bg-black border-b border-gray-800 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-300" x-data="{ categoryMenuOpen: false, mobileMenuOpen: false }">
     <!-- Logo & Navigation Row -->
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <!-- Logo -->
@@ -50,9 +50,32 @@
         <!-- Right Actions -->
         <div class="flex items-center gap-2">
             <!-- Dark Mode Toggle -->
-            <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); window.dispatchEvent(new CustomEvent('dark-mode-toggle'))" aria-label="Toggle dark mode" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-2">
-                <i :class="darkMode ? 'fas fa-sun' : 'fas fa-moon'" class="text-lg" aria-hidden="true"></i>
+            <button id="darkModeToggle" aria-label="Toggle dark mode" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-2">
+                <i class="text-lg fas fa-moon" aria-hidden="true"></i>
             </button>
+            <script>
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                const html = document.documentElement;
+
+                function updateDarkModeIcon() {
+                    const icon = darkModeToggle.querySelector('i');
+                    if (html.classList.contains('dark')) {
+                        icon.className = 'text-lg fas fa-sun';
+                    } else {
+                        icon.className = 'text-lg fas fa-moon';
+                    }
+                }
+
+                darkModeToggle.addEventListener('click', function() {
+                    html.classList.toggle('dark');
+                    const isDark = html.classList.contains('dark');
+                    localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+                    updateDarkModeIcon();
+                });
+
+                // Update icon on load
+                updateDarkModeIcon();
+            </script>
 
             <!-- Mobile Menu Button -->
             <button @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-label="Toggle mobile menu" class="lg:hidden text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-2">

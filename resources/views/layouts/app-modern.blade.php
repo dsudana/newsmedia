@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }"
-      @dark-mode-toggle.window="darkMode = !darkMode; document.documentElement.classList.toggle('dark')"
-      :class="darkMode && 'dark'">
+<html lang="en" :class="darkMode && 'dark'" x-data="{ darkMode: false }"
+      @load.window="darkMode = localStorage.getItem('darkMode') === 'true'">
+    <script>
+        // Set dark mode immediately before Alpine loads to prevent flash
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
 
     <head>
         <meta charset="UTF-8">
