@@ -375,7 +375,7 @@
                 </div>
 
                 <!-- Right Sidebar (1/3) -->
-                <aside class="space-y-8 sticky top-32 max-h-[calc(100vh-8rem)] overflow-hidden">
+                <aside class="space-y-8">
                     <!-- Social Media Section -->
                     <x-sidebar.social-links title="Follow Us" />
 
