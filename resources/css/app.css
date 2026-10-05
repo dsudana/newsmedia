@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
-/* Font: Inter */
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
+}
+
+/* Link Hover Effects */
+a {
+  transition: all 0.2s ease;
+}
+
+/* Better Focus States */
+:focus-visible {
+  outline: 2px solid rgb(220, 38, 38);
+  outline-offset: 2px;
 }
 
 /* Admin Dashboard - Modern Animations & Effects */

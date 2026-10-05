@@ -45,6 +45,12 @@
                     </div>
                 </div>
             @endif
+
+            <!-- News Index (Indeks Berita) -->
+            <a href="{{ route('categories.index') }}"
+                class="text-sm font-bold text-white hover:text-red-500 transition whitespace-nowrap uppercase tracking-wide ml-auto">
+                📑 Indeks Berita
+            </a>
         </nav>
 
         <!-- Right Actions -->
