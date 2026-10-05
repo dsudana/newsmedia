@@ -5,15 +5,27 @@
         <div class="p-3 sm:p-4 lg:p-6 flex items-center justify-between gap-2 sm:gap-3 lg:gap-4">
             <!-- Left: Header Section (Hidden on mobile) -->
             <div class="hidden sm:flex flex-shrink-0 pr-2 lg:pr-3 border-r border-red-700">
-                <div class="flex flex-col justify-center w-28 lg:w-40">
-                    <div class="flex items-center gap-0.5 mb-1 lg:mb-2">
-                        <div class="bg-white px-0.5 py-0.5 rounded-full">
-                            <span class="text-red-900 font-black text-xs">● BREAKING</span>
-                        </div>
-                        <div class="bg-blue-400 px-0.5 py-0.5 rounded-full">
-                            <span class="text-white font-bold text-xs">NEWS</span>
-                        </div>
-                    </div>
+                <div class="flex flex-col justify-center w-32 lg:w-44 gap-2">
+                    <!-- Breaking News Ribbon Badge -->
+                    <svg class="w-full h-auto" viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Yellow "BREAKING" ribbon -->
+                        <defs>
+                            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+                            </filter>
+                        </defs>
+
+                        <!-- Yellow banner -->
+                        <path d="M 10 15 L 180 10 L 175 35 L 5 40 Z" fill="#FFD500" filter="url(#shadow)" stroke="#E6B800" stroke-width="1"/>
+                        <text x="95" y="32" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#000" text-anchor="middle" letter-spacing="1">BREAKING</text>
+
+                        <!-- Red "NEWS" banner -->
+                        <path d="M 50 45 L 280 35 L 280 90 L 45 100 Z" fill="#E31C3D" filter="url(#shadow)" stroke="#C91630" stroke-width="1"/>
+                        <path d="M 50 45 L 50 100 L 45 100 L 45 45 Z" fill="#B81529" opacity="0.8"/>
+
+                        <!-- NEWS text -->
+                        <text x="165" y="78" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">NEWS</text>
+                    </svg>
                     <h3 class="text-white font-black text-xs lg:text-sm line-clamp-2 leading-tight">{{ $announcements->first()?->title ?? 'Breaking News' }}</h3>
                 </div>
             </div>
