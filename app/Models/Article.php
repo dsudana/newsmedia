@@ -130,29 +130,18 @@ class Article extends Model
 
     /**
      * Get sanitized content safe for display
-     * Uses Blade's @purify directive for XSS prevention
-     * Removes all potentially dangerous HTML/JavaScript
+     * Uses HTMLPurifier for XSS prevention - industry standard
+     * Whitelist-based approach is more secure than regex-based
      */
     public function getSafeContent(): string
     {
-        // Remove all script tags and event handlers
-        $content = preg_replace('/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi', '', $this->content);
-        $content = preg_replace('/on\w+\s*=\s*["\'][^"\']*["\']/gi', '', $content);
-        $content = preg_replace('/on\w+\s*=\s*[^\s>]*/gi', '', $content);
+        $config = [
+            'HTML.Allowed' => 'p,br,strong,em,b,i,u,h1,h2,h3,h4,h5,h6,ul,ol,li,blockquote,pre,code,img[src|alt],a[href|title],table,thead,tbody,tr,th,td,div,span,hr,figure,figcaption',
+            'URI.AllowedSchemes' => ['http' => true, 'https' => true, 'mailto' => true],
+            'URI.SafeIframeRegexp' => '%^(?:https?:)?//(?:www\.)?(?:youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/|dailymotion\.com/embed/video/)%',
+        ];
 
-        // Remove javascript: URLs from href and src
-        $content = preg_replace('/(href|src)\s*=\s*["\']javascript:[^"\']*["\']/gi', '$1=""', $content);
-
-        // Remove data: URLs from href (can be XSS vector)
-        $content = preg_replace('/(href)\s*=\s*["\']data:[^"\']*["\']/gi', '$1="javascript:void(0)"', $content);
-
-        // Remove style attributes that might contain malicious CSS
-        $content = preg_replace('/style\s*=\s*["\'][^"\']*["\']/gi', '', $content);
-
-        // Remove iframe, object, embed, form tags entirely
-        $content = preg_replace('/<(iframe|object|embed|form|input|button)\b[^<]*(?:(?!<\/\1>)<[^<]*)*<\/\1>/gi', '', $content);
-
-        return trim($content);
+        return clean($this->content, $config);
     }
 
     public function category()
