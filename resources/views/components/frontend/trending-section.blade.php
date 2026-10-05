@@ -12,27 +12,28 @@
         ->limit(10)
         ->get();
 
-    // If no keywords, get trending categories instead
+    // If no keywords, get trending tags instead
     if ($trendingKeywords->isEmpty()) {
-        $trendingKeywords = \App\Models\Category::select('categories.id', 'categories.name', 'categories.slug')
-            ->selectRaw('COUNT(articles.id) as articles_count')
-            ->join('articles', 'categories.id', '=', 'articles.category_id')
+        $trendingKeywords = \App\Models\Tag::select('tags.id', 'tags.name', 'tags.slug')
+            ->selectRaw('COUNT(article_tag.article_id) as articles_count')
+            ->join('article_tag', 'tags.id', '=', 'article_tag.tag_id')
+            ->join('articles', 'articles.id', '=', 'article_tag.article_id')
             ->where('articles.status', 'published')
-            ->groupBy('categories.id', 'categories.name', 'categories.slug')
+            ->groupBy('tags.id', 'tags.name', 'tags.slug')
             ->orderByDesc('articles_count')
             ->limit(10)
             ->get()
-            ->map(fn($cat) => (object)[
-                'keyword' => $cat->name,
-                'slug' => $cat->slug,
-                'articles_count' => $cat->articles_count,
-                'is_category' => true
+            ->map(fn($tag) => (object)[
+                'keyword' => $tag->name,
+                'slug' => $tag->slug,
+                'articles_count' => $tag->articles_count,
+                'is_tag' => true
             ]);
     } else {
         $trendingKeywords = $trendingKeywords->map(fn($kw) => (object)[
             'keyword' => $kw->keyword,
             'articles_count' => $kw->articles_count,
-            'is_category' => false
+            'is_tag' => false
         ]);
     }
 @endphp
@@ -43,13 +44,13 @@
             <!-- Label -->
             <span class="text-blue-600 font-bold text-sm uppercase whitespace-nowrap shrink-0">Trending:</span>
 
-            <!-- Trending Keywords/Categories from Articles -->
+            <!-- Trending Keywords/Tags from Articles -->
             @foreach ($trendingKeywords as $item)
-                @if ($item->is_category ?? false)
-                    <a href="{{ route('blog.category', $item->slug) }}"
-                        class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 rounded-full whitespace-nowrap transition text-sm font-medium"
+                @if ($item->is_tag ?? false)
+                    <a href="{{ route('blog.tag', $item->slug) }}"
+                        class="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-200 hover:bg-purple-500 hover:text-white dark:hover:bg-purple-600 rounded-full whitespace-nowrap transition text-sm font-medium"
                         title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)">
-                        {{ $item->keyword }}
+                        #{{ $item->keyword }}
                     </a>
                 @else
                     <a href="{{ route('blog.search') }}?q={{ urlencode($item->keyword) }}"
