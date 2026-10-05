@@ -15,6 +15,7 @@ use App\Http\Controllers\ArticleAnalyticsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Frontend\ArticleController as PublicArticleController;
 use App\Http\Controllers\Frontend\CategoryController as PublicCategoryController;
+use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\HomepageController as FrontendHomepageController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\SeoSettingController;
@@ -62,6 +63,10 @@ Route::get('/articles/{article:slug}', [PublicArticleController::class, 'show'])
 Route::get('/categories', [PublicCategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category:slug}', [PublicCategoryController::class, 'show'])->name('categories.show');
 Route::get('/go/{slug}', \App\Http\Controllers\RedirectController::class)->name('affiliate.redirect');
+
+// Public gallery routes
+Route::get('/galeri', [GalleryController::class, 'index'])->name('gallery.index')->middleware('throttle:60,60');
+Route::get('/galeri/kategori/{category:slug}', [GalleryController::class, 'category'])->name('gallery.category')->middleware('throttle:60,60');
 
 // Sitemap routes
 Route::get('/sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap.index');
