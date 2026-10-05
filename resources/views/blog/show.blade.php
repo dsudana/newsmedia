@@ -140,7 +140,7 @@
                     </div>
 
                     <!-- Featured Image -->
-                    <div class="mb-8 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video">
+                    <div class="mb-8 rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-900 aspect-video">
                         @if($article->featured_image)
                             @php
                                 $imageUrl = str_starts_with($article->featured_image, 'http')
@@ -149,14 +149,14 @@
                             @endphp
                             <img src="{{ $imageUrl }}" alt="{{ $article->title }}" class="w-full h-full object-cover" loading="lazy">
                         @else
-                            <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
-                                <i class="fas fa-image text-6xl text-gray-400 dark:text-gray-600"></i>
+                            <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+                                <i class="fas fa-image text-6xl text-gray-400 dark:text-gray-700"></i>
                             </div>
                         @endif
                     </div>
 
                     @if($article->excerpt)
-                        <div class="mb-8 p-5 bg-gray-50 dark:bg-gray-800 border-l-4 border-red-600">
+                        <div class="mb-8 p-5 dark:bg-gray-800 border-l-4 border-red-600">
                             <p class="text-base text-gray-800 dark:text-white leading-relaxed">{{ $article->excerpt }}</p>
                         </div>
                     @endif
@@ -203,7 +203,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 @foreach($relatedArticles->take(7) as $related)
                                     <a href="{{ route('blog.show', $related->slug) }}" class="group">
-                                        <div class="overflow-hidden rounded-lg mb-3 aspect-video bg-gray-100 dark:bg-gray-800">
+                                        <div class="overflow-hidden rounded-lg mb-3 aspect-video bg-gray-200 dark:bg-gray-900">
                                             @if($related->featured_image)
                                                 @php
                                                     $relatedImageUrl = str_starts_with($related->featured_image, 'http')
@@ -212,8 +212,8 @@
                                                 @endphp
                                                 <img src="{{ $relatedImageUrl }}" alt="{{ $related->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
                                             @else
-                                                <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
-                                                    <i class="fas fa-image text-gray-400 dark:text-gray-600 text-3xl"></i>
+                                                <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+                                                    <i class="fas fa-image text-gray-400 dark:text-gray-700 text-3xl"></i>
                                                 </div>
                                             @endif
                                         </div>
@@ -270,7 +270,7 @@
                     <x-frontend.affiliate-links :article="$article" />
 
                     <!-- Advertisement Top -->
-                    <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700/50 min-h-80 flex items-center justify-center">
+                    <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_top" />
 
                     </div>

@@ -82,7 +82,7 @@
                         @php $featuredArticle = $articles->first(); @endphp
                         <div class="mb-12">
                             <a href="{{ route('blog.show', $featuredArticle->slug) }}" class="group block">
-                                <div class="rounded-lg overflow-hidden mb-4 aspect-video bg-gray-100">
+                                <div class="rounded-lg overflow-hidden mb-4 aspect-video bg-gray-200 dark:bg-gray-900">
                                     @if ($featuredArticle->featured_image)
                                         @php
                                             $featuredImageUrl = str_starts_with($featuredArticle->featured_image, 'http')
@@ -136,7 +136,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                                 @foreach ($articles->slice(1) as $article)
                                     <a href="{{ route('blog.show', $article->slug) }}" class="group">
-                                        <div class="rounded-lg overflow-hidden mb-3 aspect-video bg-gray-100">
+                                        <div class="rounded-lg overflow-hidden mb-3 aspect-video bg-gray-200 dark:bg-gray-900">
                                             @if ($article->featured_image)
                                                 @php
                                                     $gridImageUrl = str_starts_with($article->featured_image, 'http')
