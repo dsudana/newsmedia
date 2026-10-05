@@ -11,7 +11,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse ($data['articles'] ?? [] as $article)
-                <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full">
                     <!-- Image Container 16:9 -->
                     <div class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-gray-200">
                         <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/placeholder.jpg' }}"
