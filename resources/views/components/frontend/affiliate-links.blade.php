@@ -9,47 +9,69 @@
         <!-- Header -->
         <div class="flex items-center gap-3 mb-6">
             <div class="w-10 h-10 bg-gradient-to-br from-amber-100 to-amber-50 dark:from-amber-900 dark:to-amber-800 rounded-lg flex items-center justify-center">
-                <i class="fas fa-link text-amber-600 dark:text-amber-400 text-lg"></i>
+                <i class="fas fa-shopping-cart text-amber-600 dark:text-amber-400 text-lg"></i>
             </div>
             <h3 class="text-lg font-bold text-gray-900 dark:text-white">Recommended Products</h3>
         </div>
 
-        <!-- Links Grid -->
-        <div class="space-y-3">
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             @foreach ($affiliateLinks as $link)
                 <a href="{{ url('go/' . $link->slug) }}" target="_blank" rel="noopener noreferrer"
-                    class="block group p-4 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600/40 rounded-lg hover:bg-amber-50 dark:hover:bg-gray-600 transition">
+                    class="group flex flex-col bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600/40 rounded-lg overflow-hidden hover:shadow-lg dark:hover:shadow-md hover:border-amber-300 dark:hover:border-amber-400/50 transition">
 
-                    <!-- Link Content -->
-                    <div class="flex items-center justify-between">
-                        <div class="flex-1">
-                            <!-- Product Name -->
-                            <h4 class="font-semibold text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition">
-                                {{ $link->name }}
-                            </h4>
+                    <!-- Product Image -->
+                    <div class="relative w-full aspect-square bg-gray-200 dark:bg-gray-900 overflow-hidden">
+                        @if ($link->image)
+                            @php
+                                $imageUrl = str_starts_with($link->image, 'http')
+                                    ? $link->image
+                                    : asset('storage/' . $link->image);
+                            @endphp
+                            <img src="{{ $imageUrl }}" alt="{{ $link->name }}"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+                        @else
+                            <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                                <i class="fas fa-box text-4xl text-gray-400 dark:text-gray-600"></i>
+                            </div>
+                        @endif
 
-                            <!-- Commission Info (jika ada) -->
-                            @if ($link->commission_value)
-                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                                    @if ($link->commission_type === 'percentage')
-                                        Commission: <span class="font-semibold text-amber-600 dark:text-amber-400">{{ $link->commission_value }}%</span>
-                                    @else
-                                        Commission: <span class="font-semibold text-amber-600 dark:text-amber-400">Rp {{ number_format($link->commission_value, 0, ',', '.') }}</span>
-                                    @endif
-                                </p>
-                            @endif
-                        </div>
-
-                        <!-- Arrow Icon -->
-                        <div class="ml-3 text-gray-400 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition">
-                            <i class="fas fa-external-link-alt text-sm"></i>
+                        <!-- Cart Icon Badge -->
+                        <div class="absolute top-2 right-2 w-9 h-9 bg-amber-600 rounded-full flex items-center justify-center text-white shadow-lg group-hover:bg-amber-700 transition">
+                            <i class="fas fa-shopping-cart text-sm"></i>
                         </div>
                     </div>
 
-                    <!-- Click Counter -->
-                    <div class="mt-2 pt-2 border-t border-gray-200 dark:border-gray-600/40 flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
-                        <i class="fas fa-mouse"></i>
-                        <span>{{ number_format($link->clicks_count ?? 0) }} clicks</span>
+                    <!-- Product Info -->
+                    <div class="p-4 flex flex-col flex-1">
+                        <!-- Product Name -->
+                        <h4 class="font-semibold text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition line-clamp-2 mb-2">
+                            {{ $link->name }}
+                        </h4>
+
+                        <!-- Price (if available) -->
+                        @if ($link->price)
+                            <p class="text-lg font-bold text-amber-600 dark:text-amber-400 mb-3">
+                                Rp {{ number_format($link->price, 0, ',', '.') }}
+                            </p>
+                        @endif
+
+                        <!-- Commission Info -->
+                        @if ($link->commission_value)
+                            <div class="text-xs text-gray-600 dark:text-gray-400 mb-3 py-2 px-2 bg-amber-50 dark:bg-amber-900/20 rounded border border-amber-200 dark:border-amber-800/30">
+                                @if ($link->commission_type === 'percentage')
+                                    <span class="font-semibold text-amber-700 dark:text-amber-300">Komisi: {{ $link->commission_value }}%</span>
+                                @else
+                                    <span class="font-semibold text-amber-700 dark:text-amber-300">Komisi: Rp {{ number_format($link->commission_value, 0, ',', '.') }}</span>
+                                @endif
+                            </div>
+                        @endif
+
+                        <!-- Click Counter -->
+                        <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mt-auto">
+                            <i class="fas fa-mouse"></i>
+                            <span>{{ number_format($link->clicks_count ?? 0) }} klik</span>
+                        </div>
                     </div>
                 </a>
             @endforeach
@@ -59,7 +81,7 @@
         <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
             <p class="text-xs text-gray-500 dark:text-gray-400">
                 <i class="fas fa-info-circle mr-1"></i>
-                These are recommended products we trust. If you make a purchase, we may earn a commission at no extra cost to you.
+                Produk rekomendasi yang kami percaya. Jika Anda melakukan pembelian, kami dapat memperoleh komisi tanpa biaya tambahan bagi Anda.
             </p>
         </div>
     </div>

@@ -10,9 +10,11 @@ class AffiliateLink extends Model
     protected $fillable = [
         'name',
         'slug',
+        'image',
         'destination_url',
         'commission_type',
         'commission_value',
+        'price',
         'clicks_count',
         'is_active',
     ];
