@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         Import Articles from WordPress XML
     </x-slot>
@@ -217,4 +217,4 @@
             }
         }
     </script>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

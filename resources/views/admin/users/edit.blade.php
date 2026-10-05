@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         Edit User: {{ $user->name }}
     </x-slot>
@@ -91,4 +91,4 @@
             </div>
         </form>
     </div>
-    </x-admin-layout-modern>
+    </x-admin.layout-modern>

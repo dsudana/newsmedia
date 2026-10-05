@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         Platform Showcase
     </x-slot>
@@ -27,4 +27,4 @@
 
         </div>
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

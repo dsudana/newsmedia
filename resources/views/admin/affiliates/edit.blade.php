@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         Edit Affiliate Link: {{ $link->name }}
     </x-slot>
@@ -63,4 +63,4 @@
             </div>
         </form>
     </div>
-    </x-admin-layout-modern>
+    </x-admin.layout-modern>

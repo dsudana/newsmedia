@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         Edit Article: {{ $article->title }}
     </x-slot>
@@ -567,4 +567,4 @@
             }
         }
     </style>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

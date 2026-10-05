@@ -1,13 +1,13 @@
 <aside>
     {{-- Latest Post --}}
-    <x-section-heading title="Latest Post" />
+    <x-ui.section-heading title="Latest Post" />
 
     @if (!empty($latestFeatured))
         <div class="mb-8">
             <a href="{{ route('blog.show', $latestFeatured->slug) }}" class="block aspect-video overflow-hidden mb-4">
                 <img src="{{ $latestFeatured->featured_image ? '/storage/' . $latestFeatured->featured_image : '/images/placeholder.jpg' }}" alt="{{ $latestFeatured->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
             </a>
-            <x-tag-pill :label="$latestFeatured->category?->name ?? 'Uncategorized'" />
+            <x-frontend.tag-pill :label="$latestFeatured->category?->name ?? 'Uncategorized'" />
             <p class="byline mt-3">By {{ $latestFeatured->user?->name ?? 'Admin' }} <span class="date">{{ $latestFeatured->published_at?->format('M d, Y') }}</span></p>
             <h3 class="text-base font-bold text-rn-ink leading-tight mt-2">{{ $latestFeatured->title }}</h3>
             <p class="text-sm text-rn-body mt-3 leading-relaxed line-clamp-3">{{ $latestFeatured->excerpt }}</p>
@@ -35,31 +35,31 @@
 
     {{-- Stay Connected --}}
     <section id="section-stay-connected" class="mt-8">
-        <x-section-heading title="Stay Connected" />
+        <x-ui.section-heading title="Stay Connected" />
         <div class="space-y-3">
             @foreach ([
                 ['icon' => 'fa-facebook-f', 'bg' => 'bg-rn-fb',   'count' => '19,243 Fans',     'cta' => 'Like'],
                 ['icon' => 'fa-twitter',    'bg' => 'bg-rn-tw',   'count' => '2,076 Followers', 'cta' => 'Follow'],
                 ['icon' => 'fa-rss',        'bg' => 'bg-rn-red',  'count' => '15,200 Followers','cta' => 'Subscribe'],
             ] as $social)
-                <x-social-box :icon="$social['icon']" :bgClass="$social['bg']" :count="$social['count']" :cta="$social['cta']" />
+                <x-frontend.social-box :icon="$social['icon']" :bgClass="$social['bg']" :count="$social['count']" :cta="$social['cta']" />
             @endforeach
         </div>
     </section>
 
     {{-- Tags --}}
-    <x-section-heading title="Tags" style="margin-top: 2.5rem;" />
-    <x-tag-cloud :tags="$tags ?? []" />
+    <x-ui.section-heading title="Tags" style="margin-top: 2.5rem;" />
+    <x-frontend.tag-cloud :tags="$tags ?? []" />
 
     {{-- Advertise --}}
-    <x-section-heading title="Advertise" style="margin-top: 2.5rem;" />
+    <x-ui.section-heading title="Advertise" style="margin-top: 2.5rem;" />
     <a href="#" class="block">
         <img src="{{ $adBanner ?? asset('images/ad-banner.svg') }}" alt="Advertisement" class="w-full h-auto">
     </a>
 
     {{-- Newsletter --}}
     <div style="margin-top: 2.5rem;">
-        <x-newsletter-form
+        <x-frontend.newsletter-form
             title="Newsletter"
             description="The most important world news and events of the day."
             subdescription="Get our daily newsletter on your inbox."

@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         Create Affiliate Link
     </x-slot>
@@ -62,4 +62,4 @@
             </div>
         </form>
     </div>
-    </x-admin-layout-modern>
+    </x-admin.layout-modern>

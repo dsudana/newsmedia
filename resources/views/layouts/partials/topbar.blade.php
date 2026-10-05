@@ -1,40 +1,20 @@
-<!-- Top Bar (White with Search) -->
-<div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3 px-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-between gap-6">
-        <!-- Left: Date -->
-        <span class="text-xs text-gray-600 dark:text-gray-400 whitespace-nowrap">{{ now()->format('l, F d, Y') }}</span>
+<div id="topbar" class="bg-black text-white text-[13px]">
+    <div class="max-w-6xl mx-auto px-4 lg:px-8 h-9 flex items-center justify-between">
+        <span id="current-date" class="font-medium">{{ now()->locale('id')->translatedFormat('l, d F Y') }}</span>
 
-        <!-- Center: Search Bar -->
-        <form action="{{ route('blog.search') }}" method="GET" class="flex-1 max-w-md">
-            <div class="flex items-center bg-gray-100 dark:bg-gray-800 rounded-full px-4 py-2">
-                <input type="text" name="search" placeholder="Cari tokoh, topik atau peristiwa..."
-                    class="bg-transparent flex-1 text-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 outline-none">
-                <button type="submit" aria-label="Search" class="text-gray-600 dark:text-gray-400 hover:text-red-600 transition">
-                    <i class="fas fa-search text-sm"></i>
-                </button>
-            </div>
-        </form>
+        <div id="topbar-links" class="flex items-center gap-5">
 
-        <!-- Right: Auth & Social -->
-        <div class="flex items-center gap-4">
-            <div class="hidden sm:flex items-center gap-3 text-xs">
-                @auth
-                    <form method="POST" action="{{ route('logout') }}" class="inline-block">
-                        @csrf
-                        <button type="submit" class="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition bg-transparent border-none cursor-pointer p-0">
-                            {{ Auth::user()->name }}
-                        </button>
-                    </form>
-                @else
-                    <a href="{{ route('login') }}" class="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition">Login</a>
-                    <span class="text-gray-400">/</span>
-                    <a href="{{ route('register') }}" class="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition">Register</a>
-                @endauth
-            </div>
-            <div class="hidden sm:flex items-center gap-3">
-                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition"><i class="fab fa-facebook text-sm"></i></a>
-                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition"><i class="fab fa-twitter text-sm"></i></a>
-                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition"><i class="fab fa-instagram text-sm"></i></a>
+            <a id="link-contact" href="{{ route('contact') }}" class="hover:text-rn-red transition-colors">Contact Us</a>
+            <a id="link-login" href="{{ route('login') }}" class="hover:text-rn-red transition-colors">Login /
+                Register</a>
+
+            <div id="social-media-topbar" class="flex items-center gap-3 pl-3 ml-1 border-l border-white/20">
+                <a href="#" id="social-facebook" aria-label="Facebook" class="hover:text-rn-red"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" id="social-twitter" aria-label="Twitter" class="hover:text-rn-red"><i
+                        class="fa-brands fa-twitter"></i></a>
+                <a href="#" id="social-instagram" aria-label="Instagram" class="hover:text-rn-red"><i
+                        class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </div>

@@ -49,7 +49,7 @@
 
                     <!-- Profile Dropdown -->
                     <div class="relative">
-                        <x-dropdown align="right" width="48">
+                        <x-ui.dropdown align="right" width="48">
                             <x-slot name="trigger">
                                 <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-lg text-gray-600 bg-white hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150">
                                     <div class="hidden sm:block">{{ Auth::user()->name }}</div>
@@ -62,7 +62,7 @@
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('profile.edit')">
+                                <x-ui.dropdown-link :href="route('profile.edit')">
                                     {{ __('Profile') }}
                                 </x-dropdown-link>
 

@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         Dashboard - NewSMedia
     </x-slot>
@@ -337,4 +337,4 @@
             animation: fadeIn 0.3s ease-in-out;
         }
     </style>
-    </x-admin-layout-modern>
+    </x-admin.layout-modern>

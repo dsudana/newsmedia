@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         WordPress Import
     </x-slot>
@@ -225,4 +225,4 @@
             }
         }
     </script>
-    </x-admin-layout-modern>
+    </x-admin.layout-modern>

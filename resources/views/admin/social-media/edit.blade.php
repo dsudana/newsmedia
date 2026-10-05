@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <div class="space-y-6">
         <h1 class="text-2xl font-bold">Edit Social Media Link</h1>
 
@@ -56,4 +56,4 @@
         </div>
         </form>
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

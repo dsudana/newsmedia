@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         Create Article
     </x-slot>
@@ -560,4 +560,4 @@
             }
         }
     </style>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

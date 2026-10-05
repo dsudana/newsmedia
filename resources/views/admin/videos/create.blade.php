@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
 
 
     <div class="max-w-2xl mx-auto px-4 py-8">
@@ -115,4 +115,4 @@
             </div>
         </form>
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <x-slot name="header">
         Edit Advertisement
     </x-slot>
@@ -272,4 +272,4 @@ document.addEventListener('DOMContentLoaded', function() {
     updateAdType();
 });
 </script>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

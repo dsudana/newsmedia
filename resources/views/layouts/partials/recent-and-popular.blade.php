@@ -12,7 +12,7 @@
                             style="background-image: url('{{ $post->featured_image ? '/storage/' . $post->featured_image : '/images/placeholder.jpg' }}'); background-size: cover; background-position: center;">
                         </div>
                         <div>
-                            <x-tag-pill :label="$post->category?->name ?? 'Uncategorized'" />
+                            <x-frontend.tag-pill :label="$post->category?->name ?? 'Uncategorized'" />
                             <h3
                                 class="text-sm font-bold text-rn-ink leading-snug mt-2 line-clamp-2 group-hover:text-rn-red transition-colors">
                                 {{ $post->title }}
@@ -57,7 +57,7 @@
                         </span>
                         <div class="flex-1">
                             <a href="{{ route('blog.show', $post->slug) }}" class="group">
-                                <x-tag-pill :label="$post->category?->name ?? 'Uncategorized'" />
+                                <x-frontend.tag-pill :label="$post->category?->name ?? 'Uncategorized'" />
                                 <p
                                     class="text-[13px] font-bold text-rn-ink leading-snug hover:text-rn-red transition-colors line-clamp-2 mt-1">
                                     {{ $post->title }}

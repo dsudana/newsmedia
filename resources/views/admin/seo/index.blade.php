@@ -1,4 +1,4 @@
-﻿<x-admin-layout-modern>
+﻿<x-admin.layout-modern>
     <x-slot name="header">
         SEO Settings - Manage Meta Tags
     </x-slot>
@@ -118,4 +118,4 @@
             </div>
         @endif
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

@@ -10,7 +10,7 @@
                             style="background-image: url('{{ $post->featured_image ? '/storage/' . $post->featured_image : '/images/placeholder.jpg' }}'); background-size: cover; background-position: center;">
                         </div>
                         <div>
-                            <x-tag-pill :label="$post->category?->name ?? 'Sports'" />
+                            <x-frontend.tag-pill :label="$post->category?->name ?? 'Sports'" />
                             <h3 class="text-sm font-bold text-rn-ink leading-snug mt-2 line-clamp-2 group-hover:text-rn-red transition-colors">
                                 {{ $post->title }}
                             </h3>

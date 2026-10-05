@@ -26,7 +26,7 @@
         <!-- 2 Small Featured Cards -->
         <div class="space-y-4">
             @foreach($latestArticles->skip(1)->take(2) as $article)
-                <x-featured-card-modern :article="$article" :height="'h-44'" />
+                <x-frontend.featured-card-modern :article="$article" :height="'h-44'" />
             @endforeach
         </div>
     </div>

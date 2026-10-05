@@ -12,7 +12,7 @@
         @endforeach
     @else
         <!-- Fallback: render current hardcoded homepage -->
-        <x-ad-slot placement="home_top" />
+        <x-frontend.ad-slot placement="home_top" />
 
         <!-- Featured Article -->
         @if($latestFeatured)

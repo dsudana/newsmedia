@@ -1,4 +1,4 @@
-﻿<x-admin-layout-modern>
+﻿<x-admin.layout-modern>
     <x-slot name="header">
         Announcements - Manage Important Messages
     </x-slot>
@@ -129,4 +129,4 @@
             </div>
         @endif
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

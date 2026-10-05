@@ -1,4 +1,4 @@
-﻿<x-admin-layout-modern>
+﻿<x-admin.layout-modern>
     <x-slot name="header">
         Create SEO Setting - Add Page Settings
     </x-slot>
@@ -175,4 +175,4 @@
             </div>
         </form>
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

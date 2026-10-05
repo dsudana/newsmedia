@@ -286,7 +286,7 @@
                     @if($popularTags && $popularTags->count() > 0)
                         <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                             <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Tag Populer</h3>
-                            <x-tag-cloud :tags="$popularTags->take(12)" />
+                            <x-frontend.tag-cloud :tags="$popularTags->take(12)" />
                         </div>
                     @endif
                 </div>

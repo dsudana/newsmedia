@@ -1,4 +1,4 @@
-<x-admin-layout-modern header="Homepage Builder">
+<x-admin.layout-modern header="Homepage Builder">
     <div class="space-y-6 pr-4">
         <!-- Header Section -->
         <div class="flex items-center justify-between">
@@ -152,4 +152,4 @@
 
     <!-- Homepage Builder JavaScript -->
     <script src="{{ asset('js/homepage-builder.js') }}"></script>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

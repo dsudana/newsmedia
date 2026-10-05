@@ -7,14 +7,14 @@
    
     <!-- Breaking News Carousel & Trending Section -->
     <div class="max-w-7xl mx-auto px-4 mt-6">
-        <x-breaking-news-carousel :announcements="$announcements" :articles="$latestArticles" />
-        <x-trending-section :categories="$categories" />
+        <x-frontend.breaking-news-carousel :announcements="$announcements" :articles="$latestArticles" />
+        <x-frontend.trending-section :categories="$categories" />
     </div>
 
     <!-- Advertisement Banner -->
     <div class="bg-white dark:bg-gray-900 border-b border-slate-200 dark:border-gray-800 py-6 mb-6">
         <div class="max-w-7xl mx-auto px-4">
-            <x-advertisement placement="header_banner" />
+            <x-frontend.advertisement placement="header_banner" />
         </div>
     </div>
 

@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <div class="space-y-6 pr-4 max-w-4xl">
         <div class="flex items-center justify-between">
             <div>
@@ -52,4 +52,4 @@
             </form>
         </div>
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

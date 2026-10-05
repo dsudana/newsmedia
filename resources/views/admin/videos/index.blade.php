@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
 
 
     <div class="max-w-6xl mx-auto px-4 py-8">
@@ -98,4 +98,4 @@
             </div>
         @endif
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

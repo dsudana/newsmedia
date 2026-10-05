@@ -1,4 +1,4 @@
-﻿<x-admin-layout-modern>
+﻿<x-admin.layout-modern>
     <x-slot name="header">
         Events - Manage Upcoming Events
     </x-slot>
@@ -130,4 +130,4 @@
             </div>
         @endif
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

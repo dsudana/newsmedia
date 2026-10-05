@@ -1,4 +1,4 @@
-<x-admin-layout-modern header="View Comment">
+<x-admin.layout-modern header="View Comment">
 <div class="space-y-6">
     <!-- Header -->
     <div class="flex items-center justify-between">
@@ -124,4 +124,4 @@
         </div>
     </div>
 </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <div class="space-y-6 pr-4">
         <!-- Header Section -->
         <div>

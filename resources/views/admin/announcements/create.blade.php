@@ -1,4 +1,4 @@
-﻿<x-admin-layout-modern>
+﻿<x-admin.layout-modern>
     <x-slot name="header">
         Create Announcement - Add New Message
     </x-slot>
@@ -81,4 +81,4 @@
             </div>
         </form>
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

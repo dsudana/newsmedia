@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <div class="space-y-8 pr-4">
         <!-- Hero Banner -->
         <div class="hero-banner p-8 text-white rounded-xl shadow-lg"
@@ -306,4 +306,4 @@
             overflow: hidden;
         }
     </style>
-    </x-admin-layout-modern>
+    </x-admin.layout-modern>

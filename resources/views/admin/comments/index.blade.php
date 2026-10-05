@@ -1,4 +1,4 @@
-﻿<x-admin-layout-modern>
+﻿<x-admin.layout-modern>
     <x-slot name="header">
         Comment Moderation - Review Comments
     </x-slot>
@@ -126,4 +126,4 @@
             </div>
         @endif
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

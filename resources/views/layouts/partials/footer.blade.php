@@ -1,65 +1,59 @@
-<footer class="bg-gray-800 text-white mt-12 py-8">
-    <div class="container mx-auto px-4">
-        <x-ad-slot placement="footer_top" />
+<footer class="bg-black text-white mt-4">
+    <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        @foreach ([
+        'World' => ['Global Economy', 'Religion', 'Bitcoin', 'Conflict', 'Sports', 'Scandals'],
+        'Entertainment' => ['Celebity News', 'Movies', 'Tv News', 'Music News', 'Life Style', 'Entertainment Video'],
+        'Health' => ['Medical Research', 'Healthy Living', 'Mental Health', 'Virus Corona', "Children's Health"],
+        'Business' => ['Markets', 'Technology', 'Features', 'Property', 'Business Leaders'],
+    ] as $heading => $links)
+            <div>
+                <h3 class="text-[15px] font-bold uppercase mb-4 relative pb-3">
+                    {{ $heading }}
+                    <span class="absolute left-0 bottom-0 w-8 h-0.75 bg-rn-red"></span>
+                </h3>
+                <ul class="space-y-2 text-[13px] text-white/70">
+                    @foreach ($links as $link)
+                        <li><a href="#" class="hover:text-rn-red transition-colors">{{ $link }}</a></li>
+                    @endforeach
+                </ul>
+            </div>
+        @endforeach
     </div>
 
-    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- About -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">About Us</h4>
-            <p class="text-gray-400 text-sm">
-                {{ $settings['site_description'] ?? 'Your source for the latest news and updates.' }}
-            </p>
-            <div class="mt-4 flex space-x-4">
-                @if(isset($settings['social_facebook']))
-                    <a href="{{ $settings['social_facebook'] }}" class="text-gray-400 hover:text-white"><i
-                            class="fab fa-facebook"></i> FB</a>
-                @endif
-                @if(isset($settings['social_twitter']))
-                    <a href="{{ $settings['social_twitter'] }}" class="text-gray-400 hover:text-white"><i
-                            class="fab fa-twitter"></i> TW</a>
-                @endif
-                {{-- Add other social links --}}
+    <div class="border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
+            <a href="{{ route('home') }}" class="flex items-center gap-1">
+                <span class="text-xl font-extrabold text-white">NEWS</span>
+                <svg class="w-4 h-6 text-rn-red -mx-0.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z" />
+                </svg>
+                <span class="text-xl font-extrabold text-rn-red">MEDIA</span>
+            </a>
+
+            <div class="flex items-center gap-3">
+                @foreach (['facebook-f', 'twitter', 'whatsapp', 'telegram', 'linkedin-in'] as $icon)
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-rn-red transition-colors">
+                        <i class="fa-brands fa-{{ $icon }} text-sm"></i>
+                    </a>
+                @endforeach
             </div>
         </div>
-
-        <!-- Links -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-            <ul class="text-gray-400 text-sm space-y-2">
-                <li><a href="{{ route('home') }}" class="hover:text-white">Home</a></li>
-                <li><a href="#" class="hover:text-white">About</a></li>
-                <li><a href="#" class="hover:text-white">Contact</a></li>
-                <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-            </ul>
-        </div>
-
-        <!-- Categories -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">Categories</h4>
-            <ul class="text-gray-400 text-sm space-y-2">
-                @foreach(\App\Models\Category::whereNull('parent_id')->take(5)->get() as $category)
-                    <li><a href="{{ route('categories.show', $category) }}"
-                            class="hover:text-white">{{ $category->name }}</a></li>
-                @endforeach
-            </ul>
-        </div>
-
-        <!-- Newsletter -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">Newsletter</h4>
-            <p class="text-gray-400 text-sm mb-4">Subscribe to get the latest news updates.</p>
-            <form action="#" method="POST">
-                <input type="email" placeholder="Your email"
-                    class="w-full bg-gray-700 text-white border-none rounded px-3 py-2 focus:ring-2 focus:ring-blue-500 mb-2">
-                <button type="submit"
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded">Subscribe</button>
-            </form>
-        </div>
     </div>
 
-    <div class="container mx-auto px-4 mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
-        &copy; {{ date('Y') }} {{ $settings['site_name'] ?? config('app.name') }}. All rights reserved.
-        {{ $settings['footer_text'] ?? '' }}
+    <div class="bg-black">
+        <div
+            class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-[12px] text-white/60">
+            <div class="flex flex-wrap gap-4">
+                <a href="{{ route('contact') }}" class="hover:text-rn-red">Contact Us</a>
+                <a href="#" class="hover:text-rn-red">Terms Of Use</a>
+                <a href="#" class="hover:text-rn-red">Adchoice</a>
+                <a href="#" class="hover:text-rn-red">About Us</a>
+                <a href="#" class="hover:text-rn-red">Newsletters</a>
+                <a href="#" class="hover:text-rn-red">Sitemap</a>
+                <a href="#" class="hover:text-rn-red">Magrenvi Store</a>
+            </div>
+            <p>Copyright © {{ now()->year }} News and Magazine template based on Bootstrap 4 Theme by Retenvi.</p>
+        </div>
     </div>
 </footer>

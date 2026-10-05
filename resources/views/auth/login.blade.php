@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-layouts.guest-layout>
     <!-- Throttle/Rate Limit Error -->
     @if ($errors->has('throttle'))
         <div class="error-message">
@@ -96,4 +96,4 @@
             box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
         }
     </style>
-</x-guest-layout>
+</x-layouts.guest-layout>

@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
 <div class="space-y-6 pr-4">
     <div class="mb-8">
         <h1 class="text-3xl font-bold text-gray-900">Import/Export Artikel</h1>

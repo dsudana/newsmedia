@@ -1,4 +1,4 @@
-﻿<x-admin-layout-modern>
+﻿<x-admin.layout-modern>
     <x-slot name="header">
         Edit SEO Setting - Update Page Settings
     </x-slot>
@@ -173,4 +173,4 @@
             </div>
         </form>
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>

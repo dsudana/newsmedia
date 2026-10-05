@@ -1,4 +1,4 @@
-<x-admin-layout-modern>
+<x-admin.layout-modern>
     <div class="space-y-6">
                 <div class="flex justify-between items-center mb-6">
                     <h1 class="text-2xl font-bold">Social Media Links</h1>
@@ -71,4 +71,4 @@
             {{ $socialMedias->links() }}
         </div>
     </div>
-</x-admin-layout-modern>
+</x-admin.layout-modern>
