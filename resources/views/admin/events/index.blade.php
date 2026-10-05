@@ -83,7 +83,7 @@
                             <td class="px-6 py-4 text-sm text-gray-600">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-calendar text-gray-400"></i>
-                                    {{ $event->event_date->format('M d, Y') }}
+                                    {{ $event->event_date->translatedFormat('d M Y') }}
                                 </div>
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-600">

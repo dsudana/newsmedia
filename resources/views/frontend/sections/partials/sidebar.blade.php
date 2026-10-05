@@ -92,7 +92,7 @@
                             </span>
                             <span class="text-gray-300">|</span>
                             <span class="news-card__date">
-                                {{ $article->published_at?->format('M d, Y') }}
+                                {{ $article->published_at?->translatedFormat('d M Y') }}
                             </span>
                         </div>
                     </div>

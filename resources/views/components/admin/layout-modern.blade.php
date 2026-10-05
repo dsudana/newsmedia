@@ -9,6 +9,7 @@
     <title>{{ $header }} - NewSMedia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" integrity="sha256-OlgGuH/LdsyB6vkJkJrIBPH88gJb7ZN2EwEVJTHnL8Q=" crossorigin="anonymous"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         [x-cloak] { display: none !important; }

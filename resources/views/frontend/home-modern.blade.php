@@ -59,7 +59,7 @@
                         >
                     @else
                         <img
-                            src="/images/default.jpg"
+                            src="/images/placeholder-news-media.svg"
                             alt="{{ $featured->title }}"
                             loading="lazy"
                             width="800"
@@ -86,12 +86,12 @@
 
                         <div class="mt-3 flex items-center gap-3 text-xs text-slate-300">
                             <time>
-                                {{ $featured->published_at?->format('M d, Y') }}
+                                {{ $featured->published_at?->translatedFormat('d M Y') }}
                             </time>
 
                             @if($featured->read_time)
                                 <span>•</span>
-                                <span>{{ $featured->read_time }} min read</span>
+                                <span>{{ $featured->read_time }} menit baca</span>
                             @endif
                         </div>
 
@@ -136,7 +136,7 @@
                             @else
 
                                 <img
-                                    src="/images/default.jpg"
+                                    src="/images/placeholder-news-media.svg"
                                     alt="{{ $article->title }}"
                                     loading="lazy"
                                     class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -167,7 +167,7 @@
                             <div class="mt-2 flex items-center gap-2 text-[10px] text-slate-500 dark:text-gray-400">
 
                                 <time>
-                                    {{ $article->published_at?->format('M d, Y') }}
+                                    {{ $article->published_at?->translatedFormat('d M Y') }}
                                 </time>
 
                                 @if($article->read_time)
@@ -189,10 +189,10 @@
     </div>
 </div>
 
-            <!-- Latest News Grid (Full Width, 4 Columns) -->
+            <!-- Berita Terbaru Grid (Full Width, 4 Columns) -->
             <section class="mb-12">
                 <div class="mb-8">
-                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Latest News</h2>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Berita Terbaru</h2>
                     <div class="h-1 w-16 bg-gradient-to-r from-red-600 to-red-400 mt-3 rounded-full"></div>
                 </div>
 
@@ -209,7 +209,7 @@
                                         <img src="{{ $imgUrl }}" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                     </picture>
                                 @else
-                                    <img src="/images/default.jpg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                    <img src="/images/placeholder-news-media.svg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                 @endif
                             </div>
                             <div class="flex-1 flex flex-col">
@@ -220,7 +220,7 @@
                                     {{ $article->title }}
                                 </h3>
                                 <p class="text-xs text-slate-600 dark:text-gray-400">
-                                    {{ $article->published_at->format('M d, Y') }}
+                                    {{ $article->published_at->translatedFormat('d M Y') }}
                                 </p>
                             </div>
                         </a>
@@ -231,11 +231,11 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Content (2/3) -->
                 <div class="lg:col-span-2 space-y-12">
-                    <!-- Category/News Update Section -->
+                    <!-- Category/Update Berita Section -->
                     <section>
                         <div class="flex items-center justify-between mb-8">
-                            <h2 class="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                                News Update
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                Update Berita
                                 <span class="text-red-600 text-2xl">›</span>
                             </h2>
                             <a href="#" class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-2xl transition">
@@ -255,7 +255,7 @@
                                                 <img src="{{ asset('storage/' . $article->featured_image) }}?w=250&q=70" alt="{{ $article->title }}" loading="lazy" width="250" height="188" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                             </picture>
                                         @else
-                                            <img src="/images/default.jpg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                            <img src="/images/placeholder-news-media.svg" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                         @endif
 
                                         <!-- Overlay with category badge -->
@@ -289,12 +289,12 @@
                         </div>
                     </section>
 
-                    <!-- Featured Videos Section -->
+                    <!-- Video Pilihan Section -->
                     @if($videoGallery && $videoGallery->count() > 0)
-                        <section class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-gray-800 dark:to-gray-900 rounded-xl p-8 shadow-lg">
+                        <section class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-gray-800 dark:to-gray-900 rounded-xl p-8 shadow-lg mb-12">
                             <div class="flex items-center justify-between mb-8">
                                 <h2 class="text-3xl font-bold text-white flex items-center gap-2">
-                                    Featured Videos
+                                    Video Pilihan
                                     <span class="text-red-600 text-2xl">›</span>
                                 </h2>
                                 <a href="{{ route('gallery.index') }}" class="text-red-600 hover:text-red-500 text-2xl transition">
@@ -312,6 +312,9 @@
                         </section>
                     @endif
 
+                    <!-- Upcoming Events Carousel -->
+                    <x-frontend.upcoming-events :events="$upcomingEvents" />
+
                     <!-- Category Sections -->
                     @php
                         // Get all active categories with their articles
@@ -324,7 +327,7 @@
                         @php $categoryArticles = $category->articles; @endphp
                         <section>
                             <div class="flex items-center justify-between mb-8">
-                                <h2 class="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                                     {{ $category->name }}
                                     <span class="text-red-600 text-2xl">›</span>
                                 </h2>

@@ -94,7 +94,7 @@
                                             class="w-full h-full object-cover group-hover:scale-105 transition"
                                             loading="lazy">
                                     @else
-                                        <img src="/images/default.jpg" alt="{{ $featuredArticle->title }}"
+                                        <img src="/images/placeholder-news-media.svg" alt="{{ $featuredArticle->title }}"
                                             class="w-full h-full object-cover group-hover:scale-105 transition"
                                             loading="lazy">
                                     @endif
@@ -107,7 +107,7 @@
                                         </span>
                                     </div>
                                     <h2
-                                        class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-200 group-hover:text-red-600 transition leading-tight">
+                                        class="text-slate-900 dark:text-white text-2xl sm:text-3xl font-bold group-hover:text-red-600 dark:group-hover:text-red-400 transition leading-tight">
                                         {{ $featuredArticle->title }}
                                     </h2>
                                     <p class="text-gray-600 text-base leading-relaxed">
@@ -148,7 +148,7 @@
                                                     class="w-full h-full object-cover group-hover:scale-105 transition"
                                                     loading="lazy">
                                             @else
-                                                <img src="/images/default.jpg" alt="{{ $article->title }}"
+                                                <img src="/images/placeholder-news-media.svg" alt="{{ $article->title }}"
                                                     class="w-full h-full object-cover group-hover:scale-105 transition"
                                                     loading="lazy">
                                             @endif
@@ -235,7 +235,7 @@
                                                 @php
                                                     $recentImageUrl = $article->featured_image
                                                         ? (str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image))
-                                                        : '/images/default.jpg';
+                                                        : '/images/placeholder-news-media.svg';
                                                 @endphp
                                                 <img src="{{ $recentImageUrl }}"
                                                     alt="{{ $article->title }}" loading="lazy"
@@ -247,7 +247,7 @@
                                                     {{ $article->title }}
                                                 </h4>
                                                 <p class="text-xs text-gray-500 dark:text-gray-400">
-                                                    {{ $article->published_at->format('M d, Y') }}
+                                                    {{ $article->published_at->translatedFormat('d M Y') }}
                                                 </p>
                                             </div>
                                         </a>

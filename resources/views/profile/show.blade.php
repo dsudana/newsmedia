@@ -85,7 +85,7 @@
                             <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
                                 <div>
                                     <p class="text-sm font-semibold text-gray-600 uppercase tracking-widest">Member Since</p>
-                                    <p class="mt-2 text-lg font-medium text-gray-900">{{ $user->created_at->format('M d, Y') }}</p>
+                                    <p class="mt-2 text-lg font-medium text-gray-900">{{ $user->created_at->translatedFormat('d M Y') }}</p>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-gray-600 uppercase tracking-widest">Account Status</p>

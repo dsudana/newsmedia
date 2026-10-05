@@ -69,7 +69,7 @@
                                                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                                                         loading="lazy">
                                                 @else
-                                                    <img src="/images/default.jpg" alt="{{ $article->title }}"
+                                                    <img src="/images/placeholder-news-media.svg" alt="{{ $article->title }}"
                                                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                                 @endif
                                             </div>

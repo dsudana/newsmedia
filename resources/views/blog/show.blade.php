@@ -326,7 +326,7 @@
                                                 {{ $recent->title }}
                                             </h4>
                                             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                                                {{ $recent->published_at->format('M d, Y') }}
+                                                {{ $recent->published_at->translatedFormat('d M Y') }}
                                             </p>
                                         </div>
                                     </a>

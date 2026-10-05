@@ -149,7 +149,7 @@
                             <td class="px-6 py-4">
                                 <div>
                                     <p class="font-semibold text-gray-900 line-clamp-2">{{ $article->title }}</p>
-                                    <p class="text-xs text-gray-500 mt-1">{{ \Carbon\Carbon::parse($article->published_at)->format('M d, Y') }}</p>
+                                    <p class="text-xs text-gray-500 mt-1">{{ \Carbon\Carbon::parse($article->published_at)->translatedFormat('d M Y') }}</p>
                                 </div>
                             </td>
                             <td class="px-6 py-4 text-center">

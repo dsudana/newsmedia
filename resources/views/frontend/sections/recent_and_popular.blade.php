@@ -19,7 +19,7 @@
                                 <h3 class="text-sm font-bold text-gray-900 dark:text-white leading-snug mt-2 line-clamp-2 group-hover:text-red-600 transition-colors">
                                     {{ $article->title }}
                                 </h3>
-                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d, Y') }}</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->translatedFormat('d M Y') }}</p>
                             </div>
                         </a>
                     @endforeach
@@ -32,7 +32,7 @@
                             <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/placeholder.jpg' }}"
                                  alt="{{ $article->title }}" class="w-20 h-16 object-cover rounded flex-shrink-0">
                             <div class="flex-1 min-w-0">
-                                <p class="text-xs text-gray-500 dark:text-gray-400">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d, Y') }}</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->translatedFormat('d M Y') }}</p>
                                 <h4 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 transition-colors">
                                     {{ $article->title }}
                                 </h4>

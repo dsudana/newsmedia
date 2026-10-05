@@ -16,7 +16,7 @@
                     <p class="text-xs text-rn-body mt-2 leading-relaxed line-clamp-2">
                         {{ $post->excerpt ?? 'Read more...' }}</p>
                     <p class="byline mt-2">By {{ $post->user?->name ?? 'Admin' }} <span
-                            class="date">{{ $post->published_at?->format('M d, Y') }}</span></p>
+                            class="date">{{ $post->published_at?->translatedFormat('d M Y') }}</span></p>
                 </div>
             </a>
         @endforeach

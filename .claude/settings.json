@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -n \"comment\" c:\\\\\\\\laragon\\\\\\\\www\\\\\\\\newsmedia\\\\\\\\routes\\\\\\\\web.php)"
+      "Bash(grep -n \"comment\" c:\\\\\\\\laragon\\\\\\\\www\\\\\\\\newsmedia\\\\\\\\routes\\\\\\\\web.php)",
+      "PowerShell(Test-Path \"C:\\\\laragon\\\\www\\\\newsmedia\\\\resources\\\\views\\\\gallery\\\\index.blade.php\" -PathType Leaf; echo \"Gallery view: $\\(if \\($?\\) {'OK'} else {'MISSING'}\\)\")"
     ]
   }
 }

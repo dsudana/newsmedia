@@ -68,15 +68,13 @@
                                     class="flex-1 bg-blue-50 hover:bg-blue-100 text-blue-600 px-3 py-2 rounded text-sm font-semibold text-center transition">
                                     Edit
                                 </a>
-                                <form action="{{ route('admin.videos.destroy', $video) }}" method="POST"
-                                    class="flex-1" onsubmit="return confirm('Yakin ingin menghapus video ini?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit"
-                                        class="w-full bg-red-50 hover:bg-red-100 text-red-600 px-3 py-2 rounded text-sm font-semibold transition">
-                                        Hapus
-                                    </button>
-                                </form>
+                                <div class="flex-1">
+                                    <x-delete-button
+                                        :route="route('admin.videos.destroy', $video)"
+                                        model="Video"
+                                        size="small"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

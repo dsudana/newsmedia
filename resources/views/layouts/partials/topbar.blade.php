@@ -1,5 +1,5 @@
-<div id="topbar" class="bg-black text-white text-[13px] sm:text-xs">
-    <div class="max-w-6xl mx-auto px-4 lg:px-8 h-9 sm:h-8 lg:h-9 flex items-center justify-between">
+<div id="topbar" class="bg-red-900 text-white text-[13px] sm:text-xs">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 h-9 sm:h-8 lg:h-9 flex items-center justify-between">
         <!-- Date (Hidden on mobile) -->
         <span id="current-date" class="hidden sm:inline font-medium">{{ now()->locale('id')->translatedFormat('l, d F Y') }}</span>
 

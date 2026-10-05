@@ -130,7 +130,7 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <p class="text-sm text-gray-600">
-                                        {{ $article->published_at ? $article->published_at->format('M d, Y') : '-' }}
+                                        {{ $article->published_at ? $article->published_at->translatedFormat('d M Y') : '-' }}
                                     </p>
                                 </td>
                                 <td class="px-6 py-4">
@@ -140,16 +140,11 @@
                                             title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('admin.articles.destroy', $article) }}" method="POST"
-                                            class="inline" onsubmit="return confirm('Are you sure?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
-                                                title="Delete">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
+                                        <x-delete-button
+                                            :route="route('admin.articles.destroy', $article)"
+                                            model="Article"
+                                            title="Delete Article"
+                                        />
                                     </div>
                                 </td>
                             </tr>

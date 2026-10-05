@@ -9,7 +9,7 @@
     <div>
         <p class="byline">
             By {{ $article->user?->name ?? 'Admin' }}
-            <span class="date">{{ $article->date ?? $article->created_at?->format('M d, Y') }}</span>
+            <span class="date">{{ $article->date ?? $article->created_at?->translatedFormat('d M Y') }}</span>
         </p>
         <p class="text-[13px] font-semibold text-rn-ink leading-snug group-hover:text-rn-red transition-colors">
             {{ $article->title }}

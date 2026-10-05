@@ -41,16 +41,16 @@
                             <span class="font-medium mr-2">{{ $latestFeatured->user->name ?? 'Admin' }}</span>
                             <span>&bull;</span>
                             <span
-                                class="ml-2">{{ $latestFeatured->published_at ? $latestFeatured->published_at->format('M d, Y') : 'Draft' }}</span>
+                                class="ml-2">{{ $latestFeatured->published_at ? $latestFeatured->published_at->translatedFormat('d M Y') : 'Draft' }}</span>
                         </div>
                     </div>
                 </div>
             </section>
         @endif
 
-        <!-- Latest News -->
+        <!-- Berita Terbaru -->
         <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 border-b-2 border-blue-600 inline-block pb-1">Latest News</h2>
+            <h2 class="text-2xl font-bold mb-6 border-b-2 border-blue-600 inline-block pb-1">Berita Terbaru</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($heroSlides as $article)
                     <div class="bg-white rounded shadow hover:shadow-md transition">

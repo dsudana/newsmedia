@@ -9,7 +9,7 @@
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                         </div>
                         <p class="byline">By {{ $post->user?->name ?? 'Admin' }}, <span
-                                class="date">{{ $post->published_at?->format('M d, Y') }}</span></p>
+                                class="date">{{ $post->published_at?->translatedFormat('d M Y') }}</span></p>
                         <p class="card-title group-hover:text-rn-red transition-colors">{{ $post->title }}</p>
                     </a>
                 </div>

@@ -24,7 +24,7 @@
                 </div>
                 <div>
                     <p class="text-xs text-gray-600 font-semibold uppercase">Published</p>
-                    <p class="text-lg font-semibold text-gray-900 mt-1">{{ $article->published_at->format('M d, Y') }}</p>
+                    <p class="text-lg font-semibold text-gray-900 mt-1">{{ $article->published_at->translatedFormat('d M Y') }}</p>
                 </div>
             </div>
         </div>
@@ -144,7 +144,7 @@
                         @forelse($analytics as $analytic)
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="px-6 py-4">
-                                    <span class="text-sm font-semibold text-gray-900">{{ $analytic->date->format('M d, Y') }}</span>
+                                    <span class="text-sm font-semibold text-gray-900">{{ $analytic->date->translatedFormat('d M Y') }}</span>
                                 </td>
                                 <td class="px-6 py-4">
                                     <span class="text-sm text-gray-600">{{ number_format($analytic->views) }}</span>

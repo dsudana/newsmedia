@@ -48,7 +48,12 @@
         </nav>
 
         <!-- Right Actions -->
-        <div class="flex items-center gap-1 sm:gap-2">
+        <div class="flex items-center gap-1 sm:gap-2" x-data="{ searchOpen: false }">
+            <!-- Search Button -->
+            <button @click="searchOpen = !searchOpen; if (searchOpen) { $nextTick(() => document.querySelector('#search-input')?.focus()) }" aria-label="Search" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-1.5 sm:p-2">
+                <i class="text-base sm:text-lg fas fa-magnifying-glass" aria-hidden="true"></i>
+            </button>
+
             <!-- Dark Mode Toggle -->
             <button id="darkModeToggle" aria-label="Toggle dark mode" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-1.5 sm:p-2">
                 <i class="text-base sm:text-lg fas fa-moon" aria-hidden="true"></i>
@@ -58,6 +63,18 @@
             <button @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-label="Toggle mobile menu" class="lg:hidden text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-1.5 sm:p-2">
                 <i :class="mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'" class="text-base sm:text-lg" aria-hidden="true"></i>
             </button>
+
+            <!-- Search Modal -->
+            <div x-show="searchOpen" @click.outside="searchOpen = false" x-transition class="absolute top-full left-0 right-0 mt-1 bg-gray-900 dark:bg-gray-900 border-b border-gray-800 dark:border-gray-800 z-40">
+                <div class="max-w-7xl mx-auto px-4 py-3">
+                    <form action="{{ route('blog.search') }}" method="GET" class="flex gap-2">
+                        <input type="text" id="search-input" name="q" placeholder="Search articles..." value="{{ request('q') }}" class="flex-1 px-3 py-2 rounded bg-gray-800 dark:bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600" />
+                        <button type="submit" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded transition font-semibold">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 

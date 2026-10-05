@@ -1,7 +1,7 @@
 <section class="mb-12">
     <div class="flex items-center justify-between mb-8">
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            Featured Videos
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            Video Pilihan
             <span class="text-red-600 text-2xl">›</span>
         </h2>
         <a href="{{ route('gallery.index') }}" class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-sm font-semibold transition">

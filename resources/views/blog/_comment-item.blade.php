@@ -1,4 +1,4 @@
-<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+<div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
     <div class="flex items-start gap-4">
         <div class="w-12 h-12 rounded-full bg-red-200 dark:bg-red-900/30 flex items-center justify-center flex-shrink-0 font-bold text-red-700 dark:text-red-400">
             {{ strtoupper(substr($comment->name, 0, 1)) }}

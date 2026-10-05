@@ -15,6 +15,7 @@ use App\Http\Controllers\ArticleAnalyticsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Frontend\ArticleController as PublicArticleController;
 use App\Http\Controllers\Frontend\CategoryController as PublicCategoryController;
+use App\Http\Controllers\Frontend\EventController as PublicEventController;
 use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\HomepageController as FrontendHomepageController;
 use App\Http\Controllers\SubscriberController;
@@ -67,6 +68,10 @@ Route::get('/go/{slug}', \App\Http\Controllers\RedirectController::class)->name(
 // Public gallery routes
 Route::get('/galeri', [GalleryController::class, 'index'])->name('gallery.index')->middleware('throttle:60,60');
 Route::get('/galeri/kategori/{category:slug}', [GalleryController::class, 'category'])->name('gallery.category')->middleware('throttle:60,60');
+
+// Public events routes
+Route::get('/acara', [PublicEventController::class, 'index'])->name('events.index')->middleware('throttle:60,60');
+Route::get('/acara/{slug}', [PublicEventController::class, 'show'])->name('events.show')->middleware('throttle:60,60');
 
 // Sitemap routes
 Route::get('/sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap.index');

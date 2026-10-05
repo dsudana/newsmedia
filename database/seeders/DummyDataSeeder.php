@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Ad;
 use App\Models\Event;
 use App\Models\Announcement;
 use App\Models\Comment;
@@ -28,15 +29,22 @@ class DummyDataSeeder extends Seeder
         $this->command->line('Creating Comments...');
         Comment::factory(20)->create();
 
-        // Create Advertisements (12) - skipped due to schema mismatch
-        // $this->command->line('Creating Advertisements...');
-        // Advertisement::factory(12)->create();
+        // Create Advertisements (12) with proper placement and dimensions
+        $this->command->line('Creating Advertisements...');
+        Advertisement::factory(12)->create();
+
+        // Create Ads (10) for different placements
+        $this->command->line('Creating Ads...');
+        Ad::factory(10)->create();
 
         // Create SEO Settings (5 for different pages)
         $this->command->line('Creating SEO Settings...');
         $pageNames = ['home', 'blog', 'about', 'contact', 'categories'];
         foreach ($pageNames as $pageName) {
-            SeoSetting::factory()->create(['page_name' => $pageName]);
+            SeoSetting::updateOrCreate(
+                ['page_name' => $pageName],
+                SeoSetting::factory()->make(['page_name' => $pageName])->toArray()
+            );
         }
 
         // Create Affiliate Links (15)
@@ -48,6 +56,8 @@ class DummyDataSeeder extends Seeder
         $this->command->info('  - 10 Events');
         $this->command->info('  - 8 Announcements');
         $this->command->info('  - 20 Comments');
+        $this->command->info('  - 12 Advertisements (with dummy images)');
+        $this->command->info('  - 10 Ads (with dummy images)');
         $this->command->info('  - 5 SEO Settings');
         $this->command->info('  - 15 Affiliate Links');
     }

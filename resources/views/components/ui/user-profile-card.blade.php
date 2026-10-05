@@ -50,7 +50,7 @@
     <div class="pt-4 border-t border-gray-200 space-y-2 text-sm">
         <div class="flex justify-between">
             <span class="text-gray-600">Member Since</span>
-            <span class="font-medium text-gray-900">{{ $user->created_at->format('M d, Y') }}</span>
+            <span class="font-medium text-gray-900">{{ $user->created_at->translatedFormat('d M Y') }}</span>
         </div>
         <div class="flex justify-between">
             <span class="text-gray-600">Last Login</span>

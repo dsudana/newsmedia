@@ -39,43 +39,122 @@
 @endphp
 
 @if ($trendingKeywords->count() > 0)
-    <div class="mb-8" x-data="trendingScroll()">
-        <div class="flex items-center gap-4 overflow-x-auto pb-4 scroll-smooth" id="trendingContainer">
-            <!-- Label -->
-            <span class="text-red-600 dark:text-red-500 font-bold text-sm uppercase whitespace-nowrap shrink-0">Trending:</span>
+    <div class="mb-8">
+        <div class="flex items-center gap-3 pb-2">
+            <!-- Fixed Label -->
+            <span class="text-red-600 dark:text-red-500 font-bold text-sm uppercase whitespace-nowrap sticky left-0 z-10 bg-white dark:bg-gray-900">TRENDING:</span>
 
-            <!-- Trending Keywords/Tags from Articles -->
-            @foreach ($trendingKeywords as $item)
-                @if ($item->is_tag ?? false)
-                    <a href="{{ route('blog.tag', $item->slug) }}"
-                        class="px-4 py-2 bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-200 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 rounded-full whitespace-nowrap transition text-sm font-medium border border-red-200 dark:border-red-800"
-                        title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)">
-                        #{{ $item->keyword }}
-                    </a>
-                @else
-                    <a href="{{ route('blog.search') }}?q={{ urlencode($item->keyword) }}"
-                        class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 rounded-full whitespace-nowrap transition text-sm font-medium border border-gray-200 dark:border-gray-700/50"
-                        title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)">
-                        {{ $item->keyword }}
-                    </a>
-                @endif
-            @endforeach
+            <!-- Scrollable Container -->
+            <div class="flex items-center gap-3 flex-1 overflow-x-auto scroll-smooth select-none"
+                 id="trendingContainer"
+                 data-dragging="false"
+                 style="scrollbar-width: none; -ms-overflow-style: none;">
 
-            <!-- Navigation Arrow -->
-            <button @click="scrollRight()" class="shrink-0 text-red-600 dark:text-red-500 hover:text-red-700 dark:hover:text-red-400 p-2 ml-4 transition" aria-label="More trending">
-                <i class="fas fa-chevron-right text-xl"></i>
+                <!-- Trending Keywords/Tags from Articles -->
+                @foreach ($trendingKeywords as $item)
+                    @if ($item->is_tag ?? false)
+                        <a href="{{ route('blog.tag', $item->slug) }}"
+                            class="px-4 py-2.5 bg-white dark:bg-gray-800 text-red-600 dark:text-red-400 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 transition text-sm font-bold border border-red-300 dark:border-red-700/60 whitespace-nowrap cursor-pointer shrink-0"
+                            title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)"
+                            draggable="false">
+                            #{{ $item->keyword }}
+                        </a>
+                    @else
+                        <a href="{{ route('blog.search') }}?q={{ urlencode($item->keyword) }}"
+                            class="px-4 py-2.5 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 transition text-sm font-bold border border-gray-300 dark:border-gray-700/60 whitespace-nowrap cursor-pointer shrink-0"
+                            title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)"
+                            draggable="false">
+                            {{ $item->keyword }}
+                        </a>
+                    @endif
+                @endforeach
+            </div>
+
+            <!-- Right Chevron Button -->
+            <button id="trendingNextBtn"
+                    class="shrink-0 text-red-600 dark:text-red-500 hover:text-red-700 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 p-2.5 rounded transition"
+                    title="Scroll right">
+                <i class="fas fa-chevron-right text-lg"></i><i class="fas fa-chevron-right text-lg -ml-2"></i>
             </button>
         </div>
     </div>
 
-    <script>
-        function trendingScroll() {
-            return {
-                scrollRight() {
-                    const container = document.getElementById('trendingContainer');
-                    container.scrollBy({ left: 200, behavior: 'smooth' });
-                }
-            }
+    <style>
+        #trendingContainer::-webkit-scrollbar {
+            display: none;
         }
+
+        #trendingContainer {
+            cursor: grab;
+        }
+
+        #trendingContainer.dragging {
+            cursor: grabbing;
+        }
+
+        #trendingContainer a:hover {
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('trendingContainer');
+            const nextBtn = document.getElementById('trendingNextBtn');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            container.addEventListener('mousedown', (e) => {
+                isDown = true;
+                container.classList.add('dragging');
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                isDown = false;
+                container.classList.remove('dragging');
+            });
+
+            container.addEventListener('mouseup', () => {
+                isDown = false;
+                container.classList.remove('dragging');
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 1;
+                container.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch support for mobile
+            container.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            });
+
+            container.addEventListener('touchend', () => {
+                isDown = false;
+            });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - container.offsetLeft;
+                const walk = (x - startX) * 1;
+                container.scrollLeft = scrollLeft - walk;
+            });
+
+            // Right chevron button scroll
+            nextBtn.addEventListener('click', () => {
+                container.scrollBy({
+                    left: 300,
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 @endif

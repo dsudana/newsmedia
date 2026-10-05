@@ -98,7 +98,7 @@
                                 @elseif(in_array('date', $section->config['show_fields'] ?? []))
                                     <p class="text-xs text-gray-500">
                                         <i class="fas fa-calendar mr-1"></i>
-                                        {{ $article->published_at ? $article->published_at->format('M d, Y') : 'Draft' }}
+                                        {{ $article->published_at ? $article->published_at->translatedFormat('d M Y') : 'Draft' }}
                                     </p>
                                 @endif
                             </div>

@@ -131,7 +131,7 @@
                                     </span>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <p class="text-sm text-gray-600">{{ $user->created_at->format('M d, Y') }}</p>
+                                    <p class="text-sm text-gray-600">{{ $user->created_at->translatedFormat('d M Y') }}</p>
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center justify-center gap-2">
@@ -140,16 +140,10 @@
                                             title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('admin.users.destroy', $user) }}" method="POST"
-                                            class="inline" onsubmit="return confirm('Are you sure?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
-                                                title="Delete">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
+                                        <x-delete-button
+                                            :route="route('admin.users.destroy', $user)"
+                                            model="User"
+                                        />
                                     </div>
                                 </td>
                             </tr>

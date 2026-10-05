@@ -24,22 +24,24 @@ class SecurityHeaders
             }
         }
 
-        // Cache homepage and article lists for 1 hour (only if not authenticated)
+        // Cache homepage and article lists for 1 hour (only if not authenticated and not setting cookies)
         if ($request->routeIs('home', 'blog.index', 'blog.category', 'blog.tag')) {
-            if (!$request->user() && !$response->headers->hasCookie('XSRF-TOKEN')) {
+            $setsCookies = count($response->headers->getCookies()) > 0;
+            if (!$request->user() && !$request->hasCookie('XSRF-TOKEN') && !$setsCookies) {
                 $response->header('Cache-Control', 'public, max-age=3600, s-maxage=3600');
             } else {
-                $response->header('Cache-Control', 'private, max-age=3600');
+                $response->header('Cache-Control', 'private, max-age=3600, no-store');
             }
             $response->header('Vary', 'Accept-Encoding, Cookie');
         }
 
-        // Cache individual articles for 24 hours (only if not authenticated)
+        // Cache individual articles for 24 hours (only if not authenticated and not setting cookies)
         if ($request->routeIs('blog.show')) {
-            if (!$request->user() && !$response->headers->hasCookie('XSRF-TOKEN')) {
+            $setsCookies = count($response->headers->getCookies()) > 0;
+            if (!$request->user() && !$request->hasCookie('XSRF-TOKEN') && !$setsCookies) {
                 $response->header('Cache-Control', 'public, max-age=86400, s-maxage=86400');
             } else {
-                $response->header('Cache-Control', 'private, max-age=86400');
+                $response->header('Cache-Control', 'private, max-age=86400, no-store');
             }
             $response->header('Vary', 'Accept-Encoding, Cookie');
         }

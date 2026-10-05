@@ -86,7 +86,7 @@
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 text-sm text-gray-600">
-                                    {{ $article->published_at?->format('M d, Y') ?? '-' }}
+                                    {{ $article->published_at?->translatedFormat('d M Y') ?? '-' }}
                                 </td>
                                 <td class="px-6 py-4 text-center">
                                     <a href="{{ route('admin.analytics.show', $article) }}"

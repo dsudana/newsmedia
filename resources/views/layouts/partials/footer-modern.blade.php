@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="bg-gray-900 dark:bg-black text-gray-400 dark:text-gray-500 py-12 border-t border-gray-800 dark:border-gray-700 transition-colors duration-300">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
         <!-- Footer Content Grid -->
         <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
             <!-- Logo & Social Media Section -->

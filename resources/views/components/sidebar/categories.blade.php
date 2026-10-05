@@ -8,7 +8,25 @@
 ])
 
 @php
-    $categoriesToShow = $limit ? $categories->take($limit) : $categories;
+    // Always ensure articles_count is loaded
+    if ($categories && $categories->count() > 0) {
+        // Re-load all categories with withCount to ensure we have the count
+        $allCategories = \App\Models\Category::active()
+            ->withCount(['articles' => function ($q) {
+                $q->where('status', 'published')->whereNotNull('published_at')->whereNull('deleted_at');
+            }])
+            ->orderBy('order')
+            ->get();
+
+        // Filter: only show categories with articles
+        $allCategories = $allCategories->filter(function ($cat) {
+            return $cat->articles_count > 0;
+        });
+
+        $categoriesToShow = $limit ? $allCategories->take($limit) : $allCategories;
+    } else {
+        $categoriesToShow = $categories;
+    }
 @endphp
 
 @if($categoriesToShow && $categoriesToShow->count() > 0)

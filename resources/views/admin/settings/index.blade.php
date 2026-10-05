@@ -116,7 +116,7 @@
                         <input type="text" name="seo_title" id="seo_title"
                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             value="{{ old('seo_title', $settings['seo_title'] ?? '') }}"
-                            placeholder="NEWSMEDIA - Latest News & Stories">
+                            placeholder="NEWSMEDIA - Berita Terbaru & Stories">
                     </div>
 
                     <div>

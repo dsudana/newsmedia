@@ -87,13 +87,40 @@
                         </form>
                     @endif
 
-                    <form action="{{ route('admin.comments.destroy', $comment) }}" method="POST" onsubmit="return confirm('Delete this comment permanently?')">
+                    <form action="{{ route('admin.comments.destroy', $comment) }}" method="POST" class="delete-form">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="w-full px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition font-medium">
+                        <button type="button" class="w-full px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition font-medium delete-btn">
                             <i class="fas fa-trash mr-2"></i> Delete
                         </button>
                     </form>
+
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const deleteBtn = document.querySelector('.delete-btn');
+                        if (deleteBtn) {
+                            deleteBtn.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                const form = this.closest('form');
+
+                                Swal.fire({
+                                    title: 'Delete Comment?',
+                                    text: "This action cannot be undone!",
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#ef4444',
+                                    cancelButtonColor: '#6b7280',
+                                    confirmButtonText: 'Yes, delete it!',
+                                    cancelButtonText: 'Cancel'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        form.submit();
+                                    }
+                                });
+                            });
+                        }
+                    });
+                    </script>
                 </div>
             </div>
 

@@ -3,7 +3,7 @@
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
         @foreach ($slider as $s)
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ $s->featured_image ? '/storage/' . $s->featured_image : '/images/default.jpg' }}"
+                <img src="{{ $s->featured_image ? '/storage/' . $s->featured_image : '/images/placeholder-news-media.svg' }}"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover h-full"
                     alt="...">
                 <div class="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300"></div>

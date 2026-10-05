@@ -91,7 +91,7 @@
                                         <div class="flex-1">
                                             <h3 class="font-semibold text-gray-900 hover:text-cyan-600">{{ $article->title }}</h3>
                                             <p class="text-sm text-gray-500 mt-1">
-                                                Created: {{ $article->created_at->format('M d, Y') }}
+                                                Created: {{ $article->created_at->translatedFormat('d M Y') }}
                                                 • Status: <span class="font-medium capitalize">{{ $article->status }}</span>
                                             </p>
                                         </div>
@@ -130,7 +130,7 @@
                         </div>
                         <div class="p-4 bg-purple-50 rounded-lg border border-purple-100">
                             <p class="text-sm text-gray-600">Created</p>
-                            <p class="text-lg font-semibold text-purple-600 mt-2">{{ $keyword->created_at->format('M d, Y') }}</p>
+                            <p class="text-lg font-semibold text-purple-600 mt-2">{{ $keyword->created_at->translatedFormat('d M Y') }}</p>
                         </div>
                     </div>
 
@@ -138,14 +138,41 @@
                         <a href="{{ route('admin.keywords.edit', $keyword) }}" class="block w-full text-center px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition font-medium">
                             Edit Keyword
                         </a>
-                        <form action="{{ route('admin.keywords.destroy', $keyword) }}" method="POST" onsubmit="return confirm('Delete this keyword?')">
+                        <form action="{{ route('admin.keywords.destroy', $keyword) }}" method="POST" class="delete-form">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="w-full px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition font-medium">
+                            <button type="button" class="w-full px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition font-medium delete-btn">
                                 <i class="fas fa-trash mr-2"></i>Delete Keyword
                             </button>
                         </form>
                     </div>
+
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const deleteBtn = document.querySelector('.delete-btn');
+                        if (deleteBtn) {
+                            deleteBtn.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                const form = this.closest('form');
+
+                                Swal.fire({
+                                    title: 'Delete Keyword?',
+                                    text: "You won't be able to undo this action!",
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#ef4444',
+                                    cancelButtonColor: '#6b7280',
+                                    confirmButtonText: 'Yes, delete it!',
+                                    cancelButtonText: 'Cancel'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        form.submit();
+                                    }
+                                });
+                            });
+                        }
+                    });
+                    </script>
                 </div>
             </div>
         </div>

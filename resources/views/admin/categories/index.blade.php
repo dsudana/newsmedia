@@ -234,22 +234,39 @@
         }
 
         function deleteCategory(id) {
-            if (!confirm('Are you sure?')) return;
-
-            fetch(`${baseUrl}/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'X-CSRF-Token': '{{ csrf_token() }}',
-                    'X-Requested-With': 'XMLHttpRequest'
+            Swal.fire({
+                title: 'Delete Category?',
+                text: "You won't be able to undo this action!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#ef4444',
+                cancelButtonColor: '#6b7280',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`${baseUrl}/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'X-CSRF-Token': '{{ csrf_token() }}',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire('Deleted!', 'Category has been deleted.', 'success');
+                            setTimeout(() => location.reload(), 1500);
+                        } else {
+                            Swal.fire('Error!', 'Failed to delete category.', 'error');
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Error deleting category:', err);
+                        Swal.fire('Error!', 'An error occurred while deleting.', 'error');
+                    });
                 }
-            })
-            .then(r => r.json())
-            .then(data => {
-                if (data.success) {
-                    location.reload();
-                }
-            })
-            .catch(err => console.error('Error deleting category:', err));
+            });
         }
 
         document.getElementById('categoryForm').addEventListener('submit', async (e) => {

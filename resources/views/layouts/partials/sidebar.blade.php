@@ -8,7 +8,7 @@
                 <img src="{{ $latestFeatured->featured_image ? '/storage/' . $latestFeatured->featured_image : '/images/placeholder.jpg' }}" alt="{{ $latestFeatured->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
             </a>
             <x-frontend.tag-pill :label="$latestFeatured->category?->name ?? 'Uncategorized'" />
-            <p class="byline mt-3">By {{ $latestFeatured->user?->name ?? 'Admin' }} <span class="date">{{ $latestFeatured->published_at?->format('M d, Y') }}</span></p>
+            <p class="byline mt-3">By {{ $latestFeatured->user?->name ?? 'Admin' }} <span class="date">{{ $latestFeatured->published_at?->translatedFormat('d M Y') }}</span></p>
             <h3 class="text-base font-bold text-rn-ink leading-tight mt-2">{{ $latestFeatured->title }}</h3>
             <p class="text-sm text-rn-body mt-3 leading-relaxed line-clamp-3">{{ $latestFeatured->excerpt }}</p>
             <a href="{{ route('blog.show', $latestFeatured->slug) }}"
@@ -23,7 +23,7 @@
                     <img src="{{ $post->featured_image ? '/storage/' . $post->featured_image : '/images/placeholder.jpg' }}" alt="{{ $post->title }}"
                         class="w-16 h-12 object-cover flex-shrink-0">
                     <div class="flex-1 min-w-0">
-                        <p class="byline text-xs">By {{ $post->user?->name ?? 'Admin' }} <span class="date">{{ $post->published_at?->format('M d, Y') }}</span></p>
+                        <p class="byline text-xs">By {{ $post->user?->name ?? 'Admin' }} <span class="date">{{ $post->published_at?->translatedFormat('d M Y') }}</span></p>
                         <h4 class="text-xs font-bold text-rn-ink line-clamp-2 group-hover:text-rn-red transition-colors">
                             {{ $post->title }}
                         </h4>

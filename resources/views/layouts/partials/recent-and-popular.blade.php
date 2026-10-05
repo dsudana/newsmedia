@@ -18,7 +18,7 @@
                                 {{ $post->title }}
                             </h3>
                             <p class="byline mt-2">By {{ $post->user?->name ?? 'Admin' }} <span
-                                    class="date">{{ $post->published_at?->format('M d, Y') }}</span></p>
+                                    class="date">{{ $post->published_at?->translatedFormat('d M Y') }}</span></p>
                         </div>
                     </a>
                 @endforeach
@@ -33,7 +33,7 @@
                             class="w-20 h-16 object-cover flex-shrink-0">
                         <div class="flex-1 min-w-0">
                             <p class="byline">By {{ $post->user?->name ?? 'Admin' }} <span
-                                    class="date">{{ $post->published_at?->format('M d, Y') }}</span></p>
+                                    class="date">{{ $post->published_at?->translatedFormat('d M Y') }}</span></p>
                             <h4
                                 class="text-sm font-bold text-rn-ink line-clamp-2 group-hover:text-rn-red transition-colors">
                                 {{ $post->title }}

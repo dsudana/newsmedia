@@ -2,7 +2,7 @@
     $imageUrl =
         $article->featured_image && !str_contains($article->featured_image, 'placeholder')
             ? '/storage/' . $article->featured_image
-            : '/images/default.jpg';
+            : '/images/placeholder-news-media.svg';
 @endphp
 
 <a href="{{ route('articles.show', $article) }}">

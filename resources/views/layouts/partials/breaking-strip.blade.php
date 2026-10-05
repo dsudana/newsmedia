@@ -13,7 +13,7 @@
                                 class="w-16 h-16 object-cover shrink-0 rounded">
                             <div class="flex-1 min-w-0">
                                 <p class="byline text-xs">By {{ $post->user?->name ?? 'Admin' }} <span
-                                        class="date">{{ $post->published_at?->format('M d, Y') }}</span></p>
+                                        class="date">{{ $post->published_at?->translatedFormat('d M Y') }}</span></p>
                                 <p
                                     class="text-[13px] font-semibold text-rn-ink leading-snug group-hover:text-rn-red transition-colors line-clamp-2">
                                     {{ $post->title }}

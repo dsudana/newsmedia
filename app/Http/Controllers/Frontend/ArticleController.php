@@ -186,7 +186,7 @@ class ArticleController extends Controller
     public function tag(Tag $tag)
     {
         $articles = Article::published()
-            ->whereHas('tags', fn($q) => $q->where('id', $tag->id))
+            ->whereHas('tags', fn($q) => $q->where('tags.id', $tag->id))
             ->recent()
             ->with(['user', 'category', 'tags'])
             ->paginate(self::PER_PAGE);
@@ -199,7 +199,7 @@ class ArticleController extends Controller
             ->get();
 
         $sidebarArticles = Article::published()
-            ->whereHas('tags', fn($q) => $q->where('id', $tag->id))
+            ->whereHas('tags', fn($q) => $q->where('tags.id', $tag->id))
             ->orderByDesc('views_count')
             ->with(['category', 'user'])
             ->take(5)
@@ -212,6 +212,7 @@ class ArticleController extends Controller
             ->get();
 
         $title = 'Tag: ' . $tag->name;
+        $category = null;
 
         return view('blog.index', compact(
             'articles',
@@ -219,7 +220,8 @@ class ArticleController extends Controller
             'sidebarArticles',
             'popularTags',
             'tag',
-            'title'
+            'title',
+            'category'
         ));
     }
 }

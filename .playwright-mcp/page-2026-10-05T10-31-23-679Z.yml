@@ -1,0 +1,240 @@
+- generic [ref=f11e2]:
+  - generic [ref=f11e4]:
+    - generic [ref=f11e5]: Internal Server Error
+    - button "Copy as Markdown" [ref=f11e11] [cursor=pointer]
+  - generic [ref=f11e18]:
+    - generic [ref=f11e19]:
+      - heading "Illuminate\\Routing\\Exceptions\\UrlGenerationException" [level=1] [ref=f11e20]
+      - generic [ref=f11e21]: vendor\laravel\framework\src\Illuminate\Routing\Exceptions\UrlGenerationException.php:35
+      - paragraph [ref=f11e23]: "Missing required parameter for [Route: events.show] [URI: acara/{event}] [Missing parameter: event]."
+    - generic [ref=f11e24]:
+      - generic [ref=f11e25]:
+        - generic [ref=f11e26]:
+          - generic [ref=f11e27]: LARAVEL
+          - generic [ref=f11e28]: 12.51.0
+        - generic [ref=f11e29]:
+          - generic [ref=f11e30]: PHP
+          - generic [ref=f11e31]: 8.3.27
+      - generic [ref=f11e32]: UNHANDLED
+      - generic [ref=f11e36]: CODE 0
+    - generic [ref=f11e38]:
+      - generic [ref=f11e39]: "500"
+      - generic [ref=f11e43]: GET
+      - generic [ref=f11e47]: http://127.0.0.1:8000
+      - button [ref=f11e48] [cursor=pointer]
+  - generic [ref=f11e53]:
+    - generic [ref=f11e54]:
+      - heading "Exception trace" [level=3] [ref=f11e60]
+      - generic [ref=f11e61]:
+        - generic [ref=f11e63] [cursor=pointer]:
+          - generic [ref=f11e68]: 5 vendor frames
+          - button [ref=f11e69]
+        - generic [ref=f11e74]:
+          - generic [ref=f11e75] [cursor=pointer]:
+            - generic [ref=f11e78]:
+              - code [ref=f11e82]:
+                - generic [ref=f11e83]: resources\views\components\frontend\upcoming-events.blade.php
+              - generic [ref=f11e84]: resources\views\components\frontend\upcoming-events.blade.php:15
+            - button [ref=f11e87]
+          - code [ref=f11e96]:
+            - generic [ref=f11e97]: 10 </a>
+            - generic [ref=f11e98]: 11 </div>
+            - generic [ref=f11e99]: "12"
+            - generic [ref=f11e100]: 13 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            - generic [ref=f11e101]: 14 @foreach ($events->take(3) as $event)
+            - generic [ref=f11e102]: "15 <a href=\"{{ route('events.show', $event->slug) }}\" class=\"group\">"
+            - generic [ref=f11e103]: 16 <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
+            - generic [ref=f11e104]: 17 @if ($event->featured_image)
+            - generic [ref=f11e105]: 18 <div class="h-40 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+            - generic [ref=f11e106]: "19 <img src=\"{{ $event->featured_image }}\" alt=\"{{ $event->title }}\""
+            - generic [ref=f11e107]: 20 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            - generic [ref=f11e108]: 21 </div>
+            - generic [ref=f11e109]: 22 @else
+            - generic [ref=f11e110]: 23 <div
+            - generic [ref=f11e111]: 24 class="h-40 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center group-hover:from-blue-500 group-hover:to-blue-700 transition-colors">
+            - generic [ref=f11e112]: 25 <span class="text-4xl">📅</span>
+            - generic [ref=f11e113]: 26 </div>
+            - generic [ref=f11e114]: "27"
+        - generic [ref=f11e116] [cursor=pointer]:
+          - generic [ref=f11e121]: 8 vendor frames
+          - button [ref=f11e122]
+        - generic [ref=f11e128] [cursor=pointer]:
+          - generic [ref=f11e131]:
+            - code [ref=f11e135]:
+              - generic [ref=f11e136]: resources\views\frontend\home-modern.blade.php
+            - generic [ref=f11e137]: resources\views\frontend\home-modern.blade.php:232
+          - button [ref=f11e140]
+        - generic [ref=f11e146] [cursor=pointer]:
+          - generic [ref=f11e151]: 33 vendor frames
+          - button [ref=f11e152]
+        - generic [ref=f11e158] [cursor=pointer]:
+          - generic [ref=f11e161]:
+            - code [ref=f11e165]:
+              - generic [ref=f11e166]: App\Http\Middleware\CheckUserActive->handle(object(Illuminate\Http\Request), object(Closure))
+            - generic [ref=f11e167]: app\Http\Middleware\CheckUserActive.php:24
+          - button [ref=f11e170]
+        - generic [ref=f11e176] [cursor=pointer]:
+          - generic [ref=f11e181]: 1 vendor frame
+          - button [ref=f11e182]
+        - generic [ref=f11e188] [cursor=pointer]:
+          - generic [ref=f11e191]:
+            - code [ref=f11e195]:
+              - generic [ref=f11e196]: App\Http\Middleware\SecurityHeaders->handle(object(Illuminate\Http\Request), object(Closure))
+            - generic [ref=f11e197]: app\Http\Middleware\SecurityHeaders.php:16
+          - button [ref=f11e200]
+        - generic [ref=f11e206] [cursor=pointer]:
+          - generic [ref=f11e211]: 23 vendor frames
+          - button [ref=f11e212]
+        - generic [ref=f11e218] [cursor=pointer]:
+          - generic [ref=f11e221]:
+            - code [ref=f11e225]:
+              - generic [ref=f11e226]: public\index.php
+            - generic [ref=f11e227]: public\index.php:20
+          - button [ref=f11e230]
+        - generic [ref=f11e236] [cursor=pointer]:
+          - generic [ref=f11e241]: 1 vendor frame
+          - button [ref=f11e242]
+    - generic [ref=f11e247]:
+      - generic [ref=f11e248]:
+        - heading "Queries" [level=3] [ref=f11e253]
+        - generic [ref=f11e254]: 1-10 of 100
+      - generic [ref=f11e258]:
+        - generic [ref=f11e259]:
+          - generic [ref=f11e260]:
+            - generic [ref=f11e261]: mysql
+            - code [ref=f11e268]:
+              - generic [ref=f11e269]: "select * from `sessions` where `id` = 'W8T7a4kiPrQ8bGdUsNzrrwiKbBpDmIhZ20DMiHUb' limit 1"
+          - generic [ref=f11e270]: 8.17ms
+        - generic [ref=f11e271]:
+          - generic [ref=f11e272]:
+            - generic [ref=f11e273]: mysql
+            - code [ref=f11e280]:
+              - generic [ref=f11e281]: "select * from `cache` where `key` in ('newsmedia-cache-homepage_latest_articles')"
+          - generic [ref=f11e282]: 1.91ms
+        - generic [ref=f11e283]:
+          - generic [ref=f11e284]:
+            - generic [ref=f11e285]: mysql
+            - code [ref=f11e292]:
+              - generic [ref=f11e293]: "select * from `cache` where `key` in ('newsmedia-cache-homepage_categories')"
+          - generic [ref=f11e294]: 0.81ms
+        - generic [ref=f11e295]:
+          - generic [ref=f11e296]:
+            - generic [ref=f11e297]: mysql
+            - code [ref=f11e304]:
+              - generic [ref=f11e305]: "select * from `cache` where `key` in ('newsmedia-cache-homepage_sidebar_categories')"
+          - generic [ref=f11e306]: 0.62ms
+        - generic [ref=f11e307]:
+          - generic [ref=f11e308]:
+            - generic [ref=f11e309]: mysql
+            - code [ref=f11e316]:
+              - generic [ref=f11e317]: "select * from `cache` where `key` in ('newsmedia-cache-homepage_sidebar_articles')"
+          - generic [ref=f11e318]: 1.09ms
+        - generic [ref=f11e319]:
+          - generic [ref=f11e320]:
+            - generic [ref=f11e321]: mysql
+            - code [ref=f11e328]:
+              - generic [ref=f11e329]: "select * from `cache` where `key` in ('newsmedia-cache-homepage_announcements')"
+          - generic [ref=f11e330]: 1.21ms
+        - generic [ref=f11e331]:
+          - generic [ref=f11e332]:
+            - generic [ref=f11e333]: mysql
+            - code [ref=f11e340]:
+              - generic [ref=f11e341]: "select * from `cache` where `key` in ('newsmedia-cache-homepage_events')"
+          - generic [ref=f11e342]: 1.01ms
+        - generic [ref=f11e343]:
+          - generic [ref=f11e344]:
+            - generic [ref=f11e345]: mysql
+            - code [ref=f11e352]:
+              - generic [ref=f11e353]: "select * from `cache` where `key` in ('newsmedia-cache-homepage_video_gallery')"
+          - generic [ref=f11e354]: 1ms
+        - generic [ref=f11e355]:
+          - generic [ref=f11e356]:
+            - generic [ref=f11e357]: mysql
+            - code [ref=f11e364]:
+              - generic [ref=f11e365]: "select * from `settings`"
+          - generic [ref=f11e366]: 1.22ms
+        - generic [ref=f11e367]:
+          - generic [ref=f11e368]:
+            - generic [ref=f11e369]: mysql
+            - code [ref=f11e376]:
+              - generic [ref=f11e377]: "select * from `categories` where `parent_id` is null"
+          - generic [ref=f11e378]: 1.32ms
+      - generic [ref=f11e379]:
+        - button [disabled] [ref=f11e380]
+        - button [disabled] [ref=f11e384]
+        - button "1" [ref=f11e388] [cursor=pointer]
+        - button "2" [ref=f11e390] [cursor=pointer]
+        - button "3" [ref=f11e392] [cursor=pointer]
+        - button "4" [ref=f11e394] [cursor=pointer]
+        - button "5" [ref=f11e396] [cursor=pointer]
+        - generic [ref=f11e397]: ...
+        - button "10" [ref=f11e400] [cursor=pointer]
+        - button [ref=f11e401] [cursor=pointer]
+        - button [ref=f11e404] [cursor=pointer]
+  - generic [ref=f11e409]:
+    - generic [ref=f11e410]:
+      - heading "Headers" [level=2] [ref=f11e411]
+      - generic [ref=f11e412]:
+        - generic [ref=f11e413]:
+          - generic [ref=f11e414]: host
+          - generic [ref=f11e416]: 127.0.0.1:8000
+        - generic [ref=f11e417]:
+          - generic [ref=f11e418]: connection
+          - generic [ref=f11e420]: keep-alive
+        - generic [ref=f11e421]:
+          - generic [ref=f11e422]: sec-ch-ua
+          - generic [ref=f11e424]: "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
+        - generic [ref=f11e425]:
+          - generic [ref=f11e426]: sec-ch-ua-mobile
+          - generic [ref=f11e428]: "?0"
+        - generic [ref=f11e429]:
+          - generic [ref=f11e430]: sec-ch-ua-platform
+          - generic [ref=f11e432]: "\"Windows\""
+        - generic [ref=f11e433]:
+          - generic [ref=f11e434]: upgrade-insecure-requests
+          - generic [ref=f11e436]: "1"
+        - generic [ref=f11e437]:
+          - generic [ref=f11e438]: user-agent
+          - generic [ref=f11e440]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36
+        - generic [ref=f11e441]:
+          - generic [ref=f11e442]: accept
+          - generic [ref=f11e444]: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        - generic [ref=f11e445]:
+          - generic [ref=f11e446]: sec-fetch-site
+          - generic [ref=f11e448]: none
+        - generic [ref=f11e449]:
+          - generic [ref=f11e450]: sec-fetch-mode
+          - generic [ref=f11e452]: navigate
+        - generic [ref=f11e453]:
+          - generic [ref=f11e454]: sec-fetch-user
+          - generic [ref=f11e456]: "?1"
+        - generic [ref=f11e457]:
+          - generic [ref=f11e458]: sec-fetch-dest
+          - generic [ref=f11e460]: document
+        - generic [ref=f11e461]:
+          - generic [ref=f11e462]: accept-encoding
+          - generic [ref=f11e464]: gzip, deflate, br, zstd
+        - generic [ref=f11e465]:
+          - generic [ref=f11e466]: accept-language
+          - generic [ref=f11e468]: en-US,en;q=0.9
+        - generic [ref=f11e469]:
+          - generic [ref=f11e470]: cookie
+          - generic [ref=f11e472]: XSRF-TOKEN=eyJpdiI6IjhpaTQzc293TTNMai9jKzRsMzU5M0E9PSIsInZhbHVlIjoiYWtObVY5UWx3YmY2d3pEUjhvb3hCNlNjdnRWZDVzajBycWhSajBDc1g3WmdQZmhxdW9yS0NOVXRoTDd6bVRMVkZPMVZ3MGJYcVk0UUhvcVhwcWlCTGVpbE05WEx0dTdRRm1DWkVqcjA1OHpKTnQwNHNxdWpLWnFSRmtteGhYUzMiLCJtYWMiOiI0OWRlYWNhYTNiOTI3ODJiNWMzNmQwZTMyYzJjNTFhNjg5MzcyMmFlYjRmYzkyYzU2N2QxNjhhODRmMmY1YmQwIiwidGFnIjoiIn0%3D; newsmedia-session=eyJpdiI6IkVuWTBNRE1zN2hQOXdpUE1jV3FTaWc9PSIsInZhbHVlIjoiSGo1T3MwY25KTklsVDVZbjlWMFFjdUplSmZyZkdBQnBxTGIvcUtkMi9UTlJLY1BsL0tjbit5dUlITmRSZUt4UlR5Mk5hbnEzUHlWc2ZoaVgrRG8vRks1ZE5SSDlraUE0SjJTWHJPOWpjbVdWR2kyWm5DSGtsL3NsdnM1bzRDYnYiLCJtYWMiOiI5OTFkZGZmY2M2MTkzODQ3NDExY2I1MjM3NDc4YjIxMDkzYTQwYTk0MGM5NmM3MjI2ZGM0NDk3ZjlmYTMwOWY2IiwidGFnIjoiIn0%3D
+    - generic [ref=f11e473]:
+      - heading "Body" [level=2] [ref=f11e474]
+      - generic [ref=f11e475]: // No request body
+    - generic [ref=f11e476]:
+      - heading "Routing" [level=2] [ref=f11e477]
+      - generic [ref=f11e478]:
+        - generic [ref=f11e479]:
+          - generic [ref=f11e480]: controller
+          - generic [ref=f11e482]: App\Http\Controllers\Frontend\HomepageController@index
+        - generic [ref=f11e483]:
+          - generic [ref=f11e484]: route name
+          - generic [ref=f11e486]: home
+        - generic [ref=f11e487]:
+          - generic [ref=f11e488]: middleware
+          - generic [ref=f11e490]: web
+    - generic [ref=f11e491]:
+      - heading "Routing parameters" [level=2] [ref=f11e492]
+      - generic [ref=f11e493]: // No routing parameters

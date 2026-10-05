@@ -77,10 +77,14 @@ class HomepageController extends Controller
 
         // Get active announcements (shorter cache for more frequent updates)
         $announcements = Cache::remember('homepage_announcements', now()->addMinutes(30), function () {
-            return Announcement::active()
-                ->ordered()
-                ->take(3)
-                ->get(['id', 'title', 'content', 'category', 'priority']);
+            try {
+                return Announcement::active()
+                    ->ordered()
+                    ->take(3)
+                    ->get(['id', 'title', 'content', 'category', 'priority']);
+            } catch (\Exception $e) {
+                return collect();
+            }
         });
 
         // Get upcoming events

@@ -14,7 +14,7 @@
                             <h3 class="text-sm font-bold text-rn-ink leading-snug mt-2 line-clamp-2 group-hover:text-rn-red transition-colors">
                                 {{ $post->title }}
                             </h3>
-                            <p class="byline mt-2">By {{ $post->user?->name ?? 'Admin' }} <span class="date">{{ $post->published_at?->format('M d, Y') }}</span></p>
+                            <p class="byline mt-2">By {{ $post->user?->name ?? 'Admin' }} <span class="date">{{ $post->published_at?->translatedFormat('d M Y') }}</span></p>
                         </div>
                     </a>
                 </div>

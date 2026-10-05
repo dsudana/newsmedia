@@ -52,15 +52,11 @@
                                 class="p-2 text-indigo-600 hover:bg-indigo-50 rounded transition" title="Edit">
                                 <i class="fas fa-edit text-sm"></i>
                             </a>
-                            <form action="{{ route('admin.tags.destroy', $tag) }}" method="POST" class="inline"
-                                onsubmit="return confirm('Are you sure?');">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="p-2 text-red-600 hover:bg-red-50 rounded transition"
-                                    title="Delete">
-                                    <i class="fas fa-trash text-sm"></i>
-                                </button>
-                            </form>
+                            <x-delete-button
+                                :route="route('admin.tags.destroy', $tag)"
+                                model="Tag"
+                                size="small"
+                            />
                         </div>
                     </div>
 

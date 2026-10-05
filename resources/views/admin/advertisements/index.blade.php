@@ -171,13 +171,10 @@
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 @if (!$ad->deleted_at)
-                                    <form action="{{ route('admin.advertisements.destroy', $ad) }}" method="POST" class="inline" onsubmit="return confirm('Hapus iklan ini?')">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="text-red-600 hover:text-red-900 hover:bg-red-50 p-2 rounded-lg transition" title="Delete">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+                                    <x-delete-button
+                                        :route="route('admin.advertisements.destroy', $ad)"
+                                        model="Advertisement"
+                                    />
                                 @else
                                     <form action="{{ route('admin.advertisements.restore', $ad->id) }}" method="POST" class="inline">
                                         @csrf
