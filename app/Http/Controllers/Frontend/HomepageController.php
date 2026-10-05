@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Tag;
 use App\Models\Announcement;
 use App\Models\Event;
+use App\Models\Video;
 use App\Services\HomepageBuilderService;
 use Illuminate\Support\Facades\Cache;
 
@@ -90,12 +91,21 @@ class HomepageController extends Controller
                 ->get(['id', 'title', 'description', 'event_date', 'location', 'featured_image']);
         });
 
+        // Get featured videos for gallery section
+        $videoGallery = Cache::remember('homepage_video_gallery', now()->addHours(1), function () {
+            return Video::published()
+                ->with(['category:id,name', 'user:id,name'])
+                ->latest('published_at')
+                ->take(8)
+                ->get(['id', 'title', 'youtube_id', 'thumbnail_url', 'category_id', 'youtube_url', 'views_count', 'published_at']);
+        });
+
         // Modern structured view (recommended)
         if ($viewType === 'modern') {
-            return view('frontend.home-modern', compact('latestArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents'));
+            return view('frontend.home-modern', compact('latestArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
         }
 
         // Legacy welcome blade view
-        return view('welcome', compact('latestArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents'));
+        return view('welcome', compact('latestArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
     }
 }
