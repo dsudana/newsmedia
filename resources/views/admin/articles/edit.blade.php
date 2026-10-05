@@ -169,7 +169,7 @@
                     <select name="affiliate_links[]" id="affiliate_links" class="w-full" multiple style="width: 100%;">
                         @foreach ($affiliateLinks ?? [] as $link)
                             <option value="{{ $link->id }}"
-                                {{ in_array($link->id, old('affiliate_links', $article->affiliateLinks()?->pluck('id')?->toArray() ?? [])) ? 'selected' : '' }}>
+                                {{ in_array($link->id, old('affiliate_links', $article->affiliateLinks()->select('affiliate_links.id')->pluck('id')->toArray() ?? [])) ? 'selected' : '' }}>
                                 {{ $link->name }} ({{ $link->commission_type === 'percentage' ? $link->commission_value . '%' : 'Rp ' . number_format($link->commission_value) }})</option>
                         @endforeach
                     </select>

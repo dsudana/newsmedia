@@ -160,7 +160,7 @@
                             <td class="px-6 py-4 text-center">
                                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold">
                                     <i class="fas fa-mouse text-xs"></i>
-                                    {{ number_format($article->affiliateLinks()->sum('clicks_count') ?? 0) }}
+                                    {{ number_format($article->affiliateLinks()->select('affiliate_links.clicks_count')->sum('clicks_count') ?? 0) }}
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-center">
