@@ -1,11 +1,11 @@
 <!-- Header (Kompas.com style) -->
 <header class="bg-black dark:bg-black border-b border-gray-800 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-300" x-data="{ categoryMenuOpen: false, mobileMenuOpen: false }">
     <!-- Logo & Navigation Row -->
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
         <!-- Logo -->
         <a href="{{ route('home') }}" class="flex items-center gap-1 hover:opacity-80 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded px-2 shrink-0">
-            <span class="text-xl lg:text-2xl font-black text-white">NEWS</span>
-            <span class="text-xl lg:text-2xl font-black">
+            <span class="text-lg sm:text-xl lg:text-2xl font-black text-white">NEWS</span>
+            <span class="text-lg sm:text-xl lg:text-2xl font-black">
                 <i class="fas fa-bolt text-red-600" aria-hidden="true"></i><span class="text-red-600">MEDIA</span>
             </span>
         </a>
@@ -48,22 +48,22 @@
         </nav>
 
         <!-- Right Actions -->
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1 sm:gap-2">
             <!-- Dark Mode Toggle -->
-            <button id="darkModeToggle" aria-label="Toggle dark mode" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-2">
-                <i class="text-lg fas fa-moon" aria-hidden="true"></i>
+            <button id="darkModeToggle" aria-label="Toggle dark mode" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-1.5 sm:p-2">
+                <i class="text-base sm:text-lg fas fa-moon" aria-hidden="true"></i>
             </button>
 
             <!-- Mobile Menu Button -->
-            <button @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-label="Toggle mobile menu" class="lg:hidden text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-2">
-                <i :class="mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'" class="text-lg" aria-hidden="true"></i>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-label="Toggle mobile menu" class="lg:hidden text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-1.5 sm:p-2">
+                <i :class="mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'" class="text-base sm:text-lg" aria-hidden="true"></i>
             </button>
         </div>
     </div>
 
     <!-- Mobile Navigation -->
     <nav x-show="mobileMenuOpen" x-transition class="lg:hidden bg-gray-900 dark:bg-gray-900 border-t border-gray-800 dark:border-gray-800" aria-label="Mobile navigation">
-        <div class="max-w-7xl mx-auto px-4 py-4 space-y-2">
+        <div class="max-w-7xl mx-auto px-4 py-3 space-y-1">
             @php
                 $allCategories = \App\Models\Category::active()
                     ->withCount(['articles' => fn($q) => $q->published()])
