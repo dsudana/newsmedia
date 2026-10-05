@@ -253,10 +253,13 @@
             <!-- Right Sidebar -->
             <aside class="lg:col-span-1">
                 <div class="sticky top-24 space-y-6">
+                    <!-- Affiliate Links Widget -->
+                    <x-frontend.affiliate-links :article="$article" />
+
                     <!-- Advertisement Top -->
                     <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_top" />
-                        
+
                     </div>
 
                     <!-- Recent Articles (labeled "Populer" for consistency) -->

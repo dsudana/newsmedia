@@ -107,6 +107,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
 
     Route::resource('users', UserController::class);
     Route::resource('affiliates', AffiliateLinkController::class);
+    Route::get('affiliates/performance/dashboard', [AffiliateLinkController::class, 'performance'])->name('affiliates.performance');
     Route::resource('keywords', KeywordController::class);
     Route::resource('seo-settings', SeoSettingController::class);
     Route::resource('announcements', AnnouncementController::class);

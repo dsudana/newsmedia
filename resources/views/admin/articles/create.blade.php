@@ -153,6 +153,22 @@
                     </div>
                 </div>
 
+                <!-- Affiliate Links Section -->
+                <div class="border-t pt-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                        <i class="fas fa-link text-amber-600 mr-2"></i>Affiliate Links
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-4">Select products to feature in this article</p>
+                    <select name="affiliate_links[]" id="affiliate_links" class="w-full" multiple style="width: 100%;">
+                        @foreach ($affiliateLinks ?? [] as $link)
+                            <option value="{{ $link->id }}"
+                                {{ in_array($link->id, old('affiliate_links', [])) ? 'selected' : '' }}>
+                                {{ $link->name }} ({{ $link->commission_type === 'percentage' ? $link->commission_value . '%' : 'Rp ' . number_format($link->commission_value) }})</option>
+                        @endforeach
+                    </select>
+                    <p class="text-xs text-gray-500 mt-2">Leave empty if you don't want to feature any affiliate products in this article</p>
+                </div>
+
                 <!-- SEO Section -->
                 <div class="border-t pt-6">
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Search Engine Optimization</h3>

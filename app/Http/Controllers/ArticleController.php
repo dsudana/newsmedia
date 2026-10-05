@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\AffiliateLink;
 use App\Models\Keyword;
 use App\Repositories\ArticleRepository;
 use App\Repositories\CategoryRepository;
@@ -47,7 +48,8 @@ class ArticleController extends Controller
         $categories = $this->categoryRepository->getActive();
         $tags = $this->tagRepository->all([], ['*']);
         $keywords = Keyword::where('status', 'done')->orderBy('keyword')->get();
-        return view('admin.articles.create', compact('categories', 'tags', 'keywords'));
+        $affiliateLinks = AffiliateLink::where('is_active', true)->orderBy('name')->get();
+        return view('admin.articles.create', compact('categories', 'tags', 'keywords', 'affiliateLinks'));
     }
 
     public function store(StoreArticleRequest $request)
@@ -70,6 +72,7 @@ class ArticleController extends Controller
 
         $tagIds = $request->input('tags', []);
         $keywordIds = $request->input('keywords', []);
+        $affiliateLinkIds = $request->input('affiliate_links', []);
 
         $article = $this->articleRepository->createWithRelations(
             $validated,
@@ -77,6 +80,10 @@ class ArticleController extends Controller
             $tagIds,
             $keywordIds
         );
+
+        if ($affiliateLinkIds) {
+            $article->affiliateLinks()->attach($affiliateLinkIds);
+        }
 
         return redirect()->route('admin.articles.edit', $article)
             ->with('success', 'Artikel berhasil dibuat. Tambahkan FAQ jika diperlukan.');
@@ -89,12 +96,13 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
-        $article->load('meta', 'tags', 'keywords', 'faqs');
+        $article->load('meta', 'tags', 'keywords', 'faqs', 'affiliateLinks');
         $categories = $this->categoryRepository->getActive();
         $tags = $this->tagRepository->all([], ['*']);
         $keywords = Keyword::where('status', 'done')->orderBy('keyword')->get();
+        $affiliateLinks = AffiliateLink::where('is_active', true)->orderBy('name')->get();
 
-        return view('admin.articles.edit', compact('article', 'categories', 'tags', 'keywords'));
+        return view('admin.articles.edit', compact('article', 'categories', 'tags', 'keywords', 'affiliateLinks'));
     }
 
     public function update(UpdateArticleRequest $request, Article $article)
@@ -118,6 +126,7 @@ class ArticleController extends Controller
         $faqs = $validated['faqs'] ?? [];
         $tagIds = $request->input('tags', []);
         $keywordIds = $request->input('keywords', []);
+        $affiliateLinkIds = $request->input('affiliate_links', []);
 
         unset($validated['meta_title'], $validated['meta_description'], $validated['focus_keyword'], $validated['faqs']);
 
@@ -129,6 +138,8 @@ class ArticleController extends Controller
             $keywordIds,
             $faqs
         );
+
+        $article->affiliateLinks()->sync($affiliateLinkIds);
 
         return redirect()->route('admin.articles.edit', $article)
             ->with('success', 'Artikel berhasil diperbarui');

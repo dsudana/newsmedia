@@ -18,6 +18,23 @@ class AffiliateLinkController extends Controller
     }
 
     /**
+     * Display performance dashboard
+     */
+    public function performance()
+    {
+        $totalClicks = AffiliateLink::sum('clicks_count') ?? 0;
+        $activeLinks = AffiliateLink::where('is_active', true)->count();
+        $topLinks = AffiliateLink::orderByDesc('clicks_count')->limit(10)->get();
+        $linksByArticle = \App\Models\Article::withCount('affiliateLinks')
+            ->having('affiliate_links_count', '>', 0)
+            ->orderByDesc('affiliate_links_count')
+            ->limit(10)
+            ->get();
+
+        return view('admin.affiliates.performance', compact('totalClicks', 'activeLinks', 'topLinks', 'linksByArticle'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()

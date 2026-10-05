@@ -6,11 +6,18 @@
                 <h1 class="text-3xl font-bold text-gray-900">Affiliate Links</h1>
                 <p class="text-sm text-gray-600 mt-1">Manage and track your affiliate links</p>
             </div>
-            <a href="{{ route('admin.affiliates.create') }}"
-                class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-lg font-semibold hover:shadow-lg transition-shadow flex items-center gap-2">
-                <i class="fas fa-plus"></i>
-                <span>New Link</span>
-            </a>
+            <div class="flex gap-3">
+                <a href="{{ route('admin.affiliates.performance') }}"
+                    class="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-lg font-semibold hover:shadow-lg transition-shadow flex items-center gap-2">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Performance</span>
+                </a>
+                <a href="{{ route('admin.affiliates.create') }}"
+                    class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-lg font-semibold hover:shadow-lg transition-shadow flex items-center gap-2">
+                    <i class="fas fa-plus"></i>
+                    <span>New Link</span>
+                </a>
+            </div>
         </div>
 
         <!-- Success Alert -->
