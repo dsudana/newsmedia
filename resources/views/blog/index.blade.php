@@ -84,7 +84,12 @@
                             <a href="{{ route('blog.show', $featuredArticle->slug) }}" class="group block">
                                 <div class="rounded-lg overflow-hidden mb-4 aspect-video bg-gray-100">
                                     @if ($featuredArticle->featured_image)
-                                        <img src="{{ asset('storage/' . $featuredArticle->featured_image) }}"
+                                        @php
+                                            $featuredImageUrl = str_starts_with($featuredArticle->featured_image, 'http')
+                                                ? $featuredArticle->featured_image
+                                                : asset('storage/' . $featuredArticle->featured_image);
+                                        @endphp
+                                        <img src="{{ $featuredImageUrl }}"
                                             alt="{{ $featuredArticle->title }}"
                                             class="w-full h-full object-cover group-hover:scale-105 transition"
                                             loading="lazy">
@@ -133,7 +138,12 @@
                                     <a href="{{ route('blog.show', $article->slug) }}" class="group">
                                         <div class="rounded-lg overflow-hidden mb-3 aspect-video bg-gray-100">
                                             @if ($article->featured_image)
-                                                <img src="{{ asset('storage/' . $article->featured_image) }}"
+                                                @php
+                                                    $gridImageUrl = str_starts_with($article->featured_image, 'http')
+                                                        ? $article->featured_image
+                                                        : asset('storage/' . $article->featured_image);
+                                                @endphp
+                                                <img src="{{ $gridImageUrl }}"
                                                     alt="{{ $article->title }}"
                                                     class="w-full h-full object-cover group-hover:scale-105 transition"
                                                     loading="lazy">
@@ -222,7 +232,12 @@
                                         <a href="{{ route('blog.show', $article->slug) }}"
                                             class="group flex gap-4 pb-5 border-b border-gray-200 dark:border-gray-700 last:pb-0 last:border-0 hover:opacity-75 transition">
                                             <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                                                <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/default.jpg' }}"
+                                                @php
+                                                    $recentImageUrl = $article->featured_image
+                                                        ? (str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image))
+                                                        : '/images/default.jpg';
+                                                @endphp
+                                                <img src="{{ $recentImageUrl }}"
                                                     alt="{{ $article->title }}" loading="lazy"
                                                     class="w-full h-full object-cover">
                                             </div>

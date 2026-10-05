@@ -142,7 +142,12 @@
                     <!-- Featured Image -->
                     <div class="mb-8 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video">
                         @if($article->featured_image)
-                            <img src="{{ asset('storage/' . $article->featured_image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover" loading="lazy">
+                            @php
+                                $imageUrl = str_starts_with($article->featured_image, 'http')
+                                    ? $article->featured_image
+                                    : asset('storage/' . $article->featured_image);
+                            @endphp
+                            <img src="{{ $imageUrl }}" alt="{{ $article->title }}" class="w-full h-full object-cover" loading="lazy">
                         @else
                             <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
                                 <i class="fas fa-image text-6xl text-gray-400 dark:text-gray-600"></i>
@@ -200,7 +205,12 @@
                                     <a href="{{ route('blog.show', $related->slug) }}" class="group">
                                         <div class="overflow-hidden rounded-lg mb-3 aspect-video bg-gray-100 dark:bg-gray-800">
                                             @if($related->featured_image)
-                                                <img src="{{ asset('storage/' . $related->featured_image) }}" alt="{{ $related->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
+                                                @php
+                                                    $relatedImageUrl = str_starts_with($related->featured_image, 'http')
+                                                        ? $related->featured_image
+                                                        : asset('storage/' . $related->featured_image);
+                                                @endphp
+                                                <img src="{{ $relatedImageUrl }}" alt="{{ $related->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
                                             @else
                                                 <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
                                                     <i class="fas fa-image text-gray-400 dark:text-gray-600 text-3xl"></i>
