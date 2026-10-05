@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" :class="darkMode && 'dark'" x-data="{ darkMode: false }"
-      @load.window="darkMode = localStorage.getItem('darkMode') === 'true'">
+<html lang="en">
     <script>
         // Set dark mode immediately before Alpine loads to prevent flash
         if (localStorage.getItem('darkMode') === 'true') {
@@ -46,7 +45,29 @@
         @yield('extra_head')
     </head>
 
-    <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300" id="appBody">
+        <style>
+            /* Explicit dark mode styles for testing */
+            html.dark body {
+                background-color: rgb(3, 7, 18) !important;
+                color: rgb(243, 244, 246) !important;
+            }
+            html.dark .dark\:bg-gray-900 {
+                background-color: rgb(17, 24, 39) !important;
+            }
+            html.dark .dark\:bg-black {
+                background-color: rgb(0, 0, 0) !important;
+            }
+            html.dark .dark\:text-white {
+                color: rgb(255, 255, 255) !important;
+            }
+            html.dark .dark\:text-gray-100 {
+                color: rgb(243, 244, 246) !important;
+            }
+            html.dark .dark\:border-gray-800 {
+                border-color: rgb(31, 41, 55) !important;
+            }
+        </style>
         <!-- Reading Progress Bar -->
         <div id="readingProgress"
             class="fixed top-0 left-0 h-1 bg-gradient-to-r from-red-600 to-red-700 z-50 transition-all duration-300"

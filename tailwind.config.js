@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+    darkMode: 'class', // Enable class-based dark mode (manual toggle)
     content: ["./resources/**/*.blade.php", "./resources/**/*.js"],
     theme: {
         extend: {

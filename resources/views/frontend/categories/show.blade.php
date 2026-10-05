@@ -27,7 +27,7 @@
         <!-- Hero Content -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             <div class="lg:col-span-2">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
                     {{ $category->name }}
                 </h1>
                 @if($category->description)

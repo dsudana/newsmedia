@@ -53,29 +53,6 @@
             <button id="darkModeToggle" aria-label="Toggle dark mode" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-2">
                 <i class="text-lg fas fa-moon" aria-hidden="true"></i>
             </button>
-            <script>
-                const darkModeToggle = document.getElementById('darkModeToggle');
-                const html = document.documentElement;
-
-                function updateDarkModeIcon() {
-                    const icon = darkModeToggle.querySelector('i');
-                    if (html.classList.contains('dark')) {
-                        icon.className = 'text-lg fas fa-sun';
-                    } else {
-                        icon.className = 'text-lg fas fa-moon';
-                    }
-                }
-
-                darkModeToggle.addEventListener('click', function() {
-                    html.classList.toggle('dark');
-                    const isDark = html.classList.contains('dark');
-                    localStorage.setItem('darkMode', isDark ? 'true' : 'false');
-                    updateDarkModeIcon();
-                });
-
-                // Update icon on load
-                updateDarkModeIcon();
-            </script>
 
             <!-- Mobile Menu Button -->
             <button @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-label="Toggle mobile menu" class="lg:hidden text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-2">

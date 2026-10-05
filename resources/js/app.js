@@ -1,3 +1,6 @@
+// Dark mode harus dijalankan sebelum Alpine
+import './dark-mode.js';
+
 import Alpine from 'alpinejs';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';

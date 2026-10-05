@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwindConfig = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
+    <div class="max-w-2xl mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-6">Dark Mode Test</h1>
+
+        <div class="mb-6">
+            <button id="toggleBtn" class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                Toggle Dark Mode
+            </button>
+        </div>
+
+        <div id="testBox" class="p-6 bg-gray-100 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-lg">
+            <p class="text-gray-900 dark:text-gray-100">This box should change color when you toggle dark mode.</p>
+            <p id="status" class="mt-4 font-bold text-gray-600 dark:text-gray-400">Status: Light Mode</p>
+        </div>
+
+        <div class="mt-8 p-4 bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-400 dark:border-yellow-600 rounded">
+            <p class="text-yellow-800 dark:text-yellow-200"><strong>Test Instructions:</strong></p>
+            <ol class="text-yellow-800 dark:text-yellow-200 list-decimal list-inside mt-2">
+                <li>Open browser console (F12)</li>
+                <li>Click the "Toggle Dark Mode" button</li>
+                <li>Check if the page colors change</li>
+                <li>Check console logs for debugging info</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        const html = document.documentElement;
+        const toggleBtn = document.getElementById('toggleBtn');
+        const statusEl = document.getElementById('status');
+
+        function updateStatus() {
+            const isDark = html.classList.contains('dark');
+            statusEl.textContent = `Status: ${isDark ? 'Dark Mode' : 'Light Mode'}`;
+        }
+
+        toggleBtn.addEventListener('click', function() {
+            console.log('[TEST] Toggle clicked');
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            console.log('[TEST] Dark mode is now:', isDark);
+            localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+            updateStatus();
+        });
+
+        // Restore dark mode from localStorage
+        if (localStorage.getItem('darkMode') === 'true') {
+            html.classList.add('dark');
+        }
+        updateStatus();
+
+        console.log('[TEST] Dark mode test initialized');
+    </script>
+</body>
+</html>

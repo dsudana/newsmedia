@@ -12,14 +12,14 @@
     </div>
 
     <!-- Advertisement Banner -->
-    <div class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-6 mb-6">
+    <div class="bg-white dark:bg-gray-900 border-b border-slate-200 dark:border-gray-800 py-6 mb-6">
         <div class="max-w-7xl mx-auto px-4">
             <x-advertisement placement="header_banner" />
         </div>
     </div>
 
     <!-- Main Content -->
-    <main class="bg-white dark:bg-slate-900 transition-colors duration-300">
+    <main class="bg-white dark:bg-gray-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 py-12">
             <!-- Featured Hero Section (Full Width, 2 Columns) -->
           <div class="mb-10">
@@ -109,7 +109,7 @@
                 <article class="group min-h-0">
                     <a
                         href="{{ route('blog.show', $article->slug) }}"
-                        class="flex h-full overflow-hidden rounded-xl bg-slate-50 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:bg-slate-800 dark:ring-slate-700"
+                        class="flex h-full overflow-hidden rounded-xl bg-slate-50 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:bg-gray-800 dark:ring-gray-700"
                     >
 
                         {{-- Image --}}
@@ -163,7 +163,7 @@
 
                             </div>
 
-                            <div class="mt-2 flex items-center gap-2 text-[10px] text-slate-500 dark:text-slate-400">
+                            <div class="mt-2 flex items-center gap-2 text-[10px] text-slate-500 dark:text-gray-400">
 
                                 <time>
                                     {{ $article->published_at?->format('M d, Y') }}
@@ -218,7 +218,7 @@
                                 <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-3">
                                     {{ $article->title }}
                                 </h3>
-                                <p class="text-xs text-slate-600 dark:text-slate-400">
+                                <p class="text-xs text-slate-600 dark:text-gray-400">
                                     {{ $article->published_at->format('M d, Y') }}
                                 </p>
                             </div>
@@ -246,7 +246,7 @@
                             @foreach ($latestArticles->skip(7)->take(3) as $article)
                                 <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:opacity-85 transition">
                                     <!-- Article Card with Image -->
-                                    <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-slate-700">
+                                    <div class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-gray-700">
                                         @if ($article->featured_image)
                                             <picture>
                                                 <source media="(min-width: 1024px)" srcset="{{ asset('storage/' . $article->featured_image) }}?w=400&q=80" width="400" height="300">
@@ -270,7 +270,7 @@
                                         <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
                                             {{ $article->title }}
                                         </h3>
-                                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-auto">
+                                        <p class="text-xs text-slate-500 dark:text-gray-400 mt-auto">
                                             @php
                                                 $minutes = (int) abs($article->published_at->diffInMinutes(now()));
                                                 if ($minutes < 60) {
@@ -313,7 +313,7 @@
                                 @foreach ($categoryArticles->take(3) as $article)
                                     <a href="{{ route('blog.show', $article->slug) }}" class="group flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                                         <!-- Article Card with Image 16:9 -->
-                                        <div class="relative overflow-hidden rounded-xl aspect-video mb-4 bg-slate-200 dark:bg-slate-700">
+                                        <div class="relative overflow-hidden rounded-xl aspect-video mb-4 bg-slate-200 dark:bg-gray-700">
                                             @if ($article->featured_image)
                                                 <img src="{{ asset('storage/' . $article->featured_image) }}" alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                                             @else
@@ -322,20 +322,21 @@
                                                 </div>
                                             @endif
 
-                                            <!-- Overlay with category badge -->
-                                            <div class="absolute top-3 left-3">
-                                                <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-sm uppercase">
-                                                    {{ $article->category->name }}
-                                                </span>
-                                            </div>
+                                            
                                         </div>
 
                                         <!-- Content -->
                                         <div class="flex-1 flex flex-col">
+                                            <!-- Overlay with category badge -->
+                                           
+                                                <span class="inline-block text-red-600 text-xs font-semibold py-1.5 rounded-sm uppercase">
+                                                    {{ $article->category->name }}
+                                                </span>
+                                          
                                             <h3 class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
                                                 {{ $article->title }}
                                             </h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-auto">
+                                            <p class="text-xs text-slate-500 dark:text-gray-400 mt-auto">
                                                 {{ $article->published_at->format('d M Y') }}
                                             </p>
                                         </div>
@@ -349,7 +350,7 @@
                 <!-- Right Sidebar (1/3) -->
                 <aside class="space-y-8">
                     <!-- Social Media Section -->
-                    <section class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+                    <section class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-slate-200 dark:border-gray-700">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Follow Us</h3>
                         <div class="flex flex-wrap gap-3">
                             @php
@@ -364,24 +365,24 @@
                                     <i class="{{ $social->icon }}"></i>
                                 </a>
                             @empty
-                                <p class="text-sm text-slate-500 dark:text-slate-400">No social media links available</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">No social media links available</p>
                             @endforelse
                         </div>
                     </section>
 
                     <!-- Advertisement Top -->
                     <div
-                        class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 h-80 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+                        class="bg-slate-100 dark:bg-gray-800 rounded-lg p-6 h-80 flex items-center justify-center border border-slate-200 dark:border-gray-700">
                         <div class="text-center">
-                            <div class="w-12 h-12 bg-slate-300 dark:bg-slate-600 rounded-lg mx-auto mb-3"></div>
-                            <p class="text-slate-600 dark:text-slate-400 font-semibold text-sm">Advertisement</p>
-                            <p class="text-slate-500 dark:text-slate-500 text-xs mt-1">300×250</p>
+                            <div class="w-12 h-12 bg-slate-300 dark:bg-gray-600 rounded-lg mx-auto mb-3"></div>
+                            <p class="text-slate-600 dark:text-gray-400 font-semibold text-sm">Advertisement</p>
+                            <p class="text-slate-500 dark:text-gray-500 text-xs mt-1">300×250</p>
                         </div>
                     </div>
 
                     <!-- Popular Articles -->
                     <section
-                        class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+                        class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-slate-200 dark:border-gray-700">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                             <span class="w-1 h-6 bg-red-600 rounded-full"></span>
                             Popular
@@ -389,7 +390,7 @@
                         <div class="space-y-5">
                             @foreach ($latestArticles->skip(11)->take(5) as $article)
                                 <a href="{{ route('blog.show', $article->slug) }}"
-                                    class="group flex gap-4 pb-5 border-b border-slate-200 dark:border-slate-700 last:pb-0 last:border-0 hover:opacity-75 transition">
+                                    class="group flex gap-4 pb-5 border-b border-slate-200 dark:border-gray-700 last:pb-0 last:border-0 hover:opacity-75 transition">
                                     <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
                                         <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/default.jpg' }}"
                                             alt="{{ $article->title }}" loading="lazy" class="w-full h-full object-cover">
@@ -399,7 +400,7 @@
                                             class="text-sm font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-1">
                                             {{ $article->title }}
                                         </h4>
-                                        <p class="text-xs text-slate-500 dark:text-slate-400">
+                                        <p class="text-xs text-slate-500 dark:text-gray-400">
                                             {{ $article->published_at->format('M d, Y') }}
                                         </p>
                                     </div>
@@ -418,17 +419,17 @@
 
                     <!-- Advertisement Bottom -->
                     <div
-                        class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 h-80 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+                        class="bg-slate-100 dark:bg-gray-800 rounded-lg p-6 h-80 flex items-center justify-center border border-slate-200 dark:border-gray-700">
                         <div class="text-center">
-                            <div class="w-12 h-12 bg-slate-300 dark:bg-slate-600 rounded-lg mx-auto mb-3"></div>
-                            <p class="text-slate-600 dark:text-slate-400 font-semibold text-sm">Advertisement</p>
-                            <p class="text-slate-500 dark:text-slate-500 text-xs mt-1">300×250</p>
+                            <div class="w-12 h-12 bg-slate-300 dark:bg-gray-600 rounded-lg mx-auto mb-3"></div>
+                            <p class="text-slate-600 dark:text-gray-400 font-semibold text-sm">Advertisement</p>
+                            <p class="text-slate-500 dark:text-gray-500 text-xs mt-1">300×250</p>
                         </div>
                     </div>
 
                     <!-- Categories -->
                     <section
-                        class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+                        class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-slate-200 dark:border-gray-700">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                             <span class="w-1 h-6 bg-red-600 rounded-full"></span>
                             Categories
@@ -444,14 +445,14 @@
                             @endphp
                             @forelse ($sidebarCategories as $category)
                                 <a href="{{ route('blog.category', $category->slug) }}"
-                                    class="group flex items-center justify-between px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition">
+                                    class="group flex items-center justify-between px-3 py-2 text-sm text-slate-700 dark:text-gray-300 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition">
                                     <span>{{ $category->name }}</span>
-                                    <span class="text-xs bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 group-hover:bg-red-200 dark:group-hover:bg-red-900/50 px-2 py-1 rounded transition">
+                                    <span class="text-xs bg-slate-200 dark:bg-gray-700 text-slate-600 dark:text-gray-400 group-hover:bg-red-200 dark:group-hover:bg-red-900/50 px-2 py-1 rounded transition">
                                         {{ $category->articles_count }}
                                     </span>
                                 </a>
                             @empty
-                                <p class="text-sm text-slate-500 dark:text-slate-400 px-3 py-2">No categories available</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400 px-3 py-2">No categories available</p>
                             @endforelse
                         </div>
                     </section>
