@@ -24,7 +24,7 @@
     <!-- Content - Minimal -->
     <div class="p-4">
         <!-- Title Only -->
-        <h3 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+        <h3 class="text-sm font-bold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" style="text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);">
             {{ $video->title }}
         </h3>
     </div>
