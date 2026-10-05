@@ -14,6 +14,7 @@ class GalleryController extends Controller
         $categories = Category::active()->orderBy('name')->get();
 
         $videos = Video::published()
+            ->with(['category:id,name'])
             ->when($request->category_id,
                 fn($q) => $q->where('category_id', $request->category_id)
             )
@@ -34,6 +35,7 @@ class GalleryController extends Controller
         $categories = Category::active()->orderBy('name')->get();
 
         $videos = Video::published()
+            ->with(['category:id,name'])
             ->where('category_id', $category->id)
             ->when($request->sort === 'popular',
                 fn($q) => $q->orderBy('views_count', 'desc')
