@@ -37,16 +37,25 @@
             <!-- Posisi Iklan -->
             <div>
                 <label for="placement" class="block text-sm font-semibold text-gray-900 mb-2">Placement Position</label>
-                <select id="placement" name="placement" required onchange="updateSize()"
+                <select id="placement" name="placement" required onchange="updateSize(); showPlacementGuide()"
                     class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 @error('placement') border-red-500 @enderror">
                     <option value="">-- Select Placement --</option>
-                    @foreach($placements as $key => $value)
-                        <option value="{{ $key }}" {{ old('placement') == $key ? 'selected' : '' }}>{{ $value }}</option>
-                    @endforeach
+                    <option value="header_banner" {{ old('placement') == 'header_banner' ? 'selected' : '' }}>Header Banner (Top Page)</option>
+                    <option value="sidebar_home_top" {{ old('placement') == 'sidebar_home_top' ? 'selected' : '' }}>Sidebar - Home Top</option>
+                    <option value="sidebar_home_bottom" {{ old('placement') == 'sidebar_home_bottom' ? 'selected' : '' }}>Sidebar - Home Bottom</option>
+                    <option value="sidebar_article_top" {{ old('placement') == 'sidebar_article_top' ? 'selected' : '' }}>Sidebar - Article Top</option>
+                    <option value="sidebar_article_bottom" {{ old('placement') == 'sidebar_article_bottom' ? 'selected' : '' }}>Sidebar - Article Bottom</option>
                 </select>
                 @error('placement')
                     <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                 @enderror
+
+                <!-- Placement Guide -->
+                <div id="placementGuide" class="mt-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hidden">
+                    <p class="text-sm text-blue-900 font-medium mb-2">📍 Placement Guide:</p>
+                    <p id="placementInfo" class="text-sm text-blue-800"></p>
+                    <p id="recommendedSize" class="text-xs text-blue-700 mt-2 font-semibold"></p>
+                </div>
             </div>
 
             <!-- Image Fields (untuk Banner type) -->
@@ -62,7 +71,12 @@
                             <p class="text-gray-500 text-sm">Max 5MB</p>
                         </label>
                     </div>
-                    <img id="imagePreview" src="" alt="Preview" class="mt-4 rounded-lg max-h-64 hidden">
+                    <div class="mt-4 hidden" id="previewContainer">
+                        <img id="imagePreview" src="" alt="Preview" class="rounded-lg max-h-64 mb-3">
+                        <p id="imageDimensionsInfo" class="text-xs text-gray-600 font-medium">
+                            <i class="fas fa-image mr-1"></i>Dimensions: <span id="imageDimensions"></span>
+                        </p>
+                    </div>
                     @error('image')
                         <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                     @enderror
@@ -209,8 +223,13 @@ function previewImage(event) {
     if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            document.getElementById('imagePreview').src = e.target.result;
-            document.getElementById('imagePreview').classList.remove('hidden');
+            const img = new Image();
+            img.onload = function() {
+                document.getElementById('imagePreview').src = e.target.result;
+                document.getElementById('imageDimensions').textContent = img.width + ' × ' + img.height + ' px';
+                document.getElementById('previewContainer').classList.remove('hidden');
+            };
+            img.src = e.target.result;
         };
         reader.readAsDataURL(file);
     }
@@ -233,10 +252,52 @@ function updateDimensions() {
     }
 }
 
+function showPlacementGuide() {
+    const placement = document.getElementById('placement').value;
+    const guide = document.getElementById('placementGuide');
+    const info = document.getElementById('placementInfo');
+    const recommended = document.getElementById('recommendedSize');
+
+    const guides = {
+        'header_banner': {
+            info: 'Displayed at the top of the page. Best for brand awareness and high visibility.',
+            size: '📏 Recommended: 1200×128 px (Leaderboard)'
+        },
+        'sidebar_home_top': {
+            info: 'Sidebar top on homepage. Great for targeted ads in high-traffic area.',
+            size: '📏 Recommended: 300×250 px (Medium Rectangle)'
+        },
+        'sidebar_home_bottom': {
+            info: 'Sidebar bottom on homepage. Good for secondary promotions.',
+            size: '📏 Recommended: 300×600 px (Half Page or 300×400 px)'
+        },
+        'sidebar_article_top': {
+            info: 'Article page sidebar top. Relevant to article readers.',
+            size: '📏 Recommended: 300×250 px (Medium Rectangle)'
+        },
+        'sidebar_article_bottom': {
+            info: 'Article page sidebar bottom. Captures reader attention.',
+            size: '📏 Recommended: 300×600 px or 300×400 px'
+        }
+    };
+
+    if (placement && guides[placement]) {
+        info.textContent = guides[placement].info;
+        recommended.textContent = guides[placement].size;
+        guide.classList.remove('hidden');
+    } else {
+        guide.classList.add('hidden');
+    }
+}
+
 function updateSize() {
     const placement = document.getElementById('placement').value;
     const defaults = {
         'header_banner': '1200x128',
+        'sidebar_home_top': '300x250',
+        'sidebar_home_bottom': '300x600',
+        'sidebar_article_top': '300x250',
+        'sidebar_article_bottom': '300x600',
         'sidebar_top': '300x250',
         'sidebar_bottom': '300x600',
         'content_middle': '300x400',

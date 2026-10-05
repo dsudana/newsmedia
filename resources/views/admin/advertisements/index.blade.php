@@ -98,9 +98,29 @@
                 @forelse ($advertisements as $ad)
                     <tr class="hover:bg-gray-50 transition">
                         <td class="px-6 py-4">
-                            <div class="flex items-center gap-3">
+                            <div class="flex items-center gap-4">
+                                @if ($ad->type === 'banner' && $ad->image)
+                                    <div class="relative group">
+                                        <img src="{{ asset('storage/' . $ad->image) }}" alt="{{ $ad->name }}"
+                                            class="w-16 h-12 object-cover rounded-lg border border-gray-200">
+                                        <div class="absolute invisible group-hover:visible bg-gray-900 text-white text-xs rounded py-1 px-2 whitespace-nowrap z-10 bottom-full mb-2 left-0">
+                                            {{ $ad->width }}×{{ $ad->height }} px
+                                        </div>
+                                    </div>
+                                @elseif ($ad->type === 'banner')
+                                    <div class="w-16 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-image text-gray-400 text-sm"></i>
+                                    </div>
+                                @else
+                                    <div class="w-16 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-code text-indigo-600 text-sm"></i>
+                                    </div>
+                                @endif
                                 <div>
                                     <p class="font-semibold text-gray-900">{{ $ad->name }}</p>
+                                    @if ($ad->type === 'banner')
+                                        <p class="text-xs text-gray-500">{{ $ad->width }}×{{ $ad->height }} px</p>
+                                    @endif
                                     @if ($ad->deleted_at)
                                         <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded inline-block mt-1">Dihapus</span>
                                     @endif
