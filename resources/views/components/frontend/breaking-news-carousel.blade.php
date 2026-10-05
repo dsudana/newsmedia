@@ -4,17 +4,17 @@
     <div class="bg-gradient-to-r from-red-600 via-red-700 to-red-800 rounded-xl lg:rounded-2xl overflow-hidden mb-6 lg:mb-8 shadow-lg" x-data="breakingCarousel()" x-init="init()">
         <div class="p-3 sm:p-4 lg:p-6 flex items-center justify-between gap-2 sm:gap-3 lg:gap-4">
             <!-- Left: Header Section (Hidden on mobile) -->
-            <div class="hidden sm:flex flex-shrink-0 pr-2 lg:pr-3 border-r border-red-700 min-w-max">
-                <div class="flex flex-col justify-center">
-                    <div class="flex items-center gap-1 mb-1.5 lg:mb-2">
-                        <div class="bg-white px-1 py-0.5 rounded-full">
+            <div class="hidden sm:flex flex-shrink-0 pr-2 lg:pr-3 border-r border-red-700">
+                <div class="flex flex-col justify-center w-28 lg:w-40">
+                    <div class="flex items-center gap-0.5 mb-1 lg:mb-2">
+                        <div class="bg-white px-0.5 py-0.5 rounded-full">
                             <span class="text-red-900 font-black text-xs">● BREAKING</span>
                         </div>
-                        <div class="bg-blue-400 px-1 py-0.5 rounded-full">
+                        <div class="bg-blue-400 px-0.5 py-0.5 rounded-full">
                             <span class="text-white font-bold text-xs">NEWS</span>
                         </div>
                     </div>
-                    <h3 class="text-white font-black text-xs lg:text-sm max-w-32 lg:max-w-44 line-clamp-2 leading-tight">{{ $announcements->first()?->title ?? 'Breaking News' }}</h3>
+                    <h3 class="text-white font-black text-xs lg:text-sm line-clamp-2 leading-tight">{{ $announcements->first()?->title ?? 'Breaking News' }}</h3>
                 </div>
             </div>
 
