@@ -23,16 +23,24 @@ class SecurityHeaders
             }
         }
 
-        // Cache homepage and article lists for 1 hour
+        // Cache homepage and article lists for 1 hour (only if not authenticated)
         if ($request->routeIs('home', 'blog.index', 'blog.category', 'blog.tag')) {
-            $response->header('Cache-Control', 'public, max-age=3600, s-maxage=3600');
-            $response->header('Vary', 'Accept-Encoding');
+            if (!$request->user() && !$response->headers->hasCookie('XSRF-TOKEN')) {
+                $response->header('Cache-Control', 'public, max-age=3600, s-maxage=3600');
+            } else {
+                $response->header('Cache-Control', 'private, max-age=3600');
+            }
+            $response->header('Vary', 'Accept-Encoding, Cookie');
         }
 
-        // Cache individual articles for 24 hours (revalidate daily)
+        // Cache individual articles for 24 hours (only if not authenticated)
         if ($request->routeIs('blog.show')) {
-            $response->header('Cache-Control', 'public, max-age=86400, s-maxage=86400');
-            $response->header('Vary', 'Accept-Encoding');
+            if (!$request->user() && !$response->headers->hasCookie('XSRF-TOKEN')) {
+                $response->header('Cache-Control', 'public, max-age=86400, s-maxage=86400');
+            } else {
+                $response->header('Cache-Control', 'private, max-age=86400');
+            }
+            $response->header('Vary', 'Accept-Encoding, Cookie');
         }
 
         // Don't cache dynamic/personalized pages
