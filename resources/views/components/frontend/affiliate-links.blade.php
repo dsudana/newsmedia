@@ -45,33 +45,16 @@
                     <!-- Product Info -->
                     <div class="p-4 flex flex-col flex-1">
                         <!-- Product Name -->
-                        <h4 class="font-semibold text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition line-clamp-2 mb-2">
+                        <h4 class="font-semibold text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition line-clamp-3 mb-3">
                             {{ $link->name }}
                         </h4>
 
-                        <!-- Price (if available) -->
+                        <!-- Price -->
                         @if ($link->price)
-                            <p class="text-lg font-bold text-amber-600 dark:text-amber-400 mb-3">
+                            <p class="text-2xl font-bold text-amber-600 dark:text-amber-400 mt-auto">
                                 Rp {{ number_format($link->price, 0, ',', '.') }}
                             </p>
                         @endif
-
-                        <!-- Commission Info -->
-                        @if ($link->commission_value)
-                            <div class="text-xs text-gray-600 dark:text-gray-400 mb-3 py-2 px-2 bg-amber-50 dark:bg-amber-900/20 rounded border border-amber-200 dark:border-amber-800/30">
-                                @if ($link->commission_type === 'percentage')
-                                    <span class="font-semibold text-amber-700 dark:text-amber-300">Komisi: {{ $link->commission_value }}%</span>
-                                @else
-                                    <span class="font-semibold text-amber-700 dark:text-amber-300">Komisi: Rp {{ number_format($link->commission_value, 0, ',', '.') }}</span>
-                                @endif
-                            </div>
-                        @endif
-
-                        <!-- Click Counter -->
-                        <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mt-auto">
-                            <i class="fas fa-mouse"></i>
-                            <span>{{ number_format($link->clicks_count ?? 0) }} klik</span>
-                        </div>
                     </div>
                 </a>
             @endforeach
