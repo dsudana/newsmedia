@@ -133,7 +133,7 @@
                             <a href="https://wa.me/?text={{ urlencode($article->title . ' ' . request()->url()) }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-green-600 text-white flex items-center justify-center hover:bg-green-700 transition" title="WhatsApp">
                                 <i class="fab fa-whatsapp text-sm"></i>
                             </a>
-                            <button onclick="copyToClipboard('{{ request()->url() }}')" class="w-9 h-9 rounded-full bg-gray-400 text-white flex items-center justify-center hover:bg-gray-500 transition" title="Salin tautan">
+                            <button onclick="copyToClipboard({{ @json(request()->url()) }})" class="w-9 h-9 rounded-full bg-gray-400 text-white flex items-center justify-center hover:bg-gray-500 transition" title="Salin tautan">
                                 <i class="fas fa-link text-xs"></i>
                             </button>
                         </div>
@@ -282,7 +282,7 @@
                                 title="Bagikan di WhatsApp">
                                 <i class="fab fa-whatsapp text-lg"></i>
                             </a>
-                            <button onclick="copyToClipboard('{{ request()->url() }}')"
+                            <button onclick="copyToClipboard({{ @json(request()->url()) }})"
                                 class="w-12 h-12 rounded-lg bg-gray-400 hover:bg-gray-500 dark:bg-gray-700 dark:hover:bg-gray-600 text-white flex items-center justify-center transition shadow-sm hover:shadow-md"
                                 title="Salin Tautan">
                                 <i class="fas fa-link text-lg"></i>
