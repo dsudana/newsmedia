@@ -10,9 +10,8 @@
         <x-frontend.breaking-news-card :breakingNews="$breakingNews" />
     </div>
 
-    <!-- Breaking News Carousel & Trending Section -->
+    <!-- Trending Section -->
     <div class="max-w-7xl mx-auto px-4">
-        <x-frontend.breaking-news-carousel :announcements="$announcements" :articles="$latestArticles" />
         <x-frontend.trending-section :categories="$categories" />
     </div>
 

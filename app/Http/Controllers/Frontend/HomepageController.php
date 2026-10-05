@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Category;
-use App\Models\Tag;
-use App\Models\Announcement;
 use App\Models\Event;
 use App\Models\Video;
 use App\Services\HomepageBuilderService;
@@ -122,17 +120,6 @@ class HomepageController extends Controller
                 ->get(['id', 'title', 'slug', 'published_at', 'category_id', 'user_id', 'featured_image']);
         });
 
-        // Get active announcements (shorter cache for more frequent updates)
-        $announcements = Cache::remember('homepage_announcements', now()->addMinutes(30), function () {
-            try {
-                return Announcement::active()
-                    ->ordered()
-                    ->take(3)
-                    ->get(['id', 'title', 'content', 'category', 'priority']);
-            } catch (\Exception $e) {
-                return collect();
-            }
-        });
 
         // Get upcoming events
         $upcomingEvents = Cache::remember('homepage_events', now()->addHours(1), function () {
@@ -157,10 +144,10 @@ class HomepageController extends Controller
 
         // Modern structured view (recommended)
         if ($viewType === 'modern') {
-            return view('frontend.home-modern', compact('breakingNews', 'featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
+            return view('frontend.home-modern', compact('breakingNews', 'featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'upcomingEvents', 'videoGallery'));
         }
 
         // Legacy welcome blade view
-        return view('welcome', compact('breakingNews', 'featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'announcements', 'upcomingEvents', 'videoGallery'));
+        return view('welcome', compact('breakingNews', 'featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'upcomingEvents', 'videoGallery'));
     }
 }
