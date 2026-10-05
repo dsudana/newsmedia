@@ -144,7 +144,7 @@
                                             @endif
                                         </div>
                                         <h3
-                                            class="text-base font-bold text-slate-900 dark:text-gray-200 line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
+                                            class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
                                             {{ $article->title }}
                                         </h3>
                                         <p class="text-xs text-gray-400 mb-3">
@@ -213,7 +213,7 @@
                         @if ($recentArticles && $recentArticles->count() > 0)
                             <section
                                 class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition-shadow duration-300">
-                                <h3 class="text-lg font-bold text-gray-900 dark:text-gray-200 mb-6 flex items-center gap-2">
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                                     <span class="w-1 h-6 bg-red-600 dark:bg-red-500 rounded-full"></span>
                                     Artikel Terbaru
                                 </h3>
@@ -228,7 +228,7 @@
                                             </div>
                                             <div class="flex-1 min-w-0">
                                                 <h4
-                                                    class="text-base font-bold text-slate-900 dark:text-gray-200 line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-1">
+                                                    class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-1">
                                                     {{ $article->title }}
                                                 </h4>
                                                 <p class="text-xs text-gray-500 dark:text-gray-400">

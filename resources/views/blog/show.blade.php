@@ -93,7 +93,7 @@
                     </div>
 
                     <!-- Article Title -->
-                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-200 leading-tight mb-6">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
                         {{ $article->title }}
                     </h1>
 
@@ -152,7 +152,7 @@
 
                     @if($article->excerpt)
                         <div class="mb-8 p-5 bg-gray-50 dark:bg-gray-800 border-l-4 border-red-600">
-                            <p class="text-base text-gray-800 dark:text-gray-200 leading-relaxed">{{ $article->excerpt }}</p>
+                            <p class="text-base text-gray-800 dark:text-white leading-relaxed">{{ $article->excerpt }}</p>
                         </div>
                     @endif
 
@@ -194,7 +194,7 @@
                     <!-- Related Articles -->
                     @if($relatedArticles && $relatedArticles->count() > 0)
                         <div class="border-t-2 border-gray-300 dark:border-gray-700 pt-8 mb-12">
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-200 mb-6">Artikel Terkait</h2>
+                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Artikel Terkait</h2>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 @foreach($relatedArticles->take(7) as $related)
                                     <a href="{{ route('blog.show', $related->slug) }}" class="group">
@@ -217,7 +217,7 @@
 
                     <!-- Comments Section -->
                     <div class="border-t-2 border-gray-300 dark:border-gray-700 pt-8">
-                        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-200 mb-6">Komentar</h2>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Komentar</h2>
 
                         @php $approvedComments = $article->comments?->where('is_approved', true)->whereNull('parent_id') ?? collect(); @endphp
 
@@ -233,7 +233,7 @@
 
                         <!-- Comment Form -->
                         <div class="border border-gray-300 dark:border-gray-600 dark:bg-gray-800 p-6 rounded-lg">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-gray-200 mb-6">Tinggalkan Komentar</h3>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Tinggalkan Komentar</h3>
                             <form action="{{ route('comments.store', $article->slug) }}" method="POST" class="space-y-4">
                                 @csrf
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -281,7 +281,7 @@
                     <!-- Popular Tags -->
                     @if($popularTags && $popularTags->count() > 0)
                         <div class= dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                            <h3 class="text-lg font-bold text-gray-900 dark:text-gray-200 mb-4">Tag Populer</h3>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Tag Populer</h3>
                             <x-frontend.tag-cloud :tags="$popularTags->take(12)" />
                         </div>
                     @endif
