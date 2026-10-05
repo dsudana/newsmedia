@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Admin\HomepageBuilderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\ArticleController;
@@ -156,17 +155,6 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
 
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');
-
-    // Homepage Builder routes
-    Route::prefix('homepage-builder')->name('homepage-builder.')->group(function () {
-        Route::post('/reorder', [HomepageBuilderController::class, 'reorder'])->name('reorder');
-        Route::get('/{section}', [HomepageBuilderController::class, 'show'])->name('show');
-        Route::patch('/{section}/toggle', [HomepageBuilderController::class, 'toggle'])->name('toggle');
-        Route::patch('/{section}', [HomepageBuilderController::class, 'update'])->name('update');
-        Route::delete('/{section}', [HomepageBuilderController::class, 'destroy'])->name('destroy');
-        Route::post('/', [HomepageBuilderController::class, 'store'])->name('store');
-        Route::get('/{pageType?}', [HomepageBuilderController::class, 'index'])->name('index');
-    });
 
     // Platform Showcase
     Route::get('/showcase', [App\Http\Controllers\Admin\ShowcaseController::class, 'index'])->name('showcase.index');

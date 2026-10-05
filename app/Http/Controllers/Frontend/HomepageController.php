@@ -7,33 +7,12 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Video;
-use App\Services\HomepageBuilderService;
 use Illuminate\Support\Facades\Cache;
 
 class HomepageController extends Controller
 {
-    public function __construct(private HomepageBuilderService $service)
-    {
-    }
-
     public function index()
     {
-        // Check query parameter to determine view type
-        // Options: 'modern' (default) - structured layout, 'builder' - homebuilder sections, 'welcome' - standalone
-        $viewType = request('view', 'modern');
-
-        // If explicitly requesting homebuilder view
-        if ($viewType === 'builder') {
-            $activeSections = $this->service->getActiveSections('homepage');
-            if ($activeSections->isNotEmpty()) {
-                $sections = $activeSections->map(fn($s) => [
-                    'section' => $s,
-                    'data' => $this->service->getSectionData($s),
-                ]);
-                return view('frontend.home', ['sections' => $sections, 'useBuilder' => true]);
-            }
-        }
-
         // ============================================
         // TIERED CONTENT STRATEGY - No Duplicate Articles
         // ============================================
@@ -142,12 +121,6 @@ class HomepageController extends Controller
                 ->get(['id', 'title', 'youtube_id', 'thumbnail_url', 'category_id', 'youtube_url', 'views_count', 'published_at']);
         });
 
-        // Modern structured view (recommended)
-        if ($viewType === 'modern') {
-            return view('frontend.home-modern', compact('breakingNews', 'featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'upcomingEvents', 'videoGallery'));
-        }
-
-        // Legacy welcome blade view
-        return view('welcome', compact('breakingNews', 'featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'upcomingEvents', 'videoGallery'));
+        return view('frontend.home-modern', compact('breakingNews', 'featuredArticles', 'latestArticles', 'trendingArticles', 'categories', 'sidebarCategories', 'sidebarArticles', 'upcomingEvents', 'videoGallery'));
     }
 }
