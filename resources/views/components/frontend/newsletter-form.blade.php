@@ -1,4 +1,4 @@
-@props(['placeholder' => 'Your email', 'buttonText' => 'Subscribe'])
+@props(['placeholder' => 'Your email', 'buttonText' => 'Subscribe', 'isDarkBg' => false])
 
 <form class="space-y-2 sm:space-y-3"
     x-data="newsletterForm()"
@@ -9,12 +9,12 @@
         name="email"
         placeholder="{{ $placeholder }}"
         x-model="email"
-        class="w-full px-3 sm:px-4 py-2 rounded-lg bg-white/90 text-gray-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-red-400"
+        class="w-full px-3 sm:px-4 py-2 rounded-lg {{ $isDarkBg ? 'bg-gray-700 text-white placeholder-gray-400 focus:ring-red-500' : 'bg-white/90 text-gray-900 focus:ring-red-400' }} text-xs sm:text-sm focus:outline-none focus:ring-2 transition"
         required>
     <button
         type="submit"
         :disabled="loading"
-        class="w-full bg-white text-red-600 font-semibold py-2 rounded-lg hover:bg-red-50 transition text-xs sm:text-sm disabled:opacity-50">
+        class="w-full {{ $isDarkBg ? 'bg-red-600 hover:bg-red-700 text-white' : 'bg-white text-red-600 hover:bg-red-50' }} font-semibold py-2 rounded-lg transition text-xs sm:text-sm disabled:opacity-50">
         <span x-show="!loading">{{ $buttonText }}</span>
         <span x-show="loading"><i class="fas fa-spinner fa-spin mr-2"></i>Subscribing...</span>
     </button>

@@ -277,14 +277,14 @@
                     />
 
                     <!-- Advertisement Bottom -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
+                    <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_bottom" />
                         
                     </div>
 
                     <!-- Popular Tags -->
                     @if($popularTags && $popularTags->count() > 0)
-                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <div class= dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                             <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Tag Populer</h3>
                             <x-frontend.tag-cloud :tags="$popularTags->take(12)" />
                         </div>
