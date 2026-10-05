@@ -352,7 +352,7 @@
                     <x-sidebar.social-links title="Follow Us" />
 
                     <!-- Advertisement Top -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
+                    <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_home_top" />
                         
                     </div>
@@ -371,7 +371,7 @@
                     />
 
                     <!-- Advertisement Bottom -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
+                    <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_home_bottom" />
                         
                     </div>

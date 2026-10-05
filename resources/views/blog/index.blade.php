@@ -132,13 +132,13 @@
                                                 class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
                                         @endif
                                     </div>
-                                    <h3 class="font-bold text-gray-900 group-hover:text-red-600 transition line-clamp-2 mb-2">
+                                    <h3 class="font-bold text-gray-200 group-hover:text-red-600 transition line-clamp-2 mb-2">
                                         {{ $article->title }}
                                     </h3>
-                                    <p class="text-xs text-gray-600 mb-3">
+                                    <p class="text-xs text-gray-400 mb-3">
                                         {{ $article->published_at->format('d M Y') }}
                                     </p>
-                                    <p class="text-xs text-gray-600 group-hover:text-red-600 transition">
+                                    <p class="text-xs text-gray-400 group-hover:text-red-600 transition">
                                         <i class="fas fa-eye mr-1"></i>{{ number_format($article->views_count ?? 0) }} dibaca
                                     </p>
                                 </a>
@@ -193,7 +193,7 @@
                             : \App\Models\Article::published()->latest('published_at')->take(5)->get();
                     @endphp
                     @if($recentArticles && $recentArticles->count() > 0)
-                        <section class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <section class=" dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                             <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                                 <span class="w-1 h-6 bg-red-600 rounded-full"></span>
                                 Artikel Terbaru
@@ -235,7 +235,7 @@
                     />
 
                     <!-- Advertisement Bottom -->
-                    <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition-shadow duration-300 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_bottom" />
                         
                     </div>
