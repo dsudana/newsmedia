@@ -42,19 +42,19 @@
     <div class="mb-8" x-data="trendingScroll()">
         <div class="flex items-center gap-4 overflow-x-auto pb-4 scroll-smooth" id="trendingContainer">
             <!-- Label -->
-            <span class="text-blue-600 font-bold text-sm uppercase whitespace-nowrap shrink-0">Trending:</span>
+            <span class="text-red-600 dark:text-red-500 font-bold text-sm uppercase whitespace-nowrap shrink-0">Trending:</span>
 
             <!-- Trending Keywords/Tags from Articles -->
             @foreach ($trendingKeywords as $item)
                 @if ($item->is_tag ?? false)
                     <a href="{{ route('blog.tag', $item->slug) }}"
-                        class="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-200 hover:bg-purple-500 hover:text-white dark:hover:bg-purple-600 rounded-full whitespace-nowrap transition text-sm font-medium"
+                        class="px-4 py-2 bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-200 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 rounded-full whitespace-nowrap transition text-sm font-medium border border-red-200 dark:border-red-800"
                         title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)">
                         #{{ $item->keyword }}
                     </a>
                 @else
                     <a href="{{ route('blog.search') }}?q={{ urlencode($item->keyword) }}"
-                        class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 rounded-full whitespace-nowrap transition text-sm font-medium"
+                        class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 rounded-full whitespace-nowrap transition text-sm font-medium border border-gray-200 dark:border-gray-700"
                         title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)">
                         {{ $item->keyword }}
                     </a>
@@ -62,7 +62,7 @@
             @endforeach
 
             <!-- Navigation Arrow -->
-            <button @click="scrollRight()" class="shrink-0 text-blue-600 hover:text-blue-700 p-2 ml-4" aria-label="More trending">
+            <button @click="scrollRight()" class="shrink-0 text-red-600 dark:text-red-500 hover:text-red-700 dark:hover:text-red-400 p-2 ml-4 transition" aria-label="More trending">
                 <i class="fas fa-chevron-right text-xl"></i>
             </button>
         </div>
