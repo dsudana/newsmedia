@@ -1,7 +1,7 @@
 <!-- Sidebar Popular Posts -->
 <div>
     <div class="border-l-4 border-red-600 pl-3 mb-6">
-        <h3 class="font-bold text-lg text-gray-900">Popular Post</h3>
+        <h3 class="font-bold text-lg text-gray-900 dark:text-white">Popular Post</h3>
     </div>
     <div class="space-y-4">
         @foreach($latestArticles->skip(5)->take(4) as $i => $article)
@@ -15,7 +15,7 @@
                             {{ strtoupper($article->category->name) }}
                         </span>
                     @endif
-                    <h4 class="font-bold text-xs text-gray-900 line-clamp-2 group-hover:text-red-600 transition">
+                    <h4 class="font-bold text-xs text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 transition">
                         {{ $article->title }}
                     </h4>
                 </div>

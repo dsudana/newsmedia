@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
             {{-- Left: Recent Posts --}}
             <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Recent Posts</h2>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b border-gray-200 dark:border-gray-700">Recent Posts</h2>
 
                 {{-- Featured Grid (2) --}}
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -16,10 +16,10 @@
                                 <span class="inline-block px-3 py-1 bg-red-100 text-red-600 text-xs font-bold rounded">
                                     {{ $article->category?->name ?? 'News' }}
                                 </span>
-                                <h3 class="text-sm font-bold text-gray-900 leading-snug mt-2 line-clamp-2 group-hover:text-red-600 transition-colors">
+                                <h3 class="text-sm font-bold text-gray-900 dark:text-white leading-snug mt-2 line-clamp-2 group-hover:text-red-600 transition-colors">
                                     {{ $article->title }}
                                 </h3>
-                                <p class="text-xs text-gray-500 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d, Y') }}</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d, Y') }}</p>
                             </div>
                         </a>
                     @endforeach
@@ -32,8 +32,8 @@
                             <img src="{{ $article->featured_image ? asset('storage/' . $article->featured_image) : '/images/placeholder.jpg' }}"
                                  alt="{{ $article->title }}" class="w-20 h-16 object-cover rounded flex-shrink-0">
                             <div class="flex-1 min-w-0">
-                                <p class="text-xs text-gray-500">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d, Y') }}</p>
-                                <h4 class="text-sm font-bold text-gray-900 line-clamp-2 group-hover:text-red-600 transition-colors">
+                                <p class="text-xs text-gray-500 dark:text-gray-400">By {{ $article->user?->name ?? 'Admin' }} • {{ $article->published_at?->format('M d, Y') }}</p>
+                                <h4 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 transition-colors">
                                     {{ $article->title }}
                                 </h4>
                             </div>
@@ -44,7 +44,7 @@
 
             {{-- Right: Popular Posts --}}
             <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Popular Posts</h2>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b border-gray-200 dark:border-gray-700">Popular Posts</h2>
 
                 <ol class="space-y-4">
                     @forelse (($data['popular_articles'] ?? [])->take(4) as $i => $article)
@@ -57,14 +57,14 @@
                                     <span class="inline-block px-2 py-1 bg-red-100 text-red-600 text-xs font-bold rounded">
                                         {{ $article->category?->name ?? 'News' }}
                                     </span>
-                                    <p class="text-sm font-bold text-gray-900 leading-snug hover:text-red-600 transition-colors line-clamp-2 mt-1">
+                                    <p class="text-sm font-bold text-gray-900 dark:text-white leading-snug hover:text-red-600 transition-colors line-clamp-2 mt-1">
                                         {{ $article->title }}
                                     </p>
                                 </a>
                             </div>
                         </li>
                     @empty
-                        <li class="text-gray-500 text-sm">No popular articles</li>
+                        <li class="text-gray-500 dark:text-gray-400 text-sm">No popular articles</li>
                     @endforelse
                 </ol>
             </div>
