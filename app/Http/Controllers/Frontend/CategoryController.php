@@ -11,9 +11,20 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::withCount([
-            'articles' => fn($q) => $q->where('status', 'published')
-        ])->get();
+        $categories = Category::query()
+            ->select('categories.*')
+            ->selectRaw('COUNT(articles.id) as articles_count')
+            ->leftJoin('articles', function($join) {
+                $join->on('articles.category_id', '=', 'categories.id')
+                    ->where('articles.status', '=', 'published');
+            })
+            ->groupBy('categories.id')
+            ->get();
+
+        \Log::debug('Categories query result:', [
+            'first_cat' => $categories->first()?->toArray()
+        ]);
+
         return view('frontend.categories.index', compact('categories'));
     }
 

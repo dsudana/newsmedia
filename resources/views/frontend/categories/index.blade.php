@@ -49,8 +49,11 @@
                             </h3>
 
                             <!-- Article Count -->
+                            @php
+                                $count = $category->articles_count ?? $category->getAttribute('articles_count') ?? 0;
+                            @endphp
                             <p class="text-sm text-slate-600 dark:text-gray-400 mb-4 flex-1">
-                                {{ $category->articles_count ?? 0 }} artikel
+                                {{ $count }} artikel
                             </p>
 
                             <!-- Arrow -->

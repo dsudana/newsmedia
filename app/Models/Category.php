@@ -45,17 +45,17 @@ class Category extends Model
         return $this->hasMany(Keyword::class);
     }
 
-    public function scopeActive($query)
+    public function scopeActive(\Illuminate\Database\Eloquent\Builder $query)
     {
         return $query->where('is_active', true);
     }
 
-    public function scopeOrdered($query)
+    public function scopeOrdered(\Illuminate\Database\Eloquent\Builder $query)
     {
         return $query->orderBy('order');
     }
 
-    public function getDescriptionAttribute($value)
+    public function getDescriptionAttribute(?string $value)
     {
         if (empty($value) || $value === 'Imported from WordPress') {
             return "Berita tentang {$this->name}";
