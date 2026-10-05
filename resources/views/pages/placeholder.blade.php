@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-modern')
 @section('title', $title ?? 'NEWSMEDIA')
 @section('content')
     <div class="py-20 text-center">
