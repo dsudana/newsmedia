@@ -178,25 +178,7 @@
             <aside class="lg:col-span-1">
                 <div class="sticky top-24 space-y-8">
                     <!-- Social Media Section -->
-                    <section class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4">Ikuti Kami</h3>
-                        <div class="flex flex-wrap gap-3">
-                            @php
-                                $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
-                            @endphp
-                            @forelse ($socialLinks as $social)
-                                <a href="{{ $social->url }}"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   title="{{ $social->platform }}"
-                                   class="w-10 h-10 flex items-center justify-center rounded-lg bg-red-600 hover:bg-red-700 text-white transition duration-300 transform hover:scale-110">
-                                    <i class="{{ $social->icon }}"></i>
-                                </a>
-                            @empty
-                                <p class="text-sm text-gray-500">Tidak ada social media</p>
-                            @endforelse
-                        </div>
-                    </section>
+                    <x-sidebar.social-links title="Ikuti Kami" />
 
                     <!-- Advertisement Top -->
                     <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
@@ -275,11 +257,12 @@
                     @endif
 
                     <!-- Newsletter -->
-                    <section class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white">
-                        <h3 class="text-lg font-bold mb-2">Tetap Update</h3>
-                        <p class="text-sm text-red-100 mb-4">Dapatkan berita terbaru langsung ke email</p>
-                        <x-newsletter-form placeholder="Email Anda" buttonText="Berlangganan" />
-                    </section>
+                    <x-sidebar.newsletter-card
+                        title="Tetap Update"
+                        subtitle="Dapatkan berita terbaru langsung ke email"
+                        placeholder="Email Anda"
+                        buttonText="Berlangganan"
+                    />
 
                     <!-- Advertisement Bottom -->
                     <div class="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 min-h-80 flex items-center justify-center">
@@ -288,29 +271,14 @@
                     </div>
 
                     <!-- Categories (Only with articles) -->
-                    @php
-                        $categoriesWithArticles = \App\Models\Category::active()
-                            ->withCount(['articles' => fn($q) => $q->published()])
-                            ->having('articles_count', '>', 0)
-                            ->orderByDesc('articles_count')
-                            ->get();
-                    @endphp
-                    @if($categoriesWithArticles && $categoriesWithArticles->count() > 0)
-                        <section class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                            <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <span class="w-1 h-6 bg-red-600 rounded-full"></span>
-                                Kategori
-                            </h3>
-                            <div class="space-y-2">
-                                @foreach ($categoriesWithArticles as $cat)
-                                    <a href="{{ route('blog.index', ['category' => $cat->slug]) }}"
-                                        class="block px-3 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-600 rounded-lg transition {{ (isset($category) && $category->id === $cat->id) ? 'bg-red-100 text-red-600 font-semibold' : '' }}">
-                                        {{ $cat->name }} <span class="text-xs text-gray-500">({{ $cat->articles_count }})</span>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </section>
-                    @endif
+                    <x-sidebar.categories
+                        :categories="$categories"
+                        :activeId="$category?->id"
+                        route="blog.index"
+                        :showCount="true"
+                    >
+                        Kategori
+                    </x-sidebar.categories>
                 </div>
             </aside>
         </div>

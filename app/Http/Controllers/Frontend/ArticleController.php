@@ -18,6 +18,8 @@ class ArticleController extends Controller
         $query = Article::published()
             ->with(['category', 'user', 'tags']);
 
+        $category = null;
+
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function ($q) use ($search) {
@@ -28,6 +30,7 @@ class ArticleController extends Controller
         }
 
         if ($request->filled('category')) {
+            $category = Category::where('slug', $request->category)->first();
             $query->whereHas('category', fn($q) => $q->where('slug', $request->category));
         }
 
@@ -51,11 +54,11 @@ class ArticleController extends Controller
         $title = 'Semua Artikel';
         if ($request->filled('search')) {
             $title = 'Pencarian: ' . $request->search;
-        } elseif ($request->filled('category')) {
-            $title = 'Kategori: ' . $request->category;
+        } elseif ($category) {
+            $title = 'Kategori: ' . $category->name;
         }
 
-        return view('blog.index', compact('articles', 'categories', 'popularTags', 'title'));
+        return view('blog.index', compact('articles', 'categories', 'popularTags', 'category', 'title'));
     }
 
     public function search(Request $request)

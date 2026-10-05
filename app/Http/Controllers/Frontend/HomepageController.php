@@ -58,6 +58,16 @@ class HomepageController extends Controller
                 ->get();
         });
 
+        // Get sidebar categories (limited to 8, with article counts)
+        $sidebarCategories = Cache::remember('homepage_sidebar_categories', now()->addHours(1), function () {
+            return Category::active()
+                ->withCount(['articles' => fn($q) => $q->published()])
+                ->having('articles_count', '>', 0)
+                ->orderBy('articles_count', 'desc')
+                ->limit(8)
+                ->get();
+        });
+
         // Get active announcements (shorter cache for more frequent updates)
         $announcements = Cache::remember('homepage_announcements', now()->addMinutes(30), function () {
             return Announcement::active()
@@ -76,10 +86,10 @@ class HomepageController extends Controller
 
         // Modern structured view (recommended)
         if ($viewType === 'modern') {
-            return view('frontend.home-modern', compact('latestArticles', 'categories', 'announcements', 'upcomingEvents'));
+            return view('frontend.home-modern', compact('latestArticles', 'categories', 'sidebarCategories', 'announcements', 'upcomingEvents'));
         }
 
         // Legacy welcome blade view
-        return view('welcome', compact('latestArticles', 'categories', 'announcements', 'upcomingEvents'));
+        return view('welcome', compact('latestArticles', 'categories', 'sidebarCategories', 'announcements', 'upcomingEvents'));
     }
 }

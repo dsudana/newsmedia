@@ -109,8 +109,7 @@
                 <article class="group min-h-0">
                     <a
                         href="{{ route('blog.show', $article->slug) }}"
-                        class="flex h-full overflow-hidden rounded-xl bg-slate-50 dark:bg-gray-800 shadow-sm ring-1 ring-slate-200/70 dark:ring-gray-700/70 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-lg"
-                    >
+                        class="flex h-full overflow-hidden rounded-xl dark:bg-gray-800 shadow-sm ring-1 ring-slate-200/70 dark:ring-gray-700/70 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-lg"                    >
 
                         {{-- Image --}}
                         <div class="relative w-32 flex-shrink-0 overflow-hidden sm:w-36 lg:w-40">
@@ -147,7 +146,7 @@
 
 
                         {{-- Content --}}
-                        <div class="flex min-w-0 flex-1 flex-col justify-between p-3 sm:p-4">
+                        <div class="flex min-w-0 flex-1 flex-col justify-between p-3 sm:p-4 ">
 
                             <div>
 
@@ -350,39 +349,17 @@
                 <!-- Right Sidebar (1/3) -->
                 <aside class="space-y-8">
                     <!-- Social Media Section -->
-                    <section class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Follow Us</h3>
-                        <div class="flex flex-wrap gap-3">
-                            @php
-                                $socialLinks = \App\Models\SocialMedia::active()->ordered()->get();
-                            @endphp
-                            @forelse ($socialLinks as $social)
-                                <a href="{{ $social->url }}"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   title="{{ $social->platform }}"
-                                   class="w-10 h-10 flex items-center justify-center rounded-lg bg-red-600 hover:bg-red-700 text-white transition duration-300 transform hover:scale-110">
-                                    <i class="{{ $social->icon }}"></i>
-                                </a>
-                            @empty
-                                <p class="text-sm text-slate-500 dark:text-gray-400">No social media links available</p>
-                            @endforelse
-                        </div>
-                    </section>
+                    <x-sidebar.social-links title="Follow Us" />
 
                     <!-- Advertisement Top -->
-                    <div
-                        class="bg-slate-100 dark:bg-gray-800 rounded-lg p-6 h-80 flex items-center justify-center border border-gray-200 dark:border-gray-700">
-                        <div class="text-center">
-                            <div class="w-12 h-12 bg-slate-300 dark:bg-gray-600 rounded-lg mx-auto mb-3"></div>
-                            <p class="text-slate-600 dark:text-gray-400 font-semibold text-sm">Advertisement</p>
-                            <p class="text-slate-500 dark:text-gray-500 text-xs mt-1">300×250</p>
-                        </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
+                        @component('components.advertisement', ['placement' => 'sidebar_home_top'])
+                        @endcomponent
                     </div>
 
                     <!-- Popular Articles -->
                     <section
-                        class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        class=" dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                             <span class="w-1 h-6 bg-red-600 rounded-full"></span>
                             Popular
@@ -410,52 +387,23 @@
                     </section>
 
                     <!-- Newsletter -->
-                    <section class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white">
-                        <h3 class="text-lg font-bold mb-2">Newsletter</h3>
-                        <p class="text-sm text-red-100 mb-4">Get the latest stories delivered to your inbox daily</p>
-
-                        <x-newsletter-form placeholder="your@email.com" buttonText="Subscribe" />
-                    </section>
+                    <x-sidebar.newsletter-card
+                        title="Newsletter"
+                        subtitle="Get the latest stories delivered to your inbox daily"
+                        placeholder="your@email.com"
+                        buttonText="Subscribe"
+                    />
 
                     <!-- Advertisement Bottom -->
-                    <div
-                        class="bg-slate-100 dark:bg-gray-800 rounded-lg p-6 h-80 flex items-center justify-center border border-gray-200 dark:border-gray-700">
-                        <div class="text-center">
-                            <div class="w-12 h-12 bg-slate-300 dark:bg-gray-600 rounded-lg mx-auto mb-3"></div>
-                            <p class="text-slate-600 dark:text-gray-400 font-semibold text-sm">Advertisement</p>
-                            <p class="text-slate-500 dark:text-gray-500 text-xs mt-1">300×250</p>
-                        </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
+                        @component('components.advertisement', ['placement' => 'sidebar_home_bottom'])
+                        @endcomponent
                     </div>
 
                     <!-- Categories -->
-                    <section
-                        class="bg-slate-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                            <span class="w-1 h-6 bg-red-600 rounded-full"></span>
-                            Categories
-                        </h3>
-                        <div class="space-y-2">
-                            @php
-                                $sidebarCategories = \App\Models\Category::active()
-                                    ->withCount(['articles' => fn($q) => $q->published()])
-                                    ->having('articles_count', '>', 0)
-                                    ->orderBy('articles_count', 'desc')
-                                    ->limit(8)
-                                    ->get();
-                            @endphp
-                            @forelse ($sidebarCategories as $category)
-                                <a href="{{ route('blog.category', $category->slug) }}"
-                                    class="group flex items-center justify-between px-3 py-2 text-sm text-slate-700 dark:text-gray-300 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition">
-                                    <span>{{ $category->name }}</span>
-                                    <span class="text-xs bg-slate-200 dark:bg-gray-700 text-slate-600 dark:text-gray-400 group-hover:bg-red-200 dark:group-hover:bg-red-900/50 px-2 py-1 rounded transition">
-                                        {{ $category->articles_count }}
-                                    </span>
-                                </a>
-                            @empty
-                                <p class="text-sm text-slate-500 dark:text-gray-400 px-3 py-2">No categories available</p>
-                            @endforelse
-                        </div>
-                    </section>
+                    <x-sidebar.categories :categories="$sidebarCategories" route="blog.category" :showCount="true">
+                        Categories
+                    </x-sidebar.categories>
                 </aside>
             </div>
         </div>

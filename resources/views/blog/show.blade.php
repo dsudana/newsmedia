@@ -292,11 +292,12 @@
                     @endif
 
                     <!-- Newsletter -->
-                    <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-lg p-6 text-white">
-                        <h3 class="text-lg font-bold mb-2">Tetap Update</h3>
-                        <p class="text-sm text-red-100 mb-4">Dapatkan berita terbaru langsung ke inbox Anda</p>
-                        <x-newsletter-form placeholder="Email Anda" buttonText="Berlangganan" />
-                    </div>
+                    <x-sidebar.newsletter-card
+                        title="Tetap Update"
+                        subtitle="Dapatkan berita terbaru langsung ke inbox Anda"
+                        placeholder="Email Anda"
+                        buttonText="Berlangganan"
+                    />
 
                     <!-- Advertisement Bottom -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
@@ -308,13 +309,7 @@
                     @if($popularTags && $popularTags->count() > 0)
                         <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                             <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Tag Populer</h3>
-                            <div class="flex flex-wrap gap-2">
-                                @foreach($popularTags->take(12) as $tag)
-                                    <a href="{{ route('blog.tag', $tag->slug) }}" class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2.5 py-1.5 rounded text-xs hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-700 dark:hover:text-red-400 transition">
-                                        #{{ $tag->name }}
-                                    </a>
-                                @endforeach
-                            </div>
+                            <x-tag-cloud :tags="$popularTags->take(12)" />
                         </div>
                     @endif
                 </div>
@@ -355,42 +350,6 @@ function copyToClipboard(text) {
             toast: true,
             background: '#1f2937',
             color: '#fff'
-        });
-    });
-}
-
-function submitNewsletter() {
-    this.loading = true;
-    fetch('{{ route("newsletter.subscribe") }}', {
-        method: 'POST',
-        headers: {
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email: this.email })
-    })
-    .then(response => response.json())
-    .then(data => {
-        this.loading = false;
-        if (data.success) {
-            Swal.fire({
-                icon: 'success',
-                title: 'Berlangganan Berhasil!',
-                text: 'Terima kasih telah berlangganan newsletter kami',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#dc2626'
-            });
-            this.email = '';
-        }
-    })
-    .catch(() => {
-        this.loading = false;
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops!',
-            text: 'Terjadi kesalahan saat berlangganan',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#dc2626'
         });
     });
 }
