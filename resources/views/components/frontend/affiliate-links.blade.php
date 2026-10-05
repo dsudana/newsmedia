@@ -1,7 +1,11 @@
 @props(['article'])
 
 @php
-    $affiliateLinks = $article->affiliateLinks()->where('is_active', true)->get();
+    try {
+        $affiliateLinks = $article->affiliateLinks()->where('is_active', true)->get();
+    } catch (\Exception $e) {
+        $affiliateLinks = collect();
+    }
 @endphp
 
 @if ($affiliateLinks->count() > 0)
