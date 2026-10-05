@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" :class="darkMode && 'dark'">
+<html lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }"
+      @dark-mode-toggle.window="darkMode = !darkMode; document.documentElement.classList.toggle('dark')"
+      :class="darkMode && 'dark'">
 
     <head>
         <meta charset="UTF-8">

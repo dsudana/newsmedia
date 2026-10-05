@@ -50,7 +50,7 @@
         <!-- Right Actions -->
         <div class="flex items-center gap-2">
             <!-- Dark Mode Toggle -->
-            <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)" aria-label="Toggle dark mode" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-2">
+            <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); window.dispatchEvent(new CustomEvent('dark-mode-toggle'))" aria-label="Toggle dark mode" class="text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-2">
                 <i :class="darkMode ? 'fas fa-sun' : 'fas fa-moon'" class="text-lg" aria-hidden="true"></i>
             </button>
 
