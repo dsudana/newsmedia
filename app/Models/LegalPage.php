@@ -15,16 +15,28 @@ class LegalPage extends Model
 
     /**
      * Get sanitized content safe for display
-     * Allows safe HTML tags while preventing XSS attacks
+     * Uses regex-based filtering for XSS prevention
+     * Removes all potentially dangerous HTML/JavaScript
      */
     public function getSafeContent(): string
     {
-        $allowed_tags = [
-            'p', 'br', 'strong', 'em', 'b', 'i', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-            'ul', 'ol', 'li', 'blockquote', 'pre', 'code', 'img', 'a', 'table', 'thead',
-            'tbody', 'tr', 'th', 'td', 'div', 'span', 'hr', 'figure', 'figcaption'
-        ];
+        // Remove all script tags and event handlers
+        $content = preg_replace('/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi', '', $this->content);
+        $content = preg_replace('/on\w+\s*=\s*["\'][^"\']*["\']/gi', '', $content);
+        $content = preg_replace('/on\w+\s*=\s*[^\s>]*/gi', '', $content);
 
-        return strip_tags($this->content, '<' . implode('><', $allowed_tags) . '>');
+        // Remove javascript: URLs from href and src
+        $content = preg_replace('/(href|src)\s*=\s*["\']javascript:[^"\']*["\']/gi', '$1=""', $content);
+
+        // Remove data: URLs from href (can be XSS vector)
+        $content = preg_replace('/(href)\s*=\s*["\']data:[^"\']*["\']/gi', '$1="javascript:void(0)"', $content);
+
+        // Remove style attributes that might contain malicious CSS
+        $content = preg_replace('/style\s*=\s*["\'][^"\']*["\']/gi', '', $content);
+
+        // Remove iframe, object, embed, form tags entirely
+        $content = preg_replace('/<(iframe|object|embed|form|input|button)\b[^<]*(?:(?!<\/\1>)<[^<]*)*<\/\1>/gi', '', $content);
+
+        return trim($content);
     }
 }
