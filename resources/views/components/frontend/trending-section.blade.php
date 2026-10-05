@@ -54,7 +54,7 @@
                     </a>
                 @else
                     <a href="{{ route('blog.search') }}?q={{ urlencode($item->keyword) }}"
-                        class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 rounded-full whitespace-nowrap transition text-sm font-medium border border-gray-200 dark:border-gray-700"
+                        class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 rounded-full whitespace-nowrap transition text-sm font-medium border border-gray-200 dark:border-gray-700/50"
                         title="{{ $item->keyword }} ({{ $item->articles_count }} artikel)">
                         {{ $item->keyword }}
                     </a>

@@ -1,4 +1,4 @@
-<div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 py-3">
+<div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700/50 py-3">
     <div class="rt-container flex items-center">
         <div
             class="bg-blue-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-sm mr-4 flex-shrink-0 flex items-center gap-2">

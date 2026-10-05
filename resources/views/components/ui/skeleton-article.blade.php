@@ -1,5 +1,5 @@
 {{-- Skeleton Article Component for article list items loading state --}}
-<article class="flex gap-4 p-5 border-b border-gray-200 dark:border-gray-700">
+<article class="flex gap-4 p-5 border-b border-gray-200 dark:border-gray-700/50">
     <!-- Skeleton Thumbnail -->
     <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-slate-200 to-slate-100 dark:from-slate-700 dark:to-slate-600 rounded animate-pulse"></div>
 

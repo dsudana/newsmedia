@@ -59,7 +59,7 @@
 
 @section('content')
 <!-- Advertisement Section -->
-<div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 py-2 sm:py-3 lg:py-4 transition-colors duration-300">
+<div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700/50 py-2 sm:py-3 lg:py-4 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center h-14 sm:h-20 lg:h-24 overflow-hidden">
             <x-frontend.advertisement placement="header_banner" />
@@ -98,7 +98,7 @@
                     </h1>
 
                     <!-- Meta Information -->
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b-2 border-gray-300 dark:border-gray-700 mb-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b-2 border-gray-300 dark:border-gray-700/50 mb-6">
                         <div class="flex items-center gap-4">
                             @if($article->user)
                                 <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 dark:text-red-400 font-bold text-lg flex-shrink-0">
@@ -168,7 +168,7 @@
 
                     <!-- Tags -->
                     @if($article->tags && $article->tags->count() > 0)
-                        <div class="border-t-2 border-gray-300 dark:border-gray-700 pt-6 mb-8">
+                        <div class="border-t-2 border-gray-300 dark:border-gray-700/50 pt-6 mb-8">
                             <h3 class="text-sm font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase">Tags Terkait</h3>
                             <div class="flex flex-wrap gap-2">
                                 @foreach($article->tags as $tag)
@@ -183,13 +183,13 @@
                     <!-- Previous/Next Navigation -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                         @if($previousArticle)
-                            <a href="{{ route('blog.show', $previousArticle->slug) }}" class="group border border-gray-200 dark:border-gray-700 p-5 rounded-lg hover:shadow-lg hover:border-red-300 dark:hover:border-red-600 transition">
+                            <a href="{{ route('blog.show', $previousArticle->slug) }}" class="group border border-gray-200 dark:border-gray-700/50 p-5 rounded-lg hover:shadow-lg hover:border-red-300 dark:hover:border-red-600 transition">
                                 <p class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase mb-2">← Artikel Sebelumnya</p>
                                 <p class="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-red-600 line-clamp-2">{{ $previousArticle->title }}</p>
                             </a>
                         @endif
                         @if($nextArticle)
-                            <a href="{{ route('blog.show', $nextArticle->slug) }}" class="group border border-gray-200 dark:border-gray-700 p-5 rounded-lg hover:shadow-lg hover:border-red-300 dark:hover:border-red-600 transition md:text-right">
+                            <a href="{{ route('blog.show', $nextArticle->slug) }}" class="group border border-gray-200 dark:border-gray-700/50 p-5 rounded-lg hover:shadow-lg hover:border-red-300 dark:hover:border-red-600 transition md:text-right">
                                 <p class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase mb-2">Artikel Selanjutnya →</p>
                                 <p class="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-red-600 line-clamp-2">{{ $nextArticle->title }}</p>
                             </a>
@@ -198,7 +198,7 @@
 
                     <!-- Related Articles -->
                     @if($relatedArticles && $relatedArticles->count() > 0)
-                        <div class="border-t-2 border-gray-300 dark:border-gray-700 pt-8 mb-12">
+                        <div class="border-t-2 border-gray-300 dark:border-gray-700/50 pt-8 mb-12">
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Artikel Terkait</h2>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 @foreach($relatedArticles->take(7) as $related)
@@ -226,7 +226,7 @@
                     @endif
 
                     <!-- Comments Section -->
-                    <div class="border-t-2 border-gray-300 dark:border-gray-700 pt-8">
+                    <div class="border-t-2 border-gray-300 dark:border-gray-700/50 pt-8">
                         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Komentar</h2>
 
                         @php $approvedComments = $article->comments?->where('is_approved', true)->whereNull('parent_id') ?? collect(); @endphp
@@ -270,7 +270,7 @@
                     <x-frontend.affiliate-links :article="$article" />
 
                     <!-- Advertisement Top -->
-                    <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
+                    <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700/50 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_top" />
 
                     </div>
@@ -297,7 +297,7 @@
                             ->get();
                     @endphp
                     @if($recentArticles && $recentArticles->count() > 0)
-                        <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700/50 shadow-sm">
                             <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                                 <span class="w-1 h-6 bg-red-600 dark:bg-red-500 rounded-full"></span>
                                 Artikel Terbaru
@@ -336,14 +336,14 @@
                     @endif
 
                     <!-- Advertisement Bottom -->
-                    <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 min-h-80 flex items-center justify-center">
+                    <div class=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700/50 min-h-80 flex items-center justify-center">
                         <x-frontend.advertisement placement="sidebar_bottom" />
                         
                     </div>
 
                     <!-- Popular Tags -->
                     @if($popularTags && $popularTags->count() > 0)
-                        <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700/50 shadow-sm">
                             <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                                 <i class="fas fa-tags text-red-600 dark:text-red-500"></i>
                                 Tag Populer

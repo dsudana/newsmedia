@@ -9,7 +9,7 @@
 @endphp
 
 @if ($ad)
-    <div class="advertisement-slot bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg flex items-center justify-center overflow-hidden transition-colors duration-300 shadow-sm dark:shadow-md"
+    <div class="advertisement-slot bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700/50 rounded-lg flex items-center justify-center overflow-hidden transition-colors duration-300 shadow-sm dark:shadow-md"
         style="width: {{ $width }}px; height: {{ $height }}px; max-width: 100%;">
 
         @if ($ad->type === 'banner')

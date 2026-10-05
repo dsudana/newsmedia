@@ -1,5 +1,5 @@
 <a href="/articles?author={{$athr->id}}"
-    class="w-full max-w-sm block bg-white border-2 border-gray-200 hover:border-blue-500 rounded-2xl  dark:bg-gray-800 dark:border-gray-700">
+    class="w-full max-w-sm block bg-white border-2 border-gray-200 hover:border-blue-500 rounded-2xl  dark:bg-gray-800 dark:border-gray-700/50">
     <div class="flex flex-col items-center py-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg"
             src="{{ $athr->avatar ? '/storage/' . $athr->avatar : 'https://ui-avatars.com/api/?name=' . urlencode($athr->name) }}"

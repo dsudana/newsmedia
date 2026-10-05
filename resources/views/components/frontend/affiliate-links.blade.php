@@ -5,7 +5,7 @@
 @endphp
 
 @if ($affiliateLinks->count() > 0)
-    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition-shadow duration-300 mb-8">
+    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700/50 shadow-sm dark:shadow-md transition-shadow duration-300 mb-8">
         <!-- Header -->
         <div class="flex items-center gap-3 mb-6">
             <div class="w-10 h-10 bg-gradient-to-br from-amber-100 to-amber-50 dark:from-amber-900 dark:to-amber-800 rounded-lg flex items-center justify-center">
@@ -18,7 +18,7 @@
         <div class="space-y-3">
             @foreach ($affiliateLinks as $link)
                 <a href="{{ url('go/' . $link->slug) }}" target="_blank" rel="noopener noreferrer"
-                    class="block group p-4 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-amber-50 dark:hover:bg-gray-600 transition">
+                    class="block group p-4 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600/40 rounded-lg hover:bg-amber-50 dark:hover:bg-gray-600 transition">
 
                     <!-- Link Content -->
                     <div class="flex items-center justify-between">
@@ -47,7 +47,7 @@
                     </div>
 
                     <!-- Click Counter -->
-                    <div class="mt-2 pt-2 border-t border-gray-200 dark:border-gray-600 flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                    <div class="mt-2 pt-2 border-t border-gray-200 dark:border-gray-600/40 flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
                         <i class="fas fa-mouse"></i>
                         <span>{{ number_format($link->clicks_count ?? 0) }} clicks</span>
                     </div>
@@ -56,7 +56,7 @@
         </div>
 
         <!-- Footer Note -->
-        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
             <p class="text-xs text-gray-500 dark:text-gray-400">
                 <i class="fas fa-info-circle mr-1"></i>
                 These are recommended products we trust. If you make a purchase, we may earn a commission at no extra cost to you.

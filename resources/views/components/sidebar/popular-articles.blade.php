@@ -13,14 +13,14 @@
 @endphp
 
 @if($articlesToShow && count($articlesToShow) > 0)
-    <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition-shadow duration-300">
+    <div class="dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700/50 shadow-sm dark:shadow-md transition-shadow duration-300">
         <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <span class="w-1 h-5 bg-red-600 dark:bg-red-500 rounded-full"></span>
             {{ $slot }}
         </h3>
         <div class="space-y-4">
             @foreach($articlesToShow as $article)
-                <a href="{{ route('blog.show', $article->slug) }}" class="group flex gap-3 pb-4 border-b border-gray-200 dark:border-gray-700 last:border-0 last:pb-0 hover:opacity-75 transition">
+                <a href="{{ route('blog.show', $article->slug) }}" class="group flex gap-3 pb-4 border-b border-gray-200 dark:border-gray-700/50 last:border-0 last:pb-0 hover:opacity-75 transition">
                     @if($showThumbnail)
                         <div class="flex-shrink-0 w-20 h-20">
                             @if($article->featured_image)
