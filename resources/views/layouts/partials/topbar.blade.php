@@ -8,7 +8,15 @@
 
         <div id="topbar-links" class="flex items-center gap-2 sm:gap-5">
             <a id="link-contact" href="{{ route('contact') }}" class="hover:text-rn-red transition-colors text-xs sm:text-[13px] whitespace-nowrap">Contact Us</a>
-            <a id="link-login" href="{{ route('login') }}" class="hover:text-rn-red transition-colors text-xs sm:text-[13px] whitespace-nowrap">Login / Register</a>
+            @auth
+                <a id="link-dashboard" href="{{ route('admin.dashboard') }}" class="hover:text-rn-red transition-colors text-xs sm:text-[13px] whitespace-nowrap font-medium">Admin Dashboard</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                <a id="link-logout" href="#" onclick="document.getElementById('logout-form').submit(); return false;" class="hover:text-rn-red transition-colors text-xs sm:text-[13px] whitespace-nowrap">Logout</a>
+            @else
+                <a id="link-login" href="{{ route('login') }}" class="hover:text-rn-red transition-colors text-xs sm:text-[13px] whitespace-nowrap">Login / Register</a>
+            @endauth
 
             <!-- Social Media Icons (Hidden on mobile) -->
             <div id="social-media-topbar" class="hidden sm:flex items-center gap-3 pl-3 ml-1 border-l border-white/20">
