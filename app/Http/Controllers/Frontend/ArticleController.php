@@ -152,6 +152,13 @@ class ArticleController extends Controller
             ->orderBy('order')
             ->get();
 
+        $sidebarArticles = Article::published()
+            ->where('category_id', $category->id)
+            ->orderByDesc('views_count')
+            ->with(['category', 'user'])
+            ->take(5)
+            ->get();
+
         $popularTags = Tag::whereHas('articles', fn($q) => $q->published())
             ->withCount('articles')
             ->orderByDesc('articles_count')
@@ -163,6 +170,7 @@ class ArticleController extends Controller
         return view('blog.index', compact(
             'articles',
             'categories',
+            'sidebarArticles',
             'popularTags',
             'category',
             'title'
@@ -182,17 +190,28 @@ class ArticleController extends Controller
             ->orderBy('order')
             ->get();
 
+        $sidebarArticles = Article::published()
+            ->whereHas('tags', fn($q) => $q->where('id', $tag->id))
+            ->orderByDesc('views_count')
+            ->with(['category', 'user'])
+            ->take(5)
+            ->get();
+
         $popularTags = Tag::whereHas('articles', fn($q) => $q->published())
             ->withCount('articles')
             ->orderByDesc('articles_count')
             ->limit(10)
             ->get();
 
+        $title = 'Tag: ' . $tag->name;
+
         return view('blog.index', compact(
             'articles',
             'categories',
+            'sidebarArticles',
             'popularTags',
-            'tag'
+            'tag',
+            'title'
         ));
     }
 }
