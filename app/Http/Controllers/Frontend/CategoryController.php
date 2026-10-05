@@ -11,7 +11,9 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::withCount('articles')->get();
+        $categories = Category::withCount([
+            'articles' => fn($q) => $q->where('status', 'published')
+        ])->get();
         return view('frontend.categories.index', compact('categories'));
     }
 
