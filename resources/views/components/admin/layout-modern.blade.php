@@ -289,10 +289,6 @@
 
                 <!-- Action Buttons -->
                 <div class="flex items-center gap-2 lg:gap-3 flex-shrink-0">
-                    <button class="w-9 lg:w-10 h-9 lg:h-10 bg-white rounded-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200">
-                        <i class="fas fa-bell text-gray-600 text-sm lg:text-base"></i>
-                    </button>
-
                     <!-- User Menu Dropdown -->
                     <div class="relative" @click.away="userMenuOpen = false" x-data="{ userMenuOpen: false }">
                         <button @click="userMenuOpen = !userMenuOpen" class="w-9 lg:w-10 h-9 lg:h-10 bg-white rounded-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200">
