@@ -146,7 +146,7 @@
         <!-- Features Grid -->
         <div>
             <h2 class="text-lg font-semibold text-gray-900 mb-4">🎯 All Features</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Articles -->
                 <a href="{{ route('admin.articles.index') }}"
                     class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-blue-300">
@@ -169,6 +169,14 @@
                     <div class="text-3xl mb-2">🏷️</div>
                     <p class="font-semibold text-gray-900 text-sm">Tags</p>
                     <p class="text-sm text-gray-600">Tag content</p>
+                </a>
+
+                <!-- Videos -->
+                <a href="{{ route('admin.videos.index') }}"
+                    class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow hover:border-purple-300">
+                    <div class="text-3xl mb-2">🎥</div>
+                    <p class="font-semibold text-gray-900 text-sm">Videos</p>
+                    <p class="text-sm text-gray-600">Manage videos</p>
                 </a>
 
                 <!-- Users -->

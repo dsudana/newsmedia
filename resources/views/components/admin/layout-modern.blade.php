@@ -194,6 +194,10 @@
                     <i class="fas fa-tag text-lg w-5"></i>
                     <span class="font-medium">Tags</span>
                 </a>
+                <a href="{{ route('admin.videos.index') }}" class="sidebar-item {{ request()->routeIs('admin.videos*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
+                    <i class="fas fa-video text-lg w-5"></i>
+                    <span class="font-medium">Videos</span>
+                </a>
                 <a href="{{ route('admin.showcase.index') }}" class="sidebar-item {{ request()->routeIs('admin.showcase*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-chart-pie text-lg w-5"></i>
                     <span class="font-medium">Showcase</span>
