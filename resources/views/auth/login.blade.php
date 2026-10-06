@@ -87,6 +87,35 @@
         </button>
     </form>
 
+    <!-- Demo Credentials -->
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+        <div style="background: #f0f9ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 1.5rem;">
+            <h3 style="color: #1e40af; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-flask-vial" style="font-size: 1.2rem;"></i> Demo Accounts for Testing
+            </h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <!-- Demo User -->
+                <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #3b82f6;">
+                    <p style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-bottom: 0.5rem;">REGULAR USER</p>
+                    <p style="font-size: 0.9rem; margin: 0.25rem 0;"><span style="color: #64748b;">Email:</span> <strong style="color: #1e293b;">demo@newsmedia.com</strong></p>
+                    <p style="font-size: 0.9rem; margin: 0.25rem 0;"><span style="color: #64748b;">Password:</span> <strong style="color: #1e293b;">demo1234</strong></p>
+                </div>
+
+                <!-- Demo Admin -->
+                <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #dc2626;">
+                    <p style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-bottom: 0.5rem;">ADMIN ACCOUNT</p>
+                    <p style="font-size: 0.9rem; margin: 0.25rem 0;"><span style="color: #64748b;">Email:</span> <strong style="color: #1e293b;">demo-admin@newsmedia.com</strong></p>
+                    <p style="font-size: 0.9rem; margin: 0.25rem 0;"><span style="color: #64748b;">Password:</span> <strong style="color: #1e293b;">demo1234</strong></p>
+                </div>
+            </div>
+
+            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">
+                💡 Use demo accounts above to test all features. Admin account has access to full dashboard.
+            </p>
+        </div>
+    </div>
+
     <style>
         .form-group input.border-red-500 {
             border-color: #ef4444;
