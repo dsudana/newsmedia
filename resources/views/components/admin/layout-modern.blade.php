@@ -292,9 +292,39 @@
                     <button class="w-9 lg:w-10 h-9 lg:h-10 bg-white rounded-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200">
                         <i class="fas fa-bell text-gray-600 text-sm lg:text-base"></i>
                     </button>
-                    <button class="w-9 lg:w-10 h-9 lg:h-10 bg-white rounded-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200">
-                        <i class="fas fa-ellipsis-v text-gray-600 text-sm lg:text-base"></i>
-                    </button>
+
+                    <!-- User Menu Dropdown -->
+                    <div class="relative" @click.away="userMenuOpen = false" x-data="{ userMenuOpen: false }">
+                        <button @click="userMenuOpen = !userMenuOpen" class="w-9 lg:w-10 h-9 lg:h-10 bg-white rounded-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200">
+                            <i class="fas fa-ellipsis-v text-gray-600 text-sm lg:text-base"></i>
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div x-show="userMenuOpen" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                            <!-- Profile Header -->
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <p class="text-sm font-medium text-gray-900">{{ auth()->user()->name }}</p>
+                                <p class="text-xs text-gray-500">{{ auth()->user()->email }}</p>
+                            </div>
+
+                            <!-- Menu Items -->
+                            <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2">
+                                <i class="fas fa-user text-gray-400 w-4"></i>
+                                <span>Edit Profile</span>
+                            </a>
+
+                            <div class="border-t border-gray-100 my-1"></div>
+
+                            <!-- Logout -->
+                            <form method="POST" action="{{ route('logout') }}" class="w-full">
+                                @csrf
+                                <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center gap-2">
+                                    <i class="fas fa-sign-out-alt text-red-400 w-4"></i>
+                                    <span>Logout</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
 
