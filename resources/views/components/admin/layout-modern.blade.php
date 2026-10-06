@@ -167,106 +167,102 @@
             </div>
 
             <!-- Overview Section -->
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">OVERVIEW</p>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">{{ __('messages.overview') }}</p>
             <nav class="space-y-2 mb-8">
                 <a href="{{ route('admin.dashboard') }}" class="sidebar-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-chart-line text-lg w-5"></i>
-                    <span class="font-medium">Dashboard</span>
-                </a>
-                <a href="#" class="sidebar-item flex items-center gap-3 px-4 py-3 rounded-lg">
-                    <i class="fas fa-inbox text-lg w-5"></i>
-                    <span class="font-medium">Inbox</span>
+                    <span class="font-medium">{{ __('messages.dashboard') }}</span>
                 </a>
             </nav>
 
             <!-- Content Management Section -->
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Content</p>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">{{ __('messages.content') }}</p>
             <nav class="space-y-2 mb-8">
                 <a href="{{ route('admin.articles.index') }}" class="sidebar-item {{ request()->routeIs('admin.articles*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-book text-lg w-5"></i>
-                    <span class="font-medium">Articles</span>
+                    <span class="font-medium">{{ __('messages.articles') }}</span>
                 </a>
                 <a href="{{ route('admin.categories.index') }}" class="sidebar-item {{ request()->routeIs('admin.categories*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-folder text-lg w-5"></i>
-                    <span class="font-medium">Categories</span>
+                    <span class="font-medium">{{ __('messages.categories') }}</span>
                 </a>
                 <a href="{{ route('admin.tags.index') }}" class="sidebar-item {{ request()->routeIs('admin.tags*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-tag text-lg w-5"></i>
-                    <span class="font-medium">Tags</span>
+                    <span class="font-medium">{{ __('messages.tags') }}</span>
                 </a>
                 <a href="{{ route('admin.videos.index') }}" class="sidebar-item {{ request()->routeIs('admin.videos*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-video text-lg w-5"></i>
-                    <span class="font-medium">Videos</span>
+                    <span class="font-medium">{{ __('messages.videos') }}</span>
                 </a>
                 <a href="{{ route('admin.showcase.index') }}" class="sidebar-item {{ request()->routeIs('admin.showcase*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-chart-pie text-lg w-5"></i>
-                    <span class="font-medium">Showcase</span>
+                    <span class="font-medium">{{ __('messages.showcase') }}</span>
                 </a>
             </nav>
 
             <!-- CMS Features Section -->
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">CMS Features</p>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">{{ __('messages.cms_features') }}</p>
             <nav class="space-y-2 mb-8">
                 <a href="{{ route('admin.announcements.index') }}" class="sidebar-item {{ request()->routeIs('admin.announcements*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-bullhorn text-lg w-5"></i>
-                    <span class="font-medium">Announcements</span>
+                    <span class="font-medium">{{ __('messages.announcements') }}</span>
                 </a>
                 <a href="{{ route('admin.events.index') }}" class="sidebar-item {{ request()->routeIs('admin.events*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-calendar text-lg w-5"></i>
-                    <span class="font-medium">Events</span>
+                    <span class="font-medium">{{ __('messages.events') }}</span>
                 </a>
                 <a href="{{ route('admin.seo-settings.index') }}" class="sidebar-item {{ request()->routeIs('admin.seo-settings*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-search text-lg w-5"></i>
-                    <span class="font-medium">SEO Settings</span>
+                    <span class="font-medium">{{ __('messages.seo_settings') }}</span>
                 </a>
                 <a href="{{ route('admin.comments.index') }}" class="sidebar-item {{ request()->routeIs('admin.comments*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-comments text-lg w-5"></i>
-                    <span class="font-medium">Moderate Comments</span>
+                    <span class="font-medium">{{ __('messages.comments') }}</span>
                 </a>
             </nav>
 
             <!-- Management Section -->
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Management</p>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">{{ __('messages.management') }}</p>
             <nav class="space-y-2 mb-auto">
                 <a href="{{ route('admin.users.index') }}" class="sidebar-item {{ request()->routeIs('admin.users*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-users text-lg w-5"></i>
-                    <span class="font-medium">Users</span>
+                    <span class="font-medium">{{ __('messages.users') }}</span>
                 </a>
                 <a href="{{ route('admin.advertisements.index') }}" class="sidebar-item {{ request()->routeIs('admin.advertisements*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-image text-lg w-5"></i>
-                    <span class="font-medium">Advertisements</span>
+                    <span class="font-medium">{{ __('messages.advertisements') }}</span>
                 </a>
                 <a href="{{ route('admin.keywords.index') }}" class="sidebar-item {{ request()->routeIs('admin.keywords*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-key text-lg w-5"></i>
-                    <span class="font-medium">Keywords</span>
+                    <span class="font-medium">{{ __('messages.keywords') }}</span>
                 </a>
                 <a href="{{ route('admin.analytics.index') }}" class="sidebar-item {{ request()->routeIs('admin.analytics*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-chart-bar text-lg w-5"></i>
-                    <span class="font-medium">Analytics</span>
+                    <span class="font-medium">{{ __('messages.analytics') }}</span>
                 </a>
                 <a href="{{ route('admin.wp-import.index') }}" class="sidebar-item {{ request()->routeIs('admin.wp-import*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-download text-lg w-5"></i>
-                    <span class="font-medium">WP Import</span>
+                    <span class="font-medium">{{ __('messages.wp_import') }}</span>
                 </a>
                 <a href="{{ route('admin.affiliates.index') }}" class="sidebar-item {{ request()->routeIs('admin.affiliates*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                     <i class="fas fa-link text-lg w-5"></i>
-                    <span class="font-medium">Affiliates</span>
+                    <span class="font-medium">{{ __('messages.affiliates') }}</span>
                 </a>
             </nav>
 
             <!-- Settings Section -->
             <div class="mt-8 pt-8 border-t border-gray-700">
-                <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Settings</p>
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">{{ __('messages.settings') }}</p>
                 <nav class="space-y-2">
                     <a href="{{ route('admin.settings.index') }}" class="sidebar-item {{ request()->routeIs('admin.settings*') ? 'active' : '' }} flex items-center gap-3 px-4 py-3 rounded-lg">
                         <i class="fas fa-cog text-lg w-5"></i>
-                        <span class="font-medium">Settings</span>
+                        <span class="font-medium">{{ __('messages.settings') }}</span>
                     </a>
                     <form method="POST" action="{{ route('logout') }}" class="w-full">
                         @csrf
                         <button type="submit" class="sidebar-item w-full text-left flex items-center gap-3 px-4 py-3 rounded-lg">
                             <i class="fas fa-sign-out-alt text-lg w-5"></i>
-                            <span class="font-medium">Logout</span>
+                            <span class="font-medium">{{ __('messages.logout') }}</span>
                         </button>
                     </form>
                 </nav>
@@ -306,7 +302,7 @@
                             <!-- Menu Items -->
                             <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2">
                                 <i class="fas fa-user text-gray-400 w-4"></i>
-                                <span>Edit Profile</span>
+                                <span>{{ __('messages.edit_profile') }}</span>
                             </a>
 
                             <div class="border-t border-gray-100 my-1"></div>
@@ -316,7 +312,7 @@
                                 @csrf
                                 <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center gap-2">
                                     <i class="fas fa-sign-out-alt text-red-400 w-4"></i>
-                                    <span>Logout</span>
+                                    <span>{{ __('messages.logout') }}</span>
                                 </button>
                             </form>
                         </div>
