@@ -203,7 +203,7 @@
                                 @endif
                             </div>
                             <div class="flex-1 flex flex-col px-4 py-3">
-                                <span class="text-xs font-bold text-red-600 dark:text-red-400 group-hover:bg-red-600 group-hover:text-white uppercase tracking-wide mb-2 px-2 py-1 rounded transition-all duration-300 inline-block">
+                                <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide mb-2 px-2 py-1 rounded inline-block">
                                     {{ $article->category->name }}
                                 </span>
                                 <h3
@@ -224,7 +224,7 @@
                 <div class="lg:col-span-2 space-y-12">
                     <!-- Category/Update Berita Section -->
                     <section>
-                        <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center justify-between mb-4">
                             <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                                 Update Berita
                                 <span class="text-red-600 text-2xl">›</span>
@@ -303,7 +303,7 @@
 
                             <section
                                 class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-gray-800 dark:to-gray-900 rounded-xl p-8 shadow-lg mb-12">
-                                <div class="flex items-center justify-between mb-8">
+                                <div class="flex items-center justify-between mb-4">
                                     <h2 class="text-3xl font-bold text-white flex items-center gap-2">
                                         Video Pilihan
                                         <span class="text-red-600 text-2xl">›</span>
@@ -355,7 +355,7 @@
                     @foreach ($allCategories as $category)
                         @php $categoryArticles = $category->articles; @endphp
                         <section>
-                            <div class="flex items-center justify-between mb-8">
+                            <div class="flex items-center justify-between mb-4">
                                 <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                                     {{ $category->name }}
                                     <span class="text-red-600 text-2xl">›</span>
@@ -392,7 +392,7 @@
                                             <!-- Overlay with category badge -->
 
                                             <span
-                                                class="inline-block text-red-600 group-hover:text-white group-hover:bg-red-600 text-xs font-semibold py-1.5 px-2 rounded-sm uppercase transition-all duration-300">
+                                                class="inline-block text-red-600 dark:text-red-400 text-xs font-semibold py-1.5 px-2 rounded-sm uppercase">
                                                 {{ $article->category->name }}
                                             </span>
 
