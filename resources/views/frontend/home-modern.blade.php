@@ -183,8 +183,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach ($latestArticles->skip(3)->take(4) as $article)
                         <a href="{{ route('blog.show', $article->slug) }}"
-                            class="group flex flex-col h-full stagger-item">
-                            <div class="relative overflow-hidden rounded-lg h-36 mb-4 image-zoom-container">
+                            class="group flex flex-col h-full stagger-item card-lift shadow-depth rounded-lg p-0 bg-white dark:bg-gray-800">
+                            <div class="relative overflow-hidden rounded-t-lg h-36 mb-0 image-zoom-container">
                                 @if ($article->featured_image)
                                     @php $imgUrl = str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image); @endphp
                                     <picture>
@@ -202,16 +202,16 @@
                                         class="w-full h-full object-cover image-zoom">
                                 @endif
                             </div>
-                            <div class="flex-1 flex flex-col">
-                                <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide mb-2">
+                            <div class="flex-1 flex flex-col px-4 py-3">
+                                <span class="text-xs font-bold text-red-600 dark:text-red-400 group-hover:bg-red-600 group-hover:text-white uppercase tracking-wide mb-2 px-2 py-1 rounded transition-all duration-300 inline-block">
                                     {{ $article->category->name }}
                                 </span>
                                 <h3
-                                    class="text-base font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-3">
+                                    class="text-base font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-3 link-accent">
                                     {{ $article->title }}
                                 </h3>
-                                <p class="text-sm text-slate-700 dark:text-gray-400">
-                                    {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}
+                                <p class="text-sm text-slate-700 dark:text-gray-400 group-hover:text-slate-800 dark:group-hover:text-gray-300 transition-colors duration-300">
+                                    <i class="fas fa-clock mr-1 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"></i>{{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}
                                 </p>
                             </div>
                         </a>
@@ -238,10 +238,10 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             @foreach ($latestArticles->skip(7)->take(3) as $article)
                                 <a href="{{ route('blog.show', $article->slug) }}"
-                                    class="group flex flex-col h-full stagger-item">
+                                    class="group flex flex-col h-full stagger-item card-lift shadow-depth rounded-xl p-0 bg-white dark:bg-gray-800">
                                     <!-- Article Card with Image -->
                                     <div
-                                        class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-gray-700 image-zoom-container">
+                                        class="relative overflow-hidden rounded-t-xl h-56 mb-4 bg-slate-200 dark:bg-gray-700 image-zoom-container">
                                         @if ($article->featured_image)
                                             <picture>
                                                 <source media="(min-width: 1024px)"
@@ -271,12 +271,13 @@
                                     </div>
 
                                     <!-- Content -->
-                                    <div class="flex-1 flex flex-col">
+                                    <div class="flex-1 flex flex-col px-4 pb-4">
                                         <h3
-                                            class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
+                                            class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-2 link-accent">
                                             {{ $article->title }}
                                         </h3>
-                                        <p class="text-sm text-slate-600 dark:text-gray-400 mt-auto">
+                                        <p class="text-sm text-slate-600 dark:text-gray-400 group-hover:text-slate-700 dark:group-hover:text-gray-300 mt-auto transition-colors duration-300">
+                                            <i class="fas fa-clock mr-1 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"></i>
                                             @php
                                                 $minutes = (int) abs($article->published_at->diffInMinutes(now()));
                                                 if ($minutes < 60) {
@@ -368,14 +369,14 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 @foreach ($categoryArticles->take(3) as $article)
                                     <a href="{{ route('blog.show', $article->slug) }}"
-                                        class="group flex flex-col h-full">
+                                        class="group flex flex-col h-full stagger-item card-lift shadow-depth rounded-xl p-0 bg-white dark:bg-gray-800">
                                         <!-- Article Card with Image 16:9 -->
                                         <div
-                                            class="relative overflow-hidden rounded-xl aspect-video mb-4 bg-slate-200 dark:bg-gray-700">
+                                            class="relative overflow-hidden rounded-t-xl aspect-video mb-0 bg-slate-200 dark:bg-gray-700 image-zoom-container">
                                             @if ($article->featured_image)
                                                 <img src="{{ asset('storage/' . $article->featured_image) }}"
                                                     alt="{{ $article->title }}" loading="lazy"
-                                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                                    class="w-full h-full object-cover image-zoom">
                                             @else
                                                 <div
                                                     class="w-full h-full bg-gradient-to-br from-slate-300 to-slate-400 flex items-center justify-center">
@@ -387,20 +388,20 @@
                                         </div>
 
                                         <!-- Content -->
-                                        <div class="flex-1 flex flex-col">
+                                        <div class="flex-1 flex flex-col px-4 pb-4">
                                             <!-- Overlay with category badge -->
 
                                             <span
-                                                class="inline-block text-red-600 text-xs font-semibold py-1.5 rounded-sm uppercase">
+                                                class="inline-block text-red-600 group-hover:text-white group-hover:bg-red-600 text-xs font-semibold py-1.5 px-2 rounded-sm uppercase transition-all duration-300">
                                                 {{ $article->category->name }}
                                             </span>
 
                                             <h3
-                                                class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
+                                                class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-2 link-accent mt-2">
                                                 {{ $article->title }}
                                             </h3>
-                                            <p class="text-sm text-slate-600 dark:text-gray-400 mt-auto">
-                                                {{ $article->published_at->format('d M Y') }}
+                                            <p class="text-sm text-slate-600 dark:text-gray-400 group-hover:text-slate-700 dark:group-hover:text-gray-300 mt-auto transition-colors duration-300">
+                                                <i class="fas fa-calendar mr-1 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"></i>{{ $article->published_at->format('d M Y') }}
                                             </p>
                                         </div>
                                     </a>
