@@ -33,15 +33,15 @@
                         </div>
                     @endif
                     <div class="flex-1 min-w-0">
-                        <p class="font-semibold text-sm text-gray-900 dark:text-gray-100 group-hover:text-red-600 line-clamp-2">{{ $article->title }}</p>
+                        <p class="font-semibold text-sm text-gray-900 dark:text-gray-100 group-hover:text-red-600 dark:group-hover:text-red-400 line-clamp-2 transition-colors duration-300 link-accent">{{ $article->title }}</p>
                         @if($showDate || $showViews)
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                            <p class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 mt-2 transition-colors duration-300">
                                 @if($showDate)
-                                    <i class="fas fa-calendar mr-1"></i>{{ $article->published_at->format('d M Y') }}
+                                    <i class="fas fa-calendar mr-1 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"></i>{{ $article->published_at->format('d M Y') }}
                                 @endif
                                 @if($showViews)
                                     @if($showDate) • @endif
-                                    <i class="fas fa-eye mr-1"></i>{{ number_format($article->views_count ?? 0) }}
+                                    <i class="fas fa-eye mr-1 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"></i>{{ number_format($article->views_count ?? 0) }}
                                 @endif
                             </p>
                         @endif

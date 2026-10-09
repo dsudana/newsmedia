@@ -12,17 +12,17 @@
         </div>
 
         <div>
-            <h5 class="text-base font-semibold line-clamp-2">
+            <h5 class="text-base font-semibold line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 link-accent">
                 {{ $article->title }}
             </h5>
 
             <span
-                class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+                class="inline-block bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors duration-300">
                 {{ $article->category->name ?? 'Uncategorized' }}
             </span>
 
             <span
-                class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                class="inline-block bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300 group-hover:bg-gray-200 dark:group-hover:bg-gray-600 transition-colors duration-300">
                 {{ $article->user?->name ?? 'Unknown' }}
             </span>
         </div>

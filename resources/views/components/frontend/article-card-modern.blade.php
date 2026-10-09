@@ -26,11 +26,11 @@
 
     <!-- Content -->
     <div class="flex-1 flex flex-col">
-        <h3 class="font-bold text-sm text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition mb-2">
+        <h3 class="font-bold text-sm text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-2 link-accent">
             {{ $article->title }}
         </h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mt-auto">
-            {{ $article->published_at?->format('d M Y') ?? 'No date' }}
+        <p class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 mt-auto transition-colors duration-300">
+            <i class="fas fa-calendar mr-1 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"></i>{{ $article->published_at?->format('d M Y') ?? 'No date' }}
         </p>
     </div>
 </article>
