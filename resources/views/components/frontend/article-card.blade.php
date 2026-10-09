@@ -1,6 +1,6 @@
 ﻿@props(['article', 'class' => 'aspect-[4/3]'])
 
-<a href="{{ $article->url ?? '#' }}" class="overlay-card block {{ $class }}">
+<a href="{{ $article->url ?? '#' }}" class="overlay-card block {{ $class }} stagger-item image-zoom-container">
     <img src="{{
         (!$article->featured_image)
             ? '/images/placeholder.jpg'

@@ -1,11 +1,13 @@
 ﻿@props(['article'])
 
-<a href="{{ $article->url ?? '#' }}" class="flex items-center gap-3 group">
-    <img src="{{
-        (!$article->featured_image)
-            ? '/images/placeholder.jpg'
-            : '/storage/' . $article->featured_image
-    }}" alt="" class="w-14 h-14 object-cover shrink-0">
+<a href="{{ $article->url ?? '#' }}" class="flex items-center gap-3 group stagger-item">
+    <div class="w-14 h-14 rounded overflow-hidden image-zoom-container">
+        <img src="{{
+            (!$article->featured_image)
+                ? '/images/placeholder.jpg'
+                : '/storage/' . $article->featured_image
+        }}" alt="" class="w-14 h-14 object-cover shrink-0 image-zoom">
+    </div>
     <div>
         <p class="byline">
             By {{ $article->user?->name ?? 'Admin' }}

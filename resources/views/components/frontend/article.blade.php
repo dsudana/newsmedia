@@ -1,9 +1,11 @@
 <div
-    class="max-w-sm bg-white border-2 border-gray-200 rounded-2xl hover:border-blue-500 dark:bg-gray-800 dark:border-gray-700/50">
+    class="max-w-sm bg-white border-2 border-gray-200 rounded-2xl dark:bg-gray-800 dark:border-gray-700/50 card-lift stagger-item">
     <a class="p-4 block" href="{{ route('articles.show', $article) }}">
-        <img class="rounded-lg mb-3 w-full h-48 object-cover"
-            src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder-news-media.svg' }}"
-            alt="{{ $article->title }}" />
+        <div class="rounded-lg mb-3 w-full h-48 overflow-hidden image-zoom-container">
+            <img class="w-full h-full object-cover image-zoom"
+                src="{{ $article->featured_image ? '/storage/' . $article->featured_image : '/images/placeholder-news-media.svg' }}"
+                alt="{{ $article->title }}" />
+        </div>
         <h5 class="mb-2 text-base lg:text-lg font-bold tracking-tight text-gray-800 dark:text-white line-clamp-2">
             {{ $article->title }}</h5>
         <span

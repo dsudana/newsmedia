@@ -20,11 +20,11 @@
         </h3>
         <div class="space-y-4">
             @foreach($articlesToShow as $article)
-                <a href="{{ route('blog.show', $article->slug) }}" class="group flex gap-3 pb-4 border-b border-gray-200 dark:border-gray-700/50 last:border-0 last:pb-0 hover:opacity-75 transition">
+                <a href="{{ route('blog.show', $article->slug) }}" class="group flex gap-3 pb-4 border-b border-gray-200 dark:border-gray-700/50 last:border-0 last:pb-0 stagger-item">
                     @if($showThumbnail)
-                        <div class="flex-shrink-0 w-20 h-20">
+                        <div class="flex-shrink-0 w-20 h-20 image-zoom-container">
                             @if($article->featured_image)
-                                <img src="{{ asset('storage/' . $article->featured_image) }}" alt="" class="w-20 h-20 object-cover rounded group-hover:opacity-80 transition" loading="lazy">
+                                <img src="{{ asset('storage/' . $article->featured_image) }}" alt="" class="w-20 h-20 object-cover rounded image-zoom" loading="lazy">
                             @else
                                 <div class="w-20 h-20 bg-gray-300 dark:bg-gray-700 rounded flex items-center justify-center">
                                     <i class="fas fa-image text-gray-400 dark:text-gray-500 text-lg"></i>

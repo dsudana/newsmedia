@@ -5,9 +5,11 @@
             : '/images/placeholder-news-media.svg';
 @endphp
 
-<a href="{{ route('articles.show', $article) }}">
-    <div class="border-2 hover:border-blue-500 rounded-lg p-3 flex gap-2 mb-3">
-        <img src="{{ $imageUrl }}" alt="{{ $article->title }}" class="w-20 h-20 object-cover rounded">
+<a href="{{ route('articles.show', $article) }}" class="stagger-item">
+    <div class="border-2 rounded-lg p-3 flex gap-2 mb-3 card-lift">
+        <div class="w-20 h-20 rounded overflow-hidden image-zoom-container">
+            <img src="{{ $imageUrl }}" alt="{{ $article->title }}" class="w-20 h-20 object-cover image-zoom">
+        </div>
 
         <div>
             <h5 class="text-base font-semibold line-clamp-2">

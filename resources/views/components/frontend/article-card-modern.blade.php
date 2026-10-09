@@ -1,12 +1,12 @@
 <!-- Article Card Component - Modern RET/NEWS Style -->
-<article {{ $attributes->merge(['class' => 'group flex flex-col h-full']) }}>
+<article {{ $attributes->merge(['class' => 'group flex flex-col h-full stagger-item']) }}>
     <a href="{{ route('articles.show', $article->slug) }}" class="block mb-3 relative">
         <!-- Image 16:9 -->
-        <div class="bg-gray-300 dark:bg-gray-800 aspect-video overflow-hidden rounded-lg relative group/image shadow-sm dark:shadow-md transition-shadow duration-300">
+        <div class="bg-gray-300 dark:bg-gray-800 aspect-video overflow-hidden rounded-lg relative group/image shadow-sm dark:shadow-md image-zoom-container">
             @if($article->featured_image)
                 <img src="{{ asset('storage/' . $article->featured_image) }}"
                      alt="{{ $article->title }}"
-                     class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                     class="w-full h-full object-cover image-zoom">
             @else
                 <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
                     <i class="fas fa-image text-gray-500 dark:text-gray-500 text-4xl"></i>
