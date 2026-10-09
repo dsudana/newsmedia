@@ -375,12 +375,12 @@
                                     <span class="w-1 h-6 bg-red-600 dark:bg-red-500 rounded-full"></span>
                                     Artikel Terbaru
                                 </h3>
-                                <div class="space-y-3">
+                                <div class="space-y-5">
                                     @foreach ($recentArticles as $recent)
                                         <a href="{{ route('blog.show', $recent->slug) }}"
-                                            class="flex gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition group">
+                                            class="flex gap-4 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition group">
                                             <div
-                                                class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200 dark:bg-gray-700">
+                                                class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200 dark:bg-gray-700 image-zoom-container">
                                                 @if ($recent->featured_image)
                                                     @php
                                                         $recentImgUrl = str_starts_with($recent->featured_image, 'http')
@@ -388,7 +388,7 @@
                                                             : asset('storage/' . $recent->featured_image);
                                                     @endphp
                                                     <img src="{{ $recentImgUrl }}" alt="{{ $recent->title }}"
-                                                        class="w-full h-full object-cover group-hover:scale-105 transition"
+                                                        class="w-full h-full object-cover image-zoom transition-transform duration-300"
                                                         loading="lazy">
                                                 @else
                                                     <div
@@ -397,13 +397,13 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <div class="flex-1 min-w-0">
+                                            <div class="flex-1 min-w-0 flex flex-col">
                                                 <h4
-                                                    class="text-sm font-semibold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition">
+                                                    class="text-lg font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition">
                                                     {{ $recent->title }}
                                                 </h4>
-                                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                                                    {{ $recent->published_at->translatedFormat('d M Y') }}
+                                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-auto">
+                                                    {{ $recent->published_at->format('d M Y') }}
                                                 </p>
                                             </div>
                                         </a>

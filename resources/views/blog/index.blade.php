@@ -282,7 +282,7 @@
                                     @foreach ($recentArticles as $article)
                                         <a href="{{ route('blog.show', $article->slug) }}"
                                             class="group flex gap-4 pb-5 border-b border-gray-200 dark:border-gray-700 last:pb-0 last:border-0 stagger-item card-lift rounded-lg p-2 -mx-2 shadow-depth">
-                                            <div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 image-zoom-container">
+                                            <div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 image-zoom-container">
                                                 @php
                                                     $recentImageUrl = $article->featured_image
                                                         ? (str_starts_with($article->featured_image, 'http')
@@ -293,15 +293,14 @@
                                                 <img src="{{ $recentImageUrl }}" alt="{{ $article->title }}"
                                                     loading="lazy" class="w-full h-full object-cover image-zoom">
                                             </div>
-                                            <div class="flex-1 min-w-0">
+                                            <div class="flex-1 min-w-0 flex flex-col">
                                                 <h4
-                                                    class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-1 link-accent">
+                                                    class="text-lg font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-2 link-accent">
                                                     {{ $article->title }}
                                                 </h4>
                                                 <p
-                                                    class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
-                                                    <i
-                                                        class="fas fa-clock mr-1 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"></i>{{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}
+                                                    class="text-xs text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mt-auto">
+                                                    {{ $article->published_at->format('d M Y') }}
                                                 </p>
                                             </div>
                                         </a>
