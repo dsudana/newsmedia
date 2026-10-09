@@ -6,19 +6,19 @@
     <!-- Skip to main content link for accessibility -->
 
     <!-- Breaking News Card (Tier 0) -->
-    <div class="max-w-7xl mx-auto px-4 mt-6">
+    <div class="max-w-6xl mx-auto px-4 mt-6">
         <x-frontend.breaking-news-card :breakingNews="$breakingNews" />
     </div>
 
     <!-- Trending Section -->
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-6xl mx-auto px-4">
         <x-frontend.trending-section :categories="$categories" />
     </div>
 
     <!-- Advertisement Banner -->
     <div
         class="bg-white dark:bg-gray-900 border-b border-slate-200 dark:border-gray-800 py-2 sm:py-3 lg:py-4 mb-6 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-6xl mx-auto px-4">
             <div
                 class="bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center h-14 sm:h-20 lg:h-24 overflow-hidden">
                 <x-frontend.advertisement placement="header_banner" />
@@ -28,7 +28,7 @@
 
     <!-- Main Content -->
     <main class="bg-white dark:bg-gray-900 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="max-w-6xl mx-auto px-4 py-12">
             <!-- Featured Hero Section (Full Width, 2 Columns) -->
             <div class="mb-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 items-stretch">
@@ -41,9 +41,9 @@
                     @endphp
 
                     @if ($featured)
-                        <article class="group h-[380px] lg:h-[420px]">
+                        <article class="group h-[380px] lg:h-[420px] card-lift">
                             <a href="{{ route('blog.show', $featured->slug) }}"
-                                class="relative block h-full overflow-hidden rounded-2xl bg-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                                class="relative block h-full overflow-hidden rounded-2xl bg-slate-200 image-zoom-container">
 
                                 {{-- Featured Image --}}
                                 @if ($featured->featured_image)
@@ -55,11 +55,11 @@
 
                                     <img src="{{ $imageUrl }}" alt="{{ $featured->title }}" loading="lazy"
                                         width="800" height="420"
-                                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                        class="absolute inset-0 h-full w-full object-cover image-zoom">
                                 @else
                                     <img src="/images/placeholder-news-media.svg" alt="{{ $featured->title }}"
                                         loading="lazy" width="800" height="420"
-                                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                        class="absolute inset-0 h-full w-full object-cover image-zoom">
                                 @endif
 
                                 {{-- Overlay --}}
@@ -103,12 +103,12 @@
                     <div class="grid grid-rows-3 gap-3 lg:h-[420px]">
 
                         @foreach ($latestArticles->skip(1)->take(3) as $article)
-                            <article class="group min-h-0">
+                            <article class="group min-h-0 card-lift">
                                 <a href="{{ route('blog.show', $article->slug) }}"
-                                    class="flex h-full overflow-hidden rounded-xl dark:bg-gray-800 shadow-sm ring-1 ring-slate-200/70 dark:ring-gray-700/70 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-lg">
+                                    class="flex h-full overflow-hidden rounded-xl dark:bg-gray-800 shadow-sm ring-1 ring-slate-200/70 dark:ring-gray-700/70">
 
                                     {{-- Image --}}
-                                    <div class="relative w-32 flex-shrink-0 overflow-hidden sm:w-36 lg:w-40">
+                                    <div class="relative w-32 flex-shrink-0 overflow-hidden sm:w-36 lg:w-40 image-zoom-container">
 
                                         @if ($article->featured_image)
                                             @php
@@ -119,11 +119,11 @@
 
                                             <img src="{{ $imgUrl }}" alt="{{ $article->title }}" loading="lazy"
                                                 width="400" height="250"
-                                                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                                class="h-full w-full object-cover image-zoom">
                                         @else
                                             <img src="/images/placeholder-news-media.svg" alt="{{ $article->title }}"
                                                 loading="lazy"
-                                                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                                class="h-full w-full object-cover image-zoom">
                                         @endif
 
                                     </div>
@@ -183,8 +183,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach ($latestArticles->skip(3)->take(4) as $article)
                         <a href="{{ route('blog.show', $article->slug) }}"
-                            class="group flex flex-col h-full hover:opacity-85 transition">
-                            <div class="relative overflow-hidden rounded-lg h-36 mb-4">
+                            class="group flex flex-col h-full stagger-item">
+                            <div class="relative overflow-hidden rounded-lg h-36 mb-4 image-zoom-container">
                                 @if ($article->featured_image)
                                     @php $imgUrl = str_starts_with($article->featured_image, 'http') ? $article->featured_image : asset('storage/' . $article->featured_image); @endphp
                                     <picture>
@@ -194,12 +194,12 @@
                                             height="225">
                                         <img src="{{ $imgUrl }}" alt="{{ $article->title }}" loading="lazy"
                                             width="250" height="188"
-                                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                            class="w-full h-full object-cover image-zoom">
                                     </picture>
                                 @else
                                     <img src="/images/placeholder-news-media.svg" alt="{{ $article->title }}"
                                         loading="lazy"
-                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                        class="w-full h-full object-cover image-zoom">
                                 @endif
                             </div>
                             <div class="flex-1 flex flex-col">
@@ -238,10 +238,10 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             @foreach ($latestArticles->skip(7)->take(3) as $article)
                                 <a href="{{ route('blog.show', $article->slug) }}"
-                                    class="group flex flex-col h-full hover:opacity-85 transition">
+                                    class="group flex flex-col h-full stagger-item">
                                     <!-- Article Card with Image -->
                                     <div
-                                        class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-gray-700">
+                                        class="relative overflow-hidden rounded-xl h-56 mb-4 bg-slate-200 dark:bg-gray-700 image-zoom-container">
                                         @if ($article->featured_image)
                                             <picture>
                                                 <source media="(min-width: 1024px)"
@@ -253,12 +253,12 @@
                                                 <img src="{{ asset('storage/' . $article->featured_image) }}?w=250&q=70"
                                                     alt="{{ $article->title }}" loading="lazy" width="250"
                                                     height="188"
-                                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                                    class="w-full h-full object-cover image-zoom">
                                             </picture>
                                         @else
                                             <img src="/images/placeholder-news-media.svg" alt="{{ $article->title }}"
                                                 loading="lazy"
-                                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                                class="w-full h-full object-cover image-zoom">
                                         @endif
 
                                         <!-- Overlay with category badge -->
@@ -296,28 +296,48 @@
 
                     <!-- Video Pilihan Section -->
                     @if ($videoGallery && $videoGallery->count() > 0)
-                        <section
-                            class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-gray-800 dark:to-gray-900 rounded-xl p-8 shadow-lg mb-12">
-                            <div class="flex items-center justify-between mb-8">
-                                <h2 class="text-3xl font-bold text-white flex items-center gap-2">
-                                    Video Pilihan
-                                    <span class="text-red-600 text-2xl">›</span>
-                                </h2>
-                                <a href="{{ route('gallery.index') }}"
-                                    class="text-red-600 hover:text-red-500 text-2xl transition">
-                                    ›
-                                </a>
-                            </div>
+                        <div x-data="{ selectedVideo: null }">
+                            <!-- Video Modal Component -->
+                            <x-video-modal modalName="homeVideoModal" />
 
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                @foreach ($videoGallery->take(3) as $video)
-                                    <a href="{{ $video->youtube_url }}" target="_blank" rel="noopener noreferrer"
-                                        class="group">
-                                        <x-video-card-minimal :$video />
+                            <section
+                                class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-gray-800 dark:to-gray-900 rounded-xl p-8 shadow-lg mb-12">
+                                <div class="flex items-center justify-between mb-8">
+                                    <h2 class="text-3xl font-bold text-white flex items-center gap-2">
+                                        Video Pilihan
+                                        <span class="text-red-600 text-2xl">›</span>
+                                    </h2>
+                                    <a href="{{ route('gallery.index') }}"
+                                        class="text-red-600 hover:text-red-500 text-2xl transition">
+                                        ›
                                     </a>
-                                @endforeach
-                            </div>
-                        </section>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    @foreach ($videoGallery->take(3) as $video)
+                                        @if ($video->youtube_id)
+                                            <button type="button"
+                                                @click="
+                                                    selectedVideo = {
+                                                        id: {{ $video->id }},
+                                                        title: @js($video->title),
+                                                        youtube_id: @js($video->youtube_id),
+                                                        youtube_url: @js($video->youtube_url),
+                                                        description: @js($video->description),
+                                                        category: @js($video->category?->name),
+                                                        views_count: {{ $video->views_count }},
+                                                        published_at: @js($video->published_at?->format('d M Y'))
+                                                    };
+                                                    $dispatch('open-modal', 'homeVideoModal');
+                                                "
+                                                class="w-full text-left group hover:opacity-95 transition">
+                                                <x-video-card-minimal :$video />
+                                            </button>
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </section>
+                        </div>
                     @endif
 
                     <!-- Upcoming Events Carousel -->

@@ -1,13 +1,13 @@
 @props(['video'])
 
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-shadow overflow-hidden group">
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden group card-lift">
     <!-- Thumbnail Container -->
-    <div class="relative h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+    <div class="relative h-48 bg-gray-200 dark:bg-gray-700 image-zoom-container">
         <!-- Thumbnail Image -->
         <img
             src="{{ $video->thumbnail_url }}"
             alt="{{ $video->title }}"
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            class="w-full h-full object-cover image-zoom"
             loading="lazy"
         >
 

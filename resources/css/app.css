@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "custom.css";
 
 /* Global Styles */
 html {

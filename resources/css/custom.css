@@ -367,6 +367,230 @@ input[type="submit"] {
   }
 }
 
+/* ===== Modern Card Animations ===== */
+
+/* Card Elevation & Lift Effect */
+.card-lift {
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 300ms ease,
+              background-color 300ms ease;
+  transform: translateY(0);
+}
+
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.dark .card-lift:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Zoom & Overlay Effect */
+.image-zoom-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-zoom {
+  transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 350ms ease;
+}
+
+.image-zoom-container:hover .image-zoom {
+  transform: scale(1.08);
+  filter: brightness(0.92);
+}
+
+/* Smooth Border Transition */
+.border-smooth {
+  transition: border-color 300ms ease,
+              border-width 300ms ease;
+}
+
+.border-smooth:hover {
+  border-color: currentColor;
+}
+
+/* Text Underline Animation */
+.text-underline-animate {
+  position: relative;
+  transition: color 300ms ease;
+}
+
+.text-underline-animate::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.text-underline-animate:hover::after {
+  width: 100%;
+}
+
+/* Gradient Shift Animation */
+.gradient-shift {
+  background-size: 200% 200%;
+  transition: background-position 400ms ease;
+}
+
+.gradient-shift:hover {
+  background-position: right center;
+}
+
+/* Smooth Shadow Depth Effect */
+.shadow-depth {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.shadow-depth:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.dark .shadow-depth:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Glow Effect */
+.card-glow {
+  transition: filter 300ms ease, box-shadow 300ms ease;
+}
+
+.card-glow:hover {
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.1));
+}
+
+/* Smooth Opacity and Scale */
+.opacity-scale {
+  transition: opacity 300ms ease, transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.opacity-scale:hover {
+  opacity: 0.95;
+  transform: scale(1.02);
+}
+
+/* Badge Pulse Animation */
+@keyframes badge-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+  }
+}
+
+.badge-pulse {
+  animation: badge-pulse 2s infinite;
+}
+
+/* Smooth Icon Rotate */
+.icon-rotate:hover {
+  animation: icon-rotate 300ms ease-out;
+}
+
+@keyframes icon-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stagger Animation for Grid Items */
+.stagger-item {
+  animation: stagger-fade-up 600ms ease-out backwards;
+}
+
+@keyframes stagger-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger Delays */
+.stagger-item:nth-child(1) { animation-delay: 0ms; }
+.stagger-item:nth-child(2) { animation-delay: 100ms; }
+.stagger-item:nth-child(3) { animation-delay: 200ms; }
+.stagger-item:nth-child(4) { animation-delay: 300ms; }
+.stagger-item:nth-child(5) { animation-delay: 400ms; }
+.stagger-item:nth-child(6) { animation-delay: 500ms; }
+
+/* Smooth Color Transition on Cards */
+.card-color-transition {
+  transition: background-color 300ms ease,
+              border-color 300ms ease,
+              color 300ms ease;
+}
+
+/* Link Hover with Accent Color */
+.link-accent {
+  transition: color 300ms ease;
+  position: relative;
+}
+
+.link-accent::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.link-accent:hover::before {
+  width: 100%;
+}
+
+/* Respect Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .card-lift,
+  .image-zoom,
+  .border-smooth,
+  .text-underline-animate,
+  .gradient-shift,
+  .shadow-depth,
+  .card-glow,
+  .opacity-scale,
+  .icon-rotate,
+  .stagger-item,
+  .card-color-transition,
+  .link-accent {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .card-lift:hover {
+    transform: none !important;
+  }
+
+  .image-zoom-container:hover .image-zoom {
+    transform: none !important;
+  }
+
+  .shadow-depth:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  }
+
+  .stagger-item {
+    animation: none !important;
+  }
+}
+
 /* Article Content Styling */
 .article-content {
   font-size: 1.125rem;
