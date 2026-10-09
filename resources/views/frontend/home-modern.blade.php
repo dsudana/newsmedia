@@ -41,7 +41,7 @@
                     @endphp
 
                     @if ($featured)
-                        <article class="group h-[380px] lg:h-[420px] card-lift">
+                        <article class="group h-48 sm:h-64 md:h-80 lg:h-[420px] card-lift">
                             <a href="{{ route('blog.show', $featured->slug) }}"
                                 class="relative block h-full overflow-hidden rounded-2xl bg-slate-200 image-zoom-container">
 
@@ -366,13 +366,13 @@
                                 </a>
                             </div>
 
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="space-y-4 md:grid md:grid-cols-3 md:gap-6">
                                 @foreach ($categoryArticles->take(3) as $article)
                                     <a href="{{ route('blog.show', $article->slug) }}"
-                                        class="group flex flex-col h-full stagger-item card-lift shadow-depth rounded-xl p-0 bg-white dark:bg-gray-800">
-                                        <!-- Article Card with Image 16:9 -->
+                                        class="group md:flex md:flex-col h-full stagger-item card-lift shadow-depth rounded-xl p-0 bg-white dark:bg-gray-800 flex flex-row md:flex-col">
+                                        <!-- Article Card with Image -->
                                         <div
-                                            class="relative overflow-hidden rounded-t-xl aspect-video mb-0 bg-slate-200 dark:bg-gray-700 image-zoom-container">
+                                            class="relative overflow-hidden rounded-t-xl md:rounded-t-xl w-24 md:w-full h-24 md:aspect-video mb-0 md:mb-2 bg-slate-200 dark:bg-gray-700 image-zoom-container flex-shrink-0">
                                             @if ($article->featured_image)
                                                 <img src="{{ asset('storage/' . $article->featured_image) }}"
                                                     alt="{{ $article->title }}" loading="lazy"
@@ -380,7 +380,7 @@
                                             @else
                                                 <div
                                                     class="w-full h-full bg-gradient-to-br from-slate-300 to-slate-400 flex items-center justify-center">
-                                                    <i class="fas fa-image text-slate-500 text-4xl"></i>
+                                                    <i class="fas fa-image text-slate-500 text-2xl"></i>
                                                 </div>
                                             @endif
 
@@ -388,19 +388,19 @@
                                         </div>
 
                                         <!-- Content -->
-                                        <div class="flex-1 flex flex-col px-4 pb-4">
+                                        <div class="flex-1 flex flex-col px-3 py-2 md:px-4 md:pb-2">
                                             <!-- Overlay with category badge -->
 
                                             <span
-                                                class="inline-block text-red-600 dark:text-red-400 text-xs font-semibold py-1.5 px-2 rounded-sm uppercase">
+                                                class="inline-block text-red-600 dark:text-red-400 text-xs font-semibold py-1 px-1.5 rounded-sm uppercase hidden md:inline-block">
                                                 {{ $article->category->name }}
                                             </span>
 
                                             <h3
-                                                class="text-base font-bold text-slate-900 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-2 link-accent mt-2">
+                                                class="text-sm md:text-base font-bold text-slate-900 dark:text-white line-clamp-2 md:line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-1 md:mb-2 link-accent md:mt-2 mt-0">
                                                 {{ $article->title }}
                                             </h3>
-                                            <p class="text-sm text-slate-600 dark:text-gray-400 group-hover:text-slate-700 dark:group-hover:text-gray-300 mt-auto transition-colors duration-300">
+                                            <p class="text-xs md:text-sm text-slate-600 dark:text-gray-400 group-hover:text-slate-700 dark:group-hover:text-gray-300 transition-colors duration-300 hidden md:block">
                                                 <i class="fas fa-calendar mr-1 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"></i>{{ $article->published_at->format('d M Y') }}
                                             </p>
                                         </div>
