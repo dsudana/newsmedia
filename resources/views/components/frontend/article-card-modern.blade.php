@@ -1,51 +1,70 @@
-<!-- Article Card Component - Professional Typography & Spacing -->
-<article {{ $attributes->merge(['class' => 'group flex flex-col h-full stagger-item card-lift bg-white dark:bg-gray-800 rounded-lg overflow-hidden']) }}>
-    <a href="{{ route('articles.show', $article->slug) }}" class="block relative">
-        <!-- Image 16:9 with Category Badge -->
-        <div class="bg-gray-300 dark:bg-gray-700 aspect-video overflow-hidden relative group/image shadow-depth image-zoom-container">
+<!-- Article Card Component - Clean Minimal Design with Icon Overlay -->
+<article {{ $attributes->merge(['class' => 'group flex flex-col h-full stagger-item card-lift bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300']) }}>
+    <a href="{{ route('articles.show', $article->slug) }}" class="block relative flex-1">
+        <!-- Large Visual Area with Icon Overlay -->
+        <div class="relative w-full h-48 sm:h-52 md:h-56 bg-gray-300 dark:bg-gray-700 overflow-hidden image-zoom-container group/image">
             @if($article->featured_image)
                 <img src="{{ asset('storage/' . $article->featured_image) }}"
                      alt="{{ $article->title }}"
-                     class="w-full h-full object-cover image-zoom">
+                     class="w-full h-full object-cover image-zoom transition-transform duration-300">
             @else
-                <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center">
-                    <i class="fas fa-image text-gray-400 dark:text-gray-500 text-5xl"></i>
+                <div class="w-full h-full bg-gradient-to-br from-red-50 via-red-100 to-red-200 dark:from-red-900/30 dark:via-red-800/30 dark:to-red-700/30 flex items-center justify-center">
                 </div>
             @endif
 
-            <!-- Category Badge - Professional Styling -->
-            @if($article->category)
-                <div class="absolute top-3 left-3 right-3">
-                    <span class="inline-block px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider rounded-md shadow-lg transition-colors duration-300 line-height: 1.4">
-                        {{ strtoupper($article->category->name) }}
-                    </span>
+            <!-- Icon Overlay - Centered -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 dark:bg-gray-800/90 rounded-full flex items-center justify-center backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                    @if($article->category)
+                        @switch($article->category->name)
+                            @case('Gaya Hidup')
+                                <i class="fas fa-heart text-red-600 dark:text-red-400 text-2xl sm:text-3xl"></i>
+                            @break
+                            @case('Pemerintahan')
+                                <i class="fas fa-landmark text-red-600 dark:text-red-400 text-2xl sm:text-3xl"></i>
+                            @break
+                            @case('Pendidikan')
+                                <i class="fas fa-book text-red-600 dark:text-red-400 text-2xl sm:text-3xl"></i>
+                            @break
+                            @case('Kesehatan')
+                                <i class="fas fa-stethoscope text-red-600 dark:text-red-400 text-2xl sm:text-3xl"></i>
+                            @break
+                            @case('Bisnis')
+                                <i class="fas fa-briefcase text-red-600 dark:text-red-400 text-2xl sm:text-3xl"></i>
+                            @break
+                            @case('Olahraga')
+                                <i class="fas fa-futbol text-red-600 dark:text-red-400 text-2xl sm:text-3xl"></i>
+                            @break
+                            @default
+                                <i class="fas fa-newspaper text-red-600 dark:text-red-400 text-2xl sm:text-3xl"></i>
+                        @endswitch
+                    @else
+                        <i class="fas fa-newspaper text-red-600 dark:text-red-400 text-2xl sm:text-3xl"></i>
+                    @endif
                 </div>
-            @endif
+            </div>
         </div>
     </a>
 
-    <!-- Content Section with Professional Spacing -->
+    <!-- Content Section - Clean & Minimal -->
     <div class="flex-1 flex flex-col px-4 py-4 sm:px-5 sm:py-5">
-        <!-- Title with Improved Typography -->
-        <h3 class="font-semibold text-base leading-relaxed text-gray-900 dark:text-gray-50 line-clamp-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-3 link-accent">
+        <!-- Metadata Label -->
+        <p class="text-xs sm:text-sm font-semibold text-red-600 dark:text-red-400 uppercase tracking-widest mb-2 group-hover:text-red-700 dark:group-hover:text-red-300 transition-colors">
+            @if($article->category)
+                {{ $article->category->name }} · {{ \App\Models\Article::where('category_id', $article->category->id)->where('status', 'published')->count() }} Artikel
+            @else
+                Artikel
+            @endif
+        </p>
+
+        <!-- Title - Bold & Prominent -->
+        <h3 class="font-bold text-base sm:text-lg leading-snug text-gray-900 dark:text-gray-50 line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-3 link-accent">
             {{ $article->title }}
         </h3>
 
-        <!-- Meta Information with Enhanced Spacing -->
-        <div class="space-y-2 mt-auto">
-            <!-- Date with Icon -->
-            <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300 flex items-center gap-2">
-                <i class="fas fa-calendar w-4 text-center text-gray-500 dark:text-gray-500 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors flex-shrink-0"></i>
-                <span>{{ $article->published_at?->format('d M Y') ?? 'No date' }}</span>
-            </p>
-
-            <!-- Views Count (if available) -->
-            @if(isset($article->views_count))
-                <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300 flex items-center gap-2">
-                    <i class="fas fa-eye w-4 text-center text-gray-500 dark:text-gray-500 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors flex-shrink-0"></i>
-                    <span>{{ number_format($article->views_count ?? 0) }} dibaca</span>
-                </p>
-            @endif
-        </div>
+        <!-- Published Date / Last Updated -->
+        <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors mt-auto">
+            Dipublikasikan {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}
+        </p>
     </div>
 </article>
