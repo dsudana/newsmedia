@@ -6,7 +6,7 @@
 @endphp
 
 <a href="{{ route('articles.show', $article) }}" class="stagger-item">
-    <div class="border-2 rounded-lg p-3 flex gap-2 mb-3 card-lift">
+    <div class="border-2 rounded-lg p-3 flex gap-2 mb-3 card-lift border-smooth shadow-depth">
         <div class="w-20 h-20 rounded overflow-hidden image-zoom-container">
             <img src="{{ $imageUrl }}" alt="{{ $article->title }}" class="w-20 h-20 object-cover image-zoom">
         </div>

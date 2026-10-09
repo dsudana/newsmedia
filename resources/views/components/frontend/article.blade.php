@@ -1,5 +1,5 @@
 <div
-    class="max-w-sm bg-white border-2 border-gray-200 rounded-2xl dark:bg-gray-800 dark:border-gray-700/50 card-lift stagger-item">
+    class="max-w-sm bg-white border-2 border-gray-200 rounded-2xl dark:bg-gray-800 dark:border-gray-700/50 border-smooth card-lift shadow-depth stagger-item">
     <a class="p-4 block" href="{{ route('articles.show', $article) }}">
         <div class="rounded-lg mb-3 w-full h-48 overflow-hidden image-zoom-container">
             <img class="w-full h-full object-cover image-zoom"

@@ -1,6 +1,7 @@
 ﻿@props(['article', 'class' => 'aspect-[4/3]'])
 
-<a href="{{ $article->url ?? '#' }}" class="overlay-card block {{ $class }} stagger-item image-zoom-container">
+<div class="card-lift shadow-depth">
+    <a href="{{ $article->url ?? '#' }}" class="overlay-card block {{ $class }} stagger-item image-zoom-container">
     <img src="{{
         (!$article->featured_image)
             ? '/images/placeholder.jpg'
@@ -16,5 +17,6 @@
             <span class="date text-white/70 group-hover:text-white/80 transition-colors duration-300">{{ $article->date ?? $article->created_at?->translatedFormat('d M Y') }}</span>
         </p>
     </div>
-</a>
+    </a>
+</div>
 

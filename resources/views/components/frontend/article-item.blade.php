@@ -1,6 +1,6 @@
 ﻿@props(['article'])
 
-<a href="{{ $article->url ?? '#' }}" class="flex items-center gap-3 group stagger-item">
+<a href="{{ $article->url ?? '#' }}" class="flex items-center gap-3 group stagger-item card-lift rounded-lg p-2 -mx-2 shadow-depth">
     <div class="w-14 h-14 rounded overflow-hidden image-zoom-container">
         <img src="{{
             (!$article->featured_image)

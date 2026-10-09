@@ -20,7 +20,7 @@
         </h3>
         <div class="space-y-4">
             @foreach($articlesToShow as $article)
-                <a href="{{ route('blog.show', $article->slug) }}" class="group flex gap-3 pb-4 border-b border-gray-200 dark:border-gray-700/50 last:border-0 last:pb-0 stagger-item">
+                <a href="{{ route('blog.show', $article->slug) }}" class="group flex gap-3 pb-4 border-b border-gray-200 dark:border-gray-700/50 last:border-0 last:pb-0 stagger-item card-lift rounded-lg p-2 -mx-2 shadow-depth">
                     @if($showThumbnail)
                         <div class="flex-shrink-0 w-20 h-20 image-zoom-container">
                             @if($article->featured_image)
