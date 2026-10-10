@@ -81,20 +81,32 @@ class Article extends Model
 
     private static function clearHomepageCache(): void
     {
-        Cache::forget('homepage_latest_articles');
-        Cache::forget('homepage_categories');
-        Cache::forget('homepage_sidebar_categories');
-        Cache::forget('homepage_sidebar_articles');
+        Cache::forget('home_featured_strip');
+        Cache::forget('home_hero_slides');
+        Cache::forget('home_category_strip');
+        Cache::forget('home_recent_featured');
+        Cache::forget('home_popular_posts');
+        Cache::forget('home_sports_posts');
+        Cache::forget('home_lifestyle_posts');
+        Cache::forget('home_technology_posts');
+        Cache::forget('home_sidebar_latest');
+        Cache::forget('home_top_categories');
+        Cache::forget('home_popular_tags');
+        Cache::forget('categories_with_counts');
+        Cache::forget('popular_tags');
     }
 
     private static function uniqueSlug($title, $exceptId = null)
     {
         $slug = Str::slug($title);
-        $count = self::where('slug', 'like', $slug . '%')
-            ->when($exceptId, fn($q) => $q->where('id', '!=', $exceptId))
-            ->count();
 
-        return $count ? "{$slug}-" . Str::random(6) : $slug;
+        // First check for exact match using index (fast)
+        $exists = self::where('slug', $slug)
+            ->when($exceptId, fn($q) => $q->where('id', '!=', $exceptId))
+            ->exists();
+
+        // If exact match exists, append random suffix
+        return $exists ? "{$slug}-" . Str::random(6) : $slug;
     }
 
     public function user()
