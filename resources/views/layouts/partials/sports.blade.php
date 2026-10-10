@@ -5,7 +5,7 @@
         <div class="swiper-wrapper">
             @foreach (($sportsPosts ?? []) as $post)
                 <div class="swiper-slide !h-auto">
-                    <a href="{{ route('blog.show', $post->slug) }}" class="group block overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+                    <a href="{{ route('blog.show', $post->slug) }}" class="group block rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow overflow-visible h-full flex flex-col">
                         <div class="aspect-[3/2] overflow-hidden bg-gray-200 dark:bg-gray-700 group-hover:opacity-90 transition-opacity image-zoom-container flex-shrink-0"
                             style="background-image: url('{{ $post->featured_image ? '/storage/' . $post->featured_image : '/images/placeholder.jpg' }}'); background-size: cover; background-position: center;">
                         </div>

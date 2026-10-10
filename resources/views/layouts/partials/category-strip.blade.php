@@ -3,7 +3,7 @@
         <div class="swiper-wrapper">
             @foreach ($categoryStrip ?? [] as $post)
                 <div class="swiper-slide !h-auto">
-                    <a href="{{ route('blog.show', $post->slug) }}" class="block group rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow overflow-hidden h-full flex flex-col">
+                    <a href="{{ route('blog.show', $post->slug) }}" class="block group rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow overflow-visible h-full flex flex-col">
                         <div class="overflow-hidden aspect-[4/3] image-zoom-container flex-shrink-0">
                             <img src="{{ $post->featured_image ? '/storage/' . $post->featured_image : '/images/placeholder.jpg' }}" alt="{{ $post->title }}"
                                 class="w-full h-full object-cover image-zoom group-hover:scale-105 transition-transform duration-300">

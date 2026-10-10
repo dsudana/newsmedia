@@ -3,7 +3,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         @foreach (($lifestylePosts ?? []) as $post)
-            <a href="{{ route('blog.show', $post->slug) }}" class="group block overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow">
+            <a href="{{ route('blog.show', $post->slug) }}" class="group block rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow overflow-visible">
                 <div class="aspect-video overflow-hidden mb-3 sm:mb-4 bg-gray-200 dark:bg-gray-700 group-hover:opacity-90 transition-opacity image-zoom-container"
                     style="background-image: url('{{ $post->featured_image ? '/storage/' . $post->featured_image : '/images/placeholder.jpg' }}'); background-size: cover; background-position: center;">
                 </div>

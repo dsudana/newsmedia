@@ -3,7 +3,7 @@
 
     <div class="space-y-6">
         @foreach ($technologyPosts ?? [] as $post)
-            <a href="{{ route('blog.show', $post->slug) }}" class="flex gap-3 sm:gap-4 group hover:shadow-md transition-shadow p-3 sm:p-4 rounded-lg bg-white dark:bg-gray-800">
+            <a href="{{ route('blog.show', $post->slug) }}" class="flex gap-3 sm:gap-4 group hover:shadow-md transition-shadow p-3 sm:p-4 rounded-lg bg-white dark:bg-gray-800 overflow-visible">
                 <div class="w-28 sm:w-40 h-24 sm:h-32 overflow-hidden shrink-0 bg-gray-200 dark:bg-gray-700 rounded-lg image-zoom-container"
                     style="background-image: url('{{ $post->featured_image ? '/storage/' . $post->featured_image : '/images/placeholder.jpg' }}'); background-size: cover; background-position: center;">
                 </div>
