@@ -3,14 +3,16 @@
         <div class="swiper-wrapper">
             @foreach ($categoryStrip ?? [] as $post)
                 <div class="swiper-slide">
-                    <a href="{{ route('blog.show', $post->slug) }}" class="block group">
-                        <div class="overflow-hidden aspect-[4/3] mb-2">
+                    <a href="{{ route('blog.show', $post->slug) }}" class="block group rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                        <div class="overflow-hidden aspect-[4/3] image-zoom-container">
                             <img src="{{ $post->featured_image ? '/storage/' . $post->featured_image : '/images/placeholder.jpg' }}" alt="{{ $post->title }}"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                class="w-full h-full object-cover image-zoom group-hover:scale-105 transition-transform duration-300">
                         </div>
-                        <p class="byline">By {{ $post->user?->name ?? 'Admin' }}, <span
-                                class="date">{{ $post->published_at?->translatedFormat('d M Y') }}</span></p>
-                        <p class="card-title group-hover:text-rn-red transition-colors">{{ $post->title }}</p>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-widest mb-2">{{ $post->category?->name ?? 'News' }}</p>
+                            <p class="text-lg font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors mb-2">{{ $post->title }}</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">{{ $post->published_at?->format('d M Y') }}</p>
+                        </div>
                     </a>
                 </div>
             @endforeach
