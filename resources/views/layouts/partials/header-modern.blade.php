@@ -69,11 +69,10 @@
                 <i class="text-base sm:text-lg fas fa-moon" aria-hidden="true"></i>
             </button>
 
-            <!-- Mobile Menu Button (Hidden on Desktop) -->
+            <!-- Mobile Menu Button (Hidden on Desktop, Visible on Mobile) -->
             <button @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen"
                 aria-label="Toggle mobile menu"
-                class="md:hidden lg:hidden text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-1.5 sm:p-2"
-                style="display: none !important;">
+                class="lg:hidden text-gray-400 hover:text-red-500 transition focus-visible:ring-2 ring-offset-2 ring-red-600 rounded p-1.5 sm:p-2">
                 <i :class="mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'" class="text-base sm:text-lg"
                     aria-hidden="true"></i>
             </button>
