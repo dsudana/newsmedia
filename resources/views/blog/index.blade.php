@@ -96,10 +96,10 @@
                                                 : asset('storage/' . $featuredArticle->featured_image);
                                         @endphp
                                         <img src="{{ $featuredImageUrl }}" alt="{{ $featuredArticle->title }}"
-                                            class="w-full h-full object-cover image-zoom" loading="lazy">
+                                            class="w-full h-full object-cover image-zoom" loading="lazy" decoding="async">
                                     @else
                                         <img src="/images/placeholder-news-media.svg" alt="{{ $featuredArticle->title }}"
-                                            class="w-full h-full object-cover image-zoom" loading="lazy">
+                                            class="w-full h-full object-cover image-zoom" loading="lazy" decoding="async">
                                     @endif
                                 </div>
                                 <div class="space-y-3 px-6 py-6 md:px-8 md:py-8">
@@ -154,7 +154,7 @@
                                                         : asset('storage/' . $article->featured_image);
                                                 @endphp
                                                 <img src="{{ $gridImageUrl }}" alt="{{ $article->title }}"
-                                                    class="w-full h-full object-cover image-zoom transition-transform duration-300" loading="lazy">
+                                                    class="w-full h-full object-cover image-zoom transition-transform duration-300" loading="lazy" decoding="async">
                                             @else
                                                 <div class="w-full h-full bg-gradient-to-br from-red-50 via-red-100 to-red-200 dark:from-red-900/30 dark:via-red-800/30 dark:to-red-700/30"></div>
                                             @endif

@@ -53,12 +53,12 @@
                                             : asset('storage/' . $featured->featured_image);
                                     @endphp
 
-                                    <img src="{{ $imageUrl }}" alt="{{ $featured->title }}" loading="lazy"
+                                    <img src="{{ $imageUrl }}" alt="{{ $featured->title }}" loading="lazy" decoding="async"
                                         width="800" height="420"
                                         class="absolute inset-0 h-full w-full object-cover image-zoom">
                                 @else
                                     <img src="/images/placeholder-news-media.svg" alt="{{ $featured->title }}"
-                                        loading="lazy" width="800" height="420"
+                                        loading="lazy" decoding="async" width="800" height="420"
                                         class="absolute inset-0 h-full w-full object-cover image-zoom">
                                 @endif
 
