@@ -8,10 +8,10 @@
                             <img src="{{ $post->featured_image ? '/storage/' . $post->featured_image : '/images/placeholder.jpg' }}" alt="{{ $post->title }}"
                                 class="w-full h-full object-cover image-zoom group-hover:scale-105 transition-transform duration-300">
                         </div>
-                        <div class="p-4">
-                            <p class="text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-widest mb-2">{{ $post->category?->name ?? 'News' }}</p>
-                            <p class="text-lg font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors mb-2">{{ $post->title }}</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">{{ $post->published_at?->format('d M Y') }}</p>
+                        <div class="p-3 sm:p-4">
+                            <p class="text-[10px] sm:text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-widest mb-2">{{ $post->category?->name ?? 'News' }}</p>
+                            <p class="text-base sm:text-lg font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors mb-2">{{ $post->title }}</p>
+                            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{{ $post->published_at?->format('d M Y') }}</p>
                         </div>
                     </a>
                 </div>
