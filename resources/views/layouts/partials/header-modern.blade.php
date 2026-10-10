@@ -35,9 +35,8 @@
             @if ($moreCategories->isNotEmpty())
                 <div class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="hidden items-center justify-center text-white hover:text-red-500 transition p-1.5 rounded"
-                        aria-label="More categories"
-                        style="display: none;">
+                        class="flex items-center justify-center text-white hover:text-red-500 transition p-1.5 rounded"
+                        aria-label="More categories">
                         <i class="fas fa-bars text-lg"></i>
                     </button>
                     <div x-show="open" @click.outside="open = false" x-transition
