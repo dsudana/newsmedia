@@ -194,8 +194,8 @@
 
                                         <!-- Content Section -->
                                         <div class="flex-1 flex flex-col px-3 py-2 md:px-4 md:py-4">
-                                            <!-- Metadata (Desktop only) -->
-                                            <p class="hidden md:block text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-widest mb-2 group-hover:text-red-700 dark:group-hover:text-red-300 transition-colors">
+                                            <!-- Metadata Label (All screens) -->
+                                            <p class="text-[10px] md:text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-widest mb-1 md:mb-2 group-hover:text-red-700 dark:group-hover:text-red-300 transition-colors">
                                                 @if($article->category)
                                                     {{ $article->category->name }} · {{ \App\Models\Article::where('category_id', $article->category->id)->where('status', 'published')->count() }}
                                                 @else
@@ -205,13 +205,13 @@
 
                                             <!-- Title -->
                                             <h3
-                                                class="text-sm md:text-base font-bold text-slate-900 dark:text-white line-clamp-2 md:line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-1 md:mb-2 link-accent">
+                                                class="text-sm md:text-base font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 mb-1 md:mb-2 link-accent flex-1">
                                                 {{ $article->title }}
                                             </h3>
 
-                                            <!-- Date and Views (Desktop) -->
+                                            <!-- Date (All screens) -->
                                             <p
-                                                class="text-xs md:text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300 hidden md:block mt-auto">
+                                                class="text-xs md:text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300">
                                                 {{ \App\Helpers\DateHelper::relativeTime($article->published_at) }}
                                             </p>
                                         </div>
