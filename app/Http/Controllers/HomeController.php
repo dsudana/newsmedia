@@ -125,20 +125,18 @@ class HomeController extends Controller
         $topCategories = Cache::remember('home_top_categories', self::CACHE_TTL, function () {
             return Category::active()
                 ->withCount(['articles' => fn($q) => $q->published()])
-                ->select('id', 'name', 'slug')
                 ->orderBy('articles_count', 'desc')
                 ->take(10)
-                ->get();
+                ->get(['id', 'name', 'slug']);
         });
 
         // Popular Tags (cached)
         $popularTags = Cache::remember('home_popular_tags', self::CACHE_TTL, function () {
             return Tag::whereHas('articles', fn($q) => $q->published())
                 ->withCount('articles')
-                ->select('id', 'name', 'slug')
                 ->orderByDesc('articles_count')
                 ->take(10)
-                ->get();
+                ->get(['id', 'name', 'slug']);
         });
 
         // Pagination for older articles (not cached - user-specific)

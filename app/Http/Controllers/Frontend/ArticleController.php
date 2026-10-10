@@ -25,9 +25,8 @@ class ArticleController extends Controller
         return Cache::remember('categories_with_counts', self::CACHE_TTL, function () {
             return Category::active()
                 ->withCount(['articles' => fn($q) => $q->published()])
-                ->select('id', 'name', 'slug', 'is_active', 'order')
                 ->orderBy('order')
-                ->get();
+                ->get(['id', 'name', 'slug', 'is_active', 'order']);
         });
     }
 
@@ -36,10 +35,9 @@ class ArticleController extends Controller
         return Cache::remember('popular_tags', self::CACHE_TTL, function () {
             return Tag::whereHas('articles', fn($q) => $q->published())
                 ->withCount('articles')
-                ->select('id', 'name', 'slug')
                 ->orderByDesc('articles_count')
                 ->limit(10)
-                ->get();
+                ->get(['id', 'name', 'slug']);
         });
     }
 
